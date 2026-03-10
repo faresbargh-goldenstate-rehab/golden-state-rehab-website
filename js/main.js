@@ -174,41 +174,94 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// ── Facility slideshow ────────────────────────────────────────
+// ── Facility card carousel ────────────────────────────────────
 (function () {
-  var track = document.querySelector('.facility-track');
-  if (!track) return;
-  var slides = track.querySelectorAll('.facility-slide');
-  var dotsWrap = document.querySelector('.facility-dots');
-  var prevBtn = document.querySelector('.facility-arrow--prev');
-  var nextBtn = document.querySelector('.facility-arrow--next');
+  var wrapper = document.querySelector('.facility-carousel-wrapper');
+  if (!wrapper) return;
+  var track = wrapper.querySelector('.facility-carousel-track');
+  var cards = track.querySelectorAll('.facility-card');
+  var prevBtn = wrapper.querySelector('.facility-arrow--prev');
+  var nextBtn = wrapper.querySelector('.facility-arrow--next');
+  var total = cards.length;
   var current = 0;
   var timer;
 
-  slides.forEach(function (_, i) {
-    var dot = document.createElement('button');
-    dot.className = 'facility-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('role', 'tab');
-    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-    dot.addEventListener('click', function () { goTo(i); });
-    dotsWrap.appendChild(dot);
-  });
+  function getVisibleCount() { return window.innerWidth <= 768 ? 1 : 3; }
+  function getCardWidth() { return cards[0].offsetWidth + 20; }
 
   function goTo(n) {
-    current = ((n % slides.length) + slides.length) % slides.length;
-    track.style.transform = 'translateX(-' + (current * 100) + '%)';
-    dotsWrap.querySelectorAll('.facility-dot').forEach(function (d, i) {
-      d.classList.toggle('active', i === current);
-    });
+    var maxIndex = total - getVisibleCount();
+    current = Math.max(0, Math.min(n, maxIndex));
+    track.style.transform = 'translateX(-' + (current * getCardWidth()) + 'px)';
+    prevBtn.style.opacity = current === 0 ? '0.4' : '1';
+    nextBtn.style.opacity = current >= maxIndex ? '0.4' : '1';
     resetTimer();
   }
 
   function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(function () { goTo(current + 1); }, 5000);
+    timer = setInterval(function () {
+      var maxIndex = total - getVisibleCount();
+      goTo(current < maxIndex ? current + 1 : 0);
+    }, 4000);
   }
 
   prevBtn.addEventListener('click', function () { goTo(current - 1); });
   nextBtn.addEventListener('click', function () { goTo(current + 1); });
-  resetTimer();
+  window.addEventListener('resize', function () { goTo(0); });
+  goTo(0);
+}());
+
+// ── Exit-intent popup ─────────────────────────────────────────
+(function () {
+  if (sessionStorage.getItem('exitShown')) return;
+  if ('ontouchstart' in window) return;
+
+  var overlay = document.createElement('div');
+  overlay.className = 'exit-popup-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Before you go');
+
+  // Resolve correct path to contact.html from any page depth
+  var path = window.location.pathname;
+  var depth = (path.match(/\//g) || []).length - 1;
+  var prefix = depth > 1 ? '../' : '';
+
+  overlay.innerHTML =
+    '<div class="exit-popup">' +
+      '<img class="exit-popup-image" src="https://picsum.photos/seed/exit-calm/600/800" alt="" loading="lazy">' +
+      '<div class="exit-popup-body">' +
+        '<p class="exit-popup-eyebrow">A Moment of Clarity</p>' +
+        '<h2 class="exit-popup-heading">Wait. Don\'t Leave<br>Without Help.</h2>' +
+        '<p class="exit-popup-text">Every moment matters when it comes to recovery. One decision can change your life — make this one count.</p>' +
+        '<div class="exit-popup-actions">' +
+          '<a href="' + prefix + 'contact.html" class="btn btn-primary">Speak With Our Team <i data-lucide="arrow-right"></i></a>' +
+          '<button class="exit-popup-dismiss">Maybe later</button>' +
+        '</div>' +
+      '</div>' +
+      '<button class="exit-popup-close" aria-label="Close"><i data-lucide="x"></i></button>' +
+    '</div>';
+
+  document.body.appendChild(overlay);
+
+  function closePopup() {
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+
+  overlay.querySelector('.exit-popup-close').addEventListener('click', closePopup);
+  overlay.querySelector('.exit-popup-dismiss').addEventListener('click', closePopup);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closePopup(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
+
+  document.addEventListener('mouseleave', function handler(e) {
+    if (e.clientY < 5 && window.innerWidth >= 768) {
+      sessionStorage.setItem('exitShown', '1');
+      overlay.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+      document.removeEventListener('mouseleave', handler);
+    }
+  });
 }());
