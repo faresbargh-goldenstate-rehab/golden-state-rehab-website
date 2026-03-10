@@ -237,7 +237,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '<p class="exit-popup-text">Every moment matters when it comes to recovery. One decision can change your life — make this one count.</p>' +
         '<div class="exit-popup-actions">' +
           '<a href="' + prefix + 'contact.html" class="btn btn-primary">Speak With Our Team <i data-lucide="arrow-right"></i></a>' +
-          '<button class="exit-popup-dismiss">Maybe later</button>' +
         '</div>' +
       '</div>' +
       '<button class="exit-popup-close" aria-label="Close"><i data-lucide="x"></i></button>' +
@@ -251,7 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   overlay.querySelector('.exit-popup-close').addEventListener('click', closePopup);
-  overlay.querySelector('.exit-popup-dismiss').addEventListener('click', closePopup);
   overlay.addEventListener('click', function (e) { if (e.target === overlay) closePopup(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
 

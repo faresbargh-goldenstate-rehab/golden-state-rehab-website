@@ -451,12 +451,22 @@ p:last-child { margin-bottom: 0; }
   color: var(--white);
   border-color: var(--gold);
 }
+.btn-primary:visited {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
 .btn-primary:hover {
   background: var(--gold-dark);
   border-color: var(--gold-dark);
   color: var(--white);
 }
 .btn-secondary {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold);
+}
+.btn-secondary:visited {
   background: transparent;
   color: var(--gold);
   border-color: var(--gold);
@@ -1604,6 +1614,11 @@ p:last-child { margin-bottom: 0; }
   cursor: pointer;
   text-decoration: none;
 }
+.btn-primary:visited {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
 .btn-primary:hover {
   background: var(--gold-dark);
   border-color: var(--gold-dark);
@@ -1624,6 +1639,11 @@ p:last-child { margin-bottom: 0; }
   transition: background var(--transition), color var(--transition), transform var(--transition);
   cursor: pointer;
   text-decoration: none;
+}
+.btn-secondary:visited {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold);
 }
 .btn-secondary:hover {
   background: var(--gold);
@@ -2403,11 +2423,6 @@ p:last-child { margin-bottom: 0; }
   font-size: 15px; color: var(--muted); line-height: 1.6; margin: 0;
 }
 .exit-popup-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
-.exit-popup-dismiss {
-  font-size: 13px; color: var(--muted); background: none; border: none;
-  cursor: pointer; text-align: left; padding: 0;
-}
-.exit-popup-dismiss:hover { color: var(--near-black); text-decoration: underline; }
 .exit-popup-close {
   position: absolute; top: 16px; right: 16px;
   width: 32px; height: 32px; border-radius: 50%;
