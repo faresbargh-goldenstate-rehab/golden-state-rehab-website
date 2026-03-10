@@ -173,3 +173,57 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// ── Chat widget: hide until 200px scroll ─────────────────────────────
+(function () {
+  // Only run on pages that have the chat widget script
+  if (!document.querySelector('script[src*="buildmyagent"]')) return;
+
+  var widget = null;
+
+  function applyVisibility() {
+    if (!widget) return;
+    if (window.scrollY > 200) {
+      widget.style.opacity = '1';
+      widget.style.pointerEvents = 'auto';
+    } else {
+      widget.style.opacity = '0';
+      widget.style.pointerEvents = 'none';
+    }
+  }
+
+  // Watch for the widget being injected into the DOM
+  var observer = new MutationObserver(function (mutations) {
+    for (var i = 0; i < mutations.length; i++) {
+      var nodes = mutations[i].addedNodes;
+      for (var j = 0; j < nodes.length; j++) {
+        var node = nodes[j];
+        if (!node || node.nodeType !== 1) continue;
+        // Match any element whose id, class, or src contains "buildmyagent"
+        var id  = (node.id  || '').toLowerCase();
+        var cls = (typeof node.className === 'string' ? node.className : '').toLowerCase();
+        var src = (node.src || '').toLowerCase();
+        if (id.indexOf('buildmyagent') > -1 ||
+            cls.indexOf('buildmyagent') > -1 ||
+            src.indexOf('buildmyagent') > -1) {
+          widget = node;
+        }
+        // Also check iframes injected as children
+        if (!widget) {
+          var iframe = node.querySelector && node.querySelector('iframe[src*="buildmyagent"]');
+          if (iframe) widget = node; // hide the wrapper, not just the iframe
+        }
+      }
+    }
+    if (widget) {
+      widget.style.transition = 'opacity 0.3s ease';
+      widget.style.opacity    = '0';
+      widget.style.pointerEvents = 'none';
+      applyVisibility(); // in case page was already scrolled on load
+      observer.disconnect();
+      window.addEventListener('scroll', applyVisibility, { passive: true });
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+}());
