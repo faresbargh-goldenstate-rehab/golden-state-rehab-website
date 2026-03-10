@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Insurance | Golden State Rehab — Los Angeles</title>
+  <meta name="description" content="Verify your insurance coverage for addiction and mental health treatment at Golden State Rehab. We work with Aetna, Anthem, Cigna, Blue Shield, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Golden State Rehab home"><img src="images/logo-icon.png" alt="" class="nav-logo-icon-img" aria-hidden="true"><span class="nav-logo-wordmark"><strong>Golden State</strong> Rehab</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="programs/index.html">Programs <i data-lucide="chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="programs/index.html" class="dropdown-all" role="menuitem">All Programs</a>
+          <a href="programs/php.html">Partial Hospitalization (PHP)</a>
+          <a href="programs/iop.html">Intensive Outpatient (IOP)</a>
+          <a href="programs/telehealth.html">Online &amp; Telehealth</a>
+          <a href="programs/individual-therapy.html">Individual Therapy</a>
+          <a href="programs/group-therapy.html">Group Therapy</a>
+          <a href="programs/medication-management.html">Medication Management</a>
+          <a href="programs/holistic-therapies.html">Holistic Therapies</a>
+          <a href="programs/alumni.html">Alumni Program</a>
+        </div>
+      </li>
+      <li class="has-dropdown">
+        <a href="treatments/index.html">Treatments <i data-lucide="chevron-down"></i></a>
+        <div class="dropdown dropdown-wide">
+          <a href="treatments/index.html" class="dropdown-all" role="menuitem">All Treatments</a>
+          <div class="dropdown-cols">
+          <div class="dropdown-col">
+            <span class="dropdown-col-label">Mental Health</span>
+            <a href="treatments/depression.html">Depression</a>
+            <a href="treatments/anxiety.html">Anxiety</a>
+            <a href="treatments/ptsd.html">PTSD</a>
+            <a href="treatments/complex-trauma.html">Complex Trauma</a>
+            <a href="treatments/dual-diagnosis.html">Dual Diagnosis</a>
+          </div>
+          <div class="dropdown-col">
+            <span class="dropdown-col-label">Addiction</span>
+            <a href="treatments/alcohol.html">Alcohol</a>
+            <a href="treatments/opioid.html">Opioid</a>
+            <a href="treatments/meth.html">Meth</a>
+            <a href="treatments/cocaine.html">Cocaine</a>
+            <a href="treatments/prescription-drugs.html">Prescription Drugs</a>
+            <a href="treatments/sex-addiction.html">Sex Addiction</a>
+          </div>
+        
+          </div>
+        </div>
+      </li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="verify-insurance.html" class="btn-nav-secondary active">Verify Insurance</a>
+      <a href="contact.html" class="btn btn-primary btn-sm"><i data-lucide="phone"></i> Call Now</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<nav class="nav-mobile" aria-label="Mobile navigation">
+  <a href="about.html">About</a>
+  <a href="programs/index.html">Programs</a>
+  <a href="treatments/index.html">Treatments</a>
+  <a href="faq.html">FAQ</a>
+  <a href="verify-insurance.html" class="active">Verify Insurance</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80&auto=format&fit=crop');">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content container">
+    <p class="page-hero-breadcrumb"><a href="index.html">Home</a> <i data-lucide="chevron-right"></i> Verify Insurance</p>
+    <span class="badge-gold">Free &amp; Confidential</span>
+    <h1>Verify Your <span class="text-gold">Insurance Coverage</span></h1>
+    <p class="page-hero-sub">Find out what your plan covers in minutes — no obligation</p>
+  </div>
+</section>
+
+<!-- Insurance Verification Section -->
+<section class="section section-white">
+  <div class="container">
+    <div class="insurance-verify-layout">
+
+      <!-- Form -->
+      <div class="insurance-form-wrapper reveal">
+        <div class="form-header">
+          <span class="badge-gold">Step 1 of 1</span>
+          <h2>Check Your Benefits</h2>
+          <p>Fill out the form below and our team will verify your insurance benefits and contact you within 1 hour. No cost, no commitment.</p>
+        </div>
+        <form class="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ins-fname">First Name <span class="required">*</span></label>
+              <input type="text" id="ins-fname" name="first_name" placeholder="Jane" autocomplete="given-name" required>
+            </div>
+            <div class="form-group">
+              <label for="ins-lname">Last Name <span class="required">*</span></label>
+              <input type="text" id="ins-lname" name="last_name" placeholder="Smith" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ins-phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="ins-phone" name="phone" placeholder="(310) 555-0100" autocomplete="tel" required>
+          </div>
+          <div class="form-group">
+            <label for="ins-dob">Date of Birth <span class="required">*</span></label>
+            <input type="date" id="ins-dob" name="dob" required>
+          </div>
+          <div class="form-group">
+            <label for="ins-provider">Insurance Provider <span class="required">*</span></label>
+            <select id="ins-provider" name="insurance_provider" required>
+              <option value="" disabled selected>Select your insurance</option>
+              <option value="anthem">Anthem Blue Cross</option>
+              <option value="aetna">Aetna</option>
+              <option value="cigna">Cigna</option>
+              <option value="blueshield">Blue Shield of California</option>
+              <option value="united">United Healthcare</option>
+              <option value="magellan">Magellan Health</option>
+              <option value="optum">Optum / UBH</option>
+              <option value="prime">Prime Health</option>
+              <option value="tricare">TRICARE</option>
+              <option value="other">Other (please specify below)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ins-member-id">Member ID / Policy Number</label>
+            <input type="text" id="ins-member-id" name="member_id" placeholder="Found on your insurance card">
+          </div>
+          <div class="form-group">
+            <label for="ins-message">Anything else you'd like us to know?</label>
+            <textarea id="ins-message" name="message" rows="4" placeholder="e.g., specific program you're interested in, current diagnosis, other questions..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">Verify My Insurance <i data-lucide="arrow-right"></i></button>
+          <p class="form-privacy"><i data-lucide="lock"></i> Your information is 100% confidential and protected by HIPAA.</p>
+        </form>
+      </div>
+
+      <!-- Help Accordion Panel -->
+      <div class="insurance-help-panel reveal">
+        <div class="help-panel-header">
+          <h3>How Insurance Works for Treatment</h3>
+          <p>We work with most major insurance plans and our team handles everything on your behalf.</p>
+        </div>
+
+        <div class="help-accordion">
+          <div class="help-accordion-item">
+            <button class="help-accordion-btn">
+              <span>Which insurance plans do you accept?</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="help-accordion-content">
+              <p>We work with most major insurance providers including Anthem Blue Cross, Aetna, Cigna, Blue Shield of California, United Healthcare, Magellan, Optum, Prime Health, TRICARE, and many others. Under the Mental Health Parity and Addiction Equity Act, most plans are required to cover behavioral health treatment.</p>
+            </div>
+          </div>
+
+          <div class="help-accordion-item">
+            <button class="help-accordion-btn">
+              <span>What does insurance typically cover?</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="help-accordion-content">
+              <p>Coverage varies by plan, but most insurance policies cover a significant portion of PHP and IOP treatment, including individual therapy, group therapy, psychiatric services, and medication management. Your out-of-pocket costs depend on your deductible, co-pay, and co-insurance amounts. Our team will give you a clear breakdown before you begin.</p>
+            </div>
+          </div>
+
+          <div class="help-accordion-item">
+            <button class="help-accordion-btn">
+              <span>How long does verification take?</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="help-accordion-content">
+              <p>Our admissions team typically completes insurance verification within 1 hour during business hours. Once we verify your benefits, we'll call you to explain exactly what your plan covers and any expected costs — so you can make an informed decision with complete clarity.</p>
+            </div>
+          </div>
+
+          <div class="help-accordion-item">
+            <button class="help-accordion-btn">
+              <span>What if my insurance doesn't cover treatment?</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="help-accordion-content">
+              <p>If your insurance doesn't cover the full cost of treatment, we offer private pay options and flexible payment arrangements. We believe cost should never be the barrier to care. Our admissions team will work with you to find a solution that allows you to access the treatment you need.</p>
+            </div>
+          </div>
+
+          <div class="help-accordion-item">
+            <button class="help-accordion-btn">
+              <span>Is my information kept confidential?</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="help-accordion-content">
+              <p>Absolutely. All information you share with us is fully protected under HIPAA and 42 CFR Part 2. We will never share your personal or insurance information without your explicit written consent. Your privacy and confidentiality are paramount to us.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="insurance-logos-panel">
+          <p class="insurance-logos-label">We work with</p>
+          <div class="insurance-logos-row">
+            <span class="insurance-logo-badge">Anthem</span>
+            <span class="insurance-logo-badge">Aetna</span>
+            <span class="insurance-logo-badge">Cigna</span>
+            <span class="insurance-logo-badge">Blue Shield</span>
+            <span class="insurance-logo-badge">United</span>
+            <span class="insurance-logo-badge">Magellan</span>
+          </div>
+          <p class="insurance-logos-more">+ many more. Call us to confirm your specific plan.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="trust-bar reveal">
+      <div class="trust-item">
+        <i data-lucide="shield-check"></i>
+        <h4>DHCS Licensed</h4>
+        <p>State-licensed outpatient treatment center</p>
+      </div>
+      <div class="trust-item">
+        <i data-lucide="lock"></i>
+        <h4>HIPAA Protected</h4>
+        <p>Your privacy is always our priority</p>
+      </div>
+      <div class="trust-item">
+        <i data-lucide="clock"></i>
+        <h4>24/7 Admissions</h4>
+        <p>Someone is always here to help</p>
+      </div>
+      <div class="trust-item">
+        <i data-lucide="heart"></i>
+        <h4>No Judgment</h4>
+        <p>Compassionate, confidential support</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col footer-brand">
+      <a href="index.html" class="footer-logo" aria-label="Golden State Rehab home"><img src="images/logo.png" alt="Golden State Rehab" class="nav-logo-img"></a>
+      <p class="footer-tagline">Compassionate, evidence-based addiction and mental health treatment in Los Angeles.</p>
+      <div class="footer-contact-block">
+        <a href="tel:8005551234" class="footer-phone"><i data-lucide="phone"></i> (800) 555-1234</a>
+        <p><i data-lucide="map-pin"></i> Los Angeles, California</p>
+        <p><i data-lucide="clock"></i> Available 24/7</p>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Treatment Pathways</h4>
+      <ul>
+        <li><a href="programs/php.html">Partial Hospitalization</a></li>
+        <li><a href="programs/iop.html">Intensive Outpatient</a></li>
+        <li><a href="programs/telehealth.html">Online Telehealth</a></li>
+        <li><a href="programs/individual-therapy.html">Individual Therapy</a></li>
+        <li><a href="programs/group-therapy.html">Group Therapy</a></li>
+        <li><a href="programs/medication-management.html">Medication Management</a></li>
+        <li><a href="programs/holistic-therapies.html">Holistic Therapies</a></li>
+        <li><a href="programs/alumni.html">Alumni Program</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>What We Treat</h4>
+      <ul>
+        <li><a href="treatments/depression.html">Depression</a></li>
+        <li><a href="treatments/anxiety.html">Anxiety</a></li>
+        <li><a href="treatments/ptsd.html">PTSD</a></li>
+        <li><a href="treatments/complex-trauma.html">Complex Trauma</a></li>
+        <li><a href="treatments/dual-diagnosis.html">Dual Diagnosis</a></li>
+        <li><a href="treatments/alcohol.html">Alcohol Addiction</a></li>
+        <li><a href="treatments/opioid.html">Opioid Addiction</a></li>
+        <li><a href="treatments/meth.html">Meth Addiction</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <ul>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+      <h4 style="margin-top:2rem;">Admissions</h4>
+      <ul>
+        <li><a href="verify-insurance.html">Verify Insurance</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html">Admissions Process</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Golden State Rehab. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    <p class="footer-disclaimer">Golden State Rehab is a licensed outpatient treatment center in Los Angeles, CA. DHCS Licensed.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>lucide.createIcons();</script>
+<!-- Chat Widget -->
+<script src="https://buildmyagent.io/widget/69af283c94abe6ce8fc1c47c/widget-professional.js?widgetId=69af283c94abe6ce8fc1c47c"></script>
+</body>
+</html>
