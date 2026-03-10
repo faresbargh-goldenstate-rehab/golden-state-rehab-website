@@ -173,3 +173,42 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// ── Facility slideshow ────────────────────────────────────────
+(function () {
+  var track = document.querySelector('.facility-track');
+  if (!track) return;
+  var slides = track.querySelectorAll('.facility-slide');
+  var dotsWrap = document.querySelector('.facility-dots');
+  var prevBtn = document.querySelector('.facility-arrow--prev');
+  var nextBtn = document.querySelector('.facility-arrow--next');
+  var current = 0;
+  var timer;
+
+  slides.forEach(function (_, i) {
+    var dot = document.createElement('button');
+    dot.className = 'facility-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+    dot.addEventListener('click', function () { goTo(i); });
+    dotsWrap.appendChild(dot);
+  });
+
+  function goTo(n) {
+    current = ((n % slides.length) + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dotsWrap.querySelectorAll('.facility-dot').forEach(function (d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    resetTimer();
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(function () { goTo(current + 1); }, 5000);
+  }
+
+  prevBtn.addEventListener('click', function () { goTo(current - 1); });
+  nextBtn.addEventListener('click', function () { goTo(current + 1); });
+  resetTimer();
+}());
