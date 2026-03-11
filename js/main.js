@@ -263,3 +263,70 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 }());
+
+// ── Team Member Modal ────────────────────────────────────────────────────
+(function () {
+  var teamBtns = document.querySelectorAll('.team-read-more');
+  if (!teamBtns.length) return;
+
+  // Create overlay + modal HTML
+  var tmOverlay = document.createElement('div');
+  tmOverlay.className = 'team-modal-overlay';
+  tmOverlay.setAttribute('role', 'dialog');
+  tmOverlay.setAttribute('aria-modal', 'true');
+  tmOverlay.setAttribute('aria-labelledby', 'tm-name');
+  tmOverlay.innerHTML = [
+    '<div class="team-modal">',
+    '  <button class="team-modal-close" aria-label="Close"><i data-lucide="x"></i></button>',
+    '  <div class="team-modal-avatar"><img id="tm-img" src="" alt=""></div>',
+    '  <h3 class="team-modal-name" id="tm-name"></h3>',
+    '  <p class="team-modal-role" id="tm-role"></p>',
+    '  <p class="team-modal-bio" id="tm-bio"></p>',
+    '  <div class="team-modal-credentials" id="tm-creds"></div>',
+    '</div>'
+  ].join('');
+  document.body.appendChild(tmOverlay);
+
+  // Render any new lucide icons inside the modal
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+
+  function openTM(btn) {
+    var img  = tmOverlay.querySelector('#tm-img');
+    img.src  = btn.dataset.img;
+    img.alt  = btn.dataset.name;
+    tmOverlay.querySelector('#tm-name').textContent = btn.dataset.name;
+    tmOverlay.querySelector('#tm-role').textContent = btn.dataset.role;
+    tmOverlay.querySelector('#tm-bio').textContent  = btn.dataset.bio;
+
+    var credsEl = tmOverlay.querySelector('#tm-creds');
+    credsEl.innerHTML = '';
+    (btn.dataset.credentials || '').split('|').forEach(function (c) {
+      c = c.trim();
+      if (!c) return;
+      var s = document.createElement('span');
+      s.className = 'team-modal-credential';
+      s.textContent = c;
+      credsEl.appendChild(s);
+    });
+
+    tmOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeTM() {
+    tmOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  teamBtns.forEach(function (b) {
+    b.addEventListener('click', function () { openTM(b); });
+  });
+
+  tmOverlay.querySelector('.team-modal-close').addEventListener('click', closeTM);
+  tmOverlay.addEventListener('click', function (e) {
+    if (e.target === tmOverlay) closeTM();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeTM();
+  });
+}());
