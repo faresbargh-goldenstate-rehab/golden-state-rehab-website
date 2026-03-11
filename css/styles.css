@@ -2720,3 +2720,8 @@ p:last-child { margin-bottom: 0; }
   .team-modal { padding: 36px 24px 28px; }
   .team-circle-avatar { width: 110px; height: 110px; }
 }
+
+/* Smooth-scroll anchor offset for sticky nav (About Us → Why Us?) */
+#about-why-us {
+  scroll-margin-top: 80px;
+}
