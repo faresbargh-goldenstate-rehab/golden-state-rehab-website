@@ -14,17 +14,18 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@GoldenStateRehab">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@1.0.1/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@1.0.1/dist/umd/lucide.min.js" defer></script>
+  <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
 
 <nav class="nav" aria-label="Main navigation">
   <div class="nav-container">
-    <a href="/" class="nav-logo" aria-label="Golden State Rehab home"><img src="images/logo-icon.png" alt="" class="nav-logo-icon-img" aria-hidden="true"><span class="nav-logo-wordmark"><strong>Golden State</strong> Rehab</span></a>
+    <a href="/" class="nav-logo" aria-label="Golden State Rehab home"><img src="images/logo-icon.png" alt="" class="nav-logo-icon-img" aria-hidden="true" width="48" height="48"><span class="nav-logo-wordmark"><strong>Golden State</strong> Rehab</span></a>
     <ul class="nav-links">
       <li class="has-dropdown">
       <a href="about.html" class="active">About Us <i data-lucide="chevron-down"></i></a>
@@ -146,7 +147,7 @@
         </div>
       </div>
       <div class="reveal reveal-delay-2" style="position: relative;">
-        <img src="https://picsum.photos/seed/photo-1559839914-17aae19cec71/800/500" alt="Clinical team at Golden State Rehab" style="width: 100%; height: 480px; object-fit: cover; border-radius: 16px;">
+        <img src="https://picsum.photos/seed/photo-1559839914-17aae19cec71/800/500" alt="Clinical team at Golden State Rehab" width="800" height="500" style="width: 100%; height: 480px; object-fit: cover; border-radius: 16px;">
       </div>
     </div>
   </div>
@@ -209,12 +210,12 @@
   <div class="container">
     <div class="grid-2" style="gap: 80px; align-items: center;">
       <div class="reveal reveal-delay-1" style="order: 2;">
-        <img src="https://picsum.photos/seed/photo-1576091160399-112ba8d25d1d/800/500" alt="Clinical excellence at Golden State Rehab" style="width: 100%; height: 460px; object-fit: cover; border-radius: 16px;">
+        <img src="https://picsum.photos/seed/photo-1576091160399-112ba8d25d1d/800/500" alt="Clinical excellence at Golden State Rehab" width="800" height="500" style="width: 100%; height: 460px; object-fit: cover; border-radius: 16px;">
       </div>
       <div class="reveal" style="order: 1;">
         <span class="eyebrow">Our Distinction</span>
         <h2 id="distinction-heading">We stand apart through depth and dedication</h2>
-        <p>Golden State Rehab is in the process of obtaining DHCS licensing and pursuing accreditations from leading national bodies, including the Joint Commission.</p>
+        <p>Golden State Rehab is DHCS licensed and committed to meeting the highest standards of care, including accreditation by the Joint Commission.</p>
         <p>Our clinical team brings decades of combined experience in addiction medicine and psychiatric care, with therapists who specialize in trauma-informed treatment. We are committed to offering integrated programs that address both mental health and substance use together — an approach many facilities still treat separately.</p>
         <ul class="check-list" style="margin-top: 24px;">
           <li>Trauma-informed clinical approach</li>
@@ -282,7 +283,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="nav-logo" style="margin-bottom:0;"><img src="images/logo-white.png" alt="Golden State Rehab" class="nav-logo-img"></a>
+        <a href="/" class="nav-logo" style="margin-bottom:0;"><img src="images/logo-white.png" alt="Golden State Rehab" class="nav-logo-img" width="120" height="120"></a>
         <div class="footer-call-cta">
           <span class="footer-call-label">Call Us At</span>
           <a href="tel:4242083120" class="footer-call-number">(424) 208-3120</a>
@@ -291,7 +292,7 @@
         <div class="footer-contact">
           <a href="contact.html" class="footer-phone"><i data-lucide="phone"></i> Call Now</a>
           <a href="mailto:admissions@goldenstate-rehab.com"><i data-lucide="mail"></i> admissions@goldenstate-rehab.com</a>
-          <a href="#"><i data-lucide="map-pin"></i> 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025</a>
+          <a href="https://maps.google.com/?q=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025</a>
         </div>
         <div class="footer-badges">
           <span class="footer-badge">DHCS Licensed</span>
@@ -347,18 +348,22 @@
       <nav class="footer-bottom-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-and-conditions.html">Terms of Use</a>
-        <a href="#">Sitemap</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </nav>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.min.js"></script>
 <script>lucide.createIcons();</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["MedicalOrganization", "LocalBusiness"],
+  "@id": "https://www.goldenstate-rehab.com/#organization",
+  "logo": "https://www.goldenstate-rehab.com/images/logo-icon.png",
+  "image": "https://www.goldenstate-rehab.com/images/logo-icon.png",
+  "description": "Golden State Rehab treats addiction and mental health in Los Angeles with flexible outpatient programs including PHP, IOP, telehealth, and individual therapy.",
   "name": "Golden State Rehab",
   "url": "https://www.goldenstate-rehab.com",
   "telephone": "+1-424-208-3120",
@@ -371,7 +376,7 @@
     "postalCode": "90025",
     "addressCountry": "US"
   },
-  "openingHours": "Mo-Fr 09:00-17:00",
+  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}],
   "foundingDate": "2026",
   "geo": {
     "@type": "GeoCoordinates",
@@ -382,6 +387,8 @@
     "@type": "City",
     "name": "Los Angeles"
   },
+  "priceRange": "$$",
+  "medicalSpecialty": ["Psychiatric", "Addiction Medicine"],
   "sameAs": [
     "https://www.facebook.com/GoldenStateRehab",
     "https://www.instagram.com/goldenstaterehab",
@@ -399,7 +406,18 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Golden State Rehab",
+  "description": "Golden State Rehab exists to guide people toward lasting recovery with compassion and clinical expertise. Learn our mission, approach, and commitment to integrated care.",
+  "url": "https://www.goldenstate-rehab.com/about.html",
+  "isPartOf": { "@id": "https://www.goldenstate-rehab.com/#website" },
+  "about": { "@id": "https://www.goldenstate-rehab.com/#organization" }
+}
+</script>
 <!-- Chat Widget -->
-<script src="https://buildmyagent.io/widget/69af283c94abe6ce8fc1c47c/widget-professional.js?widgetId=69af283c94abe6ce8fc1c47c"></script>
+<script src="https://buildmyagent.io/widget/69af283c94abe6ce8fc1c47c/widget-professional.js?widgetId=69af283c94abe6ce8fc1c47c" defer></script>
 </body>
 </html>

@@ -1501,6 +1501,90 @@ p:last-child { margin-bottom: 0; }
 .hours-badge svg { width: 16px; height: 16px; color: var(--gold); }
 
 /* ============================================================
+   22a. CONDITION LINK CARDS (Homepage)
+   ============================================================ */
+.condition-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.condition-link:hover {
+  border-color: var(--gold);
+  transform: translateX(4px);
+}
+.condition-link-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--near-black);
+  margin-bottom: 4px;
+}
+.condition-link-desc {
+  font-size: 13px;
+  color: var(--muted);
+}
+.condition-link-icon {
+  color: var(--gold);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.condition-link-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: var(--gold-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.condition-link-all:hover {
+  border-color: var(--gold);
+}
+.condition-link-all-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+}
+.condition-list-heading {
+  margin-bottom: 24px;
+  font-size: 22px;
+}
+.condition-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ============================================================
+   22b. MEDICAL DISCLAIMER
+   ============================================================ */
+.medical-disclaimer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 24px 0 0;
+  margin-top: 24px;
+}
+.medical-disclaimer p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.5);
+  margin: 0 0 8px;
+}
+.medical-disclaimer p:last-child { margin-bottom: 0; }
+.medical-disclaimer a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: underline;
+}
+.medical-disclaimer a:hover { color: var(--gold-light); }
+
+/* ============================================================
    22. RESPONSIVE BREAKPOINTS
    ============================================================ */
 
