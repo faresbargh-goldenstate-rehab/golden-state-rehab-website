@@ -521,10 +521,9 @@ p:last-child { margin-bottom: 0; }
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding: 80px 32px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -532,13 +531,37 @@ p:last-child { margin-bottom: 0; }
 }
 .hero h1 {
   color: var(--near-black);
-  font-size: clamp(28px, 5vw, 60px);
-  line-height: 1.05;
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: 1.1;
   margin-bottom: 24px;
-  white-space: nowrap;
+  text-wrap: balance;
 }
-.hero h1 span {
-  color: var(--gold);
+.hero h1 .hero-h1-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 22px auto 0;
+  line-height: 1;
+}
+.hero h1 .hero-h1-badge-rule {
+  flex: 0 0 56px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(200, 164, 74, 0) 0%, var(--gold) 100%);
+}
+.hero h1 .hero-h1-badge-rule:last-child {
+  background: linear-gradient(90deg, var(--gold) 0%, rgba(200, 164, 74, 0) 100%);
+}
+.hero h1 .hero-h1-badge-text {
+  display: inline-block;
+  color: var(--gold-dark);
+  font-size: clamp(11px, 1.05vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 .hero-eyebrow {
   font-size: 12px;
@@ -563,7 +586,7 @@ p:last-child { margin-bottom: 0; }
   font-weight: 500;
   color: var(--near-black);
   max-width: 600px;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
   line-height: 1.5;
 }
 .hero-micro {
@@ -849,10 +872,11 @@ p:last-child { margin-bottom: 0; }
 .insurance-header-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
   margin-bottom: 48px;
   flex-wrap: wrap;
+  text-align: center;
 }
 .insurance-heading {
   font-size: 32px;
@@ -865,7 +889,13 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 32px 48px;
+}
+.insurance-cta-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 72px;
 }
 .ins-logo {
   height: 40px;
@@ -878,111 +908,105 @@ p:last-child { margin-bottom: 0; }
 }
 .ins-logo:hover { opacity: 0.8; }
 
-/* 15. TESTIMONIALS
+/* 15. GOOGLE REVIEWS
    ============================================================ */
-.testimonials-section {
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+.reviews-section {
   padding: 96px 0;
+  background: #ffffff;
 }
-.testimonials-inner {
+.reviews-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.testimonials-label {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
-.google-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--white);
-  border-radius: 10px;
-  padding: 14px 20px;
-  width: fit-content;
-}
-.google-badge-logo {
-  font-size: 20px;
-  font-weight: 700;
-}
-.google-badge-logo span:nth-child(1) { color: #4285f4; }
-.google-badge-logo span:nth-child(2) { color: #ea4335; }
-.google-badge-logo span:nth-child(3) { color: #fbbc05; }
-.google-badge-logo span:nth-child(4) { color: #4285f4; }
-.google-badge-logo span:nth-child(5) { color: #34a853; }
-.google-badge-logo span:nth-child(6) { color: #ea4335; }
-.google-badge-stars {
+.review-card {
   display: flex;
-  gap: 2px;
-  color: #fbbc05;
-  font-size: 16px;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  transition: box-shadow var(--transition), border-color var(--transition);
 }
-.testimonials-label h2 {
-  color: var(--off-white);
-  font-size: 32px;
+.review-card:hover {
+  box-shadow: 0 1px 6px rgba(32,33,36,0.08), 0 4px 16px rgba(32,33,36,0.08);
+  border-color: #c4c7cb;
 }
-.testimonials-content {
-  position: relative;
-}
-.testimonial-item {
-  display: none;
-}
-.testimonial-item.active {
-  display: block;
-}
-.testimonial-quote {
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--off-white);
-  line-height: 1.55;
-  margin-bottom: 28px;
-  font-style: italic;
-}
-.testimonial-quote::before {
-  content: '\201C';
-  color: var(--gold);
-  font-size: 60px;
-  line-height: 0;
-  vertical-align: -0.5em;
-  margin-right: 4px;
-}
-.testimonial-author {
-  font-size: 14px;
-  color: rgba(253,250,245,0.6);
-}
-.testimonial-author strong {
-  color: var(--gold);
-  display: block;
-  font-size: 16px;
-  margin-bottom: 2px;
-}
-.testimonial-nav {
+.review-head {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 32px;
 }
-.testimonial-btn {
-  width: 44px;
-  height: 44px;
+.review-avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(200,164,74,0.4);
-  background: transparent;
-  color: var(--gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: background var(--transition), border-color var(--transition);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  flex-shrink: 0;
 }
-.testimonial-btn:hover {
-  background: var(--gold);
-  color: var(--white);
-  border-color: var(--gold);
+.review-avatar[data-color="blue"]   { background: #4285F4; }
+.review-avatar[data-color="red"]    { background: #EA4335; }
+.review-avatar[data-color="yellow"] { background: #FBBC05; }
+.review-avatar[data-color="green"]  { background: #34A853; }
+.review-author {
+  flex: 1;
+  min-width: 0;
 }
-.testimonial-btn svg { width: 16px; height: 16px; }
+.review-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #202124;
+  line-height: 1.3;
+}
+.review-meta {
+  font-size: 13px;
+  color: #5f6368;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+.review-source {
+  flex-shrink: 0;
+}
+.review-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review-stars {
+  color: #FBBC05;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.review-time {
+  font-size: 13px;
+  color: #5f6368;
+}
+.review-body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #202124;
+  margin: 0;
+}
 
 /* 16. FAQ ACCORDION
    ============================================================ */
@@ -1614,9 +1638,15 @@ p:last-child { margin-bottom: 0; }
   }
   .intro-stat { left: 16px; }
 
-  .testimonials-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .reviews-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .reviews-grid .review-card:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 560px;
+    justify-self: center;
+    width: 100%;
   }
 
   .form-section {
@@ -2264,6 +2294,9 @@ p:last-child { margin-bottom: 0; }
 
   .hero { min-height: 85vh; overflow: hidden; }
   .hero h1 { font-size: 36px; white-space: normal; }
+  .hero h1 .hero-h1-badge { gap: 12px; margin-top: 16px; }
+  .hero h1 .hero-h1-badge-rule { flex: 0 0 32px; }
+  .hero h1 .hero-h1-badge-text { font-size: 11px; letter-spacing: 0.24em; }
   .hero-subheadline { font-size: 16px; line-height: 1.4; }
   .hero-content { padding-left: 24px; padding-right: 24px; width: 100%; box-sizing: border-box; }
   .hero-actions { flex-direction: column; }
@@ -2283,7 +2316,7 @@ p:last-child { margin-bottom: 0; }
   .footer-brand { grid-column: auto; }
 
   .insurance-heading { font-size: 24px; white-space: normal; }
-  .insurance-header-row { flex-direction: column; align-items: flex-start; }
+  .insurance-header-row { flex-direction: column; align-items: center; text-align: center; }
   .insurance-logos-grid { gap: 24px 32px; }
   .ins-logo { height: 32px; max-width: 120px; }
 
@@ -2297,8 +2330,13 @@ p:last-child { margin-bottom: 0; }
   .cta-banner { min-height: 380px; }
   .cta-banner .btn-group { flex-direction: column; align-items: center; }
 
-  .testimonials-inner { gap: 32px; }
-  .testimonial-quote { font-size: 18px; }
+  .reviews-section { padding: 64px 0; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .reviews-grid .review-card:nth-child(3) {
+    grid-column: auto;
+    max-width: none;
+    justify-self: stretch;
+  }
 
   .footer-bottom { flex-direction: column; text-align: center; }
   .footer-bottom-links { justify-content: center; }
@@ -2920,4 +2958,291 @@ p:last-child { margin-bottom: 0; }
 /* Smooth-scroll anchor offset for sticky nav (About Us → Why Us?) */
 #about-why-us {
   scroll-margin-top: 80px;
+}
+
+/* ============================================================
+   HOMEPAGE — TRUST & CONVERSION REDESIGN
+   ============================================================ */
+
+/* Top sticky phone banner (sits above nav) */
+.phone-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  background: var(--near-black);
+  color: var(--off-white);
+  border-bottom: 1px solid rgba(200, 164, 74, 0.25);
+}
+.phone-banner-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.phone-banner-text {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(253, 250, 245, 0.75);
+}
+.phone-banner-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.phone-banner-link:hover { color: var(--off-white); }
+.phone-banner-link svg { width: 16px; height: 16px; }
+.phone-banner-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(200, 164, 74, 0.3);
+}
+.phone-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--off-white);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 164, 74, 0.5);
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition);
+}
+.phone-banner-cta:hover { text-decoration-color: var(--gold); }
+
+/* Sticky stack — phone banner stays at top:0, nav docks beneath it */
+:root { --phone-banner-h: 56px; }
+.phone-banner ~ .nav { top: var(--phone-banner-h); }
+.phone-banner ~ .nav-mobile { top: calc(var(--phone-banner-h) + var(--nav-height)); }
+@media (max-width: 640px) {
+  :root { --phone-banner-h: 52px; }
+}
+
+/* Nav hides on scroll-down (phone banner stays put) */
+.nav {
+  transition: transform 0.3s ease, box-shadow var(--transition);
+  will-change: transform;
+}
+.nav.nav-hidden {
+  transform: translateY(calc(-1 * var(--nav-height) - 1px));
+}
+
+/* Hero trust signals — flat, inline with the background, no chrome */
+.hero-trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 44px;
+  flex-wrap: wrap;
+  max-width: 880px;
+}
+.hero-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: rgba(20, 14, 4, 0.72);
+}
+.hero-trust-badge svg {
+  width: 16px;
+  height: 16px;
+  color: var(--gold-dark);
+  flex-shrink: 0;
+}
+.hero-trust-badge-sep {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(20, 14, 4, 0.22);
+}
+.hero-google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+.hero-google-g {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.hero-google-g svg { width: 100%; height: 100%; display: block; }
+.hero-google-badge-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+.hero-google-badge-stars {
+  color: #fbbc05;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.hero-google-badge-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(20, 14, 4, 0.72);
+}
+
+/* "Why Golden State Rehab?" — embedded info blocks (not interactive cards) */
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 48px;
+}
+.why-us-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: default;
+  transition: none;
+}
+.why-us-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+.why-us-icon {
+  width: 56px;
+  height: 56px;
+  background: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--gold-dark);
+  pointer-events: none;
+}
+.why-us-icon svg {
+  width: 36px;
+  height: 36px;
+  stroke-width: 1.6;
+}
+.why-us-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--near-black);
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+.why-us-card p {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Inline verify-insurance CTA strip used between sections */
+.verify-cta-strip {
+  background: linear-gradient(135deg, var(--gold-light) 0%, #F7EBC4 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 36px 0;
+}
+.verify-cta-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.verify-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.verify-cta-text strong {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--near-black);
+  letter-spacing: -0.01em;
+}
+.verify-cta-text span {
+  font-size: 14px;
+  color: var(--body-text);
+}
+.verify-cta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Section-header: left-aligned variant for mid-page */
+.section-header-left {
+  text-align: left;
+  margin-bottom: 48px;
+  max-width: 720px;
+}
+.section-header-left h2 { margin-bottom: 16px; }
+.section-header-left p { font-size: 18px; color: var(--muted); }
+
+/* Final CTA banner — variant with insurance focus */
+.cta-banner-content .cta-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .why-us-grid { grid-template-columns: 1fr 1fr; }
+  .phone-banner-inner { gap: 12px; padding: 8px 24px; }
+  .phone-banner-text { font-size: 12px; }
+}
+@media (max-width: 640px) {
+  .phone-banner-inner { padding: 8px 16px; gap: 8px; flex-wrap: wrap; }
+  .phone-banner-text { display: none; }
+  .phone-banner-divider { display: none; }
+  .phone-banner-link { font-size: 14px; }
+  .phone-banner-cta { font-size: 12px; }
+  .why-us-grid { grid-template-columns: 1fr; }
+  .hero-trust-row { gap: 14px; margin-top: 32px; row-gap: 12px; }
+  .hero-trust-badge { font-size: 12px; }
+  .hero-trust-badge svg { width: 14px; height: 14px; }
+  .hero-trust-badge-sep { display: none; }
+  .hero-google-badge-count { font-size: 12px; }
+  .verify-cta-inner { flex-direction: column; align-items: flex-start; text-align: left; padding: 0 20px; }
+  .verify-cta-text strong { font-size: 18px; }
+  .verify-cta-actions { width: 100%; }
+  .verify-cta-actions .btn { flex: 1; justify-content: center; }
 }

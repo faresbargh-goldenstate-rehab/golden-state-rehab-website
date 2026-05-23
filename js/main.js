@@ -5,11 +5,38 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── NAV SCROLL EFFECT ──────────────────────────────────────
+  // Phone banner stays sticky; nav itself slides up out of view
+  // when scrolling down and reappears when scrolling up.
   const nav = document.querySelector('.nav');
   if (nav) {
+    let lastY = window.scrollY;
+    let ticking = false;
+    const SHOW_THRESHOLD = 80;  // px past top before we start hiding
+    const DELTA = 6;            // ignore tiny scroll jitter
+
+    const update = () => {
+      const y = window.scrollY;
+      const diff = y - lastY;
+
+      nav.classList.toggle('scrolled', y > 20);
+
+      if (Math.abs(diff) > DELTA) {
+        if (diff > 0 && y > SHOW_THRESHOLD) {
+          nav.classList.add('nav-hidden');
+        } else if (diff < 0) {
+          nav.classList.remove('nav-hidden');
+        }
+        lastY = y;
+      }
+      ticking = false;
+    };
+
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    });
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
   }
 
   // ── MOBILE NAV TOGGLE ──────────────────────────────────────
@@ -87,37 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // ── TESTIMONIAL CAROUSEL ───────────────────────────────────
-  const testimonials = document.querySelectorAll('.testimonial-item');
-  const prevBtn = document.querySelector('.testimonial-prev');
-  const nextBtn = document.querySelector('.testimonial-next');
-  let currentTestimonial = 0;
-
-  function showTestimonial(index) {
-    testimonials.forEach(t => t.classList.remove('active'));
-    testimonials[index]?.classList.add('active');
-  }
-
-  if (testimonials.length) {
-    showTestimonial(0);
-
-    nextBtn?.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-      showTestimonial(currentTestimonial);
-    });
-
-    prevBtn?.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-      showTestimonial(currentTestimonial);
-    });
-
-    // Auto-advance every 6 seconds
-    setInterval(() => {
-      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-      showTestimonial(currentTestimonial);
-    }, 6000);
-  }
 
   // ── SCROLL REVEAL ──────────────────────────────────────────
   const revealEls = document.querySelectorAll('.reveal');
