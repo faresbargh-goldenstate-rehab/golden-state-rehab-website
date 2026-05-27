@@ -112,7 +112,7 @@
 
 <!-- Page Hero -->
 <section class="intake-hero">
-  <div class="container intake-hero-inner">
+  <div class="container intake-hero-inner intake-fade-in">
     <p class="intake-hero-eyebrow"><i data-lucide="lock"></i> Confidential · HIPAA-Secured</p>
     <h1>Verify Your Insurance &amp; <span class="text-gold">Start Your Intake</span></h1>
     <p class="intake-hero-sub">Tell us a little about you and upload your insurance card. Our team verifies coverage and reaches out — usually within an hour.</p>
@@ -131,7 +131,7 @@
     <form id="intake-form" class="intake-form" novalidate enctype="multipart/form-data">
 
       <!-- ── Personal info ───────────────────────────────────── -->
-      <div class="intake-card">
+      <div class="intake-card reveal">
         <div class="intake-card-head">
           <span class="intake-step-num">1</span>
           <div>
@@ -166,7 +166,7 @@
       </div>
 
       <!-- ── Insurance info ──────────────────────────────────── -->
-      <div class="intake-card">
+      <div class="intake-card reveal">
         <div class="intake-card-head">
           <span class="intake-step-num">2</span>
           <div>
@@ -185,16 +185,16 @@
       </div>
 
       <!-- ── Documents ───────────────────────────────────────── -->
-      <div class="intake-card">
+      <div class="intake-card reveal">
         <div class="intake-card-head">
           <span class="intake-step-num">3</span>
           <div>
-            <h2>Upload Your Insurance Card</h2>
-            <p>A clear photo of both sides helps us verify benefits faster.</p>
+            <h2>Upload Your Documents</h2>
+            <p>A clear photo of your insurance card and ID helps us verify benefits faster.</p>
           </div>
         </div>
 
-        <!-- Front (required) -->
+        <!-- Insurance front (required) -->
         <div class="intake-file-block">
           <label class="intake-file-label">
             <span class="intake-file-title">Front of insurance card <span class="required">*</span></span>
@@ -209,7 +209,7 @@
           </div>
         </div>
 
-        <!-- Back (optional) -->
+        <!-- Insurance back (optional) -->
         <div class="intake-file-block">
           <label class="intake-file-label">
             <span class="intake-file-title">Back of insurance card <span class="intake-optional">Optional</span></span>
@@ -223,29 +223,30 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- ── Additional documents ────────────────────────────── -->
-      <div class="intake-card">
-        <div class="intake-card-head">
-          <span class="intake-step-num">4</span>
-          <div>
-            <h2>Additional Documents <span class="intake-optional intake-optional-large">Optional</span></h2>
-            <p>Driver's license or anything else you think we'd find helpful.</p>
-          </div>
-        </div>
-
+        <!-- Driver's license (required) -->
         <div class="intake-file-block">
           <label class="intake-file-label">
-            <span class="intake-file-title">Driver's license <span class="intake-optional">Optional</span></span>
-            <span class="intake-file-hint">Speeds up identity verification</span>
+            <span class="intake-file-title">Driver's license or photo ID <span class="required">*</span></span>
+            <span class="intake-file-hint">Required for identity verification</span>
           </label>
           <div class="intake-dropzone" data-field="drivers_license">
-            <input type="file" id="drivers_license" name="drivers_license" accept="image/jpeg,image/png,image/heic,image/heif,application/pdf">
+            <input type="file" id="drivers_license" name="drivers_license" accept="image/jpeg,image/png,image/heic,image/heif,application/pdf" required>
             <div class="intake-dropzone-inner">
               <i data-lucide="id-card" class="intake-dropzone-icon"></i>
               <span class="intake-dropzone-text"><strong>Choose a file</strong> or drag &amp; drop here</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Additional documents ────────────────────────────── -->
+      <div class="intake-card reveal">
+        <div class="intake-card-head">
+          <span class="intake-step-num">4</span>
+          <div>
+            <h2>Additional Documents <span class="intake-optional intake-optional-large">Optional</span></h2>
+            <p>Anything else you think we'd find helpful — completely optional.</p>
           </div>
         </div>
 
@@ -265,7 +266,7 @@
       </div>
 
       <!-- ── Notes ───────────────────────────────────────────── -->
-      <div class="intake-card">
+      <div class="intake-card reveal">
         <div class="intake-card-head">
           <span class="intake-step-num">5</span>
           <div>

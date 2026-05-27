@@ -252,10 +252,15 @@
       return;
     }
 
-    // Required file present
+    // Required files present
     const frontFiles = selected.get('insurance_card_front') || [];
     if (frontFiles.length === 0) {
       showError('Please upload a photo of the front of your insurance card.');
+      return;
+    }
+    const licenseFiles = selected.get('drivers_license') || [];
+    if (licenseFiles.length === 0) {
+      showError("Please upload a photo of your driver's license or photo ID.");
       return;
     }
 

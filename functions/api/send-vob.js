@@ -39,7 +39,7 @@ const ALLOWED_MIME = new Set([
 const FILE_FIELDS = {
   insurance_card_front: { label: 'Insurance card (front)', required: true },
   insurance_card_back:  { label: 'Insurance card (back)',  required: false },
-  drivers_license:      { label: "Driver's license",        required: false },
+  drivers_license:      { label: "Driver's license / photo ID", required: true },
   additional_documents: { label: 'Additional document',     required: false, multiple: true },
 };
 
