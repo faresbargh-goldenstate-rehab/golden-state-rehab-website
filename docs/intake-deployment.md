@@ -1,4 +1,4 @@
-# Intake / VOB Form — Deployment & Operations
+# Intake / VOB Form — Deployment & Operations (Cloudflare Pages)
 
 > ⚠️ **Before going live, the items in [§1 Pre-launch gates](#1-pre-launch-gates) MUST all be done.** This page handles PHI; cutting corners can violate HIPAA and California licensing rules.
 
@@ -7,9 +7,9 @@
 A custom intake/VOB submission flow on `/verify-insurance` that:
 
 - Collects patient name, DOB, insurance info, contact details, and uploaded documents.
-- Compresses image uploads client-side to stay under Vercel's request body limit.
-- POSTs to `/api/send-vob` (Vercel serverless function).
-- Forwards as a HIPAA-compliant email through Paubox to `VOB@noblebill.com`.
+- Compresses image uploads client-side before sending.
+- POSTs to `/api/send-vob`, which Cloudflare Pages routes to the function at `functions/api/send-vob.js`.
+- The function forwards a HIPAA-compliant email through Paubox to the configured recipient.
 - Redirects on success to `/intake-success`.
 
 ## Files
@@ -20,9 +20,10 @@ A custom intake/VOB submission flow on `/verify-insurance` that:
 | [`intake-success.html`](../intake-success.html) | Animated success page |
 | [`js/intake.js`](../js/intake.js) | Client-side form logic + image compression |
 | [`css/intake.css`](../css/intake.css) | Intake-specific styles |
-| [`api/send-vob.js`](../api/send-vob.js) | Vercel serverless function — talks to Paubox |
-| [`package.json`](../package.json) | Declares `formidable` for the function |
-| [`.env.example`](../.env.example) | Env var template |
+| [`functions/api/send-vob.js`](../functions/api/send-vob.js) | Cloudflare Pages Function — talks to Paubox |
+| [`.env.example`](../.env.example) | Env var template (no secrets) |
+
+> The repo previously contained `api/send-vob.js`, `package.json`, and `vercel.json` from an earlier Vercel-targeted attempt. Those have been removed — Cloudflare Pages Functions use the Web Standards `request.formData()` API, no npm package needed, no `vercel.json` either.
 
 ---
 
@@ -32,66 +33,87 @@ A custom intake/VOB submission flow on `/verify-insurance` that:
 
 - [ ] BAA signed with Paubox (you confirmed this is done).
 - [ ] Sending domain (`goldenstate-rehab.com`) verified in Paubox dashboard — SPF, DKIM, return-path CNAME all green.
-- [ ] `intake@goldenstate-rehab.com` mailbox exists (or another verified sender that you prefer).
-- [ ] Note your `PAUBOX_ENDPOINT_USERNAME` from the Paubox dashboard (usually matches the domain).
+- [ ] `vob@goldenstate-rehab.com` group set up in Google Workspace and able to receive external email.
+- [ ] Note your `PAUBOX_ENDPOINT_USERNAME` from the Paubox dashboard.
 
-### 1.2 Rotate the exposed API key
+### 1.2 Cloudflare account + BAA
 
-- [ ] **Revoke** the key `5d35e7b2af1a3b7e00670452ea6a40bb56c118aa` in the Paubox dashboard. It was pasted in chat and must be assumed compromised.
-- [ ] Generate a **new** API key in Paubox.
-- [ ] Never paste API keys into chat, commits, or any client-side code again.
+Cloudflare offers a BAA on the **Workers Paid plan** ($5/mo). Without a BAA, you should not transmit real PHI through their infrastructure.
 
-### 1.3 Vercel environment variables
+- [ ] Cloudflare account created (free).
+- [ ] Workers Paid plan enabled ($5/mo). Settings → Workers & Pages → Plans.
+- [ ] BAA requested via the Cloudflare dashboard: **Privacy & Security → Business Associate Agreement** (or contact sales@cloudflare.com if not visible — Cloudflare provides BAAs for HIPAA-covered Workers Paid customers).
 
-Set these in the Vercel dashboard → Project → Settings → Environment Variables. Apply to **Production** and **Preview** environments at minimum:
+### 1.3 Migrate DNS to Cloudflare
+
+This is a one-time setup. You'll keep Squarespace as the **domain registrar** (where you bought the name) but switch DNS resolution to Cloudflare.
+
+1. In Cloudflare → **Websites → Add a site** → enter `goldenstate-rehab.com`.
+2. Cloudflare scans your existing DNS records (GitHub Pages, MX records for Google Workspace, etc.) and imports them. **Carefully review the imported records before continuing** — especially the MX records for email, otherwise email delivery will break.
+3. Cloudflare gives you **2 nameservers** (e.g., `aria.ns.cloudflare.com` + `dan.ns.cloudflare.com`).
+4. In Squarespace → **Settings → Domains → goldenstate-rehab.com → DNS Settings** → switch to **Custom Nameservers** → paste Cloudflare's 2 nameservers.
+5. Save. Propagation usually takes 5–15 minutes (Cloudflare emails you when complete; max 24h).
+6. Back in Cloudflare, confirm the domain shows **Active** under Websites.
+
+> 💡 During propagation, the site stays live on GitHub Pages. Once Cloudflare goes Active, DNS resolves through Cloudflare instead. You can verify with `dig goldenstate-rehab.com NS`.
+
+### 1.4 Connect Cloudflare Pages to the GitHub repo
+
+1. Cloudflare → **Workers & Pages → Create → Pages → Connect to Git**.
+2. Authorize Cloudflare to access your `faresbargh-goldenstate-rehab/golden-state-rehab-website` repo.
+3. **Production branch:** `main`. **Build settings:** *None* (this is a static site, no build step). Output directory: `/` (repo root).
+4. Click **Save and Deploy**. Cloudflare builds and assigns a `*.pages.dev` URL.
+5. After the first deploy, go to **Pages project → Custom domains → Set up a custom domain**.
+6. Add `www.goldenstate-rehab.com`. Cloudflare auto-creates the CNAME record (because DNS is on Cloudflare now). Wait ~30 seconds for SSL issuance.
+7. Optionally also add the apex `goldenstate-rehab.com` and set up a redirect rule from apex → www (Rules → Redirect Rules → New rule).
+
+### 1.5 Disable GitHub Pages
+
+After step 1.4 is live and you've verified `https://www.goldenstate-rehab.com` is being served by Cloudflare:
+
+- [ ] GitHub repo → **Settings → Pages → Source → Deploy from a branch → None** (or just delete the CNAME file from the repo on a follow-up commit).
+
+### 1.6 Set Pages environment variables
+
+In Cloudflare Pages → **your project → Settings → Environment variables**. Add to **Production**:
 
 | Variable | Value |
 |---|---|
-| `PAUBOX_API_KEY` | (the new key from §1.2) |
+| `PAUBOX_API_KEY` | (the API key from your Paubox dashboard) |
 | `PAUBOX_ENDPOINT_USERNAME` | (from Paubox dashboard) |
-| `PAUBOX_FROM_EMAIL` | `intake@goldenstate-rehab.com` |
-| `VOB_RECIPIENT_EMAIL` | `VOB@noblebill.com` |
-| `VOB_BCC_EMAIL` *(optional)* | a HIPAA-safe Golden State address for audit trail; omit if not wanted |
+| `PAUBOX_FROM_EMAIL` | `vob@goldenstate-rehab.com` |
+| `VOB_RECIPIENT_EMAIL` | `fares.bargh@goldenstate-rehab.com` (testing); flip to `VOB@noblebill.com` after E2E confirmation |
+| `VOB_BCC_EMAIL` *(optional)* | a HIPAA-safe Golden State internal address for audit trail |
 
-After saving, **redeploy** so the function picks up the new env vars.
+Click **Save**, then trigger a **redeploy** so the function picks them up: Deployments → "..." menu → Retry deployment.
 
-### 1.4 Confirm Paubox auth header format
+### 1.7 Confirm Paubox auth header format
 
-The Paubox docs use `Authorization: Token token="API_KEY"`. The original spec mentioned `Bearer` — the code uses the official Paubox format. If the first test call returns `401`, log into Paubox docs and confirm; flip the format in `api/send-vob.js` if needed.
+The function uses `Authorization: Token token="API_KEY"` per [Paubox's official docs](https://docs.paubox.com/docs/paubox_email_api/authentication). If the first test call returns 401, this is the first thing to flip — but it shouldn't.
 
 ---
 
-## 2. Local testing (with fake patient data only)
+## 2. Local testing (optional)
 
-> 🚫 **Never use real patient data in local development.** Use synthetic data only.
+> 🚫 **Never use real patient data in local development.** Synthetic data only.
 
-### 2.1 Install dependencies
+Cloudflare Pages Functions can be run locally using **Wrangler**:
 
 ```bash
 cd golden-state-rehab-website
-npm install
+npm install -g wrangler
+cp .env.example .env                       # gitignored
+# Edit .env with your real Paubox values + VOB_RECIPIENT_EMAIL = your own email
+wrangler pages dev . --compatibility-date=2024-09-01
 ```
 
-### 2.2 Set local env vars
+This serves the static site + runs `functions/api/send-vob.js` locally. Open `http://localhost:8788/verify-insurance`.
 
-```bash
-cp .env.example .env.local
-# Edit .env.local with your real Paubox values for testing.
-# .env.local is gitignored.
-```
+Wrangler reads env vars from `.env` automatically (no `--env-file` flag needed in recent versions; check `wrangler --version`).
 
-### 2.3 Run with Vercel CLI
+### Test data
 
-```bash
-npm install -g vercel
-vercel dev
-```
-
-This serves the static site and runs the `/api/send-vob` function locally with your `.env.local` values. Visit `http://localhost:3000/verify-insurance`.
-
-### 2.4 Test data
-
-Use this fake patient for end-to-end testing — entirely made up, no real PII:
+Use this fake patient — entirely synthetic, no real PII:
 
 | Field | Value |
 |---|---|
@@ -99,70 +121,64 @@ Use this fake patient for end-to-end testing — entirely made up, no real PII:
 | Last name | `McTesterson` |
 | DOB | `1990-01-15` |
 | Phone | `(555) 010-2030` |
-| Email | a real address you control, so you can verify the response email |
+| Email | a real address you control |
 | Insurance company | `Test Insurance Co.` |
 | Member ID | `TEST-12345678` |
+| Insurance front | any JPG/PNG/HEIC photo |
 | Notes | `This is a test submission — please ignore.` |
-| Insurance front | any JPG/PNG/HEIC photo (e.g., a screenshot) |
 
-Expected outcome:
-
-- Form submits without error
-- Redirect to `/intake-success` with animated check
-- Noble Bill's inbox receives an email with subject `New VOB Request - Testy M`
-- Attachment(s) viewable inside the email
-
-### 2.5 Error paths to test
+### Error paths to test
 
 - Submit with a missing required field → friendly inline error
 - Upload a `.txt` or `.docx` file → "isn't a supported file type"
-- Upload an image > 10 MB before compression → "is larger than 10 MB"
-- Submit with no internet (toggle airplane mode just before submit) → "couldn't reach our submission service"
-- Temporarily blank out `PAUBOX_API_KEY` in `.env.local` and restart `vercel dev` → server returns `500 server_misconfigured`, user sees generic friendly error
+- Upload a > 10 MB file before compression → "is larger than 10 MB"
+- Submit with airplane mode just before submit → "couldn't reach our submission service"
+- Temporarily blank out `PAUBOX_API_KEY` and restart `wrangler pages dev` → server returns `500 server_misconfigured`, user sees generic friendly error
 
 ---
 
-## 3. Deploy to production
+## 3. Promote to production
 
-1. Commit and push to `main`. Vercel auto-deploys.
-2. After deploy, open the Vercel **Functions** tab and confirm `/api/send-vob` is listed.
-3. Submit one real test from production to a Noble Bill test address (or your own address), then update the recipient to `VOB@noblebill.com` once confirmed.
-4. Verify the success page renders and the email lands.
+1. Commit and push to `main`. Cloudflare Pages auto-deploys.
+2. Check Pages dashboard → **Deployments** → most recent shows **✓ Success**.
+3. Submit one real test from `https://www.goldenstate-rehab.com/verify-insurance` to your own email (still set as `VOB_RECIPIENT_EMAIL`).
+4. Verify the success page renders and the email lands at `fares.bargh@goldenstate-rehab.com`.
+5. Once everything looks right end-to-end, change `VOB_RECIPIENT_EMAIL` in Pages → Environment variables to `VOB@noblebill.com`. Trigger a redeploy.
 
 ---
 
 ## 4. Where the API key lives (single source of truth)
 
-| Location | Safe to put the key? |
+| Location | Safe? |
 |---|---|
-| Vercel Environment Variables (Production scope) | ✅ Yes |
-| `.env.local` on a developer machine | ✅ Yes — gitignored |
-| `api/send-vob.js` source code | ❌ Never |
-| Any `.html`, `.js` file in the browser | ❌ Never |
-| Git commits | ❌ Never |
-| Chat / email / Slack | ❌ Never |
-| `.env.example` | ❌ Only the variable *name*, no value |
+| Cloudflare Pages → Environment Variables (Production) | ✅ |
+| `.env` on a developer machine (for `wrangler pages dev`) | ✅ — must be gitignored |
+| `functions/api/send-vob.js` source code | ❌ |
+| Any `.html`, `.js` file in the browser | ❌ |
+| Git commits | ❌ |
+| Chat / email / Slack | ❌ |
+| `.env.example` | ❌ — variable *name* only, no value |
 
-If a key is ever exposed: rotate immediately in the Paubox dashboard, then update the Vercel env var and redeploy.
+If a key is ever exposed: rotate in Paubox dashboard, update the Cloudflare env var, redeploy.
 
 ---
 
 ## 5. HIPAA posture — what the code already does
 
 - **No PHI in logs.** The function logs only status codes and error categories, never patient data or file contents.
-- **No persistent storage.** Uploaded files live in `/tmp` on the Vercel function only for the duration of the request; the function deletes them in a `finally` block.
-- **HTTPS only.** Vercel terminates TLS at the edge. There's no plaintext path.
-- **Sanitized inputs.** Text fields are stripped of control characters before being placed into the email subject / body.
-- **Restricted MIME types.** Only JPG/JPEG/PNG/HEIC/PDF are accepted on both client and server.
-- **Encrypted in transit.** Paubox encrypts the message body and attachments end-to-end via TLS; no in-transit plaintext.
+- **No persistent storage.** Uploaded files exist as `ArrayBuffer` in function memory for the duration of one request; nothing is written to disk. Memory is freed when the function returns.
+- **HTTPS only.** Cloudflare terminates TLS at the edge.
+- **Sanitized inputs.** Text fields are stripped of control characters before being placed into the email subject / body — defends against CRLF injection.
+- **Restricted MIME types.** Only JPG/JPEG/PNG/HEIC/PDF accepted on both client and server.
+- **TLS to Paubox.** Outbound fetch is HTTPS-only; `allowNonTLS: false` set in the message body.
 
 ## 6. HIPAA posture — what you still own
 
-- **BAA with Paubox.** ✅ You confirmed signed.
-- **BAA with Vercel.** Vercel offers BAAs on Enterprise plans. On Hobby/Pro, file contents only touch RAM in the function (no logs, no persistent storage) — but you should sign a Vercel BAA or migrate the function to Cloudflare Pages (also BAA-eligible) before scale.
-- **BAA with Noble Bill's email provider.** Noble Bill needs HIPAA-safe email reception — if `VOB@noblebill.com` is on Gmail/Outlook without a BAA, that's a downstream gap you'd want to verify with them.
-- **Access controls on `VOB@noblebill.com`.** That mailbox now receives PHI — strong auth + restricted access.
-- **Train staff** on what's in the form and how it's handled.
+- **BAA with Paubox.** ✅ Confirmed signed.
+- **BAA with Cloudflare.** Required — on the Workers Paid plan ($5/mo). See §1.2.
+- **BAA with Noble Bill's email provider.** When `VOB@noblebill.com` starts receiving real PHI, you need to verify that mailbox is on a HIPAA-covered service (HIPAA-compliant Google Workspace, Microsoft 365 with BAA, or similar).
+- **Access controls on `vob@goldenstate-rehab.com`.** The Google group receives reply emails containing PHI — restrict membership and require strong auth.
+- **Staff training** on what's in the form and how it's handled.
 
 ---
 
@@ -170,17 +186,16 @@ If a key is ever exposed: rotate immediately in the Paubox dashboard, then updat
 
 | Limitation | Mitigation |
 |---|---|
-| Vercel serverless functions cap request bodies at ~4.5 MB | Client-side image compression keeps real uploads well under this. Total client-side cap is 4 MB. |
-| HEIC decoding varies by browser (Safari yes, Chrome/Firefox no) | If decode fails, the original HEIC is uploaded as-is — Paubox accepts it. |
-| No spam protection in v1 | Form is functional but exposed to bot submissions. Add Cloudflare Turnstile when ready (free, free to enable). |
-| Function logs go to Vercel | Only non-PHI metadata is logged, but if you want centralized HIPAA-safe logging, route to a BAA-covered log aggregator. |
+| Cloudflare Workers CPU time limit (50ms on Paid plan) | Base64-encoding ~5MB of file data uses ~100ms of CPU. The chunked encoder in the function keeps this within bounds for typical insurance card photos (already compressed client-side to ~500KB each). Stress-test before launch with realistic file sizes. |
+| HEIC decoding varies by browser (Safari yes, Chrome/Firefox no) | If client-side compression fails, the original HEIC uploads as-is — Paubox accepts it. |
+| No spam protection in v1 | Form is functional but exposed to bot submissions. Add Cloudflare Turnstile when ready (free, native Cloudflare feature — easy add later). |
 
 ---
 
 ## 8. Future enhancements (not blocking launch)
 
-- **Cloudflare Turnstile** for spam protection (~30 min of work; free).
-- **Rate limiting** on `/api/send-vob` (e.g., 5 submissions / hour per IP).
-- **Optional BCC** to a Golden State internal mailbox for audit — already supported via `VOB_BCC_EMAIL` env var, just uncomment in `.env`.
-- **Per-page OG image** for `/verify-insurance` (currently uses the generic logo).
+- **Cloudflare Turnstile** for spam protection. Cloudflare's own product, ~10 min to add.
+- **Rate limiting** on `/api/send-vob` via Cloudflare Rate Limiting Rules (free up to 10k requests/month).
+- **WAF rules** to block known bot user-agents at the edge before they hit the function.
 - **Confirmation email** to the submitter (in addition to the email to Noble Bill).
+- **Per-page OG image** for `/verify-insurance` (currently uses the generic logo).

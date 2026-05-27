@@ -1,12 +1,13 @@
 # Golden State Rehab — Website
 
-Marketing website for Golden State Rehab (West Los Angeles). Static HTML/CSS/JS, deployed to Vercel at [www.goldenstate-rehab.com](https://www.goldenstate-rehab.com).
+Marketing website for Golden State Rehab (West Los Angeles) with a HIPAA-conscious intake/VOB submission flow at [www.goldenstate-rehab.com](https://www.goldenstate-rehab.com).
 
 ## Stack
 
 - **Static HTML/CSS/JS** — no framework, no build step.
-- **Hosting:** Vercel (clean URLs enabled — `/about` serves `about.html`).
-- **Domain:** `www.goldenstate-rehab.com` (see [CNAME](CNAME)).
+- **Hosting:** Cloudflare Pages (static site + Pages Functions for the `/api/send-vob` backend). Migrated from GitHub Pages to enable the HIPAA-compliant intake form — see [docs/intake-deployment.md](docs/intake-deployment.md).
+- **Domain:** `www.goldenstate-rehab.com` (registered at Squarespace, DNS on Cloudflare).
+- **HIPAA email:** Paubox Email API — see [functions/api/send-vob.js](functions/api/send-vob.js).
 - **Icons:** Lucide via CDN.
 - **Fonts:** Google Fonts (loaded per-page in `<head>`).
 
@@ -35,10 +36,12 @@ Marketing website for Golden State Rehab (West Los Angeles). Static HTML/CSS/JS,
 │   ├── design-guidelines.md Premium design system reference
 │   ├── seo-audit-report.md  SEO audit notes
 │   └── legacy/              Outdated drafts kept for history
+├── functions/               Cloudflare Pages Functions (backend)
+│   └── api/send-vob.js      Receives intake form, sends via Paubox
 ├── sitemap.xml              SEO sitemap
 ├── robots.txt               Crawler directives
-├── vercel.json              Vercel deploy config (cleanUrls, no trailing slash)
-├── CNAME                    Custom domain
+├── .env.example             Env var template for the backend (no secrets)
+├── CNAME                    Custom domain (vestigial from GitHub Pages — kept harmless under Cloudflare)
 └── Claude.md                Frontend Architect prompt for AI-assisted edits
 ```
 
@@ -66,4 +69,6 @@ Navigate to `http://localhost:8000`.
 
 ## Deploy
 
-Pushing to `main` triggers a Vercel deployment automatically. The `vercel.json` config is the source of truth for routing rules.
+Pushing to `main` triggers a Cloudflare Pages deployment automatically (static files + the `functions/api/send-vob.js` Pages Function). Environment variables for the backend (`PAUBOX_API_KEY`, etc.) are managed in the Cloudflare Pages dashboard, never in code or git.
+
+For the full intake-form deployment + HIPAA checklist, see [docs/intake-deployment.md](docs/intake-deployment.md).
