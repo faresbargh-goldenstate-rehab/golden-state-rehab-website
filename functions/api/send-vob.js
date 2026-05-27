@@ -177,7 +177,12 @@ export async function onRequestPost(context) {
 
   // ─── 4. Inspect Paubox response ───────────────────────────
   if (!paubox.ok) {
-    console.error(`[send-vob] paubox responded ${paubox.status}`);
+    // Diagnostic: log Paubox's response body so we can see exactly why it
+    // rejected (e.g. "sender address not authorized", "domain not verified").
+    // Paubox error responses don't include PHI — just configuration messages.
+    let bodyExcerpt = '';
+    try { bodyExcerpt = (await paubox.text()).slice(0, 800); } catch (_e) {}
+    console.error(`[send-vob] paubox responded ${paubox.status}: ${bodyExcerpt}`);
     return jsonResponse({ error: 'delivery_failed' }, 502);
   }
 
