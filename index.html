@@ -141,9 +141,9 @@
     </div>
 
     <div class="hero-trust-row" aria-label="Trust badges">
-      <span class="hero-trust-badge"><i data-lucide="shield-check"></i> DHCS Licensed</span>
+      <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="hero-trust-badge" style="text-decoration:none;" title="View DHCS License Certificate"><i data-lucide="shield-check"></i> DHCS Licensed · #191643AP</a>
       <span class="hero-trust-badge-sep" aria-hidden="true"></span>
-      <span class="hero-trust-badge"><i data-lucide="award"></i> Joint Commission Accredited</span>
+      <span class="hero-trust-badge"><i data-lucide="award"></i> Joint Commission Pending</span>
       <span class="hero-trust-badge-sep" aria-hidden="true"></span>
       <span class="hero-trust-badge"><i data-lucide="badge-check"></i> LegitScript Certified</span>
       <span class="hero-trust-badge-sep" aria-hidden="true"></span>
@@ -260,7 +260,7 @@
       <div class="why-us-card reveal reveal-delay-2">
         <div class="why-us-icon"><i data-lucide="shield-check"></i></div>
         <h3>Licensed &amp; accredited</h3>
-        <p>DHCS-licensed by the State of California, Joint Commission accredited, and LegitScript certified — the highest standards in behavioral health.</p>
+        <p>DHCS-licensed by the State of California (License #191643AP), LegitScript certified, and currently pursuing Joint Commission accreditation — the highest standards in behavioral health.</p>
       </div>
       <div class="why-us-card reveal reveal-delay-3">
         <div class="why-us-icon"><i data-lucide="wallet"></i></div>
@@ -457,8 +457,8 @@
           <span><i data-lucide="clock"></i> Admissions Available 24/7</span>
         </div>
         <div class="footer-badges">
-          <span class="footer-badge">DHCS Licensed</span>
-          <span class="footer-badge">Joint Commission</span>
+          <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="View DHCS License Certificate">DHCS Lic. #191643AP</a>
+          <span class="footer-badge">Joint Commission Pending</span>
           <span class="footer-badge">Evidence-Based</span>
         </div>
       </div>
@@ -520,7 +520,7 @@
       </nav>
     </div>
   </div>
-</footer>
+<div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></footer>
 
 <script src="js/main.min.js"></script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
@@ -562,9 +562,11 @@
   ],
   "priceRange": "$$",
   "medicalSpecialty": ["Psychiatric", "Addiction Medicine"],
+  "identifier": [
+    {"@type": "PropertyValue", "name": "DHCS License Number", "value": "191643AP"}
+  ],
   "hasCredential": [
-    {"@type": "EducationalOccupationalCredential", "name": "DHCS Licensed", "credentialCategory": "license"},
-    {"@type": "EducationalOccupationalCredential", "name": "Joint Commission Accredited", "credentialCategory": "accreditation"},
+    {"@type": "EducationalOccupationalCredential", "name": "DHCS Licensed", "credentialCategory": "license", "identifier": "191643AP", "recognizedBy": {"@type": "Organization", "name": "California Department of Health Care Services"}},
     {"@type": "EducationalOccupationalCredential", "name": "LegitScript Certified", "credentialCategory": "certification"}
   ],
   "aggregateRating": {
