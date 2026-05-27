@@ -4,6 +4,12 @@
    /intake-success only. Reuses :root tokens from styles.css.
    ============================================================ */
 
+/* Honor the HTML5 `hidden` attribute even when author CSS sets `display`.
+   Without this, `.intake-error { display: flex }` would override the
+   browser default `[hidden] { display: none }` and the error banner
+   would be visible on page load. */
+[hidden] { display: none !important; }
+
 /* Visually-hidden but accessible to screen readers */
 .sr-only {
   position: absolute;
