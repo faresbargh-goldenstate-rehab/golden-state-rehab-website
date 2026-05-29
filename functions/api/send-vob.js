@@ -37,15 +37,14 @@ const ALLOWED_MIME = new Set([
 
 // File field names we accept and how they're labeled in the email
 const FILE_FIELDS = {
-  insurance_card_front: { label: 'Insurance card (front)', required: true },
+  insurance_card_front: { label: 'Insurance card (front)', required: false },
   insurance_card_back:  { label: 'Insurance card (back)',  required: false },
-  drivers_license:      { label: "Driver's license / photo ID", required: true },
   additional_documents: { label: 'Additional document',     required: false, multiple: true },
 };
 
 const REQUIRED_TEXT = [
   'first_name', 'last_name', 'date_of_birth',
-  'insurance_company', 'member_id', 'phone', 'email',
+  'insurance_company', 'residence_state', 'member_id', 'phone', 'email',
 ];
 
 // ─── Handler ──────────────────────────────────────────────────
@@ -270,6 +269,7 @@ function renderTextBody(t, notes, files) {
     `Date of birth:      ${t.date_of_birth}`,
     `Phone:              ${t.phone}`,
     `Email:              ${t.email}`,
+    `State of residence: ${t.residence_state}`,
     `Insurance company:  ${t.insurance_company}`,
     `Member ID:          ${t.member_id}`,
     '',
@@ -299,6 +299,7 @@ function renderHtmlBody(t, notes, files) {
     ${row('Date of birth', t.date_of_birth)}
     ${row('Phone', t.phone)}
     ${row('Email', t.email)}
+    ${row('State of residence', t.residence_state)}
     ${row('Insurance company', t.insurance_company)}
     ${row('Member ID', t.member_id)}
   </table>

@@ -175,8 +175,56 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="insurance_company">Insurance Company <span class="required">*</span></label>
-          <input type="text" id="insurance_company" name="insurance_company" required maxlength="120" placeholder="e.g., Anthem Blue Cross, Aetna, Cigna…" autocomplete="organization">
+          <label id="insurance_company_label">Insurance Company <span class="required">*</span></label>
+          <div class="intake-select" data-select="insurance_company">
+            <button type="button" class="intake-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="insurance_company_label">
+              <span class="intake-select-value intake-select-placeholder">Select your insurance provider…</span>
+              <i data-lucide="chevron-down" class="intake-select-chevron"></i>
+            </button>
+            <div class="intake-select-panel" role="listbox" hidden>
+              <div class="intake-select-group-label">Most common</div>
+              <button type="button" class="intake-select-option" data-value="Aetna" role="option">Aetna</button>
+              <button type="button" class="intake-select-option" data-value="Anthem Blue Cross" role="option">Anthem Blue Cross</button>
+              <button type="button" class="intake-select-option" data-value="Blue Cross Blue Shield (out-of-state)" role="option">Blue Cross Blue Shield (out-of-state)</button>
+              <button type="button" class="intake-select-option" data-value="Blue Shield of California" role="option">Blue Shield of California</button>
+              <button type="button" class="intake-select-option" data-value="Cigna" role="option">Cigna</button>
+              <button type="button" class="intake-select-option" data-value="Health Net" role="option">Health Net</button>
+              <button type="button" class="intake-select-option" data-value="Humana" role="option">Humana</button>
+              <button type="button" class="intake-select-option" data-value="Kaiser Permanente" role="option">Kaiser Permanente</button>
+              <button type="button" class="intake-select-option" data-value="Magellan Healthcare" role="option">Magellan Healthcare</button>
+              <button type="button" class="intake-select-option" data-value="UnitedHealthcare (UHC)" role="option">UnitedHealthcare (UHC)</button>
+              <div class="intake-select-group-label">Additional carriers</div>
+              <button type="button" class="intake-select-option" data-value="Ambetter" role="option">Ambetter</button>
+              <button type="button" class="intake-select-option" data-value="Beacon Health Options / Carelon" role="option">Beacon Health Options / Carelon</button>
+              <button type="button" class="intake-select-option" data-value="Centene" role="option">Centene</button>
+              <button type="button" class="intake-select-option" data-value="ComPsych" role="option">ComPsych</button>
+              <button type="button" class="intake-select-option" data-value="First Health Network" role="option">First Health Network</button>
+              <button type="button" class="intake-select-option" data-value="GEHA" role="option">GEHA</button>
+              <button type="button" class="intake-select-option" data-value="Independence Blue Cross" role="option">Independence Blue Cross</button>
+              <button type="button" class="intake-select-option" data-value="MHN (Managed Health Network)" role="option">MHN (Managed Health Network)</button>
+              <button type="button" class="intake-select-option" data-value="Molina Healthcare" role="option">Molina Healthcare</button>
+              <button type="button" class="intake-select-option" data-value="MultiPlan / PHCS" role="option">MultiPlan / PHCS</button>
+              <button type="button" class="intake-select-option" data-value="Optum Behavioral Health" role="option">Optum Behavioral Health</button>
+              <button type="button" class="intake-select-option" data-value="Oscar Health" role="option">Oscar Health</button>
+              <button type="button" class="intake-select-option" data-value="Sutter Health Plus" role="option">Sutter Health Plus</button>
+              <button type="button" class="intake-select-option" data-value="TRICARE" role="option">TRICARE</button>
+              <button type="button" class="intake-select-option" data-value="UMR" role="option">UMR</button>
+              <button type="button" class="intake-select-option intake-select-option-other" data-value="__other__" role="option">Other (specify)</button>
+            </div>
+          </div>
+          <input type="hidden" id="insurance_company" name="insurance_company">
+          <input type="text" id="insurance_company_other" class="intake-other-input" placeholder="Enter your insurance company" maxlength="120" hidden>
+        </div>
+        <div class="form-group">
+          <label id="residence_state_label">State of Residence <span class="required">*</span></label>
+          <div class="intake-select" data-select="residence_state" data-options="states">
+            <button type="button" class="intake-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="residence_state_label">
+              <span class="intake-select-value intake-select-placeholder">Select your state…</span>
+              <i data-lucide="chevron-down" class="intake-select-chevron"></i>
+            </button>
+            <div class="intake-select-panel" role="listbox" hidden></div>
+          </div>
+          <input type="hidden" id="residence_state" name="residence_state">
         </div>
         <div class="form-group">
           <label for="member_id">Member ID / Policy Number <span class="required">*</span></label>
@@ -190,18 +238,18 @@
           <span class="intake-step-num">3</span>
           <div>
             <h2>Upload Your Documents</h2>
-            <p>A clear photo of your insurance card and ID helps us verify benefits faster.</p>
+            <p>A clear photo of your insurance card helps us verify benefits faster.</p>
           </div>
         </div>
 
         <!-- Insurance front (required) -->
         <div class="intake-file-block">
           <label class="intake-file-label">
-            <span class="intake-file-title">Front of insurance card <span class="required">*</span></span>
+            <span class="intake-file-title">Front of insurance card <span class="intake-optional">Optional</span></span>
             <span class="intake-file-hint">JPG, PNG, HEIC, or PDF · up to 10 MB</span>
           </label>
           <div class="intake-dropzone" data-field="insurance_card_front">
-            <input type="file" id="insurance_card_front" name="insurance_card_front" accept="image/jpeg,image/png,image/heic,image/heif,application/pdf" required>
+            <input type="file" id="insurance_card_front" name="insurance_card_front" accept="image/jpeg,image/png,image/heic,image/heif,application/pdf">
             <div class="intake-dropzone-inner">
               <i data-lucide="image" class="intake-dropzone-icon"></i>
               <span class="intake-dropzone-text"><strong>Choose a file</strong> or drag &amp; drop here</span>
@@ -224,20 +272,6 @@
           </div>
         </div>
 
-        <!-- Driver's license (required) -->
-        <div class="intake-file-block">
-          <label class="intake-file-label">
-            <span class="intake-file-title">Driver's license or photo ID <span class="required">*</span></span>
-            <span class="intake-file-hint">Required for identity verification</span>
-          </label>
-          <div class="intake-dropzone" data-field="drivers_license">
-            <input type="file" id="drivers_license" name="drivers_license" accept="image/jpeg,image/png,image/heic,image/heif,application/pdf" required>
-            <div class="intake-dropzone-inner">
-              <i data-lucide="id-card" class="intake-dropzone-icon"></i>
-              <span class="intake-dropzone-text"><strong>Choose a file</strong> or drag &amp; drop here</span>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- ── Additional documents ────────────────────────────── -->

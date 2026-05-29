@@ -45,6 +45,99 @@
   const errorBanner = document.getElementById('intake-error');
   const errorText = document.getElementById('intake-error-text');
 
+  // ─── Custom dropdowns (insurance + state) ───────────────────
+  const US_STATES = [
+    ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],
+    ['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['DC','District of Columbia'],
+    ['FL','Florida'],['GA','Georgia'],['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],
+    ['IN','Indiana'],['IA','Iowa'],['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],
+    ['ME','Maine'],['MD','Maryland'],['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],
+    ['MS','Mississippi'],['MO','Missouri'],['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],
+    ['NH','New Hampshire'],['NJ','New Jersey'],['NM','New Mexico'],['NY','New York'],
+    ['NC','North Carolina'],['ND','North Dakota'],['OH','Ohio'],['OK','Oklahoma'],['OR','Oregon'],
+    ['PA','Pennsylvania'],['RI','Rhode Island'],['SC','South Carolina'],['SD','South Dakota'],
+    ['TN','Tennessee'],['TX','Texas'],['UT','Utah'],['VT','Vermont'],['VA','Virginia'],
+    ['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming'],
+  ];
+
+  let openSelect = null;
+  document.querySelectorAll('.intake-select').forEach(initSelect);
+  document.addEventListener('click', (e) => {
+    if (openSelect && !openSelect.contains(e.target)) closeSelect(openSelect);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && openSelect) closeSelect(openSelect);
+  });
+  document.querySelectorAll('.intake-other-input').forEach((input) => {
+    const field = input.id.replace(/_other$/, '');
+    const hidden = document.getElementById(field);
+    input.addEventListener('input', () => { hidden.value = input.value.trim(); });
+  });
+
+  function initSelect(root) {
+    const trigger = root.querySelector('.intake-select-trigger');
+    const panel = root.querySelector('.intake-select-panel');
+    if (root.dataset.options === 'states') {
+      panel.innerHTML = US_STATES.map(([code, name]) =>
+        `<button type="button" class="intake-select-option" data-value="${code}" data-label="${name}" role="option">${name}</button>`
+      ).join('');
+    }
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (openSelect && openSelect !== root) closeSelect(openSelect);
+      if (root.classList.contains('is-open')) closeSelect(root);
+      else openSelectPanel(root);
+    });
+    panel.addEventListener('click', (e) => {
+      const opt = e.target.closest('.intake-select-option');
+      if (!opt) return;
+      selectOption(root, opt);
+      closeSelect(root);
+    });
+  }
+  function openSelectPanel(root) {
+    root.classList.add('is-open');
+    root.querySelector('.intake-select-panel').hidden = false;
+    root.querySelector('.intake-select-trigger').setAttribute('aria-expanded', 'true');
+    openSelect = root;
+  }
+  function closeSelect(root) {
+    root.classList.remove('is-open');
+    root.querySelector('.intake-select-panel').hidden = true;
+    root.querySelector('.intake-select-trigger').setAttribute('aria-expanded', 'false');
+    if (openSelect === root) openSelect = null;
+  }
+  function selectOption(root, opt) {
+    const field = root.dataset.select;
+    const hidden = document.getElementById(field);
+    const valueEl = root.querySelector('.intake-select-value');
+    const otherInput = document.getElementById(`${field}_other`);
+    const value = opt.dataset.value;
+    const label = opt.dataset.label || opt.textContent.trim();
+    root.querySelectorAll('.intake-select-option').forEach((o) => o.classList.remove('is-selected'));
+    opt.classList.add('is-selected');
+    if (value === '__other__') {
+      valueEl.textContent = 'Other (specify)';
+      valueEl.classList.remove('intake-select-placeholder');
+      if (otherInput) {
+        otherInput.hidden = false;
+        otherInput.required = true;
+        hidden.value = otherInput.value.trim();
+        setTimeout(() => otherInput.focus(), 50);
+      }
+    } else {
+      valueEl.textContent = label;
+      valueEl.classList.remove('intake-select-placeholder');
+      hidden.value = value;
+      if (otherInput) {
+        otherInput.hidden = true;
+        otherInput.required = false;
+        otherInput.value = '';
+      }
+    }
+    hideError();
+  }
+
   // ─── Wire up dropzones ──────────────────────────────────────
   document.querySelectorAll('.intake-dropzone').forEach(initDropzone);
 
@@ -225,7 +318,7 @@
     hideError();
 
     // Validate required fields
-    const required = ['first_name', 'last_name', 'date_of_birth', 'phone', 'email', 'insurance_company', 'member_id'];
+    const required = ['first_name', 'last_name', 'date_of_birth', 'phone', 'email', 'insurance_company', 'residence_state', 'member_id'];
     for (const name of required) {
       const el = form.elements.namedItem(name);
       if (!el || !el.value.trim()) {
@@ -252,18 +345,6 @@
       return;
     }
 
-    // Required files present
-    const frontFiles = selected.get('insurance_card_front') || [];
-    if (frontFiles.length === 0) {
-      showError('Please upload a photo of the front of your insurance card.');
-      return;
-    }
-    const licenseFiles = selected.get('drivers_license') || [];
-    if (licenseFiles.length === 0) {
-      showError("Please upload a photo of your driver's license or photo ID.");
-      return;
-    }
-
     // Total size check
     let totalBytes = 0;
     for (const arr of selected.values()) for (const f of arr) totalBytes += f.size;
@@ -280,6 +361,7 @@
     fd.set('phone', form.elements.namedItem('phone').value.trim());
     fd.set('email', email);
     fd.set('insurance_company', form.elements.namedItem('insurance_company').value.trim());
+    fd.set('residence_state', form.elements.namedItem('residence_state').value.trim());
     fd.set('member_id', form.elements.namedItem('member_id').value.trim());
     fd.set('notes', form.elements.namedItem('notes').value.trim());
 
