@@ -181,11 +181,11 @@
         <div class="form-group">
           <label id="residence_state_label">State of Residence <span class="required">*</span></label>
           <div class="intake-select" data-select="residence_state" data-options="states">
-            <button type="button" class="intake-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="residence_state_label">
-              <span class="intake-select-value intake-select-placeholder">Select your state…</span>
+            <div class="intake-select-input-wrap">
+              <input type="text" class="intake-select-input" id="residence_state_search" placeholder="Type or select your state…" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="residence_state_panel">
               <i data-lucide="chevron-down" class="intake-select-chevron"></i>
-            </button>
-            <div class="intake-select-panel" role="listbox"></div>
+            </div>
+            <div class="intake-select-panel" id="residence_state_panel" role="listbox"></div>
           </div>
           <input type="hidden" id="residence_state" name="residence_state">
         </div>

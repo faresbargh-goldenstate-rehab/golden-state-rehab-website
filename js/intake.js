@@ -68,76 +68,122 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && openSelect) closeSelect(openSelect);
   });
-  document.querySelectorAll('.intake-other-input').forEach((input) => {
-    const field = input.id.replace(/_other$/, '');
-    const hidden = document.getElementById(field);
-    input.addEventListener('input', () => { hidden.value = input.value.trim(); });
-  });
 
   function initSelect(root) {
-    const trigger = root.querySelector('.intake-select-trigger');
+    const input = root.querySelector('.intake-select-input');
     const panel = root.querySelector('.intake-select-panel');
-    if (!trigger || !panel) return;
-    if (root.dataset.options === 'states') {
-      panel.innerHTML = US_STATES.map(([code, name]) =>
-        `<button type="button" class="intake-select-option" data-value="${code}" data-label="${name}" role="option">${name}</button>`
-      ).join('');
-    }
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
+    if (!input || !panel) return;
+    const options = root.dataset.options === 'states'
+      ? US_STATES.map(([code, label]) => ({ value: code, label }))
+      : [];
+    renderOptions(panel, options);
+
+    input.addEventListener('focus', () => {
       if (openSelect && openSelect !== root) closeSelect(openSelect);
-      if (root.classList.contains('is-open')) closeSelect(root);
-      else openSelectPanel(root);
+      openSelectPanel(root);
+      input.select();
+    });
+    input.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!root.classList.contains('is-open')) openSelectPanel(root);
+    });
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      const filtered = q
+        ? options.filter((o) => o.label.toLowerCase().startsWith(q))
+        : options;
+      renderOptions(panel, filtered);
+      if (!root.classList.contains('is-open')) openSelectPanel(root);
+    });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const first = panel.querySelector('.intake-select-option');
+        if (first) {
+          commitOption(root, first.dataset.value, first.dataset.label);
+          closeSelect(root);
+          input.blur();
+        }
+      } else if (e.key === 'Escape') {
+        closeSelect(root);
+        input.blur();
+      }
     });
     panel.addEventListener('click', (e) => {
       const opt = e.target.closest('.intake-select-option');
       if (!opt) return;
       e.preventDefault();
       e.stopPropagation();
-      selectOption(root, opt);
+      commitOption(root, opt.dataset.value, opt.dataset.label);
       closeSelect(root);
     });
+
+    root._allOptions = options;
+  }
+  function renderOptions(panel, options) {
+    if (!options.length) {
+      panel.innerHTML = '<div class="intake-select-empty">No matches</div>';
+      return;
+    }
+    panel.innerHTML = options.map((o) =>
+      `<button type="button" class="intake-select-option" data-value="${escAttr(o.value)}" data-label="${escAttr(o.label)}" role="option">${escAttr(o.label)}</button>`
+    ).join('');
+  }
+  function escAttr(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
   function openSelectPanel(root) {
     root.classList.add('is-open');
-    root.querySelector('.intake-select-trigger').setAttribute('aria-expanded', 'true');
+    root.querySelector('.intake-select-input').setAttribute('aria-expanded', 'true');
     openSelect = root;
   }
   function closeSelect(root) {
     root.classList.remove('is-open');
-    root.querySelector('.intake-select-trigger').setAttribute('aria-expanded', 'false');
+    const input = root.querySelector('.intake-select-input');
+    const panel = root.querySelector('.intake-select-panel');
+    const hidden = document.getElementById(root.dataset.select);
+    input.setAttribute('aria-expanded', 'false');
+    const opts = root._allOptions || [];
+    const committed = hidden.value
+      ? opts.find((o) => o.value === hidden.value)
+      : null;
+    input.value = committed ? committed.label : '';
+    renderOptions(panel, opts);
     if (openSelect === root) openSelect = null;
   }
-  function selectOption(root, opt) {
-    const field = root.dataset.select;
-    const hidden = document.getElementById(field);
-    const valueEl = root.querySelector('.intake-select-value');
-    const otherInput = document.getElementById(`${field}_other`);
-    const value = opt.dataset.value;
-    const label = opt.dataset.label || opt.textContent.trim();
-    root.querySelectorAll('.intake-select-option').forEach((o) => o.classList.remove('is-selected'));
-    opt.classList.add('is-selected');
-    if (value === '__other__') {
-      valueEl.textContent = 'Other (specify)';
-      valueEl.classList.remove('intake-select-placeholder');
-      if (otherInput) {
-        otherInput.hidden = false;
-        otherInput.required = true;
-        hidden.value = otherInput.value.trim();
-        setTimeout(() => otherInput.focus(), 50);
-      }
-    } else {
-      valueEl.textContent = label;
-      valueEl.classList.remove('intake-select-placeholder');
-      hidden.value = value;
-      if (otherInput) {
-        otherInput.hidden = true;
-        otherInput.required = false;
-        otherInput.value = '';
-      }
-    }
+  function commitOption(root, value, label) {
+    const input = root.querySelector('.intake-select-input');
+    const hidden = document.getElementById(root.dataset.select);
+    input.value = label;
+    hidden.value = value;
     hideError();
+  }
+
+  // ─── Phone auto-format: (xxx) xxx-xxxx ──────────────────────
+  const phoneInput = document.getElementById('phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+      const el = e.target;
+      const cursorStart = el.selectionStart || 0;
+      const digitsBeforeCursor = (el.value.slice(0, cursorStart).match(/\d/g) || []).length;
+      let digits = el.value.replace(/\D/g, '');
+      if (digits.length === 11 && digits[0] === '1') digits = digits.slice(1);
+      digits = digits.slice(0, 10);
+      let formatted = '';
+      if (digits.length === 0) formatted = '';
+      else if (digits.length <= 3) formatted = digits;
+      else if (digits.length <= 6) formatted = `(${digits.slice(0,3)}) ${digits.slice(3)}`;
+      else formatted = `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`;
+      el.value = formatted;
+      let newCursor = 0, dc = 0;
+      for (let i = 0; i < formatted.length; i++) {
+        newCursor = i + 1;
+        if (/\d/.test(formatted[i])) dc++;
+        if (dc >= digitsBeforeCursor) break;
+      }
+      if (digitsBeforeCursor === 0) newCursor = 0;
+      try { el.setSelectionRange(newCursor, newCursor); } catch (_e) {}
+    });
   }
 
   // ─── Wire up dropzones ──────────────────────────────────────

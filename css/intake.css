@@ -570,49 +570,51 @@
   }
 }
 
-/* ─── Custom dropdown (state of residence) ─────────────────── */
+/* ─── Combobox dropdown (state of residence) ──────────────── */
 .intake-select { position: relative; }
-.intake-select-trigger {
+.intake-select-input-wrap { position: relative; width: 100%; }
+.intake-select-input {
   width: 100%;
-  padding: 13px 16px;
-  border: 1px solid var(--border) !important;
-  border-radius: var(--radius-sm) !important;
-  background: var(--off-white) !important;
-  color: var(--near-black) !important;
-  font-size: 15px !important;
-  font-family: inherit !important;
-  font-weight: 400;
-  line-height: 1.4;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  cursor: pointer;
+  padding: 13px 44px 13px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--off-white);
+  color: var(--near-black);
+  font-size: 15px;
+  font-family: inherit;
   appearance: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  -webkit-tap-highlight-color: transparent;
-  min-height: 50px;
-  margin: 0;
   transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
-.intake-select-trigger:hover { background: #fff !important; }
-.intake-select-trigger:focus,
-.intake-select.is-open .intake-select-trigger {
+.intake-select-input::placeholder { color: #9B8B6F; }
+.intake-select-input:hover { background: #fff; }
+.intake-select-input:focus,
+.intake-select.is-open .intake-select-input {
   outline: none;
-  border-color: var(--gold) !important;
-  background: #fff !important;
-  box-shadow: 0 0 0 3px rgba(200,164,74,0.20) !important;
+  border-color: var(--gold);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(200,164,74,0.20);
 }
-.intake-select-placeholder { color: #9B8B6F; }
 .intake-select-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 18px; height: 18px;
   color: var(--gold-dark);
+  pointer-events: none;
   transition: transform 0.2s ease;
-  flex-shrink: 0;
 }
-.intake-select.is-open .intake-select-chevron { transform: rotate(180deg); }
+.intake-select.is-open .intake-select-chevron {
+  transform: translateY(-50%) rotate(180deg);
+}
+.intake-select-empty {
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  font-style: italic;
+}
 .intake-select-panel {
   display: none;
   position: absolute;
