@@ -175,45 +175,8 @@
           </div>
         </div>
         <div class="form-group">
-          <label id="insurance_company_label">Insurance Company <span class="required">*</span></label>
-          <div class="intake-select" data-select="insurance_company">
-            <button type="button" class="intake-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="insurance_company_label">
-              <span class="intake-select-value intake-select-placeholder">Select your insurance provider…</span>
-              <i data-lucide="chevron-down" class="intake-select-chevron"></i>
-            </button>
-            <div class="intake-select-panel" role="listbox" hidden>
-              <div class="intake-select-group-label">Most common</div>
-              <button type="button" class="intake-select-option" data-value="Aetna" role="option">Aetna</button>
-              <button type="button" class="intake-select-option" data-value="Anthem Blue Cross" role="option">Anthem Blue Cross</button>
-              <button type="button" class="intake-select-option" data-value="Blue Cross Blue Shield (out-of-state)" role="option">Blue Cross Blue Shield (out-of-state)</button>
-              <button type="button" class="intake-select-option" data-value="Blue Shield of California" role="option">Blue Shield of California</button>
-              <button type="button" class="intake-select-option" data-value="Cigna" role="option">Cigna</button>
-              <button type="button" class="intake-select-option" data-value="Health Net" role="option">Health Net</button>
-              <button type="button" class="intake-select-option" data-value="Humana" role="option">Humana</button>
-              <button type="button" class="intake-select-option" data-value="Kaiser Permanente" role="option">Kaiser Permanente</button>
-              <button type="button" class="intake-select-option" data-value="Magellan Healthcare" role="option">Magellan Healthcare</button>
-              <button type="button" class="intake-select-option" data-value="UnitedHealthcare (UHC)" role="option">UnitedHealthcare (UHC)</button>
-              <div class="intake-select-group-label">Additional carriers</div>
-              <button type="button" class="intake-select-option" data-value="Ambetter" role="option">Ambetter</button>
-              <button type="button" class="intake-select-option" data-value="Beacon Health Options / Carelon" role="option">Beacon Health Options / Carelon</button>
-              <button type="button" class="intake-select-option" data-value="Centene" role="option">Centene</button>
-              <button type="button" class="intake-select-option" data-value="ComPsych" role="option">ComPsych</button>
-              <button type="button" class="intake-select-option" data-value="First Health Network" role="option">First Health Network</button>
-              <button type="button" class="intake-select-option" data-value="GEHA" role="option">GEHA</button>
-              <button type="button" class="intake-select-option" data-value="Independence Blue Cross" role="option">Independence Blue Cross</button>
-              <button type="button" class="intake-select-option" data-value="MHN (Managed Health Network)" role="option">MHN (Managed Health Network)</button>
-              <button type="button" class="intake-select-option" data-value="Molina Healthcare" role="option">Molina Healthcare</button>
-              <button type="button" class="intake-select-option" data-value="MultiPlan / PHCS" role="option">MultiPlan / PHCS</button>
-              <button type="button" class="intake-select-option" data-value="Optum Behavioral Health" role="option">Optum Behavioral Health</button>
-              <button type="button" class="intake-select-option" data-value="Oscar Health" role="option">Oscar Health</button>
-              <button type="button" class="intake-select-option" data-value="Sutter Health Plus" role="option">Sutter Health Plus</button>
-              <button type="button" class="intake-select-option" data-value="TRICARE" role="option">TRICARE</button>
-              <button type="button" class="intake-select-option" data-value="UMR" role="option">UMR</button>
-              <button type="button" class="intake-select-option intake-select-option-other" data-value="__other__" role="option">Other (specify)</button>
-            </div>
-          </div>
-          <input type="hidden" id="insurance_company" name="insurance_company">
-          <input type="text" id="insurance_company_other" class="intake-other-input" placeholder="Enter your insurance company" maxlength="120" hidden>
+          <label for="insurance_company">Insurance Company <span class="required">*</span></label>
+          <input type="text" id="insurance_company" name="insurance_company" required maxlength="120" placeholder="e.g., Anthem Blue Cross, Aetna, Cigna…" autocomplete="organization">
         </div>
         <div class="form-group">
           <label id="residence_state_label">State of Residence <span class="required">*</span></label>
@@ -257,61 +220,6 @@
           </div>
         </div>
 
-        <!-- Insurance back (optional) -->
-        <div class="intake-file-block">
-          <label class="intake-file-label">
-            <span class="intake-file-title">Back of insurance card <span class="intake-optional">Optional</span></span>
-            <span class="intake-file-hint">Helpful but not required</span>
-          </label>
-          <div class="intake-dropzone" data-field="insurance_card_back">
-            <input type="file" id="insurance_card_back" name="insurance_card_back" accept="image/jpeg,image/png,image/heic,image/heif,application/pdf">
-            <div class="intake-dropzone-inner">
-              <i data-lucide="image" class="intake-dropzone-icon"></i>
-              <span class="intake-dropzone-text"><strong>Choose a file</strong> or drag &amp; drop here</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ── Additional documents ────────────────────────────── -->
-      <div class="intake-card reveal">
-        <div class="intake-card-head">
-          <span class="intake-step-num">4</span>
-          <div>
-            <h2>Additional Documents <span class="intake-optional intake-optional-large">Optional</span></h2>
-            <p>Anything else you think we'd find helpful — completely optional.</p>
-          </div>
-        </div>
-
-        <div class="intake-file-block">
-          <label class="intake-file-label">
-            <span class="intake-file-title">Other helpful documents <span class="intake-optional">Optional</span></span>
-            <span class="intake-file-hint">You can select multiple files</span>
-          </label>
-          <div class="intake-dropzone" data-field="additional_documents" data-multiple="true">
-            <input type="file" id="additional_documents" name="additional_documents" accept="image/jpeg,image/png,image/heic,image/heif,application/pdf" multiple>
-            <div class="intake-dropzone-inner">
-              <i data-lucide="paperclip" class="intake-dropzone-icon"></i>
-              <span class="intake-dropzone-text"><strong>Choose files</strong> or drag &amp; drop here</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── Notes ───────────────────────────────────────────── -->
-      <div class="intake-card reveal">
-        <div class="intake-card-head">
-          <span class="intake-step-num">5</span>
-          <div>
-            <h2>Anything Else? <span class="intake-optional intake-optional-large">Optional</span></h2>
-            <p>Tell us anything you'd like our admissions team to know.</p>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="notes" class="sr-only">Notes</label>
-          <textarea id="notes" name="notes" rows="4" maxlength="5000" placeholder="e.g., specific program you're interested in, current diagnosis, scheduling preferences, other questions…"></textarea>
-        </div>
       </div>
 
       <!-- ── Error banner (hidden by default) ───────────────── -->

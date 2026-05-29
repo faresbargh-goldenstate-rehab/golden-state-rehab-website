@@ -363,7 +363,6 @@
     fd.set('insurance_company', form.elements.namedItem('insurance_company').value.trim());
     fd.set('residence_state', form.elements.namedItem('residence_state').value.trim());
     fd.set('member_id', form.elements.namedItem('member_id').value.trim());
-    fd.set('notes', form.elements.namedItem('notes').value.trim());
 
     for (const [field, files] of selected.entries()) {
       for (const f of files) fd.append(field, f, f.name);

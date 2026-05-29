@@ -38,8 +38,6 @@ const ALLOWED_MIME = new Set([
 // File field names we accept and how they're labeled in the email
 const FILE_FIELDS = {
   insurance_card_front: { label: 'Insurance card (front)', required: false },
-  insurance_card_back:  { label: 'Insurance card (back)',  required: false },
-  additional_documents: { label: 'Additional document',     required: false, multiple: true },
 };
 
 const REQUIRED_TEXT = [
@@ -75,8 +73,6 @@ export async function onRequestPost(context) {
     if (!value) return jsonResponse({ error: 'missing_field', field: key }, 400);
     text[key] = value;
   }
-  const notes = sanitize(formData.get('notes') || '', 5000);
-
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text.email)) {
     return jsonResponse({ error: 'invalid_email' }, 400);
   }
@@ -128,8 +124,8 @@ export async function onRequestPost(context) {
   const lastInitial = (text.last_name.trim()[0] || '').toUpperCase();
   const subject = `New VOB Request - ${firstName} ${lastInitial}`;
 
-  const bodyText = renderTextBody(text, notes, collected);
-  const bodyHtml = renderHtmlBody(text, notes, collected);
+  const bodyText = renderTextBody(text, collected);
+  const bodyHtml = renderHtmlBody(text, collected);
 
   let paubox;
   try {
@@ -261,7 +257,7 @@ function escHtml(s) {
     .replace(/'/g, '&#39;');
 }
 
-function renderTextBody(t, notes, files) {
+function renderTextBody(t, files) {
   const lines = [
     'New VOB request from goldenstate-rehab.com',
     '',
@@ -273,18 +269,15 @@ function renderTextBody(t, notes, files) {
     `Insurance company:  ${t.insurance_company}`,
     `Member ID:          ${t.member_id}`,
     '',
-    'Notes:',
-    notes || '(none)',
-    '',
     'Attachments:',
-    ...files.map((f) => `  • ${f.label} — ${f.originalName} (${formatBytes(f.bytes)})`),
+    ...(files.length ? files.map((f) => `  • ${f.label} — ${f.originalName} (${formatBytes(f.bytes)})`) : ['  (none)']),
     '',
     '— Sent securely via Paubox',
   ];
   return lines.join('\n');
 }
 
-function renderHtmlBody(t, notes, files) {
+function renderHtmlBody(t, files) {
   const row = (k, v) =>
     `<tr><td style="padding:4px 12px 4px 0;color:#7A6A52;font-weight:600;">${escHtml(k)}</td><td style="padding:4px 0;">${escHtml(v)}</td></tr>`;
   const fileLi = (f) =>
@@ -303,10 +296,9 @@ function renderHtmlBody(t, notes, files) {
     ${row('Insurance company', t.insurance_company)}
     ${row('Member ID', t.member_id)}
   </table>
-  ${notes ? `<h3 style="font-size:14px;margin:0 0 8px;color:#140E04;">Notes</h3><p style="white-space:pre-wrap;background:#FDFAF5;padding:12px;border-radius:8px;border-left:3px solid #C8A44A;">${escHtml(notes)}</p>` : ''}
   <h3 style="font-size:14px;margin:24px 0 8px;color:#140E04;">Attachments (${files.length})</h3>
   <ul style="padding-left:20px;margin:0;">
-    ${files.map(fileLi).join('')}
+    ${files.length ? files.map(fileLi).join('') : '<li style="color:#7A6A52;">None uploaded</li>'}
   </ul>
   <hr style="border:none;border-top:1px solid #E8D5A3;margin:24px 0;">
   <p style="font-size:12px;color:#7A6A52;margin:0;">Sent securely via Paubox · goldenstate-rehab.com</p>
