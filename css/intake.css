@@ -570,32 +570,40 @@
   }
 }
 
-/* ─── Custom dropdown (insurance + state) ──────────────────── */
+/* ─── Custom dropdown (state of residence) ─────────────────── */
 .intake-select { position: relative; }
 .intake-select-trigger {
   width: 100%;
   padding: 13px 16px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--off-white);
-  color: var(--near-black);
-  font-size: 15px;
-  font-family: inherit;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  background: var(--off-white) !important;
+  color: var(--near-black) !important;
+  font-size: 15px !important;
+  font-family: inherit !important;
+  font-weight: 400;
+  line-height: 1.4;
   text-align: left;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 50px;
+  margin: 0;
   transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
-.intake-select-trigger:hover { background: var(--white); }
+.intake-select-trigger:hover { background: #fff !important; }
 .intake-select-trigger:focus,
 .intake-select.is-open .intake-select-trigger {
   outline: none;
-  border-color: var(--gold);
-  background: var(--white);
-  box-shadow: 0 0 0 3px rgba(200,164,74,0.15);
+  border-color: var(--gold) !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 3px rgba(200,164,74,0.20) !important;
 }
 .intake-select-placeholder { color: #9B8B6F; }
 .intake-select-chevron {
@@ -606,6 +614,7 @@
 }
 .intake-select.is-open .intake-select-chevron { transform: rotate(180deg); }
 .intake-select-panel {
+  display: none;
   position: absolute;
   top: calc(100% + 6px);
   left: 0; right: 0;
@@ -615,8 +624,11 @@
   box-shadow: 0 12px 32px rgba(20,14,4,0.12), 0 2px 6px rgba(20,14,4,0.06);
   max-height: 320px;
   overflow-y: auto;
-  z-index: 50;
+  z-index: 100;
   padding: 6px;
+}
+.intake-select.is-open .intake-select-panel {
+  display: block;
   animation: intake-select-panel-in 0.16s ease-out;
 }
 @keyframes intake-select-panel-in {

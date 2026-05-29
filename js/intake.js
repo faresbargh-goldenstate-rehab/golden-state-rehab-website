@@ -77,12 +77,14 @@
   function initSelect(root) {
     const trigger = root.querySelector('.intake-select-trigger');
     const panel = root.querySelector('.intake-select-panel');
+    if (!trigger || !panel) return;
     if (root.dataset.options === 'states') {
       panel.innerHTML = US_STATES.map(([code, name]) =>
         `<button type="button" class="intake-select-option" data-value="${code}" data-label="${name}" role="option">${name}</button>`
       ).join('');
     }
     trigger.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
       if (openSelect && openSelect !== root) closeSelect(openSelect);
       if (root.classList.contains('is-open')) closeSelect(root);
@@ -91,19 +93,19 @@
     panel.addEventListener('click', (e) => {
       const opt = e.target.closest('.intake-select-option');
       if (!opt) return;
+      e.preventDefault();
+      e.stopPropagation();
       selectOption(root, opt);
       closeSelect(root);
     });
   }
   function openSelectPanel(root) {
     root.classList.add('is-open');
-    root.querySelector('.intake-select-panel').hidden = false;
     root.querySelector('.intake-select-trigger').setAttribute('aria-expanded', 'true');
     openSelect = root;
   }
   function closeSelect(root) {
     root.classList.remove('is-open');
-    root.querySelector('.intake-select-panel').hidden = true;
     root.querySelector('.intake-select-trigger').setAttribute('aria-expanded', 'false');
     if (openSelect === root) openSelect = null;
   }
