@@ -539,15 +539,20 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["MedicalOrganization", "LocalBusiness"],
+  "@type": [
+    "MedicalOrganization",
+    "LocalBusiness"
+  ],
   "@id": "https://www.goldenstate-rehab.com/#organization",
+  "name": "Golden State Rehab",
+  "url": "https://www.goldenstate-rehab.com/",
   "logo": "https://www.goldenstate-rehab.com/images/logo-icon.png",
   "image": "https://www.goldenstate-rehab.com/images/logo-icon.png",
   "description": "Golden State Rehab is a DHCS-licensed addiction and mental health treatment center in Los Angeles offering PHP, IOP, telehealth, and individual therapy. Most major insurance accepted.",
-  "name": "Golden State Rehab",
-  "url": "https://www.goldenstate-rehab.com",
   "telephone": "+1-424-208-3120",
   "email": "admissions@goldenstate-rehab.com",
+  "priceRange": "$$",
+  "currenciesAccepted": "USD",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "1964 Westwood Blvd, Ste 425",
@@ -556,62 +561,99 @@
     "postalCode": "90025",
     "addressCountry": "US"
   },
-  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}],
-  "foundingDate": "2026",
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 34.0447,
     "longitude": -118.4308
   },
+  "hasMap": "https://maps.google.com/?q=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025",
   "areaServed": [
-    {"@type": "City", "name": "Los Angeles"},
-    {"@type": "City", "name": "West Los Angeles"},
-    {"@type": "City", "name": "Santa Monica"},
-    {"@type": "City", "name": "Beverly Hills"},
-    {"@type": "City", "name": "Brentwood"},
-    {"@type": "City", "name": "Culver City"},
-    {"@type": "City", "name": "Westwood"}
+    {
+      "@type": "City",
+      "name": "Los Angeles"
+    },
+    {
+      "@type": "City",
+      "name": "West Los Angeles"
+    },
+    {
+      "@type": "City",
+      "name": "Santa Monica"
+    },
+    {
+      "@type": "City",
+      "name": "Beverly Hills"
+    },
+    {
+      "@type": "City",
+      "name": "Brentwood"
+    },
+    {
+      "@type": "City",
+      "name": "Culver City"
+    },
+    {
+      "@type": "City",
+      "name": "Westwood"
+    }
   ],
-  "priceRange": "$$",
-  "medicalSpecialty": ["Psychiatric", "Addiction Medicine"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "medicalSpecialty": [
+    "Psychiatric",
+    "Addiction Medicine"
+  ],
+  "knowsAbout": [
+    "Cognitive Behavioral Therapy",
+    "Dialectical Behavior Therapy",
+    "Addiction Treatment",
+    "Dual Diagnosis",
+    "Anxiety",
+    "Depression",
+    "PTSD",
+    "Substance Use Disorder"
+  ],
+  "foundingDate": "2026",
   "identifier": [
-    {"@type": "PropertyValue", "name": "DHCS License Number", "value": "191643AP"}
+    {
+      "@type": "PropertyValue",
+      "name": "DHCS License Number",
+      "value": "191643AP"
+    }
   ],
   "hasCredential": [
-    {"@type": "EducationalOccupationalCredential", "name": "DHCS Licensed", "credentialCategory": "license", "identifier": "191643AP", "recognizedBy": {"@type": "Organization", "name": "California Department of Health Care Services"}},
-    {"@type": "EducationalOccupationalCredential", "name": "LegitScript Certified", "credentialCategory": "certification"}
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "bestRating": "5",
-    "worstRating": "1",
-    "ratingCount": "47"
-  },
-  "review": [
     {
-      "@type": "Review",
-      "author": {"@type": "Person", "name": "Marcus T."},
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "reviewBody": "I came in broken and left with tools. The staff treated me like a person, not a diagnosis."
+      "@type": "EducationalOccupationalCredential",
+      "name": "DHCS Licensed",
+      "credentialCategory": "license",
+      "identifier": "191643AP",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "California Department of Health Care Services"
+      }
     },
     {
-      "@type": "Review",
-      "author": {"@type": "Person", "name": "Jennifer M."},
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "reviewBody": "The group therapy changed everything. I didn't feel alone anymore."
-    },
-    {
-      "@type": "Review",
-      "author": {"@type": "Person", "name": "David L."},
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "reviewBody": "They met me where I was. No judgment, just real people who genuinely wanted to help me heal."
+      "@type": "EducationalOccupationalCredential",
+      "name": "LegitScript Certified",
+      "credentialCategory": "certification"
     }
   ],
   "sameAs": [
-    "https://www.facebook.com/GoldenStateRehab",
-    "https://www.instagram.com/goldenstaterehab",
-    "https://www.linkedin.com/company/golden-state-rehab"
+    "https://www.google.com/search?q=Golden+State+Rehab&stick=H4sIAAAAAAAAAONgU1I1qLAwSDZKSko2TTUxT7U0MDe3MqhIMTRNS7JMMzAxSzNLTDUzX8Qq5J6fk5KapxBckliSqhCUmpGYBAByZ8iUPgAAAA"
   ]
 }
 </script>
@@ -621,17 +663,11 @@
   "@type": "WebSite",
   "@id": "https://www.goldenstate-rehab.com/#website",
   "name": "Golden State Rehab",
-  "alternateName": "Golden State Rehab",
   "url": "https://www.goldenstate-rehab.com/",
-  "publisher": { "@id": "https://www.goldenstate-rehab.com/#organization" },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://www.google.com/search?q=site:goldenstate-rehab.com+{search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  }
+  "publisher": {
+    "@id": "https://www.goldenstate-rehab.com/#organization"
+  },
+  "inLanguage": "en-US"
 }
 </script>
 </body>
