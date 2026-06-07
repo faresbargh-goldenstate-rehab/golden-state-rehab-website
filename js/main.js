@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   overlay.innerHTML =
     '<div class="exit-popup">' +
-      '<img class="exit-popup-image" src="https://picsum.photos/seed/exit-calm/600/800" alt="" loading="lazy">' +
+      '<img class="exit-popup-image" src="/images/facility/individual-therapy-room.jpg" alt="A private therapy room at Golden State Rehab" loading="lazy">' +
       '<div class="exit-popup-body">' +
         '<p class="exit-popup-eyebrow">A Moment of Clarity</p>' +
         '<h2 class="exit-popup-heading">Wait. Don\'t Leave<br>Without Help.</h2>' +
@@ -249,8 +249,13 @@ document.addEventListener('DOMContentLoaded', () => {
   overlay.addEventListener('click', function (e) { if (e.target === overlay) closePopup(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
 
+  // Arm exit-intent only after the visitor has spent time on the page, so it
+  // never fires on arrival or by accident — only when they genuinely move to leave.
+  var exitArmed = false;
+  setTimeout(function () { exitArmed = true; }, 8000);
+
   document.addEventListener('mouseleave', function handler(e) {
-    if (e.clientY < 5 && window.innerWidth >= 768) {
+    if (exitArmed && e.clientY <= 0 && window.innerWidth >= 768) {
       sessionStorage.setItem('exitShown', '1');
       overlay.classList.add('visible');
       document.body.style.overflow = 'hidden';
