@@ -1,0 +1,26 @@
+# Golden State Rehab
+
+> DHCS-licensed (#191643AP) outpatient addiction and mental-health treatment center in Westwood, West Los Angeles. Programs: PHP, IOP, telehealth, individual & group therapy, medication management. Evidence-based modalities including CBT and DBT. Most major insurance accepted. Admissions available 24/7 at (424) 208-3120.
+
+## Treatments
+- [All Treatments](https://www.goldenstate-rehab.com/treatments/): conditions we treat
+- [Cognitive Behavioral Therapy (CBT)](https://www.goldenstate-rehab.com/treatments/cbt)
+- [Dialectical Behavior Therapy (DBT)](https://www.goldenstate-rehab.com/treatments/dbt)
+- [Depression](https://www.goldenstate-rehab.com/treatments/depression), [Anxiety](https://www.goldenstate-rehab.com/treatments/anxiety), [PTSD](https://www.goldenstate-rehab.com/treatments/ptsd), [Complex Trauma](https://www.goldenstate-rehab.com/treatments/complex-trauma), [Dual Diagnosis](https://www.goldenstate-rehab.com/treatments/dual-diagnosis)
+- Addiction: [Alcohol](https://www.goldenstate-rehab.com/treatments/alcohol), [Opioid](https://www.goldenstate-rehab.com/treatments/opioid), [Meth](https://www.goldenstate-rehab.com/treatments/meth), [Cocaine](https://www.goldenstate-rehab.com/treatments/cocaine), [Prescription Drugs](https://www.goldenstate-rehab.com/treatments/prescription-drugs)
+
+## Programs
+- [PHP](https://www.goldenstate-rehab.com/programs/php), [IOP](https://www.goldenstate-rehab.com/programs/iop), [Telehealth](https://www.goldenstate-rehab.com/programs/telehealth), [Individual Therapy](https://www.goldenstate-rehab.com/programs/individual-therapy), [Group Therapy](https://www.goldenstate-rehab.com/programs/group-therapy), [Medication Management](https://www.goldenstate-rehab.com/programs/medication-management)
+
+## Resources
+- [Verify Insurance (free, ~2 min)](https://www.goldenstate-rehab.com/verify-insurance)
+- [How Much Does Rehab Cost in Los Angeles? (2026 Guide)](https://www.goldenstate-rehab.com/blog/cost-of-rehab-in-los-angeles)
+- [Blog: The Recovery Journal](https://www.goldenstate-rehab.com/blog/)
+- [Locations & Areas We Serve](https://www.goldenstate-rehab.com/locations)
+- [Our Clinical Team](https://www.goldenstate-rehab.com/team)
+- [FAQ](https://www.goldenstate-rehab.com/faq)
+
+## Contact
+- Phone: (424) 208-3120 (24/7 admissions)
+- Address: 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025
+- Medical Director: Dr. Eric Chaghouri, MD (Board-Certified Psychiatrist)
