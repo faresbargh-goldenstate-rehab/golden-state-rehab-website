@@ -90,7 +90,7 @@
           </div>
         </div>
       </li>
-      <li><a href="/blog/">Blog</a></li><li><a href="faq">FAQ</a></li>
+      <li><a href="/blog/">Blog</a></li>
     </ul>
     <div class="nav-actions">
       <a href="verify-insurance" class="btn btn-secondary btn-sm active">Verify Insurance</a>
@@ -107,7 +107,6 @@
   <a href="programs/">Programs</a>
   <a href="treatments/">Treatments</a>
   <a href="/blog/">Blog</a>
-  <a href="faq">FAQ</a>
   <div class="nav-mobile-actions">
     <a href="verify-insurance" class="btn btn-secondary">Verify Insurance</a>
     <a href="contact" class="btn btn-primary"><i data-lucide="phone"></i> Call Now</a>
@@ -117,16 +116,11 @@
 <main>
 
 <!-- Page Hero -->
-<section class="intake-hero">
+<section class="intake-hero" style="padding:36px 0 4px;">
   <div class="container intake-hero-inner intake-fade-in">
-    <p class="intake-hero-eyebrow"><i data-lucide="lock"></i> Confidential · HIPAA-Secured</p>
-    <h1>Verify Your Insurance &amp; <span class="text-gold">Start Your Intake</span></h1>
-    <p class="intake-hero-sub">Tell us a little about you and upload your insurance card. Our team verifies coverage and reaches out — usually within an hour.</p>
-    <div class="intake-hero-stats">
-      <div class="intake-hero-stat"><i data-lucide="clock"></i><span>~5 minutes</span></div>
-      <div class="intake-hero-stat"><i data-lucide="shield-check"></i><span>HIPAA-secured</span></div>
-      <div class="intake-hero-stat"><i data-lucide="badge-check"></i><span>No commitment</span></div>
-    </div>
+    <p class="intake-hero-eyebrow"><i data-lucide="lock"></i> 100% Confidential · HIPAA-Secured</p>
+    <h1 style="margin-bottom:10px;">Verify Your Insurance</h1>
+    <p class="intake-hero-sub" style="margin-bottom:0;">Takes about 2 minutes. No commitment. Most major insurance accepted.</p>
   </div>
 </section>
 
@@ -169,6 +163,17 @@
           <label for="email">Email Address <span class="required">*</span></label>
           <input type="email" id="email" name="email" autocomplete="email" required maxlength="200" placeholder="you@example.com">
         </div>
+        <div class="form-group">
+          <label id="referral_source_label">How did you hear about us? <span class="required">*</span></label>
+          <div class="intake-select" data-select="referral_source" data-options="referral" data-freetext="true">
+            <div class="intake-select-input-wrap">
+              <input type="text" class="intake-select-input" id="referral_source_search" placeholder="Type or select…" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="referral_source_panel" aria-labelledby="referral_source_label">
+              <i data-lucide="chevron-down" class="intake-select-chevron"></i>
+            </div>
+            <div class="intake-select-panel" id="referral_source_panel" role="listbox"></div>
+          </div>
+          <input type="hidden" id="referral_source" name="referral_source">
+        </div>
       </div>
 
       <!-- ── Insurance info ──────────────────────────────────── -->
@@ -181,8 +186,15 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="insurance_company">Insurance Company <span class="required">*</span></label>
-          <input type="text" id="insurance_company" name="insurance_company" required maxlength="120" placeholder="e.g., Anthem Blue Cross, Aetna, Cigna…" autocomplete="organization">
+          <label id="insurance_company_label">Insurance Company <span class="required">*</span></label>
+          <div class="intake-select" data-select="insurance_company" data-options="insurers" data-freetext="true">
+            <div class="intake-select-input-wrap">
+              <input type="text" class="intake-select-input" id="insurance_company_search" placeholder="Type or select your insurance…" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="insurance_company_panel" aria-labelledby="insurance_company_label">
+              <i data-lucide="chevron-down" class="intake-select-chevron"></i>
+            </div>
+            <div class="intake-select-panel" id="insurance_company_panel" role="listbox"></div>
+          </div>
+          <input type="hidden" id="insurance_company" name="insurance_company">
         </div>
         <div class="form-group">
           <label id="residence_state_label">State of Residence <span class="required">*</span></label>
@@ -240,7 +252,7 @@
           <span class="intake-submit-label">Submit Securely <i data-lucide="lock"></i></span>
           <span class="intake-submit-loading" hidden><span class="intake-spinner" aria-hidden="true"></span> Sending securely…</span>
         </button>
-        <p class="form-privacy"><i data-lucide="shield-check"></i> Your information is encrypted end-to-end and only seen by our admissions team. Protected by HIPAA.</p>
+        <p class="form-privacy"><i data-lucide="shield-check"></i> <strong>100% Confidential.</strong> Your information is encrypted end-to-end and only seen by our admissions team. Protected by HIPAA.</p>
       </div>
 
     </form>
@@ -361,6 +373,7 @@
       <p class="footer-bottom-text">© 2026 Golden State Rehab. All rights reserved. Los Angeles, California.</p>
       <nav class="footer-bottom-links" aria-label="Legal links">
         <a href="/blog/">Blog</a>
+        <a href="/faq">FAQ</a>
         <a href="privacy-policy">Privacy Policy</a>
         <a href="terms-and-conditions">Terms of Use</a>
         <a href="/sitemap.xml">Sitemap</a>

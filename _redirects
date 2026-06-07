@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects
+# Force the canonical www host. These take effect once the apex domain
+# (goldenstate-rehab.com) is added to the Pages project under
+# Custom Domains. Until then, add the apex there to stop the non-www 404.
+https://goldenstate-rehab.com/*  https://www.goldenstate-rehab.com/:splat  301!
+http://goldenstate-rehab.com/*   https://www.goldenstate-rehab.com/:splat  301!
+
+# Legacy/blog safety: ensure /blog resolves to the blog index.
+/blog  /blog/  301

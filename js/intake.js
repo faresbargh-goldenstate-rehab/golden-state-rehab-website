@@ -60,6 +60,23 @@
     ['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],['WY','Wyoming'],
   ];
 
+  // Insurance carriers — keeps CRM values consistent, but free typing is allowed.
+  const INSURERS = [
+    'Aetna','Anthem Blue Cross','Blue Cross Blue Shield (out-of-state)','Blue Shield of California',
+    'Cigna','Health Net','Humana','Kaiser Permanente','Magellan Healthcare','UnitedHealthcare (UHC)',
+    'Ambetter','Beacon Health Options / Carelon','Centene','ComPsych','First Health Network','GEHA',
+    'Independence Blue Cross','MHN (Managed Health Network)','Molina Healthcare','MultiPlan / PHCS',
+    'Optum Behavioral Health','Oscar Health','Sutter Health Plus','TRICARE','UMR',
+    'Self-Pay / No Insurance','Not Sure',
+  ];
+
+  // Attribution — "How did you hear about us?"
+  const REFERRAL_SOURCES = [
+    'Google Search','Google Maps','Friend or Family','Doctor or Therapist Referral',
+    'Insurance Provider','Facebook or Instagram','TikTok','Saw an Ad','Alumni / Past Client',
+    'Psychology Today','Other',
+  ];
+
   let openSelect = null;
   document.querySelectorAll('.intake-select').forEach(initSelect);
   document.addEventListener('click', (e) => {
@@ -73,9 +90,13 @@
     const input = root.querySelector('.intake-select-input');
     const panel = root.querySelector('.intake-select-panel');
     if (!input || !panel) return;
-    const options = root.dataset.options === 'states'
-      ? US_STATES.map(([code, label]) => ({ value: code, label }))
-      : [];
+    let options;
+    if (root.dataset.options === 'states') options = US_STATES.map(([code, label]) => ({ value: code, label }));
+    else if (root.dataset.options === 'insurers') options = INSURERS.map((v) => ({ value: v, label: v }));
+    else if (root.dataset.options === 'referral') options = REFERRAL_SOURCES.map((v) => ({ value: v, label: v }));
+    else options = [];
+    const freetext = root.dataset.freetext === 'true';
+    root._freetext = freetext;
     renderOptions(panel, options);
 
     input.addEventListener('focus', () => {
@@ -88,9 +109,16 @@
       if (!root.classList.contains('is-open')) openSelectPanel(root);
     });
     input.addEventListener('input', () => {
+      // Free-text mode: capture whatever the user types live (CRM still gets a value
+      // even if it isn't in the list).
+      if (freetext) {
+        const h = document.getElementById(root.dataset.select);
+        if (h) h.value = input.value.trim();
+        hideError();
+      }
       const q = input.value.trim().toLowerCase();
       const filtered = q
-        ? options.filter((o) => o.label.toLowerCase().startsWith(q))
+        ? options.filter((o) => o.label.toLowerCase().includes(q))
         : options;
       renderOptions(panel, filtered);
       if (!root.classList.contains('is-open')) openSelectPanel(root);
@@ -144,10 +172,15 @@
     const hidden = document.getElementById(root.dataset.select);
     input.setAttribute('aria-expanded', 'false');
     const opts = root._allOptions || [];
-    const committed = hidden.value
-      ? opts.find((o) => o.value === hidden.value)
-      : null;
-    input.value = committed ? committed.label : '';
+    if (root._freetext) {
+      // Keep exactly what the user typed or picked — don't snap back to a list value.
+      if (hidden) hidden.value = input.value.trim();
+    } else {
+      const committed = hidden.value
+        ? opts.find((o) => o.value === hidden.value)
+        : null;
+      input.value = committed ? committed.label : '';
+    }
     renderOptions(panel, opts);
     if (openSelect === root) openSelect = null;
   }
@@ -366,7 +399,7 @@
     hideError();
 
     // Validate required fields
-    const required = ['first_name', 'last_name', 'date_of_birth', 'phone', 'email', 'insurance_company', 'residence_state', 'member_id'];
+    const required = ['first_name', 'last_name', 'date_of_birth', 'phone', 'email', 'insurance_company', 'residence_state', 'member_id', 'referral_source'];
     for (const name of required) {
       const el = form.elements.namedItem(name);
       if (!el || !el.value.trim()) {
@@ -410,6 +443,7 @@
     fd.set('email', email);
     fd.set('insurance_company', form.elements.namedItem('insurance_company').value.trim());
     fd.set('residence_state', form.elements.namedItem('residence_state').value.trim());
+    fd.set('referral_source', form.elements.namedItem('referral_source').value.trim());
     fd.set('member_id', form.elements.namedItem('member_id').value.trim());
 
     for (const [field, files] of selected.entries()) {

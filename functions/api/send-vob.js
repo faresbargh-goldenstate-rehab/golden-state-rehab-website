@@ -73,6 +73,8 @@ export async function onRequestPost(context) {
     if (!value) return jsonResponse({ error: 'missing_field', field: key }, 400);
     text[key] = value;
   }
+  // Optional attribution — captured for CRM, never required server-side.
+  text.referral_source = sanitize(formData.get('referral_source') || '', 120);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text.email)) {
     return jsonResponse({ error: 'invalid_email' }, 400);
   }
@@ -268,6 +270,7 @@ function renderTextBody(t, files) {
     `State of residence: ${t.residence_state}`,
     `Insurance company:  ${t.insurance_company}`,
     `Member ID:          ${t.member_id}`,
+    `Heard about us via: ${t.referral_source || '(not provided)'}`,
     '',
     'Attachments:',
     ...(files.length ? files.map((f) => `  • ${f.label} — ${f.originalName} (${formatBytes(f.bytes)})`) : ['  (none)']),
@@ -295,6 +298,7 @@ function renderHtmlBody(t, files) {
     ${row('State of residence', t.residence_state)}
     ${row('Insurance company', t.insurance_company)}
     ${row('Member ID', t.member_id)}
+    ${row('Heard about us via', t.referral_source || '—')}
   </table>
   <h3 style="font-size:14px;margin:24px 0 8px;color:#140E04;">Attachments (${files.length})</h3>
   <ul style="padding-left:20px;margin:0;">
