@@ -3246,3 +3246,17 @@ p:last-child { margin-bottom: 0; }
   .verify-cta-actions { width: 100%; }
   .verify-cta-actions .btn { flex: 1; justify-content: center; }
 }
+
+/* ── Language toggle + light cards (added for Spanish track / grid pass) ── */
+.nav-lang { display:inline-flex; align-items:center; gap:4px; font-size:13px; font-weight:600; color:var(--near-black); text-decoration:none; padding:7px 13px; border:1px solid var(--border); border-radius:999px; transition:all .2s ease; white-space:nowrap; }
+.nav-lang:hover { border-color:var(--gold); color:var(--gold-dark); background:var(--gold-light); }
+.nav-lang-mobile { font-weight:600 !important; color:var(--gold-dark) !important; }
+.card-light { background:#fff; border:1px solid var(--border); border-radius:16px; box-shadow:0 4px 24px rgba(20,14,4,.05); transition:transform .25s ease, box-shadow .25s ease; }
+.card-light:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(20,14,4,.09); }
+.card-light h3 { margin-bottom:8px; }
+/* CTA card for filling odd-count card grids */
+.cta-card { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:10px; background:linear-gradient(135deg, var(--gold-dark), var(--gold)); color:#fff; border-radius:16px; padding:32px; text-decoration:none; transition:transform .25s ease, box-shadow .25s ease; }
+.cta-card:hover { transform:translateY(-4px); box-shadow:0 14px 34px rgba(166,132,44,.35); }
+.cta-card h3 { color:#fff; margin:0; }
+.cta-card p { color:rgba(255,255,255,.9); margin:0; font-size:14px; }
+.cta-card .cta-card-arrow { margin-top:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px; }
