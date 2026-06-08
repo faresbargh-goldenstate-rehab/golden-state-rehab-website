@@ -3260,3 +3260,12 @@ p:last-child { margin-bottom: 0; }
 .cta-card h3 { color:#fff; margin:0; }
 .cta-card p { color:rgba(255,255,255,.9); margin:0; font-size:14px; }
 .cta-card .cta-card-arrow { margin-top:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px; }
+/* Compact language pill + linked dropdown label (nav-fit pass) */
+.nav-lang { padding:6px 11px; font-size:12px; letter-spacing:.01em; }
+.dropdown-col-label-link { text-decoration:none; transition:color .2s ease; cursor:pointer; }
+.dropdown-col-label-link:hover { color:var(--gold-dark); }
+/* Raise nav hamburger breakpoint so the language pill never overflows the bar */
+@media (max-width: 1150px) {
+  .nav-links, .nav-actions { display: none; }
+  .nav-toggle { display: flex; }
+}
