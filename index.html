@@ -213,36 +213,120 @@
 <!-- ═══════════════════════════════════════════════════════════
      CLINICAL TEAM PREVIEW — credibility (audit p28)
      ═══════════════════════════════════════════════════════════ -->
-<section class="section section-cream" aria-labelledby="team-preview-heading">
+<style>
+  .team-preview-section { overflow: hidden; }
+  .team-preview-section .section-header { text-align: center; }
+  .team-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 16px 0 10px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+  }
+  .team-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: team-marquee-scroll 44s linear infinite;
+  }
+  .team-marquee:hover .team-marquee-track,
+  .team-marquee:focus-within .team-marquee-track { animation-play-state: paused; }
+  .team-marquee-card {
+    flex: 0 0 auto;
+    width: 270px;
+    margin-right: 28px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .team-marquee-card .team-circle-name { transition: color .2s ease; }
+  .team-marquee-card:hover .team-circle-name { color: var(--gold-dark); }
+  .team-marquee-cred { font-size: 13px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+  @keyframes team-marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .team-marquee { mask-image: none; -webkit-mask-image: none; }
+    .team-marquee-track { animation: none; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .team-marquee-card { margin-right: 0; }
+  }
+</style>
+<section class="section section-cream team-preview-section" aria-labelledby="team-preview-heading">
   <div class="container">
     <div class="section-header reveal">
       <span class="badge-gold">Led by Experts</span>
-      <h2 id="team-preview-heading">Care From a Credentialed Clinical Team</h2>
-      <p>Board-certified and licensed clinicians lead every step of your treatment — real people, real expertise.</p>
+      <h2 id="team-preview-heading">Meet the Team Behind Your Care</h2>
+      <p>Board-certified physicians and licensed clinicians lead every step of your treatment — real people, real expertise.</p>
     </div>
-    <div class="team-grid">
-      <a href="team" class="team-circle-card reveal" style="text-decoration:none;color:inherit;">
+  </div>
+
+  <div class="team-marquee" role="group" aria-label="Golden State Rehab team members">
+    <div class="team-marquee-track">
+      <a href="team" class="team-circle-card team-marquee-card">
         <div class="team-circle-avatar"><img src="images/team/eric-chaghouri.jpg" alt="Dr. Eric Chaghouri, MD — Medical Director" width="400" height="400" loading="lazy"></div>
         <h3 class="team-circle-name">Dr. Eric Chaghouri, MD</h3>
         <p class="team-circle-role">Medical Director</p>
-        <p style="font-size:13px;color:var(--muted);margin-top:4px;">Board-Certified Psychiatrist · Keck School of Medicine, USC</p>
+        <p class="team-marquee-cred">Board-Certified Psychiatrist · Keck School of Medicine, USC</p>
       </a>
-      <a href="team" class="team-circle-card reveal reveal-delay-1" style="text-decoration:none;color:inherit;">
+      <a href="team" class="team-circle-card team-marquee-card">
         <div class="team-circle-avatar"><img src="images/team/ari-labowitz.jpg" alt="Ari Labowitz, LMFT — Clinical Director" width="400" height="400" loading="lazy"></div>
         <h3 class="team-circle-name">Ari Labowitz, LMFT</h3>
         <p class="team-circle-role">Clinical Director</p>
-        <p style="font-size:13px;color:var(--muted);margin-top:4px;">Licensed Marriage &amp; Family Therapist</p>
+        <p class="team-marquee-cred">Licensed Marriage &amp; Family Therapist</p>
       </a>
-      <a href="team" class="team-circle-card reveal reveal-delay-2" style="text-decoration:none;color:inherit;">
+      <a href="team" class="team-circle-card team-marquee-card">
         <div class="team-circle-avatar"><img src="images/team/kris-evans.jpg" alt="Kristopher Evans, CADC II — Program Director" width="400" height="400" loading="lazy"></div>
         <h3 class="team-circle-name">Kristopher Evans, CADC II</h3>
         <p class="team-circle-role">Program Director</p>
-        <p style="font-size:13px;color:var(--muted);margin-top:4px;">11+ Years in Substance Use Treatment</p>
+        <p class="team-marquee-cred">11+ Years in Substance Use Treatment</p>
+      </a>
+      <a href="team" class="team-circle-card team-marquee-card">
+        <div class="team-circle-avatar"><img src="images/team/sara-burns.jpg" alt="Sara Burns, AMFT — Therapist" width="400" height="400" loading="lazy"></div>
+        <h3 class="team-circle-name">Sara Burns, AMFT</h3>
+        <p class="team-circle-role">Therapist</p>
+        <p class="team-marquee-cred">Mood, Substance Use &amp; Trauma</p>
+      </a>
+      <a href="team" class="team-circle-card team-marquee-card">
+        <div class="team-circle-avatar"><img src="images/team/scott-hedlund.jpg" alt="Scott Hedlund — Director of Business Development" width="400" height="400" loading="lazy"></div>
+        <h3 class="team-circle-name">Scott Hedlund</h3>
+        <p class="team-circle-role">Director of Business Development</p>
+        <p class="team-marquee-cred">Person in Long-Term Recovery</p>
+      </a>
+      <a href="team" class="team-circle-card team-marquee-card" aria-hidden="true" tabindex="-1">
+        <div class="team-circle-avatar"><img src="images/team/eric-chaghouri.jpg" alt="" width="400" height="400" loading="lazy"></div>
+        <h3 class="team-circle-name">Dr. Eric Chaghouri, MD</h3>
+        <p class="team-circle-role">Medical Director</p>
+        <p class="team-marquee-cred">Board-Certified Psychiatrist · Keck School of Medicine, USC</p>
+      </a>
+      <a href="team" class="team-circle-card team-marquee-card" aria-hidden="true" tabindex="-1">
+        <div class="team-circle-avatar"><img src="images/team/ari-labowitz.jpg" alt="" width="400" height="400" loading="lazy"></div>
+        <h3 class="team-circle-name">Ari Labowitz, LMFT</h3>
+        <p class="team-circle-role">Clinical Director</p>
+        <p class="team-marquee-cred">Licensed Marriage &amp; Family Therapist</p>
+      </a>
+      <a href="team" class="team-circle-card team-marquee-card" aria-hidden="true" tabindex="-1">
+        <div class="team-circle-avatar"><img src="images/team/kris-evans.jpg" alt="" width="400" height="400" loading="lazy"></div>
+        <h3 class="team-circle-name">Kristopher Evans, CADC II</h3>
+        <p class="team-circle-role">Program Director</p>
+        <p class="team-marquee-cred">11+ Years in Substance Use Treatment</p>
+      </a>
+      <a href="team" class="team-circle-card team-marquee-card" aria-hidden="true" tabindex="-1">
+        <div class="team-circle-avatar"><img src="images/team/sara-burns.jpg" alt="" width="400" height="400" loading="lazy"></div>
+        <h3 class="team-circle-name">Sara Burns, AMFT</h3>
+        <p class="team-circle-role">Therapist</p>
+        <p class="team-marquee-cred">Mood, Substance Use &amp; Trauma</p>
+      </a>
+      <a href="team" class="team-circle-card team-marquee-card" aria-hidden="true" tabindex="-1">
+        <div class="team-circle-avatar"><img src="images/team/scott-hedlund.jpg" alt="" width="400" height="400" loading="lazy"></div>
+        <h3 class="team-circle-name">Scott Hedlund</h3>
+        <p class="team-circle-role">Director of Business Development</p>
+        <p class="team-marquee-cred">Person in Long-Term Recovery</p>
       </a>
     </div>
-    <div style="text-align:center;margin-top:36px;">
-      <a href="team" class="btn btn-primary">Meet the Full Team <i data-lucide="arrow-right"></i></a>
-    </div>
+  </div>
+
+  <div class="container" style="text-align:center;margin-top:40px;">
+    <a href="team" class="btn btn-primary">Meet the Full Team <i data-lucide="arrow-right"></i></a>
   </div>
 </section>
 
