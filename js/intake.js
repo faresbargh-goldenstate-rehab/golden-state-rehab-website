@@ -16,7 +16,7 @@
   'use strict';
 
   const ENDPOINT = '/api/send-vob';
-  const SUCCESS_URL = '/intake-success';
+  const SUCCESS_URL = (document.documentElement.lang === 'es') ? '/es/intake-success' : '/intake-success';
 
   // Per-file caps the server also enforces
   const MAX_FILE_BYTES = 10 * 1024 * 1024;   // 10 MB
@@ -150,7 +150,7 @@
   }
   function renderOptions(panel, options) {
     if (!options.length) {
-      panel.innerHTML = '<div class="intake-select-empty">No matches</div>';
+      panel.innerHTML = '<div class="intake-select-empty">' + (document.documentElement.lang === "es" ? "Sin resultados" : "No matches") + '</div>';
       return;
     }
     panel.innerHTML = options.map((o) =>

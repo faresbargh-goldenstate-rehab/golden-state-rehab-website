@@ -17,7 +17,7 @@
   /* EN path -> ES path: explicit pairs + the growing /es/ mirror list.
      Add an EN path to MIRROR once its /es/<path> page exists. */
   var PAIRS = { '/spanish-speaking-treatment': '/espanol' };
-  var MIRROR = ['/']; // EN paths that have a real /es/ mirror page
+  var MIRROR = ['/', '/verify-insurance', '/contact']; // EN paths that have a real /es/ mirror page
 
   function norm(p) {
     p = p.replace(/index\.html$/, '').replace(/\.html$/, '');
