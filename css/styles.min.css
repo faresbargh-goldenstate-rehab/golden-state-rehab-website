@@ -3276,3 +3276,7 @@ p:last-child { margin-bottom: 0; }
 .lang-banner button { background:none; border:none; color:rgba(255,255,255,.7); font-size:15px; cursor:pointer; line-height:1; padding:2px 4px; }
 .lang-banner button:hover { color:#fff; }
 @media (max-width:600px){ .lang-banner{ bottom:86px; font-size:13px; gap:10px; padding:10px 14px; } }
+/* Even gap below homepage "Who We Are" intro before the CTA banner (stacked layout) */
+@media (max-width: 1024px) {
+  [aria-labelledby="who-we-are-heading"] .intro-text { padding-bottom: 64px; padding-right: 32px; }
+}
