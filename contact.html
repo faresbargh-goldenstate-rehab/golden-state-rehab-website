@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LLBGYXQ0Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3LLBGYXQ0Y');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Golden State Rehab — Los Angeles</title>
@@ -161,6 +170,10 @@
               <label for="contact-email">Email Address</label>
               <input type="email" id="contact-email" name="email" placeholder="jane@email.com" autocomplete="email">
             </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-address">Address <span style="color:var(--muted); font-weight:400;">(optional)</span></label>
+            <input type="text" id="contact-address" name="address" placeholder="Start typing your address..." autocomplete="off">
           </div>
           <div class="form-group">
             <label for="contact-inquiry">I am reaching out as <span class="required">*</span></label>
@@ -485,5 +498,30 @@
   <a class="mobile-cta-call" href="tel:+14242083120"><i data-lucide="phone"></i> Call Now</a>
   <a class="mobile-cta-verify" href="/verify-insurance"><i data-lucide="shield-check"></i> Verify Insurance</a>
 </div>
+
+<!-- Google Places Autocomplete for the optional address field -->
+<script>
+  function initContactAutocomplete() {
+    var input = document.getElementById('contact-address');
+    if (!input || !(window.google && google.maps && google.maps.places)) return;
+    var laBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(33.70, -118.67),
+      new google.maps.LatLng(34.34, -118.15)
+    );
+    var autocomplete = new google.maps.places.Autocomplete(input, {
+      types: ['address'],
+      componentRestrictions: { country: 'us' },
+      fields: ['formatted_address'],
+      bounds: laBounds
+    });
+    autocomplete.addListener('place_changed', function () {
+      var place = autocomplete.getPlace();
+      if (place && place.formatted_address) {
+        input.value = place.formatted_address;
+      }
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCIhLSe9iCspJKj1AYmCCPcZNNJ8o6sE8&libraries=places&callback=initContactAutocomplete&loading=async" async defer></script>
 </body>
 </html>
