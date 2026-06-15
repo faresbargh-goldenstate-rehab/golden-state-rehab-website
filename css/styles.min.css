@@ -3278,5 +3278,5 @@ p:last-child { margin-bottom: 0; }
 @media (max-width:600px){ .lang-banner{ bottom:86px; font-size:13px; gap:10px; padding:10px 14px; } }
 /* Even gap below homepage "Who We Are" intro before the CTA banner (stacked layout) */
 @media (max-width: 1024px) {
-  [aria-labelledby="who-we-are-heading"] .intro-text { padding-bottom: 64px; padding-right: 32px; }
+  [aria-labelledby="who-we-are-heading"] .intro-text { padding-bottom: 24px; padding-right: 32px; }
 }
