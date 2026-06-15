@@ -29,6 +29,7 @@
   /* Direct Spanish mirror for an English path, or null if none exists yet. */
   function esMirror(p) {
     if (PAIRS[p]) return PAIRS[p];
+    if (p === '/programs') return '/es/programs/';
     if (p === '/' && MIRROR.indexOf('/') >= 0) return '/es/';
     if (MIRROR.indexOf(p) >= 0) return '/es' + p;
     return null;
@@ -36,6 +37,7 @@
   /* English counterpart for a Spanish path. */
   function enFor(p) {
     for (var k in PAIRS) { if (PAIRS[k] === p) return k; }
+    if (p === '/es/programs') return '/programs/';
     if (p === '/es' || p === '/es/') return '/';
     if (p.indexOf('/es/') === 0) return p.slice(3) || '/';
     return '/';
