@@ -142,14 +142,37 @@
 <section class="hero" aria-label="Hero">
   <div class="container hero-content">
     <h1>Los Angeles Addiction Treatment Center <span class="hero-h1-badge"><span class="hero-h1-badge-rule" aria-hidden="true"></span><span class="hero-h1-badge-text">100+ Recoveries</span><span class="hero-h1-badge-rule" aria-hidden="true"></span></span></h1>
-    <p class="hero-subheadline">Addiction &amp; mental health treatment<br>designed around your life.</p>
-    <div class="hero-actions">
-      <a href="verify-insurance" class="btn btn-primary btn-lg">
-        Verify Insurance <i data-lucide="arrow-right"></i>
-      </a>
-      <a href="tel:+14242083120" class="btn btn-secondary btn-lg">
-        <i data-lucide="phone"></i> (424) 208-3120
-      </a>
+    <div class="hero-tabs" role="tablist" aria-label="Who are you reaching out for?">
+      <button class="hero-tab is-active" role="tab" id="tab-self" aria-controls="persona-self" aria-selected="true" data-persona="self">For Myself</button>
+      <button class="hero-tab" role="tab" id="tab-loved" aria-controls="persona-loved" aria-selected="false" tabindex="-1" data-persona="loved">For a Loved One</button>
+    </div>
+
+    <div class="hero-persona" id="persona-self" role="tabpanel" aria-labelledby="tab-self">
+      <p class="hero-subheadline">Outpatient treatment that fits the life you already have.</p>
+      <p class="hero-persona-support">You shouldn't have to disappear from your life to get well. Our PHP, IOP, and telehealth programs in West LA are built around your schedule.</p>
+      <ul class="hero-benefits check-list">
+        <li>Live at home while you get real clinical care</li>
+        <li>Work with licensed therapists and a board-certified psychiatrist, not interns</li>
+        <li>Most major PPO insurance accepted, and we verify it free</li>
+      </ul>
+      <div class="hero-actions">
+        <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+        <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
+      </div>
+    </div>
+
+    <div class="hero-persona" id="persona-loved" role="tabpanel" aria-labelledby="tab-loved" hidden>
+      <p class="hero-subheadline">Getting help for someone you love, without burning yourself out.</p>
+      <p class="hero-persona-support">We talk with worried families every day. We'll help you understand the options, sort out the insurance, and figure out how to bring it up with them.</p>
+      <ul class="hero-benefits check-list">
+        <li>Confidential guidance for families and partners</li>
+        <li>We handle the logistics so you can just be there for them</li>
+        <li>Spanish-speaking staff for your whole family</li>
+      </ul>
+      <div class="hero-actions">
+        <a href="contact" class="btn btn-primary btn-lg">Talk to Our Team <i data-lucide="arrow-right"></i></a>
+        <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
+      </div>
     </div>
 
     <div class="hero-trust-row" aria-label="Trust badges">

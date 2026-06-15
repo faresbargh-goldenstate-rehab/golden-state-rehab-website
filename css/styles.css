@@ -3284,3 +3284,48 @@ p:last-child { margin-bottom: 0; }
 @media (min-width: 1025px) {
   [aria-labelledby="who-we-are-heading"] .intro-text { padding-bottom: 40px; }
 }
+
+
+/* ── Hero audience tabs (For Myself / For a Loved One) ───────────────── */
+.hero-tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 5px;
+  margin: 0 auto 30px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(20, 14, 4, 0.06);
+}
+.hero-tab {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--near-black);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+  white-space: nowrap;
+}
+.hero-tab:hover { color: var(--gold-dark); }
+.hero-tab.is-active { background: var(--gold); color: #fff; box-shadow: 0 2px 8px rgba(166, 132, 44, 0.32); }
+.hero-tab.is-active:hover { color: #fff; }
+.hero-tab:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; }
+.hero-persona[hidden] { display: none; }
+.hero-persona { animation: heroPersonaFade .35s ease; }
+@keyframes heroPersonaFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.hero-persona .hero-subheadline { margin-bottom: 14px; }
+.hero-persona-support { font-size: 16px; color: rgba(20, 14, 4, 0.6); max-width: 580px; margin: 0 auto 26px; line-height: 1.6; }
+.hero-benefits { width: fit-content; max-width: 520px; margin: 0 auto 34px; text-align: left; }
+@media (prefers-reduced-motion: reduce) { .hero-persona { animation: none; } }
+@media (max-width: 640px) {
+  .hero-tabs { width: 100%; max-width: 360px; }
+  .hero-tab { flex: 1; padding: 11px 12px; font-size: 14px; }
+  .hero-persona-support { font-size: 15px; }
+  .hero-benefits { width: 100%; max-width: 340px; }
+}
