@@ -21,9 +21,11 @@
     backdrop-filter: blur(10px);
     border-top: 1px solid var(--border);
     box-shadow: 0 -6px 24px rgba(20, 14, 4, 0.12);
-    animation: cta-bar-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform: translateY(110%);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
   @keyframes cta-bar-in { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  .mobile-cta-bar.is-visible { transform: translateY(0); }
 
   .mobile-cta-bar a {
     display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -45,5 +47,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mobile-cta-bar { animation: none; }
+  .mobile-cta-bar { transition: none; }
 }
