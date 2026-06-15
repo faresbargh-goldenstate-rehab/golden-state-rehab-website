@@ -3280,3 +3280,7 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 1024px) {
   [aria-labelledby="who-we-are-heading"] .intro-text { padding-bottom: 24px; padding-right: 32px; }
 }
+/* Desktop (2-col): keep the same tight, intentional gap under the buttons */
+@media (min-width: 1025px) {
+  [aria-labelledby="who-we-are-heading"] .intro-text { padding-bottom: 40px; }
+}
