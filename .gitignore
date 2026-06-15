@@ -52,3 +52,7 @@ build/
 # Backup files
 *.bak
 *.orig
+
+# Local-only session notes (never deploy — repo is public via Cloudflare Pages)
+HANDOFF.md
+*.handoff.md
