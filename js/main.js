@@ -239,12 +239,9 @@ document.addEventListener('DOMContentLoaded', () => {
   overlay.setAttribute('aria-modal', 'true');
   overlay.setAttribute('aria-label', t.aria);
 
-  // Resolve correct path to contact from any page depth; Spanish pages
-  // point to the Spanish contact page.
-  var path = window.location.pathname;
-  var depth = (path.match(/\//g) || []).length - 1;
-  var prefix = depth > 1 ? '../' : '';
-  var contactHref = isES ? '/es/contact' : (prefix + 'contact.html');
+  // Contact link uses clean URLs, matching the rest of the site (avoids a
+  // .html -> clean-URL redirect); Spanish pages point to the Spanish contact.
+  var contactHref = isES ? '/es/contact' : '/contact';
 
   overlay.innerHTML =
     '<div class="exit-popup">' +
