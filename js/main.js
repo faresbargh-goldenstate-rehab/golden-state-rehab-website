@@ -549,3 +549,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderQuestion();
 })();
+
+
+// ── Floating quiz prompt (FAB) + quiz modal ──────────────────────────
+(function () {
+  var fab = document.getElementById('quizFab');
+  var modal = document.getElementById('quizModal');
+  if (!fab || !modal) return;
+  var card = document.getElementById('quizFabCard');
+  var bubble = document.getElementById('quizFabBubble');
+  var openBtn = document.getElementById('quizFabOpen');
+  var closeBtn = document.getElementById('quizFabClose');
+  var modalClose = document.getElementById('quizModalClose');
+  var overlay = document.getElementById('quizModalOverlay');
+  var minimized = false;
+  try { if (sessionStorage.getItem('quizFabMinimized')) minimized = true; } catch (e) {}
+
+  function showBubble() {
+    minimized = true;
+    fab.classList.remove('is-open');
+    card.hidden = true;
+    bubble.hidden = false;
+  }
+  function showFab() {
+    fab.hidden = false;
+    if (minimized) { showBubble(); return; }
+    card.hidden = false;
+    bubble.hidden = true;
+    requestAnimationFrame(function () { fab.classList.add('is-open'); });
+  }
+  function openModal() {
+    modal.hidden = false;
+    requestAnimationFrame(function () { modal.classList.add('is-open'); });
+    document.body.style.overflow = 'hidden';
+    if (window.lucide) lucide.createIcons();
+    var first = modal.querySelector('.quiz-option');
+    if (first) { try { first.focus(); } catch (e) {} }
+  }
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(function () { modal.hidden = true; }, 300);
+  }
+
+  if (openBtn) openBtn.addEventListener('click', function () { openModal(); showBubble(); });
+  if (bubble) bubble.addEventListener('click', openModal);
+  if (closeBtn) closeBtn.addEventListener('click', function () {
+    showBubble();
+    try { sessionStorage.setItem('quizFabMinimized', '1'); } catch (e) {}
+  });
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (overlay) overlay.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+
+  // Appear after a calm delay; auto-minimize to a bubble if left untouched.
+  setTimeout(showFab, 5000);
+  setTimeout(function () { if (!minimized && fab.classList.contains('is-open')) showBubble(); }, 17000);
+})();

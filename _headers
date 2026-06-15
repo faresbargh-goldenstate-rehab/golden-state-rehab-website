@@ -1,0 +1,11 @@
+# Cloudflare Pages response headers.
+# CSS/JS filenames are unhashed (styles.min.css, main.min.js), so browsers
+# were caching old copies after a deploy. Force revalidation on every load:
+# the browser sends a conditional request and gets a tiny 304 when unchanged,
+# or the fresh file the moment it changes. Fixes "I pushed but still see the
+# old version" without needing a hard refresh.
+/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/js/*
+  Cache-Control: public, max-age=0, must-revalidate
