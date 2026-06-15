@@ -3490,3 +3490,8 @@ p:last-child { margin-bottom: 0; }
 .quiz-modal-head p { font-size: 15px; color: var(--muted); margin: 0; line-height: 1.5; }
 @media (max-width: 560px) { .quiz-modal-panel { padding: 30px 20px 24px; } .quiz-modal-head h2 { font-size: 21px; } }
 @media (prefers-reduced-motion: reduce) { .quiz-modal-overlay, .quiz-modal-panel { transition: opacity .2s ease; transform: none; } }
+
+
+/* ── Page-level audience targeting (For Myself / For a Loved One) ────── */
+body[data-persona="loved"] .persona-self { display: none; }
+body:not([data-persona="loved"]) .persona-loved { display: none; }

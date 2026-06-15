@@ -26,11 +26,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css">
-  <link rel="stylesheet" href="/css/cta.css">
-<script src="/js/i18n.js"></script>
+  <link rel="stylesheet" href="css/styles.min.css?v=2">
+  <link rel="stylesheet" href="/css/cta.css?v=2">
+<script src="/js/i18n.js?v=2"></script>
 </head>
-<body>
+<body data-persona="self">
 
 <!-- ═══════════════════════════════════════════════════════════
      STICKY PHONE BANNER
@@ -142,37 +142,21 @@
 <section class="hero" aria-label="Hero">
   <div class="container hero-content">
     <h1>Los Angeles Addiction Treatment Center <span class="hero-h1-badge"><span class="hero-h1-badge-rule" aria-hidden="true"></span><span class="hero-h1-badge-text">100+ Recoveries</span><span class="hero-h1-badge-rule" aria-hidden="true"></span></span></h1>
-    <div class="hero-tabs" role="tablist" aria-label="Who are you reaching out for?">
-      <button class="hero-tab is-active" role="tab" id="tab-self" aria-controls="persona-self" aria-selected="true" data-persona="self">For Myself</button>
-      <button class="hero-tab" role="tab" id="tab-loved" aria-controls="persona-loved" aria-selected="false" tabindex="-1" data-persona="loved">For a Loved One</button>
+    <div class="hero-tabs" role="group" aria-label="Who are you reaching out for?">
+      <button class="hero-tab is-active" type="button" data-persona="self" aria-pressed="true">For Myself</button>
+      <button class="hero-tab" type="button" data-persona="loved" aria-pressed="false">For a Loved One</button>
     </div>
 
-    <div class="hero-persona" id="persona-self" role="tabpanel" aria-labelledby="tab-self">
-      <p class="hero-subheadline">Outpatient treatment that fits the life you already have.</p>
-      <p class="hero-persona-support">You shouldn't have to disappear from your life to get well. Our PHP, IOP, and telehealth programs in West LA are built around your schedule.</p>
-      <ul class="hero-benefits check-list">
-        <li>Live at home while you get real clinical care</li>
-        <li>Work with licensed therapists and a board-certified psychiatrist, not interns</li>
-        <li>Most major PPO insurance accepted, and we verify it free</li>
-      </ul>
-      <div class="hero-actions">
-        <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
-        <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
-      </div>
-    </div>
+    <p class="hero-subheadline persona-self">Addiction and mental health treatment designed around your life.</p>
+    <p class="hero-subheadline persona-loved">When someone you love is struggling, we'll help you find the way forward.</p>
 
-    <div class="hero-persona" id="persona-loved" role="tabpanel" aria-labelledby="tab-loved" hidden>
-      <p class="hero-subheadline">Getting help for someone you love, without burning yourself out.</p>
-      <p class="hero-persona-support">We talk with worried families every day. We'll help you understand the options, sort out the insurance, and figure out how to bring it up with them.</p>
-      <ul class="hero-benefits check-list">
-        <li>Confidential guidance for families and partners</li>
-        <li>We handle the logistics so you can just be there for them</li>
-        <li>Spanish-speaking staff for your whole family</li>
-      </ul>
-      <div class="hero-actions">
-        <a href="contact" class="btn btn-primary btn-lg">Talk to Our Team <i data-lucide="arrow-right"></i></a>
-        <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
-      </div>
+    <div class="hero-actions persona-self">
+      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+      <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
+    </div>
+    <div class="hero-actions persona-loved">
+      <a href="contact" class="btn btn-primary btn-lg">Talk to Our Team <i data-lucide="arrow-right"></i></a>
+      <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
     </div>
 
     <a href="#referrals" class="hero-pro-link">Referring a client? Start here <i data-lucide="arrow-right"></i></a>
@@ -227,7 +211,7 @@
   <div class="container">
     <div class="section-header reveal">
       <h2 id="why-us-heading">Why Golden State Rehab</h2>
-      <p>Evidence-based care and a plan built around your real life, at a private outpatient center in West Los Angeles.</p>
+      <p><span class="persona-self">Evidence-based care and a plan built around your real life, at a private outpatient center in West Los Angeles.</span><span class="persona-loved">Evidence-based care, a real clinical team, and a plan built around the person you love, at a private outpatient center in West Los Angeles.</span></p>
     </div>
     <div class="why-us-grid">
       <div class="why-us-card reveal reveal-delay-1">
@@ -581,10 +565,13 @@
   <div class="cta-banner-overlay"></div>
   <div class="cta-banner-content">
     <span class="cta-meta"><i data-lucide="shield-check"></i> Confidential · Free · 24/7</span>
-    <h2>Ready to take the next step?</h2>
-    <p>Verify your insurance in about a minute, or call our Los Angeles admissions team and we'll walk you through every step.</p>
+    <h2 class="persona-self">Ready to take the next step?</h2>
+    <h2 class="persona-loved">Ready to help them take the first step?</h2>
+    <p class="persona-self">Verify your insurance in about a minute, or call our Los Angeles admissions team and we'll walk you through every step. Free and confidential.</p>
+    <p class="persona-loved">Call our Los Angeles admissions team. We'll help you understand the options, sort out the insurance, and figure out how to start the conversation. Free and confidential.</p>
     <div class="btn-group">
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify Insurance <i data-lucide="arrow-right"></i></a>
+      <a href="verify-insurance" class="btn btn-primary btn-lg persona-self">Verify Insurance <i data-lucide="arrow-right"></i></a>
+      <a href="contact" class="btn btn-primary btn-lg persona-loved">Talk to Admissions <i data-lucide="arrow-right"></i></a>
       <a href="tel:+14242083120" class="btn btn-white-outline btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
     </div>
   </div>
@@ -686,7 +673,7 @@
   </div>
 <div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></footer>
 
-<script src="js/main.min.js"></script>
+<script src="js/main.min.js?v=2"></script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
 <script type="application/ld+json">
 {

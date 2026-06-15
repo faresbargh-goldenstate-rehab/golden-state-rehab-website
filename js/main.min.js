@@ -352,28 +352,29 @@ document.addEventListener('DOMContentLoaded', () => {
 }());
 
 
-// ── Hero audience tabs (For Myself / For a Loved One) ────────────────
+// ── Hero audience tabs -> page-wide persona targeting ────────────────
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.hero-tab'));
   if (!tabs.length) return;
-  function select(tab) {
+  function setPersona(p) {
+    document.body.setAttribute('data-persona', p);
     tabs.forEach(function (t) {
-      var on = t === tab;
+      var on = t.getAttribute('data-persona') === p;
       t.classList.toggle('is-active', on);
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-      t.setAttribute('tabindex', on ? '0' : '-1');
-      var panel = document.getElementById(t.getAttribute('aria-controls'));
-      if (panel) panel.hidden = !on;
+      t.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
+    try { localStorage.setItem('gsr_persona', p); } catch (e) {}
   }
-  tabs.forEach(function (tab, i) {
-    tab.addEventListener('click', function () { select(tab); });
+  var saved = null;
+  try { saved = localStorage.getItem('gsr_persona'); } catch (e) {}
+  if (saved === 'loved') setPersona('loved');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () { setPersona(tab.getAttribute('data-persona')); });
     tab.addEventListener('keydown', function (e) {
       if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
       e.preventDefault();
-      var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
-      next.focus();
-      select(next);
+      var other = tabs.filter(function (t) { return t !== tab; })[0];
+      if (other) { other.focus(); setPersona(other.getAttribute('data-persona')); }
     });
   });
 })();
