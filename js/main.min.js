@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(function () { el.hidden = true; }, 400);
     try { sessionStorage.setItem('tickerClosed', '1'); } catch (e) {}
   });
-  setTimeout(start, 3500);
+  setTimeout(start, 1500);
 })();
 
 
@@ -604,6 +604,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
 
   // Appear after a calm delay; auto-minimize to a bubble if left untouched.
-  setTimeout(showFab, 5000);
+  setTimeout(showFab, 2500);
   setTimeout(function () { if (!minimized && fab.classList.contains('is-open')) showBubble(); }, 17000);
 })();
