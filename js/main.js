@@ -215,27 +215,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var overlay = document.createElement('div');
   overlay.className = 'exit-popup-overlay';
+  // Language-aware copy (mirrors the lang handling in intake.js).
+  var isES = document.documentElement.lang === 'es';
+  var t = isES ? {
+    aria: 'Antes de irte',
+    imgAlt: 'Una sala de terapia privada en Golden State Rehab',
+    eyebrow: 'Un Momento de Claridad',
+    heading: 'Espera. No Te Vayas<br>Sin Ayuda.',
+    text: 'Cada momento cuenta cuando se trata de la recuperación. Una decisión puede cambiar tu vida — haz que esta valga.',
+    cta: 'Habla con Nuestro Equipo',
+    close: 'Cerrar'
+  } : {
+    aria: 'Before you go',
+    imgAlt: 'A private therapy room at Golden State Rehab',
+    eyebrow: 'A Moment of Clarity',
+    heading: 'Wait. Don\'t Leave<br>Without Help.',
+    text: 'Every moment matters when it comes to recovery. One decision can change your life — make this one count.',
+    cta: 'Speak With Our Team',
+    close: 'Close'
+  };
+
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Before you go');
+  overlay.setAttribute('aria-label', t.aria);
 
-  // Resolve correct path to contact.html from any page depth
+  // Resolve correct path to contact from any page depth; Spanish pages
+  // point to the Spanish contact page.
   var path = window.location.pathname;
   var depth = (path.match(/\//g) || []).length - 1;
   var prefix = depth > 1 ? '../' : '';
+  var contactHref = isES ? '/es/contact' : (prefix + 'contact.html');
 
   overlay.innerHTML =
     '<div class="exit-popup">' +
-      '<img class="exit-popup-image" src="/images/facility/individual-therapy-room.jpg" alt="A private therapy room at Golden State Rehab" loading="lazy">' +
+      '<img class="exit-popup-image" src="/images/facility/individual-therapy-room.jpg" alt="' + t.imgAlt + '" loading="lazy">' +
       '<div class="exit-popup-body">' +
-        '<p class="exit-popup-eyebrow">A Moment of Clarity</p>' +
-        '<h2 class="exit-popup-heading">Wait. Don\'t Leave<br>Without Help.</h2>' +
-        '<p class="exit-popup-text">Every moment matters when it comes to recovery. One decision can change your life — make this one count.</p>' +
+        '<p class="exit-popup-eyebrow">' + t.eyebrow + '</p>' +
+        '<h2 class="exit-popup-heading">' + t.heading + '</h2>' +
+        '<p class="exit-popup-text">' + t.text + '</p>' +
         '<div class="exit-popup-actions">' +
-          '<a href="' + prefix + 'contact.html" class="btn btn-primary">Speak With Our Team <i data-lucide="arrow-right"></i></a>' +
+          '<a href="' + contactHref + '" class="btn btn-primary">' + t.cta + ' <i data-lucide="arrow-right"></i></a>' +
         '</div>' +
       '</div>' +
-      '<button class="exit-popup-close" aria-label="Close"><i data-lucide="x"></i></button>' +
+      '<button class="exit-popup-close" aria-label="' + t.close + '"><i data-lucide="x"></i></button>' +
     '</div>';
 
   document.body.appendChild(overlay);
