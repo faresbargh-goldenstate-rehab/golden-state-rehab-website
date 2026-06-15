@@ -188,7 +188,35 @@
 <!-- ═══════════════════════════════════════════════════════════
      INSURANCE LOGOS — first block below hero ("Can I afford this?")
      ═══════════════════════════════════════════════════════════ -->
-<section class="insurance-strip" aria-labelledby="insurance-heading"><div class="container"><div class="insurance-header-row"><h2 class="insurance-heading" id="insurance-heading">We Accept Most Major Insurance Providers</h2></div><div class="insurance-logos-grid"><img src="images/insurance/aetna.png" alt="Aetna" class="ins-logo" width="120" height="40"><img src="images/insurance/anthem.png" alt="Anthem" class="ins-logo" width="120" height="40"><img src="images/insurance/cigna.png" alt="Cigna" class="ins-logo" width="120" height="40"><img src="images/insurance/united-healthcare.png" alt="United Healthcare" class="ins-logo" width="120" height="40"><img src="images/insurance/bcbs.png" alt="Blue Cross Blue Shield" class="ins-logo" width="120" height="40"><img src="images/insurance/highmark.png" alt="Highmark" class="ins-logo" width="120" height="40"><img src="images/insurance/carefirst.png" alt="CareFirst" class="ins-logo" width="120" height="40"><img src="images/insurance/emblemhealth.png" alt="EmblemHealth" class="ins-logo" width="120" height="40"><img src="images/insurance/geha.png" alt="GEHA" class="ins-logo" width="120" height="40"><img src="images/insurance/excellus.png" alt="Excellus BCBS" class="ins-logo" width="120" height="40"><img src="images/insurance/amerihealth.png" alt="AmeriHealth" class="ins-logo" width="120" height="40"><img src="images/insurance/multiplan.png" alt="MultiPlan" class="ins-logo" width="120" height="40"></div><div class="insurance-cta-row"><a href="verify-insurance" class="btn btn-primary btn-lg">Verify Insurance <i data-lucide="arrow-right"></i></a></div></div></section>
+<section class="insurance-strip insurance-checker" aria-labelledby="insurance-heading" id="coverage">
+  <div class="container">
+    <div class="insurance-header-row insurance-checker-head">
+      <span class="badge-gold">Check Your Coverage</span>
+      <h2 class="insurance-heading" id="insurance-heading">See if your insurance is accepted in seconds</h2>
+      <p class="insurance-checker-sub">Tap your provider below. We'll confirm it on the spot, then verify your exact benefits for free, usually in under a minute.</p>
+    </div>
+    <div class="insurance-logos-grid" role="group" aria-label="Select your insurance provider">
+      <button class="ins-tile" type="button" data-provider="Aetna"><img src="images/insurance/aetna.png" alt="Aetna" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="Anthem"><img src="images/insurance/anthem.png" alt="Anthem" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="Cigna"><img src="images/insurance/cigna.png" alt="Cigna" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="United Healthcare"><img src="images/insurance/united-healthcare.png" alt="United Healthcare" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="Blue Cross Blue Shield"><img src="images/insurance/bcbs.png" alt="Blue Cross Blue Shield" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="Highmark"><img src="images/insurance/highmark.png" alt="Highmark" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="CareFirst"><img src="images/insurance/carefirst.png" alt="CareFirst" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="EmblemHealth"><img src="images/insurance/emblemhealth.png" alt="EmblemHealth" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="GEHA"><img src="images/insurance/geha.png" alt="GEHA" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="Excellus BCBS"><img src="images/insurance/excellus.png" alt="Excellus BCBS" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="AmeriHealth"><img src="images/insurance/amerihealth.png" alt="AmeriHealth" class="ins-logo" width="120" height="40"></button>
+      <button class="ins-tile" type="button" data-provider="MultiPlan"><img src="images/insurance/multiplan.png" alt="MultiPlan" class="ins-logo" width="120" height="40"></button>
+    </div>
+    <div class="coverage-result" id="coverageResult" role="status" hidden>
+      <p class="coverage-result-msg"><i data-lucide="badge-check"></i> <span><strong id="coverageProvider">Aetna</strong> is one of the plans we work with. We'll verify your exact benefits for free, with no commitment.</span></p>
+      <a href="verify-insurance" class="btn btn-primary btn-lg" id="coverageCta"><span id="coverageCtaText">Verify My Benefits</span> <i data-lucide="arrow-right"></i></a>
+      <p class="coverage-result-note">Don't see your provider? We work with most major PPO plans. <a href="verify-insurance">Check yours free</a>.</p>
+    </div>
+    <div class="insurance-cta-row" id="coverageDefaultCta"><a href="verify-insurance" class="btn btn-primary btn-lg">Verify Insurance <i data-lucide="arrow-right"></i></a></div>
+  </div>
+</section>
 
 <!-- ═══════════════════════════════════════════════════════════
      2. WHY GOLDEN STATE REHAB?
@@ -755,6 +783,11 @@
   "inLanguage": "en-US"
 }
 </script>
+<div class="live-ticker" id="liveTicker" aria-hidden="true" hidden>
+  <span class="live-ticker-dot" aria-hidden="true"></span>
+  <span class="live-ticker-msg" id="liveTickerMsg"></span>
+  <button class="live-ticker-close" id="liveTickerClose" type="button" aria-label="Dismiss">✕</button>
+</div>
 <div class="mobile-cta-bar" role="region" aria-label="Quick contact actions">
   <a class="mobile-cta-call" href="tel:+14242083120"><i data-lucide="phone"></i> Call Now</a>
   <a class="mobile-cta-verify" href="/verify-insurance"><i data-lucide="shield-check"></i> Verify Insurance</a>
