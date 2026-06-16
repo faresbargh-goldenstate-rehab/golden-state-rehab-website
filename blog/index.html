@@ -244,7 +244,7 @@
 
 <script src="../js/main.min.js"></script>
 <script>
-  if (window.lucide) lucide.createIcons();
+  document.addEventListener('DOMContentLoaded', function(){ if (window.lucide) lucide.createIcons(); });
   // Category filter
   document.querySelectorAll('.blog-pill').forEach(function(pill){
     pill.addEventListener('click', function(){

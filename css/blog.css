@@ -220,6 +220,7 @@
 }
 .article-share a:hover { background: var(--gold); color: var(--near-black); border-color: var(--gold); transform: translateY(-2px); }
 .article-share i { width: 18px; height: 18px; }
+.article-share a svg { width: 18px; height: 18px; }
 
 /* ─── Newsletter / CTA band ─────────────────────────────────── */
 .blog-cta {
