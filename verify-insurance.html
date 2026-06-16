@@ -135,9 +135,18 @@
   <div class="container intake-hero-inner intake-fade-in">
     <p class="intake-hero-eyebrow"><i data-lucide="lock"></i> 100% Confidential · HIPAA-Secured</p>
     <h1 style="margin-bottom:10px;">Verify Your Insurance</h1>
-    <p class="intake-hero-sub" style="margin-bottom:0;">Takes about 2 minutes. No commitment. Most major insurance accepted.</p>
+    <p class="intake-hero-sub" style="margin-bottom:0;">Free and confidential. Most major insurance accepted.</p>
   </div>
 </section>
+
+<style>
+  .intake-card-title { font-size: 22px; margin: 0 0 18px; }
+  .intake-title-optional { font-weight: 400; font-size: 0.62em; color: var(--muted); letter-spacing: 0; margin-left: 6px; }
+  .intake-gated[hidden] { display: none; }
+  .intake-reveal-in { animation: intakeReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+  @keyframes intakeReveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .intake-reveal-in { animation: none; } }
+</style>
 
 <!-- Intake Form -->
 <section class="section intake-section">
@@ -146,14 +155,8 @@
     <form id="intake-form" class="intake-form" novalidate enctype="multipart/form-data">
 
       <!-- ── Personal info ───────────────────────────────────── -->
-      <div class="intake-card reveal">
-        <div class="intake-card-head">
-          <span class="intake-step-num">1</span>
-          <div>
-            <h2>Your Information</h2>
-            <p>The basics we need to identify your file.</p>
-          </div>
-        </div>
+      <div class="intake-card intake-step">
+        <h2 class="intake-card-title">Let's start with you</h2>
         <div class="form-row">
           <div class="form-group">
             <label for="first_name">First Name <span class="required">*</span></label>
@@ -178,28 +181,11 @@
           <label for="email">Email Address <span class="required">*</span></label>
           <input type="email" id="email" name="email" autocomplete="email" required maxlength="200" placeholder="you@example.com">
         </div>
-        <div class="form-group">
-          <label id="referral_source_label">How did you hear about us? <span class="required">*</span></label>
-          <div class="intake-select" data-select="referral_source" data-options="referral" data-freetext="true">
-            <div class="intake-select-input-wrap">
-              <input type="text" class="intake-select-input" id="referral_source_search" placeholder="Type or select…" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="referral_source_panel" aria-labelledby="referral_source_label">
-              <i data-lucide="chevron-down" class="intake-select-chevron"></i>
-            </div>
-            <div class="intake-select-panel" id="referral_source_panel" role="listbox"></div>
-          </div>
-          <input type="hidden" id="referral_source" name="referral_source">
-        </div>
       </div>
 
       <!-- ── Insurance info ──────────────────────────────────── -->
-      <div class="intake-card reveal">
-        <div class="intake-card-head">
-          <span class="intake-step-num">2</span>
-          <div>
-            <h2>Insurance Details</h2>
-            <p>Found right on your insurance card.</p>
-          </div>
-        </div>
+      <div class="intake-card intake-step intake-gated" id="step-insurance" hidden>
+        <h2 class="intake-card-title">Your insurance</h2>
         <div class="form-group">
           <label id="insurance_company_label">Insurance Company <span class="required">*</span></label>
           <div class="intake-select" data-select="insurance_company" data-options="insurers" data-freetext="true">
@@ -229,16 +215,10 @@
       </div>
 
       <!-- ── Documents ───────────────────────────────────────── -->
-      <div class="intake-card reveal">
-        <div class="intake-card-head">
-          <span class="intake-step-num">3</span>
-          <div>
-            <h2>Upload Your Documents</h2>
-            <p>A clear photo of your insurance card helps us verify benefits faster.</p>
-          </div>
-        </div>
+      <div class="intake-card intake-step intake-gated" id="step-upload" hidden>
+        <h2 class="intake-card-title">Add your card <span class="intake-title-optional">optional, speeds things up</span></h2>
 
-        <!-- Insurance front (required) -->
+        <!-- Insurance front (optional) -->
         <div class="intake-file-block">
           <label class="intake-file-label">
             <span class="intake-file-title">Front of insurance card <span class="intake-optional">Optional</span></span>
@@ -262,7 +242,7 @@
       </div>
 
       <!-- ── Submit ──────────────────────────────────────────── -->
-      <div class="intake-submit-row">
+      <div class="intake-submit-row intake-gated" id="step-submit" hidden>
         <button type="submit" id="intake-submit" class="btn btn-primary btn-lg btn-full">
           <span class="intake-submit-label">Submit Securely <i data-lucide="lock"></i></span>
           <span class="intake-submit-loading" hidden><span class="intake-spinner" aria-hidden="true"></span> Sending securely…</span>
@@ -272,34 +252,6 @@
 
     </form>
 
-  </div>
-</section>
-
-<!-- Trust Signals -->
-<section class="section trust-signals-section section-cream">
-  <div class="container">
-    <div class="trust-signals-grid">
-      <div class="trust-item">
-        <i data-lucide="shield-check"></i>
-        <h4>Free &amp; Confidential</h4>
-        <p>No cost to verify, no obligation to enroll</p>
-      </div>
-      <div class="trust-item">
-        <i data-lucide="lock"></i>
-        <h4>HIPAA Protected</h4>
-        <p>Your privacy is always our priority</p>
-      </div>
-      <div class="trust-item">
-        <i data-lucide="clock"></i>
-        <h4>24/7 Admissions</h4>
-        <p>Someone is always here to help</p>
-      </div>
-      <div class="trust-item">
-        <i data-lucide="heart"></i>
-        <h4>No Judgment</h4>
-        <p>Compassionate, confidential support</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -399,6 +351,45 @@
 
 <script src="js/main.min.js"></script>
 <script src="js/intake.js" defer></script>
+<script>
+/* Progressive disclosure: reveal one section at a time as the prior one is
+   completed, so the form feels short and low-commitment. Purely additive —
+   intake.js still owns validation and submission. */
+(function () {
+  var form = document.getElementById('intake-form');
+  if (!form) return;
+  var stepInsurance = document.getElementById('step-insurance');
+  var stepUpload = document.getElementById('step-upload');
+  var stepSubmit = document.getElementById('step-submit');
+  if (!stepInsurance || !stepSubmit) return;
+
+  function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  function emailish(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function step1Done() {
+    return val('first_name') && val('last_name') && val('date_of_birth') && val('phone') && emailish(val('email'));
+  }
+  function step2Done() {
+    return val('insurance_company') && val('residence_state') && val('member_id');
+  }
+  function unlock(el) {
+    if (el && el.hidden) {
+      el.hidden = false;
+      el.classList.add('intake-reveal-in');
+      if (window.lucide) lucide.createIcons();
+      try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+    }
+  }
+  function check() {
+    if (step1Done()) unlock(stepInsurance);
+    if (!stepInsurance.hidden && step2Done()) { unlock(stepUpload); unlock(stepSubmit); }
+  }
+  form.addEventListener('input', check);
+  form.addEventListener('change', check);
+  // Custom selects set their hidden inputs without firing form events — poll
+  // as a safety net until every section is open, then stop.
+  var poll = setInterval(function () { check(); if (!stepSubmit.hidden) clearInterval(poll); }, 350);
+})();
+</script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
 <script type="application/ld+json">
 {

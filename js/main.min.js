@@ -607,3 +607,28 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(showFab, 2500);
   setTimeout(function () { if (!minimized && fab.classList.contains('is-open')) showBubble(); }, 17000);
 })();
+
+/* ============================================================
+   Sticky-header height sync
+   ------------------------------------------------------------
+   The nav docks beneath the phone banner using --phone-banner-h.
+   That value used to be hard-coded (52/56px), so when the banner
+   text was taller than expected — e.g. the longer Spanish copy
+   "(424) 208-3120 · Disponible 24/7" wrapping to two lines — the
+   nav overlapped and clipped the banner, or left a visible gap.
+   Measure the banner's real height and sync the variable so the
+   header always stacks flush, in any language or viewport.
+   ============================================================ */
+(function () {
+  var banner = document.querySelector('.phone-banner');
+  if (!banner) return;
+  var root = document.documentElement;
+  function sync() {
+    root.style.setProperty('--phone-banner-h', banner.offsetHeight + 'px');
+  }
+  sync();
+  window.addEventListener('load', sync);
+  window.addEventListener('resize', sync);
+  window.addEventListener('orientationchange', sync);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(sync); }
+})();

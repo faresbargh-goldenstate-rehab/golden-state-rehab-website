@@ -399,7 +399,7 @@
     hideError();
 
     // Validate required fields
-    const required = ['first_name', 'last_name', 'date_of_birth', 'phone', 'email', 'insurance_company', 'residence_state', 'member_id', 'referral_source'];
+    const required = ['first_name', 'last_name', 'date_of_birth', 'phone', 'email', 'insurance_company', 'residence_state', 'member_id'];
     for (const name of required) {
       const el = form.elements.namedItem(name);
       if (!el || !el.value.trim()) {
@@ -443,7 +443,8 @@
     fd.set('email', email);
     fd.set('insurance_company', form.elements.namedItem('insurance_company').value.trim());
     fd.set('residence_state', form.elements.namedItem('residence_state').value.trim());
-    fd.set('referral_source', form.elements.namedItem('referral_source').value.trim());
+    var referralEl = form.elements.namedItem('referral_source');
+    if (referralEl) fd.set('referral_source', referralEl.value.trim());
     fd.set('member_id', form.elements.namedItem('member_id').value.trim());
 
     for (const [field, files] of selected.entries()) {
