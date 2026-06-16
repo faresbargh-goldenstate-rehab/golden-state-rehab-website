@@ -49,7 +49,19 @@
     .fam-faq summary i { width:20px; height:20px; color:var(--gold-dark); transition:transform var(--transition); flex-shrink:0; }
     .fam-faq details[open] summary i { transform:rotate(180deg); }
     .fam-faq p { color:var(--muted); font-size:15px; line-height:1.7; margin-top:14px; }
-    @media (max-width:880px){ .fam-steps{ grid-template-columns:1fr; } }
+    .fam-hero-img { max-width:1100px; margin:-12px auto 0; padding:0 24px; }
+    .fam-hero-img figure { margin:0; position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
+    .fam-hero-img img { width:100%; height:auto; aspect-ratio:21/8; object-fit:cover; display:block; }
+    .fam-hero-img figcaption { position:absolute; left:0; right:0; bottom:0; padding:28px 32px; color:#fff; font-size:18px; font-weight:600; background:linear-gradient(to top, rgba(20,14,4,0.78), rgba(20,14,4,0)); }
+    .fam-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .fam-gallery figure { margin:0; position:relative; border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm); aspect-ratio:4/3; }
+    .fam-gallery img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .55s ease; }
+    .fam-gallery figure:hover img { transform:scale(1.06); }
+    .fam-gallery figcaption { position:absolute; left:0; right:0; bottom:0; padding:14px 16px; color:#fff; font-size:14px; font-weight:600; background:linear-gradient(to top, rgba(20,14,4,0.75), rgba(20,14,4,0)); }
+    .fam-split-img { border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); aspect-ratio:4/3; }
+    .fam-split-img img { width:100%; height:100%; object-fit:cover; display:block; }
+    @media (max-width:880px){ .fam-steps{ grid-template-columns:1fr; } .fam-gallery{ grid-template-columns:1fr 1fr; } .fam-hero-img figcaption{ font-size:15px; padding:18px 20px; } }
+    @media (max-width:560px){ .fam-gallery{ grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -138,6 +150,14 @@
   </div>
 </section>
 
+<!-- HERO IMAGE BAND -->
+<div class="fam-hero-img reveal">
+  <figure>
+    <img src="images/facility/reception-lobby.jpg" alt="The welcoming reception lobby at Golden State Rehab in West Los Angeles" width="1100" height="419" loading="lazy">
+    <figcaption>A calm, private place for your family to start, right here in West Los Angeles.</figcaption>
+  </figure>
+</div>
+
 <!-- EMPATHY -->
 <section class="section" aria-labelledby="empathy-heading">
   <div class="container">
@@ -225,8 +245,27 @@
   </div>
 </section>
 
+<!-- FACILITY GALLERY -->
+<section class="section section-cream" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge-gold">Inside our center</span>
+      <h2 id="gallery-heading">A calm, comfortable place to heal</h2>
+      <p>This is where your loved one will spend their time with us. Warm, private, and built for real clinical work, not a sterile hospital ward.</p>
+    </div>
+    <div class="fam-gallery reveal">
+      <figure><img src="images/facility/reading-lounge.jpg" alt="Quiet reading lounge" width="600" height="450" loading="lazy"><figcaption>Quiet spaces to reset</figcaption></figure>
+      <figure><img src="images/facility/individual-therapy-room.jpg" alt="Private individual therapy room" width="600" height="450" loading="lazy"><figcaption>One-on-one therapy rooms</figcaption></figure>
+      <figure><img src="images/facility/group-therapy-room.jpg" alt="Group therapy room" width="600" height="450" loading="lazy"><figcaption>Group therapy that connects</figcaption></figure>
+      <figure><img src="images/facility/meditation-room.jpg" alt="Meditation room" width="600" height="450" loading="lazy"><figcaption>Room to breathe and reflect</figcaption></figure>
+      <figure><img src="images/facility/tv-lounge.jpg" alt="Comfortable lounge" width="600" height="450" loading="lazy"><figcaption>Comfortable common areas</figcaption></figure>
+      <figure><img src="images/facility/recreation-room.jpg" alt="Recreation room" width="600" height="450" loading="lazy"><figcaption>Space to feel normal again</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <!-- REASSURANCE -->
-<section class="section section-cream" aria-labelledby="reassure-heading">
+<section class="section" aria-labelledby="reassure-heading">
   <div class="container">
     <div class="grid-2" style="gap:64px; align-items:center;">
       <div class="reveal">
@@ -238,8 +277,8 @@
         <div class="fam-reassure"><i data-lucide="check-circle"></i><div><h3>Individual and group therapy</h3><p>One-on-one work with a therapist, plus the support of people walking the same road.</p></div></div>
       </div>
       <div class="reveal reveal-delay-2">
-        <div class="loc-map-wrap" style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-sm); aspect-ratio:4/3;">
-          <iframe src="amenity-map.html" title="Neighborhood around Golden State Rehab in West Los Angeles" style="width:100%; height:100%; border:0; display:block;" loading="lazy"></iframe>
+        <div class="fam-split-img">
+          <img src="images/facility/waiting-area.jpg" alt="The comfortable waiting area at Golden State Rehab" width="600" height="450" loading="lazy">
         </div>
       </div>
     </div>
