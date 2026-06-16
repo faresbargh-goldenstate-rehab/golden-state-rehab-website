@@ -20,7 +20,17 @@
   var MIRROR = ['/', '/verify-insurance', '/contact',
     '/programs/php', '/programs/iop', '/programs/telehealth', '/programs/individual-therapy',
     '/programs/group-therapy', '/programs/medication-management', '/programs/holistic-therapies',
-    '/programs/alumni']; // EN paths that have a real /es/ mirror page
+    '/programs/alumni',
+    '/about', '/our-story', '/our-facility', '/team', '/faq', '/locations',
+    '/mental-health', '/families', '/privacy-policy', '/terms-and-conditions',
+    '/treatments/cbt', '/treatments/dbt', '/treatments/alcohol', '/treatments/opioid',
+    '/treatments/anxiety', '/treatments/depression', '/treatments/ptsd',
+    '/treatments/complex-trauma', '/treatments/dual-diagnosis', '/treatments/cocaine',
+    '/treatments/meth', '/treatments/fentanyl', '/treatments/prescription-drugs',
+    '/treatments/sex-addiction',
+    '/blog/cbt-vs-dbt-which-is-right', '/blog/cost-of-rehab-in-los-angeles',
+    '/blog/does-insurance-cover-rehab-in-california', '/blog/does-medi-cal-cover-rehab-in-california',
+    '/blog/first-week-of-outpatient-rehab', '/blog/terrified-to-ask-for-help']; // EN paths that have a real /es/ mirror page
 
   function norm(p) {
     p = p.replace(/index\.html$/, '').replace(/\.html$/, '');
@@ -33,6 +43,8 @@
   function esMirror(p) {
     if (PAIRS[p]) return PAIRS[p];
     if (p === '/programs') return '/es/programs/';
+    if (p === '/treatments') return '/es/treatments/';
+    if (p === '/blog') return '/es/blog/';
     if (p === '/' && MIRROR.indexOf('/') >= 0) return '/es/';
     if (MIRROR.indexOf(p) >= 0) return '/es' + p;
     return null;
@@ -41,6 +53,8 @@
   function enFor(p) {
     for (var k in PAIRS) { if (PAIRS[k] === p) return k; }
     if (p === '/es/programs') return '/programs/';
+    if (p === '/es/treatments') return '/treatments/';
+    if (p === '/es/blog') return '/blog/';
     if (p === '/es' || p === '/es/') return '/';
     if (p.indexOf('/es/') === 0) return p.slice(3) || '/';
     return '/';

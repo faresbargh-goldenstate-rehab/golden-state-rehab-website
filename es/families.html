@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LLBGYXQ0Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3LLBGYXQ0Y');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayuda para la Adicción de un Ser Querido | Golden State Rehab</title>
+  <meta name="description" content="Ver sufrir a alguien que amas agota. Nuestro equipo en Los Ángeles te ayuda a entender las opciones, gestionar el seguro y empezar la conversación. Gratis.">
+  <link rel="canonical" href="https://www.goldenstate-rehab.com/es/families">
+  <link rel="alternate" hreflang="es" href="https://www.goldenstate-rehab.com/es/families">
+  <link rel="alternate" hreflang="en" href="https://www.goldenstate-rehab.com/families">
+  <link rel="alternate" hreflang="x-default" href="https://www.goldenstate-rehab.com/families">
+  <link rel="icon" type="image/png" href="/images/logo-icon.png">
+  <meta property="og:title" content="Ayuda para la Adicción de un Ser Querido | Golden State Rehab">
+  <meta property="og:description" content="Cuando alguien que amas está sufriendo, no tienes que resolverlo solo. Habla con nuestro equipo de admisiones en Los Ángeles. Gratis y confidencial.">
+  <meta property="og:image" content="https://www.goldenstate-rehab.com/images/logo-icon.png">
+  <meta property="og:url" content="https://www.goldenstate-rehab.com/es/families">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GoldenStateRehab">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="geo.region" content="US-CA">
+  <meta name="geo.placename" content="Los Angeles">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
+  <link rel="stylesheet" href="/css/styles.min.css?v=2">
+  <link rel="stylesheet" href="/css/cta.css?v=2">
+  <script src="/js/i18n.js"></script>
+  <style>
+    .fam-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:step; }
+    .fam-step { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px 28px; box-shadow:var(--shadow-sm); position:relative; }
+    .fam-step-num { width:42px; height:42px; border-radius:50%; background:var(--gold); color:var(--near-black); font-weight:800; display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-size:18px; }
+    .fam-step h3 { font-size:19px; margin-bottom:10px; }
+    .fam-step p { color:var(--muted); font-size:15px; line-height:1.65; }
+    .fam-reassure { display:flex; align-items:flex-start; gap:14px; margin-bottom:18px; }
+    .fam-reassure i { width:22px; height:22px; color:var(--gold-dark); flex-shrink:0; margin-top:3px; }
+    .fam-reassure h3 { font-size:17px; margin-bottom:4px; }
+    .fam-reassure p { color:var(--muted); font-size:14.5px; line-height:1.6; }
+    .fam-faq { max-width:780px; margin:0 auto; }
+    .fam-faq details { background:#fff; border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 24px; margin-bottom:14px; box-shadow:var(--shadow-sm); }
+    .fam-faq summary { font-weight:700; font-size:16.5px; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .fam-faq summary::-webkit-details-marker { display:none; }
+    .fam-faq summary i { width:20px; height:20px; color:var(--gold-dark); transition:transform var(--transition); flex-shrink:0; }
+    .fam-faq details[open] summary i { transform:rotate(180deg); }
+    .fam-faq p { color:var(--muted); font-size:15px; line-height:1.7; margin-top:14px; }
+    .fam-hero-img { max-width:1100px; margin:-12px auto 0; padding:0 24px; }
+    .fam-hero-img figure { margin:0; position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
+    .fam-hero-img img { width:100%; height:auto; aspect-ratio:21/8; object-fit:cover; display:block; }
+    .fam-hero-img figcaption { position:absolute; left:0; right:0; bottom:0; padding:28px 32px; color:#fff; font-size:18px; font-weight:600; background:linear-gradient(to top, rgba(20,14,4,0.78), rgba(20,14,4,0)); }
+    .fam-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .fam-gallery figure { margin:0; position:relative; border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm); aspect-ratio:4/3; }
+    .fam-gallery img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .55s ease; }
+    .fam-gallery figure:hover img { transform:scale(1.06); }
+    .fam-gallery figcaption { position:absolute; left:0; right:0; bottom:0; padding:14px 16px; color:#fff; font-size:14px; font-weight:600; background:linear-gradient(to top, rgba(20,14,4,0.75), rgba(20,14,4,0)); }
+    .fam-split-img { border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); aspect-ratio:4/3; }
+    .fam-split-img img { width:100%; height:100%; object-fit:cover; display:block; }
+    @media (max-width:880px){ .fam-steps{ grid-template-columns:1fr; } .fam-gallery{ grid-template-columns:1fr 1fr; } .fam-hero-img figcaption{ font-size:15px; padding:18px 20px; } }
+    @media (max-width:560px){ .fam-gallery{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="phone-banner" role="region" aria-label="Información de contacto">
+  <div class="phone-banner-inner">
+    <a href="tel:+14242083120" class="phone-banner-link" aria-label="Llama a Golden State Rehab al (424) 208-3120">
+      <i data-lucide="phone"></i> (424) 208-3120 · <span style="opacity:.85">Disponible 24/7</span>
+    </a>
+  </div>
+</div>
+
+<nav class="nav" aria-label="Navegación principal">
+  <div class="nav-container">
+    <a href="/es/" class="nav-logo" aria-label="Inicio de Golden State Rehab"><img src="/images/logo-icon.png" alt="" class="nav-logo-icon-img" aria-hidden="true" width="48" height="48"><span class="nav-logo-wordmark"><strong>Golden State</strong> Rehab</span></a>
+    <ul class="nav-links">
+      <li><a href="/es/">Inicio</a></li>
+      <li><a href="/programs/">Programas</a></li>
+      <li><a href="/treatments/">Tratamientos</a></li>
+      <li><a href="/mental-health">Salud Mental</a></li>
+      <li><a href="/espanol">Atención en Español</a></li>
+      <li><a href="/es/contact">Contacto</a></li>
+    </ul>
+    <div class="nav-actions"><a href="/families" class="nav-lang" aria-label="View this page in English">English</a><a href="/es/verify-insurance" class="btn btn-secondary btn-sm">Verificar Seguro</a><a href="tel:+14242083120" class="btn btn-primary btn-sm"><i data-lucide="phone"></i> Llamar</a></div>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile" aria-label="Navegación móvil">
+  <a href="/es/">Inicio</a>
+  <a href="/programs/">Programas</a>
+  <a href="/treatments/">Tratamientos</a>
+  <a href="/mental-health">Salud Mental</a>
+  <a href="/espanol">Atención en Español</a>
+  <a href="/es/contact">Contacto</a>
+  <a href="/families" class="nav-lang-mobile">🌐 View in English</a>
+  <div class="nav-mobile-actions">
+    <a href="/es/verify-insurance" class="btn btn-secondary">Verificar Seguro</a>
+    <a href="tel:+14242083120" class="btn btn-primary"><i data-lucide="phone"></i> Llamar</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" aria-label="Portada">
+  <div class="container hero-content">
+    <h1>Cuando alguien que amas está sufriendo, <span class="text-gold">no tienes que resolver esto solo</span></h1>
+    <p class="hero-subheadline">Ver cómo la adicción o una crisis de salud mental se apodera de alguien que amas es una de las cosas más difíciles que vive una familia. Nuestro equipo en Los Ángeles te ayudará a entender las opciones y a dar el primer paso real.</p>
+    <div class="hero-actions">
+      <a href="/es/contact" class="btn btn-primary btn-lg">Habla con Nuestro Equipo <i data-lucide="arrow-right"></i></a>
+      <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
+    </div>
+    <div class="hero-trust-row" aria-label="Sellos de confianza">
+      <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="hero-trust-badge" style="text-decoration:none;" title="Ver certificado de licencia DHCS"><i data-lucide="shield-check"></i> Licencia DHCS · #191643AP</a>
+      <span class="hero-trust-badge-sep" aria-hidden="true"></span>
+      <span class="hero-trust-badge"><i data-lucide="badge-check"></i> Certificado por LegitScript</span>
+      <span class="hero-trust-badge-sep" aria-hidden="true"></span>
+      <span class="hero-trust-badge"><i data-lucide="lock"></i> Gratis y Confidencial</span>
+    </div>
+  </div>
+</section>
+
+<!-- HERO IMAGE BAND -->
+<div class="fam-hero-img reveal">
+  <figure>
+    <img src="/images/facility/reception-lobby.jpg" alt="La acogedora recepción de Golden State Rehab en el oeste de Los Ángeles" width="1100" height="419" loading="lazy">
+    <figcaption>Un lugar tranquilo y privado donde tu familia puede empezar, aquí mismo en el oeste de Los Ángeles.</figcaption>
+  </figure>
+</div>
+
+<!-- EMPATHY -->
+<section class="section" aria-labelledby="empathy-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 id="empathy-heading">Sabemos lo que has estado viviendo</h2>
+      <p>Cuando la mayoría de las familias nos llaman, ya han intentado todo lo que se les ocurrió. No le estás fallando a tu ser querido por pedir ayuda. Estás haciendo lo único que de verdad cambia cómo termina esto.</p>
+    </div>
+    <div class="why-us-grid">
+      <div class="why-us-card reveal reveal-delay-1">
+        <div class="why-us-icon"><i data-lucide="moon"></i></div>
+        <h3>La preocupación que nunca se apaga</h3>
+        <p>Revisar el teléfono de madrugada, tensarte cada vez que entran por la puerta. Lo escuchamos de casi todos los padres y parejas que nos llaman.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-2">
+        <div class="why-us-icon"><i data-lucide="messages-square"></i></div>
+        <h3>No saber qué decir</h3>
+        <p>Tienes miedo de alejarlos, y el mismo miedo de no decir nada. Te ayudaremos a encontrar las palabras y el momento adecuado.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-3">
+        <div class="why-us-icon"><i data-lucide="life-buoy"></i></div>
+        <h3>Cargarlo casi en soledad</h3>
+        <p>Los amigos no siempre entienden, y estás cansado de explicar. Puedes entregarle parte de este peso a un equipo que hace esto todos los días.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE HELP -->
+<section class="section section-cream" aria-labelledby="help-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge-gold">Cómo ayudamos</span>
+      <h2 id="help-heading">Un camino claro hacia adelante, con gente que contesta el teléfono</h2>
+      <p>Golden State Rehab es un centro ambulatorio privado en el oeste de Los Ángeles. Esto es lo que trabajar con nosotros realmente significa para una familia.</p>
+    </div>
+    <div class="why-us-grid">
+      <div class="why-us-card reveal reveal-delay-1">
+        <div class="why-us-icon"><i data-lucide="phone-call"></i></div>
+        <h3>Una línea directa, no un centro de llamadas</h3>
+        <p>Cuando llamas, hablas con nuestro equipo de admisiones en Los Ángeles. Personas reales que primero escuchan y luego responden tus preguntas con honestidad.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-2">
+        <div class="why-us-icon"><i data-lucide="shield-check"></i></div>
+        <h3>Nosotros nos encargamos del seguro</h3>
+        <p>Verificamos la cobertura de tu ser querido y te explicamos qué significa, para que el costo sea una cosa menos que te quite el sueño.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-3">
+        <div class="why-us-icon"><i data-lucide="users"></i></div>
+        <h3>Se quedan cerca de casa</h3>
+        <p>La atención ambulatoria significa que tu ser querido sigue con su vida, manteniendo su trabajo o sus estudios, mientras recibe tratamiento real.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-1">
+        <div class="why-us-icon"><i data-lucide="brain"></i></div>
+        <h3>Tratamiento para el panorama completo</h3>
+        <p>La adicción rara vez viene sola. Tratamos juntos el consumo de sustancias y la depresión, la ansiedad o el trauma que hay debajo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO DO NEXT -->
+<section class="section" aria-labelledby="steps-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 id="steps-heading">Qué pasa después de que nos contactas</h2>
+      <p>Sin presión, sin compromiso en la primera llamada. Solo una conversación sobre tu situación y cuáles son las opciones.</p>
+    </div>
+    <div class="fam-steps">
+      <div class="fam-step reveal reveal-delay-1">
+        <div class="fam-step-num">1</div>
+        <h3>Nos cuentas qué está pasando</h3>
+        <p>Llama o envía un mensaje. Escuchamos lo que estás enfrentando y respondemos tus preguntas sobre el tratamiento, los tiempos y el costo.</p>
+      </div>
+      <div class="fam-step reveal reveal-delay-2">
+        <div class="fam-step-num">2</div>
+        <h3>Revisamos la cobertura y armamos un plan</h3>
+        <p>Verificamos el seguro el mismo día y nuestro equipo clínico diseña un plan en torno a las necesidades y la vida diaria de tu ser querido.</p>
+      </div>
+      <div class="fam-step reveal reveal-delay-3">
+        <div class="fam-step-num">3</div>
+        <h3>Te ayudamos a empezar la conversación</h3>
+        <p>Si todavía no están listos, es normal. Te guiaremos sobre cómo abordarlo y estaremos preparados cuando digan que sí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITY GALLERY -->
+<section class="section section-cream" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge-gold">Dentro de nuestro centro</span>
+      <h2 id="gallery-heading">Un lugar tranquilo y cómodo para sanar</h2>
+      <p>Aquí es donde tu ser querido pasará su tiempo con nosotros. Cálido, privado y pensado para el trabajo clínico real, no una sala de hospital fría.</p>
+    </div>
+    <div class="fam-gallery reveal">
+      <figure><img src="/images/facility/reading-lounge.jpg" alt="Sala de lectura tranquila" width="600" height="450" loading="lazy"><figcaption>Espacios tranquilos para reiniciar</figcaption></figure>
+      <figure><img src="/images/facility/individual-therapy-room.jpg" alt="Sala privada de terapia individual" width="600" height="450" loading="lazy"><figcaption>Salas de terapia individual</figcaption></figure>
+      <figure><img src="/images/facility/group-therapy-room.jpg" alt="Sala de terapia grupal" width="600" height="450" loading="lazy"><figcaption>Terapia grupal que conecta</figcaption></figure>
+      <figure><img src="/images/facility/meditation-room.jpg" alt="Sala de meditación" width="600" height="450" loading="lazy"><figcaption>Espacio para respirar y reflexionar</figcaption></figure>
+      <figure><img src="/images/facility/tv-lounge.jpg" alt="Sala de estar cómoda" width="600" height="450" loading="lazy"><figcaption>Áreas comunes cómodas</figcaption></figure>
+      <figure><img src="/images/facility/recreation-room.jpg" alt="Sala de recreación" width="600" height="450" loading="lazy"><figcaption>Espacio para volver a sentirte normal</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- REASSURANCE -->
+<section class="section" aria-labelledby="reassure-heading">
+  <div class="container">
+    <div class="grid-2" style="gap:64px; align-items:center;">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--gold-dark);">Cómo es el tratamiento</span>
+        <h2 id="reassure-heading">Atención clínica real que se adapta a una vida real</h2>
+        <p style="color:var(--muted); margin-bottom:24px;">Nuestros programas funcionan durante el día o la tarde para que tu ser querido pueda mantener sus responsabilidades mientras se recupera. Todo está basado en evidencia y dirigido por un equipo clínico con licencia.</p>
+        <div class="fam-reassure"><i data-lucide="check-circle"></i><div><h3>Hospitalización Parcial (PHP) y Ambulatorio Intensivo (IOP)</h3><p>Tratamiento estructurado con la intensidad ajustada a donde se encuentra tu ser querido en este momento.</p></div></div>
+        <div class="fam-reassure"><i data-lucide="check-circle"></i><div><h3>Telesalud en toda California</h3><p>Para los días en que llegar al centro es difícil, la atención puede continuar de forma segura desde casa.</p></div></div>
+        <div class="fam-reassure"><i data-lucide="check-circle"></i><div><h3>Terapia individual y grupal</h3><p>Trabajo uno a uno con un terapeuta, además del apoyo de personas que recorren el mismo camino.</p></div></div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="fam-split-img">
+          <img src="/images/facility/waiting-area.jpg" alt="La cómoda sala de espera de Golden State Rehab" width="600" height="450" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSURANCE STRIP -->
+<section class="insurance-strip"><div class="container"><div class="insurance-header-row"><h2 class="insurance-heading">Aceptamos la Mayoría de los Seguros Principales</h2><a href="/es/verify-insurance" class="btn btn-primary">Verificar Seguro <i data-lucide="arrow-right"></i></a></div><div class="insurance-logos-grid"><img src="/images/insurance/aetna.png" alt="Aetna" class="ins-logo" width="120" height="40"><img src="/images/insurance/anthem.png" alt="Anthem" class="ins-logo" width="120" height="40"><img src="/images/insurance/cigna.png" alt="Cigna" class="ins-logo" width="120" height="40"><img src="/images/insurance/united-healthcare.png" alt="United Healthcare" class="ins-logo" width="120" height="40"><img src="/images/insurance/bcbs.png" alt="Blue Cross Blue Shield" class="ins-logo" width="120" height="40"><img src="/images/insurance/highmark.png" alt="Highmark" class="ins-logo" width="120" height="40"><img src="/images/insurance/carefirst.png" alt="CareFirst" class="ins-logo" width="120" height="40"><img src="/images/insurance/emblemhealth.png" alt="EmblemHealth" class="ins-logo" width="120" height="40"><img src="/images/insurance/geha.png" alt="GEHA" class="ins-logo" width="120" height="40"><img src="/images/insurance/excellus.png" alt="Excellus BCBS" class="ins-logo" width="120" height="40"><img src="/images/insurance/amerihealth.png" alt="AmeriHealth" class="ins-logo" width="120" height="40"><img src="/images/insurance/multiplan.png" alt="MultiPlan" class="ins-logo" width="120" height="40"></div></div></section>
+
+<!-- FAQ -->
+<section class="section" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 id="faq-heading">Preguntas que nos hacen las familias</h2>
+    </div>
+    <div class="fam-faq reveal">
+      <details>
+        <summary>¿Y si no admiten que tienen un problema? <i data-lucide="chevron-down"></i></summary>
+        <p>Aquí es donde empiezan la mayoría de las familias. Tu ser querido no necesita estar completamente de acuerdo para que nos llames. Conversaremos sobre dónde se encuentran y te daremos formas prácticas de abrir la conversación sin que se convierta en una pelea.</p>
+      </details>
+      <details>
+        <summary>¿Podré seguir involucrado? <i data-lucide="chevron-down"></i></summary>
+        <p>Sí. Como la atención es ambulatoria, tu ser querido sigue siendo parte de la vida diaria en lugar de desaparecer por meses. Con su consentimiento, mantenemos a las familias informadas e involucradas de una manera que apoya la recuperación.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto nos va a costar esto? <i data-lucide="chevron-down"></i></summary>
+        <p>La mayoría de nuestros clientes usan seguro, y aceptamos la mayoría de los planes principales. Verificaremos la cobertura de tu ser querido y te explicaremos qué cubre antes de avanzar con cualquier cosa, para que no haya sorpresas.</p>
+      </details>
+      <details>
+        <summary>¿Y si rechazan el tratamiento en este momento? <i data-lucide="chevron-down"></i></summary>
+        <p>Eso pasa, y no significa que la puerta esté cerrada. Te ayudaremos a prepararte para que, cuando estén listos, aunque sea a las 2 de la madrugada, sepas exactamente a quién llamar y qué decir.</p>
+      </details>
+      <details>
+        <summary>¿De verdad la primera llamada es gratis y confidencial? <i data-lucide="chevron-down"></i></summary>
+        <p>Sí. La primera conversación no cuesta nada y no conlleva ninguna obligación. Lo que compartes con nuestro equipo de admisiones se queda en privado.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FINAL CTA -->
+<section class="cta-banner" aria-label="Llamado final a la acción">
+  <div class="cta-banner-bg" style="background-image: url('/images/facility/tv-lounge.jpg');"></div>
+  <div class="cta-banner-overlay"></div>
+  <div class="cta-banner-content">
+    <span class="cta-meta"><i data-lucide="shield-check"></i> Confidencial · Gratis · 24/7</span>
+    <h2>¿Listo para ayudarlos a dar el primer paso?</h2>
+    <p>Llama a nuestro equipo de admisiones en Los Ángeles. Te ayudaremos a entender las opciones, a resolver lo del seguro y a descubrir cómo empezar la conversación. Gratis y confidencial.</p>
+    <div class="btn-group">
+      <a href="/es/contact" class="btn btn-primary btn-lg">Habla con Admisiones <i data-lucide="arrow-right"></i></a>
+      <a href="tel:+14242083120" class="btn btn-white-outline btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/es/" class="footer-logo" aria-label="Inicio de Golden State Rehab"><img src="/images/logo-white.png" alt="Golden State Rehab" class="nav-logo-img" width="120" height="120"></a>
+        <div class="footer-call-cta"><span class="footer-call-label">Llámanos al</span><a href="tel:4242083120" class="footer-call-number">(424) 208-3120</a></div>
+        <p class="footer-tagline">Tratamiento de adicciones y salud mental en Los Ángeles con compasión, experiencia clínica y programas flexibles diseñados en torno a tu vida.</p>
+        <div class="footer-contact">
+          <a href="/contact" class="footer-phone"><i data-lucide="phone"></i> Llamar Ahora</a>
+          <!--email_off--><a href="mailto:admissions@goldenstate-rehab.com"><i data-lucide="mail"></i> admissions@goldenstate-rehab.com</a><!--/email_off-->
+          <a href="https://maps.google.com/?q=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025</a>
+        </div>
+        <div class="footer-badges">
+          <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="Ver certificado de licencia DHCS">Licencia DHCS #191643AP</a>
+          <span class="footer-badge">Se Habla Español</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Programas</h5>
+        <nav class="footer-links" aria-label="Programas">
+          <a href="/programs/php">Hospitalización Parcial (PHP)</a>
+          <a href="/programs/iop">Ambulatorio Intensivo (IOP)</a>
+          <a href="/programs/telehealth">Telesalud</a>
+          <a href="/programs/individual-therapy">Terapia Individual</a>
+          <a href="/programs/group-therapy">Terapia Grupal</a>
+          <a href="/programs/medication-management">Manejo de Medicamentos</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Tratamientos</h5>
+        <nav class="footer-links" aria-label="Tratamientos">
+          <a href="/mental-health">Salud Mental</a>
+          <a href="/treatments/depression">Depresión</a>
+          <a href="/treatments/anxiety">Ansiedad</a>
+          <a href="/treatments/ptsd">TEPT (PTSD)</a>
+          <a href="/treatments/dual-diagnosis">Diagnóstico Dual</a>
+          <a href="/treatments/alcohol">Alcohol</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h5>Recursos</h5>
+        <nav class="footer-links" aria-label="Recursos">
+          <a href="/espanol">Atención en Español</a>
+          <a href="/es/verify-insurance">Verificar Seguro</a>
+          <a href="/es/contact">Contáctanos</a>
+          <a href="/es/">Inicio</a>
+          <a href="/families">View in English</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2026 Golden State Rehab. Todos los derechos reservados. Los Ángeles, California.</p>
+      <nav class="footer-bottom-links" aria-label="Enlaces legales">
+        <a href="/privacy-policy">Privacidad</a>
+        <a href="/terms-and-conditions">Términos de Uso</a>
+        <a href="/sitemap.xml">Mapa del Sitio</a>
+      </nav>
+    </div>
+  </div>
+  <div class="medical-disclaimer"><p>Este contenido es solo para fines informativos y no sustituye el consejo, diagnóstico o tratamiento médico profesional. Siempre busca el consejo de un proveedor de salud calificado.</p><p>Si tú o alguien que conoces está en crisis, llama al <strong>988</strong> (Línea de Crisis y Suicidio) o al <strong>1-800-662-4357</strong> (Línea Nacional de SAMHSA, ayuda en español).</p></div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="mobile-cta-bar" role="region" aria-label="Acciones rápidas de contacto">
+  <a class="mobile-cta-call" href="tel:+14242083120"><i data-lucide="phone"></i> Evaluación Gratuita</a>
+  <a class="mobile-cta-verify" href="/es/verify-insurance"><i data-lucide="shield-check"></i> Verificar Seguro</a>
+</div>
+
+<script src="/js/main.min.js?v=2"></script>
+<script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://www.goldenstate-rehab.com/#organization",
+      "name": "Golden State Rehab",
+      "url": "https://www.goldenstate-rehab.com/",
+      "telephone": "+1-424-208-3120",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1964 Westwood Blvd, Ste 425",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90025",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.goldenstate-rehab.com/es/families#webpage",
+      "url": "https://www.goldenstate-rehab.com/es/families",
+      "name": "Ayuda para la Adicción de un Ser Querido | Golden State Rehab",
+      "isPartOf": { "@id": "https://www.goldenstate-rehab.com/#organization" },
+      "about": { "@id": "https://www.goldenstate-rehab.com/#organization" },
+      "description": "Ayuda para familias con un ser querido que sufre adicción o problemas de salud mental, desde un centro de tratamiento ambulatorio en el oeste de Los Ángeles.",
+      "inLanguage": "es"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.goldenstate-rehab.com/es/" },
+        { "@type": "ListItem", "position": 2, "name": "Ayuda para Familias", "item": "https://www.goldenstate-rehab.com/es/families" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "es",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Y si no admiten que tienen un problema?", "acceptedAnswer": { "@type": "Answer", "text": "Tu ser querido no necesita estar completamente de acuerdo para que nos llames. Conversaremos sobre dónde se encuentran y te daremos formas prácticas de abrir la conversación sin que se convierta en una pelea." } },
+        { "@type": "Question", "name": "¿Podré seguir involucrado?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Como la atención es ambulatoria, tu ser querido sigue siendo parte de la vida diaria en lugar de desaparecer por meses. Con su consentimiento, mantenemos a las familias informadas e involucradas de una manera que apoya la recuperación." } },
+        { "@type": "Question", "name": "¿Cuánto nos va a costar esto?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoría de nuestros clientes usan seguro, y aceptamos la mayoría de los planes principales. Verificaremos la cobertura de tu ser querido y te explicaremos qué cubre antes de avanzar con cualquier cosa." } },
+        { "@type": "Question", "name": "¿Y si rechazan el tratamiento en este momento?", "acceptedAnswer": { "@type": "Answer", "text": "Eso no significa que la puerta esté cerrada. Te ayudaremos a prepararte para que, cuando estén listos, sepas exactamente a quién llamar y qué decir." } },
+        { "@type": "Question", "name": "¿De verdad la primera llamada es gratis y confidencial?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La primera conversación no cuesta nada y no conlleva ninguna obligación, y lo que compartes con nuestro equipo de admisiones se queda en privado." } }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
