@@ -547,7 +547,7 @@ p:last-child { margin-bottom: 0; }
   line-height: 1;
 }
 .hero h1 .hero-h1-badge-rule {
-  flex: 0 0 56px;
+  flex: 0 0 64px;
   height: 1px;
   background: linear-gradient(90deg, rgba(200, 164, 74, 0) 0%, var(--gold) 100%);
 }
@@ -557,7 +557,7 @@ p:last-child { margin-bottom: 0; }
 .hero h1 .hero-h1-badge-text {
   display: inline-block;
   color: var(--gold-dark);
-  font-size: clamp(11px, 1.05vw, 13px);
+  font-size: clamp(13px, 1.25vw, 15px);
   font-weight: 600;
   letter-spacing: 0.32em;
   text-transform: uppercase;
@@ -2295,8 +2295,8 @@ p:last-child { margin-bottom: 0; }
   .hero { min-height: 85vh; overflow: hidden; }
   .hero h1 { font-size: 36px; white-space: normal; }
   .hero h1 .hero-h1-badge { gap: 12px; margin-top: 16px; }
-  .hero h1 .hero-h1-badge-rule { flex: 0 0 32px; }
-  .hero h1 .hero-h1-badge-text { font-size: 11px; letter-spacing: 0.24em; }
+  .hero h1 .hero-h1-badge-rule { flex: 0 0 36px; }
+  .hero h1 .hero-h1-badge-text { font-size: 12.5px; letter-spacing: 0.24em; }
   .hero-subheadline { font-size: 16px; line-height: 1.4; }
   .hero-content { padding-left: 24px; padding-right: 24px; width: 100%; box-sizing: border-box; }
   .hero-actions { flex-direction: column; }
@@ -3495,3 +3495,34 @@ p:last-child { margin-bottom: 0; }
 /* ── Page-level audience targeting (For Myself / For a Loved One) ────── */
 body[data-persona="loved"] .persona-self { display: none; }
 body:not([data-persona="loved"]) .persona-loved { display: none; }
+
+/* ── Keep the desktop nav on one row so it never overflows the bar ──────────
+   Overflow here made the page scroll sideways, and the sticky phone banner
+   scrolled with it, so it looked cut off and shifted right.
+
+   English fits the 1280 container at full spacing, but overflows between the
+   1150 hamburger breakpoint and 1280, so it only needs tightening in that band
+   (the full-width >=1280 nav is left untouched). */
+@media (min-width: 1151px) and (max-width: 1279px) {
+  html:not([lang="es"]) .nav-container { gap: 16px; }
+  html:not([lang="es"]) .nav-links { gap: 0; }
+  html:not([lang="es"]) .nav-links > li > a { padding: 8px 10px; }
+  html:not([lang="es"]) .nav-actions { gap: 8px; }
+  html:not([lang="es"]) .nav-actions .btn-sm { padding: 10px 15px; }
+}
+/* Spanish labels are wider than the 1280 container at every width, so the
+   Spanish desktop nav is always tightened (and collapses to the hamburger
+   below 1210, a little earlier than English). */
+@media (min-width: 1210px) {
+  html[lang="es"] .nav-container { gap: 14px; }
+  html[lang="es"] .nav-links { gap: 0; }
+  html[lang="es"] .nav-links > li > a { padding: 8px 9px; font-size: 13.5px; }
+  html[lang="es"] .nav-actions { gap: 8px; }
+  html[lang="es"] .nav-actions .nav-lang { padding: 7px 11px; }
+  html[lang="es"] .nav-actions .btn-sm { padding: 10px 14px; }
+}
+@media (max-width: 1209px) {
+  html[lang="es"] .nav-links,
+  html[lang="es"] .nav-actions { display: none; }
+  html[lang="es"] .nav-toggle { display: flex; }
+}
