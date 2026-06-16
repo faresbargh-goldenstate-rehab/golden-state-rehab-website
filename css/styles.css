@@ -40,6 +40,10 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* Never allow phantom horizontal scroll. Guards the sticky phone banner from
+     being shifted/cut off if any element briefly exceeds the viewport width.
+     `clip` (unlike `hidden`) does not break position: sticky. */
+  overflow-x: clip;
 }
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -3521,8 +3525,14 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
   html[lang="es"] .nav-actions .nav-lang { padding: 7px 11px; }
   html[lang="es"] .nav-actions .btn-sm { padding: 10px 14px; }
 }
-@media (max-width: 1209px) {
-  html[lang="es"] .nav-links,
-  html[lang="es"] .nav-actions { display: none; }
-  html[lang="es"] .nav-toggle { display: flex; }
+/* The full desktop nav needs ~1248px to fit (Spanish labels are the widest).
+   Collapse it to the hamburger until the viewport can hold it, so the nav never
+   spills past the viewport. That spill was what pushed the sticky phone banner
+   sideways and cut it off (worst in Spanish). 1260px keeps the desktop nav on
+   common 1280/1366/1440 screens while sending narrower windows to the mobile
+   nav, which already lists every link. Paired with `overflow-x: clip` on html. */
+@media (max-width: 1259px) {
+  .nav-links,
+  .nav-actions { display: none; }
+  .nav-toggle { display: flex; }
 }
