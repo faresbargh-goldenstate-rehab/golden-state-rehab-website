@@ -195,7 +195,62 @@ export async function onRequestPost(context) {
     return jsonResponse({ error: 'delivery_failed' }, 502);
   }
 
+  // ─── 5. Forward to the CRM intake router (best-effort) ────────
+  // Paubox already succeeded — the visitor's request is done. Creating the
+  // structured CRM lead runs in the background via context.waitUntil so it
+  // NEVER delays or fails the submission. A CRM outage is invisible to the
+  // patient; the VOB email still went out.
+  context.waitUntil(forwardToCrm(env, text, collected, request));
+
   return jsonResponse({ ok: true }, 200);
+}
+
+// Forward the just-sent submission to the CRM intake API so it creates a
+// structured lead + VOB request. Silent no-op if CRM env vars aren't set.
+// On any failure logs a non-PHI marker only — never the body, never PHI.
+async function forwardToCrm(env, text, collected, request) {
+  const { CRM_INTAKE_URL, CRM_INTAKE_SECRET } = env;
+  if (!CRM_INTAKE_URL || !CRM_INTAKE_SECRET) return; // not configured — skip silently
+
+  const fullName = `${text.first_name} ${text.last_name}`.trim();
+  const messageParts = [`State of residence: ${text.residence_state}`];
+  if (text.referral_source) messageParts.push(`Heard via: ${text.referral_source}`);
+
+  const payload = {
+    submission_key: crypto.randomUUID(),
+    name: fullName,
+    email: text.email,
+    phone: text.phone,
+    dob: text.date_of_birth,
+    payer_name: text.insurance_company,
+    member_id: text.member_id,
+    source: 'website_form',
+    source_url: request.headers.get('referer') || 'https://www.goldenstate-rehab.com/verify-insurance',
+    message: messageParts.join(' · '),
+    documents: collected.map((a) => ({
+      name: a.originalName,
+      content_type: a.contentType,
+      data_base64: a.base64,
+    })),
+  };
+
+  try {
+    const res = await fetch(CRM_INTAKE_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-intake-secret': CRM_INTAKE_SECRET,
+      },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      // Non-PHI: status code only.
+      console.error('[send-vob] crm forward failed', res.status);
+    }
+  } catch (_e) {
+    // Non-PHI: no error body, no request body.
+    console.error('[send-vob] crm forward failed', 'network');
+  }
 }
 
 // Reject anything other than POST with a clear method-not-allowed.

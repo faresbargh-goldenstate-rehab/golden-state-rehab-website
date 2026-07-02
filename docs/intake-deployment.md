@@ -84,8 +84,12 @@ In Cloudflare Pages → **your project → Settings → Environment variables**.
 | `PAUBOX_FROM_EMAIL` | `vob@goldenstate-rehab.com` |
 | `VOB_RECIPIENT_EMAIL` | `fares.bargh@goldenstate-rehab.com` (testing); flip to `VOB@noblebill.com` after E2E confirmation |
 | `VOB_BCC_EMAIL` *(optional)* | a HIPAA-safe Golden State internal address for audit trail |
+| `CRM_INTAKE_URL` *(optional)* | the CRM intake router endpoint, e.g. `https://portal.goldenstate-rehab.com/api/intake` |
+| `CRM_INTAKE_SECRET` *(optional)* | shared secret — must **equal** the CRM deployment's `INTAKE_SUBMIT_SECRET` |
 
 Click **Save**, then trigger a **redeploy** so the function picks them up: Deployments → "..." menu → Retry deployment.
+
+> **CRM lead forwarding:** when `CRM_INTAKE_URL` + `CRM_INTAKE_SECRET` are set, the intake is also forwarded to the CRM after the VOB email sends, creating a structured lead + VOB request. This runs in the background (`context.waitUntil`) and **never** blocks or fails the visitor's submission — a CRM outage is invisible to the patient and logged with a status code only (no PHI). Leave both blank to skip the forward.
 
 ### 1.7 Confirm Paubox auth header format
 

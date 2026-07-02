@@ -71,4 +71,8 @@ Navigate to `http://localhost:8000`.
 
 Pushing to `main` triggers a Cloudflare Pages deployment automatically (static files + the `functions/api/send-vob.js` Pages Function). Environment variables for the backend (`PAUBOX_API_KEY`, etc.) are managed in the Cloudflare Pages dashboard, never in code or git.
 
+## CRM lead forwarding
+
+After the Paubox VOB email sends, `send-vob.js` also forwards the intake to the CRM (`CRM_INTAKE_URL`) so it creates a structured lead + VOB request. This requires two extra Pages env vars: `CRM_INTAKE_URL` and `CRM_INTAKE_SECRET` (the latter must equal the CRM's `INTAKE_SUBMIT_SECRET`). The forward runs in the background via `context.waitUntil` — if the CRM is unreachable it is logged (status code only, no PHI) and **never** blocks or fails the visitor's submission. Leave both env vars blank to skip the forward entirely.
+
 For the full intake-form deployment + HIPAA checklist, see [docs/intake-deployment.md](docs/intake-deployment.md).
