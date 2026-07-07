@@ -1,5 +1,8 @@
 # Golden State Rehab — Conversion Enticement Scorecard
 
+> **RE-MEASURED 2026-07-07 (post-fix, live site): Conversion Enticement 61 → 78.**
+> Component re-scores: paths 64→82 · persona-self 58→78 · persona-family 56→76 · persona-Spanish 60→78 · trust 61→74 · above-fold 68→75. Of the 30 tracked metrics, 28 hit target; the two open items are ops-dependent (real testimonials/review links; staff license numbers). Known regressions from the owner's homepage revert: the three homepage "Call Now" buttons link to /contact (form now works, so leads are captured, not lost), the homepage LegitScript badge is unlinked, and the homepage banner lacks the "a real person answers" line present sitewide — all owner-decision items. SEO Health re-scored **71 → 87** the same day (technical 94, sitemap 93, onpage 93, schema 92, performance 90 w/ Lighthouse 90 live-mobile, content 85, local 82, GEO 71, images 68).
+
 **Baseline:** 2026-07-07 · Question answered: *how enticing is this site to a person deciding to enter treatment — and where does the funnel leak?*
 Method: full CTA/friction sweep of all 93 pages + form/handler code review, three persona walkthroughs (self-seeker, family decision-maker, Spanish-dominant seeker), trust/compliance sweep, and above-the-fold reconstruction. Critical/high findings adversarially re-verified against repo + live site. Machine-readable baseline: [conversion-baseline.json](conversion-baseline.json). Re-run the same sweeps against these numbers to track movement.
 
