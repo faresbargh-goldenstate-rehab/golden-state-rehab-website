@@ -131,9 +131,9 @@
    "content": 85,
    "onpage": 93,
    "schema": 92,
-   "performance": 90,
+   "performance": 93,
    "ai_readiness_geo": 71,
-   "images": 68,
+   "images": 85,
    "local": 82,
    "conversion_paths": 82,
    "persona_self_seeker": 78,
@@ -143,21 +143,34 @@
    "visual_above_fold": 75
   },
   "lighthouse_live_mobile": {
-   "performance": 90,
-   "lcp_s": 3.0,
-   "cls": 0.002,
-   "fcp_s": 2.6,
-   "tbt_ms": 0
+   "homepage": {
+    "performance": 99,
+    "lcp_s": 1.6,
+    "cls": 0.002,
+    "total_kib": 1503
+   },
+   "treatment_hero_page": {
+    "performance": 88,
+    "lcp_s": 3.7,
+    "cls": 0.02
+   }
   },
   "metrics_at_target": "28 of 30 (open: testimonials/reviews, staff license numbers \u2014 both ops)",
   "ai_crawlers_blocked_of_7": 0,
   "next_levers": [
-   "WebP/AVIF + srcset (14MB images dir, LCP under 2.5s)",
+   "per-viewport hero variants (image-set/media) to push interior LCP under 2.5s lab",
    "real Google reviews + visible profile links",
    "GBP/Psychology Today/findtreatment.gov listings + sameAs",
    "answer-first 140-160w intros on remaining 6 program pages",
-   "Sources blocks on iop/php",
-   "Cloudflare cache purge to clear stale stacked cache-control at edge"
-  ]
+   "Sources blocks on iop/php"
+  ],
+  "webp_conversion": {
+   "files": 71,
+   "before_mb": 14.4,
+   "after_mb": 5.2,
+   "refs_rewired": 1386,
+   "srcset_imgs": 95,
+   "hero_preloads_fetchpriority": 70
+  }
  }
 }
