@@ -3004,6 +3004,9 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0.01em;
   text-decoration: none;
   transition: color var(--transition);
+  /* Full banner height is tappable — the call CTA must beat the 24px WCAG floor */
+  padding: 14px 16px;
+  margin: -14px -16px;
 }
 .phone-banner-link:hover { color: var(--off-white); }
 .phone-banner-link svg { width: 16px; height: 16px; }
