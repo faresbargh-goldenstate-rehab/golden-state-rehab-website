@@ -3,6 +3,8 @@
 Prioritized from the **2026-07-07 audit** (Health **71/100**, Conversion **61/100** — see [seo-audit-report.md](seo-audit-report.md) and [conversion-scorecard.md](conversion-scorecard.md)).
 Owners: **Code** = repo change · **Dashboard** = Cloudflare/Google console · **Ops** = business/owner action.
 
+> **EXECUTION STATUS (2026-07-07, same day):** All **Code** items below were implemented across commits `67ab3d0`…`302b2dc` (contact-form pipeline, image overhaul, CTA/tel fixes, Spanish funnel, SEO mechanical batch, conversion copy, content expansion) plus a parallel session's work (insurance-section redesign, 11 `/locations/` city pages, footer Locations column). Two exceptions: the homepage hero rewrite was **reverted at the owner's request** (visual state restored; invisible plumbing kept), and clinician license numbers await Ops (numbers not published). All **Dashboard** and **Ops** items remain open — see the checklist at the end of the session summary. New expanded clinical copy is flagged for **clinical review before the next content pass** (notes in the session scratchpad and commit messages).
+
 ## Critical — fix now (this week)
 
 - [ ] **Wire the contact form** — it has no submit handler; 100% of contact-form leads are lost and PII leaks into the URL on a GA4 page. Clone the `functions/api/send-vob.js` Paubox pattern into `functions/api/send-contact.js` + a fetch handler on `contact.html`/`es/contact.html`. Interim (5 min): replace the submit button with a `tel:+14242083120` CTA. *(Code · half-day)*
