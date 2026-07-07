@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LLBGYXQ0Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3LLBGYXQ0Y');
-  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,8 +80,8 @@
 
       <div class="contact-form-wrapper reveal">
         <h2>Envíanos un Mensaje</h2>
-        <p class="contact-form-sub">Todas las consultas son confidenciales. Un miembro de nuestro equipo te responderá en un plazo de 1 hora durante el horario de atención.</p>
-        <form class="contact-form" novalidate>
+        <p class="contact-form-sub">Todas las consultas son confidenciales. Un miembro de nuestro equipo te responderá — normalmente dentro de una hora en horario de atención. ¿Prefieres no escribir? Llama al <a href="tel:+14242083120">(424)&nbsp;208-3120</a> y pregunta lo que quieras, de forma anónima.</p>
+        <form class="contact-form" id="contact-form" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="contact-fname">Nombre <span class="required">*</span></label>
@@ -277,5 +269,6 @@
   <a class="mobile-cta-call" href="tel:+14242083120"><i data-lucide="phone"></i> Llamar</a>
   <a class="mobile-cta-verify" href="/es/verify-insurance"><i data-lucide="shield-check"></i> Verificar Seguro</a>
 </div>
+<script src="/js/contact.js" defer></script>
 </body>
 </html>

@@ -20,7 +20,7 @@
 
   // Per-file caps the server also enforces
   const MAX_FILE_BYTES = 10 * 1024 * 1024;   // 10 MB
-  const MAX_TOTAL_BYTES = 4 * 1024 * 1024;   // 4 MB — stays under Vercel's body limit after compression
+  const MAX_TOTAL_BYTES = 25 * 1024 * 1024;  // 25 MB — matches the Cloudflare Pages Function limit in send-vob.js
   const ALLOWED_EXT = /\.(jpe?g|png|heic|heif|pdf)$/i;
   const ALLOWED_MIME = new Set([
     'image/jpeg', 'image/jpg', 'image/png', 'image/heic', 'image/heif', 'application/pdf',
