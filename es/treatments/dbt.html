@@ -36,7 +36,128 @@
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
   <link rel="stylesheet" href="/css/styles.min.css?v=3">
   <link rel="stylesheet" href="/css/cta.min.css?v=3">
-  <script src="/js/i18n.js"></script>
+  <script src="/js/i18n.js?v=3"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "MedicalOrganization",
+    "LocalBusiness"
+  ],
+  "@id": "https://www.goldenstate-rehab.com/#organization",
+  "name": "Golden State Rehab",
+  "url": "https://www.goldenstate-rehab.com/",
+  "logo": "https://www.goldenstate-rehab.com/images/logo-icon.png",
+  "image": "https://www.goldenstate-rehab.com/images/logo-icon.png",
+  "description": "Golden State Rehab is a DHCS-licensed addiction and mental health treatment center in Los Angeles offering PHP, IOP, telehealth, and individual therapy. Most major insurance accepted.",
+  "telephone": "+1-424-208-3120",
+  "email": "admissions@goldenstate-rehab.com",
+  "priceRange": "$$",
+  "currenciesAccepted": "USD",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1964 Westwood Blvd, Ste 425",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90025",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.0447,
+    "longitude": -118.4308
+  },
+  "hasMap": "https://maps.google.com/?q=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Los Angeles"
+    },
+    {
+      "@type": "City",
+      "name": "West Los Angeles"
+    },
+    {
+      "@type": "City",
+      "name": "Santa Monica"
+    },
+    {
+      "@type": "City",
+      "name": "Beverly Hills"
+    },
+    {
+      "@type": "City",
+      "name": "Brentwood"
+    },
+    {
+      "@type": "City",
+      "name": "Culver City"
+    },
+    {
+      "@type": "City",
+      "name": "Westwood"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "medicalSpecialty": [
+    "Psychiatric",
+    "Addiction Medicine"
+  ],
+  "knowsAbout": [
+    "Cognitive Behavioral Therapy",
+    "Dialectical Behavior Therapy",
+    "Addiction Treatment",
+    "Dual Diagnosis",
+    "Anxiety",
+    "Depression",
+    "PTSD",
+    "Substance Use Disorder"
+  ],
+  "foundingDate": "2026",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "name": "DHCS License Number",
+      "value": "191643AP"
+    }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "DHCS Licensed",
+      "credentialCategory": "license",
+      "identifier": "191643AP",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "California Department of Health Care Services"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "LegitScript Certified",
+      "credentialCategory": "certification"
+    }
+  ],
+  "sameAs": [
+    "https://www.legitscript.com/websites/goldenstate-rehab.com/"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -420,11 +541,12 @@
         </div>
         <div class="footer-badges">
           <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="Ver certificado de licencia DHCS">Licencia DHCS #191643AP</a>
+          <a href="https://sapccms.dhcs.ca.gov/DirectoryofProviders/" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="California DHCS provider directory">Verificar con DHCS ↗</a>
           <span class="footer-badge">Se Habla Español</span>
         </div>
       </div>
       <div class="footer-col">
-        <h5>Programas</h5>
+        <div class="footer-heading">Programas</div>
         <nav class="footer-links" aria-label="Programas">
           <a href="/es/programs/php">Hospitalización Parcial (PHP)</a>
           <a href="/es/programs/iop">Ambulatorio Intensivo (IOP)</a>
@@ -435,7 +557,7 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Tratamientos</h5>
+        <div class="footer-heading">Tratamientos</div>
         <nav class="footer-links" aria-label="Tratamientos">
           <a href="/es/mental-health">Salud Mental</a>
           <a href="/es/treatments/depression">Depresión</a>
@@ -446,11 +568,12 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Recursos</h5>
+        <div class="footer-heading">Recursos</div>
         <nav class="footer-links" aria-label="Recursos">
           <a href="/espanol">Atención en Español</a>
           <a href="/es/verify-insurance">Verificar Seguro</a>
           <a href="/es/contact">Contáctanos</a>
+          <a href="/es/families">Para Familias</a>
           <a href="/es/">Inicio</a>
           <a href="/treatments/dbt">View in English</a>
         </nav>
@@ -477,8 +600,9 @@
   "@id": "https://www.goldenstate-rehab.com/#website",
   "name": "Golden State Rehab",
   "url": "https://www.goldenstate-rehab.com/",
-  "publisher": { "@id": "https://www.goldenstate-rehab.com/#organization" },
-  "inLanguage": "es"
+  "publisher": {
+    "@id": "https://www.goldenstate-rehab.com/#organization"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -541,14 +665,70 @@
   "@type": "FAQPage",
   "inLanguage": "es",
   "mainEntity": [
-    {"@type": "Question", "name": "¿Cuánto dura la TDC?", "acceptedAnswer": {"@type": "Answer", "text": "La TDC integral estándar dura de 6 a 12 meses, normalmente dos ciclos completos a través de los cuatro módulos de habilidades. La TDC adaptada puede ser más corta. La mayoría de las personas ven un cambio significativo en la tolerancia al malestar y la regulación emocional dentro de los 3 meses, con un cambio más profundo que se acumula a lo largo del año completo."}},
-    {"@type": "Question", "name": "¿La TDC es solo para el trastorno límite de la personalidad?", "acceptedAnswer": {"@type": "Answer", "text": "No. La TDC se desarrolló originalmente para el TLP pero ahora está basada en la evidencia para los trastornos por consumo de sustancias, el atracón, la bulimia, la depresión resistente al tratamiento, el TEPT, el TDAH con desregulación emocional y cualquier presentación donde la intensidad emocional sea el motor del problema."}},
-    {"@type": "Question", "name": "¿La TDC está cubierta por el seguro en Los Ángeles?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La TDC está cubierta por prácticamente todos los planes de seguro principales bajo la Ley de Paridad de Salud Mental y Equidad en Adicciones. Golden State Rehab acepta Aetna, Anthem Blue Cross, Cigna, Blue Shield of California, United Healthcare, Magellan y la mayoría de los demás."}},
-    {"@type": "Question", "name": "¿Cuál es la diferencia entre la TDC y la TCC?", "acceptedAnswer": {"@type": "Answer", "text": "La TCC aborda los patrones de pensamiento y comportamiento poco útiles. La TDC enseña habilidades concretas para tolerar emociones intensas, regular el ánimo y navegar las relaciones. La TCC es ideal para la ansiedad, la depresión y el TOC. La TDC es ideal para el TLP, la autolesión y la desregulación emocional. Muchas personas se benefician de ambas."}},
-    {"@type": "Question", "name": "¿Puede la TDC ayudar con la adicción?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La TDC-TUS (TDC para los Trastornos por Consumo de Sustancias) es uno de los tratamientos más eficaces para las personas que recaen ante desencadenantes emocionales. Te enseña a sobrellevar los antojos usando habilidades de tolerancia al malestar y a construir una vida que valga la pena para mantenerte sobrio."}},
-    {"@type": "Question", "name": "¿Tengo que hacer el grupo de habilidades, o puedo hacer solo TDC individual?", "acceptedAnswer": {"@type": "Answer", "text": "La TDC integral incluye tanto terapia individual como un grupo de habilidades. El grupo de habilidades es donde realmente aprendes las habilidades; la terapia individual es donde las aplicas. Algunas personas empiezan solo con terapia individual, pero recomendamos firmemente unirse al grupo de habilidades dentro de unas pocas semanas para obtener los mejores resultados."}},
-    {"@type": "Question", "name": "¿La TDC se hace en línea o en persona?", "acceptedAnswer": {"@type": "Answer", "text": "Ambas. Golden State Rehab ofrece TDC en persona en nuestra instalación del oeste de Los Ángeles y TDC por telesalud para personas en toda California. Los grupos de habilidades se adaptan excepcionalmente bien al formato de video."}},
-    {"@type": "Question", "name": "¿Necesito una remisión para empezar TDC en Golden State Rehab?", "acceptedAnswer": {"@type": "Answer", "text": "No necesitas remisión. Llama a nuestro equipo de admisiones en Los Ángeles al (424) 208-3120 o envía nuestro formulario de verificación de seguro para empezar."}}
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura la TDC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La TDC integral estándar dura de 6 a 12 meses, normalmente dos ciclos completos a través de los cuatro módulos de habilidades. La TDC adaptada (TDC-TUS para la adicción, TDC para trastornos alimentarios, o grupo de habilidades de TDC dentro de un PHP o IOP) puede ser más corta. La mayoría de nuestras personas en Los Ángeles ven un cambio significativo en la tolerancia al malestar y la regulación emocional dentro de los 3 meses, con un cambio más profundo que se acumula a lo largo del año completo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La TDC es solo para el trastorno límite de la personalidad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. La TDC se desarrolló originalmente para el TLP y la suicidalidad crónica, pero su base de investigación se ha ampliado enormemente. La TDC ahora está basada en la evidencia para los trastornos por consumo de sustancias , el atracón, la bulimia, la depresión resistente al tratamiento , el TEPT , el TDAH con desregulación emocional y cualquier presentación donde la intensidad emocional sea el motor del problema."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La TDC está cubierta por el seguro en Los Ángeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La TDC está cubierta por prácticamente todos los planes de seguro principales bajo la Ley de Paridad de Salud Mental y Equidad en Adicciones. En Golden State Rehab aceptamos Aetna, Anthem Blue Cross, Cigna, Blue Shield of California, United Healthcare, Magellan y la mayoría de los demás. Verifica tus beneficios de TDC en menos de dos minutos, te diremos exactamente qué está cubierto antes de que te comprometas a nada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre la TDC y la TCC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambas son terapias estructuradas, basadas en la evidencia y enfocadas en habilidades. La TCC aborda los patrones de pensamiento y comportamiento poco útiles, ideal para la ansiedad, la depresión, el TOC y la mayoría de los casos de adicción. La TDC enseña habilidades concretas para tolerar emociones intensas, regular el ánimo y navegar las relaciones, ideal para el TLP, la autolesión y la desregulación emocional. Muchas personas se benefician de ambas, en secuencia o combinadas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puede la TDC ayudar con la adicción?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La TDC-TUS (TDC para los Trastornos por Consumo de Sustancias) es uno de los tratamientos más eficaces para las personas que recaen ante desencadenantes emocionales. La TDC te enseña a sobrellevar los antojos usando habilidades de tolerancia al malestar, reparar relaciones dañadas por el consumo y construir una vida que valga la pena para mantenerte sobrio. Usamos la TDC junto con el tratamiento asistido por medicamentos, la terapia grupal y la TCC para los mejores resultados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tengo que hacer el grupo de habilidades, o puedo hacer solo TDC individual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La TDC integral, la versión con el mayor respaldo de investigación, incluye tanto terapia individual como un grupo de habilidades. El grupo de habilidades es donde realmente aprendes las habilidades; la terapia individual es donde las aplicas. Algunas personas empiezan solo con terapia individual, pero recomendamos firmemente unirse al grupo de habilidades dentro de unas pocas semanas para obtener los mejores resultados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La TDC se hace en línea o en persona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambas. En Golden State Rehab ofrecemos TDC en persona en nuestra instalación del oeste de Los Ángeles y TDC por telesalud para personas en toda California. Los grupos de habilidades se adaptan excepcionalmente bien al video: la mayoría de las personas encuentran que el formato funciona con la misma eficacia que en persona, con la flexibilidad añadida de hacer terapia desde casa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito una remisión para empezar TDC en Golden State Rehab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No necesitas remisión. Llama a nuestro equipo de admisiones en Los Ángeles al (424) 208-3120 o envía nuestro formulario de verificación de seguro para empezar. Evaluaremos tus metas, te emparejaremos con un clínico capacitado en TDC y te ubicaremos en el grupo de habilidades en el siguiente ciclo disponible."
+      }
+    }
   ]
 }
 </script>

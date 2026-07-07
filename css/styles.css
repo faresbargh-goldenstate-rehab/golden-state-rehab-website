@@ -868,18 +868,17 @@ p:last-child { margin-bottom: 0; }
 /* 14. INSURANCE STRIP
    ============================================================ */
 .insurance-strip {
-  padding: 72px 0;
+  padding: 80px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--white);
 }
 .insurance-header-row {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
   text-align: center;
 }
 .insurance-heading {
@@ -887,30 +886,73 @@ p:last-child { margin-bottom: 0; }
   font-weight: 800;
   line-height: 1.2;
   color: var(--near-black);
-  white-space: nowrap;
+}
+.insurance-sub {
+  max-width: 620px;
+  margin: 2px auto 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
 }
 .insurance-logos-grid {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 14px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.ins-tile {
+  -webkit-appearance: none; appearance: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px 48px;
+  flex: 0 0 150px;
+  height: 78px;
+  padding: 14px 18px;
+  background: var(--white);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+button.ins-tile { cursor: pointer; }
+.ins-logo {
+  height: 34px;
+  width: auto;
+  max-width: 114px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: .55;
+  transition: filter .35s ease, opacity .35s ease;
+}
+.ins-tile:hover, .ins-tile.is-lit {
+  transform: translateY(-4px);
+  border-color: var(--border);
+  box-shadow: 0 10px 24px rgba(20, 14, 4, .10);
+}
+.ins-tile:hover .ins-logo, .ins-tile.is-lit .ins-logo { filter: grayscale(0); opacity: 1; }
+.ins-tile.is-near { transform: translateY(-2px); }
+.ins-tile.is-near .ins-logo { filter: grayscale(.45); opacity: .8; }
+.insurance-disclaimer {
+  max-width: 680px;
+  margin: 30px auto 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
 }
 .insurance-cta-row {
   display: flex;
   justify-content: center;
-  margin-top: 72px;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
 }
-.ins-logo {
-  height: 40px;
-  width: auto;
-  max-width: 150px;
-  object-fit: contain;
-  filter: grayscale(0%);
-  opacity: 1;
-  transition: opacity 0.25s ease;
+@media (prefers-reduced-motion: reduce) {
+  .ins-tile, .ins-logo { transition: none; }
+  .ins-tile:hover, .ins-tile.is-lit { transform: none; }
 }
-.ins-logo:hover { opacity: 0.8; }
 
 /* 15. GOOGLE REVIEWS
    ============================================================ */
@@ -1400,7 +1442,8 @@ p:last-child { margin-bottom: 0; }
   color: var(--off-white) !important;
   margin-bottom: 4px;
 }
-.footer-col h5 {
+.footer-col h5,
+.footer-col .footer-heading {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1926,7 +1969,8 @@ p:last-child { margin-bottom: 0; }
   border-radius: var(--radius-md);
   padding: 32px 24px;
 }
-.faq-sidebar h3 {
+.faq-sidebar h3,
+.faq-sidebar .faq-sidebar-heading {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2319,10 +2363,10 @@ p:last-child { margin-bottom: 0; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-brand { grid-column: auto; }
 
-  .insurance-heading { font-size: 24px; white-space: normal; }
-  .insurance-header-row { flex-direction: column; align-items: center; text-align: center; }
-  .insurance-logos-grid { gap: 24px 32px; }
-  .ins-logo { height: 32px; max-width: 120px; }
+  .insurance-heading { font-size: 24px; }
+  .insurance-logos-grid { gap: 10px; }
+  .ins-tile { flex: 0 0 calc(33.33% - 8px); height: 64px; padding: 10px 12px; }
+  .ins-logo { height: 26px; max-width: 96px; }
 
   .team-grid { grid-template-columns: 1fr; }
   .related-grid { grid-template-columns: 1fr; }
@@ -3391,16 +3435,9 @@ p:last-child { margin-bottom: 0; }
 /* ── Insurance coverage checker ─────────────────────────────────────── */
 .insurance-checker-head { flex-direction: column; align-items: center; text-align: center; gap: 10px; }
 .insurance-checker-sub { max-width: 580px; margin: 4px auto 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
-.ins-tile {
-  -webkit-appearance: none; appearance: none;
-  border: 1px solid transparent; background: #fff; border-radius: 12px;
-  padding: 10px 14px; cursor: pointer;
-  display: inline-flex; align-items: center; justify-content: center;
-  transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
-}
-.ins-tile:hover { border-color: var(--border); box-shadow: 0 4px 14px rgba(20, 14, 4, .08); transform: translateY(-1px); }
 .ins-tile:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; }
 .ins-tile.is-selected { border-color: var(--gold); box-shadow: 0 4px 14px rgba(166, 132, 44, .22); }
+.ins-tile.is-selected .ins-logo { filter: grayscale(0); opacity: 1; }
 .ins-tile .ins-logo { display: block; }
 .coverage-result {
   max-width: 640px; margin: 28px auto 0; padding: 24px 28px;

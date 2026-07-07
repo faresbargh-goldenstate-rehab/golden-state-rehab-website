@@ -36,7 +36,7 @@
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
   <link rel="stylesheet" href="css/styles.min.css?v=3">
   <link rel="stylesheet" href="/css/cta.min.css?v=3">
-<script src="/js/i18n.js"></script>
+<script src="/js/i18n.js?v=3"></script>
 </head>
 <body>
 
@@ -95,6 +95,7 @@
             <span class="dropdown-col-label">Addiction</span>
             <a href="treatments/alcohol">Alcohol</a>
             <a href="treatments/opioid">Opioid</a>
+            <a href="treatments/fentanyl">Fentanyl</a>
             <a href="treatments/meth">Meth</a>
             <a href="treatments/cocaine">Cocaine</a>
             <a href="treatments/prescription-drugs">Prescription Drugs</a>
@@ -143,6 +144,12 @@
     <p class="page-hero-sub">Everything you need to know before taking the first step</p>
   </div>
 </section>
+<div class="medical-review-byline">
+  <i data-lucide="shield-check"></i>
+  Medically reviewed by <a href="team">Dr. Eric Chaghouri, MD</a> — Medical Director, Golden State Rehab
+  <span class="review-date">Updated July 2026</span>
+</div>
+
 
 <!-- FAQ Section -->
 <section class="section section-white">
@@ -150,7 +157,7 @@
     <div class="faq-layout">
 
       <div class="faq-sidebar reveal">
-        <h3>Jump to Topic</h3>
+        <div class="faq-sidebar-heading">Jump to Topic</div>
         <ul class="faq-nav">
           <li><a href="#admissions">Admissions</a></li>
           <li><a href="#insurance">Insurance &amp; Cost</a></li>
@@ -524,12 +531,13 @@
         </div>
         <div class="footer-badges">
           <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="View DHCS License Certificate">DHCS Lic. #191643AP</a>
+          <a href="https://sapccms.dhcs.ca.gov/DirectoryofProviders/" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="California DHCS provider directory">Verify with DHCS ↗</a>
           <span class="footer-badge">Evidence-Based</span>
         </div>
       </div>
 
       <div class="footer-col">
-        <h5>Programs</h5>
+        <div class="footer-heading">Programs</div>
         <nav class="footer-links" aria-label="Programs">
           <a href="programs/php">Partial Hospitalization</a>
           <a href="programs/iop">Intensive Outpatient</a>
@@ -543,7 +551,7 @@
       </div>
 
       <div class="footer-col">
-        <h5>Mental Health</h5>
+        <div class="footer-heading">Mental Health</div>
         <nav class="footer-links" aria-label="Mental health treatments">
           <a href="treatments/depression">Depression</a>
           <a href="treatments/anxiety">Anxiety</a>
@@ -554,7 +562,7 @@
       </div>
 
       <div class="footer-col">
-        <h5>Addiction</h5>
+        <div class="footer-heading">Addiction</div>
         <nav class="footer-links" aria-label="Addiction treatments">
           <a href="treatments/alcohol">Alcohol Addiction</a>
           <a href="treatments/opioid">Opioid Addiction</a>
@@ -566,7 +574,7 @@
       </div>
 
       <div class="footer-col">
-        <h5>Therapies</h5>
+        <div class="footer-heading">Therapies</div>
         <nav class="footer-links" aria-label="Therapeutic modalities">
           <a href="treatments/cbt">Cognitive Behavioral Therapy</a>
           <a href="treatments/dbt">Dialectical Behavior Therapy</a>
@@ -574,11 +582,12 @@
       </div>
 
       <div class="footer-col">
-        <h5>Admissions</h5>
+        <div class="footer-heading">Admissions</div>
         <nav class="footer-links" aria-label="Admissions links">
           <a href="verify-insurance">Verify Insurance</a>
           <a href="contact">Contact Us</a>
           <a href="faq">FAQ</a>
+          <a href="families">Families</a>
           <a href="about">About Us</a>
         </nav>
       </div>
@@ -716,7 +725,7 @@
     }
   ],
   "sameAs": [
-    "https://www.google.com/search?q=Golden+State+Rehab&stick=H4sIAAAAAAAAAONgU1I1qLAwSDZKSko2TTUxT7U0MDe3MqhIMTRNS7JMMzAxSzNLTDUzX8Qq5J6fk5KapxBckliSqhCUmpGYBAByZ8iUPgAAAA"
+    "https://www.legitscript.com/websites/goldenstate-rehab.com/"
   ]
 }
 </script>
@@ -729,8 +738,7 @@
   "url": "https://www.goldenstate-rehab.com/",
   "publisher": {
     "@id": "https://www.goldenstate-rehab.com/#organization"
-  },
-  "inLanguage": "en-US"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -753,7 +761,7 @@
       "name": "How do I get started at Golden State Rehab?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Getting started is simple. You can call us anytime at (424) 208-3120 or fill out our online contact form. Our admissions team will guide you through a brief confidential assessment, verify your insurance benefits, and help you choose the right level of care. We can typically begin the intake process within 24 hours of your first call."
+        "text": "Getting started is simple. You can call us anytime at (424) 208-3120 or fill out our online contact form . Our admissions team will guide you through a brief confidential assessment, verify your insurance benefits , and help you choose the right level of care. We can typically begin the intake process within 24 hours of your first call."
       }
     },
     {
@@ -785,7 +793,7 @@
       "name": "Can I work or attend school while in treatment?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Many of our clients maintain work or school responsibilities during treatment, particularly in our IOP program. Our Intensive Outpatient Program is designed with flexible scheduling — including morning and evening options — to accommodate professional and academic commitments. We work with you to build a schedule that supports your recovery without requiring you to put your life on hold."
+        "text": "Many of our clients maintain work or school responsibilities during treatment, particularly in our IOP program. Our Intensive Outpatient Program is designed with flexible scheduling — including morning and evening options — to accommodate professional and academic commitments. We also offer telehealth sessions for added flexibility. We work with you to build a schedule that supports your recovery without requiring you to put your life on hold."
       }
     },
     {
@@ -793,7 +801,7 @@
       "name": "What insurance plans do you accept?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We work with most major insurance providers including Anthem Blue Cross, Aetna, Cigna, Blue Shield of California, United Healthcare, and many more. Under the Mental Health Parity and Addiction Equity Act, many insurance plans are required to cover substance use and mental health treatment at the same level as other medical conditions. Contact us to verify your specific benefits."
+        "text": "We work with most major insurance providers including Anthem Blue Cross, Aetna, Cigna, Blue Shield of California, United Healthcare, and many more. Under the Mental Health Parity and Addiction Equity Act, many insurance plans are required to cover substance use and mental health treatment at the same level as other medical conditions. Verify your specific benefits or contact us for more information."
       }
     },
     {
@@ -825,7 +833,7 @@
       "name": "What is the difference between PHP and IOP?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "PHP (Partial Hospitalization Program) is our most intensive outpatient level of care, involving treatment 5 days per week for approximately 6 hours per day. IOP (Intensive Outpatient Program) is a step down from PHP, typically meeting 3–5 days per week for 3 hours per session. Both programs include individual therapy, group therapy, psychiatric services, and family support, but IOP allows for greater independence and is suited for those with stable home environments."
+        "text": "PHP (Partial Hospitalization Program) is our most intensive outpatient level of care, involving treatment 5 days per week for approximately 6 hours per day. IOP (Intensive Outpatient Program) is a step down from PHP, typically meeting 3–5 days per week for 3 hours per session. Both programs include individual therapy , group therapy , psychiatric services, and family support, but IOP allows for greater independence and is suited for those with stable home environments."
       }
     },
     {
@@ -833,7 +841,7 @@
       "name": "Do you treat co-occurring mental health and addiction (dual diagnosis)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Dual diagnosis — the co-occurrence of substance use disorder and a mental health condition such as depression, anxiety, PTSD, or bipolar disorder — is incredibly common. Our integrated treatment model addresses both conditions simultaneously. Our clinical team includes licensed therapists, psychiatrists, and addiction specialists who collaborate on each client's individualized treatment plan."
+        "text": "Yes. Dual diagnosis — the co-occurrence of substance use disorder and a mental health condition such as depression , anxiety , PTSD , or bipolar disorder — is incredibly common. Our integrated treatment model addresses both conditions simultaneously. Our clinical team includes licensed therapists, psychiatrists, and addiction specialists who collaborate on each client's individualized treatment plan."
       }
     },
     {
@@ -865,7 +873,7 @@
       "name": "What is the difference between CBT and DBT?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "CBT (Cognitive Behavioral Therapy) targets the thoughts and behaviors that fuel anxiety, depression, OCD, and addiction — teaching you to catch cognitive distortions, restructure them, and replace avoidance with action. DBT (Dialectical Behavior Therapy) targets the emotions and relationships that cause chaos when feelings are too big, too fast, or too long-lasting. CBT changes how you think. DBT teaches you how to survive — and ride out — what you feel. Most clients benefit from both."
+        "text": "CBT (Cognitive Behavioral Therapy) targets the thoughts and behaviors that fuel anxiety, depression, OCD, and addiction — teaching you to catch cognitive distortions, restructure them, and replace avoidance with action. It's structured, time-limited (12–20 sessions for most conditions), and homework-driven. DBT (Dialectical Behavior Therapy) targets the emotions and relationships that cause chaos when feelings are too big, too fast, or too long-lasting. It teaches concrete skills in mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness. Comprehensive DBT typically runs 6–12 months and includes both individual therapy and a weekly skills group. Short version: CBT changes how you think. DBT teaches you how to survive — and ride out — what you feel."
       }
     },
     {
@@ -873,7 +881,7 @@
       "name": "Which is better for anxiety: CBT or DBT?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most anxiety disorders — generalized anxiety, panic disorder, social anxiety, OCD, phobias — CBT is the gold-standard first-line treatment. Exposure therapy is the most-effective intervention for phobias and panic. If anxiety comes with severe emotion dysregulation or self-harm, DBT may be added."
+        "text": "For most anxiety disorders — generalized anxiety, panic disorder, social anxiety, OCD, phobias — CBT is the gold-standard first-line treatment. Exposure therapy (a CBT technique) is the single most-effective intervention for phobias and panic. That said, if your anxiety comes with severe emotion dysregulation, self-harm, or intense relationship volatility, DBT may be added or substituted."
       }
     },
     {
@@ -881,7 +889,7 @@
       "name": "Which is better for depression: CBT or DBT?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "CBT and behavioral activation are first-line for depression. However, if your depression includes chronic suicidality, self-harm, or treatment-resistance — particularly if it's tied to borderline personality features — DBT often succeeds where standard CBT plateaus. Many clients use both."
+        "text": "CBT and behavioral activation are first-line for depression . They're well-studied, fast-acting, and lasting. However, if your depression includes chronic suicidality, self-harm, or treatment-resistance — particularly if it's tied to borderline personality features — DBT often succeeds where standard CBT plateaus. Many of our Los Angeles clients use both."
       }
     },
     {
@@ -889,7 +897,15 @@
       "name": "Which is better for addiction: CBT or DBT?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both are evidence-based. CBT for addiction targets the thoughts and triggers behind use — relapse prevention, refusal skills. DBT-SUD targets the emotion dysregulation that drives use — distress tolerance, riding out cravings. At Golden State Rehab we blend both."
+        "text": "Both are evidence-based. CBT for addiction (CBT-SUD) targets the thoughts and triggers behind use — relapse prevention, refusal skills, and high-risk situation planning. DBT-SUD targets the emotion dysregulation that drives use — distress tolerance, riding out cravings, and building a life worth staying sober for. At Golden State Rehab we blend both: CBT for the cognitive piece, DBT skills when emotions are the engine of relapse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better for trauma and PTSD: CBT or DBT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For PTSD , trauma-focused CBT (TF-CBT) and Cognitive Processing Therapy (CPT) are first-line. DBT is especially valuable for complex PTSD (C-PTSD) — where stabilization, emotion regulation, and self-harm reduction need to come before trauma processing. We use a phase-based model: DBT skills first, then trauma-focused CBT or EMDR."
       }
     },
     {
@@ -897,15 +913,15 @@
       "name": "Can I do CBT and DBT at the same time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — and most of our clients do. The skills are complementary. We routinely use CBT to address specific anxious or depressive thought patterns while running DBT skills group in parallel for emotion regulation and crisis-survival capacity."
+        "text": "Yes — and most of our clients do. The skills are complementary, not competing. We routinely use CBT to address specific anxious or depressive thought patterns while running DBT skills group in parallel for emotion regulation and crisis-survival capacity. Your individualized treatment plan blends both based on your diagnosis and goals."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I know whether CBT or DBT is right for me?",
+      "name": "How do I know which therapy is right for me?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Start with our free clinical assessment. A rough guide: if your primary struggle is thoughts (worry, rumination, distorted thinking), start with CBT. If your primary struggle is emotions (intensity, dysregulation, self-harm urges, relationship chaos), start with DBT. Most people need elements of both."
+        "text": "Start with our free clinical assessment. Our intake clinicians will review your symptoms, history, and goals — then recommend CBT, DBT, or a combination based on what's most likely to help. A rough guide: if your primary struggle is thoughts (worry, rumination, distorted thinking), start with CBT . If your primary struggle is emotions (intensity, dysregulation, self-harm urges, relationship chaos), start with DBT . Most people need elements of both."
       }
     },
     {
@@ -913,7 +929,7 @@
       "name": "Does Golden State Rehab offer both CBT and DBT?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — we're one of the few outpatient programs in West Los Angeles to deliver comprehensive DBT (individual therapy + skills group + phone coaching + therapist consultation team) alongside full-spectrum CBT, EMDR, trauma-focused therapy, and medication management."
+        "text": "Yes — we're one of the few outpatient programs in West Los Angeles to deliver comprehensive DBT (individual therapy + skills group + phone coaching + therapist consultation team) alongside full-spectrum CBT , EMDR, trauma-focused therapy, and medication management. Whether you need CBT, DBT, or both, we'll build the plan around your diagnosis and goals."
       }
     },
     {
@@ -921,7 +937,7 @@
       "name": "What does a typical day in PHP look like?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A typical PHP day at Golden State Rehab runs Monday through Friday from approximately 9am to 3pm. Your day might include a morning check-in group, individual therapy session, a clinical skills group (CBT or DBT-based), a process group, lunch, a psychoeducation session, and a closing mindfulness exercise. Schedules are structured but flexible, and no two days are identical. Our goal is to make treatment engaging, healing, and empowering."
+        "text": "A typical PHP day at Golden State Rehab runs Monday through Friday from approximately 9am to 3pm. Your day might include a morning check-in group, individual therapy session, a clinical skills group (CBT or DBT-based), a process group , lunch, a psychoeducation session, and a closing mindfulness exercise. Schedules are structured but flexible, and no two days are identical. Our goal is to make treatment engaging, healing, and empowering."
       }
     },
     {
@@ -945,7 +961,7 @@
       "name": "Where is Golden State Rehab located?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our facility is located in Los Angeles, California. We serve clients from throughout the greater Los Angeles area including the San Fernando Valley, West LA, South Bay, the Eastside, and surrounding counties. Our telehealth program also serves clients throughout California who prefer or require remote care. Please call us for our specific address and directions."
+        "text": "Our facility is located in Los Angeles, California. We serve clients from throughout the greater Los Angeles area including the San Fernando Valley, West LA, South Bay, the Eastside, and surrounding counties. Our telehealth program also serves clients throughout California who prefer or require remote care. Contact us for our specific address and directions."
       }
     },
     {
@@ -969,7 +985,7 @@
       "name": "What if I relapse after treatment?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Relapse does not mean failure — it is often part of the recovery journey. If you experience a relapse after completing our program, we encourage you to reach out immediately. Our team can assess whether a return to a higher level of care is appropriate and help you get back on track without judgment. Recovery is a process, not a single event, and we are here to support you through every phase of it."
+        "text": "Relapse does not mean failure — it is often part of the recovery journey. If you experience a relapse after completing our program, we encourage you to reach out immediately . Our team can assess whether a return to a higher level of care is appropriate and help you get back on track without judgment. Recovery is a process, not a single event, and we are here to support you through every phase of it."
       }
     }
   ]

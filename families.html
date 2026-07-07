@@ -69,7 +69,7 @@
     @media (max-width:880px){ .fam-steps{ grid-template-columns:1fr; } .fam-gallery{ grid-template-columns:1fr 1fr; } .fam-hero-img figcaption{ font-size:15px; padding:18px 20px; } }
     @media (max-width:560px){ .fam-gallery{ grid-template-columns:1fr; } }
   </style>
-<script src="/js/i18n.js"></script>
+<script src="/js/i18n.js?v=3"></script>
 </head>
 <body>
 
@@ -150,7 +150,7 @@
     <div class="hero-trust-row" aria-label="Trust badges">
       <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="hero-trust-badge" style="text-decoration:none;" title="View DHCS License Certificate"><i data-lucide="shield-check"></i> DHCS Licensed · #191643AP</a>
       <span class="hero-trust-badge-sep" aria-hidden="true"></span>
-      <span class="hero-trust-badge"><i data-lucide="badge-check"></i> LegitScript Certified</span>
+      <a href="https://www.legitscript.com/websites/goldenstate-rehab.com/" target="_blank" rel="noopener" class="hero-trust-badge" style="text-decoration:none;" title="View LegitScript certification"><i data-lucide="badge-check"></i> LegitScript Certified</a>
       <span class="hero-trust-badge-sep" aria-hidden="true"></span>
       <span class="hero-trust-badge"><i data-lucide="lock"></i> Free &amp; Confidential</span>
     </div>
@@ -362,11 +362,12 @@
         </div>
         <div class="footer-badges">
           <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="View DHCS License Certificate">DHCS Lic. #191643AP</a>
+          <a href="https://sapccms.dhcs.ca.gov/DirectoryofProviders/" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="California DHCS provider directory">Verify with DHCS ↗</a>
           <span class="footer-badge">Evidence-Based</span>
         </div>
       </div>
       <div class="footer-col">
-        <h5>Programs</h5>
+        <div class="footer-heading">Programs</div>
         <nav class="footer-links" aria-label="Programs">
           <a href="programs/php">Partial Hospitalization</a>
           <a href="programs/iop">Intensive Outpatient</a>
@@ -379,7 +380,7 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Mental Health</h5>
+        <div class="footer-heading">Mental Health</div>
         <nav class="footer-links" aria-label="Mental health treatments">
           <a href="treatments/depression">Depression</a>
           <a href="treatments/anxiety">Anxiety</a>
@@ -389,7 +390,7 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Addiction</h5>
+        <div class="footer-heading">Addiction</div>
         <nav class="footer-links" aria-label="Addiction treatments">
           <a href="treatments/alcohol">Alcohol Addiction</a>
           <a href="treatments/opioid">Opioid Addiction</a>
@@ -400,12 +401,13 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Admissions</h5>
+        <div class="footer-heading">Admissions</div>
         <nav class="footer-links" aria-label="Admissions links">
           <a href="families">Help for Families</a>
           <a href="verify-insurance">Verify Insurance</a>
           <a href="contact">Contact Us</a>
           <a href="faq">FAQ</a>
+          <a href="families">Families</a>
           <a href="about">About Us</a>
         </nav>
       </div>
@@ -437,7 +439,10 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MedicalBusiness",
+      "@type": [
+        "MedicalOrganization",
+        "LocalBusiness"
+      ],
       "@id": "https://www.goldenstate-rehab.com/#organization",
       "name": "Golden State Rehab",
       "url": "https://www.goldenstate-rehab.com/",
@@ -456,25 +461,74 @@
       "@id": "https://www.goldenstate-rehab.com/families#webpage",
       "url": "https://www.goldenstate-rehab.com/families",
       "name": "Help for a Loved One's Addiction | Golden State Rehab",
-      "isPartOf": { "@id": "https://www.goldenstate-rehab.com/#organization" },
-      "about": { "@id": "https://www.goldenstate-rehab.com/#organization" },
+      "isPartOf": {
+        "@id": "https://www.goldenstate-rehab.com/#website"
+      },
+      "about": {
+        "@id": "https://www.goldenstate-rehab.com/#organization"
+      },
       "description": "Help for families with a loved one struggling with addiction or mental health, from an outpatient treatment center in West Los Angeles."
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.goldenstate-rehab.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Help for Families", "item": "https://www.goldenstate-rehab.com/families" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.goldenstate-rehab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Help for Families",
+          "item": "https://www.goldenstate-rehab.com/families"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "What if they will not admit they have a problem?", "acceptedAnswer": { "@type": "Answer", "text": "Your loved one does not need to be fully on board for you to call us. We will talk through where they are and give you practical ways to open the conversation without it turning into a fight." } },
-        { "@type": "Question", "name": "Will I still be able to stay involved?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Because care is outpatient, your loved one stays part of daily life rather than disappearing for months. With their consent, we keep families informed and involved in a way that supports recovery." } },
-        { "@type": "Question", "name": "How much is this going to cost us?", "acceptedAnswer": { "@type": "Answer", "text": "Most of our clients use insurance, and we accept most major plans. We will verify your loved one's coverage and explain what it covers before anything moves forward." } },
-        { "@type": "Question", "name": "What if they refuse treatment right now?", "acceptedAnswer": { "@type": "Answer", "text": "That does not mean the door is closed. We will help you prepare so that when they are ready, you know exactly who to call and what to say." } },
-        { "@type": "Question", "name": "Is the first call really free and confidential?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The first conversation costs nothing and carries no obligation, and what you share with our admissions team stays private." } }
+        {
+          "@type": "Question",
+          "name": "What if they will not admit they have a problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This is the most common place families start. Your loved one does not need to be fully on board for you to call us. We will talk through where they are and give you practical ways to open the conversation without it turning into a fight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I still be able to stay involved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Because care is outpatient, your loved one stays part of daily life rather than disappearing for months. With their consent, we keep families informed and involved in a way that supports recovery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much is this going to cost us?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most of our clients use insurance, and we accept most major plans. We will verify your loved one's coverage and explain what it covers before anything moves forward, so there are no surprises."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if they refuse treatment right now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That happens, and it does not mean the door is closed. We will help you prepare so that when they are ready, even if it is at 2am, you know exactly who to call and what to say."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the first call really free and confidential?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The first conversation costs nothing and carries no obligation. What you share with our admissions team stays private."
+          }
+        }
       ]
     }
   ]

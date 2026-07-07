@@ -1,11 +1,25 @@
 # Cloudflare Pages response headers.
-# Everything (HTML included) revalidates on each load: the browser sends a
-# conditional request and gets a tiny 304 when nothing changed, or the fresh
-# file the instant it does. This is the fix for "I pushed but my browser still
-# shows the old version" — it covers the HTML page itself, not just CSS/JS.
-# Images are allowed to cache for a day since they rarely change.
+# HTML revalidates on each load: the browser sends a conditional request and
+# gets a tiny 304 when nothing changed, or the fresh file the instant it does.
+# This is the fix for "I pushed but my browser still shows the old version".
+# NOTE: for the CSS/JS/image rules below to be authoritative, set the zone's
+# Browser Cache TTL to "Respect Existing Headers" in the Cloudflare dashboard
+# (Caching > Configuration) — otherwise the 4h zone default overrides them.
 /*
   Cache-Control: public, max-age=0, must-revalidate
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
 
+# Versioned static assets (?v= cache-busting) are safe to cache long-term.
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images use stable filenames; a month with revalidation is a safe middle.
 /images/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=2592000

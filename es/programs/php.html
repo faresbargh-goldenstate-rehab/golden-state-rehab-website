@@ -36,7 +36,7 @@
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
   <link rel="stylesheet" href="/css/styles.min.css?v=3">
   <link rel="stylesheet" href="/css/cta.min.css?v=3">
-<script src="/js/i18n.js"></script>
+<script src="/js/i18n.js?v=3"></script>
 </head>
 <body>
 
@@ -308,11 +308,12 @@
         </div>
         <div class="footer-badges">
           <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="Ver licencia DHCS">Licencia DHCS #191643AP</a>
+          <a href="https://sapccms.dhcs.ca.gov/DirectoryofProviders/" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="California DHCS provider directory">Verificar con DHCS ↗</a>
           <span class="footer-badge">Se Habla Español</span>
         </div>
       </div>
       <div class="footer-col">
-        <h5>Programas</h5>
+        <div class="footer-heading">Programas</div>
         <nav class="footer-links">
           <a href="/es/programs/php">Hospitalización Parcial</a>
           <a href="/es/programs/iop">Ambulatorio Intensivo</a>
@@ -323,7 +324,7 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Tratamientos</h5>
+        <div class="footer-heading">Tratamientos</div>
         <nav class="footer-links">
           <a href="/es/mental-health">Salud Mental</a>
           <a href="/es/treatments/depression">Depresión</a>
@@ -334,11 +335,12 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Recursos</h5>
+        <div class="footer-heading">Recursos</div>
         <nav class="footer-links">
           <a href="/espanol">Atención en Español</a>
           <a href="/es/verify-insurance">Verificar Seguro</a>
           <a href="/es/contact">Contáctanos</a>
+          <a href="/es/families">Para Familias</a>
           <a href="/es/">Inicio</a>
           <a href="/programs/php">View in English</a>
         </nav>
@@ -361,7 +363,10 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["MedicalOrganization", "LocalBusiness"],
+  "@type": [
+    "MedicalOrganization",
+    "LocalBusiness"
+  ],
   "@id": "https://www.goldenstate-rehab.com/#organization",
   "name": "Golden State Rehab",
   "url": "https://www.goldenstate-rehab.com/",
@@ -371,15 +376,98 @@
   "telephone": "+1-424-208-3120",
   "email": "admissions@goldenstate-rehab.com",
   "priceRange": "$$",
-  "address": { "@type": "PostalAddress", "streetAddress": "1964 Westwood Blvd, Ste 425", "addressLocality": "Los Angeles", "addressRegion": "CA", "postalCode": "90025", "addressCountry": "US" },
-  "geo": { "@type": "GeoCoordinates", "latitude": 34.0447, "longitude": -118.4308 },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1964 Westwood Blvd, Ste 425",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90025",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.0447,
+    "longitude": -118.4308
+  },
   "hasMap": "https://maps.google.com/?q=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025",
-  "areaServed": [ { "@type": "City", "name": "Los Angeles" }, { "@type": "City", "name": "West Los Angeles" }, { "@type": "City", "name": "Santa Monica" }, { "@type": "City", "name": "Beverly Hills" }, { "@type": "City", "name": "Culver City" }, { "@type": "City", "name": "Westwood" } ],
-  "medicalSpecialty": ["Psychiatric", "Addiction Medicine"],
-  "knowsLanguage": ["en", "es"],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Los Angeles"
+    },
+    {
+      "@type": "City",
+      "name": "West Los Angeles"
+    },
+    {
+      "@type": "City",
+      "name": "Santa Monica"
+    },
+    {
+      "@type": "City",
+      "name": "Beverly Hills"
+    },
+    {
+      "@type": "City",
+      "name": "Culver City"
+    },
+    {
+      "@type": "City",
+      "name": "Westwood"
+    }
+  ],
+  "medicalSpecialty": [
+    "Psychiatric",
+    "Addiction Medicine"
+  ],
+  "knowsLanguage": [
+    "en",
+    "es"
+  ],
   "foundingDate": "2026",
-  "identifier": [{ "@type": "PropertyValue", "name": "DHCS License Number", "value": "191643AP" }],
-  "sameAs": ["https://www.google.com/search?q=Golden+State+Rehab&stick=H4sIAAAAAAAAAONgU1I1qLAwSDZKSko2TTUxT7U0MDe3MqhIMTRNS7JMMzAxSzNLTDUzX8Qq5J6fk5KapxBckliSqhCUmpGYBAByZ8iUPgAAAA"]
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "name": "DHCS License Number",
+      "value": "191643AP"
+    }
+  ],
+  "sameAs": [
+    "https://www.legitscript.com/websites/goldenstate-rehab.com/"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "DHCS Licensed",
+      "credentialCategory": "license",
+      "identifier": "191643AP",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "California Department of Health Care Services"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "LegitScript Certified",
+      "credentialCategory": "certification"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -389,8 +477,9 @@
   "@id": "https://www.goldenstate-rehab.com/#website",
   "name": "Golden State Rehab",
   "url": "https://www.goldenstate-rehab.com/",
-  "publisher": { "@id": "https://www.goldenstate-rehab.com/#organization" },
-  "inLanguage": "es"
+  "publisher": {
+    "@id": "https://www.goldenstate-rehab.com/#organization"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -426,11 +515,46 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"¿Hay un PHP cerca de mí en Los Ángeles?","acceptedAnswer":{"@type":"Answer","text":"El programa de hospitalización parcial de Golden State Rehab está ubicado en Westwood, en el oeste de Los Ángeles, y atiende a clientes de todo el Westside, incluyendo Santa Monica, Beverly Hills, Brentwood y Culver City. Hay una opción de telesalud disponible para quienes viven más lejos."}},
-    {"@type":"Question","name":"¿Dónde está ubicado su PHP?","acceptedAnswer":{"@type":"Answer","text":"Nuestro PHP está en 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025, de fácil acceso desde las autopistas 405 y 10."}},
-    {"@type":"Question","name":"¿Cuántos días a la semana es el PHP y cuánto dura cada día?","acceptedAnswer":{"@type":"Answer","text":"Nuestro PHP funciona de lunes a viernes, aproximadamente de 9am a 3pm, ofreciendo alrededor de seis horas de programación terapéutica estructurada cada día. Los clientes regresan a casa o a una vivienda sobria cada noche."}},
-    {"@type":"Question","name":"¿El seguro cubre el PHP en California?","acceptedAnswer":{"@type":"Answer","text":"En la mayoría de los casos, sí. Bajo la ley federal de paridad y la SB 855 de California, los planes de salud deben cubrir la atención médicamente necesaria como la hospitalización parcial. El monto exacto de tu bolsillo depende de tu plan."}},
-    {"@type":"Question","name":"¿Cuál es la diferencia entre el PHP y el IOP?","acceptedAnswer":{"@type":"Answer","text":"El PHP es el nivel más intensivo, con alrededor de seis horas al día, cinco días por semana. El IOP (ambulatorio intensivo) es un paso hacia abajo, con menos horas semanales y más independencia. Muchos clientes comienzan en el PHP y pasan al IOP a medida que se estabilizan."}}
+    {
+      "@type": "Question",
+      "name": "¿Hay un PHP cerca de mí en Los Ángeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestro programa de hospitalización parcial está ubicado en Westwood, en el oeste de Los Ángeles, y atiende a clientes de todo el Westside — Santa Monica, Beverly Hills, Brentwood, Culver City y los vecindarios circundantes. Si vives más lejos, nuestro programa de telesalud te lleva la misma atención clínica de forma remota."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde está ubicado su PHP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Estamos en 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025 — de fácil acceso desde las autopistas 405 y 10. Puedes obtener indicaciones aquí o ver todas las áreas a las que servimos ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántos días a la semana es el PHP y cuánto dura cada día?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestro PHP funciona de lunes a viernes, aproximadamente de 9am a 3pm — alrededor de seis horas de programación terapéutica estructurada cada día. Regresas a casa o a una vivienda sobria cada noche."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El seguro cubre el PHP en California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En la mayoría de los casos, sí. Bajo la ley federal de paridad y la SB 855 de California, los planes de salud deben cubrir la atención médicamente necesaria como el PHP. Consulta nuestra guía sobre si el seguro cubre la rehabilitación en California , o verifica tus beneficios gratis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre el PHP y el IOP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El PHP es el nivel más intensivo — alrededor de seis horas al día, cinco días por semana. El IOP (ambulatorio intensivo) es un paso hacia abajo, con menos horas semanales y más independencia. Muchos clientes comienzan en el PHP y pasan al IOP a medida que se estabilizan."
+      }
+    }
   ]
 }
 </script>

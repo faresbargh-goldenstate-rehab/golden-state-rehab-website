@@ -36,7 +36,128 @@
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
   <link rel="stylesheet" href="/css/styles.min.css?v=3">
   <link rel="stylesheet" href="/css/cta.min.css?v=3">
-  <script src="/js/i18n.js"></script>
+  <script src="/js/i18n.js?v=3"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "MedicalOrganization",
+    "LocalBusiness"
+  ],
+  "@id": "https://www.goldenstate-rehab.com/#organization",
+  "name": "Golden State Rehab",
+  "url": "https://www.goldenstate-rehab.com/",
+  "logo": "https://www.goldenstate-rehab.com/images/logo-icon.png",
+  "image": "https://www.goldenstate-rehab.com/images/logo-icon.png",
+  "description": "Golden State Rehab is a DHCS-licensed addiction and mental health treatment center in Los Angeles offering PHP, IOP, telehealth, and individual therapy. Most major insurance accepted.",
+  "telephone": "+1-424-208-3120",
+  "email": "admissions@goldenstate-rehab.com",
+  "priceRange": "$$",
+  "currenciesAccepted": "USD",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1964 Westwood Blvd, Ste 425",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90025",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.0447,
+    "longitude": -118.4308
+  },
+  "hasMap": "https://maps.google.com/?q=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Los Angeles"
+    },
+    {
+      "@type": "City",
+      "name": "West Los Angeles"
+    },
+    {
+      "@type": "City",
+      "name": "Santa Monica"
+    },
+    {
+      "@type": "City",
+      "name": "Beverly Hills"
+    },
+    {
+      "@type": "City",
+      "name": "Brentwood"
+    },
+    {
+      "@type": "City",
+      "name": "Culver City"
+    },
+    {
+      "@type": "City",
+      "name": "Westwood"
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "medicalSpecialty": [
+    "Psychiatric",
+    "Addiction Medicine"
+  ],
+  "knowsAbout": [
+    "Cognitive Behavioral Therapy",
+    "Dialectical Behavior Therapy",
+    "Addiction Treatment",
+    "Dual Diagnosis",
+    "Anxiety",
+    "Depression",
+    "PTSD",
+    "Substance Use Disorder"
+  ],
+  "foundingDate": "2026",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "name": "DHCS License Number",
+      "value": "191643AP"
+    }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "DHCS Licensed",
+      "credentialCategory": "license",
+      "identifier": "191643AP",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "California Department of Health Care Services"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "LegitScript Certified",
+      "credentialCategory": "certification"
+    }
+  ],
+  "sameAs": [
+    "https://www.legitscript.com/websites/goldenstate-rehab.com/"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -94,7 +215,7 @@
     <div class="faq-layout">
 
       <div class="faq-sidebar reveal">
-        <h3>Ir al Tema</h3>
+        <div class="faq-sidebar-heading">Ir al Tema</div>
         <ul class="faq-nav">
           <li><a href="#admissions">Admisiones</a></li>
           <li><a href="#insurance">Seguro y Costo</a></li>
@@ -461,11 +582,12 @@
         </div>
         <div class="footer-badges">
           <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="Ver certificado de licencia DHCS">Licencia DHCS #191643AP</a>
+          <a href="https://sapccms.dhcs.ca.gov/DirectoryofProviders/" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="California DHCS provider directory">Verificar con DHCS ↗</a>
           <span class="footer-badge">Se Habla Español</span>
         </div>
       </div>
       <div class="footer-col">
-        <h5>Programas</h5>
+        <div class="footer-heading">Programas</div>
         <nav class="footer-links" aria-label="Programas">
           <a href="/es/programs/php">Hospitalización Parcial (PHP)</a>
           <a href="/es/programs/iop">Ambulatorio Intensivo (IOP)</a>
@@ -476,7 +598,7 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Tratamientos</h5>
+        <div class="footer-heading">Tratamientos</div>
         <nav class="footer-links" aria-label="Tratamientos">
           <a href="/es/mental-health">Salud Mental</a>
           <a href="/es/treatments/depression">Depresión</a>
@@ -487,11 +609,12 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Recursos</h5>
+        <div class="footer-heading">Recursos</div>
         <nav class="footer-links" aria-label="Recursos">
           <a href="/espanol">Atención en Español</a>
           <a href="/es/verify-insurance">Verificar Seguro</a>
           <a href="/es/contact">Contáctanos</a>
+          <a href="/es/families">Para Familias</a>
           <a href="/es/">Inicio</a>
           <a href="/faq">View in English</a>
         </nav>
@@ -518,8 +641,9 @@
   "@id": "https://www.goldenstate-rehab.com/#website",
   "name": "Golden State Rehab",
   "url": "https://www.goldenstate-rehab.com/",
-  "publisher": { "@id": "https://www.goldenstate-rehab.com/#organization" },
-  "inLanguage": "es"
+  "publisher": {
+    "@id": "https://www.goldenstate-rehab.com/#organization"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -543,7 +667,7 @@
       "name": "¿Cómo empiezo en Golden State Rehab?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Empezar es sencillo. Puedes llamarnos en cualquier momento al (424) 208-3120 o completar nuestro formulario de contacto en línea. Nuestro equipo de admisiones te guiará a través de una breve evaluación confidencial, verificará tus beneficios de seguro y te ayudará a elegir el nivel de atención adecuado. Por lo general podemos iniciar el proceso de ingreso dentro de las 24 horas de tu primera llamada."
+        "text": "Empezar es sencillo. Puedes llamarnos en cualquier momento al (424) 208-3120 o completar nuestro formulario de contacto en línea . Nuestro equipo de admisiones te guiará a través de una breve evaluación confidencial, verificará tus beneficios de seguro y te ayudará a elegir el nivel de atención adecuado. Por lo general podemos iniciar el proceso de ingreso dentro de las 24 horas de tu primera llamada."
       }
     },
     {
@@ -575,7 +699,7 @@
       "name": "¿Puedo trabajar o estudiar mientras estoy en tratamiento?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Muchos de nuestros clientes mantienen sus responsabilidades de trabajo o estudio durante el tratamiento, especialmente en nuestro programa IOP. Nuestro Programa Ambulatorio Intensivo está diseñado con horarios flexibles, incluyendo opciones por la mañana y por la noche, para adaptarse a compromisos profesionales y académicos. Trabajamos contigo para armar un horario que apoye tu recuperación sin que tengas que poner tu vida en pausa."
+        "text": "Muchos de nuestros clientes mantienen sus responsabilidades de trabajo o estudio durante el tratamiento, especialmente en nuestro programa IOP. Nuestro Programa Ambulatorio Intensivo está diseñado con horarios flexibles, incluyendo opciones por la mañana y por la noche, para adaptarse a compromisos profesionales y académicos. También ofrecemos sesiones de telesalud para mayor flexibilidad. Trabajamos contigo para armar un horario que apoye tu recuperación sin que tengas que poner tu vida en pausa."
       }
     },
     {
@@ -583,7 +707,7 @@
       "name": "¿Qué planes de seguro aceptan?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Trabajamos con la mayoría de las principales aseguradoras, incluyendo Anthem Blue Cross, Aetna, Cigna, Blue Shield of California, United Healthcare y muchas más. Bajo la Ley de Paridad de Salud Mental y Equidad en Adicciones, muchos planes de seguro deben cubrir el tratamiento del uso de sustancias y de salud mental al mismo nivel que otras condiciones médicas. Comunícate con nosotros para verificar tus beneficios específicos."
+        "text": "Trabajamos con la mayoría de las principales aseguradoras, incluyendo Anthem Blue Cross, Aetna, Cigna, Blue Shield of California, United Healthcare y muchas más. Bajo la Ley de Paridad de Salud Mental y Equidad en Adicciones, muchos planes de seguro deben cubrir el tratamiento del uso de sustancias y de salud mental al mismo nivel que otras condiciones médicas. Verifica tus beneficios específicos o comunícate con nosotros para más información."
       }
     },
     {
@@ -615,7 +739,7 @@
       "name": "¿Cuál es la diferencia entre PHP y IOP?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El PHP (Programa de Hospitalización Parcial) es nuestro nivel de atención ambulatoria más intensivo, con tratamiento 5 días por semana durante aproximadamente 6 horas al día. El IOP (Programa Ambulatorio Intensivo) es un paso por debajo del PHP y por lo general se reúne de 3 a 5 días por semana, 3 horas por sesión. Ambos programas incluyen terapia individual, terapia grupal, servicios psiquiátricos y apoyo familiar, pero el IOP permite mayor independencia y es adecuado para quienes tienen un entorno de hogar estable."
+        "text": "El PHP (Programa de Hospitalización Parcial) es nuestro nivel de atención ambulatoria más intensivo, con tratamiento 5 días por semana durante aproximadamente 6 horas al día. El IOP (Programa Ambulatorio Intensivo) es un paso por debajo del PHP y por lo general se reúne de 3 a 5 días por semana, 3 horas por sesión. Ambos programas incluyen terapia individual , terapia grupal , servicios psiquiátricos y apoyo familiar, pero el IOP permite mayor independencia y es adecuado para quienes tienen un entorno de hogar estable."
       }
     },
     {
@@ -623,7 +747,7 @@
       "name": "¿Tratan la salud mental y la adicción al mismo tiempo (diagnóstico dual)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. El diagnóstico dual, la coexistencia de un trastorno por uso de sustancias y una condición de salud mental como depresión, ansiedad, TEPT o trastorno bipolar, es increíblemente común. Nuestro modelo de tratamiento integrado aborda ambas condiciones de forma simultánea. Nuestro equipo clínico incluye terapeutas con licencia, psiquiatras y especialistas en adicciones que colaboran en el plan de tratamiento individualizado de cada cliente."
+        "text": "Sí. El diagnóstico dual , la coexistencia de un trastorno por uso de sustancias y una condición de salud mental como depresión , ansiedad , TEPT o trastorno bipolar, es increíblemente común. Nuestro modelo de tratamiento integrado aborda ambas condiciones de forma simultánea. Nuestro equipo clínico incluye terapeutas con licencia, psiquiatras y especialistas en adicciones que colaboran en el plan de tratamiento individualizado de cada cliente."
       }
     },
     {
@@ -639,7 +763,7 @@
       "name": "¿Ofrecen tratamiento asistido con medicamentos (MAT)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Nuestros psiquiatras certificados ofrecen servicios de manejo de medicamentos, incluyendo el tratamiento asistido con medicamentos (MAT) para clientes con trastorno por uso de opioides (con buprenorfina/Suboxone) y trastorno por uso de alcohol (con naltrexona/Vivitrol). El MAT está basado en evidencia y es muy efectivo cuando se combina con terapia conductual y apoyo. Todas las decisiones sobre medicamentos se toman en conjunto con el cliente y el equipo clínico."
+        "text": "Sí. Nuestros psiquiatras certificados ofrecen servicios de manejo de medicamentos , incluyendo el tratamiento asistido con medicamentos (MAT) para clientes con trastorno por uso de opioides (con buprenorfina/Suboxone) y trastorno por uso de alcohol (con naltrexona/Vivitrol). El MAT está basado en evidencia y es muy efectivo cuando se combina con terapia conductual y apoyo. Todas las decisiones sobre medicamentos se toman en conjunto con el cliente y el equipo clínico."
       }
     },
     {
@@ -655,7 +779,7 @@
       "name": "¿Cuál es la diferencia entre la TCC y la TDC?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La TCC (Terapia Cognitivo-Conductual) se enfoca en los pensamientos y comportamientos que alimentan la ansiedad, la depresión, el TOC y la adicción, enseñándote a detectar las distorsiones cognitivas, reestructurarlas y reemplazar la evitación con acción. La TDC (Terapia Dialéctica Conductual) se enfoca en las emociones y relaciones que generan caos cuando los sentimientos son demasiado grandes, demasiado rápidos o demasiado duraderos. La TCC cambia tu manera de pensar. La TDC te enseña a sobrellevar y atravesar lo que sientes. La mayoría de los clientes se benefician de ambas."
+        "text": "La TCC (Terapia Cognitivo-Conductual) se enfoca en los pensamientos y comportamientos que alimentan la ansiedad, la depresión, el TOC y la adicción, enseñándote a detectar las distorsiones cognitivas, reestructurarlas y reemplazar la evitación con acción. Es estructurada, de tiempo limitado (de 12 a 20 sesiones para la mayoría de las condiciones) y se apoya en tareas. La TDC (Terapia Dialéctica Conductual) se enfoca en las emociones y relaciones que generan caos cuando los sentimientos son demasiado grandes, demasiado rápidos o demasiado duraderos. Enseña habilidades concretas de atención plena, tolerancia al malestar, regulación emocional y eficacia interpersonal. La TDC integral suele durar de 6 a 12 meses e incluye tanto terapia individual como un grupo semanal de habilidades. En resumen: la TCC cambia tu manera de pensar. La TDC te enseña a sobrellevar y atravesar lo que sientes."
       }
     },
     {
@@ -663,7 +787,7 @@
       "name": "¿Cuál es mejor para la ansiedad: la TCC o la TDC?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Para la mayoría de los trastornos de ansiedad (ansiedad generalizada, trastorno de pánico, ansiedad social, TOC, fobias), la TCC es el tratamiento de primera línea por excelencia. La terapia de exposición es la intervención más efectiva para las fobias y el pánico. Si la ansiedad viene con una desregulación emocional severa o autolesiones, se puede añadir la TDC."
+        "text": "Para la mayoría de los trastornos de ansiedad (ansiedad generalizada, trastorno de pánico, ansiedad social, TOC, fobias), la TCC es el tratamiento de primera línea por excelencia. La terapia de exposición (una técnica de la TCC) es la intervención más efectiva para las fobias y el pánico. Dicho esto, si tu ansiedad viene acompañada de una desregulación emocional severa, autolesiones o una volatilidad intensa en las relaciones, se puede añadir o sustituir por la TDC."
       }
     },
     {
@@ -671,7 +795,7 @@
       "name": "¿Cuál es mejor para la depresión: la TCC o la TDC?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La TCC y la activación conductual son de primera línea para la depresión. Sin embargo, si tu depresión incluye ideación suicida crónica, autolesiones o resistencia al tratamiento, en particular si está ligada a rasgos de personalidad límite, la TDC a menudo tiene éxito donde la TCC estándar se estanca. Muchos clientes usan ambas."
+        "text": "La TCC y la activación conductual son de primera línea para la depresión . Están bien estudiadas, actúan rápido y son duraderas. Sin embargo, si tu depresión incluye ideación suicida crónica, autolesiones o resistencia al tratamiento, en particular si está ligada a rasgos de personalidad límite, la TDC a menudo tiene éxito donde la TCC estándar se estanca. Muchos de nuestros clientes en Los Ángeles usan ambas."
       }
     },
     {
@@ -679,7 +803,15 @@
       "name": "¿Cuál es mejor para la adicción: la TCC o la TDC?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ambas están basadas en evidencia. La TCC para la adicción se enfoca en los pensamientos y desencadenantes detrás del consumo: prevención de recaídas, habilidades de rechazo. La TDC-TUS se enfoca en la desregulación emocional que impulsa el consumo: tolerancia al malestar, atravesar los antojos. En Golden State Rehab combinamos ambas."
+        "text": "Ambas están basadas en evidencia. La TCC para la adicción (TCC-TUS) se enfoca en los pensamientos y desencadenantes detrás del consumo: prevención de recaídas, habilidades de rechazo y planificación ante situaciones de alto riesgo. La TDC-TUS se enfoca en la desregulación emocional que impulsa el consumo: tolerancia al malestar, atravesar los antojos y construir una vida que valga la pena para mantenerse sobrio. En Golden State Rehab combinamos ambas: la TCC para la parte cognitiva y las habilidades de la TDC cuando las emociones son el motor de la recaída."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es mejor para el trauma y el TEPT: la TCC o la TDC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para el TEPT , la TCC centrada en el trauma (TCC-CT) y la Terapia de Procesamiento Cognitivo (TPC) son de primera línea. La TDC es especialmente valiosa para el TEPT complejo (TEPT-C) , donde la estabilización, la regulación emocional y la reducción de las autolesiones deben venir antes del procesamiento del trauma. Usamos un modelo por fases: primero las habilidades de la TDC, luego la TCC centrada en el trauma o el EMDR."
       }
     },
     {
@@ -687,15 +819,15 @@
       "name": "¿Puedo hacer TCC y TDC al mismo tiempo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, y la mayoría de nuestros clientes lo hacen. Las habilidades son complementarias. Habitualmente usamos la TCC para abordar patrones de pensamiento ansiosos o depresivos específicos mientras realizamos en paralelo el grupo de habilidades de la TDC para la regulación emocional y la capacidad de sobrellevar crisis."
+        "text": "Sí, y la mayoría de nuestros clientes lo hacen. Las habilidades son complementarias, no compiten entre sí. Habitualmente usamos la TCC para abordar patrones de pensamiento ansiosos o depresivos específicos mientras realizamos en paralelo el grupo de habilidades de la TDC para la regulación emocional y la capacidad de sobrellevar crisis. Tu plan de tratamiento individualizado combina ambas según tu diagnóstico y tus metas."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cómo sé cuál terapia, TCC o TDC, es la adecuada para mí?",
+      "name": "¿Cómo sé cuál terapia es la adecuada para mí?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Empieza con nuestra evaluación clínica gratuita. Una guía aproximada: si tu lucha principal son los pensamientos (preocupación, rumiación, pensamiento distorsionado), empieza con la TCC. Si tu lucha principal son las emociones (intensidad, desregulación, impulsos de autolesión, caos en las relaciones), empieza con la TDC. La mayoría de las personas necesita elementos de ambas."
+        "text": "Empieza con nuestra evaluación clínica gratuita. Nuestros clínicos de ingreso revisarán tus síntomas, tu historia y tus metas, y luego te recomendarán TCC, TDC o una combinación, según lo que tenga más probabilidad de ayudarte. Una guía aproximada: si tu lucha principal son los pensamientos (preocupación, rumiación, pensamiento distorsionado), empieza con la TCC . Si tu lucha principal son las emociones (intensidad, desregulación, impulsos de autolesión, caos en las relaciones), empieza con la TDC . La mayoría de las personas necesita elementos de ambas."
       }
     },
     {
@@ -703,7 +835,7 @@
       "name": "¿Golden State Rehab ofrece tanto TCC como TDC?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Somos uno de los pocos programas ambulatorios en el oeste de Los Ángeles que ofrece TDC integral (terapia individual + grupo de habilidades + coaching telefónico + equipo de consulta de terapeutas) junto con TCC de espectro completo, EMDR, terapia centrada en el trauma y manejo de medicamentos."
+        "text": "Sí. Somos uno de los pocos programas ambulatorios en el oeste de Los Ángeles que ofrece TDC integral (terapia individual + grupo de habilidades + coaching telefónico + equipo de consulta de terapeutas) junto con TCC de espectro completo, EMDR, terapia centrada en el trauma y manejo de medicamentos. Ya sea que necesites TCC, TDC o ambas, construiremos el plan en torno a tu diagnóstico y tus metas."
       }
     },
     {
@@ -711,7 +843,7 @@
       "name": "¿Cómo es un día típico en PHP?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un día típico de PHP en Golden State Rehab va de lunes a viernes, aproximadamente de 9 a.m. a 3 p.m. Tu día puede incluir un grupo de bienvenida por la mañana, una sesión de terapia individual, un grupo de habilidades clínicas (basado en TCC o TDC), un grupo de proceso, almuerzo, una sesión de psicoeducación y un ejercicio de atención plena de cierre. Los horarios son estructurados pero flexibles, y no hay dos días iguales. Nuestra meta es que el tratamiento sea atractivo, sanador y empoderador."
+        "text": "Un día típico de PHP en Golden State Rehab va de lunes a viernes, aproximadamente de 9 a.m. a 3 p.m. Tu día puede incluir un grupo de bienvenida por la mañana, una sesión de terapia individual , un grupo de habilidades clínicas (basado en TCC o TDC), un grupo de proceso , almuerzo, una sesión de psicoeducación y un ejercicio de atención plena de cierre. Los horarios son estructurados pero flexibles, y no hay dos días iguales. Nuestra meta es que el tratamiento sea atractivo, sanador y empoderador."
       }
     },
     {
@@ -735,7 +867,7 @@
       "name": "¿Dónde está ubicado Golden State Rehab?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nuestras instalaciones están en Los Ángeles, California. Atendemos a clientes de toda el área metropolitana de Los Ángeles, incluyendo el Valle de San Fernando, el oeste de LA, South Bay, el Eastside y los condados aledaños. Nuestro programa de telesalud también atiende a clientes en todo California que prefieren o necesitan atención remota. Por favor llámanos para conocer nuestra dirección exacta y cómo llegar."
+        "text": "Nuestras instalaciones están en Los Ángeles, California. Atendemos a clientes de toda el área metropolitana de Los Ángeles, incluyendo el Valle de San Fernando, el oeste de LA, South Bay, el Eastside y los condados aledaños. Nuestro programa de telesalud también atiende a clientes en todo California que prefieren o necesitan atención remota. Comunícate con nosotros para conocer nuestra dirección exacta y cómo llegar."
       }
     },
     {
@@ -759,7 +891,7 @@
       "name": "¿Qué pasa si recaigo después del tratamiento?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Una recaída no significa fracaso: a menudo es parte del camino de la recuperación. Si experimentas una recaída después de completar nuestro programa, te animamos a que te comuniques con nosotros de inmediato. Nuestro equipo puede evaluar si es apropiado regresar a un nivel de atención más alto y ayudarte a retomar el rumbo sin juicios. La recuperación es un proceso, no un solo evento, y estamos aquí para apoyarte en cada fase de él."
+        "text": "Una recaída no significa fracaso: a menudo es parte del camino de la recuperación. Si experimentas una recaída después de completar nuestro programa, te animamos a que te comuniques con nosotros de inmediato . Nuestro equipo puede evaluar si es apropiado regresar a un nivel de atención más alto y ayudarte a retomar el rumbo sin juicios. La recuperación es un proceso, no un solo evento, y estamos aquí para apoyarte en cada fase de él."
       }
     }
   ]
