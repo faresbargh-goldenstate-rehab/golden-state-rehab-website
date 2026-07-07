@@ -297,6 +297,18 @@
       <div class="intake-card intake-step intake-gated" id="step-upload" hidden>
         <h2 class="intake-card-title">Agrega tu tarjeta <span class="intake-title-optional">opcional, agiliza el proceso</span></h2>
 
+        <div class="form-group">
+          <label id="referral_source_label">¿Cómo supiste de nosotros? <span class="intake-optional">Opcional</span></label>
+          <div class="intake-select" data-select="referral_source" data-options="referral">
+            <div class="intake-select-input-wrap">
+              <input type="text" class="intake-select-input" id="referral_source_search" placeholder="Selecciona una opción…" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="referral_source_panel" aria-labelledby="referral_source_label">
+              <i data-lucide="chevron-down" class="intake-select-chevron"></i>
+            </div>
+            <div class="intake-select-panel" id="referral_source_panel" role="listbox"></div>
+          </div>
+          <input type="hidden" id="referral_source" name="referral_source">
+        </div>
+
         <div class="intake-file-block">
           <label class="intake-file-label">
             <span class="intake-file-title">Frente de la tarjeta de seguro <span class="intake-optional">Opcional</span></span>
@@ -321,11 +333,13 @@
 
       <!-- Enviar -->
       <div class="intake-submit-row intake-gated" id="step-submit" hidden>
+        <p style="font-size:15px; margin:0 0 12px;">Un especialista en beneficios revisa tu información y te llama o envía un mensaje — normalmente dentro de una hora, 24/7. Verificar tus beneficios nunca notifica a tu empleador, y no aparece en el estado de cuenta de nadie más.</p>
         <button type="submit" id="intake-submit" class="btn btn-primary btn-lg btn-full">
           <span class="intake-submit-label">Enviar de Forma Segura <i data-lucide="lock"></i></span>
           <span class="intake-submit-loading" hidden><span class="intake-spinner" aria-hidden="true"></span> Enviando de forma segura…</span>
         </button>
         <p class="form-privacy"><i data-lucide="shield-check"></i> <strong>100% Confidencial.</strong> Tu información está cifrada de extremo a extremo y solo la ve nuestro equipo de admisiones. Protegida por HIPAA.</p>
+        <p style="font-size:14px; color:var(--muted); text-align:center; margin-top:12px;">¿Prefieres no escribir tus datos? Llama al <a href="tel:+14242083120">(424) 208-3120</a> — puedes preguntar lo que quieras sin dar tu nombre.</p>
       </div>
 
     </form>

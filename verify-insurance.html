@@ -234,6 +234,18 @@
       <div class="intake-card intake-step intake-gated" id="step-upload" hidden>
         <h2 class="intake-card-title">Add your card <span class="intake-title-optional">optional, speeds things up</span></h2>
 
+        <div class="form-group">
+          <label id="referral_source_label">How did you hear about us? <span class="intake-optional">Optional</span></label>
+          <div class="intake-select" data-select="referral_source" data-options="referral">
+            <div class="intake-select-input-wrap">
+              <input type="text" class="intake-select-input" id="referral_source_search" placeholder="Select one…" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="referral_source_panel" aria-labelledby="referral_source_label">
+              <i data-lucide="chevron-down" class="intake-select-chevron"></i>
+            </div>
+            <div class="intake-select-panel" id="referral_source_panel" role="listbox"></div>
+          </div>
+          <input type="hidden" id="referral_source" name="referral_source">
+        </div>
+
         <!-- Insurance front (optional) -->
         <div class="intake-file-block">
           <label class="intake-file-label">
@@ -259,11 +271,13 @@
 
       <!-- ── Submit ──────────────────────────────────────────── -->
       <div class="intake-submit-row intake-gated" id="step-submit" hidden>
+        <p style="font-size:15px; margin:0 0 12px;">A benefits specialist reviews your info and calls or texts you back — usually within the hour, 24/7. Checking benefits never notifies your employer, and nothing appears on anyone else's statement.</p>
         <button type="submit" id="intake-submit" class="btn btn-primary btn-lg btn-full">
           <span class="intake-submit-label">Submit Securely <i data-lucide="lock"></i></span>
           <span class="intake-submit-loading" hidden><span class="intake-spinner" aria-hidden="true"></span> Sending securely…</span>
         </button>
         <p class="form-privacy"><i data-lucide="shield-check"></i> <strong>100% Confidential.</strong> Your information is encrypted end-to-end and only seen by our admissions team. Protected by HIPAA.</p>
+        <p style="font-size:14px; color:var(--muted); text-align:center; margin-top:12px;">Prefer not to type your details? Call <a href="tel:+14242083120">(424) 208-3120</a> — you can ask anything without giving your name.</p>
       </div>
 
     </form>
