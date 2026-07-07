@@ -16,11 +16,39 @@
   'use strict';
 
   const ENDPOINT = '/api/send-vob';
-  const SUCCESS_URL = (document.documentElement.lang === 'es') ? '/es/intake-success' : '/intake-success';
+  const IS_ES = document.documentElement.lang === 'es';
+  const SUCCESS_URL = IS_ES ? '/es/intake-success' : '/intake-success';
+
+  // User-facing strings, language-matched to the page (ES mirror shares this file).
+  const T = IS_ES ? {
+    unsupportedFile: (n) => `"${n}" no es un tipo de archivo compatible. Usa JPG, PNG, HEIC o PDF.`,
+    fileTooLarge: (n) => `"${n}" pesa más de 10 MB. Elige un archivo más pequeño.`,
+    requiredFields: 'Por favor completa todos los campos obligatorios.',
+    invalidEmail: 'Ese correo electrónico no parece válido. Por favor revísalo.',
+    invalidDob: 'Por favor ingresa una fecha de nacimiento válida.',
+    totalTooLarge: (t, l) => `Tus archivos suman ${t} — elige archivos más pequeños o menos archivos (límite ~${l}).`,
+    network: 'No pudimos conectar con nuestro servicio de envío. Verifica tu conexión e inténtalo de nuevo, o llama al (424) 208-3120.',
+    missingField: 'Parece que falta uno de los campos obligatorios. Revísalo e inténtalo de nuevo.',
+    unsupportedGeneric: 'Uno de los archivos no es de un tipo compatible. Usa JPG, PNG, HEIC o PDF.',
+    uploadsTooLarge: 'Tus archivos son demasiado grandes. Elige archivos más pequeños e inténtalo de nuevo.',
+    generic: 'Algo salió mal al enviar tu formulario. Inténtalo de nuevo o llama a nuestro equipo de admisiones al (424) 208-3120.',
+  } : {
+    unsupportedFile: (n) => `"${n}" isn't a supported file type. Please use JPG, PNG, HEIC, or PDF.`,
+    fileTooLarge: (n) => `"${n}" is larger than 10 MB. Please choose a smaller file.`,
+    requiredFields: 'Please fill in all required fields.',
+    invalidEmail: 'That email address doesn’t look right. Please double-check.',
+    invalidDob: 'Please enter a valid date of birth.',
+    totalTooLarge: (t, l) => `Your uploads total ${t} — please choose smaller or fewer files (limit ~${l}).`,
+    network: 'We couldn’t reach our submission service. Please check your connection and try again, or call (424) 208-3120.',
+    missingField: 'It looks like one of the required fields is missing. Please review and try again.',
+    unsupportedGeneric: 'One of the files isn’t a supported type. Please use JPG, PNG, HEIC, or PDF.',
+    uploadsTooLarge: 'Your uploads are too large. Please choose smaller files and try again.',
+    generic: 'Something went wrong while submitting your form. Please try again or call our admissions team at (424) 208-3120.',
+  };
 
   // Per-file caps the server also enforces
   const MAX_FILE_BYTES = 10 * 1024 * 1024;   // 10 MB
-  const MAX_TOTAL_BYTES = 4 * 1024 * 1024;   // 4 MB — stays under Vercel's body limit after compression
+  const MAX_TOTAL_BYTES = 25 * 1024 * 1024;  // 25 MB — matches the Cloudflare Pages Function limit in send-vob.js
   const ALLOWED_EXT = /\.(jpe?g|png|heic|heif|pdf)$/i;
   const ALLOWED_MIME = new Set([
     'image/jpeg', 'image/jpg', 'image/png', 'image/heic', 'image/heif', 'application/pdf',
@@ -256,11 +284,11 @@
 
     for (const f of files) {
       if (!isAllowedFile(f)) {
-        showError(`"${f.name}" isn't a supported file type. Please use JPG, PNG, HEIC, or PDF.`);
+        showError(T.unsupportedFile(f.name));
         continue;
       }
       if (f.size > MAX_FILE_BYTES) {
-        showError(`"${f.name}" is larger than 10 MB. Please choose a smaller file.`);
+        showError(T.fileTooLarge(f.name));
         continue;
       }
 
@@ -403,7 +431,7 @@
     for (const name of required) {
       const el = form.elements.namedItem(name);
       if (!el || !el.value.trim()) {
-        showError('Please fill in all required fields.');
+        showError(T.requiredFields);
         if (el && el.focus) el.focus();
         return;
       }
@@ -412,7 +440,7 @@
     // Email format
     const email = form.elements.namedItem('email').value.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showError('That email address doesn’t look right. Please double-check.');
+      showError(T.invalidEmail);
       form.elements.namedItem('email').focus();
       return;
     }
@@ -421,7 +449,7 @@
     const dobStr = form.elements.namedItem('date_of_birth').value;
     const dob = new Date(dobStr);
     if (isNaN(dob.getTime()) || dob > new Date()) {
-      showError('Please enter a valid date of birth.');
+      showError(T.invalidDob);
       form.elements.namedItem('date_of_birth').focus();
       return;
     }
@@ -430,7 +458,7 @@
     let totalBytes = 0;
     for (const arr of selected.values()) for (const f of arr) totalBytes += f.size;
     if (totalBytes > MAX_TOTAL_BYTES) {
-      showError(`Your uploads total ${formatBytes(totalBytes)} — please choose smaller or fewer files (limit ~${formatBytes(MAX_TOTAL_BYTES)}).`);
+      showError(T.totalTooLarge(formatBytes(totalBytes), formatBytes(MAX_TOTAL_BYTES)));
       return;
     }
 
@@ -474,7 +502,7 @@
       showError(messageFor(errCode, resp.status));
     } catch (err) {
       // Network-level failure
-      showError('We couldn’t reach our submission service. Please check your connection and try again, or call (424) 208-3120.');
+      showError(T.network);
     } finally {
       setLoading(false);
     }
@@ -484,20 +512,20 @@
     switch (errCode) {
       case 'missing_field':
       case 'missing_file':
-        return 'It looks like one of the required fields is missing. Please review and try again.';
+        return T.missingField;
       case 'invalid_email':
-        return 'That email address doesn’t look right. Please double-check.';
+        return T.invalidEmail;
       case 'unsupported_file_type':
-        return 'One of the files isn’t a supported type. Please use JPG, PNG, HEIC, or PDF.';
+        return T.unsupportedGeneric;
       case 'file_too_large':
       case 'total_too_large':
-        return 'Your uploads are too large. Please choose smaller files and try again.';
+        return T.uploadsTooLarge;
       case 'delivery_failed':
       case 'submission_failed':
       case 'server_misconfigured':
       default:
-        if (status === 413) return 'Your uploads are too large. Please choose smaller files and try again.';
-        return 'Something went wrong while submitting your form. Please try again or call our admissions team at (424) 208-3120.';
+        if (status === 413) return T.uploadsTooLarge;
+        return T.generic;
     }
   }
 

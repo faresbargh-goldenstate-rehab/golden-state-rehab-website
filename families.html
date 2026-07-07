@@ -13,15 +13,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Help for a Loved One's Addiction | Golden State Rehab</title>
-  <meta name="description" content="Watching someone you love struggle with addiction or mental health is exhausting. Our Los Angeles team helps families understand the options, handle insurance, and start the conversation. Free and confidential.">
+  <meta name="description" content="When someone you love is struggling with addiction, our Los Angeles team helps you understand the options, handle insurance, and start the conversation.">
   <link rel="canonical" href="https://www.goldenstate-rehab.com/families">
   <link rel="alternate" hreflang="en" href="https://www.goldenstate-rehab.com/families">
   <link rel="alternate" hreflang="es" href="https://www.goldenstate-rehab.com/es/families">
   <link rel="alternate" hreflang="x-default" href="https://www.goldenstate-rehab.com/families">
   <link rel="icon" type="image/png" href="images/logo-icon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Help for a Loved One's Addiction | Golden State Rehab">
   <meta property="og:description" content="When someone you love is struggling, you don't have to figure it out alone. Talk to our Los Angeles admissions team. Free and confidential.">
-  <meta property="og:image" content="https://www.goldenstate-rehab.com/images/logo-icon.png">
+  <meta property="og:image" content="https://www.goldenstate-rehab.com/images/og/default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://www.goldenstate-rehab.com/families">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -33,8 +36,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=2">
-  <link rel="stylesheet" href="/css/cta.css?v=2">
+  <link rel="stylesheet" href="css/styles.min.css?v=4">
+  <link rel="stylesheet" href="/css/cta.min.css?v=3">
   <style>
     .fam-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:step; }
     .fam-step { background:#fff; border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px 28px; box-shadow:var(--shadow-sm); position:relative; }
@@ -66,6 +69,7 @@
     @media (max-width:880px){ .fam-steps{ grid-template-columns:1fr; } .fam-gallery{ grid-template-columns:1fr 1fr; } .fam-hero-img figcaption{ font-size:15px; padding:18px 20px; } }
     @media (max-width:560px){ .fam-gallery{ grid-template-columns:1fr; } }
   </style>
+<script src="/js/i18n.js?v=3"></script>
 </head>
 <body>
 
@@ -73,7 +77,7 @@
 <div class="phone-banner" role="region" aria-label="Contact information">
   <div class="phone-banner-inner">
     <a href="tel:+14242083120" class="phone-banner-link" aria-label="Call Golden State Rehab at (424) 208-3120">
-      <i data-lucide="phone"></i> (424) 208-3120
+      <i data-lucide="phone"></i> (424) 208-3120 · <span style="opacity:.85">A real person answers, 24/7</span>
     </a>
   </div>
 </div>
@@ -110,7 +114,7 @@
     </ul>
     <div class="nav-actions"><a href="/espanol" class="nav-lang" aria-label="Ver en español">Español</a>
       <a href="verify-insurance" class="btn btn-secondary btn-sm">Verify Insurance</a>
-      <a href="contact" class="btn btn-primary btn-sm"><i data-lucide="phone"></i> Call Now</a>
+      <a href="tel:+14242083120" class="btn btn-primary btn-sm"><i data-lucide="phone"></i> Call Now</a>
     </div>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -128,7 +132,7 @@
   <a href="/espanol" class="nav-lang-mobile">🌐 Ver en Español</a>
   <div class="nav-mobile-actions">
     <a href="verify-insurance" class="btn btn-secondary">Verify Insurance</a>
-    <a href="contact" class="btn btn-primary"><i data-lucide="phone"></i> Call Now</a>
+    <a href="tel:+14242083120" class="btn btn-primary"><i data-lucide="phone"></i> Call Now</a>
   </div>
 </nav>
 
@@ -146,7 +150,7 @@
     <div class="hero-trust-row" aria-label="Trust badges">
       <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="hero-trust-badge" style="text-decoration:none;" title="View DHCS License Certificate"><i data-lucide="shield-check"></i> DHCS Licensed · #191643AP</a>
       <span class="hero-trust-badge-sep" aria-hidden="true"></span>
-      <span class="hero-trust-badge"><i data-lucide="badge-check"></i> LegitScript Certified</span>
+      <a href="https://www.legitscript.com/websites/goldenstate-rehab.com/" target="_blank" rel="noopener" class="hero-trust-badge" style="text-decoration:none;" title="View LegitScript certification"><i data-lucide="badge-check"></i> LegitScript Certified</a>
       <span class="hero-trust-badge-sep" aria-hidden="true"></span>
       <span class="hero-trust-badge"><i data-lucide="lock"></i> Free &amp; Confidential</span>
     </div>
@@ -245,6 +249,7 @@
         <p>If they are not ready yet, that is normal. We will coach you on how to approach it and be ready when they say yes.</p>
       </div>
     </div>
+    <p class="reveal" style="max-width:780px; margin:36px auto 0; text-align:center; color:var(--muted); font-size:15px; line-height:1.7;">One more thing while you wait for them to say yes: if opioids or fentanyl are part of the picture, carry naloxone (Narcan) — we will show you how to use it. Naloxone is a nasal spray that can reverse an overdose, and it is available without a prescription. The <a href="https://www.cdc.gov/stop-overdose/caring/naloxone.html" target="_blank" rel="noopener">CDC's guide to naloxone</a> explains how it works and where to get it.</p>
   </div>
 </section>
 
@@ -278,6 +283,7 @@
         <div class="fam-reassure"><i data-lucide="check-circle"></i><div><h3>Partial Hospitalization (PHP) and Intensive Outpatient (IOP)</h3><p>Structured treatment with the intensity matched to where your loved one is right now.</p></div></div>
         <div class="fam-reassure"><i data-lucide="check-circle"></i><div><h3>Telehealth across California</h3><p>For days when getting to the center is hard, care can continue securely from home.</p></div></div>
         <div class="fam-reassure"><i data-lucide="check-circle"></i><div><h3>Individual and group therapy</h3><p>One-on-one work with a therapist, plus the support of people walking the same road.</p></div></div>
+        <div class="fam-reassure"><i data-lucide="check-circle"></i><div><h3>Medication for opioid &amp; fentanyl addiction</h3><p>Our medical team offers proven medication like Suboxone (buprenorphine), started with careful, fentanyl-aware protocols. <a href="treatments/fentanyl">See how fentanyl treatment works</a>.</p></div></div>
       </div>
       <div class="reveal reveal-delay-2">
         <div class="fam-split-img">
@@ -288,8 +294,41 @@
   </div>
 </section>
 
+<!-- FIRST CALL, MINUTE BY MINUTE -->
+<section class="section section-cream" aria-labelledby="firstcall-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge-gold">Before you dial</span>
+      <h2 id="firstcall-heading">Your first call, minute by minute</h2>
+      <p>Not knowing what will happen on the phone stops a lot of families from calling. So here is exactly how it goes.</p>
+    </div>
+    <div class="why-us-grid">
+      <div class="why-us-card reveal reveal-delay-1">
+        <div class="why-us-icon"><i data-lucide="phone-call"></i></div>
+        <h3>A person answers, not a call center</h3>
+        <p>Your call goes to our admissions team here in Los Angeles. Day or night, a real person picks up and listens first.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-2">
+        <div class="why-us-icon"><i data-lucide="clipboard"></i></div>
+        <h3>We ask four simple things</h3>
+        <p>Their age, what they are using, their insurance if you know it, and how you are related to them. No names required.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-3">
+        <div class="why-us-icon"><i data-lucide="clock"></i></div>
+        <h3>It takes about 15 minutes</h3>
+        <p>Most first calls run about 15 minutes. You will hang up knowing what the options are and what a next step could look like.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-1">
+        <div class="why-us-icon"><i data-lucide="lock"></i></div>
+        <h3>Calling commits you to nothing</h3>
+        <p>The call is free and private, and it does not sign anyone up for anything. Your loved one does not even need to know you called.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- INSURANCE STRIP -->
-<section class="insurance-strip"><div class="container"><div class="insurance-header-row"><h2 class="insurance-heading">We Accept Most Major Insurance Providers</h2><a href="verify-insurance" class="btn btn-primary">Verify Insurance <i data-lucide="arrow-right"></i></a></div><div class="insurance-logos-grid"><img src="images/insurance/aetna.png" alt="Aetna" class="ins-logo" width="120" height="40"><img src="images/insurance/anthem.png" alt="Anthem" class="ins-logo" width="120" height="40"><img src="images/insurance/cigna.png" alt="Cigna" class="ins-logo" width="120" height="40"><img src="images/insurance/united-healthcare.png" alt="United Healthcare" class="ins-logo" width="120" height="40"><img src="images/insurance/bcbs.png" alt="Blue Cross Blue Shield" class="ins-logo" width="120" height="40"><img src="images/insurance/highmark.png" alt="Highmark" class="ins-logo" width="120" height="40"><img src="images/insurance/carefirst.png" alt="CareFirst" class="ins-logo" width="120" height="40"><img src="images/insurance/emblemhealth.png" alt="EmblemHealth" class="ins-logo" width="120" height="40"><img src="images/insurance/geha.png" alt="GEHA" class="ins-logo" width="120" height="40"><img src="images/insurance/excellus.png" alt="Excellus BCBS" class="ins-logo" width="120" height="40"><img src="images/insurance/amerihealth.png" alt="AmeriHealth" class="ins-logo" width="120" height="40"><img src="images/insurance/multiplan.png" alt="MultiPlan" class="ins-logo" width="120" height="40"></div></div></section>
+<section class="insurance-strip" aria-labelledby="insurance-heading"><div class="container"><div class="insurance-header-row"><span class="badge-gold">Paying for Treatment</span><h2 class="insurance-heading" id="insurance-heading">We Accept Most Major Insurance Providers</h2><p class="insurance-sub">Coverage varies by plan. Our admissions team verifies your exact benefits for free and explains your options honestly, without pressure.</p></div><div class="insurance-logos-grid"><div class="ins-tile"><img src="/images/insurance/aetna.png" alt="Aetna" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/anthem.png" alt="Anthem" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/cigna.png" alt="Cigna" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/united-healthcare.png" alt="United Healthcare" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/bcbs.png" alt="Blue Cross Blue Shield" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/highmark.png" alt="Highmark" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/carefirst.png" alt="CareFirst" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/emblemhealth.png" alt="EmblemHealth" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/geha.png" alt="GEHA" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/excellus.png" alt="Excellus BCBS" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/amerihealth.png" alt="AmeriHealth" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/multiplan.png" alt="MultiPlan" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/carelon.png" alt="Carelon Behavioral Health" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div><div class="ins-tile"><img src="/images/insurance/trustmark.png" alt="Trustmark" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div></div><p class="insurance-disclaimer">Insurance logos are shown to help you identify your plan and are trademarks of their respective owners; they do not imply endorsement. Coverage varies by plan — verification is free and confidential.</p><div class="insurance-cta-row"><a href="/verify-insurance" class="btn btn-primary">Verify Insurance <i data-lucide="arrow-right"></i></a><a href="tel:+14242083120" class="btn btn-secondary"><i data-lucide="phone"></i> Call (424) 208-3120</a></div></div></section>
 
 <!-- FAQ -->
 <section class="section" aria-labelledby="faq-heading">
@@ -313,6 +352,14 @@
       <details>
         <summary>What if they refuse treatment right now? <i data-lucide="chevron-down"></i></summary>
         <p>That happens, and it does not mean the door is closed. We will help you prepare so that when they are ready, even if it is at 2am, you know exactly who to call and what to say.</p>
+      </details>
+      <details>
+        <summary>My child is using fentanyl — do you offer medication-assisted treatment? <i data-lucide="chevron-down"></i></summary>
+        <p>Yes. Our medical team treats opioid and fentanyl addiction with medication, including buprenorphine (Suboxone). Fentanyl is stronger than other opioids and needs a careful start, so we use fentanyl-aware protocols when beginning the medication. Learn more about our <a href="treatments/fentanyl">fentanyl treatment</a>.</p>
+      </details>
+      <details>
+        <summary>Can I call about my adult son or daughter without them knowing? <i data-lucide="chevron-down"></i></summary>
+        <p>Yes, and many parents do. You do not have to give us names, and we will not contact your loved one. We will listen, explain the options, and help you plan what to say when the moment comes. The call is free, confidential, and commits you to nothing.</p>
       </details>
       <details>
         <summary>Is the first call really free and confidential? <i data-lucide="chevron-down"></i></summary>
@@ -347,22 +394,23 @@
         <a href="/" class="footer-logo" aria-label="Golden State Rehab home"><img src="images/logo-white.png" alt="Golden State Rehab" class="nav-logo-img" width="120" height="120"></a>
         <div class="footer-call-cta">
           <span class="footer-call-label">Call Us At</span>
-          <a href="tel:4242083120" class="footer-call-number">(424) 208-3120</a>
+          <a href="tel:+14242083120" class="footer-call-number">(424) 208-3120</a>
         </div>
         <p class="footer-tagline">Treating addiction and mental health in Los Angeles with compassion, clinical expertise, and flexible programs built around your life.</p>
         <div class="footer-contact">
-          <a href="contact" class="footer-phone"><i data-lucide="phone"></i> Call Now</a>
+          <a href="tel:+14242083120" class="footer-phone"><i data-lucide="phone"></i> Call Now</a>
           <!--email_off--><a href="mailto:admissions@goldenstate-rehab.com"><i data-lucide="mail"></i> admissions@goldenstate-rehab.com</a><!--/email_off-->
           <a href="https://maps.google.com/?q=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025</a>
           <span><i data-lucide="clock"></i> Admissions Available 24/7</span>
         </div>
         <div class="footer-badges">
           <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="View DHCS License Certificate">DHCS Lic. #191643AP</a>
+          <a href="https://sapccms.dhcs.ca.gov/DirectoryofProviders/" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="California DHCS provider directory">Verify with DHCS ↗</a>
           <span class="footer-badge">Evidence-Based</span>
         </div>
       </div>
       <div class="footer-col">
-        <h5>Programs</h5>
+        <div class="footer-heading">Programs</div>
         <nav class="footer-links" aria-label="Programs">
           <a href="programs/php">Partial Hospitalization</a>
           <a href="programs/iop">Intensive Outpatient</a>
@@ -375,7 +423,7 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Mental Health</h5>
+        <div class="footer-heading">Mental Health</div>
         <nav class="footer-links" aria-label="Mental health treatments">
           <a href="treatments/depression">Depression</a>
           <a href="treatments/anxiety">Anxiety</a>
@@ -385,7 +433,7 @@
         </nav>
       </div>
       <div class="footer-col">
-        <h5>Addiction</h5>
+        <div class="footer-heading">Addiction</div>
         <nav class="footer-links" aria-label="Addiction treatments">
           <a href="treatments/alcohol">Alcohol Addiction</a>
           <a href="treatments/opioid">Opioid Addiction</a>
@@ -395,13 +443,14 @@
           <a href="treatments/sex-addiction">Sex Addiction</a>
         </nav>
       </div>
-      <div class="footer-col">
-        <h5>Admissions</h5>
+      <div class="footer-col"><div class="footer-heading">Locations</div><nav class="footer-links"><a href="/locations">All Locations</a><a href="/locations/west-los-angeles">West Los Angeles</a><a href="/locations/santa-monica">Rehab Near Santa Monica</a><a href="/locations/beverly-hills">Rehab Near Beverly Hills</a><a href="/locations/brentwood">Rehab Near Brentwood</a><a href="/locations/culver-city">Rehab Near Culver City</a><a href="/locations/venice">Rehab Near Venice</a><a href="/locations/century-city">Rehab Near Century City</a></nav></div><div class="footer-col">
+        <div class="footer-heading">Admissions</div>
         <nav class="footer-links" aria-label="Admissions links">
           <a href="families">Help for Families</a>
           <a href="verify-insurance">Verify Insurance</a>
           <a href="contact">Contact Us</a>
           <a href="faq">FAQ</a>
+          <a href="families">Families</a>
           <a href="about">About Us</a>
         </nav>
       </div>
@@ -426,14 +475,17 @@
   <a class="mobile-cta-verify" href="/verify-insurance"><i data-lucide="shield-check"></i> Verify Insurance</a>
 </div>
 
-<script src="js/main.min.js?v=2"></script>
+<script src="js/main.min.js?v=4"></script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MedicalBusiness",
+      "@type": [
+        "MedicalOrganization",
+        "LocalBusiness"
+      ],
       "@id": "https://www.goldenstate-rehab.com/#organization",
       "name": "Golden State Rehab",
       "url": "https://www.goldenstate-rehab.com/",
@@ -452,25 +504,90 @@
       "@id": "https://www.goldenstate-rehab.com/families#webpage",
       "url": "https://www.goldenstate-rehab.com/families",
       "name": "Help for a Loved One's Addiction | Golden State Rehab",
-      "isPartOf": { "@id": "https://www.goldenstate-rehab.com/#organization" },
-      "about": { "@id": "https://www.goldenstate-rehab.com/#organization" },
+      "isPartOf": {
+        "@id": "https://www.goldenstate-rehab.com/#website"
+      },
+      "about": {
+        "@id": "https://www.goldenstate-rehab.com/#organization"
+      },
       "description": "Help for families with a loved one struggling with addiction or mental health, from an outpatient treatment center in West Los Angeles."
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.goldenstate-rehab.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Help for Families", "item": "https://www.goldenstate-rehab.com/families" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.goldenstate-rehab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Help for Families",
+          "item": "https://www.goldenstate-rehab.com/families"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "What if they will not admit they have a problem?", "acceptedAnswer": { "@type": "Answer", "text": "Your loved one does not need to be fully on board for you to call us. We will talk through where they are and give you practical ways to open the conversation without it turning into a fight." } },
-        { "@type": "Question", "name": "Will I still be able to stay involved?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Because care is outpatient, your loved one stays part of daily life rather than disappearing for months. With their consent, we keep families informed and involved in a way that supports recovery." } },
-        { "@type": "Question", "name": "How much is this going to cost us?", "acceptedAnswer": { "@type": "Answer", "text": "Most of our clients use insurance, and we accept most major plans. We will verify your loved one's coverage and explain what it covers before anything moves forward." } },
-        { "@type": "Question", "name": "What if they refuse treatment right now?", "acceptedAnswer": { "@type": "Answer", "text": "That does not mean the door is closed. We will help you prepare so that when they are ready, you know exactly who to call and what to say." } },
-        { "@type": "Question", "name": "Is the first call really free and confidential?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The first conversation costs nothing and carries no obligation, and what you share with our admissions team stays private." } }
+        {
+          "@type": "Question",
+          "name": "What if they will not admit they have a problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This is the most common place families start. Your loved one does not need to be fully on board for you to call us. We will talk through where they are and give you practical ways to open the conversation without it turning into a fight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I still be able to stay involved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Because care is outpatient, your loved one stays part of daily life rather than disappearing for months. With their consent, we keep families informed and involved in a way that supports recovery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much is this going to cost us?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most of our clients use insurance, and we accept most major plans. We will verify your loved one's coverage and explain what it covers before anything moves forward, so there are no surprises."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if they refuse treatment right now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That happens, and it does not mean the door is closed. We will help you prepare so that when they are ready, even if it is at 2am, you know exactly who to call and what to say."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My child is using fentanyl — do you offer medication-assisted treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our medical team treats opioid and fentanyl addiction with medication, including buprenorphine (Suboxone). Fentanyl is stronger than other opioids and needs a careful start, so we use fentanyl-aware protocols when beginning the medication. Learn more about our fentanyl treatment ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I call about my adult son or daughter without them knowing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and many parents do. You do not have to give us names, and we will not contact your loved one. We will listen, explain the options, and help you plan what to say when the moment comes. The call is free, confidential, and commits you to nothing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the first call really free and confidential?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The first conversation costs nothing and carries no obligation. What you share with our admissions team stays private."
+          }
+        }
       ]
     }
   ]

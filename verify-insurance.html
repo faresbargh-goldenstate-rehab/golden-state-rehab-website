@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LLBGYXQ0Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3LLBGYXQ0Y');
-  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,9 +11,12 @@
   <link rel="alternate" hreflang="es" href="https://www.goldenstate-rehab.com/es/verify-insurance">
   <link rel="alternate" hreflang="x-default" href="https://www.goldenstate-rehab.com/verify-insurance">
   <link rel="icon" type="image/png" href="images/logo-icon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Verify Insurance &amp; Start Intake | Golden State Rehab — Los Angeles">
   <meta property="og:description" content="Verify your insurance and start your intake at Golden State Rehab in Los Angeles. Securely send your insurance card and details — we take it from here.">
-  <meta property="og:image" content="https://www.goldenstate-rehab.com/images/logo-icon.png">
+  <meta property="og:image" content="https://www.goldenstate-rehab.com/images/og/default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://www.goldenstate-rehab.com/verify-insurance">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -31,9 +26,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css">
-  <link rel="stylesheet" href="css/intake.css">
-<script src="/js/i18n.js"></script>
+  <link rel="stylesheet" href="css/styles.min.css?v=4">
+  <link rel="stylesheet" href="css/intake.min.css?v=3">
+<script src="/js/i18n.js?v=3"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.goldenstate-rehab.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Verify Insurance",
+      "item": "https://www.goldenstate-rehab.com/verify-insurance"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -41,7 +56,7 @@
 <div class="phone-banner" role="region" aria-label="Contact information">
   <div class="phone-banner-inner">
     <a href="tel:+14242083120" class="phone-banner-link" aria-label="Call Golden State Rehab at (424) 208-3120">
-      <i data-lucide="phone"></i> (424) 208-3120
+      <i data-lucide="phone"></i> (424) 208-3120 · <span style="opacity:.85">A real person answers, 24/7</span>
     </a>
   </div>
 </div>
@@ -90,6 +105,7 @@
               <span class="dropdown-col-label">Addiction</span>
               <a href="treatments/alcohol">Alcohol</a>
               <a href="treatments/opioid">Opioid</a>
+            <a href="treatments/fentanyl">Fentanyl</a>
               <a href="treatments/meth">Meth</a>
               <a href="treatments/cocaine">Cocaine</a>
               <a href="treatments/prescription-drugs">Prescription Drugs</a>
@@ -107,7 +123,7 @@
     </ul>
     <div class="nav-actions"><a href="/espanol" class="nav-lang" aria-label="Ver en español">Español</a>
       <a href="verify-insurance" class="btn btn-secondary btn-sm active">Verify Insurance</a>
-      <a href="contact" class="btn btn-primary btn-sm"><i data-lucide="phone"></i> Call Now</a>
+      <a href="tel:+14242083120" class="btn btn-primary btn-sm"><i data-lucide="phone"></i> Call Now</a>
     </div>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -124,7 +140,7 @@
   <a href="/espanol" class="nav-lang-mobile">🌐 Ver en Español</a>
   <div class="nav-mobile-actions">
     <a href="verify-insurance" class="btn btn-secondary">Verify Insurance</a>
-    <a href="contact" class="btn btn-primary"><i data-lucide="phone"></i> Call Now</a>
+    <a href="tel:+14242083120" class="btn btn-primary"><i data-lucide="phone"></i> Call Now</a>
   </div>
 </nav>
 
@@ -218,6 +234,18 @@
       <div class="intake-card intake-step intake-gated" id="step-upload" hidden>
         <h2 class="intake-card-title">Add your card <span class="intake-title-optional">optional, speeds things up</span></h2>
 
+        <div class="form-group">
+          <label id="referral_source_label">How did you hear about us? <span class="intake-optional">Optional</span></label>
+          <div class="intake-select" data-select="referral_source" data-options="referral">
+            <div class="intake-select-input-wrap">
+              <input type="text" class="intake-select-input" id="referral_source_search" placeholder="Select one…" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-controls="referral_source_panel" aria-labelledby="referral_source_label">
+              <i data-lucide="chevron-down" class="intake-select-chevron"></i>
+            </div>
+            <div class="intake-select-panel" id="referral_source_panel" role="listbox"></div>
+          </div>
+          <input type="hidden" id="referral_source" name="referral_source">
+        </div>
+
         <!-- Insurance front (optional) -->
         <div class="intake-file-block">
           <label class="intake-file-label">
@@ -243,15 +271,86 @@
 
       <!-- ── Submit ──────────────────────────────────────────── -->
       <div class="intake-submit-row intake-gated" id="step-submit" hidden>
+        <p style="font-size:15px; margin:0 0 12px;">A benefits specialist reviews your info and calls or texts you back — usually within the hour, 24/7. Checking benefits never notifies your employer, and nothing appears on anyone else's statement.</p>
         <button type="submit" id="intake-submit" class="btn btn-primary btn-lg btn-full">
           <span class="intake-submit-label">Submit Securely <i data-lucide="lock"></i></span>
           <span class="intake-submit-loading" hidden><span class="intake-spinner" aria-hidden="true"></span> Sending securely…</span>
         </button>
         <p class="form-privacy"><i data-lucide="shield-check"></i> <strong>100% Confidential.</strong> Your information is encrypted end-to-end and only seen by our admissions team. Protected by HIPAA.</p>
+        <p style="font-size:14px; color:var(--muted); text-align:center; margin-top:12px;">Prefer not to type your details? Call <a href="tel:+14242083120">(424) 208-3120</a> — you can ask anything without giving your name.</p>
       </div>
 
     </form>
 
+  </div>
+</section>
+
+<!-- How Verification Works -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-header reveal"><span class="badge-gold">What Happens Next</span><h2>How Verification Works</h2></div>
+    <p class="reveal" style="max-width:720px;margin:0 auto 40px;text-align:center;color:var(--muted);">Insurance is confusing — that's normal. Here's exactly what happens after you submit the form or call, so there are no surprises.</p>
+    <div class="grid-3">
+      <div class="card-dark reveal" style="background:var(--off-white);color:var(--near-black);border:1px solid var(--border);">
+        <div class="process-badge" style="background:var(--gold-light);color:var(--gold-dark);"><i data-lucide="send"></i></div>
+        <h3 style="color:var(--near-black);">1. Submit the form — or just call</h3>
+        <p style="color:var(--muted);">Send the secure form above, or call <a href="tel:+14242083120">(424) 208-3120</a> if you'd rather talk it through. A real person answers 24/7, and you can ask questions without giving your name.</p>
+      </div>
+      <div class="card-dark reveal reveal-delay-1" style="background:var(--off-white);color:var(--near-black);border:1px solid var(--border);">
+        <div class="process-badge" style="background:var(--gold-light);color:var(--gold-dark);"><i data-lucide="phone-call"></i></div>
+        <h3 style="color:var(--near-black);">2. A specialist confirms your benefits</h3>
+        <p style="color:var(--muted);">A benefits specialist contacts your insurance company directly and confirms your plan's behavioral health coverage. You don't sit on hold or decode insurance jargon — we do that part.</p>
+      </div>
+      <div class="card-dark reveal reveal-delay-2" style="background:var(--off-white);color:var(--near-black);border:1px solid var(--border);">
+        <div class="process-badge" style="background:var(--gold-light);color:var(--gold-dark);"><i data-lucide="message-square"></i></div>
+        <h3 style="color:var(--near-black);">3. We call or text you with your coverage</h3>
+        <p style="color:var(--muted);">Usually within the hour, any time of day or night. You'll know exactly what your plan covers — and what it would cost you — before you decide anything.</p>
+      </div>
+    </div>
+    <div class="reveal" style="max-width:820px;margin:48px auto 0;">
+      <h3>What we check</h3>
+      <p style="margin-top:8px;">Verification isn't a yes-or-no answer. When we call you back, you'll know:</p>
+      <ul class="check-list" style="margin-top:16px;">
+        <li><strong>Your deductible</strong> — the amount you pay out of pocket before your plan starts covering care</li>
+        <li><strong>Your copay or coinsurance</strong> — your share of the cost for each session</li>
+        <li><strong>Sessions covered</strong> — which levels of care your plan includes (like PHP and IOP) and how many sessions it covers</li>
+      </ul>
+      <p style="margin-top:24px;">A few things people worry about — and don't need to. Checking your benefits is free, and it never obligates you to start treatment. It never notifies your employer. Your information is protected by HIPAA and 42 CFR Part 2, a federal rule that gives addiction treatment records extra privacy protection. And if we're not the right fit for your plan, we'll say so honestly and help you look at other options.</p>
+      <p style="margin-top:16px;">One more worry worth naming: starting treatment doesn't mean putting your job on hold. Our evening IOP (a few 3-hour sessions a week — you sleep at home) and telehealth options are built so you can keep working while you get care. After verification, a free assessment helps figure out which level of care actually fits your life.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Verification FAQ -->
+<section class="section section-white">
+  <div class="container">
+    <div class="section-header reveal"><span class="badge-gold">Frequently Asked</span><h2>Insurance Verification: Common Questions</h2></div>
+    <div class="faq-content" style="max-width:820px;margin:0 auto;">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Is verifying my insurance really free?<i data-lucide="chevron-down"></i></button>
+        <div class="faq-answer">
+          <p>Yes. Checking your benefits costs nothing, and there's no obligation to start treatment. We confirm your coverage, explain it in plain language, and the next step is entirely up to you.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Will my employer find out I checked my benefits?<i data-lucide="chevron-down"></i></button>
+        <div class="faq-answer">
+          <p>No. Verifying your benefits never notifies your employer. Your information is protected by HIPAA and 42 CFR Part 2, and nothing about the check appears on anyone else's statement.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">How fast will I hear back?<i data-lucide="chevron-down"></i></button>
+        <div class="faq-answer">
+          <p>Usually within the hour. A benefits specialist confirms your coverage with your insurer, then calls or texts you with the details — 24/7, including nights and weekends.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">What if I don't have my insurance card?<i data-lucide="chevron-down"></i></button>
+        <div class="faq-answer">
+          <p>That's okay. The card photo is optional — it just speeds things up. If you're not sure about your member ID, call <a href="tel:+14242083120">(424) 208-3120</a> and our admissions team will walk you through finding it.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -265,23 +364,24 @@
         <a href="/" class="footer-logo" aria-label="Golden State Rehab home"><img src="images/logo-white.png" alt="Golden State Rehab" class="nav-logo-img" width="120" height="120"></a>
         <div class="footer-call-cta">
           <span class="footer-call-label">Call Us At</span>
-          <a href="tel:4242083120" class="footer-call-number">(424) 208-3120</a>
+          <a href="tel:+14242083120" class="footer-call-number">(424) 208-3120</a>
         </div>
         <p class="footer-tagline">Treating addiction and mental health in Los Angeles with compassion, clinical expertise, and flexible programs built around your life.</p>
         <div class="footer-contact">
-          <a href="contact" class="footer-phone"><i data-lucide="phone"></i> Call Now</a>
+          <a href="tel:+14242083120" class="footer-phone"><i data-lucide="phone"></i> Call Now</a>
           <!--email_off--><a href="mailto:admissions@goldenstate-rehab.com"><i data-lucide="mail"></i> admissions@goldenstate-rehab.com</a><!--/email_off-->
           <a href="https://maps.google.com/?q=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025</a>
           <span><i data-lucide="clock"></i> Admissions Available 24/7</span>
         </div>
         <div class="footer-badges">
           <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="View DHCS License Certificate">DHCS Lic. #191643AP</a>
+          <a href="https://sapccms.dhcs.ca.gov/DirectoryofProviders/" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="California DHCS provider directory">Verify with DHCS ↗</a>
           <span class="footer-badge">Evidence-Based</span>
         </div>
       </div>
 
       <div class="footer-col">
-        <h5>Programs</h5>
+        <div class="footer-heading">Programs</div>
         <nav class="footer-links" aria-label="Programs">
           <a href="programs/php">Partial Hospitalization</a>
           <a href="programs/iop">Intensive Outpatient</a>
@@ -295,18 +395,18 @@
       </div>
 
       <div class="footer-col">
-        <h5>Mental Health</h5>
+        <div class="footer-heading">Mental Health</div>
         <nav class="footer-links" aria-label="Mental health treatments">
           <a href="treatments/depression">Depression</a>
           <a href="treatments/anxiety">Anxiety</a>
           <a href="treatments/ptsd">PTSD</a>
           <a href="treatments/complex-trauma">Complex Trauma</a>
           <a href="treatments/dual-diagnosis">Dual Diagnosis</a>
-        </nav>
+        <a href="treatments/cbt">Cognitive Behavioral Therapy</a><a href="treatments/dbt">Dialectical Behavior Therapy</a></nav>
       </div>
 
       <div class="footer-col">
-        <h5>Addiction</h5>
+        <div class="footer-heading">Addiction</div>
         <nav class="footer-links" aria-label="Addiction treatments">
           <a href="treatments/alcohol">Alcohol Addiction</a>
           <a href="treatments/opioid">Opioid Addiction</a>
@@ -317,19 +417,14 @@
         </nav>
       </div>
 
+      <div class="footer-col"><div class="footer-heading">Locations</div><nav class="footer-links"><a href="/locations">All Locations</a><a href="/locations/west-los-angeles">West Los Angeles</a><a href="/locations/santa-monica">Rehab Near Santa Monica</a><a href="/locations/beverly-hills">Rehab Near Beverly Hills</a><a href="/locations/brentwood">Rehab Near Brentwood</a><a href="/locations/culver-city">Rehab Near Culver City</a><a href="/locations/venice">Rehab Near Venice</a><a href="/locations/century-city">Rehab Near Century City</a></nav></div>
       <div class="footer-col">
-        <h5>Therapies</h5>
-        <nav class="footer-links" aria-label="Therapeutic modalities">
-          <a href="treatments/cbt">Cognitive Behavioral Therapy</a>
-          <a href="treatments/dbt">Dialectical Behavior Therapy</a>
-        </nav>
-      </div>
-      <div class="footer-col">
-        <h5>Admissions</h5>
+        <div class="footer-heading">Admissions</div>
         <nav class="footer-links" aria-label="Admissions links">
           <a href="verify-insurance">Verify Insurance</a>
           <a href="contact">Contact Us</a>
           <a href="faq">FAQ</a>
+          <a href="families">Families</a>
           <a href="about">About Us</a>
         </nav>
       </div>
@@ -349,8 +444,8 @@
   <div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div>
 </footer>
 
-<script src="js/main.min.js"></script>
-<script src="js/intake.js" defer></script>
+<script src="js/main.min.js?v=4"></script>
+<script src="js/intake.js?v=3" defer></script>
 <script>
 /* Progressive disclosure: reveal one section at a time as the prior one is
    completed, so the form feels short and low-commitment. Purely additive —
@@ -525,7 +620,7 @@
     }
   ],
   "sameAs": [
-    "https://www.google.com/search?q=Golden+State+Rehab&stick=H4sIAAAAAAAAAONgU1I1qLAwSDZKSko2TTUxT7U0MDe3MqhIMTRNS7JMMzAxSzNLTDUzX8Qq5J6fk5KapxBckliSqhCUmpGYBAByZ8iUPgAAAA"
+    "https://www.legitscript.com/websites/goldenstate-rehab.com/", "https://www.yelp.com/biz/golden-state-rehab-llc-los-angeles"
   ]
 }
 </script>
@@ -538,8 +633,47 @@
   "url": "https://www.goldenstate-rehab.com/",
   "publisher": {
     "@id": "https://www.goldenstate-rehab.com/#organization"
-  },
-  "inLanguage": "en-US"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is verifying my insurance really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Checking your benefits costs nothing, and there's no obligation to start treatment. We confirm your coverage, explain it in plain language, and the next step is entirely up to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my employer find out I checked my benefits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Verifying your benefits never notifies your employer. Your information is protected by HIPAA and 42 CFR Part 2, and nothing about the check appears on anyone else's statement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast will I hear back?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually within the hour. A benefits specialist confirms your coverage with your insurer, then calls or texts you with the details — 24/7, including nights and weekends."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't have my insurance card?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's okay. The card photo is optional — it just speeds things up. If you're not sure about your member ID, call (424) 208-3120 and our admissions team will walk you through finding it."
+      }
+    }
+  ]
 }
 </script>
 </body>

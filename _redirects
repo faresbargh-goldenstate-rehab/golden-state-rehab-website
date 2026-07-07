@@ -2,9 +2,10 @@
 # Ensure /blog resolves to the blog index.
 /blog  /blog/  301
 
-# Fix 404s: old/malformed program URLs reported by Search Console.
+# Fix 404s: old/malformed URLs reported by Search Console.
 /programs/holistic-therapies-page  /programs/holistic-therapies  301
 /programs/iop-program-page  /programs/iop  301
+/treatments-2  /treatments/  301
 
 # NOTE: non-www -> www (goldenstate-rehab.com -> www.goldenstate-rehab.com)
 # is handled by a Redirect Rule in the Cloudflare dashboard once the apex
