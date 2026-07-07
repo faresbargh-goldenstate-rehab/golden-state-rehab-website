@@ -13,7 +13,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meet Our Team | Golden State Rehab — Los Angeles</title>
-  <meta name="description" content="Meet the compassionate clinical team behind Golden State Rehab. Our licensed therapists, psychiatrists, and recovery specialists are dedicated to your healing.">
+  <meta name="description" content="Meet the team at Golden State Rehab in Los Angeles: a board-certified psychiatrist, licensed therapist, and addiction counselor dedicated to your recovery.">
   <link rel="canonical" href="https://www.goldenstate-rehab.com/team">
   <link rel="alternate" hreflang="en" href="https://www.goldenstate-rehab.com/team">
   <link rel="alternate" hreflang="es" href="https://www.goldenstate-rehab.com/es/team">
@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" href="images/logo-icon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Meet Our Team | Golden State Rehab — Los Angeles">
-  <meta property="og:description" content="Meet the compassionate clinical team behind Golden State Rehab. Our licensed therapists, psychiatrists, and recovery specialists are dedicated to your healing.">
+  <meta property="og:description" content="Meet the team at Golden State Rehab in Los Angeles: a board-certified psychiatrist, licensed therapist, and addiction counselor dedicated to your recovery.">
   <meta property="og:image" content="https://www.goldenstate-rehab.com/images/og/default.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=3">
+  <link rel="stylesheet" href="css/styles.min.css?v=4">
   <link rel="stylesheet" href="/css/cta.min.css?v=3">
 <script src="/js/i18n.js?v=3"></script>
 </head>
@@ -153,6 +153,29 @@
 </section>
 
 <!-- Team Intro -->
+<style>
+  .team-bio { margin-top: 4px; text-align: left; }
+  .team-bio summary {
+    list-style: none;
+    cursor: pointer;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    padding: 4px 0;
+    transition: color .2s ease;
+  }
+  .team-bio summary::-webkit-details-marker { display: none; }
+  .team-bio summary::after { content: " +"; }
+  .team-bio[open] summary::after { content: " \2212"; }
+  .team-bio summary:hover { color: var(--gold-dark); }
+  .team-bio summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+  .team-bio p { font-size: 14px; line-height: 1.65; color: var(--body-text); margin: 12px 0 0; }
+  .team-bio-creds { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 14px; }
+  .team-bio-creds span { background: var(--gold-light); border: 1px solid var(--border); border-radius: 50px; padding: 4px 12px; font-size: 12px; font-weight: 600; color: var(--body-text); }
+  .team-bio-license { font-size: 12px; color: var(--muted); }
+  .team-bio-license a { color: var(--muted); text-decoration: underline; }
+</style>
 <section class="section section-white">
   <div class="container">
     <div class="section-header reveal">
@@ -167,14 +190,13 @@
         </div>
         <h3 class="team-circle-name">Dr. Eric Chaghouri, MD</h3>
         <p class="team-circle-role">Medical Director</p>
-        <button class="team-read-more"
-          data-name="Dr. Eric Chaghouri, MD"
-          data-role="Medical Director"
-          data-bio="Dr. Eric Chaghouri is a board-certified psychiatrist whose clinical work focuses on the treatment of co-occurring psychiatric and addictive disorders. He earned his Bachelor of Arts in Biology, Summa Cum Laude, from UCLA, and his medical degree from the Keck School of Medicine at USC — where he served as chief resident in psychiatric emergency services and as resident clinical instructor and volunteer faculty in the Department of Psychiatry. He completed a fellowship in forensic psychiatry at the USC Institute of Psychiatry and Law, and has extensive experience consulting and providing expert opinion in trial and for the film and television industry. As Medical Director at Golden State Rehab, Dr. Chaghouri oversees clinical operations and provides pharmacologic and psychotherapeutic care."
-          data-img="images/team/eric-chaghouri.jpg"
-          data-credentials="Board-Certified Psychiatrist|M.D., Keck School of Medicine at USC">
-          Read more <i data-lucide="arrow-right"></i>
-        </button>
+        <details class="team-bio">
+          <summary>Full bio</summary>
+          <p>Dr. Eric Chaghouri is a board-certified psychiatrist whose clinical work focuses on the treatment of co-occurring psychiatric and addictive disorders. He earned his Bachelor of Arts in Biology, Summa Cum Laude, from UCLA, and his medical degree from the Keck School of Medicine at USC — where he served as chief resident in psychiatric emergency services and as resident clinical instructor and volunteer faculty in the Department of Psychiatry.</p>
+          <p>He completed a fellowship in forensic psychiatry at the USC Institute of Psychiatry and Law, and has extensive experience consulting and providing expert opinion in trial and for the film and television industry. As Medical Director at Golden State Rehab, Dr. Chaghouri oversees clinical operations and provides pharmacologic and psychotherapeutic care.</p>
+          <div class="team-bio-creds"><span>Board-Certified Psychiatrist</span><span>M.D., Keck School of Medicine at USC</span></div>
+          <p class="team-bio-license">License number available on request and verifiable at <a href="https://search.dca.ca.gov" target="_blank" rel="noopener">search.dca.ca.gov</a>.</p>
+        </details>
       </div>
 
       <div class="team-circle-card reveal reveal-delay-1">
@@ -183,14 +205,13 @@
         </div>
         <h3 class="team-circle-name">Ari Labowitz, LMFT</h3>
         <p class="team-circle-role">Clinical Director</p>
-        <button class="team-read-more"
-          data-name="Ari Labowitz, LMFT"
-          data-role="Clinical Director"
-          data-bio="As Clinical Director, Ari Labowitz brings deep clinical expertise across individual, couples, and family therapy. A relationship expert, Ari is passionate about helping people build the relationship of their dreams — whether with a current partner or someone new. He works with clients facing major life transitions, difficult decisions, depression, anxiety, and creative blocks, alongside relationship and couples' concerns. Practicing from a strengths-based, humanistic approach, he creates a safe space where clients feel secure and grow — treating each person as an individual and focusing on their strengths. No matter what life has thrown at you or what you've tried before, Ari believes there is always hope, and will help you find the answers to what's getting in the way. You deserve better than just getting by — you deserve to thrive."
-          data-img="images/team/ari-labowitz.jpg"
-          data-credentials="Licensed Marriage &amp; Family Therapist (LMFT)|Individuals, Couples &amp; Families">
-          Read more <i data-lucide="arrow-right"></i>
-        </button>
+        <details class="team-bio">
+          <summary>Full bio</summary>
+          <p>As Clinical Director, Ari Labowitz leads the therapy programs at Golden State Rehab. He works with clients facing depression, anxiety, major life transitions, difficult decisions, and creative blocks — the kinds of struggles that often travel with addiction — alongside relationship and couples' concerns. He brings deep clinical expertise across individual, couples, and family therapy.</p>
+          <p>Practicing from a strengths-based, humanistic approach, he creates a safe space where clients feel secure and grow — treating each person as an individual and focusing on their strengths. A relationship expert as well, Ari is passionate about helping people build the relationship of their dreams — whether with a current partner or someone new. No matter what life has thrown at you or what you've tried before, Ari believes there is always hope, and will help you find the answers to what's getting in the way. You deserve better than just getting by — you deserve to thrive.</p>
+          <div class="team-bio-creds"><span>Licensed Marriage &amp; Family Therapist (LMFT)</span><span>Depression, Anxiety &amp; Life Transitions</span></div>
+          <p class="team-bio-license">License number available on request and verifiable at <a href="https://search.dca.ca.gov" target="_blank" rel="noopener">search.dca.ca.gov</a>.</p>
+        </details>
       </div>
 
       <div class="team-circle-card reveal reveal-delay-2">
@@ -199,14 +220,12 @@
         </div>
         <h3 class="team-circle-name">Scott Hedlund</h3>
         <p class="team-circle-role">Director of Business Development</p>
-        <button class="team-read-more"
-          data-name="Scott Hedlund"
-          data-role="Director of Business Development"
-          data-bio="Scott Hedlund is Golden State Rehab's Director of Business Development — and he has lived the journey our clients are on. After years in corporate America, including a run as a top-performing sales representative at Yelp, Scott got sober and lost more than 150 pounds, transforming his life from the inside out. He found his purpose in giving back: using his business background and acumen to connect people struggling with addiction and mental health to real, life-changing care. Scott knows firsthand the courage it takes to ask for help — and he brings that lived experience, energy, and drive to every individual and family he guides toward treatment."
-          data-img="images/team/scott-hedlund.jpg"
-          data-credentials="Director of Business Development|Person in Long-Term Recovery">
-          Read more <i data-lucide="arrow-right"></i>
-        </button>
+        <details class="team-bio">
+          <summary>Full bio</summary>
+          <p>Scott Hedlund is Golden State Rehab's Director of Business Development — and he has lived the journey our clients are on. After years in corporate America, including a run as a top-performing sales representative at Yelp, Scott got sober and lost more than 150 pounds, transforming his life from the inside out.</p>
+          <p>He found his purpose in giving back: using his business background and acumen to connect people struggling with addiction and mental health to real, life-changing care. Scott knows firsthand the courage it takes to ask for help — and he brings that lived experience, energy, and drive to every individual and family he guides toward treatment.</p>
+          <div class="team-bio-creds"><span>Director of Business Development</span><span>Person in Long-Term Recovery</span></div>
+        </details>
       </div>
 
       <div class="team-circle-card reveal reveal-delay-3">
@@ -215,14 +234,13 @@
         </div>
         <h3 class="team-circle-name">Juanita Casillas, RADT</h3>
         <p class="team-circle-role">AOD Counselor</p>
-        <button class="team-read-more"
-          data-name="Juanita Casillas, RADT"
-          data-role="AOD Counselor"
-          data-bio="Juanita Casillas is a Registered Alcohol and Drug Technician (RADT) and Alcohol and Other Drug (AOD) Counselor with more than four years of experience walking alongside people in substance use recovery. She has worked across the full continuum of care, from detox and residential settings to intensive outpatient and PHP, in roles ranging from behavioral health technician to senior technician at programs including Malibu Detox and Residential, New Spirit Recovery, and Nova Vitae Center. That range means she has sat with people on their hardest first days and stayed with them as they rebuilt, so she understands what real recovery asks of a person. At Golden State Rehab, Juanita facilitates individual and group sessions, helps clients recognize their triggers, and works with them to build the relapse-prevention and recovery plans that hold up after treatment. She is proficient in the KIPU EMR and trained in CIWA and COWS withdrawal monitoring, crisis de-escalation, and HIPAA-compliant documentation. She holds an Associate in Addiction Studies from Pierce College along with her RADT certification. Her approach is steady, direct, and genuinely warm. Juanita meets people where they are, treats them with dignity, and helps them move from simply getting through the day toward a life that feels like their own again."
-          data-img="images/team/juanita-casillas.jpg?v=2"
-          data-credentials="Registered Alcohol &amp; Drug Technician (RADT)|4+ Years across Detox, Residential &amp; Outpatient Care">
-          Read more <i data-lucide="arrow-right"></i>
-        </button>
+        <details class="team-bio">
+          <summary>Full bio</summary>
+          <p>Juanita Casillas is a Registered Alcohol and Drug Technician (RADT) and Alcohol and Other Drug (AOD) Counselor with more than four years of experience walking alongside people in substance use recovery. She has worked across the full continuum of care, from detox and residential settings to intensive outpatient and PHP, in roles ranging from behavioral health technician to senior technician at programs including Malibu Detox and Residential, New Spirit Recovery, and Nova Vitae Center. That range means she has sat with people on their hardest first days and stayed with them as they rebuilt, so she understands what real recovery asks of a person.</p>
+          <p>At Golden State Rehab, Juanita facilitates individual and group sessions, helps clients recognize their triggers, and works with them to build the relapse-prevention and recovery plans that hold up after treatment. She is proficient in the KIPU EMR and trained in CIWA and COWS withdrawal monitoring, crisis de-escalation, and HIPAA-compliant documentation. She holds an Associate in Addiction Studies from Pierce College along with her RADT certification.</p>
+          <p>Her approach is steady, direct, and genuinely warm. Juanita meets people where they are, treats them with dignity, and helps them move from simply getting through the day toward a life that feels like their own again.</p>
+          <div class="team-bio-creds"><span>Registered Alcohol &amp; Drug Technician (RADT)</span><span>4+ Years across Detox, Residential &amp; Outpatient Care</span></div>
+        </details>
       </div>
 
     </div>
@@ -356,7 +374,7 @@
   </div>
 <div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></footer>
 
-<script src="js/main.min.js?v=3"></script>
+<script src="js/main.min.js?v=4"></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.lucide)lucide.createIcons();});</script>
 <script type="application/ld+json">
 {
