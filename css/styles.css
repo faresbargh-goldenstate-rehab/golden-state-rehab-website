@@ -788,6 +788,16 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 24px;
   flex-shrink: 0;
 }
+.process-badge-time {
+  width: auto;
+  min-width: 56px;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
 .process-step {
   display: flex;
   flex-direction: column;
