@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "8000"],
       "port": 8000
+    },
+    {
+      "name": "gsr-app-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/faresbarghouthi/Downloads/gsr-app"],
+      "port": 3000
     }
   ]
 }
