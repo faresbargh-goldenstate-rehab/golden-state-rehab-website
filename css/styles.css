@@ -540,6 +540,57 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 24px;
   text-wrap: balance;
 }
+/* Rating eyebrow above the stacked H1: Google mark + 5 stars, as a soft white
+   pill so it reads as a credential rather than decoration on the cream hero. */
+.hero-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px;
+  padding: 8px 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  line-height: 1;
+}
+.hero-rating-g {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.hero-rating-g svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.hero-rating-stars {
+  color: #FBBC05;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+.hero-rating-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: rgba(20, 14, 4, 0.72);
+}
+/* Stacked H1 (English homepage): three deliberate lines, with "100+ Recoveries"
+   as the third — part of the headline itself, not a separate badge beneath it.
+   Line breaks are explicit, so `balance` is turned off. Sizes are chosen so the
+   longest line ("Los Angeles Addiction", 10.81em at weight 700) never wraps to a
+   fourth line — see the mobile override in the ≤640px block. */
+.hero h1.hero-h1-stack {
+  text-wrap: wrap;
+}
+.hero h1.hero-h1-stack .hero-h1-line {
+  display: block;
+}
+.hero h1.hero-h1-stack .hero-h1-proof {
+  color: var(--gold-dark);
+}
+/* Legacy separated badge — still used by the Spanish homepage (es/index.html). */
 .hero h1 .hero-h1-badge {
   display: flex;
   align-items: center;
@@ -2355,6 +2406,10 @@ button.ins-tile { cursor: pointer; }
   .hero h1 .hero-h1-badge { gap: 12px; margin-top: 16px; }
   .hero h1 .hero-h1-badge-rule { flex: 0 0 36px; }
   .hero h1 .hero-h1-badge-text { font-size: 12.5px; letter-spacing: 0.24em; }
+  /* Stacked H1: content width here is 100vw - 48px (hero-content padding). The
+     longest line is 10.81em, so the largest non-wrapping size is
+     (100vw - 48px) / 10.81. The calc below is that with ~4% headroom, capped at 36px. */
+  .hero h1.hero-h1-stack { font-size: clamp(22px, calc(8.9vw - 4.3px), 36px); }
   .hero-subheadline { font-size: 16px; line-height: 1.4; }
   .hero-content { padding-left: 24px; padding-right: 24px; width: 100%; box-sizing: border-box; }
   .hero-actions { flex-direction: column; }
@@ -3607,4 +3662,84 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
 .hero-call-facts li svg { width: 16px; height: 16px; color: var(--gold); flex: none; }
 @media (max-width: 640px) {
   .hero-call-facts { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* ============================================================
+   WHAT PEOPLE ARE SAYING — Google review screenshots
+   Three Google review captures, trimmed at the margins only. Desktop:
+   one row, equal-height cards. Mobile: a single stack where each card
+   overlaps the one above it, like a pile of printed screenshots.
+   ============================================================ */
+/* Pure white, matching the screenshots' own background, so the captures sit on
+   the page instead of reading as bright rectangles on cream. With no colour
+   difference left to separate them, the cards are defined by a neutral hairline
+   and shadow rather than the gold border used elsewhere on the site. */
+.review-wall {
+  background: var(--white);
+}
+.review-shots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch; /* cards match the tallest; the surplus is white-on-white */
+}
+.review-shot {
+  position: relative;
+  margin: 0;
+  background: var(--white);
+  border: 1px solid rgba(20, 14, 4, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.review-shot:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+/* Side by side, each screenshot is too small to read comfortably, so the whole
+   card opens the full-size capture. No JS, no extra chrome on the page. */
+.review-shot > a {
+  display: block;
+  cursor: zoom-in;
+}
+.review-shot > a:focus-visible {
+  outline: 2px solid var(--gold-dark);
+  outline-offset: -2px;
+}
+.review-shot img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1023px) {
+  /* Stacked, with each card riding up over the one before it. The 40px of
+     padding below each screenshot is what the next card overlaps, so no
+     review text is ever covered. Stacking is kept all the way up to 1024px
+     because a screenshot in a third-width column is only legible on a real
+     desktop; below that, full-width stacked cards read far better. */
+  .review-shots {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .review-shot {
+    padding-bottom: 48px;
+    box-shadow: 0 -10px 26px rgba(20, 14, 4, 0.13);
+  }
+  .review-shot + .review-shot {
+    margin-top: -36px;
+  }
+  .review-shot:nth-child(1) { z-index: 1; }
+  .review-shot:nth-child(2) { z-index: 2; }
+  .review-shot:nth-child(3) { z-index: 3; }
+  .review-shot:hover {
+    transform: none;
+    box-shadow: 0 -10px 26px rgba(20, 14, 4, 0.13);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-shot { transition: none; }
+  .review-shot:hover { transform: none; }
 }
