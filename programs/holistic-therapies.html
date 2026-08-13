@@ -114,7 +114,7 @@
       <div class="intro-text">
         <span class="eyebrow">About Holistic Therapies</span>
         <h2>What Are Holistic Therapies in Rehab?</h2>
-        <p>Holistic therapies are practices that care for the body while clinical treatment works on the mind — yoga, breathwork, mindfulness, journaling, movement, and expressive arts. At Golden State Rehab, they run alongside evidence-based care like <a href="../treatments/cbt">CBT</a> and <a href="../treatments/dbt">DBT</a>. They complement that work. They never replace it.</p>
+        <p>Holistic therapies are practices that care for the body while clinical treatment works on the mind — yoga, breathwork, mindfulness, journaling, movement, and expressive arts. At Golden State Rehab, they run alongside evidence-based care like <a href="../treatments/cbt">CBT</a> and <a href="../treatments/dbt">DBT</a>. They complement that work. They never replace it. You'll find these practices woven into the <a href="/programs/">rehab programs in Los Angeles</a> we offer from our Westwood outpatient center.</p>
         <p>Why does the body matter? Stress, trauma, and addiction show up physically — tight shoulders, shallow breathing, a nervous system stuck on high alert. Talk therapy alone can miss that. Our holistic sessions give you simple, repeatable tools to settle your body, so the skills you learn in therapy have somewhere calm to land.</p>
         <a href="../contact" class="btn btn-primary">Get Started <i data-lucide="arrow-right"></i></a>
       </div>
@@ -298,22 +298,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

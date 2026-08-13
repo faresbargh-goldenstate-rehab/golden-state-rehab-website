@@ -444,22 +444,24 @@
   "sameAs": [
     "https://www.legitscript.com/websites/goldenstate-rehab.com/", "https://www.yelp.com/biz/golden-state-rehab-llc-los-angeles"
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "hasCredential": [
     {
       "@type": "EducationalOccupationalCredential",

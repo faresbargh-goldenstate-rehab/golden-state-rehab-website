@@ -159,8 +159,8 @@
       <div class="intro-text">
         <span class="eyebrow">About PHP</span>
         <h2>What is a Partial Hospitalization Program?</h2>
-        <p>A Partial Hospitalization Program (PHP) is the most intensive level of outpatient care available. Designed for individuals who need more support than traditional outpatient treatment but do not require 24-hour residential care, PHP provides a structured, full-day clinical environment 5 days per week.</p>
-        <p>At Golden State Rehab, our PHP runs Monday through Friday from approximately 9am to 3pm, offering approximately 6 hours of therapeutic programming each day. Clients return home or to a sober living environment each evening, maintaining some connection to daily life while receiving the intensive support they need to stabilize and heal.</p>
+        <p>A Partial Hospitalization Program (PHP) is the most intensive level of outpatient care available. Designed for individuals who need more support than traditional outpatient treatment but do not require 24-hour residential care, PHP provides a structured, full-day clinical environment 5 days per week. It's the most intensive of the <a href="/programs/">rehab programs in Los Angeles</a> we run from our Westwood outpatient center.</p>
+        <p>At Golden State Rehab, our PHP runs Monday through Friday from approximately 9am to 3pm, offering approximately 6 hours of therapeutic programming each day. Clients return home or to a sober living environment each evening, maintaining some connection to daily life while receiving the intensive support they need to stabilize and heal. If the unknown is part of what's holding you back, read <a href="/blog/first-week-of-outpatient-rehab">what your first week of outpatient rehab actually looks like</a>.</p>
         <a href="../contact" class="btn btn-primary">Start Today <i data-lucide="arrow-right"></i></a>
       </div>
       <div class="intro-image">
@@ -277,7 +277,7 @@
       <div class="reveal">
         <span class="eyebrow">Serving the Westside</span>
         <h2>A PHP Program Near You in West Los Angeles</h2>
-        <p>If you've been searching for a "PHP near me," our partial hospitalization program is centrally located in <strong>Westwood</strong> at 1964 Westwood Blvd — minutes from the surrounding Westside neighborhoods and easy to reach from the 405 and 10 freeways. We're an accessible daily option whether you're stepping down from residential care or starting treatment for the first time.</p>
+        <p>If you've been searching for a "PHP near me," our partial hospitalization program is centrally located in <strong>Westwood</strong> at 1964 Westwood Blvd — minutes from the surrounding Westside neighborhoods and easy to reach from the 405 and 10 freeways. We're an accessible daily option whether you're stepping down from residential care or starting treatment for the first time. PHP's daily structure also makes it a common setting for <a href="/treatments/alcohol">alcohol addiction treatment</a>.</p>
         <p>Our PHP serves clients from across West Los Angeles, including:</p>
         <ul class="check-list" style="margin-top: 16px;">
           <li>Santa Monica, Brentwood &amp; Pacific Palisades</li>
@@ -486,22 +486,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

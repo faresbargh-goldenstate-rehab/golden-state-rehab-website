@@ -350,7 +350,7 @@
     </div>
     <div class="reveal" style="margin-top: 56px;">
       <h3 style="color: var(--off-white); font-size: 22px; margin-bottom: 8px;">Explore the neighborhood</h3>
-      <p style="color: rgba(253,250,245,0.7); margin-bottom: 20px; max-width: 640px;">Parks, cafes, pharmacies, and quiet places to regroup, all within walking distance of our West Los Angeles location.</p>
+      <p style="color: rgba(253,250,245,0.7); margin-bottom: 20px; max-width: 640px;">Parks, cafes, pharmacies, and quiet places to regroup, all within walking distance of our West Los Angeles location. Prefer a full-screen view? <a href="/amenity-map" style="color: var(--gold);">Explore the neighborhood around our center</a> on our interactive amenity map.</p>
       <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(253,250,245,0.12); box-shadow: var(--shadow-md); height: 540px;">
         <iframe
           title="Explore parks, cafes, and amenities near Golden State Rehab in West Los Angeles"
@@ -523,22 +523,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

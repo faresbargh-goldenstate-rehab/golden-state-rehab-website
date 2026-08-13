@@ -121,7 +121,7 @@
       <div class="intro-text">
         <span class="eyebrow">About Individual Therapy</span>
         <h2>What Is Individual Therapy?</h2>
-        <p>Individual therapy is private, one-on-one time with a licensed therapist. At Golden State Rehab in Los Angeles, it anchors every treatment plan: you meet with your own dedicated therapist multiple times a week in <a href="php">PHP</a> (full weekday treatment — you sleep at home) and at least once a week in <a href="iop">IOP</a> (a few 3-hour sessions per week).</p>
+        <p>Individual therapy is private, one-on-one time with a licensed therapist. At Golden State Rehab in Los Angeles, it anchors every treatment plan: you meet with your own dedicated therapist multiple times a week in <a href="php">PHP</a> (full weekday treatment — you sleep at home) and at least once a week in <a href="iop">IOP</a> (a few 3-hour sessions per week). One-on-one work is woven through all of the <a href="/programs/">rehab programs in Los Angeles</a> we provide at our Westwood outpatient center.</p>
         <p>Sessions use proven approaches like CBT, DBT, and EMDR to work on what's underneath the addiction or anxiety — not just the surface symptoms. The same therapist stays with you from your first week to your last, so trust builds instead of starting over.</p>
         <p>Everything you share is protected by HIPAA and 42 CFR Part 2, a federal privacy law specific to addiction treatment. Most major insurance plans cover individual therapy as part of our programs — <a href="../verify-insurance">verify your benefits</a> for free, or call <a href="tel:+14242083120">(424) 208-3120</a> anytime.</p>
         <a href="../contact" class="btn btn-primary">Get Started <i data-lucide="arrow-right"></i></a>
@@ -299,22 +299,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

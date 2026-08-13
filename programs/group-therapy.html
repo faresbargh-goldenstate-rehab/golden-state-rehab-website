@@ -114,7 +114,7 @@
       <div class="intro-text">
         <span class="eyebrow">About Group Therapy</span>
         <h2>What Is Group Therapy?</h2>
-        <p>Group therapy is a small, therapist-led session — usually 6 to 10 people — where you work on recovery alongside others who understand it firsthand. At Golden State Rehab in Los Angeles, groups are the backbone of treatment: they meet daily in <a href="php">PHP</a> (full weekday treatment — you sleep at home) and anchor each 3-hour session in <a href="iop">IOP</a>.</p>
+        <p>Group therapy is a small, therapist-led session — usually 6 to 10 people — where you work on recovery alongside others who understand it firsthand. At Golden State Rehab in Los Angeles, groups are the backbone of treatment: they meet daily in <a href="php">PHP</a> (full weekday treatment — you sleep at home) and anchor each 3-hour session in <a href="iop">IOP</a>. Like the rest of the <a href="/programs/">rehab programs in Los Angeles</a> we run, groups meet at our Westwood outpatient center.</p>
         <p>Every group is run by a licensed therapist. Some teach skills — CBT, DBT, relapse prevention. Others, like process groups, give you room to say the hard things out loud and be heard. Group counseling is a core behavioral therapy for addiction, according to the <a href="https://nida.nih.gov/publications/drugfacts/treatment-approaches-drug-addiction" target="_blank" rel="noopener">National Institute on Drug Abuse</a> — and it works on the isolation and shame that keep addiction going.</p>
         <p>What you share stays in the room — group privacy norms are strictly kept, and HIPAA and 42 CFR Part 2 protect your records. Most major insurance covers group therapy as part of our programs. <a href="../verify-insurance">Verify your benefits</a> for free, or call <a href="tel:+14242083120">(424) 208-3120</a> anytime.</p>
         <a href="../contact" class="btn btn-primary">Get Started <i data-lucide="arrow-right"></i></a>
@@ -293,22 +293,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

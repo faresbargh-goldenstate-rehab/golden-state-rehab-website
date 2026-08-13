@@ -322,6 +322,23 @@
   </div>
 </section>
 
+<!-- Before You Verify -->
+<section class="section section-white">
+  <div class="container">
+    <div class="reveal" style="max-width:820px;margin:0 auto;">
+      <h3>Before you verify</h3>
+      <p style="margin-top:8px;">Not sure what you're verifying for? Start here:</p>
+      <ul class="check-list" style="margin-top:16px;">
+        <li>Learn <a href="/blog/does-insurance-cover-rehab-in-california">whether insurance covers rehab in California</a> and how coverage typically works</li>
+        <li>Get a realistic picture of <a href="/blog/cost-of-rehab-in-los-angeles">what rehab costs in Los Angeles</a></li>
+        <li>Have Medi-Cal? Read our guide to <a href="/blog/does-medi-cal-cover-rehab-in-california">Medi-Cal coverage for rehab</a></li>
+        <li>Worried about confidentiality? Our FAQ answers common <a href="/faq">privacy and 42 CFR Part 2 questions</a></li>
+        <li>Compare the <a href="/programs/">rehab programs in Los Angeles</a> your benefits would apply to</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- Verification FAQ -->
 <section class="section section-white">
   <div class="container">
@@ -567,22 +584,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

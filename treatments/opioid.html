@@ -114,7 +114,7 @@
         <span class="eyebrow">Opioid Use Disorder</span>
         <h2>Opioid Addiction Requires Medical Treatment — Not Willpower</h2>
         <p>Opioid addiction changes the brain. It doesn’t matter how it started — a pain prescription that escalated, or heroin or <a href="fentanyl">fentanyl</a> from the street. Once the brain’s reward system adapts, stopping without help is extremely hard. That’s not weakness. It’s biology — and it’s treatable.</p>
-        <p>The most effective approach combines medication with therapy. That’s what we provide: buprenorphine (Suboxone) managed by our medical team, plus individual therapy, group sessions, and holistic support. Treatment runs as PHP (full weekdays — you sleep at home) or IOP (a few 3-hour sessions a week, with morning and evening tracks). Most of our clients keep working during treatment.</p>
+        <p>The most effective approach combines medication with therapy. That’s what we provide: buprenorphine (Suboxone) managed by our medical team, plus individual therapy, group sessions, and holistic support. Treatment runs as PHP (full weekdays — you sleep at home) or IOP (a few 3-hour sessions a week, with morning and evening tracks). Most of our clients keep working during treatment. If opioids aren't the only concern, explore the full range of <a href="/treatments/">conditions we treat in Los Angeles</a>.</p>
         <a href="../contact" class="btn btn-primary">Start Recovery Today <i data-lucide="arrow-right"></i></a>
       </div>
       <div class="intro-image">
@@ -224,6 +224,7 @@
         </div>
       </div>
     </div>
+    <p style="margin-top:48px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto;color:var(--muted);font-size:15px;">Opioid treatment is delivered from our Westside center — see <a href="/locations">our Westwood location and the areas we serve</a>, including <a href="/locations/venice">rehab near Venice</a>.</p>
   </div>
 </section>
 
@@ -294,22 +295,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

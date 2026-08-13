@@ -135,7 +135,7 @@
       <div class="intro-text">
         <span class="eyebrow">About Telehealth</span>
         <h2>What Is Online IOP at Golden State Rehab?</h2>
-        <p>Golden State Rehab's telehealth program delivers our full Intensive Outpatient Program (IOP) by secure, HIPAA-compliant video — live 3-hour sessions, 3 to 5 days per week, about 9 to 15 hours of treatment weekly, with morning and evening tracks, from anywhere in California. You keep your job and your routine while getting real clinical care. You join real-time group therapy, meet one-on-one with your primary therapist each week, and see our board-certified psychiatrist for medication support — all from a computer, tablet, or phone, with no downloads needed. It's the same evidence-based curriculum as our in-person program at our Westwood office in West Los Angeles, built for people who live farther away, can't manage the commute, or simply feel more at ease starting treatment from home. Most major insurance plans are accepted, and a free, confidential assessment determines whether online IOP is the right level of care for you.</p>
+        <p>Golden State Rehab's telehealth program delivers our full Intensive Outpatient Program (IOP) by secure, HIPAA-compliant video — live 3-hour sessions, 3 to 5 days per week, about 9 to 15 hours of treatment weekly, with morning and evening tracks, from anywhere in California. You keep your job and your routine while getting real clinical care. You join real-time group therapy, meet one-on-one with your primary therapist each week, and see our board-certified psychiatrist for medication support — all from a computer, tablet, or phone, with no downloads needed. It's the same evidence-based curriculum as our in-person program at our Westwood office in West Los Angeles, built for people who live farther away, can't manage the commute, or simply feel more at ease starting treatment from home. Most major insurance plans are accepted, and a free, confidential assessment determines whether online IOP is the right level of care for you. Telehealth is one of several <a href="/programs/">rehab programs in Los Angeles</a> we operate out of our Westwood center — just delivered to wherever you are.</p>
         <a href="../contact" class="btn btn-primary">Get Started <i data-lucide="arrow-right"></i></a>
       </div>
       <div class="intro-image">
@@ -244,7 +244,7 @@
       <div class="reveal">
         <span class="eyebrow">A Real Clinic Behind the Screen</span>
         <h2>Online Care From a Real Los Angeles Clinic</h2>
-        <p>Our telehealth program isn't a faceless app. It's run from our DHCS-licensed clinic at 1964 Westwood Blvd in <strong>Westwood, West Los Angeles</strong>, by the same clinical team that treats clients in person. If you're local, you can step into our <a href="iop">in-person IOP</a> at any point — it's the same curriculum.</p>
+        <p>Our telehealth program isn't a faceless app. It's run from our DHCS-licensed clinic at 1964 Westwood Blvd in <strong>Westwood, West Los Angeles</strong>, by the same clinical team that treats clients in person. If you're local, you can step into our <a href="iop">in-person IOP</a> at any point — it's the same curriculum. Online IOP is also a common setting for <a href="/treatments/alcohol">alcohol addiction treatment</a> when the commute to a clinic is the obstacle.</p>
         <p>We serve online clients across the Westside and beyond:</p>
         <ul class="check-list" style="margin-top: 16px;">
           <li>Santa Monica &amp; Brentwood</li>
@@ -385,22 +385,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

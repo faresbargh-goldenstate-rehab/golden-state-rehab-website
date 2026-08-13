@@ -199,7 +199,7 @@
           <h3>Call or Text</h3>
           <a href="tel:+14242083120" class="contact-info-link">(424) 208-3120</a>
           <p>Available 24 hours a day, 7 days a week. You'll always speak with a real person — never a call center.</p>
-          <a href="sms:+14242083120?&body=Hi, I'd like to learn about treatment options." class="contact-info-link">Text us instead</a>
+          <a href="sms:+14242083120?body=Hi, I'd like to learn about treatment options." class="contact-info-link">Text us instead</a>
         </div>
 
         <div class="contact-info-card">
@@ -220,7 +220,7 @@
           <div class="contact-info-icon"><i data-lucide="clock"></i></div>
           <h3>Hours</h3>
           <ul class="hours-list">
-            <li><span>Clinical Hours</span><span>Admissions Available 24/7</span></li>
+            <li><span>Clinical Hours</span><span>Mon–Sat</span></li>
             <li><span>Admissions Line</span><span>24/7</span></li>
             <li><span>Crisis Line</span><span>24/7</span></li>
           </ul>
@@ -403,22 +403,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

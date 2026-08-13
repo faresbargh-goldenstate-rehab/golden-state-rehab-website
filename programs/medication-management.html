@@ -114,7 +114,7 @@
       <div class="intro-text">
         <span class="eyebrow">About Medication Management</span>
         <h2>What Is Medication Management?</h2>
-        <p>Medication management is psychiatric care built into your treatment program. Our psychiatric team — led by board-certified psychiatrist <a href="../team">Dr. Eric Chaghouri, MD</a> — evaluates whether medication could help you, prescribes it when appropriate, and meets with you regularly to make sure it's working. It's one part of a plan that also includes therapy. It is never a substitute for it.</p>
+        <p>Medication management is psychiatric care built into your treatment program. Our psychiatric team — led by board-certified psychiatrist <a href="../team">Dr. Eric Chaghouri, MD</a> — evaluates whether medication could help you, prescribes it when appropriate, and meets with you regularly to make sure it's working. It's one part of a plan that also includes therapy. It is never a substitute for it. Psychiatric care like this supports every one of the <a href="/programs/">rehab programs in Los Angeles</a> at our Westwood outpatient center.</p>
         <p>For some clients, that means medication for opioid or alcohol use disorder — like buprenorphine (Suboxone) or naltrexone. For others, it means medication for depression, anxiety, or PTSD, conditions that often travel with addiction. And sometimes it simply means a careful review of what you're already taking. Your psychiatrist and your primary therapist work from the same plan, so nothing happens in a silo.</p>
         <a href="../contact" class="btn btn-primary">Get Assessed <i data-lucide="arrow-right"></i></a>
       </div>
@@ -296,22 +296,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

@@ -114,7 +114,7 @@
       <div class="intro-text">
         <span class="eyebrow">After Treatment</span>
         <h2>What Is a Rehab Alumni Program?</h2>
-        <p>An alumni program is the recovery community you keep after treatment ends. When you finish <a href="php">PHP</a> or <a href="iop">IOP</a> at Golden State Rehab, you don't just get a discharge date. You get monthly check-ins, weekly peer groups, sober social events, and a clinical team that still picks up the phone.</p>
+        <p>An alumni program is the recovery community you keep after treatment ends. When you finish <a href="php">PHP</a> or <a href="iop">IOP</a> at Golden State Rehab, you don't just get a discharge date. You get monthly check-ins, weekly peer groups, sober social events, and a clinical team that still picks up the phone. Alumni support is the lasting chapter of the <a href="/programs/">rehab programs in Los Angeles</a> based at our Westwood outpatient center.</p>
         <p>Why does that matter? The early months after leaving structured treatment are often the hardest. The schedule that held you steady is gone, and old routines are waiting. Our alumni program is built to carry the continuity, community, and accountability of treatment into everyday life — so the distance between "in treatment" and "on your own" never feels like a cliff.</p>
         <a href="../contact" class="btn btn-primary">Join Our Alumni Community <i data-lucide="arrow-right"></i></a>
       </div>
@@ -320,22 +320,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

@@ -135,7 +135,7 @@
       <div class="intro-text">
         <span class="eyebrow">About IOP</span>
         <h2>What is an Intensive Outpatient Program?</h2>
-        <p>An Intensive Outpatient Program (IOP) is structured addiction and mental health treatment that fits around your life — a few focused sessions each week instead of full days, and you sleep in your own bed. At Golden State Rehab in Westwood, Los Angeles, IOP meets 3 to 5 days per week for 3-hour sessions, about 9 to 15 hours of treatment weekly, with morning and evening tracks offered in person or through secure telehealth anywhere in California. Each week includes group therapy, at least one private session with your primary therapist, and psychiatric support when your treatment plan calls for it. IOP sits one step below <a href="php">PHP</a> (full weekdays) in intensity, and it's often where clients land after finishing PHP — or when weekly therapy alone isn't enough. Most major insurance plans are accepted, and a free, confidential assessment determines whether IOP is the right level of care for you.</p>
+        <p>An Intensive Outpatient Program (IOP) is structured addiction and mental health treatment that fits around your life — a few focused sessions each week instead of full days, and you sleep in your own bed. At Golden State Rehab in Westwood, Los Angeles, IOP meets 3 to 5 days per week for 3-hour sessions, about 9 to 15 hours of treatment weekly, with morning and evening tracks offered in person or through secure telehealth anywhere in California. Each week includes group therapy, at least one private session with your primary therapist, and psychiatric support when your treatment plan calls for it. IOP sits one step below <a href="php">PHP</a> (full weekdays) in intensity, and it's often where clients land after finishing PHP — or when weekly therapy alone isn't enough. IOP is one of the core <a href="/programs/">rehab programs in Los Angeles</a> we offer at our Westwood outpatient center. Most major insurance plans are accepted, and a free, confidential assessment determines whether IOP is the right level of care for you.</p>
         <a href="../contact" class="btn btn-primary">Get Started <i data-lucide="arrow-right"></i></a>
       </div>
       <div class="intro-image">
@@ -168,7 +168,7 @@
     <div class="section-header reveal">
       <span class="eyebrow">Your Weekly Rhythm</span>
       <h2>What a Week of IOP Looks Like</h2>
-      <p class="section-subtext">You attend 3-hour sessions 3–5 days a week — 9 to 15 hours in total. Your clinical team sets your starting days at your free assessment and adjusts as you progress.</p>
+      <p class="section-subtext">You attend 3-hour sessions 3–5 days a week — 9 to 15 hours in total. Your clinical team sets your starting days at your free assessment and adjusts as you progress. For a day-by-day picture of getting started, read <a href="/blog/first-week-of-outpatient-rehab">what your first week of outpatient rehab actually looks like</a>.</p>
     </div>
     <div class="grid-3">
       <div class="feature-card reveal"><div class="feature-card-icon"><i data-lucide="sunrise"></i></div><h3>Morning Track</h3><p>Three-hour group sessions in the morning, 3–5 days a week. A good fit if you work evenings or want treatment finished early in the day.</p></div>
@@ -209,7 +209,7 @@
       <div class="reveal">
         <span class="eyebrow">Is IOP Right For You?</span>
         <h2>Who Benefits Most from IOP</h2>
-        <p>IOP is ideal for clients who have established a baseline of stability — either through completing PHP or entering treatment with a stable support system and living environment.</p>
+        <p>IOP is ideal for clients who have established a baseline of stability — either through completing PHP or entering treatment with a stable support system and living environment. Because it fits around work and family life, IOP is also a common setting for <a href="/treatments/alcohol">alcohol addiction treatment</a>.</p>
         <ul class="check-list" style="margin-top: 24px;">
           <li>Clients transitioning from PHP ready for more independence</li>
           <li>Professionals who need to maintain work or school</li>
@@ -400,22 +400,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

@@ -114,7 +114,7 @@
       <div class="intro-text">
         <span class="eyebrow">A Skills-Based Therapy That Actually Teaches You How</span>
         <h2>What Is Dialectical Behavior Therapy?</h2>
-        <p><strong>Dialectical Behavior Therapy (DBT)</strong> is a structured, evidence-based form of psychotherapy developed by Dr. Marsha Linehan at the University of Washington in the 1980s. Originally designed for people with chronic suicidality and borderline personality disorder, DBT has since become one of the most effective treatments available for any condition involving intense, hard-to-manage emotions — including <a href="alcohol">addiction</a>, <a href="depression">depression</a>, <a href="ptsd">PTSD</a>, eating disorders, and severe emotion dysregulation.</p>
+        <p><strong>Dialectical Behavior Therapy (DBT)</strong> is a structured, evidence-based form of psychotherapy developed by Dr. Marsha Linehan at the University of Washington in the 1980s. Originally designed for people with chronic suicidality and borderline personality disorder, DBT has since become one of the most effective treatments available for any condition involving intense, hard-to-manage emotions — including <a href="alcohol">addiction</a>, <a href="depression">depression</a>, <a href="ptsd">PTSD</a>, eating disorders, and severe emotion dysregulation. DBT is one pillar of the <a href="/mental-health">mental health treatment in Los Angeles</a> available at Golden State Rehab.</p>
         <p>The word <em>dialectical</em> comes from the central insight of the therapy: that two seemingly opposite things can both be true at the same time. You can accept yourself exactly as you are <em>and</em> work hard to change. You can be doing the best you can <em>and</em> need to do better. Holding both — instead of getting stuck in either — is where freedom begins.</p>
         <p>At Golden State Rehab, our licensed DBT therapists in Los Angeles deliver comprehensive DBT — individual therapy, skills group, between-session coaching, and team consultation — within our <a href="../programs/php">PHP</a>, <a href="../programs/iop">IOP</a>, and <a href="../programs/individual-therapy">individual therapy</a> programs.</p>
         <a href="../contact" class="btn btn-primary">Start DBT Treatment <i data-lucide="arrow-right"></i></a>
@@ -358,6 +358,7 @@
         <p style="color:var(--muted);">Schema therapy explores how early experiences shaped your "modes" or core patterns. DBT focuses on building the skills you need to act differently right now. Both can complement each other in long-term work.</p>
       </div>
     </div>
+    <p style="margin-top:48px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto;color:var(--muted);font-size:15px;">Not sure which approach fits your situation? Our guide <a href="/blog/cbt-vs-dbt-which-is-right">CBT vs. DBT: how to know which therapy is right for you</a> walks through the differences.</p>
   </div>
 </section>
 
@@ -414,6 +415,7 @@
         </div>
       </div>
     </div>
+    <p style="margin-top:48px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto;color:var(--muted);font-size:15px;">DBT groups and sessions run from one Westside center — explore <a href="/locations">our Westwood location and the areas we serve</a>, including programs <a href="/locations/west-los-angeles">serving West Los Angeles</a>.</p>
   </div>
 </section>
 
@@ -486,22 +488,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"

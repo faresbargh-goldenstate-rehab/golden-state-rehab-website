@@ -115,7 +115,7 @@
         <span class="eyebrow">The Gold Standard of Talk Therapy</span>
         <h2>What Is Cognitive Behavioral Therapy?</h2>
         <p><strong>Cognitive Behavioral Therapy (CBT)</strong> is a short-term, structured, evidence-based form of psychotherapy that helps you identify and change the unhelpful thought patterns and behaviors that fuel emotional suffering. First developed by psychiatrist Dr. Aaron T. Beck in the 1960s, CBT has since become the most rigorously studied form of talk therapy in history — with more than 2,000 randomized controlled trials supporting its effectiveness.</p>
-        <p>At Golden State Rehab, our licensed CBT therapists in Los Angeles deliver this evidence-based treatment for anxiety, depression, addiction, PTSD, OCD, eating disorders, insomnia, and chronic pain. Whether you're stepping into our <a href="../programs/php">PHP program</a>, our <a href="../programs/iop">IOP program</a>, or <a href="../programs/individual-therapy">individual therapy</a>, CBT is woven into nearly every clinical hour we deliver.</p>
+        <p>At Golden State Rehab, our licensed CBT therapists in Los Angeles deliver this evidence-based treatment for anxiety, depression, addiction, PTSD, OCD, eating disorders, insomnia, and chronic pain. Whether you're stepping into our <a href="../programs/php">PHP program</a>, our <a href="../programs/iop">IOP program</a>, or <a href="../programs/individual-therapy">individual therapy</a>, CBT is woven into nearly every clinical hour we deliver. It's also the backbone of the broader <a href="/mental-health">mental health treatment in Los Angeles</a> we offer for depression, anxiety, trauma, and co-occurring conditions.</p>
         <p>The American Psychological Association, the National Institute of Mental Health, and the Substance Abuse and Mental Health Services Administration all recognize CBT as a first-line treatment for the majority of mental health and substance use disorders. It works — and it works fast.</p>
         <a href="../contact" class="btn btn-primary">Start CBT Treatment <i data-lucide="arrow-right"></i></a>
       </div>
@@ -177,13 +177,13 @@
         <p>CBT for addiction targets the thoughts, triggers, and behaviors that drive use — building practical relapse-prevention skills you can use for life.</p>
         <span class="service-card-link">Learn more <i data-lucide="arrow-right"></i></span>
       </a>
-      <a href="../treatments/dual-diagnosis" class="service-card reveal reveal-delay-1">
+      <a href="/treatments/anxiety" class="service-card reveal reveal-delay-1">
         <div class="service-card-icon"><i data-lucide="git-merge"></i></div>
         <h3>OCD &amp; Intrusive Thoughts</h3>
         <p>Exposure and Response Prevention (ERP) — a specialized form of CBT — is the gold-standard treatment for obsessive-compulsive disorder.</p>
         <span class="service-card-link">Learn more <i data-lucide="arrow-right"></i></span>
       </a>
-      <a href="../treatments/dual-diagnosis" class="service-card reveal reveal-delay-2">
+      <a href="/mental-health" class="service-card reveal reveal-delay-2">
         <div class="service-card-icon"><i data-lucide="moon"></i></div>
         <h3>Insomnia &amp; Sleep</h3>
         <p>CBT-I (CBT for Insomnia) outperforms sleep medication in long-term studies. We treat sleep disturbance as part of the broader recovery picture.</p>
@@ -343,6 +343,7 @@
         <p style="color:var(--muted);">Psychodynamic therapy explores the unconscious roots of behavior. CBT focuses on what you can change now. Most clients benefit from CBT's structure and speed; insight-oriented work complements it later.</p>
       </div>
     </div>
+    <p style="margin-top:48px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto;color:var(--muted);font-size:15px;">Still weighing your options? Read our guide: <a href="/blog/cbt-vs-dbt-which-is-right">CBT vs. DBT: how to know which therapy is right for you</a>.</p>
   </div>
 </section>
 
@@ -399,6 +400,7 @@
         </div>
       </div>
     </div>
+    <p style="margin-top:48px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto;color:var(--muted);font-size:15px;">All CBT sessions take place at our one Westside center — browse <a href="/locations">our Westwood location and the areas we serve</a>, including therapy <a href="/locations/santa-monica">serving Santa Monica</a>.</p>
   </div>
 </section>
 
@@ -471,22 +473,24 @@
       "name": "Westwood"
     }
   ],
-  "openingHoursSpecification": [
-    {
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "00:00",
       "closes": "23:59"
     }
-  ],
+  }],
   "medicalSpecialty": [
     "Psychiatric",
     "Addiction Medicine"
