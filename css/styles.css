@@ -3743,3 +3743,22 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
   .review-shot { transition: none; }
   .review-shot:hover { transform: none; }
 }
+/* Contact map embed */
+.map-embed {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+.map-caption {
+  margin: 0;
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--off-white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+@media (max-width: 640px) { .map-embed { height: 300px; } }

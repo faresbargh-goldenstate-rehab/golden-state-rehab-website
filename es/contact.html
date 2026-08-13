@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="/css/styles.min.css?v=4">
+  <link rel="stylesheet" href="/css/styles.min.css?v=5">
   <link rel="stylesheet" href="/css/cta.min.css?v=3">
   <script src="/js/i18n.js?v=3"></script>
 <script type="application/ld+json">
@@ -58,7 +58,7 @@
     "latitude": 34.0447,
     "longitude": -118.4308
   },
-  "hasMap": "https://maps.google.com/?q=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025",
+  "hasMap": "https://www.google.com/maps?cid=15086981718348312167",
   "areaServed": [
     {
       "@type": "City",
@@ -147,7 +147,7 @@
     }
   ],
   "sameAs": [
-    "https://www.legitscript.com/websites/goldenstate-rehab.com/", "https://www.yelp.com/biz/golden-state-rehab-llc-los-angeles"
+    "https://www.google.com/maps?cid=15086981718348312167", "https://www.legitscript.com/websites/goldenstate-rehab.com/", "https://www.yelp.com/biz/golden-state-rehab-llc-los-angeles"
   ]
 }
 </script>
@@ -317,14 +317,18 @@
   </div>
 </section>
 
-<section class="section-map">
-  <div class="map-placeholder">
-    <div class="map-placeholder-inner">
-      <i data-lucide="map-pin"></i>
-      <p>Los Ángeles, California</p>
-      <p class="map-sub">Llámanos para conocer nuestra dirección exacta y cómo llegar.</p>
-    </div>
-  </div>
+<section class="section-map" aria-label="Nuestra ubicación">
+  <iframe class="map-embed"
+          src="https://www.google.com/maps?q=1964%20Westwood%20Blvd%20Ste%20425,%20Los%20Angeles,%20CA%2090025&amp;output=embed&amp;hl=es"
+          title="Mapa de Golden State Rehab, 1964 Westwood Blvd, Ste 425, Los Ángeles, CA 90025"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+  <p class="map-caption">
+    1964 Westwood Blvd, Ste 425, Los Ángeles, CA 90025 ·
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025"
+       target="_blank" rel="noopener">Cómo llegar</a>
+  </p>
 </section>
 
 <footer class="footer" aria-label="Pie de página">
@@ -337,7 +341,7 @@
         <div class="footer-contact">
           <a href="tel:+14242083120" class="footer-phone"><i data-lucide="phone"></i> Llamar Ahora</a>
           <!--email_off--><a href="mailto:admissions@goldenstate-rehab.com"><i data-lucide="mail"></i> admissions@goldenstate-rehab.com</a><!--/email_off-->
-          <a href="https://maps.google.com/?q=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025</a>
+          <a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025</a>
         </div>
         <div class="footer-badges">
           <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="Ver certificado de licencia DHCS">Licencia DHCS #191643AP</a>
@@ -393,7 +397,7 @@
   <div class="medical-disclaimer"><p>Este contenido es solo para fines informativos y no sustituye el consejo, diagnóstico o tratamiento médico profesional. Siempre busca el consejo de un proveedor de salud calificado.</p><p>Si tú o alguien que conoces está en crisis, llama al <strong>988</strong> (Línea de Crisis y Suicidio) o al <strong>1-800-662-4357</strong> (Línea Nacional de SAMHSA, ayuda en español).</p></div>
 </footer>
 
-<script src="/js/main.min.js?v=4"></script>
+<script src="/js/main.min.js?v=4" defer></script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
 <script type="application/ld+json">
 {
