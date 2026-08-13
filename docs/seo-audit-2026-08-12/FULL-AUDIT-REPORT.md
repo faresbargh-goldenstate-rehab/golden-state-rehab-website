@@ -27,11 +27,13 @@ This is a well-built site — top-decile execution for the addiction-treatment v
 
 ### Top 5 Critical/High Issues
 
-1. **Schema hours contradict visible copy (verified directly).** JSON-LD claims the clinic is open Mon–Sun 00:00–23:59 sitewide; visible copy says "Admissions available 24/7 · **Clinical hours Mon–Sat**". Structured-data misrepresentation risk in Google's most-scrutinized vertical.
-2. **No Google Business Profile link anywhere.** No Maps/g.page link on the site, no GBP URL in `sameAs` (only Yelp + LegitScript). The review wall shows "5.0 on Google" with no live link to the listing and no review count. GBP is the #1 local ranking surface and it's disconnected from the site.
-3. **Contact page contradiction.** The address is printed in the info panel, but the map section below it is a placeholder reading "Call us for our exact address and driving directions." No real map on the highest-intent page.
-4. **The site contradicts itself on PHP hours.** /programs/php says "about six hours a day, five days a week"; /programs/iop describes PHP as "3-hour sessions 3 to 5 days a week". A factual inconsistency on a core service — and a direct AI-answer poisoning risk.
-5. **Broken mobile sticky CTA bar (verified via live Playwright).** `.mobile-cta-bar` ("Call Now / Verify Insurance") exists on every page but its transform keeps it permanently off-screen — it never appears at any scroll position. Dead conversion code.
+> **Post-audit status (2026-08-13).** The audit above reflects the **deployed** site. On re-checking the local working tree, items 1 and 2 had already been fixed locally but not yet deployed; item 4 turned out to be a false positive and is retracted; items 3 and 5 were real and have now been fixed in the working tree. Item 5 turned out to be far larger than one bar. See "Post-audit remediation" at the end.
+
+1. ~~**Schema hours contradict visible copy.**~~ **Already fixed locally (not yet deployed).** The deployed JSON-LD claims Mon–Sun 00:00–23:59; the working tree now correctly declares clinical hours Mon–Sat 09:00–18:00 plus a separate 24/7 admissions `ContactPoint`. Verified across all 101 business-hour blocks — zero remaining 24/7 declarations.
+2. ~~**No Google Business Profile link anywhere.**~~ **Already fixed locally (not yet deployed).** The working tree now carries the GBP listing (`google.com/maps?cid=15086981718348312167`) in `hasMap` and in `sameAs` on 99 of 100 pages. Still worth doing: surface a visible "Read all reviews on Google" link and a review count on the review wall.
+3. **Contact page contradiction.** ✅ **Fixed.** The address was printed in the info panel while the map section below it was a placeholder reading "Call us for our exact address and driving directions." Replaced with a real lazy-loaded embedded map plus address caption and a driving-directions link, on both `/contact` and `/es/contact`.
+4. ~~**The site contradicts itself on PHP hours.**~~ **RETRACTED — false positive.** Re-reading the full sentences shows both pages agree: PHP ≈ six hours/day, five days a week; IOP = 3-hour sessions, 3–5 days a week. The subagent misattributed the IOP clause in "PHP … is the more intensive level — full weekdays of programming … IOP is a step down: 3-hour sessions 3 to 5 days a week" to PHP. No inconsistency exists; no change made.
+5. **Five conversion features silently dead sitewide, not one.** ✅ **Fixed.** `main.min.js` was a parser-blocking script placed *before* the markup it queries, so 15 `getElementById`/`querySelector` lookups returned null and their handlers never attached. Confirmed dead on the live site by independent Playwright testing: the sticky mobile CTA bar never appeared, the quiz FAB and quiz modal would not open, and the live ticker rendered empty at opacity 0 — with **no console errors**, which is why it went unnoticed. One `defer` attribute fixes all of them.
 
 ### Top 5 Quick Wins
 
@@ -124,3 +126,21 @@ Broken sticky CTA bar (Critical #5); no above-the-fold CTA button on inner-page 
 - Cross-checked between specialists: the hours mismatch was confirmed by direct HTML extraction after two agents disagreed; a "blogs lack BlogPosting schema" claim was rejected (programmatic extraction found it on all 12 posts); an "add aggregateRating" recommendation was overruled as a guideline violation.
 - Lab-only performance (no CrUX/GSC access); SERP findings from search snippets, not rank trackers; GBP internals not auditable from a crawl; Yelp/LegitScript listing status unverified (403 to bots).
 - Findings artifacts: `scratchpad/findings/*.md`, Lighthouse JSONs, screenshots, and the full JSON-LD dataset are in the session scratchpad.
+
+---
+
+## Post-audit remediation (2026-08-13)
+
+Changes made to the working tree after the audit, each verified before and after. **Nothing was committed or deployed** — the tree also contains unrelated in-progress work.
+
+| Change | Files | Verification |
+|---|---|---|
+| Added `defer` to the `main.min.js` tag | 104 HTML pages | Playwright on live site before: CTA bar `translateY(82.5px)` at every scroll depth, quiz modal `display:none` after click, ticker empty at opacity 0. After, served locally: CTA bar `is-visible` and on-screen, quiz modal `display:flex`, ticker reading "Admissions line is open right now". Nav toggle still works (regression check) on 5 page types incl. ES and location pages. Zero page errors throughout. |
+| Replaced contact map placeholder with a real embedded map + address caption + directions link | `contact.html`, `es/contact.html`, `css/styles.css`, `css/styles.min.css` (+ `?v=5` cache bump) | Rendered at 1440×900 and 390×844 on both languages: map pins 1964 Westwood Blvd #425, no horizontal overflow, no errors. Lazy-loaded so it doesn't affect LCP. |
+| `medicalSpecialty` invalid enum → `["Psychiatric"]`, with "Addiction Medicine" preserved in `knowsAbout` | 100 HTML pages (`knowsAbout` newly added to 12) | 0 files retain the invalid value inside `medicalSpecialty`; all 100 retain the term in `knowsAbout`. |
+| `Person.qualifications` → `description`; `worksFor` → `@id` reference to the org entity | `team.html` (5 + 7), `es/team.html` (3 + 4) | — |
+| **All of the above** | — | All **475 JSON-LD blocks across the site still parse with zero errors**; all 104 pages carry `defer`. |
+
+**Why the dead-features bug hid so well:** the failure is silent by construction. Each affected block is written as `var el = document.querySelector(...); if (!el) return;` — a null lookup exits cleanly, so nothing throws, nothing logs, and every automated "no console errors" check passes while five conversion features do nothing.
+
+**Deployment note:** `styles.min.css` and `main.min.js` are hand-maintained (no build step), so the source and minified files were both updated. The two contact pages request `styles.min.css?v=5`; if the new map styles don't appear after deploy, that cache-bust is the thing to check. If a CSP is added later (High priority item), it will need `frame-src https://www.google.com` for the map.

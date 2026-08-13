@@ -25,6 +25,12 @@ IOP_RE = re.compile(
     r'<a href="(?P<p>[^"]*)programs/iop">Intensive Outpatient(?P<iop> \(IOP\))?</a>'
     r'(?!\s*<a href="[^"]*programs/outpatient-rehab")'
 )
+# Pages inside /programs/ link siblings with bare relative hrefs (href="iop"),
+# optionally carrying an aria-current style class on the active page.
+IOP_BARE_RE = re.compile(
+    r'<a href="iop"(?P<attrs>[^>]*)>Intensive Outpatient(?P<iop> \(IOP\))?</a>'
+    r'(?!\s*<a href="outpatient-rehab")'
+)
 OPIOID_RE = re.compile(
     r'<a href="(?P<h>[^"]*)opioid">Opioid Addiction</a>'
     r'(?!\s*<a href="[^"]*fentanyl")'
@@ -73,8 +79,14 @@ def apply_rules(text: str, is_es_style_target: bool):
             + '<a href="/es/treatments/fentanyl">Fentanilo</a>'
         )
 
+    def sub_iop_bare(m):
+        sep = indent_for(text, m.start())
+        changes.append("outpatient-rehab" + (" (nav)" if m.group("iop") else " (footer)"))
+        return m.group(0) + sep + '<a href="outpatient-rehab">Outpatient Rehab</a>'
+
     if not is_es_style_target:
         text = IOP_RE.sub(sub_iop, text)
+        text = IOP_BARE_RE.sub(sub_iop_bare, text)
         text = OPIOID_RE.sub(sub_opioid, text)
     text = ES_ALCOHOL_RE.sub(sub_es, text)
     return text, changes
