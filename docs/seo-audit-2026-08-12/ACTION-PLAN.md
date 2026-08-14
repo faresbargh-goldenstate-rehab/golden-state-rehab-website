@@ -3,21 +3,23 @@
 Priorities: **Critical** = fix immediately · **High** = within 1 week · **Medium** = within 1 month · **Low** = backlog.
 Effort: S (<1h) · M (half day) · L (multi-day).
 
-## Critical
+## Critical — all resolved or retracted as of 2026-08-13
 
-| # | Action | Effort | Why |
-|---|---|---|---|
-| C1 | Fix `openingHoursSpecification` sitewide: real clinical hours (Mon–Sat per visible copy); model 24/7 admissions as `ContactPoint` with `hoursAvailable`, `contactType: "admissions"` | S | Schema currently claims open 24/7 all week while copy says Clinical hours Mon–Sat — misrepresentation risk in a scrutinized YMYL vertical (verified) |
-| C2 | Link the site to the Google Business Profile: GBP/Maps URL in `sameAs`, "Read all our reviews on Google" link on the review wall + review count; verify the Place ID in /locations JS is the owned listing; audit GBP dashboard (primary category, hours, posts, Q&A) | S–M | GBP is the #1 local surface and is currently disconnected; matches the `feat/gbp-linking-eeat` branch intent |
-| C3 | Replace the contact-page map placeholder ("Call us for our exact address…") with a real embedded map — the address is already printed on the same page | S | Live contradiction on the highest-intent page |
-| C4 | Reconcile PHP hours copy: /programs/php ("~6 hrs/day, 5 days/wk") vs /programs/iop ("3-hr sessions 3–5 days/wk") — pick the true schedule, fix both | S | Factual self-contradiction on a core service; poisons AI-generated answers |
-| C5 | Fix or remove the broken `.mobile-cta-bar` (permanently translateY'd off-screen; never appears at any scroll position — verified via Playwright) | S–M | Dead conversion code on every page |
+| # | Action | Status |
+|---|---|---|
+| C1 | Fix `openingHoursSpecification` sitewide: real clinical hours; 24/7 admissions as `ContactPoint` | ✅ **Fixed** before this plan was written (the audit reflected the deployed site, not the repo). Verified: 0 of 101 business-hour blocks still declare 24/7. |
+| C2 | Link the site to the Google Business Profile | ✅ **Fixed in code** — GBP CID URL now in `hasMap` + `sameAs` on 99/100 pages. **Still open:** visible "Read all reviews on Google" link + review count on the review wall; GBP dashboard audit (primary category, posts, Q&A) — not auditable from the codebase. |
+| C3 | Replace the contact-page map placeholder with a real embedded map | ✅ **Fixed.** Lazy-loaded embed + address caption + driving-directions link on `/contact` and `/es/contact`; verified desktop + mobile, both languages, no overflow. |
+| C4 | Reconcile PHP hours copy | ❌ **Retracted — false positive.** Both pages already agree (PHP ≈ 6 hrs/day × 5 days; IOP = 3-hr sessions × 3–5 days). The subagent misattributed the IOP clause to PHP. No change needed. |
+| C5 | Fix the broken `.mobile-cta-bar` | ✅ **Fixed — and it was 5 features, not 1.** `main.min.js` ran before the markup it queries, nulling 15 element lookups: sticky CTA bar, quiz FAB, quiz modal, treatment quiz, live ticker. One `defer` attribute on 104 pages fixed all of them; verified live-before/local-after with Playwright, including a nav regression check. |
+
+**Status:** all C1–C5 code changes are committed and pushed on `feat/gbp-linking-eeat`. They are **not yet merged to `main`**, so they are not live on goldenstate-rehab.com — merge the branch, then deploy.
 
 ## High (1 week)
 
 | # | Action | Effort |
 |---|---|---|
-| H1 | Schema validity: `medicalSpecialty` → `["Psychiatric"]` + move "Addiction Medicine" etc. to `knowsAbout`; `Person.qualifications` → `description` (5 team members); `worksFor` → `@id` reference; add `Person.image` | S |
+| H1 | ✅ **Done** — `medicalSpecialty` → `["Psychiatric"]` with the term preserved in `knowsAbout` (100 pages, `knowsAbout` newly added to 12); `Person.qualifications` → `description` and `worksFor` → `@id` in `team.html` + `es/team.html`. All 475 JSON-LD blocks still parse. **Remaining:** add `Person.image` (headshots exist on-page) and `Person.sameAs`. | S |
 | H2 | De-orphan /programs/outpatient-rehab: add to the /programs/ card grid + footer nav; add hreflang pair (only page without it); plan ES twin | S |
 | H3 | Real per-URL sitemap `lastmod` from git (`git log -1 --format=%as -- <file>`); wire into build | S |
 | H4 | Publish clinician license numbers (Dr. Chaghouri MD, Ari Labowitz LMFT) with search.dca.ca.gov verify links, instead of "available on request" | S |

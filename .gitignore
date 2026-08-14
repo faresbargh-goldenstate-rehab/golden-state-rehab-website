@@ -56,3 +56,7 @@ build/
 # Local-only session notes (never deploy — repo is public via Cloudflare Pages)
 HANDOFF.md
 *.handoff.md
+
+# SEO audit artifacts — regenerable, and the repo is public. Markdown reports are tracked.
+docs/seo-audit-*/screenshots/
+docs/seo-audit-*/*.pdf
