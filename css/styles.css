@@ -3378,7 +3378,10 @@ button.ins-tile { cursor: pointer; }
 .cta-card .cta-card-arrow { margin-top:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px; }
 /* Compact language pill + linked dropdown label (nav-fit pass) */
 .nav-lang { padding:6px 11px; font-size:12px; letter-spacing:.01em; }
-.dropdown-col-label-link { text-decoration:none; transition:color .2s ease; cursor:pointer; }
+/* The Mental Health column header is a link, not a plain label — render it in
+   title case so it reads as a destination rather than an eyebrow. Letter-spacing
+   is dialed back because .1em is tuned for uppercase and looks loose otherwise. */
+.dropdown-col-label-link { text-decoration:none; transition:color .2s ease; cursor:pointer; text-transform:none; letter-spacing:.02em; }
 .dropdown-col-label-link:hover { color:var(--gold-dark); }
 /* Raise nav hamburger breakpoint so the language pill never overflows the bar */
 @media (max-width: 1150px) {
