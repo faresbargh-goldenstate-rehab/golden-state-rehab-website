@@ -1568,14 +1568,17 @@ button.ins-tile { cursor: pointer; }
    reproduction on websites and forbid altering the mark, so — unlike .ins-logo —
    this deliberately carries NO grayscale/opacity filter. Width and height are
    equal to hold the seal's proportional relationship. Hover is transform-only:
-   it moves the mark without recoloring or reshaping it. */
+   it moves the mark without recoloring or reshaping it.
+
+   It lives in .footer-bottom rather than .footer-brand: the brand column is the
+   tallest grid item, so a seal there stretched all six columns and added 115px of
+   mostly empty space. In the legal bar it costs ~21px. */
 .footer-seal {
-  display: inline-block;
-  margin-top: 20px;
+  display: inline-flex;
   transition: transform var(--transition);
 }
 .footer-seal:hover { transform: translateY(-2px); }
-.footer-seal img { width: 88px; height: 88px; }
+.footer-seal img { width: 44px; height: 44px; }
 
 /* 21. SCROLL REVEAL ANIMATIONS
    ============================================================ */
@@ -3232,7 +3235,7 @@ button.ins-tile { cursor: pointer; }
   transition: transform var(--transition);
 }
 .hero-trust-seal:hover { transform: translateY(-2px); }
-.hero-trust-seal img { width: 56px; height: 56px; }
+.hero-trust-seal img { width: 44px; height: 44px; }
 .hero-google-badge {
   display: inline-flex;
   align-items: center;
