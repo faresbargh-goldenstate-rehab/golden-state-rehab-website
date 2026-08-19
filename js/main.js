@@ -489,15 +489,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
-// ── Sticky mobile CTA bar: reveal after 300px of scroll ──────────────
-(function () {
-  var bar = document.querySelector('.mobile-cta-bar');
-  if (!bar) return;
-  function onScroll() { bar.classList.toggle('is-visible', window.scrollY > 300); }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-
 // ── Treatment match quiz — non-diagnostic program finder ─────────────
 (function () {
   var card = document.getElementById('quizCard');

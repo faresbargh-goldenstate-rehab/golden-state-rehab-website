@@ -1165,6 +1165,14 @@ button.ins-tile { cursor: pointer; }
   color: var(--muted);
   line-height: 1.75;
 }
+.faq-answer a {
+  color: var(--gold-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+.faq-answer a:hover { color: var(--gold); }
 
 /* 17. FORMS
    ============================================================ */
@@ -3644,7 +3652,7 @@ button.ins-tile { cursor: pointer; }
 .quiz-fab-bubble[hidden] { display: none; }
 .quiz-fab-bubble:hover { transform: scale(1.06); box-shadow: 0 12px 32px rgba(166, 132, 44, .5); }
 .quiz-fab-bubble svg { width: 25px; height: 25px; }
-@media (max-width: 880px) { .quiz-fab { right: 14px; bottom: calc(78px + env(safe-area-inset-bottom, 0px) + 12px); } .quiz-fab-card { width: 252px; } }
+@media (max-width: 880px) { .quiz-fab { right: 14px; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); } .quiz-fab-card { width: 252px; } }
 @media (prefers-reduced-motion: reduce) { .quiz-fab-card { transition: opacity .2s ease; transform: none; } }
 
 /* ── Quiz modal ─────────────────────────────────────────────────────── */
