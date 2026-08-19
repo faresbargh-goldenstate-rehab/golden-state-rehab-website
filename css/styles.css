@@ -1466,15 +1466,30 @@ button.ins-tile { cursor: pointer; }
 .footer {
   background: var(--near-black);
   color: rgba(253,250,245,0.7);
-  padding: 80px 0 40px;
+  padding: 56px 0 32px;
 }
+/* Six equal link columns with the brand block as a full-width band above them.
+   Previously the brand sat as a seventh grid item in a six-column track: it
+   wrapped to a second row, and because it is roughly twice the height of the
+   tallest link list it stretched the whole first row, leaving a deep empty band
+   under the short columns. Banding it cuts ~29% off the footer at 1440px. */
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr repeat(5, 1fr);
-  gap: 36px;
-  margin-bottom: 64px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px 28px;
+  margin-bottom: 40px;
+  align-items: start;
 }
-.footer-brand .nav-logo-img { height: 120px; }
+.footer-brand {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 32px 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(200,164,74,0.15);
+}
+.footer-brand .nav-logo-img { height: 72px; }
 .footer-tagline {
   font-size: 14px;
   color: rgba(253,250,245,0.5);
@@ -1482,6 +1497,9 @@ button.ins-tile { cursor: pointer; }
   line-height: 1.65;
   max-width: 260px;
 }
+/* Inside the horizontal band these two no longer need their stacked spacing. */
+.footer-brand .footer-tagline { max-width: 280px; margin: 0; }
+.footer-brand .footer-badges { margin-top: 0; }
 .footer-contact {
   display: flex;
   flex-direction: column;
@@ -1743,8 +1761,8 @@ button.ins-tile { cursor: pointer; }
   .nav-container { padding: 0 24px; }
 
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px 24px;
   }
   .footer-brand { grid-column: 1 / -1; }
 
@@ -2460,8 +2478,9 @@ button.ins-tile { cursor: pointer; }
   .gallery-strip { height: auto; }
   .gallery-strip img { height: 160px; }
 
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-brand { grid-column: auto; }
+  /* Pair the link columns rather than stacking all six single-file — that alone
+     was ~600px of scroll on a 375px screen. */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
 
   .insurance-heading { font-size: 24px; }
   .insurance-logos-grid { gap: 10px; }
