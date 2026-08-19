@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=8">
+  <link rel="stylesheet" href="css/styles.min.css?v=9">
   <link rel="stylesheet" href="/css/cta.css?v=2">
 <script src="/js/i18n.js?v=2"></script>
 </head>
@@ -176,7 +176,10 @@
     </div>
 
     <div class="hero-trust-row" aria-label="Trust badges">
-      <a rel="noopener noreferrer" href="https://www.jointcommission.org/" target="_blank" class="hero-trust-seal"><img src="/images/joint-commission-gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage" width="44" height="44" decoding="async"></a>
+      <!-- Seal is decorative here: the adjacent text carries the meaning and the link
+           destination, so a descriptive alt would be announced twice. The standalone
+           footer seal keeps its full alt. -->
+      <a rel="noopener noreferrer" href="https://www.jointcommission.org/" target="_blank" class="hero-trust-badge hero-trust-seal" style="text-decoration:none;"><img src="/images/joint-commission-gold-seal.webp" alt="" aria-hidden="true" width="20" height="20" decoding="async"> Accredited by Joint Commission</a>
       <span class="hero-trust-badge-sep" aria-hidden="true"></span>
       <a href="/images/dhcs-license.jpg" target="_blank" rel="noopener" class="hero-trust-badge" style="text-decoration:none;" title="View DHCS License Certificate"><i data-lucide="shield-check"></i> DHCS Licensed · #191643AP</a>
       <span class="hero-trust-badge-sep" aria-hidden="true"></span>

@@ -3226,16 +3226,12 @@ button.ins-tile { cursor: pointer; }
   border-radius: 50%;
   background: rgba(20, 14, 4, 0.22);
 }
-/* Joint Commission Gold Seal in the hero trust row. Same brand constraints as
-   .footer-seal: four-color, unfiltered, square. The row is already
-   align-items:center, so the seal centers against the 13px text badges and
-   becomes the row's visual anchor. */
-.hero-trust-seal {
-  display: inline-flex;
-  transition: transform var(--transition);
-}
-.hero-trust-seal:hover { transform: translateY(-2px); }
-.hero-trust-seal img { width: 44px; height: 44px; }
+/* Joint Commission Gold Seal in the hero trust row. It also carries
+   .hero-trust-badge, so it inherits that badge's layout, 13px type and 8px gap —
+   the seal reads as the badge's icon, sized to sit with the 16px Lucide marks
+   beside it, with the wording carrying the meaning at this scale. Same brand
+   constraints as .footer-seal: four-color, unfiltered, square. */
+.hero-trust-seal img { width: 20px; height: 20px; }
 .hero-google-badge {
   display: inline-flex;
   align-items: center;
