@@ -1564,6 +1564,18 @@ button.ins-tile { cursor: pointer; }
   text-transform: uppercase;
   color: rgba(200,164,74,0.8);
 }
+/* Joint Commission Gold Seal. Joint Commission brand rules require four-color
+   reproduction on websites and forbid altering the mark, so — unlike .ins-logo —
+   this deliberately carries NO grayscale/opacity filter. Width and height are
+   equal to hold the seal's proportional relationship. Hover is transform-only:
+   it moves the mark without recoloring or reshaping it. */
+.footer-seal {
+  display: inline-block;
+  margin-top: 20px;
+  transition: transform var(--transition);
+}
+.footer-seal:hover { transform: translateY(-2px); }
+.footer-seal img { width: 88px; height: 88px; }
 
 /* 21. SCROLL REVEAL ANIMATIONS
    ============================================================ */
@@ -3211,6 +3223,16 @@ button.ins-tile { cursor: pointer; }
   border-radius: 50%;
   background: rgba(20, 14, 4, 0.22);
 }
+/* Joint Commission Gold Seal in the hero trust row. Same brand constraints as
+   .footer-seal: four-color, unfiltered, square. The row is already
+   align-items:center, so the seal centers against the 13px text badges and
+   becomes the row's visual anchor. */
+.hero-trust-seal {
+  display: inline-flex;
+  transition: transform var(--transition);
+}
+.hero-trust-seal:hover { transform: translateY(-2px); }
+.hero-trust-seal img { width: 56px; height: 56px; }
 .hero-google-badge {
   display: inline-flex;
   align-items: center;
