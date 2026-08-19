@@ -1826,6 +1826,26 @@ button.ins-tile { cursor: pointer; }
   max-width: 520px;
 }
 
+/* Centered page hero: headline + subheadline sit on the horizontal center.
+   Visible breadcrumbs were removed sitewide; BreadcrumbList JSON-LD remains. */
+.page-hero-content {
+  text-align: center;
+  /* .page-hero is a flex row; without these the container sizes to its
+     content and overflows narrow viewports, clipping centered text. */
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+}
+.page-hero-content h1,
+.page-hero-content .page-hero-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Inline-styled flex CTA rows inside the hero (mental-health, espanol, etc.) */
+.page-hero-content > div {
+  justify-content: center;
+}
+
 /* Button aliases (standalone without .btn prefix) */
 .btn-primary {
   display: inline-flex;
