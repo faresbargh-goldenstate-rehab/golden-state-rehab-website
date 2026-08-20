@@ -3762,22 +3762,9 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), box-shadow var(--transition);
 }
-.review-shot:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-/* Side by side, each screenshot is too small to read comfortably, so the whole
-   card opens the full-size capture. No JS, no extra chrome on the page. */
-.review-shot > a {
-  display: block;
-  cursor: zoom-in;
-}
-.review-shot > a:focus-visible {
-  outline: 2px solid var(--gold-dark);
-  outline-offset: -2px;
-}
+/* The screenshots are proof, not navigation: no link, and no hover lift that
+   would imply one. */
 .review-shot img {
   width: 100%;
   height: auto;
@@ -3804,15 +3791,6 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
   .review-shot:nth-child(1) { z-index: 1; }
   .review-shot:nth-child(2) { z-index: 2; }
   .review-shot:nth-child(3) { z-index: 3; }
-  .review-shot:hover {
-    transform: none;
-    box-shadow: 0 -10px 26px rgba(20, 14, 4, 0.13);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .review-shot { transition: none; }
-  .review-shot:hover { transform: none; }
 }
 /* Contact map embed */
 .map-embed {
