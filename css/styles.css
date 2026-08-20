@@ -1613,6 +1613,45 @@ button.ins-tile { cursor: pointer; }
   text-transform: uppercase;
   color: rgba(200,164,74,0.8);
 }
+/* Social profiles. The brand marks are inline SVG rather than Lucide glyphs:
+   Lucide has no X mark and its `twitter` icon is the retired bird, so mixing it
+   with two current logos would date the row. Sizing matches .footer-badge's
+   visual weight so the two blocks read as one trust cluster. */
+.footer-social { display: flex; flex-direction: column; gap: 10px; }
+.footer-social-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.footer-social-row { display: flex; gap: 10px; }
+.footer-social-link {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: rgba(253,250,245,0.65);
+  background: rgba(200,164,74,0.12);
+  border: 1px solid rgba(200,164,74,0.25);
+  transition: color var(--transition), background var(--transition),
+              border-color var(--transition), transform var(--transition);
+}
+.footer-social-link:hover {
+  color: var(--near-black);
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.footer-social-link:active { transform: translateY(0) scale(0.96); }
+.footer-social-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.footer-social-link svg { width: 18px; height: 18px; display: block; }
+
 /* Joint Commission Gold Seal. Joint Commission brand rules require four-color
    reproduction on websites and forbid altering the mark, so — unlike .ins-logo —
    this deliberately carries NO grayscale/opacity filter. Width and height are
