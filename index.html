@@ -147,10 +147,16 @@
 </nav>
 
 <main>
-
 <!-- ═══════════════════════════════════════════════════════════
-     1. HERO + TRUST BADGES
+     HERO + TRUST BADGES
      ═══════════════════════════════════════════════════════════ -->
+<style>
+  /* Answers the unspoken question at the CTA: "what happens if I actually call?" */
+  .hero-reassure{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 24px;margin:20px 0 0;font-size:14.5px;font-weight:600;color:var(--muted)}
+  .hero-reassure span{display:inline-flex;align-items:center;gap:7px}
+  .hero-reassure svg{width:15px;height:15px;color:var(--gold-dark);stroke-width:3}
+  @media (max-width:640px){.hero-reassure{gap:6px 16px;font-size:13.5px}}
+</style>
 <section class="hero" aria-label="Hero">
   <div class="container hero-content">
     <p class="hero-rating">
@@ -174,6 +180,12 @@
       <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
     </div>
 
+    <p class="hero-reassure">
+      <span><i data-lucide="check"></i> A real counselor answers</span>
+      <span><i data-lucide="check"></i> No obligation to enroll</span>
+      <span><i data-lucide="check"></i> 100% confidential</span>
+    </p>
+
     <div class="hero-trust-row" aria-label="Trust badges">
       <!-- Seal is decorative here: the adjacent text carries the meaning and the link
            destination, so a descriptive alt would be announced twice. The standalone
@@ -188,7 +200,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     INSURANCE LOGOS — first block below hero ("Can I afford this?")
+     INSURANCE CHECKER — 'can I afford this?'
      ═══════════════════════════════════════════════════════════ -->
 <section class="insurance-strip insurance-checker" aria-labelledby="insurance-heading" id="coverage">
   <div class="container">
@@ -224,20 +236,80 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     EXPLORE OUR CARE — mirrors our Google Business Profile categories
+     WHAT PEOPLE ARE SAYING — unedited Google review screenshots
      ═══════════════════════════════════════════════════════════ -->
-<section class="section" aria-labelledby="explore-care-heading">
+<section class="section review-wall" id="reviews" aria-labelledby="reviews-heading" style="background:var(--gold-light);">
   <div class="container">
     <div class="section-header reveal">
-      <span class="eyebrow">Explore our care</span>
-      <h2 id="explore-care-heading">Care for Every Diagnosis and Every Schedule</h2>
-      <p class="section-intro">From structured day programs to evening telehealth, our licensed clinicians cover <a href="treatments/">everything we treat</a> across the <a href="locations">areas of Los Angeles we serve</a>.</p>
+      <h2 id="reviews-heading">What People Are Saying</h2>
     </div>
-    <div class="related-grid">
-      <a href="programs/" class="related-card reveal"><div class="related-card-icon"><i data-lucide="layers"></i></div><h4>Rehab Programs in Los Angeles</h4><p>PHP, IOP, outpatient, and telehealth — structured levels of care built around work and family.</p><span>Explore programs <i data-lucide="arrow-right"></i></span></a>
-      <a href="mental-health" class="related-card reveal reveal-delay-1"><div class="related-card-icon"><i data-lucide="brain"></i></div><h4>Mental Health Treatment in Los Angeles</h4><p>Depression, anxiety, trauma, and dual diagnosis care from master's-level clinicians.</p><span>Explore mental health <i data-lucide="arrow-right"></i></span></a>
-      <a href="treatments/alcohol" class="related-card reveal reveal-delay-2"><div class="related-card-icon"><i data-lucide="wine-off"></i></div><h4>Alcohol Addiction Treatment in Los Angeles</h4><p>Evidence-based alcohol treatment at every outpatient level of care, including medication support.</p><span>Explore alcohol treatment <i data-lucide="arrow-right"></i></span></a>
-      <a href="programs/holistic-therapies" class="related-card reveal reveal-delay-3"><div class="related-card-icon"><i data-lucide="flower-2"></i></div><h4>Holistic Therapies in Los Angeles</h4><p>Mindfulness, yoga, breathwork, and expressive therapies that support clinical treatment.</p><span>Explore holistic care <i data-lucide="arrow-right"></i></span></a>
+    <div class="review-shots">
+      <figure class="review-shot reveal reveal-delay-1">
+        <a href="images/reviews/google-review-1.webp" target="_blank" rel="noopener">
+          <img src="images/reviews/google-review-1.webp" width="1100" height="1229" loading="lazy" decoding="async"
+               alt="Five-star Google review from Dennis: “This place is truly amazing! From the moment I arrived, I felt welcomed, supported, and treated with genuine care and respect. The staff is incredible and goes above and beyond to make sure everyone feels heard, understood, and encouraged.” The review includes a photo posted by the reviewer.">
+        </a>
+      </figure>
+      <figure class="review-shot reveal reveal-delay-2">
+        <a href="images/reviews/google-review-2.webp" target="_blank" rel="noopener">
+          <img src="images/reviews/google-review-2.webp" width="1100" height="904" loading="lazy" decoding="async"
+               alt="Five-star Google review from Gregory Icenogle: “Golden State Rehab gave me a second chance at life and helped me get my sobriety back. From the moment I got there, the place felt safe, calm, and welcoming. It isn’t just a place for treatment, it feels like family.” The review includes a photo posted by the reviewer.">
+        </a>
+      </figure>
+      <figure class="review-shot reveal reveal-delay-3">
+        <a href="images/reviews/google-review-3.webp" target="_blank" rel="noopener">
+          <img src="images/reviews/google-review-3.webp" width="1100" height="680" loading="lazy" decoding="async"
+               alt="Five-star Google review from Joey F: “I loved my time at Golden State Rehab. I came in needing a safe place to get myself together, and that is exactly what I found here. The staff gave me the space, support, and patience I needed to heal without ever making me feel judged or rushed.”">
+        </a>
+      </figure>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener" class="btn btn-secondary">Read all our Google reviews <i data-lucide="arrow-up-right"></i></a></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHY GOLDEN STATE REHAB
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="why-us-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 id="why-us-heading">Why Golden State Rehab</h2>
+      <p>Evidence-based care and a plan built around your real life, at a private outpatient center in West Los Angeles.</p>
+    </div>
+    <div class="why-us-grid">
+      <div class="why-us-card reveal reveal-delay-1">
+        <div class="why-us-icon"><i data-lucide="user-check"></i></div>
+        <h3>Personalized treatment plans</h3>
+        <p>Your care should fit you, not a template. You start with a <a href="contact">full clinical assessment</a>, and from there we shape a plan around your diagnosis, your goals, and your day-to-day life.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-2">
+        <div class="why-us-icon"><i data-lucide="shield-check"></i></div>
+        <h3>Accredited &amp; licensed</h3>
+        <p>Accredited by The Joint Commission, licensed by California's DHCS (License #191643AP), and LegitScript certified. These are the standards that hold behavioral health to account.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-3">
+        <div class="why-us-icon"><i data-lucide="wallet"></i></div>
+        <h3>Most insurance accepted</h3>
+        <p>We work with most major PPO plans, including Aetna, Anthem, Cigna, Blue Cross Blue Shield, and United Healthcare. <a href="verify-insurance">Checking your benefits</a> is free and takes about a minute.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-1">
+        <div class="why-us-icon"><i data-lucide="clock"></i></div>
+        <h3>Admissions 24/7</h3>
+        <p>A crisis rarely waits for business hours. You can reach our intake team by phone day or night, and we offer same-day assessments whenever possible.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-2">
+        <div class="why-us-icon"><i data-lucide="users"></i></div>
+        <h3>Master's-level clinicians</h3>
+        <p>You work directly with licensed therapists, psychiatrists, and certified addiction specialists, never interns. Their care draws on proven methods like <a href="treatments/cbt">CBT</a>, <a href="treatments/dbt">DBT</a>, EMDR, and <a href="programs/medication-management">medication-assisted treatment</a>.</p>
+      </div>
+      <div class="why-us-card reveal reveal-delay-3">
+        <div class="why-us-icon"><i data-lucide="home"></i></div>
+        <h3>Flexible outpatient programs</h3>
+        <p><a href="programs/php">PHP</a>, <a href="programs/iop">IOP</a>, <a href="programs/telehealth">telehealth</a>, and <a href="programs/individual-therapy">individual therapy</a>, all built to fit around work, family, and daily life. You stay in your own home and community while you heal — see how <a href="programs/outpatient-rehab">outpatient drug rehab in Los Angeles</a> works.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 48px;" class="reveal">
+      <a href="verify-insurance" class="btn btn-primary btn-lg">Check My Coverage — Free, About a Minute <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -294,114 +366,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     2. WHY GOLDEN STATE REHAB?
-     ═══════════════════════════════════════════════════════════ -->
-<section class="section" aria-labelledby="why-us-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 id="why-us-heading">Why Golden State Rehab</h2>
-      <p>Evidence-based care and a plan built around your real life, at a private outpatient center in West Los Angeles.</p>
-    </div>
-    <div class="why-us-grid">
-      <div class="why-us-card reveal reveal-delay-1">
-        <div class="why-us-icon"><i data-lucide="user-check"></i></div>
-        <h3>Personalized treatment plans</h3>
-        <p>Your care should fit you, not a template. You start with a <a href="contact">full clinical assessment</a>, and from there we shape a plan around your diagnosis, your goals, and your day-to-day life.</p>
-      </div>
-      <div class="why-us-card reveal reveal-delay-2">
-        <div class="why-us-icon"><i data-lucide="shield-check"></i></div>
-        <h3>Accredited &amp; licensed</h3>
-        <p>Accredited by The Joint Commission, licensed by California's DHCS (License #191643AP), and LegitScript certified. These are the standards that hold behavioral health to account.</p>
-      </div>
-      <div class="why-us-card reveal reveal-delay-3">
-        <div class="why-us-icon"><i data-lucide="wallet"></i></div>
-        <h3>Most insurance accepted</h3>
-        <p>We work with most major PPO plans, including Aetna, Anthem, Cigna, Blue Cross Blue Shield, and United Healthcare. <a href="verify-insurance">Checking your benefits</a> is free and takes about a minute.</p>
-      </div>
-      <div class="why-us-card reveal reveal-delay-1">
-        <div class="why-us-icon"><i data-lucide="clock"></i></div>
-        <h3>Admissions 24/7</h3>
-        <p>A crisis rarely waits for business hours. You can reach our intake team by phone day or night, and we offer same-day assessments whenever possible.</p>
-      </div>
-      <div class="why-us-card reveal reveal-delay-2">
-        <div class="why-us-icon"><i data-lucide="users"></i></div>
-        <h3>Master's-level clinicians</h3>
-        <p>You work directly with licensed therapists, psychiatrists, and certified addiction specialists, never interns. Their care draws on proven methods like <a href="treatments/cbt">CBT</a>, <a href="treatments/dbt">DBT</a>, EMDR, and <a href="programs/medication-management">medication-assisted treatment</a>.</p>
-      </div>
-      <div class="why-us-card reveal reveal-delay-3">
-        <div class="why-us-icon"><i data-lucide="home"></i></div>
-        <h3>Flexible outpatient programs</h3>
-        <p><a href="programs/php">PHP</a>, <a href="programs/iop">IOP</a>, <a href="programs/telehealth">telehealth</a>, and <a href="programs/individual-therapy">individual therapy</a>, all built to fit around work, family, and daily life. You stay in your own home and community while you heal — see how <a href="programs/outpatient-rehab">outpatient drug rehab in Los Angeles</a> works.</p>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 48px;" class="reveal">
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify Insurance <i data-lucide="arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     FEATURED SERVICES — GBP service names
-     ═══════════════════════════════════════════════════════════ -->
-<style>
-  .svc-pills{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px}
-  .svc-pill{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border:1px solid rgba(28,25,23,.14);border-radius:999px;background:#fff;color:inherit;text-decoration:none;font-weight:600;font-size:15px;transition:transform .2s ease,box-shadow .2s ease}
-  .svc-pill:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
-  .svc-pill:active{transform:translateY(0) scale(.98)}
-</style>
-<section class="section section-cream" aria-labelledby="services-strip-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 id="services-strip-heading">What We Treat and How</h2>
-      <p>Every service is delivered at our Westwood center or securely online, and covered by most major PPO plans.</p>
-    </div>
-    <nav class="svc-pills reveal" aria-label="Featured services">
-      <a class="svc-pill" href="programs/php">PHP in Los Angeles</a>
-      <a class="svc-pill" href="programs/iop">IOP in Los Angeles</a>
-      <a class="svc-pill" href="programs/outpatient-rehab">Outpatient Drug Rehab in Los Angeles</a>
-      <a class="svc-pill" href="programs/telehealth">Telehealth Rehab in Los Angeles</a>
-      <a class="svc-pill" href="treatments/dual-diagnosis">Dual Diagnosis Treatment</a>
-      <a class="svc-pill" href="treatments/opioid">Opioid Addiction Treatment</a>
-      <a class="svc-pill" href="programs/medication-management">Medication Management</a>
-      <a class="svc-pill" href="programs/alumni">Aftercare &amp; Alumni Program</a>
-    </nav>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     WHAT PEOPLE ARE SAYING — unedited Google review screenshots
-     ═══════════════════════════════════════════════════════════ -->
-<section class="section review-wall" id="reviews" aria-labelledby="reviews-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 id="reviews-heading">What People Are Saying</h2>
-    </div>
-    <div class="review-shots">
-      <figure class="review-shot reveal reveal-delay-1">
-        <a href="images/reviews/google-review-1.webp" target="_blank" rel="noopener">
-          <img src="images/reviews/google-review-1.webp" width="1100" height="1229" loading="lazy" decoding="async"
-               alt="Five-star Google review from Dennis: “This place is truly amazing! From the moment I arrived, I felt welcomed, supported, and treated with genuine care and respect. The staff is incredible and goes above and beyond to make sure everyone feels heard, understood, and encouraged.” The review includes a photo posted by the reviewer.">
-        </a>
-      </figure>
-      <figure class="review-shot reveal reveal-delay-2">
-        <a href="images/reviews/google-review-2.webp" target="_blank" rel="noopener">
-          <img src="images/reviews/google-review-2.webp" width="1100" height="904" loading="lazy" decoding="async"
-               alt="Five-star Google review from Gregory Icenogle: “Golden State Rehab gave me a second chance at life and helped me get my sobriety back. From the moment I got there, the place felt safe, calm, and welcoming. It isn’t just a place for treatment, it feels like family.” The review includes a photo posted by the reviewer.">
-        </a>
-      </figure>
-      <figure class="review-shot reveal reveal-delay-3">
-        <a href="images/reviews/google-review-3.webp" target="_blank" rel="noopener">
-          <img src="images/reviews/google-review-3.webp" width="1100" height="680" loading="lazy" decoding="async"
-               alt="Five-star Google review from Joey F: “I loved my time at Golden State Rehab. I came in needing a safe place to get myself together, and that is exactly what I found here. The staff gave me the space, support, and patience I needed to heal without ever making me feel judged or rushed.”">
-        </a>
-      </figure>
-    </div>
-    <div style="text-align:center;margin-top:40px;" class="reveal"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener" class="btn btn-secondary">Read all our Google reviews <i data-lucide="arrow-up-right"></i></a></div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     CLINICAL TEAM PREVIEW — credibility (audit p28)
+     CLINICAL TEAM PREVIEW
      ═══════════════════════════════════════════════════════════ -->
 <style>
   .team-preview-section { overflow: hidden; }
@@ -437,8 +402,11 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .team-marquee { mask-image: none; -webkit-mask-image: none; }
-    .team-marquee-track { animation: none; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .team-marquee-track { animation: none; width: 100%; flex-wrap: wrap; justify-content: center; gap: 16px; }
     .team-marquee-card { margin-right: 0; }
+    /* The duplicate half of the track only exists to make the scroll seamless;
+       with the animation off it would show every clinician twice. */
+    .team-marquee-card[aria-hidden="true"] { display: none; }
   }
 </style>
 <section class="section section-cream team-preview-section" aria-labelledby="team-preview-heading">
@@ -532,7 +500,9 @@
   </div>
 </section>
 
-<!-- Spanish-Speaking Track -->
+<!-- ═══════════════════════════════════════════════════════════
+     SPANISH-SPEAKING TRACK
+     ═══════════════════════════════════════════════════════════ -->
 <section class="section" style="background:linear-gradient(135deg,var(--near-black),#22160a);" aria-labelledby="es-track-heading">
   <div class="container">
     <div class="grid-2" style="gap:60px;align-items:center;">
@@ -557,32 +527,45 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     WHO WE ARE — INTRO SPLIT
+     WHAT WE TREAT AND HOW — services + treatment areas
      ═══════════════════════════════════════════════════════════ -->
-<section aria-labelledby="who-we-are-heading">
-  <div class="intro-section">
-    <div class="intro-text container" style="max-width: none; padding-left: max(32px, calc((100vw - 1280px)/2 + 32px));">
-      <span class="eyebrow">Who we are</span>
-      <h2 id="who-we-are-heading">Treatment that meets you where you are</h2>
-      <p>Golden State Rehab is a licensed addiction and mental health treatment center in West Los Angeles. We provide evidence-based outpatient care for adults across the greater LA area, including PHP, IOP, telehealth, and individual therapy.</p>
-      <p>We treat the whole person, not just a diagnosis. Our goal is simple: help you rebuild a life worth living, through individualized care grounded in respect, honesty, and clinical skill.</p>
-      <div class="btn-group">
-        <a href="about" class="btn btn-primary">Our Story <i data-lucide="arrow-right"></i></a>
-        <a href="team" class="btn btn-secondary">Meet The Team <i data-lucide="arrow-right"></i></a>
-      </div>
+<style>
+  .svc-pills{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px}
+  .svc-pill{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border:1px solid rgba(28,25,23,.14);border-radius:999px;background:#fff;color:inherit;text-decoration:none;font-weight:600;font-size:15px;transition:transform .2s ease,box-shadow .2s ease}
+  .svc-pill:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+  .svc-pill:active{transform:translateY(0) scale(.98)}
+  .treat-grid{grid-template-columns:repeat(4,1fr);margin-bottom:32px}
+  .treat-grid .related-card{background:#fff}
+  @media (max-width:1024px){.treat-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:640px){.treat-grid{grid-template-columns:1fr}}
+</style>
+<section class="section section-cream" aria-labelledby="services-strip-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 id="services-strip-heading">What We Treat and How</h2>
+      <p class="section-intro">From structured day programs to evening telehealth, our licensed clinicians cover <a href="treatments/">everything we treat</a> across the <a href="locations">areas of Los Angeles we serve</a>. Every service is delivered at our Westwood center or securely online.</p>
     </div>
-    <div class="intro-image">
-      <img src="images/facility/reception-lobby.webp" alt="Reception and front lounge at Golden State Rehab in West Los Angeles" loading="lazy" width="900" height="500">
-      <div class="intro-stat">
-        <div class="intro-stat-number">100+</div>
-        <div class="intro-stat-label">Lives changed in Los Angeles</div>
-      </div>
+    <div class="related-grid treat-grid">
+      <a href="programs/" class="related-card reveal"><div class="related-card-icon"><i data-lucide="layers"></i></div><h4>Rehab Programs in Los Angeles</h4><p>PHP, IOP, outpatient, and telehealth — structured levels of care built around work and family.</p><span>Explore programs <i data-lucide="arrow-right"></i></span></a>
+      <a href="mental-health" class="related-card reveal reveal-delay-1"><div class="related-card-icon"><i data-lucide="brain"></i></div><h4>Mental Health Treatment in Los Angeles</h4><p>Depression, anxiety, trauma, and dual diagnosis care from master's-level clinicians.</p><span>Explore mental health <i data-lucide="arrow-right"></i></span></a>
+      <a href="treatments/alcohol" class="related-card reveal reveal-delay-2"><div class="related-card-icon"><i data-lucide="wine-off"></i></div><h4>Alcohol Addiction Treatment in Los Angeles</h4><p>Evidence-based alcohol treatment at every outpatient level of care, including medication support.</p><span>Explore alcohol treatment <i data-lucide="arrow-right"></i></span></a>
+      <a href="programs/holistic-therapies" class="related-card reveal reveal-delay-3"><div class="related-card-icon"><i data-lucide="flower-2"></i></div><h4>Holistic Therapies in Los Angeles</h4><p>Mindfulness, yoga, breathwork, and expressive therapies that support clinical treatment.</p><span>Explore holistic care <i data-lucide="arrow-right"></i></span></a>
     </div>
+    <nav class="svc-pills reveal" aria-label="Featured services">
+      <a class="svc-pill" href="programs/php">PHP in Los Angeles</a>
+      <a class="svc-pill" href="programs/iop">IOP in Los Angeles</a>
+      <a class="svc-pill" href="programs/outpatient-rehab">Outpatient Drug Rehab in Los Angeles</a>
+      <a class="svc-pill" href="programs/telehealth">Telehealth Rehab in Los Angeles</a>
+      <a class="svc-pill" href="treatments/dual-diagnosis">Dual Diagnosis Treatment</a>
+      <a class="svc-pill" href="treatments/opioid">Opioid Addiction Treatment</a>
+      <a class="svc-pill" href="programs/medication-management">Medication Management</a>
+      <a class="svc-pill" href="programs/alumni">Aftercare &amp; Alumni Program</a>
+    </nav>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     6. PROCESS — DARK SECTION
+     PROCESS — DARK SECTION
      ═══════════════════════════════════════════════════════════ -->
 <section class="section section-dark" aria-labelledby="process-heading">
   <div class="container">
@@ -591,7 +574,7 @@
       <h2 id="process-heading">Your path to treatment</h2>
       <p style="color: rgba(253,250,245,0.65);">Starting treatment is simpler than most people expect. We handle the logistics so you can focus on the work that matters.</p>
     </div>
-    <div class="grid-3" style="gap: 20px;">
+    <div class="grid-2" style="gap: 20px; align-items: stretch;">
       <div class="card-dark reveal reveal-delay-1">
         <div class="process-badge">01</div>
         <h4>First Contact</h4>
@@ -610,33 +593,23 @@
       <div class="card-dark reveal reveal-delay-1">
         <div class="process-badge">04</div>
         <h4>Your First Session</h4>
-        <p>You meet your therapist, join your first group, and begin the real work alongside people who understand what you're facing.</p>
-      </div>
-      <div class="card-dark reveal reveal-delay-2">
-        <div class="process-badge">05</div>
-        <h4>Treatment Momentum</h4>
-        <p>You settle into your program, build trust with the people around you, and start gaining skills that hold up in daily life. This is where progress starts to feel real.</p>
-      </div>
-      <div class="card-dark reveal reveal-delay-3">
-        <div class="process-badge">06</div>
-        <h4>Continued Care</h4>
-        <p>Recovery doesn't end at discharge. We stay with you through the transitions that follow and keep cheering you on as part of our alumni community.</p>
+        <p>You meet your therapist, join your first group, and begin the real work alongside people who understand what you're facing. And recovery doesn't end at discharge — you stay part of our <a href="programs/alumni">alumni community</a> long after.</p>
       </div>
     </div>
     <div style="text-align: center; margin-top: 48px;" class="reveal">
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify Insurance <i data-lucide="arrow-right"></i></a>
+      <a href="verify-insurance" class="btn btn-primary btn-lg">Start With Step 1 — Verify My Insurance <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     7. FAQ
+     FAQ
      ═══════════════════════════════════════════════════════════ -->
 <section class="section section-white" aria-labelledby="home-faq-heading">
   <div class="container">
     <div class="section-header reveal">
-      <span class="eyebrow">Common Questions</span>
-      <h2 id="home-faq-heading">Answers Before You Commit to Anything</h2>
+      <span class="eyebrow">FAQ</span>
+      <h2 id="home-faq-heading">Frequently Asked Questions</h2>
     </div>
     <div class="faq-content" style="max-width:820px;margin:0 auto;">
       <div class="faq-item">
@@ -687,7 +660,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     8. FINAL CTA BANNER
+     FINAL CTA BANNER
      ═══════════════════════════════════════════════════════════ -->
 <section class="cta-banner" aria-label="Final call to action">
   <div class="cta-banner-bg" style="background-image: url('images/facility/tv-lounge.webp');"></div>
@@ -702,6 +675,7 @@
     </div>
   </div>
 </section>
+
 
 </main>
 
