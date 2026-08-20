@@ -294,70 +294,126 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 }());
 
-// ── Team Member Modal ────────────────────────────────────────────────────
+// ── Team Member Bio Modal ────────────────────────────────────────────────
+// Each team card keeps its bio in a hidden .team-bio-source block (so the
+// copy stays in the HTML for crawlers) and exposes a card-wide trigger
+// button. Clicking anywhere on the card opens that bio in a modal.
 (function () {
-  var teamBtns = document.querySelectorAll('.team-read-more');
-  if (!teamBtns.length) return;
+  var triggers = document.querySelectorAll('.team-card-trigger');
+  if (!triggers.length) return;
 
-  // Create overlay + modal HTML
-  var tmOverlay = document.createElement('div');
-  tmOverlay.className = 'team-modal-overlay';
-  tmOverlay.setAttribute('role', 'dialog');
-  tmOverlay.setAttribute('aria-modal', 'true');
-  tmOverlay.setAttribute('aria-labelledby', 'tm-name');
-  tmOverlay.innerHTML = [
-    '<div class="team-modal">',
-    '  <button class="team-modal-close" aria-label="Close"><i data-lucide="x"></i></button>',
-    '  <div class="team-modal-avatar"><img id="tm-img" src="" alt=""></div>',
-    '  <h3 class="team-modal-name" id="tm-name"></h3>',
-    '  <p class="team-modal-role" id="tm-role"></p>',
-    '  <p class="team-modal-bio" id="tm-bio"></p>',
-    '  <div class="team-modal-credentials" id="tm-creds"></div>',
+  var CLOSE_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"' +
+    ' stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"' +
+    ' aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+
+  var overlay = document.createElement('div');
+  overlay.className = 'team-modal-overlay';
+  overlay.innerHTML = [
+    '<div class="team-modal" role="dialog" aria-modal="true" aria-labelledby="tm-name">',
+    '  <button type="button" class="team-modal-close" aria-label="Close bio">' + CLOSE_ICON + '</button>',
+    '  <div class="team-modal-scroll">',
+    '    <div class="team-modal-head">',
+    '      <div class="team-modal-avatar"><img id="tm-img" src="" alt=""></div>',
+    '      <h2 class="team-modal-name" id="tm-name"></h2>',
+    '      <p class="team-modal-role" id="tm-role"></p>',
+    '    </div>',
+    '    <div class="team-modal-bio" id="tm-bio"></div>',
+    '  </div>',
     '</div>'
   ].join('');
-  document.body.appendChild(tmOverlay);
+  document.body.appendChild(overlay);
 
-  // Render any new lucide icons inside the modal
-  if (typeof lucide !== 'undefined') lucide.createIcons();
+  var modal     = overlay.querySelector('.team-modal');
+  var scroller  = overlay.querySelector('.team-modal-scroll');
+  var closeBtn  = overlay.querySelector('.team-modal-close');
+  var bioEl     = overlay.querySelector('#tm-bio');
+  var lastFocus = null;
+  var isOpen    = false;
 
-  function openTM(btn) {
-    var img  = tmOverlay.querySelector('#tm-img');
-    img.src  = btn.dataset.img;
-    img.alt  = btn.dataset.name;
-    tmOverlay.querySelector('#tm-name').textContent = btn.dataset.name;
-    tmOverlay.querySelector('#tm-role').textContent = btn.dataset.role;
-    tmOverlay.querySelector('#tm-bio').textContent  = btn.dataset.bio;
+  function textOf(card, selector) {
+    var el = card.querySelector(selector);
+    return el ? el.textContent.trim() : '';
+  }
 
-    var credsEl = tmOverlay.querySelector('#tm-creds');
-    credsEl.innerHTML = '';
-    (btn.dataset.credentials || '').split('|').forEach(function (c) {
-      c = c.trim();
-      if (!c) return;
-      var s = document.createElement('span');
-      s.className = 'team-modal-credential';
-      s.textContent = c;
-      credsEl.appendChild(s);
-    });
+  // Show the bottom fade only while there is more bio below the fold.
+  function syncScrollCue() {
+    var more = scroller.scrollTop + scroller.clientHeight < scroller.scrollHeight - 4;
+    modal.classList.toggle('has-more', more);
+  }
 
-    tmOverlay.classList.add('open');
+  function open(trigger) {
+    var card = trigger.closest('.team-circle-card');
+    if (!card) return;
+    var source = card.querySelector('.team-bio-source');
+    if (!source) return;
+
+    var cardImg  = card.querySelector('.team-circle-avatar img');
+    var modalImg = overlay.querySelector('#tm-img');
+    modalImg.src = cardImg ? cardImg.currentSrc || cardImg.src : '';
+    modalImg.alt = '';
+
+    overlay.querySelector('#tm-name').textContent = textOf(card, '.team-circle-name');
+    overlay.querySelector('#tm-role').textContent = textOf(card, '.team-circle-role');
+
+    // Clone the authored bio nodes rather than re-parsing markup.
+    while (bioEl.firstChild) bioEl.removeChild(bioEl.firstChild);
+    var clone = source.cloneNode(true);
+    while (clone.firstChild) bioEl.appendChild(clone.firstChild);
+
+    lastFocus = trigger;
+    isOpen = true;
+    scroller.scrollTop = 0;
+    overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
+    // visibility is part of the open transition, so it is still `hidden`
+    // on this frame and the button cannot take focus yet. Wait a frame.
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { closeBtn.focus(); });
+    });
+    syncScrollCue();
   }
 
-  function closeTM() {
-    tmOverlay.classList.remove('open');
+  function close() {
+    if (!isOpen) return;
+    isOpen = false;
+    overlay.classList.remove('open');
     document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+    lastFocus = null;
   }
 
-  teamBtns.forEach(function (b) {
-    b.addEventListener('click', function () { openTM(b); });
+  // Keep Tab inside the dialog. Focus is moved explicitly rather than
+  // letting the browser do it, because WebKit skips buttons in its default
+  // tab order and would drop focus out of the dialog entirely.
+  function trapFocus(e) {
+    var items = Array.prototype.slice.call(
+      modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    );
+    if (!items.length) return;
+    e.preventDefault();
+    var step = e.shiftKey ? -1 : 1;
+    var i = items.indexOf(document.activeElement);
+    // Focus outside the dialog (or lost to <body>) re-enters at the edge.
+    var next = i === -1
+      ? (e.shiftKey ? items[items.length - 1] : items[0])
+      : items[(i + step + items.length) % items.length];
+    next.focus();
+  }
+
+  Array.prototype.forEach.call(triggers, function (trigger) {
+    trigger.addEventListener('click', function () { open(trigger); });
   });
 
-  tmOverlay.querySelector('.team-modal-close').addEventListener('click', closeTM);
-  tmOverlay.addEventListener('click', function (e) {
-    if (e.target === tmOverlay) closeTM();
+  closeBtn.addEventListener('click', close);
+  scroller.addEventListener('scroll', syncScrollCue);
+  window.addEventListener('resize', function () { if (isOpen) syncScrollCue(); });
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) close();
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeTM();
+    if (!isOpen) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'Tab') trapFocus(e);
   });
 }());
 

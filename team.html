@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=15">
+  <link rel="stylesheet" href="css/styles.min.css?v=16">
 <script src="/js/i18n.js?v=3"></script>
 </head>
 <body>
@@ -146,29 +146,6 @@
 </section>
 
 <!-- Team Intro -->
-<style>
-  .team-bio { margin-top: 4px; text-align: left; }
-  .team-bio summary {
-    list-style: none;
-    cursor: pointer;
-    color: var(--gold);
-    font-weight: 600;
-    font-size: 13px;
-    text-align: center;
-    padding: 4px 0;
-    transition: color .2s ease;
-  }
-  .team-bio summary::-webkit-details-marker { display: none; }
-  .team-bio summary::after { content: " +"; }
-  .team-bio[open] summary::after { content: " \2212"; }
-  .team-bio summary:hover { color: var(--gold-dark); }
-  .team-bio summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
-  .team-bio p { font-size: 14px; line-height: 1.65; color: var(--body-text); margin: 12px 0 0; }
-  .team-bio-creds { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 14px; }
-  .team-bio-creds span { background: var(--gold-light); border: 1px solid var(--border); border-radius: 50px; padding: 4px 12px; font-size: 12px; font-weight: 600; color: var(--body-text); }
-  .team-bio-license { font-size: 12px; color: var(--muted); }
-  .team-bio-license a { color: var(--muted); text-decoration: underline; }
-</style>
 <section class="section section-white">
   <div class="container">
     <div class="section-header reveal">
@@ -177,93 +154,105 @@
       <p class="section-subtext">Every member of our team brings deep clinical expertise and personal commitment to the recovery process. We believe healing happens through genuine human connection — and our staff embodies that belief every day.</p>
     </div>
     <div class="team-grid">
-      <div class="team-circle-card reveal" id="eric-chaghouri">
+      <div class="team-circle-card has-bio reveal" id="eric-chaghouri">
         <div class="team-circle-avatar">
           <img src="images/team/eric-chaghouri.jpg" alt="Dr. Eric Chaghouri, MD" width="400" height="400">
         </div>
         <h3 class="team-circle-name">Dr. Eric Chaghouri, MD</h3>
         <p class="team-circle-role">Medical Director</p>
-        <details class="team-bio">
-          <summary>Full bio</summary>
+        <button type="button" class="team-card-trigger" aria-haspopup="dialog" aria-label="Read the full bio of Dr. Eric Chaghouri, MD">
+          View bio <i data-lucide="arrow-up-right"></i>
+        </button>
+        <div class="team-bio-source" hidden>
           <p>Dr. Eric Chaghouri is a board-certified psychiatrist whose clinical work focuses on the treatment of co-occurring psychiatric and addictive disorders. He earned his Bachelor of Arts in Biology, Summa Cum Laude, from UCLA, and his medical degree from the Keck School of Medicine at USC — where he served as chief resident in psychiatric emergency services and as resident clinical instructor and volunteer faculty in the Department of Psychiatry.</p>
           <p>He completed a fellowship in forensic psychiatry at the USC Institute of Psychiatry and Law, and has extensive experience consulting and providing expert opinion in trial and for the film and television industry. As Medical Director at Golden State Rehab, Dr. Chaghouri oversees clinical operations and provides pharmacologic and psychotherapeutic care.</p>
           <div class="team-bio-creds"><span>Board-Certified Psychiatrist</span><span>M.D., Keck School of Medicine at USC</span></div>
           <p class="team-bio-license">License number available on request and verifiable at <a href="https://search.dca.ca.gov" target="_blank" rel="noopener">search.dca.ca.gov</a>.</p>
-        </details>
+        </div>
       </div>
 
-      <div class="team-circle-card reveal reveal-delay-1">
+      <div class="team-circle-card has-bio reveal reveal-delay-1">
         <div class="team-circle-avatar">
           <img src="images/team/ari-labowitz.jpg" alt="Ari Labowitz" width="400" height="400">
         </div>
         <h3 class="team-circle-name">Ari Labowitz, LMFT</h3>
         <p class="team-circle-role">Clinical Director</p>
-        <details class="team-bio">
-          <summary>Full bio</summary>
+        <button type="button" class="team-card-trigger" aria-haspopup="dialog" aria-label="Read the full bio of Ari Labowitz, LMFT">
+          View bio <i data-lucide="arrow-up-right"></i>
+        </button>
+        <div class="team-bio-source" hidden>
           <p>As Clinical Director, Ari Labowitz leads the therapy programs at Golden State Rehab. He works with clients facing depression, anxiety, major life transitions, difficult decisions, and creative blocks — the kinds of struggles that often travel with addiction — alongside relationship and couples' concerns. He brings deep clinical expertise across individual, couples, and family therapy.</p>
           <p>Practicing from a strengths-based, humanistic approach, he creates a safe space where clients feel secure and grow — treating each person as an individual and focusing on their strengths. A relationship expert as well, Ari is passionate about helping people build the relationship of their dreams — whether with a current partner or someone new. No matter what life has thrown at you or what you've tried before, Ari believes there is always hope, and will help you find the answers to what's getting in the way. You deserve better than just getting by — you deserve to thrive.</p>
           <div class="team-bio-creds"><span>Licensed Marriage &amp; Family Therapist (LMFT)</span><span>Depression, Anxiety &amp; Life Transitions</span></div>
           <p class="team-bio-license">License number available on request and verifiable at <a href="https://search.dca.ca.gov" target="_blank" rel="noopener">search.dca.ca.gov</a>.</p>
-        </details>
+        </div>
       </div>
 
-      <div class="team-circle-card reveal reveal-delay-2" id="vindell-brunson">
+      <div class="team-circle-card has-bio reveal reveal-delay-2" id="vindell-brunson">
         <div class="team-circle-avatar">
           <img src="images/team/vindell-brunson.jpg" alt="Vindell Brunson, Program Director" width="400" height="400" loading="lazy">
         </div>
         <h3 class="team-circle-name">Vindell Brunson</h3>
         <p class="team-circle-role">Program Director</p>
-        <details class="team-bio">
-          <summary>Full bio</summary>
+        <button type="button" class="team-card-trigger" aria-haspopup="dialog" aria-label="Read the full bio of Vindell Brunson">
+          View bio <i data-lucide="arrow-up-right"></i>
+        </button>
+        <div class="team-bio-source" hidden>
           <p>Vindell Brunson is Golden State Rehab's Program Director, bringing more than 24 years of clinical experience in addiction treatment. As a Master Addiction Specialist, he has spent his career on the front lines of recovery — and his role here is to build the day-to-day structure that turns a treatment plan on paper into something a person can actually live out. He oversees how programming runs, how clients move between levels of care, and whether the details that decide an outcome are being handled well.</p>
           <p>What drives that work is personal. Vindell has 26 years of his own continuous recovery behind him, and he brings that lived experience into every room. He knows what it costs to walk through the door the first time, and what it takes to keep showing up long after the initial weeks are over. For clients who arrive convinced that lasting change is something that happens to other people, he is standing evidence otherwise.</p>
           <p>His philosophy is deliberately simple: change the mindset, change the addict. Vindell works from the belief that recovery begins the moment a person's thinking starts to shift — and that a program's job is to create the conditions for that shift, then hold steady while it takes root. He runs programming to that standard, keeping the focus on helping people build a life worth staying sober for.</p>
           <div class="team-bio-creds"><span>Master Addiction Specialist</span><span>24+ Years Clinical Experience · 26 Years in Personal Recovery</span></div>
-        </details>
+        </div>
       </div>
 
-      <div class="team-circle-card reveal reveal-delay-3">
+      <div class="team-circle-card has-bio reveal reveal-delay-3">
         <div class="team-circle-avatar">
           <img src="images/team/scott-hedlund.jpg" alt="Scott Hedlund, Director of Business Development" width="400" height="400" loading="lazy">
         </div>
         <h3 class="team-circle-name">Scott Hedlund</h3>
         <p class="team-circle-role">Director of Business Development</p>
-        <details class="team-bio">
-          <summary>Full bio</summary>
+        <button type="button" class="team-card-trigger" aria-haspopup="dialog" aria-label="Read the full bio of Scott Hedlund">
+          View bio <i data-lucide="arrow-up-right"></i>
+        </button>
+        <div class="team-bio-source" hidden>
           <p>Scott Hedlund is Golden State Rehab's Director of Business Development — and he has lived the journey our clients are on. After years in corporate America, including a run as a top-performing sales representative at Yelp, Scott got sober and lost more than 150 pounds, transforming his life from the inside out.</p>
           <p>He found his purpose in giving back: using his business background and acumen to connect people struggling with addiction and mental health to real, life-changing care. Scott knows firsthand the courage it takes to ask for help — and he brings that lived experience, energy, and drive to every individual and family he guides toward treatment.</p>
           <div class="team-bio-creds"><span>Director of Business Development</span><span>Person in Long-Term Recovery</span></div>
-        </details>
+        </div>
       </div>
 
-      <div class="team-circle-card reveal">
+      <div class="team-circle-card has-bio reveal">
         <div class="team-circle-avatar">
           <img src="images/team/juanita-casillas.jpg?v=2" alt="Juanita Casillas, RADT, AOD Counselor" width="400" height="400" loading="lazy">
         </div>
         <h3 class="team-circle-name">Juanita Casillas, RADT</h3>
         <p class="team-circle-role">AOD Counselor</p>
-        <details class="team-bio">
-          <summary>Full bio</summary>
+        <button type="button" class="team-card-trigger" aria-haspopup="dialog" aria-label="Read the full bio of Juanita Casillas, RADT">
+          View bio <i data-lucide="arrow-up-right"></i>
+        </button>
+        <div class="team-bio-source" hidden>
           <p>Juanita Casillas is a Registered Alcohol and Drug Technician (RADT) and Alcohol and Other Drug (AOD) Counselor with more than four years of experience walking alongside people in substance use recovery. She has worked across the full continuum of care, from detox and residential settings to intensive outpatient and PHP, in roles ranging from behavioral health technician to senior technician at programs including Malibu Detox and Residential, New Spirit Recovery, and Nova Vitae Center. That range means she has sat with people on their hardest first days and stayed with them as they rebuilt, so she understands what real recovery asks of a person.</p>
           <p>At Golden State Rehab, Juanita facilitates individual and group sessions, helps clients recognize their triggers, and works with them to build the relapse-prevention and recovery plans that hold up after treatment. She is proficient in the KIPU EMR and trained in CIWA and COWS withdrawal monitoring, crisis de-escalation, and HIPAA-compliant documentation. She holds an Associate in Addiction Studies from Pierce College along with her RADT certification.</p>
           <p>Her approach is steady, direct, and genuinely warm. Juanita meets people where they are, treats them with dignity, and helps them move from simply getting through the day toward a life that feels like their own again.</p>
           <div class="team-bio-creds"><span>Registered Alcohol &amp; Drug Technician (RADT)</span><span>4+ Years across Detox, Residential &amp; Outpatient Care</span></div>
-        </details>
+        </div>
       </div>
 
-      <div class="team-circle-card reveal reveal-delay-1" id="viola-sulahian">
+      <div class="team-circle-card has-bio reveal reveal-delay-1" id="viola-sulahian">
         <div class="team-circle-avatar">
           <img src="images/team/viola-sulahian.jpg" alt="Viola Sulahian, AMFT, Primary Therapist" width="400" height="400" loading="lazy">
         </div>
         <h3 class="team-circle-name">Viola Sulahian, AMFT</h3>
         <p class="team-circle-role">Primary Therapist</p>
-        <details class="team-bio">
-          <summary>Full bio</summary>
+        <button type="button" class="team-card-trigger" aria-haspopup="dialog" aria-label="Read the full bio of Viola Sulahian, AMFT">
+          View bio <i data-lucide="arrow-up-right"></i>
+        </button>
+        <div class="team-bio-source" hidden>
           <p>Viola Sulahian is an Associate Marriage and Family Therapist (AMFT) with nearly four years of clinical experience providing compassionate, evidence-based care to people facing substance use disorders, mental health conditions, and co-occurring (dual diagnosis) challenges. As she completes the path to licensure as a Licensed Marriage and Family Therapist (LMFT), she stays focused on client-centered treatment that makes lasting change possible.</p>
           <p>Viola has worked across every level of care — detox, residential, Partial Hospitalization (PHP), and Intensive Outpatient (IOP) — and specializes in treating addiction alongside depression, anxiety, PTSD, bipolar disorder, and other co-occurring conditions. Her approach draws on Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), Motivational Interviewing (MI), trauma-informed care, and person-centered therapy to help clients build resilience, coping skills, and self-awareness.</p>
           <p>She believes healing begins with a safe, supportive relationship built on empathy, trust, and genuine connection. Rather than focusing only on reducing symptoms, Viola helps clients build fulfilling lives grounded in self-respect and purpose — whether someone is taking a first step toward sobriety, navigating a mental health crisis, or rebuilding after years of struggle. Her aim is to help every client move beyond survival to rediscover hope and lasting emotional wellness.</p>
           <div class="team-bio-creds"><span>Associate Marriage &amp; Family Therapist (AMFT)</span><span>Nearly 4 Years across Detox, Residential, PHP &amp; IOP</span></div>
-        </details>
+        </div>
       </div>
 
       <div class="team-circle-card reveal reveal-delay-2" id="sophia-scharpf">
@@ -401,7 +390,7 @@
   </div>
 <div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></footer>
 
-<script src="js/main.min.js?v=7" defer></script>
+<script src="js/main.min.js?v=8" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.lucide)lucide.createIcons();});</script>
 <script type="application/ld+json">
 {
