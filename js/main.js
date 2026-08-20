@@ -380,47 +380,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
-// ── Live activity ticker — TRUE, non-fabricated availability messages ──
-(function () {
-  var el = document.getElementById('liveTicker');
-  if (!el) return;
-  try { if (sessionStorage.getItem('tickerClosed')) return; } catch (e) {}
-  var msgEl = document.getElementById('liveTickerMsg');
-  var closeBtn = document.getElementById('liveTickerClose');
-  if (!msgEl || !closeBtn) return;
-  var MESSAGES = [
-    'Admissions line is open right now',
-    'Free insurance check, usually under a minute',
-    'Most major PPO plans accepted here',
-    'Confidential help, in English and Spanish',
-    'Same-day assessments are often available',
-    '100+ people have started treatment with us'
-  ];
-  var i = 0, timer;
-  function cycle() {
-    msgEl.style.opacity = '0';
-    setTimeout(function () {
-      i = (i + 1) % MESSAGES.length;
-      msgEl.textContent = MESSAGES[i];
-      msgEl.style.opacity = '1';
-    }, 300);
-  }
-  function start() {
-    el.hidden = false;
-    msgEl.textContent = MESSAGES[0];
-    requestAnimationFrame(function () { el.classList.add('is-visible'); });
-    timer = setInterval(cycle, 5000);
-  }
-  closeBtn.addEventListener('click', function () {
-    clearInterval(timer);
-    el.classList.remove('is-visible');
-    setTimeout(function () { el.hidden = true; }, 400);
-    try { sessionStorage.setItem('tickerClosed', '1'); } catch (e) {}
-  });
-  setTimeout(start, 1500);
-})();
-
-
 // ── Insurance coverage checker (confirms acceptance, routes to free VOB) ──
 (function () {
   var tiles = Array.prototype.slice.call(document.querySelectorAll('.ins-tile'));

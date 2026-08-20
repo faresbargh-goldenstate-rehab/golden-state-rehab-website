@@ -40,6 +40,7 @@
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
   <link rel="stylesheet" href="css/styles.min.css?v=14">
 <script src="/js/i18n.js?v=2"></script>
+<style>.hero{min-height:0!important;height:auto!important}#quizFab,#liveTicker{display:none!important}.reveal{opacity:1!important;transform:none!important}[data-hide]{display:none!important}</style>
 </head>
 <body>
 
@@ -157,7 +158,7 @@
   .hero-reassure{margin:18px 0 0;font-size:15px;font-weight:500;color:var(--muted)}
   @media (max-width:640px){.hero-reassure{font-size:14px;margin-top:16px}}
 </style>
-<section class="hero" aria-label="Hero">
+<section class="hero" aria-label="Hero" data-hide>
   <div class="container hero-content">
     <p class="hero-rating">
       <span class="hero-rating-g" aria-hidden="true">
@@ -198,7 +199,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      INSURANCE CHECKER — 'can I afford this?'
      ═══════════════════════════════════════════════════════════ -->
-<section class="insurance-strip insurance-checker" aria-labelledby="insurance-heading" id="coverage">
+<section class="insurance-strip insurance-checker" aria-labelledby="insurance-heading" id="coverage" data-hide>
   <div class="container">
     <div class="insurance-header-row insurance-checker-head">
       <span class="badge-gold">Check Your Coverage</span>
@@ -234,7 +235,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      WHAT PEOPLE ARE SAYING — unedited Google review screenshots
      ═══════════════════════════════════════════════════════════ -->
-<section class="section review-wall" id="reviews" aria-labelledby="reviews-heading" style="background:var(--gold-light);">
+<section class="section review-wall" id="reviews" aria-labelledby="reviews-heading" style="background:var(--gold-light);" data-hide>
   <div class="container">
     <div class="section-header reveal">
       <h2 id="reviews-heading">What People Are Saying</h2>
@@ -263,7 +264,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      WHY GOLDEN STATE REHAB
      ═══════════════════════════════════════════════════════════ -->
-<section class="section" aria-labelledby="why-us-heading">
+<section class="section" aria-labelledby="why-us-heading" data-hide>
   <div class="container">
     <div class="section-header reveal">
       <h2 id="why-us-heading">Why Golden State Rehab</h2>
@@ -310,7 +311,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      OUR FACILITY — PHOTO SLIDESHOW
      ═══════════════════════════════════════════════════════════ -->
-<section class="facility-section section" id="facility" aria-labelledby="facility-heading">
+<section class="facility-section section" id="facility" aria-labelledby="facility-heading" data-hide>
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">A space for healing</span>
@@ -402,7 +403,7 @@
     .team-marquee-card[aria-hidden="true"] { display: none; }
   }
 </style>
-<section class="section section-cream team-preview-section" aria-labelledby="team-preview-heading">
+<section class="section section-cream team-preview-section" aria-labelledby="team-preview-heading" data-hide>
   <div class="container">
     <div class="section-header reveal">
       <span class="badge-gold">Led by Experts</span>
@@ -496,7 +497,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      SPANISH-SPEAKING TRACK
      ═══════════════════════════════════════════════════════════ -->
-<section class="section" style="background:linear-gradient(135deg,var(--near-black),#22160a);" aria-labelledby="es-track-heading">
+<section class="section" style="background:linear-gradient(135deg,var(--near-black),#22160a);" aria-labelledby="es-track-heading" data-hide>
   <div class="container">
     <div class="grid-2" style="gap:60px;align-items:center;">
       <div class="reveal">
