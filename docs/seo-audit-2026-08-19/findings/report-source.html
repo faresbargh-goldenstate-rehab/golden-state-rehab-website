@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SEO Audit — Golden State Rehab — August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#C8A44A;
+    --gold-dark:#8F6F1E;
+    --gold-light:#FBF6E8;
+    --ink:#140E04;
+    --body:#3D3020;
+    --muted:#7A6A52;
+    --border:#E8D5A3;
+    --rule:#D9C89B;
+    --paper:#FFFFFF;
+    --tint:#FDFAF5;
+    --red:#8E2F20;
+    --green:#2F5D3A;
+  }
+
+  @page{
+    size:A4;
+    margin:18mm 16mm 20mm 16mm;
+  }
+  @page:first{ margin:0; }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+  body{
+    font-family:"Plus Jakarta Sans","Helvetica Neue",Helvetica,sans-serif;
+    font-size:9.8pt;
+    line-height:1.55;
+    word-spacing:.012em;
+    color:var(--body);
+    background:var(--paper);
+  }
+
+  h1,h2,h3,h4{ font-family:"Fraunces","Iowan Old Style",Georgia,serif; color:var(--ink); line-height:1.18; }
+
+  strong{ color:var(--ink); font-weight:700; }
+  em{ font-style:italic; }
+  code{
+    font-family:"SFMono-Regular",Menlo,Consolas,monospace;
+    font-size:.86em;
+    background:var(--gold-light);
+    border:1px solid var(--border);
+    border-radius:3px;
+    padding:.5px 4px;
+    color:var(--gold-dark);
+    white-space:nowrap;
+  }
+
+  /* ---------- COVER ---------- */
+  .cover{
+    height:297mm;
+    padding:34mm 24mm 24mm;
+    background:var(--ink);
+    color:#F6EFDF;
+    display:flex;
+    flex-direction:column;
+    page-break-after:always;
+    position:relative;
+  }
+  .cover::after{
+    content:"";
+    position:absolute; left:24mm; right:24mm; bottom:22mm;
+    height:2px; background:var(--gold);
+  }
+  .cover .eyebrow{
+    font-size:9pt; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--gold); font-weight:700; margin-bottom:14mm;
+  }
+  .cover h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-size:40pt; font-weight:600; color:#FFFDF7;
+    letter-spacing:-.015em; line-height:1.06; margin-bottom:7mm;
+  }
+  .cover .sub{
+    font-size:12.5pt; color:#CDBE9C; max-width:120mm; line-height:1.5;
+  }
+  .cover .scorewrap{ margin-top:auto; display:flex; align-items:flex-end; gap:14mm; }
+  .cover .bigscore{
+    font-family:"Fraunces",Georgia,serif;
+    font-size:88pt; font-weight:600; color:var(--gold);
+    line-height:.85; letter-spacing:-.03em;
+  }
+  .cover .bigscore span{ font-size:26pt; color:#8C7B57; }
+  .cover .scorenote{ font-size:9.6pt; color:#CDBE9C; max-width:78mm; padding-bottom:4mm; }
+  .cover .scorenote b{ color:#FFFDF7; }
+  .cover .meta{
+    margin-top:16mm; padding-top:6mm; border-top:1px solid #3A2E15;
+    display:flex; gap:12mm; font-size:8.8pt; color:#9C8C68;
+  }
+  .cover .meta b{ display:block; color:#E4D8B8; font-size:9.6pt; font-weight:600; }
+
+  /* ---------- FLOW ---------- */
+  .page-break{ page-break-before:always; }
+
+  h2.section{
+    font-size:19.5pt; font-weight:600; letter-spacing:-.01em;
+    margin:0 0 2mm;
+  }
+  .section-rule{
+    height:3px; background:var(--gold); width:22mm; margin-bottom:5mm;
+  }
+  .section-lede{
+    font-size:10.4pt; color:var(--muted); margin-bottom:5.5mm; max-width:150mm; line-height:1.55;
+  }
+
+  h3{ font-size:11.6pt; font-weight:600; margin:0 0 2mm; }
+
+  p{ margin:0 0 2.8mm; }
+  ul,ol{ margin:0 0 3.5mm 5mm; }
+  li{ margin-bottom:1.3mm; }
+
+  /* ---------- FINDING CARDS ---------- */
+  .finding{
+    border:1px solid var(--border);
+    border-left:4px solid var(--gold);
+    background:var(--tint);
+    border-radius:4px;
+    padding:4mm 5mm 3.4mm;
+    margin-bottom:4mm;
+    page-break-inside:avoid;
+  }
+  .finding.now{ border-left-color:var(--red); }
+  .finding.week{ border-left-color:var(--gold); }
+  .finding.month{ border-left-color:var(--rule); }
+
+  .finding-head{
+    display:flex; align-items:baseline; gap:3.4mm; margin-bottom:2.4mm;
+  }
+  .badge{
+    flex:0 0 auto;
+    font-size:7.6pt; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+    padding:1.2mm 2.6mm; border-radius:3px;
+    background:var(--ink); color:var(--gold);
+  }
+  .badge.red{ background:var(--red); color:#FBEDE9; }
+  .badge.amber{ background:var(--gold); color:#241A05; }
+  .badge.grey{ background:#E4DAC2; color:#5A4A2C; }
+  .finding-head h3{ margin:0; flex:1 1 auto; }
+
+  .qa{ margin-bottom:2.2mm; }
+  .qa:last-child{ margin-bottom:0; }
+  .qa .label{
+    font-size:8pt; font-weight:800; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--gold-dark); display:block; margin-bottom:.8mm;
+  }
+  .qa p{ margin:0 0 1.6mm; }
+  .qa p:last-child{ margin-bottom:0; }
+
+  .effort{
+    margin-top:3mm; padding-top:2.4mm; border-top:1px dashed var(--border);
+    font-size:8.6pt; color:var(--muted);
+  }
+  .effort b{ color:var(--gold-dark); }
+
+  /* ---------- TABLES ---------- */
+  table{
+    width:100%; border-collapse:collapse; margin:0 0 5mm;
+    font-size:9.2pt; page-break-inside:avoid;
+  }
+  th{
+    text-align:left; font-weight:700; color:var(--ink);
+    border-bottom:2px solid var(--gold); padding:2mm 3mm 1.8mm;
+    font-size:8.4pt; letter-spacing:.06em; text-transform:uppercase;
+  }
+  td{ padding:2.2mm 3mm; border-bottom:1px solid #EFE6D0; vertical-align:top; }
+  tr:last-child td{ border-bottom:none; }
+  td.num{ text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .bar{
+    display:inline-block; height:5px; background:var(--gold);
+    border-radius:2px; vertical-align:middle; margin-right:2mm;
+  }
+  .bar.low{ background:#C77C4E; }
+
+  /* ---------- CALLOUTS ---------- */
+  .callout{
+    border:1px solid var(--border); background:var(--gold-light);
+    border-radius:4px; padding:4mm 4.6mm; margin:0 0 4.5mm;
+    page-break-inside:avoid;
+  }
+  .callout h4{
+    font-size:11pt; font-weight:600; margin-bottom:2mm;
+  }
+  .callout.warn{ background:#FBF1EE; border-color:#E8C6BC; }
+  .callout.warn h4{ color:var(--red); }
+  .callout.good{ background:#F1F6F1; border-color:#C8DBCB; }
+  .callout.good h4{ color:var(--green); }
+
+  .good-grid{ column-count:2; column-gap:8mm; font-size:9.4pt; }
+  .good-grid li{ break-inside:avoid; margin-bottom:1.4mm; }
+
+  .plain{ font-size:9.6pt; color:var(--muted); }
+
+  .kicker{
+    font-size:8.4pt; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--gold-dark); font-weight:800; margin-bottom:2mm;
+  }
+
+  .twocol{ display:flex; gap:6mm; margin-bottom:5mm; page-break-inside:avoid; }
+  .twocol > div{ flex:1; }
+
+  .statline{
+    display:flex; gap:4.5mm; margin:0 0 4.5mm; page-break-inside:avoid;
+  }
+  .stat{
+    flex:1; border:1px solid var(--border); border-radius:4px;
+    padding:2.8mm 3.4mm; background:var(--paper);
+  }
+  .stat .n{
+    font-family:"Fraunces",Georgia,serif; font-size:19pt; font-weight:600;
+    color:var(--ink); line-height:1; display:block; margin-bottom:1.2mm;
+  }
+  .stat .n.warn{ color:var(--red); }
+  .stat .l{ font-size:8.4pt; color:var(--muted); line-height:1.4; }
+
+  footer.pagefoot{
+    margin-top:8mm; padding-top:3mm; border-top:1px solid var(--border);
+    font-size:8pt; color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="cover">
+  <div class="eyebrow">Website Audit · goldenstate-rehab.com</div>
+  <h1>What&rsquo;s working,<br>what&rsquo;s broken,<br>and what to fix first</h1>
+  <p class="sub">A plain-English review of all 116 pages on the site — how Google sees them, how AI assistants read them, and the twelve changes that will move the needle.</p>
+
+  <div class="scorewrap">
+    <div class="bigscore">83<span>/100</span></div>
+    <div class="scorenote">
+      <b>Up from 76 a week ago.</b> The technical foundations are genuinely clean. What&rsquo;s left is a short list of specific problems — and two of them are things the site says about itself.
+    </div>
+  </div>
+
+  <div class="meta">
+    <div><b>20 August 2026</b>Audit date</div>
+    <div><b>116 pages</b>Every page checked</div>
+    <div><b>12 actions</b>Prioritised, with effort</div>
+  </div>
+</section>
+
+<!-- ============ THE SHORT VERSION ============ -->
+<h2 class="section">The short version</h2>
+<div class="section-rule"></div>
+<p class="section-lede">If you read nothing else, read this page.</p>
+
+<p>Your site is in good shape. The plumbing most sites get wrong — titles, descriptions, the sitemap, redirects, alt text, security headers — is essentially flawless here. Across all 116 pages we found <strong>zero</strong> missing titles, <strong>zero</strong> duplicate titles or descriptions, <strong>zero</strong> images without alt text and <strong>zero</strong> broken structured data. That is rare. So this is not a list of errors — it is a list of <em>twelve specific things</em> holding the site back, most of them structural rather than broken. Two aren&rsquo;t technical at all: they are claims the website makes about itself that don&rsquo;t add up.</p>
+
+<div class="statline">
+  <div class="stat"><span class="n">0</span><span class="l">Missing page titles, duplicate titles, or missing alt text across 116 pages</span></div>
+  <div class="stat"><span class="n warn">98</span><span class="l">Pages telling Google the clinic was founded in 2026 — this year</span></div>
+  <div class="stat"><span class="n warn">0</span><span class="l">English pages that link to your Spanish site</span></div>
+  <div class="stat"><span class="n warn">0</span><span class="l">Places on the site where a visitor can leave or read a review</span></div>
+</div>
+
+<div class="callout warn">
+  <h4>The biggest single risk: your site says it was founded this year</h4>
+  <p><strong>98 pages</strong> tell Google the clinic was founded in 2026, and two pages show visitors a stat card reading &ldquo;2026 — Founded in Los Angeles.&rdquo; Meanwhile your homepage headline claims <strong>100+ Recoveries</strong> next to a Joint Commission seal and a state licence number.</p>
+  <p>A family researching treatment for someone they love will notice that a clinic founded eight months ago is claiming full accreditation and 100+ recoveries. That may be perfectly true — outpatient programmes move people through faster than residential, and accreditation can carry over — but the site never explains it. Google&rsquo;s human quality raters are trained to look for exactly this kind of unexplained inconsistency on health sites. <strong>This is the first thing to fix.</strong></p>
+</div>
+
+<div class="callout">
+  <h4>The biggest single opportunity: your Spanish site is invisible</h4>
+  <p>You built a complete Spanish version of the site — 44 pages. But the &ldquo;Español&rdquo; button in your navigation sends every visitor to one standalone page (<code>/espanol</code>) instead of to the Spanish version of the page they were reading. As a result, no English page on the site links into the Spanish section at all.</p>
+  <p>Google follows links to decide what matters. Your Spanish pages sit three to five clicks from the homepage and get about a third of the internal links your English pages get. Four of them — the Spanish FAQ, About, Our Story and Our Facility — have exactly <strong>one</strong> link pointing at them. In one of the most Spanish-speaking markets in America, that is a lot of work sitting unread. <span class="plain">The fix is one line in a shared navigation file.</span></p>
+</div>
+
+<!-- ============ SCORECARD ============ -->
+<div class="page-break"></div>
+<h2 class="section">The scorecard</h2>
+<div class="section-rule"></div>
+<p class="section-lede">Seven areas, weighted by how much each one affects whether people find you.</p>
+
+<table>
+  <thead>
+    <tr><th style="width:34%">Area</th><th style="width:36%">Score</th><th style="width:30%">What it means</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>On-page basics</strong><br><span class="plain">Titles, descriptions, headings</span></td>
+        <td><span class="bar" style="width:44mm"></span><strong>88</strong></td>
+        <td>Near-perfect. Minor heading-structure issues only.</td></tr>
+    <tr><td><strong>Technical foundations</strong><br><span class="plain">Crawling, redirects, security</span></td>
+        <td><span class="bar" style="width:43.5mm"></span><strong>87</strong></td>
+        <td>Clean. Held back by the Spanish linking gap.</td></tr>
+    <tr><td><strong>Content quality</strong><br><span class="plain">Trust, expertise, depth</span></td>
+        <td><span class="bar" style="width:42mm"></span><strong>84</strong></td>
+        <td>Genuinely strong — except the founding-date problem.</td></tr>
+    <tr><td><strong>AI search readiness</strong><br><span class="plain">ChatGPT, Perplexity, AI Overviews</span></td>
+        <td><span class="bar" style="width:40mm"></span><strong>80</strong></td>
+        <td>Good bones. Headings and dates need work.</td></tr>
+    <tr><td><strong>Structured data</strong><br><span class="plain">What you tell Google in code</span></td>
+        <td><span class="bar low" style="width:39mm"></span><strong>78</strong></td>
+        <td>Very complete, but copies of it have drifted apart.</td></tr>
+    <tr><td><strong>Speed</strong><br><span class="plain">How fast pages load</span></td>
+        <td><span class="bar low" style="width:38mm"></span><strong>76</strong></td>
+        <td>Server is excellent. One oversized script is the issue.</td></tr>
+    <tr><td><strong>Images</strong><br><span class="plain">Size, format, labelling</span></td>
+        <td><span class="bar low" style="width:37mm"></span><strong>74</strong></td>
+        <td>Alt text is now perfect. Sizing is not.</td></tr>
+  </tbody>
+</table>
+
+<h3 style="margin-top:6mm">What got fixed since last week</h3>
+<p>Six items from the 13 August audit are genuinely closed: <strong>112 missing image alt tags</strong> are now zero; an invalid code value that Google was rejecting is corrected; the sitemap now carries real per-page update dates instead of one shared date; the Outpatient Rehab page went from 1 internal link to over 40; broken navigation links on 25 pages are fixed; and language tags now cover the whole site.</p>
+
+<h3 style="margin-top:5mm">What is still open from last week</h3>
+<p>Ten items did not move, and they make up most of this report: the founding date, the missing security header, the render-blocking script, the conflicting service-area data, the heading structure, the Spanish linking, the oversized icon library, the hero images, the missing reviews, and the missing map embed.</p>
+
+<footer class="pagefoot">Scores are weighted: content 23%, technical 22%, on-page 20%, structured data 10%, speed 10%, AI readiness 10%, images 5%.</footer>
+
+<!-- ============ FIX NOW ============ -->
+<div class="page-break"></div>
+<h2 class="section">Fix now</h2>
+<div class="section-rule"></div>
+<p class="section-lede">Five things. Two are about trust, three are about being found. None of them require new content.</p>
+
+<div class="finding now">
+  <div class="finding-head"><span class="badge red">1</span><h3>The site says it was founded this year</h3></div>
+  <div class="qa"><span class="label">What&rsquo;s wrong</span>
+    <p>The code on 98 pages tells Google <code>foundingDate: "2026"</code>. Two pages — About Us and Our Story — show visitors a stat card that reads &ldquo;2026 / Founded in Los Angeles,&rdquo; and the Our Story page description says the clinic &ldquo;was founded in 2026.&rdquo; At the same time the homepage headline says <strong>100+ Recoveries</strong> and the site displays Joint Commission accreditation and DHCS licence #191643AP.</p></div>
+  <div class="qa"><span class="label">Why it matters</span>
+    <p>Addiction treatment is what Google calls a &ldquo;Your Money or Your Life&rdquo; topic — the category it holds to the highest evidence standard, because bad information causes real harm. Google pays human reviewers to check whether a site&rsquo;s claims about itself hold together. A clinic that says it opened eight months ago while claiming a mature track record and full accreditation is exactly the pattern they are trained to flag. Prospective clients notice too.</p></div>
+  <div class="qa"><span class="label">What to change</span>
+    <p>Pick one of two paths. <strong>Either</strong> state the real opening date and reconcile it in plain language on the About and Our Story pages — for example, &ldquo;Since opening in [month] 2026, we&rsquo;ve supported 100+ clients through treatment&rdquo; — <strong>or</strong>, if 2026 was placeholder text that shipped by accident, correct it to the real year everywhere.</p>
+    <p>Do <em>not</em> simply delete the founding date and leave &ldquo;100+ Recoveries&rdquo; unexplained. That removes the evidence, not the question. The 100+ figure should stay in the headline; it is the founding side that needs fixing.</p></div>
+  <div class="effort"><b>Effort:</b> Half a day · One find-and-replace across 98 files, plus a short paragraph on two pages. Needs the real date from you before anyone can start.</div>
+</div>
+
+<div class="finding now">
+  <div class="finding-head"><span class="badge red">2</span><h3>Nowhere on the site can anyone read or leave a review</h3></div>
+  <div class="qa"><span class="label">What&rsquo;s wrong</span>
+    <p>We searched all 116 pages for testimonials, star ratings, review code, or a &ldquo;leave us a review&rdquo; link. There are none — not one. There is also no embedded Google map anywhere on the public site. Meanwhile three real Google review screenshots dated 27 July sit unused in a folder in the project.</p></div>
+  <div class="qa"><span class="label">Why it matters</span>
+    <p>For a local health service, review volume and recency are among the strongest factors in whether you appear in the Google map results — and AI assistants like ChatGPT and Google&rsquo;s AI Overviews lean heavily on review text when someone asks &ldquo;is this place any good.&rdquo; Right now the site gives them nothing to work with, and gives a satisfied client no way to help you.</p></div>
+  <div class="qa"><span class="label">What to change</span>
+    <p>Three steps, in this order. <strong>First</strong>, add a &ldquo;Leave us a review&rdquo; link pointing at your Google review form — footer or alumni page. There is nothing to write and no compliance question; do it this week. <strong>Second</strong>, embed a real Google map on the Contact and Locations pages. <strong>Third</strong>, decide with whoever handles compliance whether to display consented testimonials with a live star rating.</p>
+    <p><strong>Important:</strong> do not publish those screenshots as page content or mark them up as review data. A review of an addiction treatment centre names a person&rsquo;s health condition, so displaying one needs explicit written consent from the reviewer.</p></div>
+  <div class="effort"><b>Effort:</b> Step one is 15 minutes. Steps two and three are half a day plus a compliance decision.</div>
+</div>
+
+<div class="finding now">
+  <div class="finding-head"><span class="badge red">3</span><h3>The business information you send Google contradicts itself</h3></div>
+  <div class="qa"><span class="label">What&rsquo;s wrong</span>
+    <p>Every page carries a hidden block of code describing the business — name, address, phone, service area, credentials. It is meant to be one identical description repeated everywhere. Instead it was copy-pasted and the copies have quietly drifted apart:</p>
+    <ul>
+      <li>The service area is <strong>7 cities</strong> on the homepage, <strong>12</strong> on the neighbourhood pages, and <strong>6</strong> on the Spanish homepage.</li>
+      <li>The business logo is one file everywhere except the 11 neighbourhood pages, which point at a different image.</li>
+      <li>The list of specialities is 9 items in English and only 4 in Spanish.</li>
+      <li>The founding date appears on some pages and is missing from others.</li>
+    </ul></div>
+  <div class="qa"><span class="label">Why it matters</span>
+    <p>All of these copies carry the same identifier, so Google treats them as one business. When one business tells Google three different service areas and two different logos, Google has to guess which is right — and confidence in the whole record drops. This is the data that feeds your map listing and knowledge panel.</p></div>
+  <div class="qa"><span class="label">What to change</span>
+    <p>Stop copy-pasting it. Generate the business block once from a single source file and inject the identical text everywhere, or define it fully on one page and have every other page point back to that definition. Either approach makes drift impossible going forward. Corrected code is ready to paste in the technical findings.</p></div>
+  <div class="effort"><b>Effort:</b> Half a day. Also fixes a related gap — the business record never lists your actual programmes (PHP, IOP, telehealth), so nothing tells Google what you do without reading the prose.</div>
+</div>
+
+<div class="finding now">
+  <div class="finding-head"><span class="badge red">4</span><h3>Your Spanish site is cut off from your English site</h3></div>
+  <div class="qa"><span class="label">What&rsquo;s wrong</span>
+    <p>The &ldquo;Español&rdquo; link in the navigation goes to <code>/espanol</code> on every single English page — a standalone Spanish landing page — rather than to the Spanish version of the page the visitor is on. But in the page code, you correctly tell Google that <code>/es/…</code> holds the Spanish version. The navigation and the code disagree.</p>
+    <p>The result: of the 71 pages outside the Spanish section, only the 404 page links into it. Spanish pages sit three to five clicks deep and get about a third of the internal links English pages get. The Spanish FAQ, About, Our Story and Our Facility pages have <strong>one inbound link each</strong>.</p></div>
+  <div class="qa"><span class="label">Why it matters</span>
+    <p>Internal links are how Google decides which of your pages deserve attention. Pages buried five clicks deep with one link pointing at them get crawled rarely and rank poorly. You have 44 well-built Spanish pages doing almost nothing, in a market where a large share of families searching for treatment search in Spanish.</p></div>
+  <div class="qa"><span class="label">What to change</span>
+    <p>Change the language switcher so it sends someone reading <code>/treatments/fentanyl</code> to <code>/es/treatments/fentanyl</code>, falling back to the Spanish homepage when no translation exists. Keep <code>/espanol</code> as a campaign landing page, reachable from the Spanish navigation. Nothing else needs to change — the language tags are already correct.</p></div>
+  <div class="effort"><b>Effort:</b> Half a day. It lives in one shared navigation component.</div>
+</div>
+
+<div class="finding now">
+  <div class="finding-head"><span class="badge red">5</span><h3>An icon library is 94% of your JavaScript — and it makes the page jump</h3></div>
+  <div class="qa"><span class="label">What&rsquo;s wrong</span>
+    <p>Every page loads a 94 KB icon library from an outside server called unpkg. Your own code is about 6 KB. The library arrives late, then swaps 49 empty placeholders on the homepage into 24-pixel icons — <em>after</em> the page has already drawn. Nothing in the stylesheet reserves space for them, so content visibly shifts as they appear, including the &ldquo;Call Now&rdquo; button in the header.</p></div>
+  <div class="qa"><span class="label">Why it matters</span>
+    <p>Content jumping around after load is one of the three page-experience signals Google measures directly, and it is the one visitors feel most — it is what makes someone tap the wrong thing. On top of that, you are trusting an outside server: if unpkg has an outage, every icon on your site disappears.</p></div>
+  <div class="qa"><span class="label">What to change</span>
+    <p><strong>Today, one line:</strong> add a stylesheet rule reserving 24×24 pixels for every icon placeholder. That stops the jumping immediately. <strong>Then, properly:</strong> you use roughly 15–20 unique icons. Paste those directly into the pages at build time and delete the library. That removes 94 KB, an outside dependency, and the shift, all at once.</p></div>
+  <div class="effort"><b>Effort:</b> The stopgap is one line and ten minutes. The full fix is half a day.</div>
+</div>
+
+<!-- ============ THIS WEEK ============ -->
+<div class="page-break"></div>
+<h2 class="section">Fix this week</h2>
+<div class="section-rule"></div>
+<p class="section-lede">Four changes that are small in effort and disproportionate in effect.</p>
+
+<div class="finding week">
+  <div class="finding-head"><span class="badge amber">6</span><h3>Six pages load a hero image four times bigger than they need</h3></div>
+  <div class="qa"><span class="label">What&rsquo;s wrong</span>
+    <p>The Team, Our Facility and Our Story pages — and their three Spanish versions — build their hero image in a way the browser can&rsquo;t discover early, and none of the six tells the browser to start loading it. They also point at the full-size file when a smaller version is already built and deployed right beside it:</p>
+    <ul>
+      <li>Team page loads <code>waiting-area.webp</code> at <strong>217 KB</strong> — <code>waiting-area-800.webp</code> is <strong>53 KB</strong>.</li>
+      <li>Another page loads a <strong>142 KB</strong> file where a <strong>42 KB</strong> version exists.</li>
+    </ul>
+    <p>The other 70 pages with hero images already do this correctly.</p></div>
+  <div class="qa"><span class="label">Why it matters</span>
+    <p>The hero image is usually the largest thing on screen, and Google measures how long it takes to appear. These six pages are four times slower than they need to be, on files you have already paid to create.</p></div>
+  <div class="qa"><span class="label">What to change</span>
+    <p>Add one preload line to each of the six pages and point it at the smaller variant on phone-sized screens.</p></div>
+  <div class="effort"><b>Effort:</b> Under an hour. This is the cheapest real win in the report.</div>
+</div>
+
+<div class="finding week">
+  <div class="finding-head"><span class="badge amber">7</span><h3>Blog posts look two months out of date to readers and to AI</h3></div>
+  <div class="qa"><span class="label">What&rsquo;s wrong</span>
+    <p>Every treatment, programme and location page carries a visible &ldquo;Updated [Month Year]&rdquo; line under the medical reviewer&rsquo;s name. <strong>Not one of the 16 blog posts does.</strong> Several show a June publish date on the page while the hidden code says they were reviewed on 19 August.</p></div>
+  <div class="qa"><span class="label">Why it matters</span>
+    <p>AI assistants and readers both go by what they can see. A cost guide that looks like it was written in June reads as stale next to a competitor&rsquo;s that says &ldquo;updated this month&rdquo; — even though yours actually was.</p></div>
+  <div class="qa"><span class="label">What to change</span>
+    <p>Add the same visible &ldquo;Updated&rdquo; line to all 16 posts, matching the date already in the code.</p></div>
+  <div class="effort"><b>Effort:</b> Under an hour.</div>
+</div>
+
+<div class="finding week">
+  <div class="finding-head"><span class="badge amber">8</span><h3>Your headings don&rsquo;t match the questions people actually ask</h3></div>
+  <div class="qa"><span class="label">What&rsquo;s wrong</span>
+    <p>Only <strong>11%</strong> of the section headings across the site are phrased as questions, and nearly all of those are inside FAQ dropdowns. The headings that sit above your actual answers are labels or slogans — &ldquo;Fentanyl Is Different, So Treatment Has to Be&rdquo; instead of &ldquo;How is fentanyl addiction treatment different?&rdquo;. Several sections also open with a rhetorical lead-in rather than the answer.</p></div>
+  <div class="qa"><span class="label">Why it matters</span>
+    <p>When ChatGPT, Perplexity or Google&rsquo;s AI Overview answers a question, it lifts a self-contained passage that sits directly under a matching heading. A slogan heading followed by a scene-setting paragraph gives them nothing liftable. Your Santa Monica page shows how good this can be — its FAQ answers give exact drive times, roads and bus lines, and scored 9 out of 10 for how quotable they are.</p></div>
+  <div class="qa"><span class="label">What to change</span>
+    <p>Rewrite six specific headings into question form and move the direct answer into the first sentence beneath each. The exact rewrites are listed in the technical findings.</p></div>
+  <div class="effort"><b>Effort:</b> Half a day, concentrated on the cost and insurance posts and the fentanyl page.</div>
+</div>
+
+<div class="finding week">
+  <div class="finding-head"><span class="badge amber">9</span><h3>Four small housekeeping items</h3></div>
+  <div class="qa"><span class="label">What to change</span>
+    <ul>
+      <li><strong>Add a security policy header.</strong> The site loads scripts from Google and unpkg and collects contact and insurance details through forms, with no policy restricting what can run. Flagged a week ago, still open.</li>
+      <li><strong>Fix a version mismatch.</strong> The homepage requests version 2 of a script that all 114 other pages request as version 3.</li>
+      <li><strong>Add two missing pages to your AI index file.</strong> Outpatient Rehab and Spanish-Speaking Treatment are linked from dozens of pages but absent from <code>llms.txt</code>, the file that tells AI crawlers what exists.</li>
+      <li><strong>Link your two weakest blog posts.</strong> &ldquo;Do I Need Rehab?&rdquo; and &ldquo;Find Rehab Near Me in Los Angeles&rdquo; have two internal links each, against 68 for every treatment page — and the second is one of the highest-intent searches in your market.</li>
+    </ul></div>
+  <div class="effort"><b>Effort:</b> Around two hours for all four.</div>
+</div>
+
+<!-- ============ THIS MONTH ============ -->
+<div class="page-break"></div>
+<h2 class="section">Fix this month</h2>
+<div class="section-rule"></div>
+<p class="section-lede">Bigger jobs, and things that need someone outside the website.</p>
+
+<div class="finding month">
+  <div class="finding-head"><span class="badge grey">10</span><h3>Get listed where AI assistants look for treatment centres</h3></div>
+  <div class="qa"><span class="label">What&rsquo;s wrong</span>
+    <p>There is no sign anywhere on the site that you are listed on Psychology Today, Healthgrades, the Better Business Bureau, or — most importantly — SAMHSA&rsquo;s FindTreatment.gov provider directory. Your site links <em>out</em> to SAMHSA twelve times as a resource, which is not the same as being <em>in</em> it.</p></div>
+  <div class="qa"><span class="label">Why it matters</span>
+    <p>When someone asks an AI assistant for a rehab near them, it leans hard on government and high-authority directories. Being absent from FindTreatment.gov means being absent from a large share of those answers. Psychology Today carries similar weight for behavioural health specifically.</p>
+    <p>One thing you already do right: LegitScript certification — the one Google requires before a treatment centre can advertise — is displayed and linked for verification.</p></div>
+  <div class="qa"><span class="label">What to change</span>
+    <p>Claim each listing, then add the live profile links to your site&rsquo;s business record so Google can connect them to you.</p></div>
+  <div class="effort"><b>Effort:</b> Multi-day, mostly waiting on verification. Start now.</div>
+</div>
+
+<div class="finding month">
+  <div class="finding-head"><span class="badge grey">11</span><h3>Check your Google Business Profile category</h3></div>
+  <div class="qa"><span class="label">What&rsquo;s wrong</span>
+    <p>We can&rsquo;t see this from the website — it is a setting in your Google Business Profile dashboard.</p></div>
+  <div class="qa"><span class="label">Why it matters</span>
+    <p>The primary category is consistently ranked the single largest factor in whether you show up in the local map results — and the single largest handicap when it is wrong.</p></div>
+  <div class="qa"><span class="label">What to change</span>
+    <p>Confirm the primary category is &ldquo;Addiction treatment center,&rdquo; with &ldquo;Mental health clinic&rdquo; as secondary. While you are in there, check review count and recency, the Q&amp;A section, and photo freshness.</p></div>
+  <div class="effort"><b>Effort:</b> 20 minutes, but someone with dashboard access has to do it.</div>
+</div>
+
+<div class="finding month">
+  <div class="finding-head"><span class="badge grey">12</span><h3>The remaining speed and structure work</h3></div>
+  <div class="qa"><span class="label">What to change</span>
+    <ul>
+      <li><strong>Build smaller hero images.</strong> The main hero photos have no phone-sized versions, so a mobile visitor downloads the same file a desktop does — around 100 KB on most pages. Affects roughly 70 pages.</li>
+      <li><strong>Host your fonts yourself.</strong> Fonts come from Google&rsquo;s servers through two separate round trips before any text can display in its final form. Self-hosting removes both and stops the headline reflowing as the font loads.</li>
+      <li><strong>Fix the heading structure on 48 pages.</strong> They jump from a section heading straight to a sub-sub-heading, skipping a level. Mainly an accessibility issue — it affects screen readers more than rankings — and it lives in a couple of shared components.</li>
+      <li><strong>Finish or remove the amenity map page.</strong> It is live, publicly linked from four pages, and still contains unfilled template placeholders like <code>{{website}}</code>. It also loads two large outside libraries.</li>
+      <li><strong>Vary the repeated blocks on the neighbourhood pages.</strong> Good news first: these pages are <em>not</em> thin copies of each other. Real driving routes, real bus lines, real local framing — we measured it and they genuinely differ. But the &ldquo;Levels of Care&rdquo; and &ldquo;Why Golden State Rehab&rdquo; card blocks repeat across all 11 with only cosmetic rewording. Vary them before adding a twelfth neighbourhood page, not after.</li>
+    </ul></div>
+  <div class="effort"><b>Effort:</b> Several days across the group. None of it is urgent.</div>
+</div>
+
+<div class="callout warn">
+  <h4>One security item to check outside the website</h4>
+  <p>The amenity map page has a Google Maps key visible in its source code. Keys like this are public by design, so this is not a leak — but it must have website restrictions applied in the Google Cloud console, otherwise anyone can run up charges on your account. Worth five minutes to confirm.</p>
+</div>
+
+<!-- ============ WHAT'S GOOD ============ -->
+<div class="page-break"></div>
+<h2 class="section">What is already working well</h2>
+<div class="section-rule"></div>
+<p class="section-lede">Documented so it doesn&rsquo;t get broken by accident later. Most of this is better than what competitors in your market are running.</p>
+
+<div class="callout good">
+  <h4>Trust signals are genuinely strong for a treatment centre</h4>
+  <p>Named clinicians with real credentials and links to look up their licences. A &ldquo;Medically reviewed by Dr. Eric Chaghouri, MD&rdquo; line with a review date on every clinical page. Claims cited to NIDA, the CDC and ASAM with visible source lists — 18 links to NIDA alone. HIPAA and 42 CFR Part 2 confidentiality language. The 988 crisis line and the SAMHSA helpline in the footer of every single page. A &ldquo;Claims You Can Check Yourself&rdquo; section that links out to the state licence lookup. Most sites in this vertical have none of this.</p>
+</div>
+
+<div class="twocol">
+  <div>
+    <div class="kicker">Technically clean</div>
+    <ul class="plain">
+      <li>Every page title unique and present</li>
+      <li>No duplicate descriptions anywhere</li>
+      <li>Every page points at itself as the original</li>
+      <li>All 44 Spanish pages in the sitemap</li>
+      <li>Language tags all correctly paired</li>
+      <li>Redirects all clean and single-hop</li>
+      <li>All security headers live and correct</li>
+      <li>Server responds in 60–70 milliseconds</li>
+    </ul>
+  </div>
+  <div>
+    <div class="kicker">Built right</div>
+    <ul class="plain">
+      <li>Every image has alt text — all 116 pages</li>
+      <li>Image dimensions set on 115 of 116 pages</li>
+      <li>No invented reviews or fake ratings anywhere</li>
+      <li>One real address — no fake branch offices</li>
+      <li>Phone and address identical on every page</li>
+      <li>Headline text isn&rsquo;t hidden behind JavaScript</li>
+      <li>Structured data on 112 of 116 pages, all valid</li>
+      <li>AI crawlers fully allowed; <code>llms.txt</code> in place</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout good">
+  <h4>The neighbourhood pages pass the test that matters</h4>
+  <p>Eleven pages targeting eleven neighbourhoods, for a business with one office, is the classic setup for a Google penalty. Yours avoid it. We measured the overlap between every pair of pages and it came out low — each has genuinely different driving directions, distances, bus lines, landmarks and framing. Swapping &ldquo;Santa Monica&rdquo; for &ldquo;Venice&rdquo; would produce factually wrong sentences, which is the test. The code also correctly describes one business serving a service area, rather than inventing eleven fake offices. Don&rsquo;t change that part.</p>
+</div>
+
+<!-- ============ LIMITS ============ -->
+<div class="page-break"></div>
+<h2 class="section">What we could not measure</h2>
+<div class="section-rule"></div>
+<p class="section-lede">Stated plainly so no number in this report gets more weight than it has earned.</p>
+
+<div class="callout warn">
+  <h4>The speed score is the weakest number in this report</h4>
+  <p>Google&rsquo;s free speed-testing API returned a quota error, and its real-world performance database requires an API key we don&rsquo;t have. <strong>That means no actual loading-speed measurements were taken.</strong> Everything in the speed section comes from measuring file sizes and reading the code — the problems identified are real and verified in the source, but the score of 76 is an informed estimate, not a measurement.</p>
+  <p><strong>Before acting on any speed number here, get a real one.</strong> The tooling to do it is already installed on the machine and needs no account or quota — one command produces a full report in about a minute.</p>
+</div>
+
+<p>Also outside what a website audit can see:</p>
+<ul>
+  <li><strong>Google Search Console and Analytics.</strong> No access was configured, so we can&rsquo;t tell you which pages are actually indexed, what people search to find you, or how much traffic each page earns. Connecting these would make the next audit substantially sharper.</li>
+  <li><strong>Your backlink profile.</strong> Who links to you, and whether any of it is harmful, is unmeasured.</li>
+  <li><strong>Google Business Profile.</strong> Category, review count and velocity, Q&amp;A, photos — all dashboard settings. See item 11.</li>
+  <li><strong>Directory listings.</strong> We inferred you aren&rsquo;t on Psychology Today or FindTreatment.gov from the absence of links on your own site. That is suggestive, not proof — check directly.</li>
+  <li><strong>Reading level.</strong> Last week&rsquo;s audit found clinical pages reading at roughly a college level against a target of eighth grade. We did not re-measure it this round, so treat that finding as carried forward and unconfirmed.</li>
+</ul>
+
+<div class="callout">
+  <h4>Two corrections to last week&rsquo;s audit</h4>
+  <p><strong>The insurance logo sizes are not causing layout shift.</strong> Last week&rsquo;s report flagged 980 image tags with wrong dimensions as a page-jumping problem. Reading the stylesheet shows it overrides those dimensions before anything is drawn, so no shift occurs. The dimensions are still factually wrong and worth correcting, but this is a tidiness item, not a speed one — it should not be on anyone&rsquo;s urgent list.</p>
+  <p><strong>The language script should not be deferred.</strong> Last week&rsquo;s fix for a blocking script was to defer it. That would break the feature — the script deliberately runs before the page draws to stop Spanish-speaking visitors seeing a flash of English first. The right fix is to paste its 2 KB directly into the page instead of fetching it as a separate file.</p>
+</div>
+
+<footer class="pagefoot">Full technical detail, file paths, line numbers and paste-ready code: <code>docs/seo-audit-2026-08-19/FULL-AUDIT-REPORT.md</code> and <code>docs/seo-audit-2026-08-19/findings/</code>. Prepared 20 August 2026.</footer>
+
+</body>
+</html>
