@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=14">
+  <link rel="stylesheet" href="css/styles.min.css?v=15">
 <script src="/js/i18n.js?v=2"></script>
 </head>
 <body>
@@ -227,7 +227,7 @@
       <a href="verify-insurance" class="btn btn-primary btn-lg" id="coverageCta"><span id="coverageCtaText">Verify My Benefits</span> <i data-lucide="arrow-right"></i></a>
       <p class="coverage-result-note">Don't see your provider? We work with most major PPO plans. <a href="verify-insurance">Check yours free</a>.</p>
     </div>
-    <div class="insurance-cta-row" id="coverageDefaultCta"><a href="verify-insurance" class="btn btn-primary btn-lg">Verify Insurance <i data-lucide="arrow-right"></i></a><a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> Call (424) 208-3120</a></div>
+    <div class="insurance-cta-row" id="coverageDefaultCta"><a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a><a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> Call (424) 208-3120</a></div>
   </div>
 </section>
 
@@ -254,7 +254,8 @@
       </figure>
     </div>
     <div style="text-align:center;margin-top:40px;" class="reveal">
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Start The Same Way They Did — Verify My Insurance <i data-lucide="arrow-right"></i></a>
+      <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--near-black);">Start the same way they did.</p>
+      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
       <p style="margin-top:18px;font-size:15px;"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener" style="color:var(--body-text);text-decoration:underline;text-underline-offset:3px;">Read all our 5.0-star reviews on Google <i data-lucide="arrow-up-right" style="width:15px;height:15px;vertical-align:-2px;"></i></a></p>
     </div>
   </div>
@@ -302,7 +303,8 @@
       </div>
     </div>
     <div style="text-align: center; margin-top: 48px;" class="reveal">
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Check My Coverage — Free, About a Minute <i data-lucide="arrow-right"></i></a>
+      <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--near-black);">Free, confidential, and about a minute.</p>
+      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -393,13 +395,23 @@
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
   }
-  @media (prefers-reduced-motion: reduce) {
+  /* The marquee only ever pauses on :hover, which a touch screen never fires —
+     so on a phone this strip slides sideways under the reader's eyes the whole
+     time they are scrolling past it, with no way to stop it. Below the tablet
+     breakpoint the clinicians become a still two-up grid instead. Same
+     treatment for anyone who asked for reduced motion, at any width. */
+  @media (max-width: 768px), (prefers-reduced-motion: reduce) {
     .team-marquee { mask-image: none; -webkit-mask-image: none; }
     .team-marquee-track { animation: none; width: 100%; flex-wrap: wrap; justify-content: center; gap: 16px; }
     .team-marquee-card { margin-right: 0; }
     /* The duplicate half of the track only exists to make the scroll seamless;
        with the animation off it would show every clinician twice. */
     .team-marquee-card[aria-hidden="true"] { display: none; }
+  }
+  /* Two per row on a phone, matching how .team-grid already lays out below
+     640px. Without this the 270px fixed width forces one tall card per row. */
+  @media (max-width: 768px) {
+    .team-marquee-card { width: calc(50% - 8px); }
   }
 </style>
 <section class="section section-cream team-preview-section" aria-labelledby="team-preview-heading">
@@ -599,7 +611,8 @@
       </div>
     </div>
     <div style="text-align: center; margin-top: 48px;" class="reveal">
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Start With Step 1 — Verify My Insurance <i data-lucide="arrow-right"></i></a>
+      <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--near-black);">Start with step 1.</p>
+      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -657,7 +670,6 @@
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:40px;" class="reveal"><a href="/blog/" class="btn btn-secondary">Read more in the Recovery Journal <i data-lucide="arrow-right"></i></a></div>
   </div>
 </section>
 
@@ -672,7 +684,7 @@
     <h2>Ready to take the next step?</h2>
     <p>Verify your insurance in about a minute, or call our Los Angeles admissions team and we'll walk you through every step. Free and confidential.</p>
     <div class="btn-group">
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify Insurance <i data-lucide="arrow-right"></i></a>
+      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
       <a href="tel:+14242083120" class="btn btn-white-outline btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
     </div>
   </div>
@@ -789,7 +801,7 @@
   </div>
 <div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></footer>
 
-<script src="js/main.min.js?v=6" defer></script>
+<script src="js/main.min.js?v=7" defer></script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
 <script type="application/ld+json">
 {
@@ -998,33 +1010,5 @@
   ]
 }
 </script>
-<!-- FLOATING QUIZ PROMPT + MODAL -->
-<div class="quiz-fab" id="quizFab" hidden>
-  <div class="quiz-fab-card" id="quizFabCard">
-    <button class="quiz-fab-close" id="quizFabClose" type="button" aria-label="Minimize">&#10005;</button>
-    <div class="quiz-fab-icon"><i data-lucide="compass"></i></div>
-    <p class="quiz-fab-title">Not sure which program fits?</p>
-    <p class="quiz-fab-sub">Take our quick 30-second quiz to find your starting point.</p>
-    <button class="btn btn-primary btn-sm quiz-fab-cta" id="quizFabOpen" type="button">Take the quiz <i data-lucide="arrow-right"></i></button>
-  </div>
-  <button class="quiz-fab-bubble" id="quizFabBubble" type="button" aria-label="Open the program-fit quiz" hidden><i data-lucide="compass"></i></button>
-</div>
-
-<div class="quiz-modal" id="quizModal" hidden>
-  <div class="quiz-modal-overlay" id="quizModalOverlay"></div>
-  <div class="quiz-modal-panel" role="dialog" aria-modal="true" aria-labelledby="quiz-modal-title">
-    <button class="quiz-modal-close" id="quizModalClose" type="button" aria-label="Close">&#10005;</button>
-    <div class="quiz-modal-head">
-      <span class="badge-gold">Find Your Fit</span>
-      <h2 id="quiz-modal-title">Let's find the right starting point</h2>
-      <p>Three quick questions. Nothing here is a diagnosis, just a starting point.</p>
-    </div>
-    <div class="quiz-card" id="quizCard">
-      <div class="quiz-progress" id="quizProgress" aria-hidden="true"></div>
-      <div class="quiz-body" id="quizBody" aria-live="polite"></div>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>

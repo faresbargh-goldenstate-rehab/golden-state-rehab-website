@@ -185,6 +185,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function getVisibleCount() { return window.innerWidth <= 768 ? 1 : 3; }
   function getCardWidth() { return cards[0].offsetWidth + 20; }
 
+  // Below the tablet breakpoint one step is a whole card — about 80% of the
+  // screen — so an unattended advance drags most of the viewport sideways
+  // while someone is reading their way down the page. On a phone the carousel
+  // therefore only moves when an arrow is tapped. Anyone who asked for reduced
+  // motion gets the same treatment at every width.
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function autoplayAllowed() { return window.innerWidth > 768 && !reducedMotion.matches; }
+
   function goTo(n) {
     var maxIndex = total - getVisibleCount();
     current = Math.max(0, Math.min(n, maxIndex));
@@ -196,6 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function resetTimer() {
     clearInterval(timer);
+    timer = null;
+    if (!autoplayAllowed()) return;
     timer = setInterval(function () {
       var maxIndex = total - getVisibleCount();
       goTo(current < maxIndex ? current + 1 : 0);
@@ -447,162 +457,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
-
-// ── Treatment match quiz — non-diagnostic program finder ─────────────
-(function () {
-  var card = document.getElementById('quizCard');
-  if (!card) return;
-  var body = document.getElementById('quizBody');
-  var progress = document.getElementById('quizProgress');
-
-  var Q = [
-    { id: 'who', q: 'Who are you looking for support for?', opts: [
-      { l: 'Myself', v: 'self' },
-      { l: 'Someone I love', v: 'loved' },
-      { l: "A client I'm referring (I'm a professional)", v: 'pro' }
-    ]},
-    { id: 'focus', q: 'What feels like the main thing to work on right now?', opts: [
-      { l: 'Drugs or alcohol', v: 'sud' },
-      { l: 'Mental health, like anxiety, depression, or trauma', v: 'mh' },
-      { l: "Both, or I'm not sure yet", v: 'both' }
-    ]},
-    { id: 'time', q: 'How much time can you give to treatment right now?', opts: [
-      { l: 'Most of my day, several days a week', v: 'php' },
-      { l: 'A few hours, a few days a week', v: 'iop' },
-      { l: 'I need to do this from home', v: 'tele' },
-      { l: "I honestly don't know yet", v: 'unsure' }
-    ]}
-  ];
-
-  var R = {
-    php: { icon: 'layers', tag: 'Most structured', title: 'A Partial Hospitalization Program (PHP) looks like a strong starting point',
-      body: 'PHP is our most structured outpatient level: around six hours a day, five days a week, while you sleep at home. A free assessment confirms whether it is the right fit.',
-      link: '/programs/php', linkLabel: 'See how PHP works' },
-    iop: { icon: 'calendar', tag: 'Flexible', title: 'An Intensive Outpatient Program (IOP) may fit your schedule',
-      body: 'IOP gives you real clinical support a few sessions a week, so you can keep up with work, school, or family while you do the work of recovery.',
-      link: '/programs/iop', linkLabel: 'See how IOP works' },
-    tele: { icon: 'video', tag: 'From home', title: 'Telehealth can bring treatment to you',
-      body: 'Our telehealth program offers the same care by secure video, anywhere in California. It is a strong option when getting to a center every week is not realistic.',
-      link: '/programs/telehealth', linkLabel: 'See telehealth options' },
-    unsure: { icon: 'compass', tag: "Let's talk", title: 'Not knowing yet is completely normal',
-      body: 'You do not need to have it figured out. A free, confidential assessment is the fastest way to find the right level of care together, with no pressure and no commitment.',
-      link: '/contact', linkLabel: 'Talk with our team' },
-    pro: { icon: 'heart-handshake', tag: 'For professionals', title: 'Thank you for trusting us with your client',
-      body: 'We coordinate referrals quickly and confidentially, verify benefits the same day, and keep you in the loop as your client authorizes. Reach our team directly to get started.',
-      link: '#referrals', linkLabel: 'See referral details' }
-  };
-
-  var answers = {}, order = [];
-
-  function setProgress(done) {
-    if (!progress) return;
-    var pct = done ? 100 : Math.round(order.length / Q.length * 100);
-    progress.innerHTML = '<span class="quiz-progress-bar" style="width:' + pct + '%"></span>';
-  }
-
-  function renderQuestion() {
-    var i = order.length, step = Q[i];
-    var h = '<div class="quiz-step"><p class="quiz-step-count">Question ' + (i + 1) + ' of ' + Q.length + '</p>';
-    h += '<p class="quiz-q">' + step.q + '</p><div class="quiz-options">';
-    step.opts.forEach(function (o) {
-      h += '<button type="button" class="quiz-option" data-id="' + step.id + '" data-val="' + o.v + '">' + o.l + '</button>';
-    });
-    h += '</div></div>';
-    body.innerHTML = h;
-    body.querySelectorAll('.quiz-option').forEach(function (b) {
-      b.addEventListener('click', function () { choose(step.id, b.getAttribute('data-val')); });
-    });
-    setProgress(false);
-  }
-
-  function choose(id, val) {
-    answers[id] = val;
-    order.push(id);
-    if (id === 'who' && val === 'pro') return renderResult('pro');
-    if (order.length < Q.length) renderQuestion();
-    else renderResult(answers.time === 'php' ? 'php' : answers.time === 'iop' ? 'iop' : answers.time === 'tele' ? 'tele' : 'unsure');
-  }
-
-  function renderResult(key) {
-    var r = R[key];
-    setProgress(true);
-    var note = '';
-    if (answers.focus === 'mh' && key !== 'pro' && key !== 'unsure') {
-      note = '<p class="quiz-result-note">Since mental health is front of mind, ask us about our <a href="/mental-health">Mental Health track</a> too.</p>';
-    }
-    body.innerHTML = '<div class="quiz-result">' +
-      '<div class="quiz-result-icon"><i data-lucide="' + r.icon + '"></i></div>' +
-      '<span class="card-tag">' + r.tag + '</span>' +
-      '<h3>' + r.title + '</h3><p>' + r.body + '</p>' + note +
-      '<div class="quiz-result-actions">' +
-        '<a href="verify-insurance" class="btn btn-primary">Verify Insurance Free <i data-lucide="arrow-right"></i></a>' +
-        '<a href="' + r.link + '" class="btn btn-secondary">' + r.linkLabel + '</a>' +
-      '</div>' +
-      '<button type="button" class="quiz-restart" id="quizRestart">Start over</button></div>';
-    if (window.lucide) lucide.createIcons();
-    var rb = document.getElementById('quizRestart');
-    if (rb) rb.addEventListener('click', function () { answers = {}; order = []; renderQuestion(); });
-  }
-
-  renderQuestion();
-})();
-
-
-// ── Floating quiz prompt (FAB) + quiz modal ──────────────────────────
-(function () {
-  var fab = document.getElementById('quizFab');
-  var modal = document.getElementById('quizModal');
-  if (!fab || !modal) return;
-  var card = document.getElementById('quizFabCard');
-  var bubble = document.getElementById('quizFabBubble');
-  var openBtn = document.getElementById('quizFabOpen');
-  var closeBtn = document.getElementById('quizFabClose');
-  var modalClose = document.getElementById('quizModalClose');
-  var overlay = document.getElementById('quizModalOverlay');
-  var minimized = false;
-  try { if (sessionStorage.getItem('quizFabMinimized')) minimized = true; } catch (e) {}
-
-  function showBubble() {
-    minimized = true;
-    fab.classList.remove('is-open');
-    card.hidden = true;
-    bubble.hidden = false;
-  }
-  function showFab() {
-    fab.hidden = false;
-    if (minimized) { showBubble(); return; }
-    card.hidden = false;
-    bubble.hidden = true;
-    requestAnimationFrame(function () { fab.classList.add('is-open'); });
-  }
-  function openModal() {
-    modal.hidden = false;
-    requestAnimationFrame(function () { modal.classList.add('is-open'); });
-    document.body.style.overflow = 'hidden';
-    if (window.lucide) lucide.createIcons();
-    var first = modal.querySelector('.quiz-option');
-    if (first) { try { first.focus(); } catch (e) {} }
-  }
-  function closeModal() {
-    modal.classList.remove('is-open');
-    document.body.style.overflow = '';
-    setTimeout(function () { modal.hidden = true; }, 300);
-  }
-
-  if (openBtn) openBtn.addEventListener('click', function () { openModal(); showBubble(); });
-  if (bubble) bubble.addEventListener('click', openModal);
-  if (closeBtn) closeBtn.addEventListener('click', function () {
-    showBubble();
-    try { sessionStorage.setItem('quizFabMinimized', '1'); } catch (e) {}
-  });
-  if (modalClose) modalClose.addEventListener('click', closeModal);
-  if (overlay) overlay.addEventListener('click', closeModal);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
-
-  // Appear after a calm delay; auto-minimize to a bubble if left untouched.
-  setTimeout(showFab, 2500);
-  setTimeout(function () { if (!minimized && fab.classList.contains('is-open')) showBubble(); }, 17000);
-})();
 
 /* ============================================================
    Sticky-header height sync
