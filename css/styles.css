@@ -52,6 +52,11 @@ body {
   color: var(--body-text);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
+  /* A single unbreakable token — a spelled-out URL, a long email address —
+     otherwise widens its text column past the viewport and lets the whole page
+     pan sideways on a phone. `break-word` only splits a word that cannot fit on
+     a line of its own, so normal prose wrapping is unchanged. */
+  overflow-wrap: break-word;
 }
 img, video {
   display: block;
@@ -443,6 +448,24 @@ p:last-child { margin-bottom: 0; }
   text-decoration: none;
   border: 2px solid transparent;
   white-space: nowrap;
+  /* A long CTA label must never push its own box wider than the column it sits
+     in. One over-wide button is enough to make the entire page pan sideways on
+     a phone — and `overflow-x: clip` on <html> does not stop that drag gesture
+     in iOS Safari, it only hides the scrollbar elsewhere. */
+  max-width: 100%;
+}
+/* Paired with the max-width above: below the tablet breakpoint a label that no
+   longer fits wraps to a second line instead of spilling outside the pill.
+   Wrapping only ever engages when the text genuinely doesn't fit, so short
+   labels ("Call Now", a phone number) are untouched. */
+@media (max-width: 640px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+    /* Splits a wrapped label into even lines rather than a long line plus an
+       orphan. Ignored by browsers without support, which just wrap normally. */
+    text-wrap: balance;
+  }
 }
 .btn:hover {
   transform: translateY(-1px);
