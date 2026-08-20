@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=12">
+  <link rel="stylesheet" href="css/styles.min.css?v=13">
 <script src="/js/i18n.js?v=2"></script>
 </head>
 <body>
@@ -151,11 +151,11 @@
      HERO + TRUST BADGES
      ═══════════════════════════════════════════════════════════ -->
 <style>
-  /* Answers the unspoken question at the CTA: "what happens if I actually call?" */
-  .hero-reassure{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 24px;margin:20px 0 0;font-size:14.5px;font-weight:600;color:var(--muted)}
-  .hero-reassure span{display:inline-flex;align-items:center;gap:7px}
-  .hero-reassure svg{width:15px;height:15px;color:var(--gold-dark);stroke-width:3}
-  @media (max-width:640px){.hero-reassure{gap:6px 16px;font-size:13.5px}}
+  /* Answers the unspoken question at the CTA: "what happens if I actually call?"
+     Deliberately plain text, not a badge row — the accreditation row below is the
+     only badge treatment in the hero, so the two don't compete. */
+  .hero-reassure{margin:18px 0 0;font-size:15px;font-weight:500;color:var(--muted)}
+  @media (max-width:640px){.hero-reassure{font-size:14px;margin-top:16px}}
 </style>
 <section class="hero" aria-label="Hero">
   <div class="container hero-content">
@@ -180,11 +180,7 @@
       <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
     </div>
 
-    <p class="hero-reassure">
-      <span><i data-lucide="check"></i> A real counselor answers</span>
-      <span><i data-lucide="check"></i> No obligation to enroll</span>
-      <span><i data-lucide="check"></i> 100% confidential</span>
-    </p>
+    <p class="hero-reassure">A real counselor answers, 24/7 — no obligation, always confidential.</p>
 
     <div class="hero-trust-row" aria-label="Trust badges">
       <!-- Seal is decorative here: the adjacent text carries the meaning and the link
@@ -524,37 +520,85 @@
      WHAT WE TREAT AND HOW — services + treatment areas
      ═══════════════════════════════════════════════════════════ -->
 <style>
-  .svc-pills{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px}
-  .svc-pill{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border:1px solid rgba(28,25,23,.14);border-radius:999px;background:#fff;color:inherit;text-decoration:none;font-weight:600;font-size:15px;transition:transform .2s ease,box-shadow .2s ease}
-  .svc-pill:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
-  .svc-pill:active{transform:translateY(0) scale(.98)}
-  .treat-grid{grid-template-columns:repeat(4,1fr);margin-bottom:32px}
-  .treat-grid .related-card{background:#fff}
-  @media (max-width:1024px){.treat-grid{grid-template-columns:1fr 1fr}}
-  @media (max-width:640px){.treat-grid{grid-template-columns:1fr}}
+  /* Compact link directory. This block is navigation, not a feature showcase —
+     cards and pills gave it the visual weight of a pitch while repeating
+     "in Los Angeles" eight times. */
+  .treat-intro a{color:var(--gold-dark);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+  .treat-cols{display:grid;grid-template-columns:repeat(4,1fr);max-width:1040px;margin:0 auto}
+  .treat-col{padding:0 30px}
+  .treat-col+.treat-col{border-left:1px solid rgba(28,25,23,.11)}
+  .treat-col:first-child{padding-left:0}
+  .treat-col:last-child{padding-right:0}
+  .treat-col-label{font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--gold-dark);margin:0 0 16px}
+  .treat-col-label a{text-decoration:none}
+  .treat-col-label a:hover{text-decoration:underline;text-underline-offset:3px}
+  .treat-links{display:flex;flex-direction:column;gap:10px}
+  .treat-links a{font-size:15.5px;font-weight:500;color:var(--body-text);text-decoration:none;transition:color .2s ease}
+  .treat-links a:hover{color:var(--gold-dark)}
+  @media (max-width:1024px){
+    .treat-cols{grid-template-columns:1fr 1fr;row-gap:36px;max-width:600px}
+    .treat-col{padding:0 24px}
+    .treat-col:nth-child(odd){border-left:0;padding-left:0}
+    .treat-col:nth-child(even){padding-right:0}
+  }
+  @media (max-width:640px){
+    /* Two columns, not one — the labels are short, and stacking 20 links
+       single-file undoes the compaction on exactly the devices that need it. */
+    .treat-cols{grid-template-columns:1fr 1fr;row-gap:26px;column-gap:18px;max-width:none}
+    .treat-col{padding:0;border-left:0}
+    .treat-col-label{margin-bottom:12px}
+    .treat-links{gap:9px}
+    .treat-links a{font-size:14.5px}
+  }
 </style>
 <section class="section section-cream" aria-labelledby="services-strip-heading">
   <div class="container">
     <div class="section-header reveal">
       <h2 id="services-strip-heading">What We Treat and How</h2>
-      <p class="section-intro">From structured day programs to evening telehealth, our licensed clinicians cover <a href="treatments/">everything we treat</a> across the <a href="locations">areas of Los Angeles we serve</a>. Every service is delivered at our Westwood center or securely online.</p>
+      <p class="section-intro treat-intro">Every program runs at our Westwood center or securely online for the <a href="locations">areas of Los Angeles we serve</a>, and most major PPO plans cover it.</p>
     </div>
-    <div class="related-grid treat-grid">
-      <a href="programs/" class="related-card reveal"><div class="related-card-icon"><i data-lucide="layers"></i></div><h4>Rehab Programs in Los Angeles</h4><p>PHP, IOP, outpatient, and telehealth — structured levels of care built around work and family.</p><span>Explore programs <i data-lucide="arrow-right"></i></span></a>
-      <a href="mental-health" class="related-card reveal reveal-delay-1"><div class="related-card-icon"><i data-lucide="brain"></i></div><h4>Mental Health Treatment in Los Angeles</h4><p>Depression, anxiety, trauma, and dual diagnosis care from master's-level clinicians.</p><span>Explore mental health <i data-lucide="arrow-right"></i></span></a>
-      <a href="treatments/alcohol" class="related-card reveal reveal-delay-2"><div class="related-card-icon"><i data-lucide="wine-off"></i></div><h4>Alcohol Addiction Treatment in Los Angeles</h4><p>Evidence-based alcohol treatment at every outpatient level of care, including medication support.</p><span>Explore alcohol treatment <i data-lucide="arrow-right"></i></span></a>
-      <a href="programs/holistic-therapies" class="related-card reveal reveal-delay-3"><div class="related-card-icon"><i data-lucide="flower-2"></i></div><h4>Holistic Therapies in Los Angeles</h4><p>Mindfulness, yoga, breathwork, and expressive therapies that support clinical treatment.</p><span>Explore holistic care <i data-lucide="arrow-right"></i></span></a>
+    <div class="treat-cols reveal">
+      <div class="treat-col">
+        <p class="treat-col-label"><a href="programs/">Programs</a></p>
+        <nav class="treat-links" aria-label="Programs">
+          <a href="programs/php">PHP</a>
+          <a href="programs/iop">IOP</a>
+          <a href="programs/outpatient-rehab">Outpatient Rehab</a>
+          <a href="programs/telehealth">Telehealth</a>
+          <a href="programs/individual-therapy">Individual Therapy</a>
+        </nav>
+      </div>
+      <div class="treat-col">
+        <p class="treat-col-label"><a href="mental-health">Mental Health</a></p>
+        <nav class="treat-links" aria-label="Mental health treatment">
+          <a href="treatments/depression">Depression</a>
+          <a href="treatments/anxiety">Anxiety</a>
+          <a href="treatments/ptsd">PTSD</a>
+          <a href="treatments/complex-trauma">Complex Trauma</a>
+          <a href="treatments/dual-diagnosis">Dual Diagnosis</a>
+        </nav>
+      </div>
+      <div class="treat-col">
+        <p class="treat-col-label"><a href="treatments/">Addiction</a></p>
+        <nav class="treat-links" aria-label="Addiction treatment">
+          <a href="treatments/alcohol">Alcohol</a>
+          <a href="treatments/opioid">Opioid</a>
+          <a href="treatments/fentanyl">Fentanyl</a>
+          <a href="treatments/meth">Meth</a>
+          <a href="treatments/cocaine">Cocaine</a>
+        </nav>
+      </div>
+      <div class="treat-col">
+        <p class="treat-col-label">Therapy &amp; Support</p>
+        <nav class="treat-links" aria-label="Therapies and ongoing support">
+          <a href="treatments/cbt">CBT</a>
+          <a href="treatments/dbt">DBT</a>
+          <a href="programs/holistic-therapies">Holistic Therapies</a>
+          <a href="programs/medication-management">Medication Management</a>
+          <a href="programs/alumni">Aftercare &amp; Alumni</a>
+        </nav>
+      </div>
     </div>
-    <nav class="svc-pills reveal" aria-label="Featured services">
-      <a class="svc-pill" href="programs/php">PHP in Los Angeles</a>
-      <a class="svc-pill" href="programs/iop">IOP in Los Angeles</a>
-      <a class="svc-pill" href="programs/outpatient-rehab">Outpatient Drug Rehab in Los Angeles</a>
-      <a class="svc-pill" href="programs/telehealth">Telehealth Rehab in Los Angeles</a>
-      <a class="svc-pill" href="treatments/dual-diagnosis">Dual Diagnosis Treatment</a>
-      <a class="svc-pill" href="treatments/opioid">Opioid Addiction Treatment</a>
-      <a class="svc-pill" href="programs/medication-management">Medication Management</a>
-      <a class="svc-pill" href="programs/alumni">Aftercare &amp; Alumni Program</a>
-    </nav>
   </div>
 </section>
 
