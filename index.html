@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=17">
+  <link rel="stylesheet" href="css/styles.min.css?v=34">
 <script src="/js/i18n.min.js?v=4"></script>
 </head>
 <body>
@@ -150,13 +150,6 @@
 <!-- ═══════════════════════════════════════════════════════════
      HERO + TRUST BADGES
      ═══════════════════════════════════════════════════════════ -->
-<style>
-  /* Answers the unspoken question at the CTA: "what happens if I actually call?"
-     Deliberately plain text, not a badge row — the accreditation row below is the
-     only badge treatment in the hero, so the two don't compete. */
-  .hero-reassure{margin:18px 0 0;font-size:15px;font-weight:500;color:var(--muted)}
-  @media (max-width:640px){.hero-reassure{font-size:14px;margin-top:16px}}
-</style>
 <section class="hero" aria-label="Hero">
   <div class="container hero-content">
     <p class="hero-rating">
@@ -180,17 +173,135 @@
       <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
     </div>
 
-    <p class="hero-reassure">A real counselor answers, 24/7 — no obligation, always confidential.</p>
+    <!-- One trust band: the seal anchors it on the left (strongest credential
+         reads first), with the three promises as a gold-bulleted list beside
+         it. The seal link carries the accreditation name itself, so the img
+         alt stays a real accessible name. -->
+    <div class="hero-creds">
+      <a class="hero-creds-seal" href="https://www.jointcommission.org/" target="_blank" rel="noopener noreferrer nofollow" title="Accredited by The Joint Commission">
+        <img src="/images/joint-commission-gold-seal.webp" alt="Accredited by The Joint Commission — Gold Seal of Approval" width="76" height="76" decoding="async">
+      </a>
+      <span class="hero-creds-rule" aria-hidden="true"></span>
+      <ul class="hero-creds-list">
+        <li>A real counselor answers 24/7</li>
+        <li>Always confidential</li>
+        <li><a href="/license" target="_blank" rel="noopener" title="View DHCS License Certificate">DHCS Licensed · #191643AP</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <div class="hero-trust-row" aria-label="Trust badges">
-      <!-- Seal is decorative here: the adjacent text carries the meaning and the link
-           destination, so a descriptive alt would be announced twice. The standalone
-           footer seal keeps its full alt. -->
-      <a rel="noopener noreferrer nofollow" href="https://www.jointcommission.org/" target="_blank" class="hero-trust-badge hero-trust-seal" style="text-decoration:none;"><img src="/images/joint-commission-gold-seal.webp" alt="" aria-hidden="true" width="20" height="20" decoding="async"> Accredited by Joint Commission</a>
-      <span class="hero-trust-badge-sep" aria-hidden="true"></span>
-      <a href="/license" target="_blank" rel="noopener" class="hero-trust-badge" style="text-decoration:none;" title="View DHCS License Certificate"><i data-lucide="shield-check"></i> DHCS Licensed · #191643AP</a>
-      <span class="hero-trust-badge-sep" aria-hidden="true"></span>
-      <span class="hero-trust-badge"><i data-lucide="badge-check"></i> LegitScript Certified</span>
+<!-- ═══════════════════════════════════════════════════════════
+     PROOF — six unedited Google review screenshots, then the three
+     cards that close the case. One section,
+     one background: the reviews and the cards are a single
+     credibility block, not two slabs stacked on each other.
+
+     Nothing is behind a swipe: four reviews sit on the page, two per
+     row, and "Read more" opens all six. The widths are deliberately
+     unequal because the screenshots were captured at two different
+     browser zooms (the older three fit ~92 characters per line, the
+     newer three ~48). Each row pairs one of each and exactly fills
+     the container, so every review's body copy renders at the same
+     size.
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section proof" id="reviews" aria-labelledby="reviews-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 id="reviews-heading">What People Are Saying</h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <ul class="proof-wall reveal">
+      <li class="proof-shot proof-shot--narrow">
+        <img src="images/reviews/google-review-4.webp" width="808" height="610" loading="lazy" decoding="async"
+             alt="Five-star Google review from Yvette Vargas: “For myself it’s been less then a month that I have been here. To share my experience here. It’s been one of the best programs by far. All the facilitators have a lot of experience in recovery and walk the talk. They are fun and are attentive to our needs and want to see us shine and have a beautiful out look on recovery. There’s never a dull moment as far as participation and perception. We appreciate this program and hands down. We recommend this place.”">
+        <button class="proof-shot-more" type="button" data-review="4">Read more<span class="visually-hidden"> — open all six reviews</span></button>
+      </li>
+      <li class="proof-shot proof-shot--wide">
+        <img src="images/reviews/google-review-1.webp" width="1100" height="1229" loading="lazy" decoding="async"
+             alt="Five-star Google review from Dennis: “This place is truly amazing! From the moment I arrived, I felt welcomed, supported, and treated with genuine care and respect. The staff is incredible and goes above and beyond to make sure everyone feels heard, understood, and encouraged.” The review includes a photo posted by the reviewer.">
+        <button class="proof-shot-more" type="button" data-review="1">Read more<span class="visually-hidden"> — open all six reviews</span></button>
+      </li>
+      <li class="proof-shot proof-shot--wide">
+        <img src="images/reviews/google-review-2.webp" width="1100" height="904" loading="lazy" decoding="async"
+             alt="Five-star Google review from Gregory Icenogle: “Golden State Rehab gave me a second chance at life and helped me get my sobriety back. From the moment I got there, the place felt safe, calm, and welcoming. It isn’t just a place for treatment, it feels like family.” The review includes a photo posted by the reviewer.">
+        <button class="proof-shot-more" type="button" data-review="2">Read more<span class="visually-hidden"> — open all six reviews</span></button>
+      </li>
+      <li class="proof-shot proof-shot--narrow">
+        <img src="images/reviews/google-review-6.webp" width="796" height="634" loading="lazy" decoding="async"
+             alt="Five-star Google review from Mikey Iava: “The best program ive been in since i started my recovery journey. The staff and owners actually listen to you and show genuine care which ive never experienced before. The groups are very engaging and very fun! Ive grown more in my short time here at golden state rehab than i have in my entire journey of recovery. If your serious about getting sober and want to grow while have genuine connections and having fun then i cant recommend golden state rehab enough!”">
+        <button class="proof-shot-more" type="button" data-review="6">Read more<span class="visually-hidden"> — open all six reviews</span></button>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="proof-bento">
+      <!-- Card 1 speaks to where they want to end up. Card 2 names the week
+           that actually decides it, then hands them the mechanism. Card 3 is
+           the only place we talk about ourselves — last, once it's earned. -->
+      <div class="proof-card proof-card--outcome reveal reveal-delay-1">
+        <h3>Get your life back<br><span class="proof-outcome-em">without leaving it.</span></h3>
+      </div>
+
+      <div class="proof-card proof-card--pitch reveal reveal-delay-2">
+        <p class="proof-badge"><i data-lucide="heart"></i> Personalized Outpatient Treatment</p>
+        <p class="proof-pitch-copy">Quitting isn’t the hard part. Going back to the same house, the same job, the same people is. That’s what we build your plan for.</p>
+        <a href="contact" class="btn btn-primary btn-lg proof-pitch-cta">Talk to Admissions <i data-lucide="arrow-right"></i></a>
+      </div>
+
+      <!-- The last thing between someone and the phone is not proof, it is
+           not knowing what happens if they pick it up. Every line here is
+           already substantiated elsewhere on the site: a real counselor 24/7,
+           free benefits check in about a minute, same-day assessment when
+           possible. -->
+      <div class="proof-card proof-card--proof reveal reveal-delay-3">
+        <p class="proof-call-head"><span class="proof-call-icon" aria-hidden="true"><i data-lucide="phone-call"></i></span> The first call</p>
+        <p class="proof-call-title">No waitlist.</p>
+        <ol class="proof-call-steps">
+          <li><span class="proof-call-num" aria-hidden="true">1</span> A counselor picks up &mdash; not a call center.</li>
+          <li><span class="proof-call-num" aria-hidden="true">2</span> We check your benefits while you&rsquo;re on the phone.</li>
+          <li><span class="proof-call-num" aria-hidden="true">3</span> If we&rsquo;re a fit, an assessment &mdash; often the same day.</li>
+        </ol>
+        <p class="proof-call-foot">Free, confidential, and you commit to nothing.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- All six, read as a transparent scrolling view rather than a boxed
+       dialog: the captures float on the blurred page with nothing around
+       them but a close button. -->
+  <div class="proof-modal" id="reviewsModal" hidden role="dialog" aria-modal="true" aria-labelledby="reviewsModalTitle">
+    <button class="proof-modal-close" type="button" aria-label="Close reviews"><i data-lucide="x"></i></button>
+    <div class="proof-modal-scroll">
+      <div class="proof-modal-inner">
+      <p class="proof-modal-title" id="reviewsModalTitle">All 6 reviews <span class="proof-modal-stars" aria-hidden="true">★★★★★</span> <span class="proof-modal-rating">5.0 on Google</span></p>
+      <figure class="proof-full proof-full--narrow" data-review="4">
+        <img src="images/reviews/google-review-4.webp" width="808" height="610" loading="lazy" decoding="async"
+             alt="Five-star Google review from Yvette Vargas: “For myself it’s been less then a month that I have been here. To share my experience here. It’s been one of the best programs by far. All the facilitators have a lot of experience in recovery and walk the talk. They are fun and are attentive to our needs and want to see us shine and have a beautiful out look on recovery. There’s never a dull moment as far as participation and perception. We appreciate this program and hands down. We recommend this place.”">
+      </figure>
+      <figure class="proof-full proof-full--wide" data-review="1">
+        <img src="images/reviews/google-review-1.webp" width="1100" height="1229" loading="lazy" decoding="async"
+             alt="Five-star Google review from Dennis: “This place is truly amazing! From the moment I arrived, I felt welcomed, supported, and treated with genuine care and respect. The staff is incredible and goes above and beyond to make sure everyone feels heard, understood, and encouraged.” The review includes a photo posted by the reviewer.">
+      </figure>
+      <figure class="proof-full proof-full--wide" data-review="2">
+        <img src="images/reviews/google-review-2.webp" width="1100" height="904" loading="lazy" decoding="async"
+             alt="Five-star Google review from Gregory Icenogle: “Golden State Rehab gave me a second chance at life and helped me get my sobriety back. From the moment I got there, the place felt safe, calm, and welcoming. It isn’t just a place for treatment, it feels like family.” The review includes a photo posted by the reviewer.">
+      </figure>
+      <figure class="proof-full proof-full--narrow" data-review="5">
+        <img src="images/reviews/google-review-5.webp" width="804" height="394" loading="lazy" decoding="async"
+             alt="Five-star Google review from Chaz Rowens: “My experience here at the golden state has been delightful. From all the staff top to bottom has been pleasant to encounter with. This place is a great to recover from whatever life has thrown at you.”">
+      </figure>
+      <figure class="proof-full proof-full--narrow" data-review="6">
+        <img src="images/reviews/google-review-6.webp" width="796" height="634" loading="lazy" decoding="async"
+             alt="Five-star Google review from Mikey Iava: “The best program ive been in since i started my recovery journey. The staff and owners actually listen to you and show genuine care which ive never experienced before. The groups are very engaging and very fun! Ive grown more in my short time here at golden state rehab than i have in my entire journey of recovery. If your serious about getting sober and want to grow while have genuine connections and having fun then i cant recommend golden state rehab enough!”">
+      </figure>
+      <figure class="proof-full proof-full--wide" data-review="3">
+        <img src="images/reviews/google-review-3.webp" width="1100" height="680" loading="lazy" decoding="async"
+             alt="Five-star Google review from Joey F: “I loved my time at Golden State Rehab. I came in needing a safe place to get myself together, and that is exactly what I found here. The staff gave me the space, support, and patience I needed to heal without ever making me feel judged or rushed.”">
+      </figure>
+      </div>
     </div>
   </div>
 </section>
@@ -203,7 +314,6 @@
     <div class="insurance-header-row insurance-checker-head">
       <span class="badge-gold">Check Your Coverage</span>
       <h2 class="insurance-heading" id="insurance-heading">See if your insurance is accepted in seconds</h2>
-      <p class="insurance-checker-sub">Tap your provider below. We'll confirm it on the spot, then verify your exact benefits for free, usually in under a minute.</p>
     </div>
     <div class="insurance-logos-grid" role="group" aria-label="Select your insurance provider">
       <button class="ins-tile" type="button" data-provider="Aetna"><img src="images/insurance/aetna.webp" alt="Aetna" class="ins-logo" width="120" height="40"></button>
@@ -232,36 +342,6 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     WHAT PEOPLE ARE SAYING — unedited Google review screenshots
-     ═══════════════════════════════════════════════════════════ -->
-<section class="section review-wall" id="reviews" aria-labelledby="reviews-heading" style="background:var(--gold-light);">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 id="reviews-heading">What People Are Saying</h2>
-    </div>
-    <div class="review-shots">
-      <figure class="review-shot reveal reveal-delay-1">
-        <img src="images/reviews/google-review-1.webp" width="1100" height="1229" loading="lazy" decoding="async"
-             alt="Five-star Google review from Dennis: “This place is truly amazing! From the moment I arrived, I felt welcomed, supported, and treated with genuine care and respect. The staff is incredible and goes above and beyond to make sure everyone feels heard, understood, and encouraged.” The review includes a photo posted by the reviewer.">
-      </figure>
-      <figure class="review-shot reveal reveal-delay-2">
-        <img src="images/reviews/google-review-2.webp" width="1100" height="904" loading="lazy" decoding="async"
-             alt="Five-star Google review from Gregory Icenogle: “Golden State Rehab gave me a second chance at life and helped me get my sobriety back. From the moment I got there, the place felt safe, calm, and welcoming. It isn’t just a place for treatment, it feels like family.” The review includes a photo posted by the reviewer.">
-      </figure>
-      <figure class="review-shot reveal reveal-delay-3">
-        <img src="images/reviews/google-review-3.webp" width="1100" height="680" loading="lazy" decoding="async"
-             alt="Five-star Google review from Joey F: “I loved my time at Golden State Rehab. I came in needing a safe place to get myself together, and that is exactly what I found here. The staff gave me the space, support, and patience I needed to heal without ever making me feel judged or rushed.”">
-      </figure>
-    </div>
-    <div style="text-align:center;margin-top:40px;" class="reveal">
-      <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--near-black);">Start the same way they did.</p>
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
-      <p style="margin-top:18px;font-size:9px;"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener" style="color:var(--body-text);text-decoration:underline;text-underline-offset:3px;">Read all our 5.0-star reviews on Google <i data-lucide="arrow-up-right" style="width:9px;height:9px;vertical-align:-1px;"></i></a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
      WHY GOLDEN STATE REHAB
      ═══════════════════════════════════════════════════════════ -->
 <section class="section" aria-labelledby="why-us-heading">
@@ -279,7 +359,7 @@
       <div class="why-us-card reveal reveal-delay-2">
         <div class="why-us-icon"><i data-lucide="shield-check"></i></div>
         <h3>Accredited &amp; licensed</h3>
-        <p>Accredited by The Joint Commission, licensed by California's DHCS (License #191643AP), and LegitScript certified. These are the standards that hold behavioral health to account.</p>
+        <p>Accredited by The Joint Commission and licensed by California's DHCS (License #191643AP). These are the standards that hold behavioral health to account.</p>
       </div>
       <div class="why-us-card reveal reveal-delay-3">
         <div class="why-us-icon"><i data-lucide="wallet"></i></div>
@@ -324,39 +404,40 @@
     <div class="facility-carousel-track">
       <div class="facility-card">
         <img src="images/facility/reception-lobby.webp" alt="Reception and front lounge with the Golden State Rehab signature wall" loading="lazy" width="800" height="500">
-        <a class="facility-card-label" href="our-facility" style="text-decoration:none;color:inherit;">Reception &amp; Lobby</a>
+        <a class="facility-card-label" href="our-facility">Reception &amp; Lobby <i data-lucide="arrow-up-right"></i></a>
       </div>
       <div class="facility-card">
         <img src="images/facility/individual-therapy-room.webp" alt="Private one-on-one therapy office with leather lounge chair and sofa" loading="lazy" width="800" height="500">
-        <a class="facility-card-label" href="programs/individual-therapy" style="text-decoration:none;color:inherit;">Private Therapy Rooms</a>
+        <a class="facility-card-label" href="programs/individual-therapy">Private Therapy Rooms <i data-lucide="arrow-up-right"></i></a>
       </div>
       <div class="facility-card">
         <img src="images/facility/group-therapy-room.webp" alt="Group therapy room with a circle of chairs and a Never Give Up wall print" loading="lazy" width="800" height="500">
-        <a class="facility-card-label" href="programs/group-therapy" style="text-decoration:none;color:inherit;">Group Therapy Suite</a>
+        <a class="facility-card-label" href="programs/group-therapy">Group Therapy Suite <i data-lucide="arrow-up-right"></i></a>
       </div>
       <div class="facility-card">
         <img src="images/facility/meditation-room.webp" alt="Meditation and yoga room with floor cushions and warm lantern lighting" loading="lazy" width="800" height="500">
-        <a class="facility-card-label" href="programs/holistic-therapies" style="text-decoration:none;color:inherit;">Meditation &amp; Yoga Space</a>
+        <a class="facility-card-label" href="programs/holistic-therapies">Meditation &amp; Yoga Space <i data-lucide="arrow-up-right"></i></a>
       </div>
       <div class="facility-card">
         <img src="images/facility/tv-lounge.webp" alt="Lounge and common area with media wall, sofas and lounge chairs" loading="lazy" width="800" height="500">
-        <a class="facility-card-label" href="our-facility" style="text-decoration:none;color:inherit;">Lounge &amp; Common Area</a>
+        <a class="facility-card-label" href="our-facility">Lounge &amp; Common Area <i data-lucide="arrow-up-right"></i></a>
       </div>
       <div class="facility-card">
         <img src="images/facility/reading-lounge.webp" alt="Quiet reading nook with bouclé chairs and floor-to-ceiling library shelves" loading="lazy" width="800" height="500">
-        <a class="facility-card-label" href="our-facility" style="text-decoration:none;color:inherit;">Reading Lounge</a>
+        <a class="facility-card-label" href="our-facility">Reading Lounge <i data-lucide="arrow-up-right"></i></a>
       </div>
       <div class="facility-card">
         <img src="images/facility/recreation-room.webp" alt="Recreation room with shared dining table, ping pong, and built-in shelving" loading="lazy" width="800" height="500">
-        <a class="facility-card-label" href="our-facility" style="text-decoration:none;color:inherit;">Recreation &amp; Dining</a>
+        <a class="facility-card-label" href="our-facility">Recreation &amp; Dining <i data-lucide="arrow-up-right"></i></a>
       </div>
       <div class="facility-card">
         <img src="images/facility/computer-workstations.webp" alt="Computer workstations with monitors and lounge chairs for work and study" loading="lazy" width="800" height="500">
-        <a class="facility-card-label" href="programs/telehealth" style="text-decoration:none;color:inherit;">Workstations &amp; Study</a>
+        <a class="facility-card-label" href="programs/telehealth">Workstations &amp; Study <i data-lucide="arrow-up-right"></i></a>
       </div>
     </div>
     <button class="facility-arrow facility-arrow--prev" aria-label="Previous"><i data-lucide="chevron-left"></i></button>
     <button class="facility-arrow facility-arrow--next" aria-label="Next"><i data-lucide="chevron-right"></i></button>
+    <div class="facility-counter" aria-hidden="true">1&ndash;3 / 8</div>
   </div>
 </section>
 
@@ -521,11 +602,11 @@
           <a href="espanol" class="btn btn-secondary" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.3);">Ver en Español</a>
         </div>
       </div>
-      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div class="card-dark" style="padding:24px;"><div class="process-badge"><i data-lucide="users"></i></div><h3 style="font-size:17px;">Personal Bilingüe</h3><p style="font-size:14px;">Spanish-speaking clinicians &amp; staff</p></div>
-        <div class="card-dark" style="padding:24px;"><div class="process-badge"><i data-lucide="layers"></i></div><h3 style="font-size:17px;">PHP &amp; IOP en Español</h3><p style="font-size:14px;">Every level of care, bilingual</p></div>
-        <div class="card-dark" style="padding:24px;"><div class="process-badge"><i data-lucide="heart-handshake"></i></div><h3 style="font-size:17px;">Apoyo Familiar</h3><p style="font-size:14px;">Family sessions in Spanish</p></div>
-        <div class="card-dark" style="padding:24px;"><div class="process-badge"><i data-lucide="shield-check"></i></div><h3 style="font-size:17px;">Confidencial</h3><p style="font-size:14px;">Free, private insurance check</p></div>
+      <div class="reveal es-track-grid">
+        <div class="card-dark es-track-card"><h3><i data-lucide="users"></i>Personal Bilingüe</h3><p>Spanish-speaking clinicians &amp; staff</p></div>
+        <div class="card-dark es-track-card"><h3><i data-lucide="layers"></i>PHP &amp; IOP en Español</h3><p>Every level of care, bilingual</p></div>
+        <div class="card-dark es-track-card"><h3><i data-lucide="heart-handshake"></i>Apoyo Familiar</h3><p>Family sessions in Spanish</p></div>
+        <div class="card-dark es-track-card"><h3><i data-lucide="shield-check"></i>Confidencial</h3><p>Free, private insurance check</p></div>
       </div>
     </div>
   </div>
@@ -584,34 +665,34 @@
 <section class="section section-dark" aria-labelledby="process-heading">
   <div class="container">
     <div class="section-header reveal">
-      <span class="eyebrow">Process</span>
+      <span class="eyebrow">From first call to first session</span>
       <h2 id="process-heading">Your path to treatment</h2>
       <p style="color: rgba(253,250,245,0.65);">Starting treatment is simpler than most people expect. We handle the logistics so you can focus on the work that matters.</p>
     </div>
-    <div class="grid-2" style="gap: 20px; align-items: stretch;">
-      <div class="card-dark reveal reveal-delay-1">
-        <div class="process-badge">01</div>
+    <ol class="path-steps">
+      <li class="path-step reveal reveal-delay-1">
+        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">01</span><span class="path-step-chip">within hours</span></div>
         <h4>First Contact</h4>
-        <p>You call us or send in the intake form. We respond within hours to answer your questions and set up your assessment.</p>
-      </div>
-      <div class="card-dark reveal reveal-delay-2">
-        <div class="process-badge">02</div>
+        <p>You call us or send in the intake form, we answer your questions, and we set up your assessment.</p>
+      </li>
+      <li class="path-step reveal reveal-delay-2">
+        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">02</span><span class="path-step-chip">60&ndash;90 minutes</span></div>
         <h4>Clinical Assessment</h4>
         <p>You sit down with an intake specialist for a clinical interview. We listen to your history, get clear on what you need, and go through your options together.</p>
-      </div>
-      <div class="card-dark reveal reveal-delay-3">
-        <div class="process-badge">03</div>
+      </li>
+      <li class="path-step reveal reveal-delay-3">
+        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">03</span><span class="path-step-chip">free &middot; no commitment</span></div>
         <h4>Insurance Verification</h4>
         <p>We check your insurance coverage at no cost and explain exactly what your plan covers before you commit to anything.</p>
-      </div>
-      <div class="card-dark reveal reveal-delay-1">
-        <div class="process-badge">04</div>
+      </li>
+      <li class="path-step reveal reveal-delay-4">
+        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">04</span><span class="path-step-chip">week 1</span></div>
         <h4>Your First Session</h4>
         <p>You meet your therapist, join your first group, and begin the real work alongside people who understand what you're facing. And recovery doesn't end at discharge — you stay part of our <a href="programs/alumni">alumni community</a> long after.</p>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 48px;" class="reveal">
-      <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--near-black);">Start with step 1.</p>
+      </li>
+    </ol>
+    <div style="text-align: center; margin-top: 56px;" class="reveal">
+      <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--off-white);">Start with step 1.</p>
       <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
@@ -802,7 +883,7 @@
   </div>
 <div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></footer>
 
-<script src="js/main.min.js?v=8" defer></script>
+<script src="js/main.min.js?v=13" defer></script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
 <script type="application/ld+json">
 {
@@ -916,11 +997,6 @@
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "LegitScript Certified",
-      "credentialCategory": "certification"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
       "name": "Joint Commission Accredited",
       "credentialCategory": "accreditation",
       "url": "https://www.jointcommission.org/",
@@ -931,7 +1007,7 @@
       }
     }
   ],
-  "sameAs": ["https://www.google.com/maps?cid=15086981718348312167", "https://www.legitscript.com/websites/goldenstate-rehab.com/", "https://www.yelp.com/biz/golden-state-rehab-llc-los-angeles"]
+  "sameAs": ["https://www.google.com/maps?cid=15086981718348312167", "https://www.yelp.com/biz/golden-state-rehab-llc-los-angeles"]
 }
 </script>
 <script type="application/ld+json">

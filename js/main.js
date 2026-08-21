@@ -170,6 +170,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// ── Reviews overlay ───────────────────────────────────────────
+// Four reviews sit on the page; this opens all six. The blurred frame is
+// fixed and a child scrolls inside it, so the close button stays put.
+(function () {
+  var wall = document.querySelector('.proof-wall');
+  var modal = document.getElementById('reviewsModal');
+  if (!wall || !modal) return;
+  var scroller = modal.querySelector('.proof-modal-scroll');
+  var closeBtn = modal.querySelector('.proof-modal-close');
+  var lastFocused = null;
+  if (!scroller) return;
+
+  function goTo(id) {
+    var target = id && scroller.querySelector('.proof-full[data-review="' + id + '"]');
+    scroller.style.scrollBehavior = 'auto';
+    scroller.scrollTop = target ? target.offsetTop - 24 : 0;
+    scroller.style.scrollBehavior = '';
+  }
+
+  function open(id) {
+    lastFocused = document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    goTo(id);
+    // The captures are lazy-loaded, so on first open the scroller may still be
+    // shorter than its content and clamp the jump above back to zero. Re-apply
+    // once each image reports a height.
+    var pending = [].slice.call(scroller.querySelectorAll('img')).filter(function (img) { return !img.complete; });
+    pending.forEach(function (img) {
+      img.addEventListener('load', function () { if (!modal.hidden) goTo(id); }, { once: true });
+    });
+    requestAnimationFrame(function () { modal.classList.add('is-open'); });
+    closeBtn.focus();
+    document.addEventListener('keydown', onKeydown);
+  }
+
+  function close() {
+    modal.classList.remove('is-open');
+    document.removeEventListener('keydown', onKeydown);
+    document.body.style.overflow = '';
+    window.setTimeout(function () { modal.hidden = true; }, 220);
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  function onKeydown(e) {
+    if (e.key === 'Escape') { close(); return; }
+    // Close is the only control in here, so Tab simply stays on it.
+    if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
+  }
+
+  wall.addEventListener('click', function (e) {
+    var btn = e.target.closest('.proof-shot-more');
+    if (!btn) return;
+    open(btn.getAttribute('data-review'));
+  });
+  closeBtn.addEventListener('click', close);
+  // Clicking the dimmed area around the captures closes; clicking a capture does not.
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal || e.target === scroller ||
+        e.target.classList.contains('proof-modal-inner')) close();
+  });
+}());
+
 // ── Facility card carousel ────────────────────────────────────
 (function () {
   var wrapper = document.querySelector('.facility-carousel-wrapper');
@@ -178,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var cards = track.querySelectorAll('.facility-card');
   var prevBtn = wrapper.querySelector('.facility-arrow--prev');
   var nextBtn = wrapper.querySelector('.facility-arrow--next');
+  var counter = wrapper.querySelector('.facility-counter');
   var total = cards.length;
   var current = 0;
   var timer;
@@ -194,11 +258,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function autoplayAllowed() { return window.innerWidth > 768 && !reducedMotion.matches; }
 
   function goTo(n) {
-    var maxIndex = total - getVisibleCount();
+    var visible = getVisibleCount();
+    var maxIndex = total - visible;
     current = Math.max(0, Math.min(n, maxIndex));
-    track.style.transform = 'translateX(-' + (current * getCardWidth()) + 'px)';
+    // Cards are narrower than a third of the track (a peek of the next card
+    // shows), so the last whole-card step would overshoot — clamp to the
+    // track's real end instead of leaving a blank gap.
+    var offset = Math.min(current * getCardWidth(), track.scrollWidth - track.clientWidth);
+    track.style.transform = 'translateX(-' + offset + 'px)';
     prevBtn.style.opacity = current === 0 ? '0.4' : '1';
     nextBtn.style.opacity = current >= maxIndex ? '0.4' : '1';
+    if (counter) {
+      counter.textContent = visible > 1
+        ? (current + 1) + '–' + (current + visible) + ' / ' + total
+        : (current + 1) + ' / ' + total;
+    }
     resetTimer();
   }
 
