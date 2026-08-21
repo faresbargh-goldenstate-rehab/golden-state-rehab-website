@@ -4064,6 +4064,9 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
     height: 320px;
     margin-inline: auto;
   }
+  /* Three stacked reviews are enough on a phone; the fourth (Mikey Iava)
+     stays on desktop and in the all-six overlay. */
+  .proof-shot--desktop-only { display: none; }
 }
 
 @media (max-width: 640px) {
