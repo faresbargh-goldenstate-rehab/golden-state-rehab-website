@@ -4392,3 +4392,13 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
 @media (max-width: 480px) {
   .es-track-grid { grid-template-columns: 1fr; }
 }
+
+/* Hero CTA row on inner pages (programs, treatments, locations). Added by the
+   2026-08-29 audit: 50 pages had no call-to-action above the fold on mobile. */
+.page-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 28px;
+}

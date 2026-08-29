@@ -11,3 +11,13 @@
 # is handled by a Redirect Rule in the Cloudflare dashboard once the apex
 # domain is attached to this Pages project (Custom Domains). That is the
 # reliable method for cross-host redirects.
+
+# Internal planning docs must not be reachable on the live site (audit C1).
+# Cloudflare Pages has no deploy-exclude for static projects, so send them home
+# until the files are moved out of the deployed tree.
+/docs/*  /  301
+/README.md  /  301
+/Claude.md  /  301
+/golden-state-rehab-seo-buildout-plan.md  /  301
+/goldenstate-rehab-audit-fixes.md  /  301
+/Privacy%20Policy%20-%20Website.docx  /  301

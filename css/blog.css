@@ -265,3 +265,6 @@ table.article-table th, table.article-table td { text-align:left; padding:13px 1
 table.article-table th { background:var(--gold-light); color:var(--gold-dark); font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; }
 table.article-table tr:last-child td { border-bottom:none; }
 table.article-table td:last-child { font-weight:700; color:var(--near-black); white-space:nowrap; }
+
+/* CTA row under the article byline (2026-08-29 audit). */
+.article-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }

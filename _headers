@@ -12,6 +12,9 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  # Report-only first: watch the browser console / GSC for violations for a
+  # week, then rename to Content-Security-Policy to enforce.
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com https://news.google.com https://maps.googleapis.com https://ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.goldenstate-rehab.com https://www.google-analytics.com https://www.googletagmanager.com https://*.google.com https://*.gstatic.com https://*.googleapis.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://www.googletagmanager.com https://news.google.com https://maps.googleapis.com; frame-src https://www.google.com https://maps.google.com https://news.google.com; object-src 'none'; base-uri 'self'; form-action 'self'
 
 # Versioned static assets (?v= cache-busting) are safe to cache long-term.
 # The "! Cache-Control" line detaches the /* rule's value so headers don't stack.
@@ -27,3 +30,17 @@
 /images/*
   ! Cache-Control
   Cache-Control: public, max-age=2592000
+
+# Internal planning docs are checked in next to the site and Cloudflare Pages
+# serves the whole tree. Keep them out of the index until they are moved out of
+# the deploy (see docs/seo-audit-2026-08-29/ACTION-PLAN.md, item C1).
+/docs/*
+  X-Robots-Tag: noindex, nofollow
+/*.md
+  X-Robots-Tag: noindex, nofollow
+/*.docx
+  X-Robots-Tag: noindex, nofollow
+/*.pdf
+  X-Robots-Tag: noindex, nofollow
+/*.csv
+  X-Robots-Tag: noindex, nofollow

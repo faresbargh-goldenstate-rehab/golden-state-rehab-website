@@ -1,0 +1,30 @@
+total 114
+status Counter({'200': 114})
+html ok 114
+in sitemap not 200: []
+crawled not in sitemap: ['https://www.goldenstate-rehab.com/amenity-map']
+dup titles []
+dup md []
+no md ['https://www.goldenstate-rehab.com/amenity-map']
+no h1 ['https://www.goldenstate-rehab.com/amenity-map']
+multi h1 []
+canonical mismatch []
+no canonical ['https://www.goldenstate-rehab.com/amenity-map']
+thin <300w [(11, 'https://www.goldenstate-rehab.com/amenity-map')]
+word stats min/max/avg 11 4112 1429
+missing alt total 123 [('https://www.goldenstate-rehab.com/faq', 1), ('https://www.goldenstate-rehab.com/about', 1), ('https://www.goldenstate-rehab.com/contact', 1), ('https://www.goldenstate-rehab.com/families', 1), ('https://www.goldenstate-rehab.com/', 7), ('https://www.goldenstate-rehab.com/our-facility', 1), ('https://www.goldenstate-rehab.com/our-story', 1), ('https://www.goldenstate-rehab.com/privacy-policy', 1), ('https://www.goldenstate-rehab.com/team', 1), ('https://www.goldenstate-rehab.com/verify-insurance', 1), ('https://www.goldenstate-rehab.com/terms-and-conditions', 1), ('https://www.goldenstate-rehab.com/license', 1), ('https://www.goldenstate-rehab.com/programs/outpatient-rehab', 1), ('https://www.goldenstate-rehab.com/programs/php', 1), ('https://www.goldenstate-rehab.com/programs', 1)]
+schema types Counter({"['MedicalOrganization', 'LocalBusiness']": 110, 'BreadcrumbList': 109, 'WebSite': 106, 'FAQPage': 70, 'MedicalWebPage': 70, 'MedicalCondition': 24, 'BlogPosting': 22, 'MedicalTherapy': 21, 'None': 4, 'WebPage': 4, 'AboutPage': 3, 'Blog': 2, 'MedicalClinic': 2, 'ItemList': 1, 'ContactPage': 1})
+no schema ['https://www.goldenstate-rehab.com/amenity-map']
+schema parse errors []
+noindex [('https://www.goldenstate-rehab.com/amenity-map', 'noindex')]
+title len issues []
+md len issues [(162, 'https://www.goldenstate-rehab.com/license')]
+orphans (0 inlinks): []
+low inlinks (<=3): [(1, 'https://www.goldenstate-rehab.com/amenity-map'), (1, 'https://www.goldenstate-rehab.com/es/about'), (1, 'https://www.goldenstate-rehab.com/es/blog/does-medi-cal-cover-rehab-in-california'), (1, 'https://www.goldenstate-rehab.com/es/faq'), (1, 'https://www.goldenstate-rehab.com/es/our-story'), (1, 'https://www.goldenstate-rehab.com/es/treatments/cocaine'), (1, 'https://www.goldenstate-rehab.com/es/treatments/prescription-drugs'), (1, 'https://www.goldenstate-rehab.com/es/treatments/sex-addiction'), (2, 'https://www.goldenstate-rehab.com/blog/do-i-need-rehab'), (2, 'https://www.goldenstate-rehab.com/blog/find-rehab-near-me-los-angeles'), (2, 'https://www.goldenstate-rehab.com/es/treatments/meth'), (3, 'https://www.goldenstate-rehab.com/es/blog/cbt-vs-dbt-which-is-right'), (3, 'https://www.goldenstate-rehab.com/es/blog/cost-of-rehab-in-los-angeles')]
+ttfb ms avg 266 max (1198, 'https://www.goldenstate-rehab.com/blog/questions-to-ask-a-rehab-center')
+html bytes avg 38982 max (76013, 'https://www.goldenstate-rehab.com/')
+lang Counter({'en': 69, 'es': 45})
+hreflang missing ['https://www.goldenstate-rehab.com/license', 'https://www.goldenstate-rehab.com/blog/what-happens-after-rehab', 'https://www.goldenstate-rehab.com/blog/can-family-come-to-rehab-visits', 'https://www.goldenstate-rehab.com/blog/find-rehab-near-me-los-angeles', 'https://www.goldenstate-rehab.com/blog/how-much-does-rehab-cost', 'https://www.goldenstate-rehab.com/blog/first-day-of-rehab', 'https://www.goldenstate-rehab.com/blog/do-i-need-rehab', 'https://www.goldenstate-rehab.com/blog/questions-to-ask-a-rehab-center', 'https://www.goldenstate-rehab.com/blog/can-i-work-while-in-rehab', 'https://www.goldenstate-rehab.com/blog/how-long-is-rehab', 'https://www.goldenstate-rehab.com/blog/inpatient-vs-outpatient-rehab', 'https://www.goldenstate-rehab.com/amenity-map']
+es pages 44
+top external [('https://www.instagram.com/goldenstaterehab', 113), ('https://www.jointcommission.org/', 113), ('https://www.linkedin.com/company/goldenstaterehab/', 113), ('https://x.com/goldenstateWR1', 113), ('https://www.dhcs.ca.gov/providers-partners/directories-for-substance-use-disorder-services/', 112), ('https://www.google.com/maps?cid=15086981718348312167', 112), ('https://www.rehab.com/comeback-sober-living', 12), ('https://findtreatment.gov', 11), ('https://nida.nih.gov/publications/drugfacts/treatment-approaches-drug-addiction', 9), ('https://www.healthcare.gov/coverage/mental-health-substance-abuse-coverage/', 6), ('https://www.samhsa.gov/find-help/national-helpline', 5), ('https://www.asam.org/asam-criteria/about-the-asam-criteria', 5)]
+og:image missing []
