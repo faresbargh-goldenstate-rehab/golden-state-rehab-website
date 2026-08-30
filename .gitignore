@@ -60,3 +60,8 @@ HANDOFF.md
 # SEO audit artifacts — regenerable, and the repo is public. Markdown reports are tracked.
 docs/seo-audit-*/screenshots/
 docs/seo-audit-*/*.pdf
+
+# Local working artifacts at repo root (never deploy — repo is public via Cloudflare Pages)
+/Screenshot*.png
+/review*.png
+/*.csv
