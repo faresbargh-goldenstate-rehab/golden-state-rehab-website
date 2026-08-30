@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=37">
+  <link rel="stylesheet" href="css/styles.min.css?v=38">
 <link rel="preload" as="image" href="https://www.goldenstate-rehab.com/images/facility/reception-lobby.webp" fetchpriority="high">
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
@@ -144,9 +144,9 @@
     <div class="contact-layout">
 
       <!-- Form -->
-      <div class="contact-form-wrapper reveal">
-        <h2>Send Us a Message</h2>
-        <p class="contact-form-sub">All inquiries are confidential. A member of our team will follow up — usually within the hour during business hours. Prefer not to type? Call <a href="tel:+14242083120">(424)&nbsp;208-3120</a> and ask anything, anonymously.</p>
+      <div class="contact-form-wrapper reveal" id="form">
+        <h2>Request a Call Back</h2>
+        <p class="contact-form-sub">Leave your number and a member of our admissions team calls you back — usually within the hour during business hours. All inquiries are confidential. Prefer to talk right now? Call <a href="tel:+14242083120">(424)&nbsp;208-3120</a> and ask anything, anonymously.</p>
         <form class="contact-form" id="contact-form" novalidate>
           <div class="form-row">
             <div class="form-group">
@@ -186,7 +186,7 @@
             <label for="contact-message">Your Message</label>
             <textarea id="contact-message" name="message" rows="5" placeholder="Tell us a little about what you're looking for, or ask us any questions you have..."></textarea>
           </div>
-          <button type="submit" class="btn-primary btn-full">Send Message <i data-lucide="send"></i></button>
+          <button type="submit" class="btn-primary btn-full">Request My Call Back <i data-lucide="phone-call"></i></button>
           <p class="form-privacy"><i data-lucide="lock"></i> Your information is 100% confidential and protected by HIPAA.</p>
         </form>
       </div>
@@ -492,6 +492,6 @@
   ]
 }
 </script>
-<script src="/js/contact.min.js?v=4" defer></script>
+<script src="/js/contact.min.js?v=5" defer></script>
 </body>
 </html>

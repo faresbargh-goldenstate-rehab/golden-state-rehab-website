@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=37">
+  <link rel="stylesheet" href="css/styles.min.css?v=38">
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
@@ -249,7 +249,10 @@
       <div class="proof-card proof-card--pitch reveal reveal-delay-2">
         <p class="proof-badge"><i data-lucide="heart"></i> Personalized Outpatient Treatment</p>
         <p class="proof-pitch-copy">Quitting isn’t the hard part. Going back to the same house, the same job, the same people is. That’s what we build your plan for.</p>
-        <a href="contact" class="btn btn-primary btn-lg proof-pitch-cta">Talk to Admissions <i data-lucide="arrow-right"></i></a>
+        <!-- On a phone, "talk to admissions" should dial admissions. On desktop it
+             goes to the call-back form, which is what a desktop visitor can act on. -->
+        <a href="tel:+14242083120" class="btn btn-primary btn-lg proof-pitch-cta cta-phone-only"><i data-lucide="phone"></i> Call Admissions</a>
+        <a href="contact#form" class="btn btn-primary btn-lg proof-pitch-cta cta-wide-only">Request a Call Back <i data-lucide="arrow-right"></i></a>
       </div>
 
       <!-- The last thing between someone and the phone is not proof, it is

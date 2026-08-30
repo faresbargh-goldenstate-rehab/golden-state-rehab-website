@@ -4402,3 +4402,19 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
   justify-content: center;
   margin-top: 28px;
 }
+
+/* Device-targeted CTA pair. A button that promises a conversation should start
+   one, so on phone-width screens the tel: variant is shown and the contact-form
+   variant is removed from the layout; wider screens get the reverse. Exactly one
+   of the pair is ever rendered, so screen readers never announce both. */
+.cta-phone-only { display: none; }
+@media (max-width: 768px) {
+  .cta-phone-only { display: inline-flex; }
+  .cta-wide-only { display: none; }
+}
+
+/* Anchor target for deep links into the contact form (contact#form). Offset
+   clears the sticky nav. */
+#form {
+  scroll-margin-top: calc(var(--nav-height) + 24px);
+}

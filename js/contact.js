@@ -18,7 +18,7 @@
       network: 'We couldn’t reach our submission service. Please check your connection and try again, or call (424) 208-3120.',
       server: 'Something went wrong sending your message. Please try again in a moment, or call us directly at (424) 208-3120 — we answer 24/7.',
       sending: 'Sending…',
-      successTitle: 'Message received.',
+      successTitle: 'Request received.',
       successBody: 'A member of our admissions team will follow up with you shortly — usually within the hour during business hours. If this is urgent, call us anytime at',
     },
     es: {
@@ -27,7 +27,7 @@
       network: 'No pudimos conectar con nuestro servicio de envío. Verifica tu conexión e inténtalo de nuevo, o llama al (424) 208-3120.',
       server: 'Algo salió mal al enviar tu mensaje. Inténtalo de nuevo en un momento, o llámanos directamente al (424) 208-3120 — contestamos 24/7.',
       sending: 'Enviando…',
-      successTitle: 'Mensaje recibido.',
+      successTitle: 'Solicitud recibida.',
       successBody: 'Un miembro de nuestro equipo de admisiones te contactará pronto — normalmente dentro de una hora en horario de atención. Si es urgente, llámanos a cualquier hora al',
     },
   }[lang];
