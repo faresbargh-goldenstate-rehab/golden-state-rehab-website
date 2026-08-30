@@ -500,12 +500,50 @@
 .intake-success-sub {
   font-size: clamp(16px, 1.6vw, 18px);
   color: var(--muted);
-  margin-bottom: 48px;
+  margin-bottom: 28px;
   max-width: 540px;
   margin-left: auto;
   margin-right: auto;
   opacity: 0;
   animation: intake-fade-in 0.6s ease-out 1.05s forwards;
+}
+
+/* Save-this-number callout — the caller-ID block */
+.intake-success-callout {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(200,164,74,0.10);
+  border: 1px solid rgba(200,164,74,0.35);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  max-width: 540px;
+  margin: 0 auto 40px;
+  text-align: left;
+  opacity: 0;
+  animation: intake-fade-in 0.6s ease-out 1.1s forwards;
+}
+.intake-success-callout i {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  color: var(--gold-dark);
+}
+.intake-success-callout p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--near-black);
+  line-height: 1.55;
+}
+.intake-success-callout a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.intake-success-callout a:hover,
+.intake-success-callout a:focus-visible {
+  text-decoration: underline;
 }
 
 .intake-success-next {
@@ -563,6 +601,7 @@
 @media (prefers-reduced-motion: reduce) {
   .intake-success-title,
   .intake-success-sub,
+  .intake-success-callout,
   .intake-success-next,
   .intake-success-actions {
     opacity: 1;
