@@ -49,8 +49,10 @@
     .area-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
     .area-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-md); padding:26px; transition:box-shadow var(--transition), transform var(--transition); }
     .area-card:hover { box-shadow:var(--shadow-md); transform:translateY(-3px); border-color:rgba(200,164,74,0.5); }
-    .area-card h3 { font-size:19px; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
-    .area-card h3 i { width:18px; height:18px; color:var(--gold-dark); }
+    .area-card h3 { font-size:19px; margin-bottom:8px; }
+    .area-time { display:inline-flex; align-items:center; gap:6px; margin-bottom:12px; padding:5px 12px; border-radius:var(--radius-pill); background:rgba(200,164,74,0.14); color:var(--gold-dark); font-size:12.5px; font-weight:700; }
+    .area-time i { width:13px; height:13px; }
+    .area-time--home { background:var(--near-black); color:var(--gold); }
     .area-card p { color:var(--muted); font-size:14.5px; line-height:1.6; }
     @media (max-width:880px){ .area-grid{ grid-template-columns:1fr 1fr; } }
     @media (max-width:600px){ .area-grid{ grid-template-columns:1fr; } }
@@ -140,14 +142,14 @@
 <!-- Areas we serve -->
 <section class="section section-cream">
   <div class="container">
-    <div class="section-header reveal"><span class="badge-gold">Áreas que Atendemos</span><h2>Atendiendo Toda el Área del Oeste de Los Ángeles</h2><p class="section-subtitle">Tenemos una sola clínica — en Westwood — y las guías de abajo no son instalaciones separadas: cada una explica cómo llegar desde su vecindario. Damos la bienvenida a clientes de todo el condado de Los Ángeles, y ofrecemos <a href="/es/programs/telehealth">telesalud</a> en todo California.</p></div>
+    <div class="section-header reveal"><span class="badge-gold">Áreas que Atendemos</span><h2>Atendiendo Toda el Área del Oeste de Los Ángeles</h2><p class="section-subtitle">Damos la bienvenida a clientes de todo el condado de Los Ángeles, y ofrecemos <a href="/es/programs/telehealth">telesalud</a> en todo California.</p></div>
     <div class="area-grid">
-      <div class="area-card reveal"><h3><i data-lucide="map-pin"></i> Westwood</h3><p>Nuestro barrio. Cómodo para llegar a pie para residentes, estudiantes y profesionales de la zona de UCLA que buscan tratamiento ambulatorio discreto y de alta calidad.</p></div>
-      <div class="area-card reveal reveal-delay-1"><h3><i data-lucide="map-pin"></i> Santa Mónica</h3><p>A un corto trayecto hacia el oeste. Atendemos a residentes de Santa Mónica que necesitan horarios flexibles de PHP e IOP que se acomoden al equilibrio entre vida y trabajo junto al mar.</p></div>
-      <div class="area-card reveal reveal-delay-2"><h3><i data-lucide="map-pin"></i> Beverly Hills</h3><p>Atención ambulatoria confidencial y de primer nivel para clientes de Beverly Hills que valoran la privacidad, la discreción y un estándar elevado de atención clínica.</p></div>
-      <div class="area-card reveal"><h3><i data-lucide="map-pin"></i> Brentwood</h3><p>A minutos de Brentwood, ofrecemos terapia individual, atención de diagnóstico dual y apoyo familiar para una de las comunidades más unidas de LA.</p></div>
-      <div class="area-card reveal reveal-delay-1"><h3><i data-lucide="map-pin"></i> Culver City</h3><p>Fácil acceso desde Culver City para profesionales que trabajan: nuestras pistas de IOP por la noche te permiten mantener tu empleo y tu rutina mientras te recuperas.</p></div>
-      <div class="area-card reveal reveal-delay-2"><h3><i data-lucide="map-pin"></i> Gran Los Ángeles</h3><p>Desde el Valle de San Fernando hasta South Bay, atendemos a clientes de todo el condado de LA, con telesalud disponible en cualquier lugar de California.</p></div>
+      <div class="area-card reveal"><span class="area-time area-time--home"><i data-lucide="building-2"></i> Estamos aquí</span><h3>Westwood</h3><p>Nuestro barrio. Cómodo para llegar a pie para residentes, estudiantes y profesionales de la zona de UCLA que buscan tratamiento ambulatorio discreto y de alta calidad.</p></div>
+      <div class="area-card reveal reveal-delay-1"><span class="area-time"><i data-lucide="car"></i> ~15 min de nuestra puerta</span><h3>Santa Mónica</h3><p>A un corto trayecto hacia el este. Atendemos a residentes de Santa Mónica que necesitan horarios flexibles de PHP e IOP que se acomoden al equilibrio entre vida y trabajo junto al mar.</p></div>
+      <div class="area-card reveal reveal-delay-2"><span class="area-time"><i data-lucide="car"></i> ~15 min de nuestra puerta</span><h3>Beverly Hills</h3><p>Atención ambulatoria confidencial y de primer nivel para clientes de Beverly Hills que valoran la privacidad, la discreción y un estándar elevado de atención clínica.</p></div>
+      <div class="area-card reveal"><span class="area-time"><i data-lucide="car"></i> ~10 min de nuestra puerta</span><h3>Brentwood</h3><p>A minutos de Brentwood, ofrecemos terapia individual, atención de diagnóstico dual y apoyo familiar para una de las comunidades más unidas de LA.</p></div>
+      <div class="area-card reveal reveal-delay-1"><span class="area-time"><i data-lucide="car"></i> ~12 min de nuestra puerta</span><h3>Culver City</h3><p>Fácil acceso desde Culver City para profesionales que trabajan: nuestras pistas de IOP por la noche te permiten mantener tu empleo y tu rutina mientras te recuperas.</p></div>
+      <div class="area-card reveal reveal-delay-2"><span class="area-time"><i data-lucide="video"></i> Telesalud en todo California</span><h3>Gran Los Ángeles</h3><p>Desde el Valle de San Fernando hasta South Bay, atendemos a clientes de todo el condado de LA, con telesalud disponible en cualquier lugar de California.</p></div>
     </div>
   </div>
 </section>
