@@ -2572,6 +2572,24 @@ button.ins-tile { cursor: pointer; }
   .ins-tile { flex: 0 0 calc(33.33% - 8px); height: 64px; padding: 10px 12px; }
   .ins-logo { height: 26px; max-width: 96px; }
 
+  /* Homepage coverage checker. The eyebrow is redundant next to the headline on a
+     phone, so it goes and the headline takes the space. Three logos per row needs
+     min-width:0 as well as the basis — without it each tile's min-content floor
+     (96px logo + padding) is ~122px, and three of those overflow a 335px
+     container, which is what was forcing the wrap to two. */
+  .insurance-checker .badge-gold { display: none; }
+  .insurance-checker .insurance-header-row { margin-bottom: 26px; }
+  .insurance-checker .insurance-heading { font-size: clamp(26px, 7.5vw, 30px); line-height: 1.22; }
+  .insurance-checker .insurance-logos-grid { gap: 8px; }
+  .insurance-checker .ins-tile {
+    flex: 0 0 calc((100% - 16px) / 3);
+    min-width: 0;
+    height: 58px;
+    padding: 8px 6px;
+    border-radius: 10px;
+  }
+  .insurance-checker .ins-logo { height: 22px; max-width: 100%; }
+
   .team-grid { grid-template-columns: 1fr; }
   .related-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
