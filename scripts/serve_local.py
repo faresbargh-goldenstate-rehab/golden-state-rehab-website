@@ -97,8 +97,12 @@ def main() -> None:
     args = ap.parse_args()
 
     handler = functools.partial(PagesRequestHandler, directory=str(ROOT))
-    socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer((args.bind, args.port), handler) as httpd:
+    # Threading matters: real browsers open several parallel connections, and
+    # a plain TCPServer serves them one at a time — one slow request stalls
+    # the whole page load.
+    socketserver.ThreadingTCPServer.allow_reuse_address = True
+    socketserver.ThreadingTCPServer.daemon_threads = True
+    with socketserver.ThreadingTCPServer((args.bind, args.port), handler) as httpd:
         print(f"serving {ROOT} at http://{args.bind}:{args.port}/  (ctrl-c to stop)")
         try:
             httpd.serve_forever()
