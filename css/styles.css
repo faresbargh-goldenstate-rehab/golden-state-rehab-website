@@ -4328,77 +4328,185 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
 }
 
 /* ── Path to Treatment stepper (homepage process section) ────── */
+/* Scoped to .path-section rather than .section-dark, which 84 other pages
+   share and must keep its flat background. */
+.section.path-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 70% at 50% -10%, rgba(200, 164, 74, 0.13) 0%, transparent 62%),
+    radial-gradient(80% 60% at 88% 108%, rgba(166, 132, 44, 0.11) 0%, transparent 60%),
+    linear-gradient(180deg, var(--dark-2) 0%, var(--near-black) 55%);
+}
+/* Film grain keeps the large dark field from banding and reads as paper
+   rather than flat ink. */
+.path-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* Hairline top edge, faded at both ends — an editorial rule, not a border. */
+.path-section::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(200, 164, 74, 0.42) 22%, rgba(200, 164, 74, 0.42) 78%, transparent);
+}
+
 .path-steps {
+  position: relative;
   list-style: none;
-  margin: 56px 0 0;
+  margin: 60px 0 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0 36px;
 }
-.path-step { position: relative; padding-top: 28px; }
-/* The connecting line runs through the gap to the next step's dot, so the
-   four steps read as one journey rather than four boxes. */
+/* Unlit track. Each step then draws its own lit segment over the top of it. */
+.path-steps::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: rgba(200, 164, 74, 0.16);
+}
+.path-step { position: relative; padding-top: 30px; }
+
+/* The lit segment. It sweeps left-to-right as each step reveals, so the four
+   steps read as one path being travelled rather than four boxes. */
 .path-step::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: -36px;
   height: 1px;
-  background: rgba(200, 164, 74, 0.28);
+  background: linear-gradient(90deg, var(--gold), rgba(200, 164, 74, 0.55));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .path-step:last-child::before { right: 0; }
+.path-step.visible::before { transform: scaleX(1); }
+.path-step:nth-child(1)::before { transition-delay: 0.1s; }
+.path-step:nth-child(2)::before { transition-delay: 0.45s; }
+.path-step:nth-child(3)::before { transition-delay: 0.8s; }
+.path-step:nth-child(4)::before { transition-delay: 1.15s; }
+
+/* Station marker: an open ring that fills and blooms as the line reaches it. */
 .path-step::after {
   content: "";
   position: absolute;
-  top: -3.5px; left: 0;
-  width: 8px; height: 8px;
+  top: -4.5px; left: 0;
+  width: 10px; height: 10px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--near-black);
+  border: 1.5px solid rgba(200, 164, 74, 0.55);
+  box-shadow: 0 0 0 0 rgba(200, 164, 74, 0);
+  transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.6s ease;
 }
+.path-step.visible::after {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 5px rgba(200, 164, 74, 0.12);
+}
+.path-step:nth-child(1).visible::after { transition-delay: 0.1s; }
+.path-step:nth-child(2).visible::after { transition-delay: 0.45s; }
+.path-step:nth-child(3).visible::after { transition-delay: 0.8s; }
+.path-step:nth-child(4).visible::after { transition-delay: 1.15s; }
+/* The destination reads heavier than the stops along the way. */
+.path-step:last-child::after { width: 13px; height: 13px; top: -6px; }
+.path-step:last-child.visible::after { box-shadow: 0 0 0 7px rgba(200, 164, 74, 0.16), 0 0 22px rgba(200, 164, 74, 0.45); }
+
+/* Numeral over chip, left-aligned — an editorial stack instead of a numeral
+   and a pill competing at opposite ends of the same row. */
 .path-step-top {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .path-step-num {
-  font-size: 56px;
+  font-size: 50px;
   font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  color: rgba(200, 164, 74, 0.38);
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  color: rgba(200, 164, 74, 0.34);
+  transition: color 0.35s ease, -webkit-text-stroke-color 0.35s ease;
 }
 /* Outlined "ghost" numeral where text-stroke is supported; the translucent
    gold above is the fallback so the number never disappears. */
 @supports (-webkit-text-stroke: 1px black) {
-  .path-step-num { color: transparent; -webkit-text-stroke: 1.2px rgba(200, 164, 74, 0.6); }
+  .path-step-num { color: transparent; -webkit-text-stroke: 1.2px rgba(200, 164, 74, 0.55); }
+  .path-step:hover .path-step-num { -webkit-text-stroke-color: var(--gold); }
 }
 .path-step-chip {
   display: inline-block;
-  padding: 5px 12px;
-  margin-bottom: 6px;
-  border: 1px solid rgba(200, 164, 74, 0.45);
+  padding: 5px 13px;
+  border: 1px solid rgba(200, 164, 74, 0.32);
   border-radius: 999px;
-  font-size: 12.5px;
+  background: rgba(200, 164, 74, 0.09);
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: var(--gold);
   white-space: nowrap;
 }
-.path-step h4 { color: var(--off-white); font-size: 19px; margin: 0 0 10px; }
+.path-step h4 { color: var(--off-white); font-size: 19px; margin: 0 0 10px; letter-spacing: -0.01em; }
 .path-step p { color: rgba(253, 250, 245, 0.7); font-size: 15px; line-height: 1.65; margin: 0; }
 .path-step p a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+
+@media (min-width: 1025px) {
+  /* Hover lifts the whole step and warms its marker. The opacity half of the
+     shorthand is restated because .reveal's transition lives on this same
+     element and a bare `transition: transform` here would drop its fade. */
+  .path-step { transition: opacity 0.6s ease, transform 0.3s ease; }
+  .path-step:hover { transform: translateY(-3px); }
+  .path-step:hover::after { box-shadow: 0 0 0 6px rgba(200, 164, 74, 0.18), 0 0 20px rgba(200, 164, 74, 0.4); }
+}
 @media (max-width: 1024px) {
-  .path-steps { grid-template-columns: 1fr 1fr; gap: 44px 36px; }
+  .path-steps { grid-template-columns: 1fr 1fr; gap: 48px 36px; }
+  /* Two rows of two: only the top row has a track behind it, so each step
+     paints its own rule and the second row gets one at its own offset. */
+  .path-steps::before { display: none; }
+  .path-step::before { background: linear-gradient(90deg, var(--gold), rgba(200, 164, 74, 0.45)); }
   .path-step:nth-child(even)::before { right: 0; }
+  .path-step:nth-child(3)::before { transition-delay: 0.5s; }
+  .path-step:nth-child(4)::before { transition-delay: 0.75s; }
+  .path-step:nth-child(3).visible::after { transition-delay: 0.5s; }
+  .path-step:nth-child(4).visible::after { transition-delay: 0.75s; }
 }
 @media (max-width: 640px) {
-  .path-steps { grid-template-columns: 1fr; gap: 36px; margin-top: 44px; }
-  .path-step { padding: 0 0 0 22px; }
-  .path-step::before { top: 4px; bottom: -36px; left: 0; right: auto; width: 1px; height: auto; }
+  .path-steps { grid-template-columns: 1fr; gap: 38px; margin-top: 44px; }
+  .path-step { padding: 0 0 0 24px; }
+  /* The path turns vertical and draws downward instead. */
+  .path-step::before {
+    top: 4px; bottom: -38px; left: 0; right: auto;
+    width: 1px; height: auto;
+    background: linear-gradient(180deg, var(--gold), rgba(200, 164, 74, 0.45));
+    transform: scaleY(0);
+    transform-origin: top center;
+  }
+  .path-step.visible::before { transform: scaleY(1); }
   .path-step:last-child::before { bottom: 0; }
-  .path-step::after { top: 0; left: -3.5px; }
+  .path-step::after { top: 0; left: -4.5px; }
+  .path-step:last-child::after { top: -1.5px; left: -6px; }
+  .path-step-num { font-size: 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* transform:none renders the segment at its full positioned size in both
+     the horizontal and vertical layouts, so the path is simply already drawn. */
+  .path-step::before,
+  .path-step.visible::before { transform: none; transition: none; }
+  .path-step::after,
+  .path-step.visible::after { transition: none; background: var(--gold); border-color: var(--gold); }
+  .path-step:hover { transform: none; }
 }
 
 /* ── Spanish-track cards (homepage) ──────────────────────────── */
