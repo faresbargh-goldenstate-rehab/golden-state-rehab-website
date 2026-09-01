@@ -31,6 +31,12 @@
   ! Cache-Control
   Cache-Control: public, max-age=2592000
 
+# Chat-widget knowledge base (data/chat-kb.*.json). Deliberately NOT under
+# /js/ so it inherits the /* revalidate rule — KB edits ship on deploy with no
+# ?v= bump. Keep it out of search results; it's data, not a page.
+/data/*
+  X-Robots-Tag: noindex, nofollow
+
 # Internal planning docs are checked in next to the site and Cloudflare Pages
 # serves the whole tree. Keep them out of the index until they are moved out of
 # the deploy (see docs/seo-audit-2026-08-29/ACTION-PLAN.md, item C1).
