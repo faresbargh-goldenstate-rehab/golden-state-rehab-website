@@ -4432,18 +4432,21 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
   gap: 12px;
   margin-bottom: 16px;
 }
+/* Cream rather than gold: the line, nodes and chips are the gold "path"
+   system, so neutral numerals keep the section from going monotone and let
+   them read as quiet structure. They warm to gold only on hover. */
 .path-step-num {
   font-size: 50px;
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.03em;
-  color: rgba(200, 164, 74, 0.34);
+  color: rgba(253, 250, 245, 0.3);
   transition: color 0.35s ease, -webkit-text-stroke-color 0.35s ease;
 }
 /* Outlined "ghost" numeral where text-stroke is supported; the translucent
-   gold above is the fallback so the number never disappears. */
+   cream above is the fallback so the number never disappears. */
 @supports (-webkit-text-stroke: 1px black) {
-  .path-step-num { color: transparent; -webkit-text-stroke: 1.2px rgba(200, 164, 74, 0.55); }
+  .path-step-num { color: transparent; -webkit-text-stroke: 1.2px rgba(253, 250, 245, 0.42); }
   .path-step:hover .path-step-num { -webkit-text-stroke-color: var(--gold); }
 }
 .path-step-chip {
