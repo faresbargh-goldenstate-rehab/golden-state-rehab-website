@@ -547,6 +547,46 @@
 <!-- ═══════════════════════════════════════════════════════════
      PROCESS — DARK SECTION
      ═══════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════
+     COMMUNITY BAND — alumni photo
+     ═══════════════════════════════════════════════════════════ -->
+<style>
+  .community-band{padding:96px 0 0;background:var(--white)}
+  .community-figure{position:relative;margin:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+  .community-figure img{display:block;width:100%;height:clamp(300px,42vw,460px);object-fit:cover;object-position:center 42%}
+  .community-figure figcaption{position:absolute;inset:auto 0 0 0;padding:110px 40px 34px;background:linear-gradient(to top,rgba(20,14,4,0.82),rgba(20,14,4,0.35) 55%,transparent);color:var(--white)}
+  .community-kicker{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .community-figure figcaption p{margin:0;font-size:clamp(18px,2.4vw,26px);font-weight:700;line-height:1.35;max-width:30ch}
+  @media (max-width:640px){
+    .community-band{padding-top:64px}
+    .community-figure{border-radius:var(--radius-md)}
+    .community-figure figcaption{padding:80px 22px 24px;background:linear-gradient(to top,rgba(20,14,4,0.92),rgba(20,14,4,0.5) 60%,transparent)}
+  }
+</style>
+<section class="community-band" aria-label="Alumni and community">
+  <div class="container">
+    <figure class="community-figure reveal">
+      <img src="images/community/alumni-gathering.webp" alt="A big group of smiling people posed close together for a photo on a tree-lined street" loading="lazy" width="1800" height="1200">
+      <figcaption>
+        <span class="community-kicker">Alumni &amp; Community</span>
+        <p>Recovery doesn&rsquo;t end at discharge &mdash; you leave here with people in your corner.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+  /* "Who walks through our doors" — group-session photo beside the personas
+     list. Photo stretches to match list height on desktop; stacks first and
+     crops to a wide band on mobile. */
+  .doors-split{display:grid;grid-template-columns:minmax(280px,400px) 1fr;gap:40px 48px;align-items:stretch;max-width:1020px;margin:0 auto}
+  .doors-photo{position:relative;margin:0;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-md)}
+  .doors-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+  @media (max-width:900px){
+    .doors-split{grid-template-columns:1fr;gap:28px}
+    .doors-photo img{height:auto;max-height:300px;object-position:center 40%}
+  }
+</style>
 <section class="section" aria-labelledby="why-us-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -575,7 +615,11 @@
         <span class="eyebrow">Who walks through our doors</span>
         <h3 style="font-size:28px;line-height:1.25;margin:10px 0 0;color:var(--near-black);">If you see yourself here, you&rsquo;re in the right place</h3>
       </div>
-      <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px 44px;max-width:980px;margin:0 auto;padding:0;">
+      <div class="doors-split">
+        <figure class="doors-photo">
+          <img src="images/community/group-session.webp" alt="People talking and laughing together during a group session" loading="lazy" width="1100" height="734">
+        </figure>
+        <ul style="list-style:none;display:grid;grid-template-columns:1fr;gap:18px;margin:0;padding:0;">
         <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">Young adults</strong> figuring out recovery and real life at the same time — school, first jobs, and a future still taking shape.</p></li>
         <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">Working professionals</strong> who need serious treatment that starts after the workday ends — no leave of absence, no explanations.</p></li>
         <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">People in early recovery</strong> who know weekly therapy isn&rsquo;t holding, and want more structure before things slip.</p></li>
@@ -583,6 +627,7 @@
         <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">People stepping down from residential care</strong> who need a bridge between 24/7 support and standing on their own.</p></li>
         <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">Anyone who wants a supportive place to recover</strong> &mdash; real clinical care and real community, without a hospital stay.</p></li>
       </ul>
+      </div>
       <p style="text-align:center;max-width:660px;margin:36px auto 0;font-size:16px;line-height:1.65;color:var(--body-text);">No two of these stories are the same &mdash; which is why there is no standard plan here. Your treatment is <strong style="color:var(--near-black);">customized to your needs and your goals</strong>, built for a recovery that lasts.</p>
     </div>
     <div style="text-align: center; margin-top: 48px;" class="reveal">
@@ -687,7 +732,7 @@
      FINAL CTA BANNER
      ═══════════════════════════════════════════════════════════ -->
 <section class="cta-banner" aria-label="Final call to action">
-  <div class="cta-banner-bg" style="background-image: url('images/facility/tv-lounge.webp');"></div>
+  <div class="cta-banner-bg" style="background-image: url('images/community/community-sunset.webp'); background-position: center 38%;"></div>
   <div class="cta-banner-overlay"></div>
   <div class="cta-banner-content">
     <span class="cta-meta"><i data-lucide="shield-check"></i> Confidential · Free · 24/7</span>
