@@ -29,6 +29,8 @@ TARGETS = {
     ROOT / "js/i18n.js": ROOT / "js/i18n.min.js",
     ROOT / "js/contact.js": ROOT / "js/contact.min.js",
     ROOT / "js/intake.js": ROOT / "js/intake.min.js",
+    ROOT / "js/chat.js": ROOT / "js/chat.min.js",
+    ROOT / "css/chat.css": ROOT / "css/chat.min.css",
 }
 
 

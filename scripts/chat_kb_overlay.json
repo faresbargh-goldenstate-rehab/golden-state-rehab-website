@@ -1,0 +1,487 @@
+{
+  "_readme": [
+    "Hand-authored knowledge-base overlay for the Golden Guide chat widget.",
+    "Merged into data/chat-kb.{en,es}.json by scripts/build_chat_kb.py.",
+    "COMPLIANCE: insurance wording here is locked. Never 'accepted', 'in-network',",
+    "or 'covered' for a named carrier — only 'we work with most major PPO plans',",
+    "'may cover', 'verify your benefits' (see golden_state_rehab_seo_internal_linking_blueprint.md).",
+    "No statistics, success rates, outcome promises, or superlatives (SB 1228 / FTC).",
+    "The site is OUTPATIENT ONLY: no on-site medical detox, no residential beds — say so and refer out.",
+    "All regexes are applied case-insensitively by the widget after diacritic stripping."
+  ],
+
+  "facts": {
+    "phone_display": "(424) 208-3120",
+    "phone_tel": "+14242083120",
+    "email": "admissions@goldenstate-rehab.com",
+    "address": "1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025",
+    "license": "DHCS Lic. #191643AP",
+    "accreditation": "The Joint Commission",
+    "medical_director": "Dr. Eric Chaghouri, MD"
+  },
+
+  "exclude_questions": [
+    "What insurance plans do you accept?",
+    "Where is Golden State Rehab located?"
+  ],
+
+  "safety": {
+    "en": {
+      "greeting": "Hi, I'm Golden Guide — an automated assistant, not a person or a clinician. I can answer questions about our programs, insurance verification, admissions, and what treatment here looks like. Nothing I say is medical advice. How can I help?",
+      "teaser": "Questions about treatment or insurance?",
+      "disclosure_line": "Automated assistant · or call (424) 208-3120",
+      "privacy_note": "This assistant runs entirely in your browser. Your messages are never stored or sent anywhere.",
+      "crisis": {
+        "re": "suicid|kill (myself|himself|herself|themselves|my ?self)|end (my|his|her|their) life|(hurt|harm)(ing)? (myself|my ?self|themselves)|self[- ]?harm|overdos|od['e]?d|took too (many|much)|not breathing|unconscious|unresponsive|turning blue|want to die|don'?t want to (live|be alive)|no reason to live",
+        "answer": "If you or someone with you may be in danger, please reach out right now — you don't have to handle this alone:\n\n• Call or text 988 (Suicide & Crisis Lifeline, 24/7)\n• Call 1-800-662-4357 (SAMHSA National Helpline, 24/7)\n• If this is a medical emergency, call 911\n\nOur admissions line is also answered by a real person 24/7 at (424) 208-3120."
+      },
+      "medical": {
+        "re": "dos(e|age|ing)|taper|cold turkey|how (do|can|should) i (stop|quit|detox|withdraw|come off|get off)|withdrawal|is it (safe|ok|okay) to (take|stop|quit|drink|mix)|can i (take|drink|mix)|mixing|interact(ion)?s? (with|between)|do i have|diagnos(e|tic)? me|am i (addicted|an? (addict|alcoholic))|what medicati?on should|should i (take|stop|quit)|prescribe",
+        "answer": "I can't give medical advice — questions about medications, withdrawal, or stopping a substance safely need a qualified clinician, because the answer depends on your health and history. Please talk to a healthcare provider, or call our team at (424) 208-3120 (24/7) — a real person can connect you with clinical staff. If it's urgent, call 988 or 911."
+      },
+      "fallback": {
+        "answer": "I'm only able to help with questions about Golden State Rehab — our programs, insurance verification, admissions, costs, and what treatment looks like. For anything else, our team is happy to help at (424) 208-3120. Here are some things I can answer:"
+      },
+      "offline": "I couldn't load my knowledge base just now. Our team can answer any question directly — call or text (424) 208-3120, answered 24/7 by a real person."
+    },
+    "es": {
+      "greeting": "Hola, soy Golden Guide, un asistente automatizado, no una persona ni un profesional clínico. Puedo responder preguntas sobre nuestros programas, verificación de seguro, admisiones y cómo es el tratamiento aquí. Nada de lo que digo es consejo médico. ¿Cómo puedo ayudar?",
+      "teaser": "¿Preguntas sobre tratamiento o seguro?",
+      "disclosure_line": "Asistente automatizado · o llame al (424) 208-3120",
+      "privacy_note": "Este asistente funciona completamente en su navegador. Sus mensajes nunca se guardan ni se envían a ningún lado.",
+      "crisis": {
+        "re": "suicid|matarme|quitarme la vida|hacerme dano|autolesion|sobredosis|tomo demasiad|no respira|inconsciente|no quiero vivir|quiero morir|no vale la pena vivir",
+        "answer": "Si usted o alguien con usted puede estar en peligro, busque ayuda ahora mismo — no tiene que enfrentarlo solo:\n\n• Llame o envíe un texto al 988 (Línea de Prevención del Suicidio y Crisis, 24/7, con servicio en español)\n• Llame al 1-800-662-4357 (Línea Nacional de SAMHSA, 24/7)\n• Si es una emergencia médica, llame al 911\n\nNuestra línea de admisiones también es atendida por una persona real las 24 horas: (424) 208-3120."
+      },
+      "medical": {
+        "re": "dosis|dejar de golpe|como (dejo|dejar|puedo dejar)|abstinencia|es seguro (tomar|dejar|mezclar|beber)|puedo (tomar|mezclar|beber)|mezclar|interaccion|tengo (adiccion|depresion|ansiedad)|diagnostica(r|n)? ?me|soy (adicto|alcoholico)|que medicamento|debo (tomar|dejar)|recetar",
+        "answer": "No puedo dar consejos médicos. Las preguntas sobre medicamentos, abstinencia o cómo dejar una sustancia de forma segura necesitan un profesional clínico, porque la respuesta depende de su salud y su historial. Hable con un proveedor de salud, o llame a nuestro equipo al (424) 208-3120 (24/7) — se habla español. Si es urgente, llame al 988 o al 911."
+      },
+      "fallback": {
+        "answer": "Solo puedo ayudar con preguntas sobre Golden State Rehab: nuestros programas, verificación de seguro, admisiones, costos y cómo es el tratamiento. Para cualquier otra cosa, nuestro equipo puede ayudarle al (424) 208-3120. Algunas cosas que puedo responder:"
+      },
+      "offline": "No pude cargar mi base de conocimientos en este momento. Nuestro equipo puede responder cualquier pregunta directamente: llame o envíe un texto al (424) 208-3120, atendido 24/7 por una persona real."
+    }
+  },
+
+  "quick_actions": {
+    "en": [
+      { "id": "call", "label": "Call now", "href": "tel:+14242083120" },
+      { "id": "verify_insurance", "label": "Verify insurance", "href": "/verify-insurance" },
+      { "id": "programs", "label": "Explore programs", "href": "/programs/" },
+      { "id": "directions", "label": "Directions", "href": "/contact" },
+      { "id": "faq", "label": "FAQs", "href": "/faq" }
+    ],
+    "es": [
+      { "id": "call", "label": "Llamar ahora", "href": "tel:+14242083120" },
+      { "id": "verify_insurance", "label": "Verificar seguro", "href": "/es/verify-insurance" },
+      { "id": "programs", "label": "Ver programas", "href": "/es/programs/" },
+      { "id": "directions", "label": "Cómo llegar", "href": "/es/contact" },
+      { "id": "faq", "label": "Preguntas frecuentes", "href": "/es/faq" }
+    ]
+  },
+
+  "intents": {
+    "en": [
+      {
+        "id": "intent-human",
+        "re": "(talk|speak|chat) (to|with) (a |an )?(person|human|someone|real|counselor|advisor)|real person|live (agent|person|chat)|not a (bot|robot)|actual person",
+        "answer": "Absolutely — our admissions line is answered 24/7 by our own team, never a call center. Call or text (424) 208-3120, or email admissions@goldenstate-rehab.com (we reply within one business hour).",
+        "cta": { "id": "call", "label": "Call (424) 208-3120", "href": "tel:+14242083120" }
+      },
+      {
+        "id": "intent-detox",
+        "re": "detox|residential|inpatient|live (there|at the facility|on ?site)|stay (overnight|there)|sleep there|\\bbeds?\\b",
+        "answer": "An honest answer: Golden State Rehab is an outpatient treatment center and does not offer medical detox or residential beds on-site. If you need detox first, we'll refer you to a trusted partner facility and coordinate a seamless transition into our PHP or IOP program once you're medically stable.",
+        "url": "/programs/",
+        "link_label": "See our outpatient programs"
+      },
+      {
+        "id": "intent-carrier-aetna",
+        "re": "aetna",
+        "answer": "Coverage details vary by plan and change over time, so we can't promise what any Aetna plan pays — benefits are confirmed only through verification with Aetna. We work with most major PPO plans, and verification is free, confidential, and shows your exact numbers before you commit to anything. (Golden State Rehab is not affiliated with or endorsed by Aetna.)",
+        "url": "/insurance/aetna",
+        "link_label": "Aetna coverage guide",
+        "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
+      },
+      {
+        "id": "intent-carrier-cigna",
+        "re": "cigna|evernorth",
+        "answer": "Coverage details vary by plan and change over time, so we can't promise what any Cigna plan pays — benefits are confirmed only through verification with Cigna. We work with most major PPO plans, and verification is free, confidential, and shows your exact numbers before you commit to anything. (Golden State Rehab is not affiliated with or endorsed by Cigna or Evernorth.)",
+        "url": "/insurance/cigna",
+        "link_label": "Cigna coverage guide",
+        "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
+      },
+      {
+        "id": "intent-carrier-anthem",
+        "re": "anthem|blue cross",
+        "answer": "Coverage details vary by plan and change over time, so we can't promise what any Anthem Blue Cross plan pays — benefits are confirmed only through verification with Anthem. We work with most major PPO plans, and verification is free, confidential, and shows your exact numbers before you commit to anything. (Golden State Rehab is not affiliated with or endorsed by Anthem Blue Cross, Elevance Health, or Carelon.)",
+        "url": "/insurance/anthem-blue-cross",
+        "link_label": "Anthem Blue Cross coverage guide",
+        "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
+      },
+      {
+        "id": "intent-carrier-blueshield",
+        "re": "blue shield",
+        "answer": "Coverage details vary by plan and change over time, so we can't promise what any Blue Shield of California plan pays — benefits are confirmed only through verification with Blue Shield. We work with most major PPO plans, and verification is free, confidential, and shows your exact numbers before you commit to anything. (Golden State Rehab is not affiliated with or endorsed by Blue Shield of California.)",
+        "url": "/insurance/blue-shield-of-california",
+        "link_label": "Blue Shield coverage guide",
+        "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
+      },
+      {
+        "id": "intent-carrier-uhc",
+        "re": "united ?health|\\buhc\\b|optum",
+        "answer": "Coverage details vary by plan and change over time, so we can't promise what any UnitedHealthcare plan pays — benefits are confirmed only through verification with UnitedHealthcare. We work with most major PPO plans, and verification is free, confidential, and shows your exact numbers before you commit to anything. (Golden State Rehab is not affiliated with or endorsed by UnitedHealthcare or Optum.)",
+        "url": "/insurance/united-healthcare",
+        "link_label": "UnitedHealthcare coverage guide",
+        "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
+      },
+      {
+        "id": "intent-medical-medicaid",
+        "re": "medi[- ]?cal\\b|medicaid|medicare",
+        "answer": "Coverage depends heavily on your specific plan type, and Medi-Cal works differently from PPO plans. The honest answer is: let our admissions team check for you — verification is free and confidential, and they'll explain every option that applies to you, including what to do if a plan doesn't cover treatment here.",
+        "url": "/blog/does-medi-cal-cover-rehab-in-california",
+        "link_label": "Our Medi-Cal coverage guide",
+        "cta": { "id": "call", "label": "Call (424) 208-3120", "href": "tel:+14242083120" }
+      },
+      {
+        "id": "intent-insurance",
+        "re": "insurance|coverage|covered|\\bppo\\b|\\bhmo\\b|deductible|out[- ]of[- ]pocket|copay|verify (my )?benefits|in[- ]?network",
+        "answer": "We work with most major PPO plans. Coverage varies by plan, so we don't make promises a policy might not keep — instead, our admissions team verifies your exact benefits for free, confidentially, and explains your options honestly before you commit to anything. Verifying never notifies your employer.",
+        "url": "/insurance/",
+        "link_label": "How insurance for rehab works",
+        "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
+      },
+      {
+        "id": "intent-cost",
+        "re": "cost|price|how much|afford|\\bpay(ment)?\\b|financ|sliding scale|self[- ]pay|cash|expensive",
+        "answer": "Cost depends on your program and your insurance benefits, so the only real answer comes from a free, confidential benefits check. If you're uninsured or a plan doesn't cover treatment, our team will walk through every option with you — sliding-scale fees, private pay, and financing. Financial barriers shouldn't stand between you and care.",
+        "url": "/blog/how-much-does-rehab-cost",
+        "link_label": "What rehab really costs",
+        "cta": { "id": "verify_insurance", "label": "Check my coverage", "href": "/verify-insurance" }
+      },
+      {
+        "id": "intent-work",
+        "re": "work while|keep (my |a )?job|miss work|evening (program|session|iop)|after work|fmla",
+        "answer": "Many of our clients keep working full-time during treatment. Our Evening IOP meets after typical work hours, and treatment records are protected by HIPAA and 42 CFR Part 2 — we never contact your employer, and verifying benefits doesn't notify them either.",
+        "url": "/blog/can-i-work-while-in-rehab",
+        "link_label": "Working while in rehab"
+      },
+      {
+        "id": "intent-confidential",
+        "re": "confidential|private|privacy|anonymous|employer (know|find)|job find out|will (anyone|my boss) know",
+        "answer": "Your privacy is protected by HIPAA and by 42 CFR Part 2, a federal confidentiality law specific to addiction treatment. We never contact your employer, and verifying your insurance benefits doesn't trigger any notification to them.",
+        "url": "/verify-insurance",
+        "link_label": "Free, confidential verification"
+      },
+      {
+        "id": "intent-admissions",
+        "re": "get(ting)? started|admission|intake|enroll|sign ?up|first step|how do i (start|begin)|ready (for|to)",
+        "answer": "Getting started is one phone call: our team confirms your insurance benefits for free, schedules a clinical assessment, and most clients begin treatment the same week. You'll always talk to a real person, never a call center.",
+        "url": "/admissions",
+        "link_label": "How admissions works",
+        "cta": { "id": "call", "label": "Call (424) 208-3120", "href": "tel:+14242083120" }
+      },
+      {
+        "id": "intent-telehealth",
+        "re": "telehealth|virtual|online (treatment|therapy|rehab|program)|remote|from home",
+        "answer": "Yes — our Virtual IOP and telehealth services serve clients throughout California, with the same clinical team as our in-person programs. It's a real option if distance, work, or family makes commuting to Westwood impractical.",
+        "url": "/programs/virtual-iop",
+        "link_label": "About Virtual IOP"
+      },
+      {
+        "id": "intent-programs",
+        "re": "what (programs|services) (do you|you) (have|offer)|programs offered|levels of care|what do you (offer|treat|do)\\??$",
+        "answer": "We're an outpatient center offering several levels of care: Partial Hospitalization (PHP, our most structured program), Intensive Outpatient (IOP, including morning and evening tracks), Virtual IOP, standard outpatient, psychiatric care, individual and group therapy, medication management, holistic therapies, and an alumni aftercare program.",
+        "url": "/programs/",
+        "link_label": "Explore all programs"
+      },
+      {
+        "id": "intent-hours",
+        "re": "hours|open (now|today|on)|when are you open|what time",
+        "answer": "Clinical hours run Monday through Saturday, and our admissions line is answered 24/7 — call or text (424) 208-3120 any time, day or night, and you'll reach a real person.",
+        "url": "/contact",
+        "link_label": "Contact details"
+      },
+      {
+        "id": "intent-address",
+        "re": "address|located|location\\b|directions|where (are you|is golden state|is the facility)|find you|parking|near me",
+        "answer": "We're at 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025 — in Westwood, serving all of West LA. Our telehealth program also serves clients throughout California.",
+        "url": "/contact",
+        "link_label": "Map and directions"
+      },
+      {
+        "id": "intent-phone",
+        "re": "phone|\\bnumber\\b|call you|contact (you|info)|reach (you|someone)|\\btexts?\\b|email",
+        "answer": "Call or text us at (424) 208-3120 — answered 24/7 by a real person, never a call center. You can also email admissions@goldenstate-rehab.com; we respond within one business hour.",
+        "cta": { "id": "call", "label": "Call (424) 208-3120", "href": "tel:+14242083120" }
+      },
+      {
+        "id": "intent-license",
+        "re": "licens|accredit|legit|certified|credential|joint commission|dhcs",
+        "answer": "Golden State Rehab operates under license #191643AP from the California Department of Health Care Services (DHCS), and is accredited by The Joint Commission, an independent body that evaluates health care organizations against national quality and safety standards. Our Medical Director is Dr. Eric Chaghouri, MD, a board-certified psychiatrist.",
+        "url": "/license",
+        "link_label": "Verify our license"
+      },
+      {
+        "id": "intent-family",
+        "re": "my (son|daughter|husband|wife|partner|brother|sister|mom|mother|dad|father|friend|child)|loved one|family member|someone i (love|know|care)|help (someone|a friend)|intervention",
+        "answer": "Watching someone you love struggle is its own kind of hard. Our team talks with families every day — you can call before your loved one is ready, and we'll help you understand the options and what to say. You won't be pressured into anything.",
+        "url": "/families",
+        "link_label": "Guidance for families",
+        "cta": { "id": "call", "label": "Call (424) 208-3120", "href": "tel:+14242083120" }
+      },
+      {
+        "id": "intent-spanish",
+        "re": "espanol|spanish|habla|se habla",
+        "answer": "Sí — we offer Spanish-language treatment services with bilingual staff, and our website is available in Spanish too. Se habla español: llame al (424) 208-3120.",
+        "url": "/spanish-speaking-treatment",
+        "link_label": "Tratamiento en español"
+      },
+      {
+        "id": "intent-greeting",
+        "re": "^(hi|hello|hey|howdy|good (morning|afternoon|evening)|yo)[!.?, ]*$",
+        "answer": "Hi there. I can answer questions about our programs, insurance, admissions, and what treatment at Golden State Rehab looks like. What's on your mind?"
+      },
+      {
+        "id": "intent-thanks",
+        "re": "^(thanks|thank you|ty|thx|great|awesome|ok|okay|got it)[!.?, ]*$",
+        "answer": "You're welcome. If you'd rather talk it through with a person, our team is at (424) 208-3120, 24/7. Anything else I can help with?"
+      }
+    ],
+    "es": [
+      {
+        "id": "intent-human",
+        "re": "hablar con (una persona|alguien|un humano)|persona real|no (un|eres) (bot|robot)",
+        "answer": "Por supuesto — nuestra línea de admisiones es atendida las 24 horas por nuestro propio equipo, y se habla español. Llame o envíe un texto al (424) 208-3120, o escriba a admissions@goldenstate-rehab.com.",
+        "cta": { "id": "call", "label": "Llamar al (424) 208-3120", "href": "tel:+14242083120" }
+      },
+      {
+        "id": "intent-detox",
+        "re": "detox|desintoxicacion|residencial|internado|internamiento|quedarme|dormir alli|camas",
+        "answer": "Una respuesta honesta: Golden State Rehab es un centro de tratamiento ambulatorio y no ofrece desintoxicación médica ni camas residenciales en el sitio. Si necesita desintoxicación primero, lo referiremos a un centro asociado de confianza y coordinaremos una transición a nuestro programa PHP o IOP cuando esté médicamente estable.",
+        "url": "/es/programs/",
+        "link_label": "Ver nuestros programas ambulatorios"
+      },
+      {
+        "id": "intent-insurance",
+        "re": "seguro|aseguranza|cobertura|cubre|aetna|cigna|anthem|blue (cross|shield)|united|medi-?cal|deducible|verificar",
+        "answer": "Trabajamos con la mayoría de los planes PPO principales. La cobertura varía según el plan, así que no hacemos promesas — en cambio, nuestro equipo verifica sus beneficios exactos gratis y de forma confidencial, y le explica sus opciones honestamente antes de comprometerse a nada. Verificar nunca notifica a su empleador.",
+        "url": "/es/verify-insurance",
+        "link_label": "Verificar mi seguro",
+        "cta": { "id": "verify_insurance", "label": "Verificar beneficios", "href": "/es/verify-insurance" }
+      },
+      {
+        "id": "intent-cost",
+        "re": "costo|cuesta|precio|pagar|caro|financ|efectivo",
+        "answer": "El costo depende de su programa y de los beneficios de su seguro, así que la única respuesta real viene de una verificación gratuita y confidencial. Si no tiene seguro o su plan no cubre el tratamiento, nuestro equipo revisará todas las opciones con usted: tarifas escalonadas, pago privado y financiamiento.",
+        "url": "/es/blog/cost-of-rehab-in-los-angeles",
+        "link_label": "Lo que realmente cuesta la rehabilitación",
+        "cta": { "id": "verify_insurance", "label": "Verificar cobertura", "href": "/es/verify-insurance" }
+      },
+      {
+        "id": "intent-admissions",
+        "re": "empezar|comenzar|admision|inscribir|primer paso|como (empiezo|inicio)",
+        "answer": "Empezar es una sola llamada: nuestro equipo confirma sus beneficios de seguro gratis, programa una evaluación clínica, y la mayoría de los clientes comienzan el tratamiento la misma semana. Siempre hablará con una persona real, y se habla español.",
+        "url": "/es/verify-insurance",
+        "link_label": "Cómo empezar",
+        "cta": { "id": "call", "label": "Llamar al (424) 208-3120", "href": "tel:+14242083120" }
+      },
+      {
+        "id": "intent-telehealth",
+        "re": "telesalud|virtual|en linea|remoto|desde casa",
+        "answer": "Sí — nuestro programa de telesalud (IOP virtual) atiende a clientes en toda California, con el mismo equipo clínico que nuestros programas presenciales.",
+        "url": "/es/programs/telehealth",
+        "link_label": "Sobre la telesalud"
+      },
+      {
+        "id": "intent-programs",
+        "re": "que programas|que servicios|niveles de (atencion|cuidado)|que (ofrecen|tratan|hacen)",
+        "answer": "Somos un centro ambulatorio con varios niveles de atención: Hospitalización Parcial (PHP, nuestro programa más estructurado), Programa Intensivo Ambulatorio (IOP), IOP virtual, terapia individual y grupal, manejo de medicamentos, terapias holísticas y un programa de exalumnos.",
+        "url": "/es/programs/",
+        "link_label": "Ver todos los programas"
+      },
+      {
+        "id": "intent-hours",
+        "re": "horario|abierto|a que hora",
+        "answer": "El horario clínico es de lunes a sábado, y nuestra línea de admisiones se atiende las 24 horas, los 7 días — llame o envíe un texto al (424) 208-3120 en cualquier momento.",
+        "url": "/es/contact",
+        "link_label": "Datos de contacto"
+      },
+      {
+        "id": "intent-address",
+        "re": "direccion|ubicad|donde (estan|queda)|como llegar|cerca de mi|estacionamiento",
+        "answer": "Estamos en 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025 — en Westwood, sirviendo todo el oeste de Los Ángeles. Nuestro programa de telesalud también atiende a clientes en toda California.",
+        "url": "/es/contact",
+        "link_label": "Mapa y direcciones"
+      },
+      {
+        "id": "intent-phone",
+        "re": "telefono|numero|llamar|contacto|texto|correo",
+        "answer": "Llame o envíe un texto al (424) 208-3120 — atendido las 24 horas por una persona real, y se habla español. También puede escribir a admissions@goldenstate-rehab.com.",
+        "cta": { "id": "call", "label": "Llamar al (424) 208-3120", "href": "tel:+14242083120" }
+      },
+      {
+        "id": "intent-confidential",
+        "re": "confidencial|privad|anonimo|empleador|trabajo se enter|jefe",
+        "answer": "Su privacidad está protegida por HIPAA y por 42 CFR Part 2, una ley federal de confidencialidad específica para el tratamiento de adicciones. Nunca contactamos a su empleador, y verificar sus beneficios de seguro no genera ninguna notificación.",
+        "url": "/es/verify-insurance",
+        "link_label": "Verificación gratuita y confidencial"
+      },
+      {
+        "id": "intent-license",
+        "re": "licencia|acreditad|certificad|legitimo",
+        "answer": "Golden State Rehab opera bajo la licencia #191643AP del Departamento de Servicios de Salud de California (DHCS), y está acreditado por The Joint Commission. Nuestro Director Médico es el Dr. Eric Chaghouri, MD, psiquiatra certificado.",
+        "url": "/es/about",
+        "link_label": "Sobre nosotros"
+      },
+      {
+        "id": "intent-family",
+        "re": "mi (hijo|hija|esposo|esposa|pareja|hermano|hermana|madre|padre|mama|papa|amigo|amiga)|ser querido|familiar|ayudar a (alguien|un)",
+        "answer": "Ver a alguien que ama pasar por esto es duro. Nuestro equipo habla con familias todos los días — puede llamar antes de que su ser querido esté listo, y le ayudaremos a entender las opciones y qué decir. Sin presión.",
+        "url": "/es/families",
+        "link_label": "Orientación para familias",
+        "cta": { "id": "call", "label": "Llamar al (424) 208-3120", "href": "tel:+14242083120" }
+      },
+      {
+        "id": "intent-english",
+        "re": "english|ingles",
+        "answer": "Yes — our full website and all our services are available in English. You can switch any time, or call (424) 208-3120.",
+        "url": "/",
+        "link_label": "View site in English"
+      },
+      {
+        "id": "intent-greeting",
+        "re": "^(hola|buenos dias|buenas tardes|buenas noches|buenas|hey|saludos)[!.?, ]*$",
+        "answer": "Hola. Puedo responder preguntas sobre nuestros programas, seguro, admisiones y cómo es el tratamiento en Golden State Rehab. ¿En qué puedo ayudarle?"
+      },
+      {
+        "id": "intent-thanks",
+        "re": "^(gracias|muchas gracias|ok|okay|vale|perfecto|entendido)[!.?, ]*$",
+        "answer": "De nada. Si prefiere hablar con una persona, nuestro equipo está en el (424) 208-3120, las 24 horas. ¿Algo más en que pueda ayudar?"
+      }
+    ]
+  },
+
+  "extra_docs": {
+    "en": [
+      {
+        "id": "overlay/what-is-detox",
+        "q": "What is detox?",
+        "kw": ["detox", "detoxification", "withdrawal"],
+        "a": "Detox (detoxification) is the medically supervised process of clearing a substance from the body, usually the first step before treatment when there's physical dependence. Golden State Rehab is an outpatient center and doesn't provide detox on-site — if you need it, we refer you to a trusted partner facility and coordinate your transition into our PHP or IOP program once you're medically stable.",
+        "url": "/programs/",
+        "link_label": "Our outpatient programs"
+      },
+      {
+        "id": "overlay/php-vs-iop",
+        "q": "What is the difference between PHP and IOP?",
+        "kw": ["php", "iop", "difference", "versus"],
+        "a": "PHP (Partial Hospitalization) is our most structured outpatient level: about 5 days per week, roughly 6 hours per day. IOP (Intensive Outpatient) meets 3 to 5 days per week for about 3 hours per session, with morning and evening tracks, so many clients keep working. Which one fits depends on your clinical assessment — our team helps you figure that out.",
+        "url": "/programs/php",
+        "link_label": "Compare PHP and IOP"
+      },
+      {
+        "id": "overlay/what-is-mat",
+        "q": "What is medication-assisted treatment (MAT)?",
+        "kw": ["mat", "medication", "assisted"],
+        "a": "Medication-assisted treatment combines FDA-approved medications with counseling and therapy to support recovery, most often for opioid or alcohol use. Our medication management program is overseen by our psychiatric team. Whether it's right for you is a clinical decision made with a provider — not something a chatbot can judge.",
+        "url": "/programs/medication-management",
+        "link_label": "About medication management"
+      },
+      {
+        "id": "overlay/what-is-dual-diagnosis",
+        "q": "What is dual diagnosis?",
+        "kw": ["dual", "diagnosis", "co-occurring"],
+        "a": "Dual diagnosis (or co-occurring disorders) means experiencing a substance use disorder and a mental health condition — like depression, anxiety, or PTSD — at the same time. Treating both together matters, because each can feed the other. Our programs are built to treat them as one connected picture.",
+        "url": "/treatments/dual-diagnosis",
+        "link_label": "Dual diagnosis treatment"
+      },
+      {
+        "id": "overlay/what-is-aftercare",
+        "q": "What happens after treatment ends?",
+        "kw": ["aftercare", "alumni", "after", "relapse"],
+        "a": "Recovery doesn't end at discharge. Our aftercare and alumni program keeps you connected — ongoing support, community, and a plan for the transition back to everyday life. We help you build that plan before your program ends, not after.",
+        "url": "/programs/alumni",
+        "link_label": "Aftercare and alumni program"
+      }
+    ],
+    "es": [
+      {
+        "id": "overlay/que-es-detox",
+        "q": "¿Qué es la desintoxicación?",
+        "kw": ["detox", "desintoxicacion", "abstinencia"],
+        "a": "La desintoxicación es el proceso supervisado médicamente de eliminar una sustancia del cuerpo, normalmente el primer paso cuando hay dependencia física. Golden State Rehab es un centro ambulatorio y no ofrece desintoxicación en el sitio — si la necesita, lo referimos a un centro asociado de confianza y coordinamos su transición a nuestro programa PHP o IOP.",
+        "url": "/es/programs/",
+        "link_label": "Nuestros programas ambulatorios"
+      },
+      {
+        "id": "overlay/php-vs-iop",
+        "q": "¿Cuál es la diferencia entre PHP e IOP?",
+        "kw": ["php", "iop", "diferencia"],
+        "a": "PHP (Hospitalización Parcial) es nuestro nivel ambulatorio más estructurado: unos 5 días por semana, alrededor de 6 horas al día. IOP (Programa Intensivo Ambulatorio) se reúne de 3 a 5 días por semana, unas 3 horas por sesión, así que muchos clientes siguen trabajando. Cuál le conviene depende de su evaluación clínica — nuestro equipo le ayuda a decidir.",
+        "url": "/es/programs/php",
+        "link_label": "Comparar PHP e IOP"
+      },
+      {
+        "id": "overlay/diagnostico-dual",
+        "q": "¿Qué es el diagnóstico dual?",
+        "kw": ["dual", "diagnostico", "concurrente"],
+        "a": "El diagnóstico dual (o trastornos concurrentes) significa tener un trastorno por uso de sustancias y una condición de salud mental — como depresión, ansiedad o TEPT — al mismo tiempo. Tratar ambos juntos importa, porque uno puede alimentar al otro. Nuestros programas los tratan como un solo cuadro conectado.",
+        "url": "/es/treatments/dual-diagnosis",
+        "link_label": "Tratamiento de diagnóstico dual"
+      }
+    ]
+  },
+
+  "synonyms": {
+    "en": {
+      "intensive outpatient": "iop",
+      "partial hospitalization": "php",
+      "day program": "php",
+      "price": "cost",
+      "pricing": "cost",
+      "afford": "cost",
+      "expensive": "cost",
+      "blue cross": "anthem",
+      "united healthcare": "unitedhealthcare",
+      "unitedhealthcare": "unitedhealthcare",
+      "uhc": "unitedhealthcare",
+      "optum": "unitedhealthcare",
+      "medication assisted": "mat",
+      "detoxification": "detox",
+      "rehabilitation": "rehab",
+      "treat": "treatment",
+      "treatment center": "rehab",
+      "drinking": "alcohol",
+      "alcoholic": "alcohol",
+      "alcoholism": "alcohol",
+      "counseling": "therapy",
+      "counselling": "therapy",
+      "psychiatrist": "psychiatric",
+      "crystal": "meth",
+      "heroin": "opioid",
+      "painkillers": "opioid",
+      "oxycontin": "opioid",
+      "oxy": "opioid",
+      "xanax": "benzodiazepine",
+      "benzo": "benzodiazepine",
+      "benzos": "benzodiazepine",
+      "coke": "cocaine",
+      "ptsd": "ptsd",
+      "trauma": "trauma"
+    },
+    "es": {
+      "precio": "costo",
+      "pagar": "costo",
+      "caro": "costo",
+      "aseguranza": "seguro",
+      "desintoxicacion": "detox",
+      "rehabilitacion": "rehab",
+      "alcoholismo": "alcohol",
+      "consejeria": "terapia",
+      "heroina": "opioid",
+      "medicamentos recetados": "prescription"
+    }
+  }
+}
