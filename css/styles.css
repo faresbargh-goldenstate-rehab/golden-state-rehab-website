@@ -4441,7 +4441,7 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.03em;
-  color: rgba(253, 250, 245, 0.24);
+  color: rgba(253, 250, 245, 0.38);
   transition: color 0.35s ease;
 }
 .path-step:hover .path-step-num { color: var(--gold); }
