@@ -143,7 +143,7 @@ if (typeof module !== 'undefined' && module.exports) {
   var LANG = document.documentElement.lang === 'es' ? 'es' : 'en';
   var CSS_HREF = '/css/chat.min.css?v=1';
   var KB_URL = '/data/chat-kb.' + LANG + '.json';
-  var NUDGE_DELAY_MS = 25000;
+  var NUDGE_DELAY_MS = 10000;
   var TYPING_MS = 550;
 
   var TEXT = {
