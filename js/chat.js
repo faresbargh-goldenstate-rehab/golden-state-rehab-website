@@ -406,7 +406,10 @@ if (typeof module !== 'undefined' && module.exports) {
     }
     if (kb) panel.querySelector('.gg-foot').textContent = kb.safety.privacy_note;
     everOpened = true;
-    if (focusInput !== false && inputEl) inputEl.focus();
+    // Desktop only: focusing the input on a touch device pops the on-screen
+    // keyboard over the freshly opened panel — let mobile users tap it.
+    var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    if (focusInput !== false && inputEl && !touch) inputEl.focus();
   }
 
   function closePanel() {
