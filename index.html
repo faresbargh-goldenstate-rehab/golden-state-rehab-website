@@ -346,7 +346,10 @@
   .loc-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);margin:0 0 14px}
   .loc-card h4{font-size:24px;line-height:1.25;margin:0;text-wrap:balance}
   .loc-abbr{color:var(--gold-dark)}
-  .loc-lede{font-size:16px;line-height:1.55;color:var(--muted);margin:14px 0 0}
+  /* This line is the plain-English definition of the acronym above it, so it
+     is set in body colour rather than muted; the title still outranks it on
+     size and weight. */
+  .loc-lede{font-size:16px;line-height:1.6;color:var(--body-text);margin:14px 0 0}
 
   /* One hairline in the whole card, and it earns its place by separating the
      prose from the numbers. */
@@ -445,7 +448,7 @@
           <div class="loc-head">
             <span class="loc-eyebrow">Most structured</span>
             <h4>Partial Hospitalization Program <span class="loc-abbr">(PHP)</span></h4>
-            <p class="loc-lede">Residential-level care, without moving in.</p>
+            <p class="loc-lede">A full day of treatment on weekdays, sleeping at home each night.</p>
           </div>
           <div class="loc-stats">
             <div class="loc-stat"><b>Mon&ndash;Fri</b><span>Schedule</span></div>
@@ -462,7 +465,7 @@
           <div class="loc-head">
             <span class="loc-eyebrow">One step down</span>
             <h4>Intensive Outpatient Program <span class="loc-abbr">(IOP)</span></h4>
-            <p class="loc-lede">Treatment that fits around your job.</p>
+            <p class="loc-lede">Shorter therapy sessions a few days a week, built around your schedule.</p>
           </div>
           <div class="loc-stats">
             <div class="loc-stat"><b>3&ndash;5 days</b><span>Schedule</span></div>
