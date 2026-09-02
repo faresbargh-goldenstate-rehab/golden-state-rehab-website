@@ -343,7 +343,6 @@
   }
   .loc-card:hover{border-color:var(--gold);transform:translateY(-2px)}
 
-  .loc-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);margin:0 0 14px}
   .loc-card h4{font-size:24px;line-height:1.25;margin:0;text-wrap:balance}
   .loc-abbr{color:var(--gold-dark)}
   /* This line is the plain-English definition of the acronym above it, so it
@@ -357,9 +356,8 @@
   .loc-stat b{display:block;font-size:17px;font-weight:700;line-height:1.2;color:var(--near-black)}
   .loc-stat span{display:block;font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:6px}
 
-  .loc-foot{display:flex;flex-direction:column;align-items:flex-start;padding-top:24px}
-  .loc-where{font-size:13.5px;line-height:1.5;color:var(--muted);margin:0}
-  .loc-cta{margin-top:auto;padding-top:26px;display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:700;color:var(--near-black);text-decoration:none;transition:gap var(--transition)}
+  .loc-foot{display:flex;flex-direction:column;align-items:flex-start;padding-top:30px}
+  .loc-cta{margin-top:auto;display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:700;color:var(--near-black);text-decoration:none;transition:gap var(--transition)}
   .loc-cta svg{width:15px;height:15px;color:var(--gold-dark)}
   .loc-cta:hover{gap:14px}
   .loc-cta:focus-visible{outline:2px solid var(--gold-dark);outline-offset:4px;border-radius:2px}
@@ -446,9 +444,8 @@
 
         <article class="loc-card reveal">
           <div class="loc-head">
-            <span class="loc-eyebrow">Most structured</span>
             <h4>Partial Hospitalization Program <span class="loc-abbr">(PHP)</span></h4>
-            <p class="loc-lede">A full day of treatment on weekdays, sleeping at home each night.</p>
+            <p class="loc-lede">A more structured weekly schedule with more time dedicated to treatment.</p>
           </div>
           <div class="loc-stats">
             <div class="loc-stat"><b>Mon&ndash;Fri</b><span>Schedule</span></div>
@@ -456,16 +453,14 @@
             <div class="loc-stat"><b>~30 hrs</b><span>Weekly</span></div>
           </div>
           <div class="loc-foot">
-            <p class="loc-where">In person, Westwood</p>
             <a href="programs/php" class="loc-cta">Explore PHP <i data-lucide="arrow-right"></i></a>
           </div>
         </article>
 
         <article class="loc-card reveal reveal-delay-1">
           <div class="loc-head">
-            <span class="loc-eyebrow">One step down</span>
             <h4>Intensive Outpatient Program <span class="loc-abbr">(IOP)</span></h4>
-            <p class="loc-lede">Shorter therapy sessions a few days a week, built around your schedule.</p>
+            <p class="loc-lede">A more flexible weekly schedule with fewer treatment hours.</p>
           </div>
           <div class="loc-stats">
             <div class="loc-stat"><b>3&ndash;5 days</b><span>Schedule</span></div>
@@ -473,7 +468,6 @@
             <div class="loc-stat"><b>9&ndash;15 hrs</b><span>Weekly</span></div>
           </div>
           <div class="loc-foot">
-            <p class="loc-where">Westwood or telehealth</p>
             <a href="programs/iop" class="loc-cta">Explore IOP <i data-lucide="arrow-right"></i></a>
           </div>
         </article>
