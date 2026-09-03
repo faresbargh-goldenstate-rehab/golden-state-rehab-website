@@ -331,33 +331,33 @@
      in a comparison. What is left is type, whitespace, and a single hairline.
      Neither card is styled as the recommended one; that is a clinical call. */
   .loc-heading{text-align:center;font-size:30px;line-height:1.25;margin:0 auto 12px;max-width:22ch}
-  .loc-sub{text-align:center;max-width:640px;margin:0 auto 44px;color:var(--muted);font-size:15.5px;line-height:1.65}
+  .loc-sub{text-align:center;max-width:640px;margin:0 auto 40px;color:var(--muted);font-size:15.5px;line-height:1.65}
 
   /* Shared row tracks so the two stat rows line up even when the program
      names wrap to different heights. Without subgrid the cards simply size
      themselves and lose nothing but that cross-card alignment. */
-  .loc-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto 1fr;gap:24px;align-items:stretch}
-  .loc-card{display:grid;grid-row:span 3;grid-template-rows:auto auto 1fr;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px 36px;transition:border-color var(--transition),transform var(--transition)}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto 1fr;column-gap:24px;row-gap:0;align-items:stretch}
+  .loc-card{display:grid;grid-row:span 3;grid-template-rows:auto auto 1fr;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:34px 32px;transition:border-color var(--transition),transform var(--transition)}
   @supports (grid-template-rows:subgrid){
     .loc-card{grid-template-rows:subgrid}
   }
   .loc-card:hover{border-color:var(--gold);transform:translateY(-2px)}
 
-  .loc-card h4{font-size:24px;line-height:1.25;margin:0;text-wrap:balance}
+  .loc-card h4{font-size:22px;line-height:1.25;margin:0;text-wrap:balance}
   .loc-abbr{color:var(--gold-dark)}
   /* This line is the plain-English definition of the acronym above it, so it
      is set in body colour rather than muted; the title still outranks it on
      size and weight. */
-  .loc-lede{font-size:16px;line-height:1.6;color:var(--body-text);margin:14px 0 0}
+  .loc-lede{font-size:15.5px;line-height:1.55;color:var(--body-text);margin:12px 0 0}
 
   /* One hairline in the whole card, and it earns its place by separating the
      prose from the numbers. */
-  .loc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;padding-top:26px;border-top:1px solid var(--border)}
-  .loc-stat b{display:block;font-size:17px;font-weight:700;line-height:1.2;color:var(--near-black)}
-  .loc-stat span{display:block;font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+  .loc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;padding-top:24px;border-top:1px solid var(--border)}
+  .loc-stat b{display:block;font-size:16px;font-weight:700;line-height:1.2;color:var(--near-black)}
+  .loc-stat span{display:block;font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:5px}
 
-  .loc-foot{display:flex;flex-direction:column;align-items:flex-start;padding-top:30px}
-  .loc-cta{margin-top:auto;display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:700;color:var(--near-black);text-decoration:none;transition:gap var(--transition)}
+  .loc-foot{display:flex;flex-direction:column;align-items:flex-start;padding-top:26px}
+  .loc-cta{margin-top:auto;display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:700;color:var(--near-black);text-decoration:none;transition:gap var(--transition)}
   .loc-cta svg{width:15px;height:15px;color:var(--gold-dark)}
   .loc-cta:hover{gap:14px}
   .loc-cta:focus-visible{outline:2px solid var(--gold-dark);outline-offset:4px;border-radius:2px}
@@ -374,16 +374,16 @@
   /* Stacked, the cards are no longer being compared, so the shared row tracks
      come off and each sizes to its own content. */
   @media (max-width:900px){
-    .loc-grid{grid-template-columns:1fr;grid-template-rows:none;gap:20px}
+    .loc-grid{grid-template-columns:1fr;grid-template-rows:none;row-gap:20px}
     .loc-card{grid-row:auto;grid-template-rows:auto auto 1fr}
     .loc-heading{font-size:26px}
   }
   @media (max-width:640px){
-    .loc-card{padding:30px 24px;border-radius:var(--radius-md)}
+    .loc-card{padding:26px 22px;border-radius:var(--radius-md)}
     .loc-heading{font-size:23px;max-width:100%}
-    .loc-card h4{font-size:21px}
-    .loc-lede{font-size:15.5px}
-    .loc-stats{gap:10px;margin-top:26px;padding-top:22px}
+    .loc-card h4{font-size:20px}
+    .loc-lede{font-size:15px}
+    .loc-stats{gap:10px;margin-top:22px;padding-top:20px}
     .loc-stat b{font-size:15.5px}
     .loc-stat span{font-size:9.5px;letter-spacing:.08em}
   }
