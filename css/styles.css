@@ -2975,23 +2975,27 @@ button.ins-tile { cursor: pointer; }
   transition: transform 0.4s ease;
 }
 .facility-card:hover img { transform: scale(1.04); }
+/* Kept as visible text (it names the room for visitors and for on-page
+   relevance) but deliberately quiet: a hairline strip, not a caption bar. */
 .facility-card-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 16px 20px;
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(253,250,245,0.85);
-  letter-spacing: 0.02em;
+  gap: 10px;
+  padding: 6px 14px 7px;
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: rgba(253,250,245,0.48);
+  letter-spacing: 0.07em;
   text-decoration: none;
   transition: color var(--transition);
 }
+.facility-card:hover .facility-card-label { color: rgba(253,250,245,0.72); }
 .facility-card-label svg {
-  width: 15px;
-  height: 15px;
-  opacity: 0.55;
+  width: 12px;
+  height: 12px;
+  opacity: 0.4;
   flex-shrink: 0;
   transition: opacity var(--transition), transform var(--transition);
 }
@@ -3022,6 +3026,53 @@ a.facility-card-label:hover svg { opacity: 1; transform: translate(2px, -2px); }
   .facility-carousel-wrapper { padding: 0 44px; }
   .facility-card { flex: 0 0 calc(85vw - 44px); }
   .facility-card img { height: 220px; }
+}
+
+/* ── Facility Gallery (homepage) ─────────────────────────────────
+   Desktop: static asymmetric 5-photo grid — lobby dominant, all
+   photos visible without interaction. Mobile: user-initiated
+   scroll-snap strip; next card peeks in to signal scrollability.
+   Distinct from .facility-carousel-* (tour pages keep the arrows). */
+.facility-gallery {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr 1fr;
+  grid-auto-rows: 250px;
+  gap: 20px;
+  margin-top: 48px;
+}
+.facility-gallery .facility-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.facility-gallery .facility-card--tall { grid-row: span 2; }
+.facility-gallery .facility-card img {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .facility-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Bleed to the viewport edge so the next card peeks past the
+       32px .container padding. */
+    margin-left: -32px;
+    margin-right: -32px;
+    padding: 4px 32px 8px;
+    scroll-padding-inline: 32px;
+    scrollbar-width: none;
+  }
+  .facility-gallery::-webkit-scrollbar { display: none; }
+  .facility-gallery .facility-card {
+    flex: 0 0 min(78%, 340px);
+    scroll-snap-align: start;
+  }
+  .facility-gallery .facility-card img { flex: none; height: 230px; }
 }
 
 /* ── Team Circle Cards ─────────────────────────────────────────────────── */
@@ -4423,8 +4474,7 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
 .path-step:last-child::after { width: 13px; height: 13px; top: -6px; }
 .path-step:last-child.visible::after { box-shadow: 0 0 0 7px rgba(200, 164, 74, 0.16), 0 0 22px rgba(200, 164, 74, 0.45); }
 
-/* Numeral over chip, left-aligned — an editorial stack instead of a numeral
-   and a pill competing at opposite ends of the same row. */
+/* Numeral alone, left-aligned above the heading. */
 .path-step-top {
   display: flex;
   flex-direction: column;
@@ -4434,7 +4484,7 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
 }
 /* Solid cream, held at a low opacity: the numeral is large enough that a
    full-strength fill would out-shout the step heading. Gold stays reserved
-   for the path system (line, nodes, chips), so the numerals read as quiet
+   for the path system (line, nodes), so the numerals read as quiet
    structure and warm to gold only on hover. */
 .path-step-num {
   font-size: 50px;
@@ -4445,18 +4495,6 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
   transition: color 0.35s ease;
 }
 .path-step:hover .path-step-num { color: var(--gold); }
-.path-step-chip {
-  display: inline-block;
-  padding: 5px 13px;
-  border: 1px solid rgba(200, 164, 74, 0.32);
-  border-radius: 999px;
-  background: rgba(200, 164, 74, 0.09);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: var(--gold);
-  white-space: nowrap;
-}
 .path-step h4 { color: var(--off-white); font-size: 19px; margin: 0 0 10px; letter-spacing: -0.01em; }
 .path-step p { color: rgba(253, 250, 245, 0.7); font-size: 15px; line-height: 1.65; margin: 0; }
 .path-step p a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }

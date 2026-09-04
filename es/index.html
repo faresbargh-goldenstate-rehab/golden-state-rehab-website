@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="/css/styles.min.css?v=42">
+  <link rel="stylesheet" href="/css/styles.min.css?v=48">
   <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
@@ -100,24 +100,31 @@
   <div class="container">
     <div class="section-header reveal">
       <span class="eyebrow">Un espacio para sanar</span>
-      <h2 id="facility-heading">Nuestras Instalaciones</h2>
-      <p class="section-intro">Un entorno tranquilo y privado en el oeste de Los Ángeles — diseñado para apoyar la concentración, la comodidad y una recuperación real. <a href="/es/our-facility">Recorre nuestras instalaciones</a>.</p>
+      <h2 id="facility-heading">Nuestro Centro de Tratamiento en Westwood</h2>
+      <p class="section-intro">Un espacio ambulatorio tranquilo y privado en el oeste de Los Ángeles, diseñado para que pueda adaptarse y concentrarse en su recuperación.</p>
     </div>
-  </div>
-  <div class="facility-carousel-wrapper">
-    <div class="facility-carousel-track">
-      <div class="facility-card"><img src="/images/facility/reception-lobby.webp" alt="Recepción y sala de espera de Golden State Rehab" loading="lazy" width="800" height="500"><a class="facility-card-label" href="/es/our-facility">Recepción y Vestíbulo <i data-lucide="arrow-up-right"></i></a></div>
-      <div class="facility-card"><img src="/images/facility/individual-therapy-room.webp" alt="Consultorio privado de terapia individual" loading="lazy" width="800" height="500"><a class="facility-card-label" href="/es/programs/individual-therapy">Salas de Terapia Privadas <i data-lucide="arrow-up-right"></i></a></div>
-      <div class="facility-card"><img src="/images/facility/group-therapy-room.webp" alt="Sala de terapia grupal con un círculo de sillas" loading="lazy" width="800" height="500"><a class="facility-card-label" href="/es/programs/group-therapy">Sala de Terapia Grupal <i data-lucide="arrow-up-right"></i></a></div>
-      <div class="facility-card"><img src="/images/facility/meditation-room.webp" alt="Sala de meditación y yoga con cojines" loading="lazy" width="800" height="500"><a class="facility-card-label" href="/es/programs/holistic-therapies">Espacio de Meditación y Yoga <i data-lucide="arrow-up-right"></i></a></div>
-      <div class="facility-card"><img src="/images/facility/tv-lounge.webp" alt="Sala común con sofás y área de descanso" loading="lazy" width="800" height="500"><a class="facility-card-label" href="/es/our-facility">Sala Común <i data-lucide="arrow-up-right"></i></a></div>
-      <div class="facility-card"><img src="/images/facility/reading-lounge.webp" alt="Rincón de lectura tranquilo con estantería de biblioteca" loading="lazy" width="800" height="500"><a class="facility-card-label" href="/es/our-facility">Sala de Lectura <i data-lucide="arrow-up-right"></i></a></div>
-      <div class="facility-card"><img src="/images/facility/recreation-room.webp" alt="Sala de recreación con mesa de comedor compartida" loading="lazy" width="800" height="500"><a class="facility-card-label" href="/es/our-facility">Recreación y Comedor <i data-lucide="arrow-up-right"></i></a></div>
-      <div class="facility-card"><img src="/images/facility/computer-workstations.webp" alt="Estaciones de trabajo con computadoras para trabajo y estudio" loading="lazy" width="800" height="500"><a class="facility-card-label" href="/es/programs/telehealth">Estaciones de Trabajo y Estudio <i data-lucide="arrow-up-right"></i></a></div>
+    <div class="facility-gallery reveal">
+      <div class="facility-card facility-card--tall">
+        <img src="/images/facility/reception-lobby.webp" alt="Recepción y sala de espera de Golden State Rehab" loading="lazy" width="800" height="600">
+        <span class="facility-card-label">Recepción y Vestíbulo</span>
+      </div>
+      <div class="facility-card">
+        <img src="/images/facility/individual-therapy-room.webp" alt="Consultorio privado de terapia individual" loading="lazy" width="600" height="800">
+        <span class="facility-card-label">Salas de Terapia Privadas</span>
+      </div>
+      <div class="facility-card">
+        <img src="/images/facility/group-therapy-room.webp" alt="Sala de terapia grupal con un círculo de sillas" loading="lazy" width="800" height="500">
+        <span class="facility-card-label">Sala de Terapia Grupal</span>
+      </div>
+      <div class="facility-card">
+        <img src="/images/facility/meditation-room.webp" alt="Sala de meditación y yoga con cojines" loading="lazy" width="600" height="800">
+        <span class="facility-card-label">Espacio de Meditación y Yoga</span>
+      </div>
+      <div class="facility-card">
+        <img src="/images/facility/reading-lounge.webp" alt="Rincón de lectura tranquilo con estantería de biblioteca" loading="lazy" width="800" height="500">
+        <span class="facility-card-label">Sala de Lectura</span>
+      </div>
     </div>
-    <button class="facility-arrow facility-arrow--prev" aria-label="Anterior"><i data-lucide="chevron-left"></i></button>
-    <button class="facility-arrow facility-arrow--next" aria-label="Siguiente"><i data-lucide="chevron-right"></i></button>
-    <div class="facility-counter" aria-hidden="true">1&ndash;3 / 8</div>
   </div>
 </section>
 
@@ -279,23 +286,23 @@
     </div>
     <ol class="path-steps">
       <li class="path-step reveal">
-        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">01</span><span class="path-step-chip">en cuestión de horas</span></div>
-        <h4>Primer Contacto</h4>
-        <p>Llamas o completas nuestro formulario, respondemos tus preguntas y agendamos tu evaluación.</p>
+        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">01</span></div>
+        <h4>Primero, verifica tu seguro</h4>
+        <p>Llámanos o completa el formulario, y agendamos tu evaluación.</p>
       </li>
       <li class="path-step reveal">
-        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">02</span><span class="path-step-chip">60&ndash;90 minutos</span></div>
-        <h4>Evaluación Clínica</h4>
+        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">02</span></div>
+        <h4>Evaluación clínica de ~60 min</h4>
         <p>Una entrevista clínica con nuestro especialista de admisiones. Escuchamos tu historia, entendemos tus necesidades y hablamos de las opciones de tratamiento.</p>
       </li>
       <li class="path-step reveal">
-        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">03</span><span class="path-step-chip">gratis &middot; sin compromiso</span></div>
-        <h4>Verificación de Seguro</h4>
-        <p>Verificamos tu cobertura de seguro sin costo y te explicamos exactamente qué está cubierto antes de que te comprometas a nada.</p>
+        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">03</span></div>
+        <h4>Conoce tus costos desde el inicio</h4>
+        <p>Te explicamos exactamente qué cubre tu plan, sin costo y antes de que te comprometas a nada.</p>
       </li>
       <li class="path-step reveal">
-        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">04</span><span class="path-step-chip">semana 1</span></div>
-        <h4>Tu Primera Sesión</h4>
+        <div class="path-step-top"><span class="path-step-num" aria-hidden="true">04</span></div>
+        <h4>Primera sesión en la semana 1</h4>
         <p>Conoces a tu terapeuta, te unes a tu primer grupo y comienzas el verdadero trabajo. Y la recuperación no termina con el alta — sigues siendo parte de nuestra <a href="/es/programs/alumni">comunidad de exalumnos</a> mucho después.</p>
       </li>
     </ol>
