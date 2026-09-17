@@ -520,6 +520,25 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
+// ── GA4 conversion events (phone_click, cta_click, insurance_tile_click) ──
+// gtag is intentionally absent on PHI pages (contact, verify-insurance,
+// intake-success), so every call is guarded and no event carries PHI.
+(function () {
+  function track(name, params) {
+    if (typeof gtag === 'function') gtag('event', name, params || {});
+  }
+  document.addEventListener('click', function (e) {
+    var tile = e.target.closest('.ins-tile[data-provider]');
+    if (tile) { track('insurance_tile_click', { provider: tile.getAttribute('data-provider') }); return; }
+    var link = e.target.closest('a[href]');
+    if (!link) return;
+    if (link.getAttribute('href').indexOf('tel:') === 0) track('phone_click');
+    var cta = link.getAttribute('data-cta');
+    if (cta) track('cta_click', { location: cta });
+  });
+})();
+
+
 // ── Insurance coverage checker (confirms acceptance, routes to free VOB) ──
 (function () {
   var tiles = Array.prototype.slice.call(document.querySelectorAll('.ins-tile'));

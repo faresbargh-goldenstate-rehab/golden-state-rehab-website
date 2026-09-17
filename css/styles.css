@@ -1037,9 +1037,9 @@ button.ins-tile { cursor: pointer; }
 .ins-tile.is-near .ins-logo { filter: grayscale(.45); opacity: .8; }
 .insurance-disclaimer {
   max-width: 680px;
-  margin: 30px auto 0;
+  margin: 20px auto 0;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
   line-height: 1.65;
 }
@@ -1050,6 +1050,7 @@ button.ins-tile { cursor: pointer; }
   flex-wrap: wrap;
   margin-top: 28px;
 }
+.insurance-cta-row[hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .ins-tile, .ins-logo { transition: none; }
   .ins-tile:hover, .ins-tile.is-lit { transform: none; }

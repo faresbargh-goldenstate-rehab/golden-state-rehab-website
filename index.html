@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=49">
+  <link rel="stylesheet" href="css/styles.min.css?v=50">
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
@@ -122,7 +122,7 @@
 
     <div class="nav-actions"><a href="/espanol" class="nav-lang" aria-label="Ver en español">Español</a>
       <a href="verify-insurance" class="btn btn-secondary btn-sm">Verify Insurance</a>
-      <a href="contact" class="btn btn-primary btn-sm">
+      <a href="tel:+14242083120" class="btn btn-primary btn-sm">
         <i data-lucide="phone"></i> Call Now
       </a>
     </div>
@@ -143,7 +143,7 @@
   <a href="/espanol" class="nav-lang-mobile">🌐 Ver en Español</a>
   <div class="nav-mobile-actions">
     <a href="verify-insurance" class="btn btn-secondary">Verify Insurance</a>
-    <a href="contact" class="btn btn-primary"><i data-lucide="phone"></i> Call Now</a>
+    <a href="tel:+14242083120" class="btn btn-primary"><i data-lucide="phone"></i> Call Now</a>
   </div>
 </nav>
 
@@ -170,7 +170,7 @@
     <p class="hero-subheadline">Flexible, structured care through PHP and IOP programs that provide meaningful support while allowing you to continue with work, school, and everyday life.</p>
 
     <div class="hero-actions">
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="hero">Verify My Insurance <i data-lucide="arrow-right"></i></a>
       <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
     </div>
 
@@ -298,13 +298,13 @@
       <button class="ins-tile" type="button" data-provider="Carelon Behavioral Health"><img src="images/insurance/carelon.webp" alt="Carelon Behavioral Health" class="ins-logo" width="120" height="40"></button>
       <button class="ins-tile" type="button" data-provider="Trustmark"><img src="images/insurance/trustmark.webp" alt="Trustmark" class="ins-logo" width="120" height="40"></button>
     </div>
-    <p class="insurance-disclaimer">Insurance logos are shown to help you identify your plan and are trademarks of their respective owners; they do not imply endorsement. Coverage varies by plan, and verification is free and confidential.</p>
     <div class="coverage-result" id="coverageResult" role="status" hidden>
       <p class="coverage-result-msg"><i data-lucide="badge-check"></i> <span><strong id="coverageProvider">Aetna</strong> is one of the plans we work with. We'll verify your exact benefits for free, with no commitment.</span></p>
-      <a href="verify-insurance" class="btn btn-primary btn-lg" id="coverageCta"><span id="coverageCtaText">Verify My Benefits</span> <i data-lucide="arrow-right"></i></a>
+      <a href="verify-insurance" class="btn btn-primary btn-lg" id="coverageCta" data-cta="insurance"><span id="coverageCtaText">Verify My Benefits</span> <i data-lucide="arrow-right"></i></a>
       <p class="coverage-result-note">Don't see your provider? We work with most major PPO plans. <a href="verify-insurance">Check yours free</a>.</p>
     </div>
-    <div class="insurance-cta-row" id="coverageDefaultCta"><a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a><a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> Call (424) 208-3120</a></div>
+    <div class="insurance-cta-row" id="coverageDefaultCta"><a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="insurance">Verify My Insurance <i data-lucide="arrow-right"></i></a><a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> Call (424) 208-3120</a></div>
+    <p class="insurance-disclaimer">Insurance logos are shown to help you identify your plan and are trademarks of their respective owners; they do not imply endorsement. Coverage varies by plan, and verification is free and confidential.</p>
   </div>
 </section>
 
@@ -440,6 +440,10 @@
       </div>
       <p class="tx-more reveal">Also at our <a href="rehabilitation-center">rehabilitation center</a>: <a href="programs/evening-iop">Evening IOP</a> &middot; <a href="programs/virtual-iop">Virtual IOP</a> &middot; <a href="programs/telehealth">Telehealth Rehab</a> &middot; <a href="programs/outpatient-rehab">Outpatient Drug Rehab</a> &middot; <a href="programs/psychiatric-care">Psychiatric Care</a> &middot; <a href="alcoholism-treatment-program">Alcoholism Treatment</a></p>
     </div>
+    <div style="text-align: center; margin-top: 48px;" class="reveal">
+      <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--near-black);">Not sure if your plan covers treatment for this?</p>
+      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="conditions">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+    </div>
   </div>
 </section>
 
@@ -568,7 +572,7 @@
     </div>
     <div style="text-align: center; margin-top: 48px;" class="reveal">
       <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--near-black);">Free. Confidential. Fast.</p>
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="why-us">Verify My Insurance <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -603,7 +607,7 @@
     </ol>
     <div style="text-align: center; margin-top: 56px;" class="reveal">
       <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--off-white);">Start with step 1.</p>
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="process">Verify My Insurance <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -675,7 +679,7 @@
     <h2>Let's get you scheduled.</h2>
     <p>Verify your insurance in about a minute, or call our Los Angeles admissions team and we'll walk you through every step. Free and confidential.</p>
     <div class="btn-group">
-      <a href="verify-insurance" class="btn btn-primary btn-lg">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="final">Verify My Insurance <i data-lucide="arrow-right"></i></a>
       <a href="tel:+14242083120" class="btn btn-white-outline btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
     </div>
   </div>
@@ -692,7 +696,7 @@
           <div google-add-preferred-source-btn data-theme="dark"></div>
         </div></div><div class="footer-col"><div class="footer-heading">Programs</div><nav class="footer-links"><a href="/programs/">All Programs</a><a href="/programs/php">Partial Hospitalization (PHP)</a><a href="/programs/iop">Intensive Outpatient (IOP)</a><a href="/programs/evening-iop">Evening IOP</a><a href="/programs/virtual-iop">Virtual IOP</a><a href="/programs/outpatient-rehab">Outpatient Drug Rehab</a><a href="/programs/telehealth">Telehealth Rehab</a><a href="/programs/psychiatric-care">Psychiatric Care</a></nav></div><div class="footer-col"><div class="footer-heading">Treatments</div><nav class="footer-links"><a href="/treatments/">All Treatments</a><a href="/treatments/alcohol">Alcohol Addiction</a><a href="/treatments/fentanyl">Fentanyl Addiction</a><a href="/treatments/dual-diagnosis">Dual Diagnosis</a><a href="/treatments/depression">Depression</a><a href="/treatments/anxiety">Anxiety</a></nav></div><div class="footer-col"><div class="footer-heading">Centers of Care</div><nav class="footer-links"><a href="/rehabilitation-center">Rehabilitation Center</a><a href="/alcoholism-treatment-program">Alcoholism Treatment Program</a><a href="/mental-health">Mental Health Treatment</a><a href="/spanish-speaking-treatment">Spanish-Speaking Treatment</a></nav></div><div class="footer-col"><div class="footer-heading">Admissions</div><nav class="footer-links"><a href="/admissions">Admissions &amp; Same-Week Intake</a><a href="/verify-insurance">Verify Insurance</a><a href="/insurance/">Insurance Coverage</a><a href="/contact">Contact Us</a><a href="/faq">FAQ</a><a href="/families">For Families</a></nav></div><div class="footer-col"><div class="footer-heading">Explore</div><nav class="footer-links"><a href="/locations">Our Location &amp; Areas We Serve</a><a href="/blog/">Blog</a><a href="/about">About Us</a><a href="/team">Our Team</a><a href="/our-facility">Our Facility</a></nav></div></div><div class="footer-visit"><div class="footer-visit-text"><div class="footer-visit-eyebrow">Visit Us</div><p class="footer-visit-addr">1964 Westwood Blvd, Suite 425<br>Los Angeles, CA 90025</p><p class="footer-visit-note">Our outpatient center in Westwood, West Los Angeles &mdash; minutes from Santa Monica, Beverly Hills, Brentwood, and Culver City.</p><div class="footer-visit-links"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Open in Google Maps</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025&amp;destination_place_id=ChIJd5B-5MW7woARZ672RvC5X9E" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Get directions</a></div></div><div class="footer-visit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3!2d-118.4343784!3d34.0474328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbc5e47e9077%3A0xd15fb9f046f6ae67!2sGolden%20State%20Rehab!5e0!3m2!1sen!2sus!4v1758000000000!5m2!1sen!2sus" title="Google Map: Golden State Rehab, 1964 Westwood Blvd Suite 425, Los Angeles" width="600" height="240" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div><div class="footer-bottom"><a rel="noopener noreferrer nofollow" href="https://www.jointcommission.org/" target="_blank" class="footer-seal"><img src="/images/joint-commission-gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage" width="44" height="44" loading="lazy" decoding="async"></a><p class="footer-bottom-text">&copy; 2026 Golden State Rehab. All rights reserved. Los Angeles, California.</p><nav class="footer-bottom-links"><a href="/blog/">Blog</a><a href="/faq">FAQ</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms of Use</a><a href="/sitemap.xml">Sitemap</a></nav></div><div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></div></footer>
 
-<script src="js/main.min.js?v=13" defer></script>
+<script src="js/main.min.js?v=14" defer></script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
 <script type="application/ld+json">
 {
