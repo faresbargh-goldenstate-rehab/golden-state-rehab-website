@@ -143,7 +143,6 @@ if (typeof module !== 'undefined' && module.exports) {
   var LANG = document.documentElement.lang === 'es' ? 'es' : 'en';
   var CSS_HREF = '/css/chat.min.css?v=1';
   var KB_URL = '/data/chat-kb.' + LANG + '.json';
-  var NUDGE_DELAY_MS = 10000;
   var TYPING_MS = 550;
 
   var TEXT = {
@@ -462,6 +461,32 @@ if (typeof module !== 'undefined' && module.exports) {
     document.body.appendChild(teaser);
   }
 
+  // The teaser must not compete with above-the-fold CTAs: it waits until the
+  // reader has scrolled past the reviews band (homepage), the hero (inner
+  // pages), or one viewport (pages with neither, e.g. blog posts).
+  function nudgeOnScrollPast() {
+    if (everOpened || ss('gsrChatNudged') === '1') return;
+    var sentinel = document.getElementById('reviews') ||
+      document.querySelector('section[class*="hero"]');
+    var ticking = false;
+    function passed() {
+      if (sentinel) return sentinel.getBoundingClientRect().bottom <= 0;
+      return window.scrollY >= window.innerHeight;
+    }
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () {
+        ticking = false;
+        if (!passed()) return;
+        window.removeEventListener('scroll', onScroll);
+        nudge();
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   function watchLangBanner() {
     var sync = function () {
       var present = !!document.querySelector('.lang-banner');
@@ -494,7 +519,7 @@ if (typeof module !== 'undefined' && module.exports) {
         everOpened = true;
         openPanel(false);
       } else {
-        setTimeout(nudge, NUDGE_DELAY_MS);
+        nudgeOnScrollPast();
       }
     };
     link.onload = start;
