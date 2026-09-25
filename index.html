@@ -632,7 +632,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      OUR FACILITY: SELF-ADVANCING PHOTO STRIP
      One row of photos, no controls, running edge to edge of the
-     screen at every width: 3 square tiles on desktop, one 4:5 tile
+     screen at every width: 4 square tiles on desktop, one 4:5 tile
      plus a peek of the next on mobile. Glides one photo at a time,
      slow-fast-slow, with only a 0.1s stop between glides, so the row
      reads as one continuous drift; drag (mouse) or swipe (touch) to
@@ -650,7 +650,7 @@
   .facility-strip:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
   .facility-strip.is-dragging{cursor:grabbing}
   .facility-strip-track{display:flex;gap:8px;margin:0;padding:0;list-style:none}
-  .facility-strip-item{flex:0 0 calc((100% - 16px) / 3);aspect-ratio:1 / 1;border-radius:var(--radius-md);overflow:hidden;background:var(--near-black)}
+  .facility-strip-item{flex:0 0 calc((100% - 24px) / 4);aspect-ratio:1 / 1;border-radius:var(--radius-md);overflow:hidden;background:var(--near-black)}
   .facility-strip-item img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
   @media (max-width:767px){
     .facility-strip-track{gap:6px}
@@ -665,16 +665,16 @@
   </div>
   <div class="facility-strip reveal" role="region" aria-label="Photos of our facility" tabindex="0">
     <ul class="facility-strip-track">
-      <li class="facility-strip-item"><img src="images/facility/reception-lobby-800.webp" srcset="images/facility/reception-lobby-800.webp 800w, images/facility/reception-lobby.webp 1600w" sizes="(max-width:767px) 134vw, 45vw" alt="Reception and front lounge with the Golden State Rehab signature wall" loading="lazy" draggable="false" width="800" height="600"></li>
-      <li class="facility-strip-item"><img src="images/facility/individual-therapy-room-800.webp" srcset="images/facility/individual-therapy-room-800.webp 800w, images/facility/individual-therapy-room.webp 1600w" sizes="(max-width:767px) 80vw, 34vw" alt="Private one-on-one therapy office with leather lounge chair and sofa" loading="lazy" draggable="false" width="600" height="800"></li>
-      <li class="facility-strip-item"><img src="images/facility/group-therapy-room-800.webp" srcset="images/facility/group-therapy-room-800.webp 800w, images/facility/group-therapy-room.webp 1600w" sizes="(max-width:767px) 134vw, 45vw" alt="Group therapy room with a circle of chairs" loading="lazy" draggable="false" width="800" height="600"></li>
-      <li class="facility-strip-item"><img src="images/facility/meditation-room-800.webp" srcset="images/facility/meditation-room-800.webp 800w, images/facility/meditation-room.webp 1600w" sizes="(max-width:767px) 80vw, 34vw" alt="Meditation and yoga room with floor cushions and warm lantern lighting" loading="lazy" draggable="false" width="600" height="800"></li>
-      <li class="facility-strip-item"><img src="images/facility/reading-lounge-800.webp" srcset="images/facility/reading-lounge-800.webp 800w, images/facility/reading-lounge.webp 1600w" sizes="(max-width:767px) 80vw, 34vw" alt="Quiet reading lounge with library shelving and armchairs" loading="lazy" draggable="false" width="600" height="800"></li>
-      <li class="facility-strip-item"><img src="images/facility/computer-workstations-800.webp" srcset="images/facility/computer-workstations-800.webp 800w, images/facility/computer-workstations.webp 1600w" sizes="(max-width:767px) 80vw, 34vw" alt="Computer workstations with monitors and lounge chairs for work and study" loading="lazy" draggable="false" width="600" height="800"></li>
-      <li class="facility-strip-item"><img src="images/facility/game-room-800.webp" srcset="images/facility/game-room-800.webp 800w, images/facility/game-room.webp 1600w" sizes="(max-width:767px) 80vw, 34vw" alt="Game room with full-size ping pong table and lounge seating" loading="lazy" draggable="false" width="600" height="800"></li>
-      <li class="facility-strip-item"><img src="images/facility/recreation-room-800.webp" srcset="images/facility/recreation-room-800.webp 800w, images/facility/recreation-room.webp 1600w" sizes="(max-width:767px) 134vw, 45vw" alt="Recreation room with shared dining table, ping pong, and built-in shelving" loading="lazy" draggable="false" width="800" height="600"></li>
-      <li class="facility-strip-item"><img src="images/facility/tv-lounge-800.webp" srcset="images/facility/tv-lounge-800.webp 800w, images/facility/tv-lounge.webp 1600w" sizes="(max-width:767px) 80vw, 34vw" alt="Lounge and common area with media wall, sofas and lounge chairs" loading="lazy" draggable="false" width="600" height="800"></li>
-      <li class="facility-strip-item"><img src="images/facility/waiting-area-800.webp" srcset="images/facility/waiting-area-800.webp 800w, images/facility/waiting-area.webp 1600w" sizes="(max-width:767px) 134vw, 45vw" alt="Waiting area with leather swivel chairs, round rug, and tall arched mirror" loading="lazy" draggable="false" width="800" height="600"></li>
+      <li class="facility-strip-item"><img src="images/facility/reception-lobby-800.webp" srcset="images/facility/reception-lobby-800.webp 800w, images/facility/reception-lobby.webp 1600w" sizes="(max-width:767px) 134vw, 34vw" alt="Reception and front lounge with the Golden State Rehab signature wall" loading="lazy" draggable="false" width="800" height="600"></li>
+      <li class="facility-strip-item"><img src="images/facility/individual-therapy-room-800.webp" srcset="images/facility/individual-therapy-room-800.webp 800w, images/facility/individual-therapy-room.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Private one-on-one therapy office with leather lounge chair and sofa" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/group-therapy-room-800.webp" srcset="images/facility/group-therapy-room-800.webp 800w, images/facility/group-therapy-room.webp 1600w" sizes="(max-width:767px) 134vw, 34vw" alt="Group therapy room with a circle of chairs" loading="lazy" draggable="false" width="800" height="600"></li>
+      <li class="facility-strip-item"><img src="images/facility/meditation-room-800.webp" srcset="images/facility/meditation-room-800.webp 800w, images/facility/meditation-room.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Meditation and yoga room with floor cushions and warm lantern lighting" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/reading-lounge-800.webp" srcset="images/facility/reading-lounge-800.webp 800w, images/facility/reading-lounge.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Quiet reading lounge with library shelving and armchairs" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/computer-workstations-800.webp" srcset="images/facility/computer-workstations-800.webp 800w, images/facility/computer-workstations.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Computer workstations with monitors and lounge chairs for work and study" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/game-room-800.webp" srcset="images/facility/game-room-800.webp 800w, images/facility/game-room.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Game room with full-size ping pong table and lounge seating" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/recreation-room-800.webp" srcset="images/facility/recreation-room-800.webp 800w, images/facility/recreation-room.webp 1600w" sizes="(max-width:767px) 134vw, 34vw" alt="Recreation room with shared dining table, ping pong, and built-in shelving" loading="lazy" draggable="false" width="800" height="600"></li>
+      <li class="facility-strip-item"><img src="images/facility/tv-lounge-800.webp" srcset="images/facility/tv-lounge-800.webp 800w, images/facility/tv-lounge.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Lounge and common area with media wall, sofas and lounge chairs" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/waiting-area-800.webp" srcset="images/facility/waiting-area-800.webp 800w, images/facility/waiting-area.webp 1600w" sizes="(max-width:767px) 134vw, 34vw" alt="Waiting area with leather swivel chairs, round rug, and tall arched mirror" loading="lazy" draggable="false" width="800" height="600"></li>
     </ul>
   </div>
 </section>
