@@ -153,6 +153,14 @@
 <!-- ═══════════════════════════════════════════════════════════
      HERO + TRUST BADGES
      ═══════════════════════════════════════════════════════════ -->
+<style>
+  /* Hero subheadline holds three lines on phones: the font tracks the content
+     width (100vw - 48px), so every phone wraps it like a 400px screen does at
+     16px, with a little slack. Capped at 16px, floored at 13px. */
+  @media (max-width:640px){
+    .hero .hero-subheadline{font-size:clamp(13px,calc(4.55vw - 2.2px),16px)}
+  }
+</style>
 <section class="hero" aria-label="Hero">
   <div class="container hero-content">
     <p class="hero-rating">
@@ -169,7 +177,7 @@
       <span class="visually-hidden">Rated 5.0 out of 5 stars on Google</span>
     </p>
     <h1 class="hero-h1-stack"><span class="hero-h1-line">Los Angeles Addiction</span> <span class="hero-h1-line">Treatment Center</span> <span class="hero-h1-line hero-h1-proof">100+ Recoveries</span></h1>
-    <p class="hero-subheadline">Outpatient rehab in West Los Angeles for drugs, alcohol, and mental health. Day or evening PHP and IOP, so you can keep your job and live at home.</p>
+    <p class="hero-subheadline">Outpatient rehab in West Los Angeles for drugs, alcohol, and mental health. PHP or IOP: you can keep your job and live at home.</p>
 
     <div class="hero-actions">
       <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="hero">Verify My Insurance <i data-lucide="arrow-right"></i></a>
@@ -628,8 +636,9 @@
      plus a peek of the next on mobile. Glides one photo at a time,
      slow-fast-slow, with only a 0.1s stop between glides, so the row
      reads as one continuous drift; drag (mouse) or swipe (touch) to
-     browse. Loops endlessly via
-     clone sets on either side. Styles and script are page-scoped
+     browse. The row never scrolls natively (overflow hidden,
+     touch-action pan-y), so vertical page scrolls can't disturb it.
+     Loops endlessly via clone sets on either side. Styles and script are page-scoped
      here (es/index.html still uses .facility-gallery from
      styles.css). No tour CTA by design — single-CTA page
      discipline (verify insurance / call only).
@@ -637,13 +646,11 @@
 <style>
   .facility-section .section-header{margin-bottom:40px}
   .facility-section .section-header h2{margin:0}
-  .facility-strip{overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab;user-select:none;-webkit-user-select:none}
-  .facility-strip::-webkit-scrollbar{display:none}
+  .facility-strip{overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
   .facility-strip:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
   .facility-strip.is-dragging{cursor:grabbing}
-  .facility-strip.is-dragging,.facility-strip.is-animating{scroll-snap-type:none}
   .facility-strip-track{display:flex;gap:8px;margin:0;padding:0;list-style:none}
-  .facility-strip-item{flex:0 0 calc((100% - 16px) / 3);aspect-ratio:1 / 1;border-radius:var(--radius-md);overflow:hidden;background:var(--near-black);scroll-snap-align:start}
+  .facility-strip-item{flex:0 0 calc((100% - 16px) / 3);aspect-ratio:1 / 1;border-radius:var(--radius-md);overflow:hidden;background:var(--near-black)}
   .facility-strip-item img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
   @media (max-width:767px){
     .facility-strip-track{gap:6px}
@@ -672,7 +679,12 @@
   </div>
 </section>
 <script>
-// Facility strip: near-continuous glide autoplay, mouse drag, endless loop.
+// Facility strip: near-continuous glide autoplay, drag/swipe, endless loop.
+// The row moves only under script control (overflow hidden, touch-action
+// pan-y): the browser keeps every vertical gesture for the page and hands us
+// sideways drags as pointer events. With no native scrolling or snapping,
+// nothing but this script can move the row, so a page scroll never
+// interrupts or resets a glide.
 (function () {
   var strip = document.querySelector('.facility-strip');
   if (!strip) return;
@@ -682,8 +694,10 @@
   var SLIDE_MS = 3150;   // one-photo glide: slow start, fast middle, slow finish
   var DWELL_MS = 100;    // the brief stop between glides
   var RESUME_MS = 4000;  // idle time after an interaction before autoplay resumes
-  var SETTLE_MS = 150;   // quiet period that counts as "scroll finished"
-  var SNAP_MS = 500;     // glide to the nearest photo after a drag
+  var SETTLE_MS = 150;   // quiet period that counts as "wheel/resize finished"
+  var SNAP_MS = 500;     // glide to a photo after a drag, wheel or arrow key
+  var DRAG_SLOP = 6;     // px a finger must travel sideways before it drags
+  var FLICK_PX = 40;     // a drag this long moves on to the next photo
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   // One clone set on each side of the originals; the view always settles back
@@ -712,22 +726,16 @@
     var p = pitch();
     return Math.round(strip.scrollLeft / p) * p;
   }
-
-  // Instant, snap-free reposition (loop wrap, resize re-align).
-  function jumpTo(x) {
-    strip.classList.add('is-animating');
-    strip.scrollLeft = x;
-    strip.classList.remove('is-animating');
-  }
+  // Wrap back into the middle set (the sets are identical, so it's invisible).
   function normalize() {
     var p = pitch();
     if (!p) return;
     var index = Math.round(strip.scrollLeft / p);
-    if (index < COUNT) jumpTo(strip.scrollLeft + COUNT * p);
-    else if (index >= COUNT * 2) jumpTo(strip.scrollLeft - COUNT * p);
+    if (index < COUNT) strip.scrollLeft += COUNT * p;
+    else if (index >= COUNT * 2) strip.scrollLeft -= COUNT * p;
   }
 
-  // ── Eased glide (snap is suspended while it runs) ──
+  // ── Eased glide ──
   var frameId = null;
   // Sine ease-in-out: speed follows sin(πt), easing up from rest to a peak
   // mid-glide and back down symmetrically, so the row swells and slows.
@@ -737,31 +745,21 @@
   function cancelGlide() {
     if (frameId !== null) cancelAnimationFrame(frameId);
     frameId = null;
-    strip.classList.remove('is-animating');
   }
   function glideTo(target, duration, done) {
     cancelGlide();
     var start = strip.scrollLeft;
     var distance = target - start;
     var startedAt = null;
-    var lastSet = start;
-    strip.classList.add('is-animating');
     function frame(now) {
-      // A finger is panning the row itself (it drifted from where the glide
-      // put it): that is a real sideways swipe, so hand the row over.
-      if (gesture && gesture.axis !== 'x' && Math.abs(strip.scrollLeft - lastSet) > 3) {
-        claimSwipe();
-        return;
-      }
       if (startedAt === null) startedAt = now;
       var progress = Math.min((now - startedAt) / duration, 1);
-      strip.scrollLeft = lastSet = start + distance * easeSwell(progress);
+      strip.scrollLeft = start + distance * easeSwell(progress);
       if (progress < 1) {
         frameId = requestAnimationFrame(frame);
         return;
       }
       frameId = null;
-      strip.classList.remove('is-animating');
       normalize();
       if (done) done();
     }
@@ -771,10 +769,10 @@
   // ── Autoplay: glide one photo, rest, repeat ──
   var timer = null;
   var onScreen = !('IntersectionObserver' in window);
-  var state = { touching: false, dragging: false, keyboard: false };
+  var state = { dragging: false, keyboard: false };
 
   function interacting() {
-    return state.touching || state.dragging || state.keyboard;
+    return state.dragging || state.keyboard;
   }
   function canPlay() {
     return onScreen && !document.hidden && !reducedMotion.matches && !interacting();
@@ -801,77 +799,80 @@
     else schedule(RESUME_MS);
   }
 
-  // ── Mouse: hovering leaves autoplay running; click-and-drag takes over ──
-  var drag = null;
-  strip.addEventListener('pointerdown', function (e) {
-    if (e.pointerType !== 'mouse' || e.button !== 0) return;
-    e.preventDefault();
+  // ── Drag (mouse) and swipe (touch, pen) ──
+  // A mouse drags at once. A finger drags only once it has moved sideways
+  // more than up/down; if the browser claims the gesture as a page scroll it
+  // sends pointercancel before that, and the glide never notices.
+  var drag = null;  // { id, x, y, left, active }
+  function beginDrag(e) {
+    drag.active = true;
+    drag.x = e.clientX;
+    drag.left = strip.scrollLeft;
     cancelGlide();
-    drag = { x: e.clientX, left: strip.scrollLeft };
-    strip.classList.add('is-dragging');
     strip.setPointerCapture(e.pointerId);
+    strip.classList.add('is-dragging');
     setState('dragging', true);
+  }
+  strip.addEventListener('pointerdown', function (e) {
+    if (drag || (e.pointerType === 'mouse' && e.button !== 0)) return;
+    drag = { id: e.pointerId, x: e.clientX, y: e.clientY, left: strip.scrollLeft, active: false };
+    if (e.pointerType === 'mouse') {
+      e.preventDefault();
+      beginDrag(e);
+    }
   });
   strip.addEventListener('pointermove', function (e) {
-    if (drag) strip.scrollLeft = drag.left - (e.clientX - drag.x);
+    if (!drag || e.pointerId !== drag.id) return;
+    if (!drag.active) {
+      var dx = Math.abs(e.clientX - drag.x);
+      var dy = Math.abs(e.clientY - drag.y);
+      if (dx < DRAG_SLOP || dx <= dy) return;
+      beginDrag(e);
+    }
+    strip.scrollLeft = drag.left - (e.clientX - drag.x);
   });
   function endDrag(e) {
-    if (!drag) return;
+    if (!drag || e.pointerId !== drag.id) return;
+    var ended = drag;
     drag = null;
+    if (!ended.active) return;
     if (strip.hasPointerCapture(e.pointerId)) strip.releasePointerCapture(e.pointerId);
-    glideTo(nearestStop(), SNAP_MS);
     strip.classList.remove('is-dragging');
+    // Settle on a whole photo: onward in the drag's direction after a real
+    // swipe, back to the nearest one after a nudge.
+    var p = pitch();
+    var moved = strip.scrollLeft - ended.left;
+    var target = nearestStop();
+    if (moved >= FLICK_PX) target = Math.ceil(strip.scrollLeft / p) * p;
+    else if (moved <= -FLICK_PX) target = Math.floor(strip.scrollLeft / p) * p;
+    glideTo(target, SNAP_MS);
     setState('dragging', false);
   }
   strip.addEventListener('pointerup', endDrag);
   strip.addEventListener('pointercancel', endDrag);
 
-  // Trackpad side-swipes and shift+wheel also take over, the same as a drag.
+  // ── Trackpad side-swipes and shift+wheel scroll the row, then settle ──
+  var wheelTimer = null;
   strip.addEventListener('wheel', function (e) {
-    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) && !e.shiftKey) return;
+    var sideways = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+    if (!sideways && !e.shiftKey) return;  // vertical wheel scrolls the page
+    e.preventDefault();
+    var scale = e.deltaMode === 1 ? 16 : 1;  // line-based wheels (Firefox)
     stop();
-    schedule(RESUME_MS);
-  }, { passive: true });
+    strip.scrollLeft += (sideways ? e.deltaX : e.deltaY) * scale;
+    clearTimeout(wheelTimer);
+    wheelTimer = setTimeout(function () {
+      glideTo(nearestStop(), SNAP_MS);
+      schedule(RESUME_MS);
+    }, SETTLE_MS);
+  }, { passive: false });
 
-  // ── Touch: native swipe + CSS snap. Only a clearly sideways swipe takes
-  // over; a page scroll that starts on the strip leaves the glide running,
-  // since stopping it mid-glide makes snap jerk the row to the nearest photo.
-  // Diagonal gestures stay with the page unless the row itself moves under
-  // the finger (caught in glideTo's frame). ──
-  var TOUCH_SLOP = 12;   // px of travel before a gesture's direction counts
-  var SIDEWAYS_RATIO = 2; // horizontal travel must exceed vertical by this much
-  var gesture = null;    // { x, y, scrollY, axis: null | 'x' | 'y' }
-  function claimSwipe() {
-    gesture.axis = 'x';
-    cancelGlide();
-    setState('touching', true);
-  }
-  strip.addEventListener('touchstart', function (e) {
-    var t = e.touches[0];
-    gesture = { x: t.clientX, y: t.clientY, scrollY: window.scrollY, axis: null };
-  }, { passive: true });
-  strip.addEventListener('touchmove', function (e) {
-    if (!gesture || gesture.axis) return;
-    // The page has started scrolling: this gesture is vertical.
-    if (window.scrollY !== gesture.scrollY) {
-      gesture.axis = 'y';
-      return;
-    }
-    var t = e.touches[0];
-    var dx = Math.abs(t.clientX - gesture.x);
-    var dy = Math.abs(t.clientY - gesture.y);
-    if (dx < TOUCH_SLOP && dy < TOUCH_SLOP) return;
-    if (dx > dy * SIDEWAYS_RATIO) claimSwipe();
-    else gesture.axis = 'y';
-  }, { passive: true });
-  function endTouch() {
-    if (gesture && gesture.axis === 'x') setState('touching', false);
-    gesture = null;
-  }
-  strip.addEventListener('touchend', endTouch, { passive: true });
-  strip.addEventListener('touchcancel', endTouch, { passive: true });
-
-  // ── Keyboard: arrow keys scroll natively; pause while focus is visible ──
+  // ── Keyboard: arrow keys step one photo; pause while focus is visible ──
+  strip.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault();
+    glideTo(nearestStop() + (e.key === 'ArrowRight' ? pitch() : -pitch()), SNAP_MS);
+  });
   strip.addEventListener('focusin', function () {
     var visible = true;
     try { visible = strip.matches(':focus-visible'); } catch (err) { /* older engines: treat as keyboard */ }
@@ -879,16 +880,8 @@
   });
   strip.addEventListener('focusout', function () { setState('keyboard', false); });
 
-  // Swipes, wheel and keyboard scrolls wrap the loop once they settle.
-  var settleTimer = null;
-  strip.addEventListener('scroll', function () {
-    if (frameId !== null || drag) return;
-    clearTimeout(settleTimer);
-    settleTimer = setTimeout(normalize, SETTLE_MS);
-  }, { passive: true });
-
   // Run only while the strip is on screen and the tab is visible. Photos
-  // sitting off to the side of the scroller are fetched as the section
+  // sitting off to the side of the row are fetched as the section
   // approaches, so an autoplay glide never reveals a blank tile.
   if (!onScreen) {
     var images = track.querySelectorAll('img');
@@ -915,22 +908,28 @@
     });
   }
 
-  // Keep a whole photo at the left edge when the tile width changes.
+  // Keep a whole photo at the left edge when the tile width changes. Mobile
+  // browsers fire resize whenever the address bar shows or hides during a
+  // page scroll; that changes only the height, so it is ignored here instead
+  // of stopping the glide and jumping the row.
   var lastPitch = pitch();
+  var lastWidth = strip.clientWidth;
   var resizeTimer = null;
   window.addEventListener('resize', function () {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
+      if (strip.clientWidth === lastWidth) return;
+      lastWidth = strip.clientWidth;
       var index = lastPitch ? Math.round(strip.scrollLeft / lastPitch) : COUNT;
       stop();
       lastPitch = pitch();
-      jumpTo(index * lastPitch);
+      strip.scrollLeft = index * lastPitch;
       normalize();
       schedule(DWELL_MS);
     }, SETTLE_MS);
   });
 
-  jumpTo(COUNT * lastPitch);
+  strip.scrollLeft = COUNT * lastPitch;
   schedule(DWELL_MS);
 }());
 </script>
