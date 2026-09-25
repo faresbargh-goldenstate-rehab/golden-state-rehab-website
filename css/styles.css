@@ -1015,25 +1015,13 @@ p:last-child { margin-bottom: 0; }
   background: var(--white);
   border: 1px solid transparent;
   border-radius: 12px;
-  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 }
 .ins-logo {
   height: 34px;
   width: auto;
   max-width: 114px;
   object-fit: contain;
-  filter: grayscale(1);
-  opacity: .55;
-  transition: filter .35s ease, opacity .35s ease;
 }
-.ins-tile:hover, .ins-tile.is-lit {
-  transform: translateY(-4px);
-  border-color: var(--border);
-  box-shadow: 0 10px 24px rgba(20, 14, 4, .10);
-}
-.ins-tile:hover .ins-logo, .ins-tile.is-lit .ins-logo { filter: grayscale(0); opacity: 1; }
-.ins-tile.is-near { transform: translateY(-2px); }
-.ins-tile.is-near .ins-logo { filter: grayscale(.45); opacity: .8; }
 .insurance-disclaimer {
   max-width: 680px;
   margin: 20px auto 0;
@@ -1048,10 +1036,6 @@ p:last-child { margin-bottom: 0; }
   gap: 14px;
   flex-wrap: wrap;
   margin-top: 28px;
-}
-@media (prefers-reduced-motion: reduce) {
-  .ins-tile, .ins-logo { transition: none; }
-  .ins-tile:hover, .ins-tile.is-lit { transform: none; }
 }
 
 /* 15. GOOGLE REVIEWS
@@ -1669,8 +1653,8 @@ p:last-child { margin-bottom: 0; }
 .footer-social-link svg { width: 18px; height: 18px; display: block; }
 
 /* Joint Commission Gold Seal. Joint Commission brand rules require four-color
-   reproduction on websites and forbid altering the mark, so — unlike .ins-logo —
-   this deliberately carries NO grayscale/opacity filter. Width and height are
+   reproduction on websites and forbid altering the mark, so this deliberately
+   carries NO grayscale/opacity filter. Width and height are
    equal to hold the seal's proportional relationship. Hover is transform-only:
    it moves the mark without recoloring or reshaping it.
 

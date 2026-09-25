@@ -541,48 +541,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
-// ── Insurance logo wave: lights each logo up in sequence, like a wave ──
-(function () {
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var grids = Array.prototype.slice.call(document.querySelectorAll('.insurance-logos-grid'));
-  if (!grids.length) return;
-  grids.forEach(function (grid) {
-    var tiles = Array.prototype.slice.call(grid.querySelectorAll('.ins-tile'));
-    if (tiles.length < 3) return;
-    var i = -1, timer = null, hovered = false;
-
-    function step() {
-      if (hovered) return;
-      i = (i + 1) % tiles.length;
-      var prev = (i - 1 + tiles.length) % tiles.length;
-      var next = (i + 1) % tiles.length;
-      tiles.forEach(function (t, idx) {
-        t.classList.toggle('is-lit', idx === i);
-        t.classList.toggle('is-near', idx === prev || idx === next);
-      });
-    }
-    function clearWave() {
-      tiles.forEach(function (t) { t.classList.remove('is-lit', 'is-near'); });
-    }
-    function start() { if (!timer) timer = setInterval(step, 380); }
-    function stop() { if (timer) { clearInterval(timer); timer = null; } clearWave(); }
-
-    // Only animate while the grid is on screen
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { start(); } else { stop(); } });
-      }, { threshold: 0.25 }).observe(grid);
-    } else {
-      start();
-    }
-    // Hand control to the visitor's cursor while they explore
-    grid.addEventListener('mouseenter', function () { hovered = true; clearWave(); });
-    grid.addEventListener('mouseleave', function () { hovered = false; });
-    grid.addEventListener('touchstart', function () { hovered = true; clearWave(); }, { passive: true });
-  });
-})();
-
-
 /* ============================================================
    Sticky-header height sync
    ------------------------------------------------------------
