@@ -520,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
-// ── GA4 conversion events (phone_click, cta_click, insurance_tile_click) ──
+// ── GA4 conversion events (phone_click, cta_click) ──
 // gtag is intentionally absent on PHI pages (contact, verify-insurance,
 // intake-success), so every call is guarded and no event carries PHI.
 (function () {
@@ -528,35 +528,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gtag === 'function') gtag('event', name, params || {});
   }
   document.addEventListener('click', function (e) {
-    var tile = e.target.closest('.ins-tile[data-provider]');
-    if (tile) { track('insurance_tile_click', { provider: tile.getAttribute('data-provider') }); return; }
     var link = e.target.closest('a[href]');
     if (!link) return;
     if (link.getAttribute('href').indexOf('tel:') === 0) track('phone_click');
     var cta = link.getAttribute('data-cta');
     if (cta) track('cta_click', { location: cta });
-  });
-})();
-
-
-// ── Insurance coverage checker (confirms acceptance, routes to free VOB) ──
-(function () {
-  var tiles = Array.prototype.slice.call(document.querySelectorAll('.ins-tile'));
-  if (!tiles.length) return;
-  var result = document.getElementById('coverageResult');
-  var providerEl = document.getElementById('coverageProvider');
-  var ctaText = document.getElementById('coverageCtaText');
-  var defaultCta = document.getElementById('coverageDefaultCta');
-  if (!result || !providerEl || !ctaText) return;
-  tiles.forEach(function (tile) {
-    tile.addEventListener('click', function () {
-      var name = tile.getAttribute('data-provider');
-      tiles.forEach(function (t) { t.classList.toggle('is-selected', t === tile); });
-      providerEl.textContent = name;
-      ctaText.textContent = 'Verify My ' + name + ' Benefits';
-      if (defaultCta) defaultCta.hidden = true;
-      result.hidden = false;
-    });
   });
 })();
 
@@ -569,10 +545,10 @@ document.addEventListener('DOMContentLoaded', () => {
   grids.forEach(function (grid) {
     var tiles = Array.prototype.slice.call(grid.querySelectorAll('.ins-tile'));
     if (tiles.length < 3) return;
-    var i = -1, timer = null, hovered = false, stopped = false;
+    var i = -1, timer = null, hovered = false;
 
     function step() {
-      if (hovered || stopped) return;
+      if (hovered) return;
       i = (i + 1) % tiles.length;
       var prev = (i - 1 + tiles.length) % tiles.length;
       var next = (i + 1) % tiles.length;
@@ -584,7 +560,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function clearWave() {
       tiles.forEach(function (t) { t.classList.remove('is-lit', 'is-near'); });
     }
-    function start() { if (!timer && !stopped) timer = setInterval(step, 380); }
+    function start() { if (!timer) timer = setInterval(step, 380); }
     function stop() { if (timer) { clearInterval(timer); timer = null; } clearWave(); }
 
     // Only animate while the grid is on screen
@@ -599,10 +575,6 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.addEventListener('mouseenter', function () { hovered = true; clearWave(); });
     grid.addEventListener('mouseleave', function () { hovered = false; });
     grid.addEventListener('touchstart', function () { hovered = true; clearWave(); }, { passive: true });
-    // Once a provider is picked (homepage checker), retire the wave
-    tiles.forEach(function (t) {
-      t.addEventListener('click', function () { stopped = true; stop(); });
-    });
   });
 })();
 

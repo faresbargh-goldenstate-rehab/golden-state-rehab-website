@@ -39,8 +39,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
-  <link rel="stylesheet" href="css/styles.min.css?v=50">
+  <link rel="stylesheet" href="css/styles.min.css?v=51">
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
@@ -194,17 +195,11 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     PROOF: six unedited Google review screenshots. The reviews carry
-     the credibility on their own, so nothing is stacked underneath
-     them competing for the same attention.
-
-     Nothing is behind a swipe: four reviews sit on the page, two per
-     row, and "Read more" opens all six. The widths are deliberately
-     unequal because the screenshots were captured at two different
-     browser zooms (the older three fit ~92 characters per line, the
-     newer three ~48). Each row pairs one of each and exactly fills
-     the container, so every review's body copy renders at the same
-     size.
+     PROOF: six Google reviews transcribed verbatim into HTML.
+     Four previews retain the original captures' proportions; "Read
+     more" opens all six. Full review text is present in the initial
+     HTML. Dates and NEW badges are preserved as originally captured.
+     Images are clipped to the original photos and photographic avatar.
      ═══════════════════════════════════════════════════════════ -->
 <section class="section proof" id="reviews" aria-labelledby="reviews-heading">
   <div class="container">
@@ -216,29 +211,142 @@
   <div class="container">
     <ul class="proof-wall reveal">
       <li class="proof-shot proof-shot--narrow">
-        <img src="images/reviews/google-review-4.webp" width="808" height="610" loading="lazy" decoding="async"
-             alt="Five-star Google review from Yvette Vargas: “For myself it’s been less then a month that I have been here. To share my experience here. It’s been one of the best programs by far. All the facilitators have a lot of experience in recovery and walk the talk. They are fun and are attentive to our needs and want to see us shine and have a beautiful out look on recovery. There’s never a dull moment as far as participation and perception. We appreciate this program and hands down. We recommend this place.”">
+        <article class="google-review google-review--4" aria-label="Google review by Yvette Vargas">
+          <header class="google-review-header">
+            <span class="google-review-avatar" aria-hidden="true">Y</span>
+            <div class="google-review-author">
+              <h3 class="google-review-name"><span>Yvette Vargas</span></h3>
+              <p class="google-review-meta">2 reviews</p>
+            </div>
+            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="12" cy="19" r="2.1"/></svg></span>
+          </header>
+          <div class="google-review-content">
+            <div class="google-review-rating">
+              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+              <span class="google-review-age">a week ago</span>
+              <span class="google-review-new">NEW</span>
+            </div>
+            <blockquote class="google-review-text">
+              <p>For myself it’s been less then a month that I have been<br>
+              here. To share my experience here. It’s been one of<br>
+              the best programs by far. All the facilitators have a lot<br>
+              of experience in recovery and walk the talk. They are<br>
+              fun and are attentive to our needs and want to see us<br>
+              shine and have a beautiful out look on recovery.<br>
+              There’s never a dull moment as far as participation<br>
+              and perception. We appreciate this program and<br>
+              hands down. We recommend this place 💯</p>
+            </blockquote>
+          </div>
+        </article>
         <button class="proof-shot-more" type="button" data-review="4">Read more<span class="visually-hidden">: opens all six reviews</span></button>
       </li>
       <li class="proof-shot proof-shot--wide">
-        <img src="images/reviews/google-review-1.webp" width="1100" height="1229" loading="lazy" decoding="async"
-             alt="Five-star Google review from Dennis: “This place is truly amazing! From the moment I arrived, I felt welcomed, supported, and treated with genuine care and respect. The staff is incredible and goes above and beyond to make sure everyone feels heard, understood, and encouraged.” The review includes a photo posted by the reviewer.">
+        <article class="google-review google-review--1 google-review--wide" aria-label="Google review by Dennis">
+          <header class="google-review-header">
+            <span class="google-review-avatar" aria-hidden="true">D</span>
+            <div class="google-review-author">
+              <h3 class="google-review-name"><span>Dennis</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
+              <p class="google-review-meta">1 review • 1 photo</p>
+            </div>
+            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
+          </header>
+          <div class="google-review-content">
+            <div class="google-review-rating">
+              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+              <span class="google-review-age">3 days ago</span>
+              <span class="google-review-new">NEW</span>
+            </div>
+            <blockquote class="google-review-text">
+              <p>This place is truly amazing! From the moment I arrived, I felt welcomed, supported, and<br>
+              treated with genuine care and respect. The staff is incredible and goes above and<br>
+              beyond to make sure everyone feels heard, understood, and encouraged. You can tell<br>
+              they are passionate about the work they do and truly want to see people succeed.</p>
+              <p>The groups are also excellent. They are informative, engaging, and provide helpful tools<br>
+              that can be applied to everyday life. The facilitators create a comfortable and supportive<br>
+              environment where people can be honest, participate, and learn without feeling judged.<br>
+              I have gained so much insight, encouragement, and motivation from the groups and the<br>
+              staff.</p>
+              <p>I am extremely grateful for the support I received here. This program has made a<br>
+              positive difference in my life, and I would highly recommend it to anyone looking for a<br>
+              safe, caring, and supportive place to grow, heal, and move forward. Thank you to the<br>
+              entire staff for everything you do!</p>
+            </blockquote>
+            <div class="google-review-photo">
+              <img src="images/reviews/google-review-1.webp" width="1100" height="1229" loading="lazy" decoding="async" alt="Photo shared by Dennis with his Google review: three people standing together at Golden State Rehab.">
+            </div>
+          </div>
+        </article>
         <button class="proof-shot-more" type="button" data-review="1">Read more<span class="visually-hidden">: opens all six reviews</span></button>
       </li>
       <li class="proof-shot proof-shot--wide">
-        <img src="images/reviews/google-review-2.webp" width="1100" height="904" loading="lazy" decoding="async"
-             alt="Five-star Google review from Gregory Icenogle: “Golden State Rehab gave me a second chance at life and helped me get my sobriety back. From the moment I got there, the place felt safe, calm, and welcoming. It isn’t just a place for treatment, it feels like family.” The review includes a photo posted by the reviewer.">
+        <article class="google-review google-review--2 google-review--wide" aria-label="Google review by Gregory Icenogle">
+          <header class="google-review-header">
+            <span class="google-review-avatar" aria-hidden="true">G</span>
+            <div class="google-review-author">
+              <h3 class="google-review-name"><span>Gregory Icenogle</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
+              <p class="google-review-meta">11 reviews • 2 photos</p>
+            </div>
+            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
+          </header>
+          <div class="google-review-content">
+            <div class="google-review-rating">
+              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+              <span class="google-review-age">3 weeks ago</span>
+              <span class="google-review-new">NEW</span>
+            </div>
+            <blockquote class="google-review-text">
+              <p>Golden State Rehab gave me a second chance at life and helped me get my sobriety back.<br>
+              From the moment I got there, the place felt safe, calm, and welcoming. The location is<br>
+              amazing and it honestly felt like a home away from home.<br class="google-review-paragraph-break">
+              The staff really care about your recovery. Juanita and Scott helped me through some of the<br>
+              hardest parts and made sure I never felt like I was doing it alone. Big thank you to them and<br>
+              the whole Golden State Rehab team for helping me heal and start feeling like myself again.<br>
+              They also got me a cake for my birthday !! It isn’t just a place for treatment it feels like family</p>
+            </blockquote>
+            <div class="google-review-photo">
+              <img src="images/reviews/google-review-2.webp" width="1100" height="904" loading="lazy" decoding="async" alt="Photo shared by Gregory Icenogle with his Google review: a person seated at a table at Golden State Rehab.">
+            </div>
+          </div>
+        </article>
         <button class="proof-shot-more" type="button" data-review="2">Read more<span class="visually-hidden">: opens all six reviews</span></button>
       </li>
       <li class="proof-shot proof-shot--narrow proof-shot--desktop-only">
-        <img src="images/reviews/google-review-6.webp" width="796" height="634" loading="lazy" decoding="async"
-             alt="Five-star Google review from Mikey Iava: “The best program ive been in since i started my recovery journey. The staff and owners actually listen to you and show genuine care which ive never experienced before. The groups are very engaging and very fun! Ive grown more in my short time here at golden state rehab than i have in my entire journey of recovery. If your serious about getting sober and want to grow while have genuine connections and having fun then i cant recommend golden state rehab enough!”">
+        <article class="google-review google-review--6" aria-label="Google review by Mikey Iava">
+          <header class="google-review-header">
+            <span class="google-review-avatar" aria-hidden="true">M</span>
+            <div class="google-review-author">
+              <h3 class="google-review-name"><span>Mikey Iava</span></h3>
+              <p class="google-review-meta">1 review</p>
+            </div>
+            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="12" cy="19" r="2.1"/></svg></span>
+          </header>
+          <div class="google-review-content">
+            <div class="google-review-rating">
+              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+              <span class="google-review-age">a week ago</span>
+              <span class="google-review-new">NEW</span>
+            </div>
+            <blockquote class="google-review-text">
+              <p>The best program ive been in since i started my<br>
+              recovery journey . The staff and owners actually listen<br>
+              to you and show genuine care which ive never<br>
+              experienced before . The groups are very engaging<br>
+              and very fun ! Ive grown more in my short time here at<br>
+              golden state rehab than i have in my entire journey of<br>
+              recovery . If your serious about getting sober and want<br>
+              to grow while have genuine connections and having<br>
+              fun then i cant recommend golden state rehab enough<br>
+              !</p>
+            </blockquote>
+          </div>
+        </article>
         <button class="proof-shot-more" type="button" data-review="6">Read more<span class="visually-hidden">: opens all six reviews</span></button>
       </li>
     </ul>
   </div>
   <!-- All six, read as a transparent scrolling view rather than a boxed
-       dialog: the captures float on the blurred page with nothing around
+       dialog: the reviews float on the blurred page with nothing around
        them but a close button. -->
   <div class="proof-modal" id="reviewsModal" hidden role="dialog" aria-modal="true" aria-labelledby="reviewsModalTitle">
     <button class="proof-modal-close" type="button" aria-label="Close reviews"><i data-lucide="x"></i></button>
@@ -246,28 +354,190 @@
       <div class="proof-modal-inner">
       <p class="proof-modal-title" id="reviewsModalTitle">All 6 reviews <span class="proof-modal-stars" aria-hidden="true">★★★★★</span> <span class="proof-modal-rating">5.0 on Google</span></p>
       <figure class="proof-full proof-full--narrow" data-review="4">
-        <img src="images/reviews/google-review-4.webp" width="808" height="610" loading="lazy" decoding="async"
-             alt="Five-star Google review from Yvette Vargas: “For myself it’s been less then a month that I have been here. To share my experience here. It’s been one of the best programs by far. All the facilitators have a lot of experience in recovery and walk the talk. They are fun and are attentive to our needs and want to see us shine and have a beautiful out look on recovery. There’s never a dull moment as far as participation and perception. We appreciate this program and hands down. We recommend this place.”">
+        <article class="google-review google-review--4" aria-label="Google review by Yvette Vargas">
+          <header class="google-review-header">
+            <span class="google-review-avatar" aria-hidden="true">Y</span>
+            <div class="google-review-author">
+              <h3 class="google-review-name"><span>Yvette Vargas</span></h3>
+              <p class="google-review-meta">2 reviews</p>
+            </div>
+            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="12" cy="19" r="2.1"/></svg></span>
+          </header>
+          <div class="google-review-content">
+            <div class="google-review-rating">
+              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+              <span class="google-review-age">a week ago</span>
+              <span class="google-review-new">NEW</span>
+            </div>
+            <blockquote class="google-review-text">
+              <p>For myself it’s been less then a month that I have been<br>
+              here. To share my experience here. It’s been one of<br>
+              the best programs by far. All the facilitators have a lot<br>
+              of experience in recovery and walk the talk. They are<br>
+              fun and are attentive to our needs and want to see us<br>
+              shine and have a beautiful out look on recovery.<br>
+              There’s never a dull moment as far as participation<br>
+              and perception. We appreciate this program and<br>
+              hands down. We recommend this place 💯</p>
+            </blockquote>
+          </div>
+        </article>
       </figure>
       <figure class="proof-full proof-full--wide" data-review="1">
-        <img src="images/reviews/google-review-1.webp" width="1100" height="1229" loading="lazy" decoding="async"
-             alt="Five-star Google review from Dennis: “This place is truly amazing! From the moment I arrived, I felt welcomed, supported, and treated with genuine care and respect. The staff is incredible and goes above and beyond to make sure everyone feels heard, understood, and encouraged.” The review includes a photo posted by the reviewer.">
+        <article class="google-review google-review--1 google-review--wide" aria-label="Google review by Dennis">
+          <header class="google-review-header">
+            <span class="google-review-avatar" aria-hidden="true">D</span>
+            <div class="google-review-author">
+              <h3 class="google-review-name"><span>Dennis</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
+              <p class="google-review-meta">1 review • 1 photo</p>
+            </div>
+            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
+          </header>
+          <div class="google-review-content">
+            <div class="google-review-rating">
+              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+              <span class="google-review-age">3 days ago</span>
+              <span class="google-review-new">NEW</span>
+            </div>
+            <blockquote class="google-review-text">
+              <p>This place is truly amazing! From the moment I arrived, I felt welcomed, supported, and<br>
+              treated with genuine care and respect. The staff is incredible and goes above and<br>
+              beyond to make sure everyone feels heard, understood, and encouraged. You can tell<br>
+              they are passionate about the work they do and truly want to see people succeed.</p>
+              <p>The groups are also excellent. They are informative, engaging, and provide helpful tools<br>
+              that can be applied to everyday life. The facilitators create a comfortable and supportive<br>
+              environment where people can be honest, participate, and learn without feeling judged.<br>
+              I have gained so much insight, encouragement, and motivation from the groups and the<br>
+              staff.</p>
+              <p>I am extremely grateful for the support I received here. This program has made a<br>
+              positive difference in my life, and I would highly recommend it to anyone looking for a<br>
+              safe, caring, and supportive place to grow, heal, and move forward. Thank you to the<br>
+              entire staff for everything you do!</p>
+            </blockquote>
+            <div class="google-review-photo">
+              <img src="images/reviews/google-review-1.webp" width="1100" height="1229" loading="lazy" decoding="async" alt="Photo shared by Dennis with his Google review: three people standing together at Golden State Rehab.">
+            </div>
+          </div>
+        </article>
       </figure>
       <figure class="proof-full proof-full--wide" data-review="2">
-        <img src="images/reviews/google-review-2.webp" width="1100" height="904" loading="lazy" decoding="async"
-             alt="Five-star Google review from Gregory Icenogle: “Golden State Rehab gave me a second chance at life and helped me get my sobriety back. From the moment I got there, the place felt safe, calm, and welcoming. It isn’t just a place for treatment, it feels like family.” The review includes a photo posted by the reviewer.">
+        <article class="google-review google-review--2 google-review--wide" aria-label="Google review by Gregory Icenogle">
+          <header class="google-review-header">
+            <span class="google-review-avatar" aria-hidden="true">G</span>
+            <div class="google-review-author">
+              <h3 class="google-review-name"><span>Gregory Icenogle</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
+              <p class="google-review-meta">11 reviews • 2 photos</p>
+            </div>
+            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
+          </header>
+          <div class="google-review-content">
+            <div class="google-review-rating">
+              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+              <span class="google-review-age">3 weeks ago</span>
+              <span class="google-review-new">NEW</span>
+            </div>
+            <blockquote class="google-review-text">
+              <p>Golden State Rehab gave me a second chance at life and helped me get my sobriety back.<br>
+              From the moment I got there, the place felt safe, calm, and welcoming. The location is<br>
+              amazing and it honestly felt like a home away from home.<br class="google-review-paragraph-break">
+              The staff really care about your recovery. Juanita and Scott helped me through some of the<br>
+              hardest parts and made sure I never felt like I was doing it alone. Big thank you to them and<br>
+              the whole Golden State Rehab team for helping me heal and start feeling like myself again.<br>
+              They also got me a cake for my birthday !! It isn’t just a place for treatment it feels like family</p>
+            </blockquote>
+            <div class="google-review-photo">
+              <img src="images/reviews/google-review-2.webp" width="1100" height="904" loading="lazy" decoding="async" alt="Photo shared by Gregory Icenogle with his Google review: a person seated at a table at Golden State Rehab.">
+            </div>
+          </div>
+        </article>
       </figure>
       <figure class="proof-full proof-full--narrow" data-review="5">
-        <img src="images/reviews/google-review-5.webp" width="804" height="394" loading="lazy" decoding="async"
-             alt="Five-star Google review from Chaz Rowens: “My experience here at the golden state has been delightful. From all the staff top to bottom has been pleasant to encounter with. This place is a great to recover from whatever life has thrown at you.”">
+        <article class="google-review google-review--5" aria-label="Google review by Chaz Rowens">
+          <header class="google-review-header">
+            <span class="google-review-avatar" aria-hidden="true"><img src="images/reviews/google-review-5.webp" width="804" height="394" loading="lazy" decoding="async" alt=""></span>
+            <div class="google-review-author">
+              <h3 class="google-review-name"><span>Chaz Rowens</span></h3>
+              <p class="google-review-meta">3 reviews</p>
+            </div>
+            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="12" cy="19" r="2.1"/></svg></span>
+          </header>
+          <div class="google-review-content">
+            <div class="google-review-rating">
+              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+              <span class="google-review-age">6 days ago</span>
+              <span class="google-review-new">NEW</span>
+            </div>
+            <blockquote class="google-review-text">
+              <p>My experience here at the golden state has been<br>
+              delightful. From all the staff top to bottom has been<br>
+              pleasant to encounter with. This place is a great to<br>
+              recover from whatever life has thrown at you.</p>
+            </blockquote>
+          </div>
+        </article>
       </figure>
       <figure class="proof-full proof-full--narrow" data-review="6">
-        <img src="images/reviews/google-review-6.webp" width="796" height="634" loading="lazy" decoding="async"
-             alt="Five-star Google review from Mikey Iava: “The best program ive been in since i started my recovery journey. The staff and owners actually listen to you and show genuine care which ive never experienced before. The groups are very engaging and very fun! Ive grown more in my short time here at golden state rehab than i have in my entire journey of recovery. If your serious about getting sober and want to grow while have genuine connections and having fun then i cant recommend golden state rehab enough!”">
+        <article class="google-review google-review--6" aria-label="Google review by Mikey Iava">
+          <header class="google-review-header">
+            <span class="google-review-avatar" aria-hidden="true">M</span>
+            <div class="google-review-author">
+              <h3 class="google-review-name"><span>Mikey Iava</span></h3>
+              <p class="google-review-meta">1 review</p>
+            </div>
+            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="12" cy="19" r="2.1"/></svg></span>
+          </header>
+          <div class="google-review-content">
+            <div class="google-review-rating">
+              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+              <span class="google-review-age">a week ago</span>
+              <span class="google-review-new">NEW</span>
+            </div>
+            <blockquote class="google-review-text">
+              <p>The best program ive been in since i started my<br>
+              recovery journey . The staff and owners actually listen<br>
+              to you and show genuine care which ive never<br>
+              experienced before . The groups are very engaging<br>
+              and very fun ! Ive grown more in my short time here at<br>
+              golden state rehab than i have in my entire journey of<br>
+              recovery . If your serious about getting sober and want<br>
+              to grow while have genuine connections and having<br>
+              fun then i cant recommend golden state rehab enough<br>
+              !</p>
+            </blockquote>
+          </div>
+        </article>
       </figure>
       <figure class="proof-full proof-full--wide" data-review="3">
-        <img src="images/reviews/google-review-3.webp" width="1100" height="680" loading="lazy" decoding="async"
-             alt="Five-star Google review from Joey F: “I loved my time at Golden State Rehab. I came in needing a safe place to get myself together, and that is exactly what I found here. The staff gave me the space, support, and patience I needed to heal without ever making me feel judged or rushed.”">
+        <article class="google-review google-review--3 google-review--wide" aria-label="Google review by Joey F">
+          <header class="google-review-header">
+            <span class="google-review-avatar" aria-hidden="true">J<svg class="google-review-guide" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="11" fill="#f57c00" stroke="#fff" stroke-width="1.5"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" fill="#fff" transform="translate(2.4 2.4) scale(.8)"/></svg></span>
+            <div class="google-review-author">
+              <h3 class="google-review-name"><span>Joey F</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
+              <p class="google-review-meta">Local Guide • 17 reviews • 1 photo</p>
+            </div>
+            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
+          </header>
+          <div class="google-review-content">
+            <div class="google-review-rating">
+              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+              <span class="google-review-age">5 weeks ago</span>
+            </div>
+            <blockquote class="google-review-text">
+              <p>I loved my time at Golden State Rehab. I came in needing a safe place to get myself together,<br>
+              and that is exactly what I found here. The staff gave me the space, support, and patience I<br>
+              needed to heal without ever making me feel judged or rushed.</p>
+              <p>Working with Viola was amazing. She helped me open up, look at things honestly, and do real<br>
+              work on myself. I left feeling like I understood my recovery and my mental health in a much<br>
+              better way.</p>
+              <p>Juanita led every group with so much love and care. Her groups always felt safe, honest, and<br>
+              meaningful, and she has a way of making people feel comfortable even when the topics are<br>
+              hard. I learned a lot from her and from everyone in the room.</p>
+              <p>By the time I finished, I felt like I was leaving with a full toolbox, a clearer mind, and more<br>
+              confidence in my sobriety. I’m grateful for the whole team at Golden State Rehab, including<br>
+              the people I may not have mentioned by name. I really felt like I was in good hands here.</p>
+            </blockquote>
+          </div>
+        </article>
       </figure>
       </div>
     </div>
@@ -275,233 +545,830 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     INSURANCE CHECKER: 'can I afford this?'
+     INSURANCE LOGOS
      ═══════════════════════════════════════════════════════════ -->
+<style>
+  /* CTA TRUST ROW. Google rating between laurels + Joint Commission seal,
+     directly under a CTA. The stack shrinks to the badge row's width and the
+     buttons stretch to it, so pill and row line up edge to edge. Light
+     sections use the default colours; .cta-stack--dark flips them for the
+     dark process band and the final banner. Page-scoped for now; moves to
+     styles.css when rolled out sitewide. */
+  .cta-stack{display:inline-flex;flex-direction:column;align-items:stretch;max-width:100%;vertical-align:top}
+  .cta-stack>.btn{flex:none;width:100%;justify-content:center;padding:13px 24px;font-size:15px}
+  .cta-stack>.btn+.btn{margin-top:12px}
+  .cta-proof{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px 20px;margin:14px 0 0;padding:0;list-style:none}
+  .cta-proof-item{display:flex;align-items:center;gap:7px}
+  .cta-proof-text{font-size:10px;font-weight:400;line-height:1.35;letter-spacing:0.06em;text-transform:uppercase;text-align:left;color:var(--muted)}
+  .cta-proof-text strong{font-weight:600;color:var(--body-text)}
+  .cta-proof-laurel{flex:none;width:11px;height:22px;color:var(--gold-dark);opacity:0.8}
+  .cta-proof-laurel--r{transform:scaleX(-1)}
+  .cta-proof-item .cta-proof-laurel + .cta-proof-text{text-align:center}
+  .cta-proof-seal{flex:none;width:24px;height:24px}
+  .cta-stack--dark .cta-proof-text{color:rgba(253,250,245,0.6)}
+  .cta-stack--dark .cta-proof-text strong{color:rgba(253,250,245,0.85)}
+  .cta-stack--dark .cta-proof-laurel{color:var(--gold)}
+  /* Logo trademark note under the insurance CTA: quieter fine print. */
+  .insurance-checker .insurance-disclaimer{font-size:10.5px;line-height:1.6;max-width:600px}
+  @media (max-width:480px){
+    .cta-proof{justify-content:center;gap:8px 14px}
+    .cta-proof-item{gap:6px}
+    .cta-proof-text{font-size:9.5px;letter-spacing:0.05em}
+    .cta-proof-laurel{width:10px;height:20px}
+    .cta-proof-seal{width:22px;height:22px}
+  }
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="cta-laurel" viewBox="0 0 20 40"><path d="M15 39C5 33 3 16 9 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M11.3 35.9Q6.9 32.4 2.3 35.5Q6.6 39.0 11.3 35.9ZM11.3 35.9Q14.3 32.2 11.4 28.4Q8.5 32.1 11.3 35.9ZM8.2 31.1Q5.3 27.1 0.7 28.6Q3.5 32.6 8.2 31.1ZM8.2 31.1Q11.6 28.7 10.2 24.8Q6.7 27.2 8.2 31.1ZM6.3 25.5Q4.7 21.5 0.5 21.9Q2.0 25.8 6.3 25.5ZM6.3 25.5Q9.6 24.2 9.2 20.6Q5.8 21.9 6.3 25.5ZM5.6 19.4Q5.0 15.9 1.5 15.5Q2.1 19.0 5.6 19.4ZM5.6 19.4Q8.6 18.9 8.9 15.9Q5.9 16.4 5.6 19.4ZM6.2 13.4Q6.3 10.5 3.6 9.6Q3.5 12.5 6.2 13.4ZM6.2 13.4Q8.7 13.5 9.4 11.2Q6.9 11.1 6.2 13.4ZM9.0 6.0Q12.5 4.9 11.8 1.3Q8.4 2.4 9.0 6.0Z" fill="currentColor"/></symbol></svg>
 <section class="insurance-strip insurance-checker" aria-labelledby="insurance-heading" id="coverage">
   <div class="container">
     <div class="insurance-header-row insurance-checker-head">
       <span class="badge-gold">Check Your Coverage</span>
       <h2 class="insurance-heading" id="insurance-heading">See if your insurance is accepted in seconds</h2>
     </div>
-    <div class="insurance-logos-grid" role="group" aria-label="Select your insurance provider">
-      <button class="ins-tile" type="button" data-provider="Aetna"><img src="images/insurance/aetna.webp" alt="Aetna" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="Anthem"><img src="images/insurance/anthem.webp" alt="Anthem" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="Cigna"><img src="images/insurance/cigna.webp" alt="Cigna" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="United Healthcare"><img src="images/insurance/united-healthcare.webp" alt="United Healthcare" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="Blue Cross Blue Shield"><img src="images/insurance/bcbs.webp" alt="Blue Cross Blue Shield" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="Highmark"><img src="images/insurance/highmark.webp" alt="Highmark" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="CareFirst"><img src="images/insurance/carefirst.webp" alt="CareFirst" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="EmblemHealth"><img src="images/insurance/emblemhealth.webp" alt="EmblemHealth" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="GEHA"><img src="images/insurance/geha.webp" alt="GEHA" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="Excellus BCBS"><img src="images/insurance/excellus.webp" alt="Excellus BCBS" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="AmeriHealth"><img src="images/insurance/amerihealth.webp" alt="AmeriHealth" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="MultiPlan"><img src="images/insurance/multiplan.webp" alt="MultiPlan" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="Carelon Behavioral Health"><img src="images/insurance/carelon.webp" alt="Carelon Behavioral Health" class="ins-logo" width="120" height="40"></button>
-      <button class="ins-tile" type="button" data-provider="Trustmark"><img src="images/insurance/trustmark.webp" alt="Trustmark" class="ins-logo" width="120" height="40"></button>
+    <div class="insurance-logos-grid">
+      <div class="ins-tile"><img src="images/insurance/aetna.webp" alt="Aetna" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/anthem.webp" alt="Anthem" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/cigna.webp" alt="Cigna" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/united-healthcare.webp" alt="United Healthcare" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/bcbs.webp" alt="Blue Cross Blue Shield" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/highmark.webp" alt="Highmark" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/carefirst.webp" alt="CareFirst" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/emblemhealth.webp" alt="EmblemHealth" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/geha.webp" alt="GEHA" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/excellus.webp" alt="Excellus BCBS" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/amerihealth.webp" alt="AmeriHealth" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/multiplan.webp" alt="MultiPlan" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/carelon.webp" alt="Carelon Behavioral Health" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
+      <div class="ins-tile"><img src="images/insurance/trustmark.webp" alt="Trustmark" class="ins-logo" width="120" height="40" loading="lazy" decoding="async"></div>
     </div>
-    <div class="coverage-result" id="coverageResult" role="status" hidden>
-      <p class="coverage-result-msg"><i data-lucide="badge-check"></i> <span><strong id="coverageProvider">Aetna</strong> is one of the plans we work with. We'll verify your exact benefits for free, with no commitment.</span></p>
-      <a href="verify-insurance" class="btn btn-primary btn-lg" id="coverageCta" data-cta="insurance"><span id="coverageCtaText">Verify My Benefits</span> <i data-lucide="arrow-right"></i></a>
-      <p class="coverage-result-note">Don't see your provider? We work with most major PPO plans. <a href="verify-insurance">Check yours free</a>.</p>
+    <div class="insurance-cta-row">
+      <div class="cta-stack">
+        <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="insurance">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+        <ul class="cta-proof" aria-label="Ratings and accreditation">
+          <li class="cta-proof-item">
+            <svg class="cta-proof-laurel" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+            <span class="cta-proof-text"><strong>5-Star</strong> Rated<br>on Google</span>
+            <svg class="cta-proof-laurel cta-proof-laurel--r" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+          </li>
+          <li class="cta-proof-item">
+            <img class="cta-proof-seal" src="/images/joint-commission-gold-seal.webp" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="cta-proof-text"><strong>Joint Commission</strong><br>Accredited</span>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="insurance-cta-row" id="coverageDefaultCta"><a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="insurance">Verify My Insurance <i data-lucide="arrow-right"></i></a><a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> Call (424) 208-3120</a></div>
-    <p class="insurance-disclaimer">Insurance logos are shown to help you identify your plan and are trademarks of their respective owners; they do not imply endorsement. Coverage varies by plan, and verification is free and confidential.</p>
+    <p class="insurance-disclaimer">Logos are trademarks of their owners and don&rsquo;t imply endorsement. Coverage varies by plan.</p>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     WHY GOLDEN STATE REHAB
-     ═══════════════════════════════════════════════════════════ -->
-
-<!-- ═══════════════════════════════════════════════════════════
-     WHAT WE TREAT AND HOW: services + treatment areas
-     ═══════════════════════════════════════════════════════════ -->
-<style>
-  /* WHAT WE TREAT AND HOW.
-     One vertical read: the conditions, one hairline, then five program/
-     treatment cards in one grid. The three condition deep-dive links used to
-     run as a separate row between the lists and the cards; folding them into
-     the same card grid as PHP/IOP removes a whole visual unit (no eyebrows,
-     no deck, no separate link row) and gives every "learn more" destination
-     the same weight and click target. Page-scoped CSS. */
-  #services-strip-heading{text-wrap:balance}
-  .tx-head{margin-bottom:44px}
-
-  .tx-groups{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:64px;row-gap:36px}
-  .tx-label{font-size:19px;font-weight:700;line-height:1.25;color:var(--near-black);margin:0 0 16px}
-  .tx-list{list-style:none;margin:0;padding:0;display:grid;grid-auto-flow:column;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,auto);column-gap:32px;row-gap:10px}
-  .tx-list li{position:relative;padding-left:18px;margin:0;font-size:15.5px;font-weight:500;line-height:1.45;color:var(--body-text)}
-  
-  .tx-list li::before{content:"";position:absolute;left:0;top:.58em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
-
-  /* The one rule in the section: what we treat above it, how below. */
-  .tx-programs{margin-top:48px;padding-top:44px;border-top:1px solid var(--border)}
-  .tx-title{font-size:24px;line-height:1.25;margin:0 0 24px;color:var(--near-black);text-wrap:balance}
-
-  .tx-cells{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .tx-cell{position:relative;background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:24px 26px;transition:border-color var(--transition),transform var(--transition)}
-  .tx-cell:hover{border-color:var(--gold);transform:translateY(-2px)}
-  /* The program name is the link, stretched over the cell so the whole card is
-     one target; the arrow follows the name instead of floating off to the edge. */
-  .tx-cell h4{font-size:20px;font-weight:700;line-height:1.3;margin:0;text-wrap:balance}
-  .tx-cell h4 a{color:var(--near-black);text-decoration:none}
-  .tx-cell h4 a::after{content:"";position:absolute;inset:0;border-radius:inherit}
-  .tx-cell h4 svg{width:17px;height:17px;margin-left:8px;vertical-align:-2px;color:var(--gold-dark);transition:transform var(--transition)}
-  .tx-cell:hover h4 svg{transform:translateX(4px)}
-  .tx-abbr{color:var(--gold-dark)}
-  /* The definition carries the meaning of the acronym above it, so body colour. */
-  .tx-def{font-size:15.5px;line-height:1.55;color:var(--body-text);margin:10px 0 0}
-  .tx-cell:has(a:focus-visible){outline:2px solid var(--gold-dark);outline-offset:3px}
-  @supports not selector(:has(a)){
-    .tx-cell h4 a:focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px}
-  }
-
-  /* The other programs are a footnote to the two cells, not a second paragraph. */
-  .tx-more{margin:24px 0 0;font-size:13.5px;line-height:1.9;color:var(--muted)}
-  .tx-more a{color:var(--muted);text-decoration:underline;text-decoration-color:currentColor;text-decoration-thickness:1px;text-underline-offset:3px;transition:color var(--transition)}
-  .tx-more a:hover{color:var(--gold-dark)}
-  .tx-more a:focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px;border-radius:2px}
-
-  /* Below the two-up width the lists run single file: a wrapped condition name
-     in a 150px column is harder to scan than a longer list. */
-  @media (max-width:900px){
-    .tx-list{grid-auto-flow:row;grid-template-columns:minmax(0,1fr);grid-template-rows:none}
-    .tx-cells{grid-template-columns:1fr}
-  }
-  @media (max-width:640px){
-    .tx-head{margin-bottom:36px}
-    .tx-groups{grid-template-columns:1fr;row-gap:32px}
-    .tx-programs{margin-top:36px;padding-top:32px}
-    .tx-title{font-size:22px}
-    .tx-cell{padding:20px 20px}
-    .tx-cell h4{font-size:19px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    .tx-cell,.tx-cell h4 svg,.tx-more a{transition:none}
-    .tx-cell:hover{transform:none}
-  }
-</style>
-<section class="section section-cream" aria-labelledby="services-strip-heading">
-  <div class="container">
-    <div class="section-header tx-head reveal">
-      <h2 id="services-strip-heading">Mental Health and Addiction Conditions We Treat</h2>
-    </div>
-
-    <div class="tx-groups reveal">
-      <div class="tx-group">
-        <h3 class="tx-label" id="tx-addiction">Addiction</h3>
-        <ul class="tx-list" aria-labelledby="tx-addiction">
-          <li>Alcohol Addiction</li>
-          <li>Opioid Addiction</li>
-          <li>Fentanyl Addiction</li>
-          <li>Cocaine Addiction</li>
-          <li>Methamphetamine Addiction</li>
-          <li>Prescription Drug Addiction</li>
-          <li>Benzodiazepine Addiction</li>
-          <li>Sex Addiction</li>
-        </ul>
-      </div>
-      <div class="tx-group">
-        <h3 class="tx-label" id="tx-mental-health">Mental Health</h3>
-        <ul class="tx-list" aria-labelledby="tx-mental-health">
-          <li>Depression</li>
-          <li>Anxiety</li>
-          <li>Panic Disorder</li>
-          <li>PTSD</li>
-          <li>Complex Trauma</li>
-          <li>Bipolar Disorder</li>
-          <li>Dual Diagnosis</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="tx-programs">
-      <h3 class="tx-title reveal">Outpatient Treatment Programs in Los Angeles</h3>
-      <div class="tx-cells">
-        <article class="tx-cell reveal">
-          <h4><a href="programs/php">Partial Hospitalization Program <span class="tx-abbr">(PHP)</span> <i data-lucide="arrow-right"></i></a></h4>
-          <p class="tx-def">A more structured weekly schedule with more time dedicated to treatment.</p>
-        </article>
-        <article class="tx-cell reveal reveal-delay-1">
-          <h4><a href="programs/iop">Intensive Outpatient Program <span class="tx-abbr">(IOP)</span> <i data-lucide="arrow-right"></i></a></h4>
-          <p class="tx-def">A more flexible weekly schedule with fewer treatment hours.</p>
-        </article>
-        <article class="tx-cell reveal">
-          <h4><a href="treatments/alcohol">Alcohol Addiction Treatment in Los Angeles <i data-lucide="arrow-right"></i></a></h4>
-          <p class="tx-def">Evidence-based therapy and anti-craving medication. You don&rsquo;t need a rock bottom to qualify.</p>
-        </article>
-        <article class="tx-cell reveal reveal-delay-1">
-          <h4><a href="mental-health">Mental Health Treatment in Los Angeles <i data-lucide="arrow-right"></i></a></h4>
-          <p class="tx-def">Depression, anxiety, and trauma, treated by master&rsquo;s-level clinicians and a board-certified psychiatrist.</p>
-        </article>
-        <article class="tx-cell reveal">
-          <h4><a href="treatments/dual-diagnosis">Dual Diagnosis Treatment <i data-lucide="arrow-right"></i></a></h4>
-          <p class="tx-def">When addiction and a mental health condition feed each other, both are treated together, not one after the other.</p>
-        </article>
-      </div>
-      <p class="tx-more reveal">Also at our <a href="rehabilitation-center">rehabilitation center</a>: <a href="programs/evening-iop">Evening IOP</a> &middot; <a href="programs/virtual-iop">Virtual IOP</a> &middot; <a href="programs/telehealth">Telehealth Rehab</a> &middot; <a href="programs/outpatient-rehab">Outpatient Drug Rehab</a> &middot; <a href="programs/psychiatric-care">Psychiatric Care</a> &middot; <a href="alcoholism-treatment-program">Alcoholism Treatment</a></p>
-    </div>
-    <div style="text-align: center; margin-top: 48px;" class="reveal">
-      <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--near-black);">Not sure if your plan covers treatment for this?</p>
-      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="conditions">Verify My Insurance <i data-lucide="arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     PROCESS: DARK SECTION
-     ═══════════════════════════════════════════════════════════ -->
-<!-- ═══════════════════════════════════════════════════════════
-     OUR FACILITY: STATIC GALLERY GRID
-     Desktop: asymmetric 5-photo grid, everything visible, no
-     controls. Mobile: user-initiated scroll-snap strip with a
-     next-card peek. No tour CTA by design — single-CTA page
+     OUR FACILITY: SELF-ADVANCING PHOTO STRIP
+     One row of photos, no controls: 4 square tiles running edge to
+     edge on desktop, 2 tiles at 4:5 inside the page gutter on mobile.
+     Advances one photo with a bell-curve speed profile, pauses, repeats;
+     drag (mouse) or swipe (touch) to browse. Loops endlessly via
+     clone sets on either side. Styles and script are page-scoped
+     here (es/index.html still uses .facility-gallery from
+     styles.css). No tour CTA by design — single-CTA page
      discipline (verify insurance / call only).
      ═══════════════════════════════════════════════════════════ -->
+<style>
+  .facility-section .section-header{margin-bottom:40px}
+  .facility-section .section-header h2{margin:0}
+  .facility-strip{overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab;user-select:none;-webkit-user-select:none}
+  .facility-strip::-webkit-scrollbar{display:none}
+  .facility-strip:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
+  .facility-strip.is-dragging{cursor:grabbing}
+  .facility-strip.is-dragging,.facility-strip.is-animating{scroll-snap-type:none}
+  .facility-strip-track{display:flex;gap:20px;margin:0;padding:0;list-style:none}
+  .facility-strip-item{flex:0 0 calc((100% - 60px) / 4);aspect-ratio:1 / 1;border-radius:var(--radius-md);overflow:hidden;background:var(--near-black);scroll-snap-align:start}
+  .facility-strip-item img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+  @media (max-width:767px){
+    /* Mobile keeps the page gutter (matches .container at this width). */
+    .facility-strip{margin:0 24px;border-radius:var(--radius-md)}
+    .facility-strip:focus-visible{outline-offset:4px}
+    .facility-strip-track{gap:12px}
+    .facility-strip-item{flex-basis:calc((100% - 12px) / 2);aspect-ratio:4 / 5}
+  }
+</style>
 <section class="facility-section section" id="facility" aria-labelledby="facility-heading">
   <div class="container">
     <div class="section-header reveal">
-      <span class="eyebrow">A space for healing</span>
-      <h2 id="facility-heading">Our Westwood Treatment Center</h2>
-      <p class="section-intro">A calm, private outpatient space in West Los Angeles, designed so you can settle in and focus on your recovery.</p>
+      <h2 id="facility-heading">Our Facility</h2>
     </div>
-    <div class="facility-gallery reveal">
-      <div class="facility-card facility-card--tall">
-        <img src="images/facility/reception-lobby.webp" alt="Reception and front lounge with the Golden State Rehab signature wall" loading="lazy" width="800" height="600">
-        <span class="facility-card-label">Reception &amp; Lobby</span>
+  </div>
+  <div class="facility-strip reveal" role="region" aria-label="Photos of our facility" tabindex="0">
+    <ul class="facility-strip-track">
+      <li class="facility-strip-item"><img src="images/facility/reception-lobby-800.webp" srcset="images/facility/reception-lobby-800.webp 800w, images/facility/reception-lobby.webp 1600w" sizes="(max-width:767px) 66vw, 34vw" alt="Reception and front lounge with the Golden State Rehab signature wall" loading="lazy" draggable="false" width="800" height="600"></li>
+      <li class="facility-strip-item"><img src="images/facility/individual-therapy-room-800.webp" srcset="images/facility/individual-therapy-room-800.webp 800w, images/facility/individual-therapy-room.webp 1600w" sizes="(max-width:767px) 45vw, 25vw" alt="Private one-on-one therapy office with leather lounge chair and sofa" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/group-therapy-room-800.webp" srcset="images/facility/group-therapy-room-800.webp 800w, images/facility/group-therapy-room.webp 1600w" sizes="(max-width:767px) 66vw, 34vw" alt="Group therapy room with a circle of chairs" loading="lazy" draggable="false" width="800" height="600"></li>
+      <li class="facility-strip-item"><img src="images/facility/meditation-room-800.webp" srcset="images/facility/meditation-room-800.webp 800w, images/facility/meditation-room.webp 1600w" sizes="(max-width:767px) 45vw, 25vw" alt="Meditation and yoga room with floor cushions and warm lantern lighting" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/reading-lounge-800.webp" srcset="images/facility/reading-lounge-800.webp 800w, images/facility/reading-lounge.webp 1600w" sizes="(max-width:767px) 45vw, 25vw" alt="Quiet reading lounge with library shelving and armchairs" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/computer-workstations-800.webp" srcset="images/facility/computer-workstations-800.webp 800w, images/facility/computer-workstations.webp 1600w" sizes="(max-width:767px) 45vw, 25vw" alt="Computer workstations with monitors and lounge chairs for work and study" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/game-room-800.webp" srcset="images/facility/game-room-800.webp 800w, images/facility/game-room.webp 1600w" sizes="(max-width:767px) 45vw, 25vw" alt="Game room with full-size ping pong table and lounge seating" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/recreation-room-800.webp" srcset="images/facility/recreation-room-800.webp 800w, images/facility/recreation-room.webp 1600w" sizes="(max-width:767px) 66vw, 34vw" alt="Recreation room with shared dining table, ping pong, and built-in shelving" loading="lazy" draggable="false" width="800" height="600"></li>
+      <li class="facility-strip-item"><img src="images/facility/tv-lounge-800.webp" srcset="images/facility/tv-lounge-800.webp 800w, images/facility/tv-lounge.webp 1600w" sizes="(max-width:767px) 45vw, 25vw" alt="Lounge and common area with media wall, sofas and lounge chairs" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/waiting-area-800.webp" srcset="images/facility/waiting-area-800.webp 800w, images/facility/waiting-area.webp 1600w" sizes="(max-width:767px) 66vw, 34vw" alt="Waiting area with leather swivel chairs, round rug, and tall arched mirror" loading="lazy" draggable="false" width="800" height="600"></li>
+    </ul>
+  </div>
+</section>
+<script>
+// Facility strip: step-and-pause autoplay, mouse drag, endless loop.
+(function () {
+  var strip = document.querySelector('.facility-strip');
+  if (!strip) return;
+  var track = strip.querySelector('.facility-strip-track');
+  var originals = Array.prototype.slice.call(track.children);
+  var COUNT = originals.length;
+  var SLIDE_MS = 2000;   // one-photo glide: quick surge, long gentle settle
+  var DWELL_MS = 2000;   // rest between glides (the settle's tail adds a little more)
+  var RESUME_MS = 4000;  // idle time after an interaction before autoplay resumes
+  var SETTLE_MS = 150;   // quiet period that counts as "scroll finished"
+  var SNAP_MS = 500;     // glide to the nearest photo after a drag
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // One clone set on each side of the originals; the view always settles back
+  // into the middle set, so the row never runs out in either direction.
+  function makeClone(item) {
+    var clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelector('img').alt = '';
+    return clone;
+  }
+  var before = document.createDocumentFragment();
+  var after = document.createDocumentFragment();
+  originals.forEach(function (item) {
+    before.appendChild(makeClone(item));
+    after.appendChild(makeClone(item));
+  });
+  track.insertBefore(before, track.firstChild);
+  track.appendChild(after);
+
+  function pitch() {
+    var a = track.children[0].getBoundingClientRect();
+    var b = track.children[1].getBoundingClientRect();
+    return b.left - a.left;
+  }
+  function nearestStop() {
+    var p = pitch();
+    return Math.round(strip.scrollLeft / p) * p;
+  }
+
+  // Instant, snap-free reposition (loop wrap, resize re-align).
+  function jumpTo(x) {
+    strip.classList.add('is-animating');
+    strip.scrollLeft = x;
+    strip.classList.remove('is-animating');
+  }
+  function normalize() {
+    var p = pitch();
+    if (!p) return;
+    var index = Math.round(strip.scrollLeft / p);
+    if (index < COUNT) jumpTo(strip.scrollLeft + COUNT * p);
+    else if (index >= COUNT * 2) jumpTo(strip.scrollLeft - COUNT * p);
+  }
+
+  // ── Eased glide (snap is suspended while it runs) ──
+  var frameId = null;
+  // Ease-out surge: speed follows 42t(1−t)⁵. A brief ramp from rest (no jolt)
+  // to a peak at 1/6 of the glide, then a long, slow deceleration into place.
+  function easeSurge(t) {
+    var r = 1 - t;
+    return 1 - Math.pow(r, 7) - 7 * t * Math.pow(r, 6);
+  }
+  function cancelGlide() {
+    if (frameId !== null) cancelAnimationFrame(frameId);
+    frameId = null;
+    strip.classList.remove('is-animating');
+  }
+  function glideTo(target, duration, done) {
+    cancelGlide();
+    var start = strip.scrollLeft;
+    var distance = target - start;
+    var startedAt = null;
+    strip.classList.add('is-animating');
+    function frame(now) {
+      if (startedAt === null) startedAt = now;
+      var progress = Math.min((now - startedAt) / duration, 1);
+      strip.scrollLeft = start + distance * easeSurge(progress);
+      if (progress < 1) {
+        frameId = requestAnimationFrame(frame);
+        return;
+      }
+      frameId = null;
+      strip.classList.remove('is-animating');
+      normalize();
+      if (done) done();
+    }
+    frameId = requestAnimationFrame(frame);
+  }
+
+  // ── Autoplay: glide one photo, rest, repeat ──
+  var timer = null;
+  var onScreen = !('IntersectionObserver' in window);
+  var state = { touching: false, dragging: false, keyboard: false };
+
+  function interacting() {
+    return state.touching || state.dragging || state.keyboard;
+  }
+  function canPlay() {
+    return onScreen && !document.hidden && !reducedMotion.matches && !interacting();
+  }
+  function stop() {
+    clearTimeout(timer);
+    timer = null;
+    cancelGlide();
+  }
+  function schedule(delay) {
+    clearTimeout(timer);
+    timer = null;
+    if (canPlay()) timer = setTimeout(advance, delay);
+  }
+  function advance() {
+    timer = null;
+    if (!canPlay()) return;
+    glideTo(nearestStop() + pitch(), SLIDE_MS, function () { schedule(DWELL_MS); });
+  }
+  function setState(key, value) {
+    if (state[key] === value) return;
+    state[key] = value;
+    if (interacting()) stop();
+    else schedule(RESUME_MS);
+  }
+
+  // ── Mouse: hovering leaves autoplay running; click-and-drag takes over ──
+  var drag = null;
+  strip.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    e.preventDefault();
+    cancelGlide();
+    drag = { x: e.clientX, left: strip.scrollLeft };
+    strip.classList.add('is-dragging');
+    strip.setPointerCapture(e.pointerId);
+    setState('dragging', true);
+  });
+  strip.addEventListener('pointermove', function (e) {
+    if (drag) strip.scrollLeft = drag.left - (e.clientX - drag.x);
+  });
+  function endDrag(e) {
+    if (!drag) return;
+    drag = null;
+    if (strip.hasPointerCapture(e.pointerId)) strip.releasePointerCapture(e.pointerId);
+    glideTo(nearestStop(), SNAP_MS);
+    strip.classList.remove('is-dragging');
+    setState('dragging', false);
+  }
+  strip.addEventListener('pointerup', endDrag);
+  strip.addEventListener('pointercancel', endDrag);
+
+  // Trackpad side-swipes and shift+wheel also take over, the same as a drag.
+  strip.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) && !e.shiftKey) return;
+    stop();
+    schedule(RESUME_MS);
+  }, { passive: true });
+
+  // ── Touch: native swipe + CSS snap; just pause while a finger is down ──
+  strip.addEventListener('touchstart', function () {
+    cancelGlide();
+    setState('touching', true);
+  }, { passive: true });
+  function endTouch() { setState('touching', false); }
+  strip.addEventListener('touchend', endTouch, { passive: true });
+  strip.addEventListener('touchcancel', endTouch, { passive: true });
+
+  // ── Keyboard: arrow keys scroll natively; pause while focus is visible ──
+  strip.addEventListener('focusin', function () {
+    var visible = true;
+    try { visible = strip.matches(':focus-visible'); } catch (err) { /* older engines: treat as keyboard */ }
+    if (visible) setState('keyboard', true);
+  });
+  strip.addEventListener('focusout', function () { setState('keyboard', false); });
+
+  // Swipes, wheel and keyboard scrolls wrap the loop once they settle.
+  var settleTimer = null;
+  strip.addEventListener('scroll', function () {
+    if (frameId !== null || drag) return;
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(normalize, SETTLE_MS);
+  }, { passive: true });
+
+  // Run only while the strip is on screen and the tab is visible. Photos
+  // sitting off to the side of the scroller are fetched as the section
+  // approaches, so an autoplay glide never reveals a blank tile.
+  if (!onScreen) {
+    var images = track.querySelectorAll('img');
+    var preload = new IntersectionObserver(function (entries) {
+      if (!entries[entries.length - 1].isIntersecting) return;
+      images.forEach(function (img) { img.loading = 'eager'; });
+      preload.disconnect();
+    }, { rootMargin: '400px 0px' });
+    preload.observe(strip);
+    new IntersectionObserver(function (entries) {
+      onScreen = entries[entries.length - 1].isIntersecting;
+      if (onScreen) schedule(DWELL_MS);
+      else stop();
+    }, { threshold: 0.25 }).observe(strip);
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) stop();
+    else schedule(DWELL_MS);
+  });
+  if (reducedMotion.addEventListener) {
+    reducedMotion.addEventListener('change', function () {
+      if (reducedMotion.matches) stop();
+      else schedule(DWELL_MS);
+    });
+  }
+
+  // Keep a whole photo at the left edge when the tile width changes.
+  var lastPitch = pitch();
+  var resizeTimer = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      var index = lastPitch ? Math.round(strip.scrollLeft / lastPitch) : COUNT;
+      stop();
+      lastPitch = pitch();
+      jumpTo(index * lastPitch);
+      normalize();
+      schedule(DWELL_MS);
+    }, SETTLE_MS);
+  });
+
+  jumpTo(COUNT * lastPitch);
+  schedule(DWELL_MS);
+}());
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHAT WE TREAT: conditions, grouped by addiction and mental health
+     ═══════════════════════════════════════════════════════════ -->
+<style>
+  /* WHAT WE TREAT.
+     Editorial split: headline, intro and photo on the left; the fifteen
+     conditions as ruled rows on the right, one column per group so each name
+     reads on its own line. The condition names are plain text on purpose (they
+     mirror the Google Business Profile service names), so the rows carry no
+     arrows that would make them look clickable. On phones the section stacks
+     and the lists go two-up. Page-scoped CSS. */
+  /* Pin geometry. The chrome above the page is the sticky phone banner plus
+     the nav, and the nav slides away on scroll-down (main.js adds .nav-hidden).
+     The pinned intro keeps one height, sized for the full chrome so the photo
+     never resizes mid-scroll, and only its top moves with the nav. */
+  .tx-wrap{--tx-ink:#7F6120;--tx-gap:40px;--tx-chrome:calc(var(--phone-banner-h,0px) + var(--nav-height))}
+  .tx-split{display:grid;grid-template-columns:minmax(0,1fr);row-gap:48px}
+
+  .tx-intro h2{font-size:clamp(34px,3.6vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.03em;color:var(--near-black);margin:0;text-wrap:balance}
+  .tx-h-accent{display:block;color:var(--tx-ink)}
+  .tx-lede{margin:20px 0 0;max-width:32em;font-size:18px;line-height:1.65;color:var(--body-text)}
+  .tx-lede a{color:var(--near-black);text-decoration:underline;text-decoration-color:var(--border);text-decoration-thickness:1px;text-underline-offset:4px;transition:color var(--transition),text-decoration-color var(--transition)}
+  .tx-lede a:hover{color:var(--tx-ink);text-decoration-color:currentColor}
+  .tx-photo{display:block;width:100%;height:auto;aspect-ratio:16 / 7;object-fit:cover;object-position:50% 40%;margin-top:32px;border-radius:var(--radius-md) var(--radius-md) 120px var(--radius-md)}
+
+  .tx-group + .tx-group{margin-top:56px}
+  .tx-label{font-size:30px;font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--near-black);margin:0 0 8px}
+  .tx-label a{color:inherit;text-decoration:none}
+  .tx-label svg{width:.8em;height:.8em;margin-left:12px;vertical-align:-.05em;color:var(--tx-ink);transition:transform var(--transition)}
+  .tx-label a:hover svg{transform:translate(3px,-3px)}
+  .tx-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
+  .tx-list li{margin:0;padding:18px 0;border-bottom:1px solid var(--border);font-size:18px;font-weight:500;line-height:1.35;color:var(--near-black)}
+  .tx-lede a:focus-visible,.tx-label a:focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px;border-radius:2px}
+
+  /* The CTA sits outside .tx-split so the pinned intro can never slide over it. */
+  .tx-cta{margin-top:72px;padding-top:48px;border-top:1px solid var(--border);text-align:center}
+  .tx-cta p{margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--near-black)}
+
+  /* Laptop and up: the intro pins while the one-column lists scroll past it.
+     It is sized to the viewport, with the photo taking whatever height is
+     left, so the whole photo is always on screen while pinned. Its bottom
+     lands flush with the last list row when the split ends. */
+  @media (min-width:1024px){
+    .tx-split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:96px}
+    .tx-list{grid-template-columns:minmax(0,1fr)}
+    .tx-list li{padding:20px 0;font-size:19px}
+  }
+  @media (min-width:1024px) and (min-height:720px){
+    .tx-intro{position:sticky;top:calc(var(--tx-chrome) + var(--tx-gap));align-self:start;display:flex;flex-direction:column;height:calc(100vh - var(--tx-chrome) - 2 * var(--tx-gap));height:calc(100svh - var(--tx-chrome) - 2 * var(--tx-gap));max-height:820px;transition:top .3s ease,opacity .6s ease,transform .6s ease}
+    .tx-photo{flex:1 1 0;min-height:0;aspect-ratio:auto}
+    /* Nav tucked away: the intro rises by half the nav's height, in step with
+       the nav's own .3s slide, so its top and bottom margins stay equal in the
+       taller visible area. Scrolling up reverses it before the nav can land on it. */
+    .nav.nav-hidden ~ main .tx-intro{top:calc(var(--phone-banner-h,0px) + var(--tx-gap) + var(--nav-height) / 2)}
+  }
+  /* Short laptop screens: no pin, a fixed-shape photo instead. */
+  @media (min-width:1024px) and (max-height:719px){
+    .tx-photo{aspect-ratio:4 / 3}
+  }
+  @media (max-width:640px){
+    .tx-split{row-gap:40px}
+    .tx-lede{font-size:16px;margin-top:16px}
+    .tx-photo{aspect-ratio:9 / 4;margin-top:24px;border-radius:var(--radius-md) var(--radius-md) 64px var(--radius-md)}
+    .tx-group + .tx-group{margin-top:48px}
+    .tx-label{font-size:24px}
+    .tx-list li{padding:16px 0;font-size:16px}
+    .tx-cta{margin-top:48px;padding-top:40px}
+    .tx-cta p{font-size:18px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .tx-lede a,.tx-label svg,.tx-intro{transition:none}
+    .tx-label a:hover svg{transform:none}
+  }
+</style>
+<section class="section section-cream" aria-labelledby="services-strip-heading">
+  <div class="container tx-wrap">
+    <div class="tx-split">
+      <div class="tx-intro reveal">
+        <h2 id="services-strip-heading">Mental Health and Addiction <span class="tx-h-accent">Conditions We Treat</span></h2>
+        <p class="tx-lede">Explore addiction and mental health care at our <a href="rehabilitation-center">Los Angeles rehabilitation center</a>. We&rsquo;ll help you understand your options.</p>
+        <img class="tx-photo" src="images/community/group-session.webp" width="1100" height="734" alt="Adults laughing together during a group therapy session" loading="lazy" decoding="async">
       </div>
-      <div class="facility-card">
-        <img src="images/facility/individual-therapy-room.webp" alt="Private one-on-one therapy office with leather lounge chair and sofa" loading="lazy" width="600" height="800">
-        <span class="facility-card-label">Private Therapy Rooms</span>
+
+      <div class="tx-lists">
+        <div class="tx-group reveal">
+          <h3 class="tx-label" id="tx-addiction">Addiction treatment</h3>
+          <ul class="tx-list" aria-labelledby="tx-addiction">
+            <li>Alcohol Addiction</li>
+            <li>Opioid Addiction</li>
+            <li>Fentanyl Addiction</li>
+            <li>Cocaine Addiction</li>
+            <li>Methamphetamine Addiction</li>
+            <li>Prescription Drug Addiction</li>
+            <li>Benzodiazepine Addiction</li>
+            <li>Sex Addiction</li>
+          </ul>
+        </div>
+        <div class="tx-group reveal">
+          <h3 class="tx-label" id="tx-mental-health"><a href="mental-health">Mental health treatment <i data-lucide="arrow-up-right"></i></a></h3>
+          <ul class="tx-list" aria-labelledby="tx-mental-health">
+            <li>Depression</li>
+            <li>Anxiety</li>
+            <li>Panic Disorder</li>
+            <li>PTSD</li>
+            <li>Complex Trauma</li>
+            <li>Bipolar Disorder</li>
+            <li>Dual Diagnosis</li>
+          </ul>
+        </div>
       </div>
-      <div class="facility-card">
-        <img src="images/facility/group-therapy-room.webp" alt="Group therapy room with a circle of chairs" loading="lazy" width="800" height="500">
-        <span class="facility-card-label">Group Therapy Room</span>
-      </div>
-      <div class="facility-card">
-        <img src="images/facility/meditation-room.webp" alt="Meditation and yoga room with floor cushions and warm lantern lighting" loading="lazy" width="600" height="800">
-        <span class="facility-card-label">Meditation &amp; Yoga Space</span>
-      </div>
-      <div class="facility-card">
-        <img src="images/facility/reading-lounge.webp" alt="Quiet reading lounge with library shelving and armchairs" loading="lazy" width="800" height="500">
-        <span class="facility-card-label">Reading Lounge</span>
+    </div>
+
+    <div class="tx-cta reveal">
+      <div class="cta-stack">
+        <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="conditions">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+        <ul class="cta-proof" aria-label="Ratings and accreditation">
+          <li class="cta-proof-item">
+            <svg class="cta-proof-laurel" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+            <span class="cta-proof-text"><strong>5-Star</strong> Rated<br>on Google</span>
+            <svg class="cta-proof-laurel cta-proof-laurel--r" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+          </li>
+          <li class="cta-proof-item">
+            <img class="cta-proof-seal" src="/images/joint-commission-gold-seal.webp" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="cta-proof-text"><strong>Joint Commission</strong><br>Accredited</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     COMMUNITY BAND: alumni photo
+     OUR TEAM: who provides care
+     Every fact on these cards is sourced from team.html. One
+     "Meet Our Team" button under the grid links there instead of a
+     link per card. Everything stays visible: no carousel, no
+     hover-only bios. Every width uses the same
+     compact card (portrait beside name and role, description
+     underneath): 3 columns on desktop, 2 on tablet, 1 on phones.
      ═══════════════════════════════════════════════════════════ -->
 <style>
-  .community-band{padding:96px 0 0;background:var(--white)}
+  .team-home{background:var(--off-white);border-top:1px solid var(--border)}
+  .team-home-intro{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 64px;align-items:end;margin-bottom:56px}
+  .team-home-intro h2{margin:0;text-wrap:balance}
+  .team-home-intro p{margin:0;max-width:52ch;font-size:18px;line-height:1.6;color:var(--muted)}
+
+  .team-home-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .team-home-grid > li{display:flex}
+  .team-home-card{flex:1;display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:auto 1fr;grid-template-areas:"photo id" "desc desc";column-gap:20px;padding:24px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}
+  .team-home-photo{grid-area:photo;display:block;width:112px;height:auto;aspect-ratio:4 / 5;object-fit:cover;background:var(--gold-light);border-radius:var(--radius-sm)}
+  .team-home-id{grid-area:id;align-self:center}
+  .team-home-name{font-size:20px;line-height:1.3;margin:0;color:var(--near-black)}
+  .team-home-role{margin:6px 0 0;font-size:14.5px;font-weight:600;line-height:1.4;color:var(--near-black)}
+  .team-home-cred{margin:2px 0 0;font-size:14.5px;font-weight:500;line-height:1.4;color:var(--muted)}
+  .team-home-desc{grid-area:desc;margin:18px 0 0;font-size:15.5px;line-height:1.6;color:var(--body-text)}
+
+  .team-home-more{margin-top:48px;text-align:center}
+
+  /* Below this width three columns leave too little room beside the portrait. */
+  @media (max-width:1100px){
+    .team-home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (max-width:900px){
+    .team-home-intro{grid-template-columns:1fr;gap:16px;margin-bottom:40px}
+  }
+  /* Compact card: portrait beside name and role, description full width. */
+  @media (max-width:640px){
+    .team-home-grid{grid-template-columns:1fr;gap:16px}
+    .team-home-card{grid-template-columns:96px minmax(0,1fr);grid-template-rows:auto;grid-template-areas:"photo id" "desc desc";column-gap:16px;padding:16px}
+    .team-home-card > *{grid-column:auto}
+    .team-home-photo{grid-area:photo;width:96px;border-radius:var(--radius-sm)}
+    .team-home-id{grid-area:id;align-self:center;padding-top:0}
+    .team-home-name{font-size:18px}
+    .team-home-role,.team-home-cred{font-size:14px}
+    .team-home-desc{grid-area:desc;margin-top:14px;font-size:15px}
+    .team-home-more{margin-top:32px}
+  }
+</style>
+<section class="section team-home" id="team" aria-labelledby="team-heading">
+  <div class="container">
+    <div class="team-home-intro reveal">
+      <div>
+        <span class="eyebrow">Our Team</span>
+        <h2 id="team-heading">Know the people behind your care.</h2>
+      </div>
+      <p>Meet the team at Golden State Rehab in Los Angeles. Learn about their experience in addiction treatment and how each person supports your care.</p>
+    </div>
+    <ul class="team-home-grid" role="list">
+      <li class="reveal">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/eric-chaghouri-640.webp" srcset="images/team/portrait/eric-chaghouri-160.webp 160w, images/team/portrait/eric-chaghouri-320.webp 320w, images/team/portrait/eric-chaghouri-640.webp 640w" sizes="(max-width: 640px) 96px, 112px" width="640" height="800" loading="lazy" decoding="async" alt="Dr. Eric Chaghouri">
+          <div class="team-home-id">
+            <h3 class="team-home-name">Dr. Eric Chaghouri, MD</h3>
+            <p class="team-home-role">Medical Director</p>
+            <p class="team-home-cred">Board-certified psychiatrist</p>
+          </div>
+          <p class="team-home-desc">Dr. Chaghouri oversees clinical operations at the center and provides psychiatric care and medication management when clients need it. A board-certified psychiatrist who earned his M.D. at USC&rsquo;s Keck School of Medicine, he focuses on treating addiction alongside co-occurring mental health conditions.</p>
+        </article>
+      </li>
+      <li class="reveal reveal-delay-1">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/ari-labowitz-640.webp" srcset="images/team/portrait/ari-labowitz-160.webp 160w, images/team/portrait/ari-labowitz-320.webp 320w, images/team/portrait/ari-labowitz-640.webp 640w" sizes="(max-width: 640px) 96px, 112px" width="640" height="800" loading="lazy" decoding="async" alt="Ari Labowitz">
+          <div class="team-home-id">
+            <h3 class="team-home-name">Ari Labowitz, LMFT</h3>
+            <p class="team-home-role">Clinical Director</p>
+            <p class="team-home-cred">Licensed Marriage and Family Therapist</p>
+          </div>
+          <p class="team-home-desc">As Clinical Director, Ari leads the therapy programs at Golden State Rehab. A Licensed Marriage and Family Therapist, he treats depression, anxiety, and major life transitions through individual, couples, and family therapy.</p>
+        </article>
+      </li>
+      <li class="reveal reveal-delay-2">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/viola-sulahian-320.webp" srcset="images/team/portrait/viola-sulahian-160.webp 160w, images/team/portrait/viola-sulahian-320.webp 320w" sizes="(max-width: 640px) 96px, 112px" width="320" height="400" loading="lazy" decoding="async" alt="Viola Sulahian">
+          <div class="team-home-id">
+            <h3 class="team-home-name">Viola Sulahian, AMFT</h3>
+            <p class="team-home-role">Primary Therapist</p>
+            <p class="team-home-cred">Associate Marriage and Family Therapist</p>
+          </div>
+          <p class="team-home-desc">Viola works with clients as a primary therapist, treating addiction alongside depression, anxiety, PTSD, and other co-occurring conditions. An Associate Marriage and Family Therapist working toward licensure under supervision, she brings nearly four years of experience across detox, residential, PHP, and IOP.</p>
+        </article>
+      </li>
+      <li class="reveal">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/juanita-casillas-556.webp" srcset="images/team/portrait/juanita-casillas-160.webp 160w, images/team/portrait/juanita-casillas-320.webp 320w, images/team/portrait/juanita-casillas-556.webp 556w" sizes="(max-width: 640px) 96px, 112px" width="556" height="695" loading="lazy" decoding="async" alt="Juanita Casillas">
+          <div class="team-home-id">
+            <h3 class="team-home-name">Juanita Casillas, RADT</h3>
+            <p class="team-home-role">AOD Counselor</p>
+            <p class="team-home-cred">Registered Alcohol and Drug Technician</p>
+          </div>
+          <p class="team-home-desc">Juanita facilitates individual and group sessions, helping clients recognize their triggers and build relapse-prevention plans for life after treatment. A Registered Alcohol and Drug Technician with an Associate in Addiction Studies, she has more than four years of experience from detox through outpatient care.</p>
+        </article>
+      </li>
+      <li class="reveal reveal-delay-1">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/vindell-brunson-320.webp" srcset="images/team/portrait/vindell-brunson-160.webp 160w, images/team/portrait/vindell-brunson-320.webp 320w" sizes="(max-width: 640px) 96px, 112px" width="320" height="400" loading="lazy" decoding="async" alt="Vindell Brunson">
+          <div class="team-home-id">
+            <h3 class="team-home-name">Vindell Brunson</h3>
+            <p class="team-home-role">Program Director</p>
+            <p class="team-home-cred">Programming and levels of care</p>
+          </div>
+          <p class="team-home-desc">Vindell oversees how day-to-day programming runs at the center, including how clients move between levels of care. He brings more than 24 years of experience in addiction treatment and 26 years of his own continuous recovery.</p>
+        </article>
+      </li>
+      <li class="reveal reveal-delay-2">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/dean-mcdermott-640.webp" srcset="images/team/portrait/dean-mcdermott-160.webp 160w, images/team/portrait/dean-mcdermott-320.webp 320w, images/team/portrait/dean-mcdermott-640.webp 640w" sizes="(max-width: 640px) 96px, 112px" width="640" height="800" loading="lazy" decoding="async" alt="Dean McDermott">
+          <div class="team-home-id">
+            <h3 class="team-home-name">Dean McDermott</h3>
+            <p class="team-home-role">Director of Operations</p>
+            <p class="team-home-cred">Alcohol and drug counselor, breathwork specialist</p>
+          </div>
+          <p class="team-home-desc">As Director of Operations, Dean oversees the center&rsquo;s overall operations. An alcohol and drug counselor and breathwork specialist, he brings his own recovery from addiction, and an earlier career as an actor and comedian, to the team.</p>
+        </article>
+      </li>
+    </ul>
+    <div class="team-home-more reveal">
+      <a href="team" class="btn btn-secondary btn-lg" data-cta="team">Meet Our Team <i data-lucide="arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHY US: left-aligned header + value cards (Apple-style shelf)
+     Cards reuse the sitewide .value-card styles (as on /treatments/
+     and /programs/). The row starts at the header's left edge and
+     runs off the right edge of the screen, sized so 3⅓ cards show on
+     desktop (2⅓ tablet, ~1.2 mobile): the cut-off card says
+     "swipe for more". The visual panel holds a centered picture of
+     the actual thing (portrait, seal, room), not an icon.
+     ═══════════════════════════════════════════════════════════ -->
+<style>
+  .why-us-section .section-header{text-align:left;margin-bottom:40px}
+  .why-us-section .section-header h2{text-wrap:balance}
+  .why-us-section .section-header p{margin:0;max-width:none}
+  /* --wu-gutter mirrors .container padding at each breakpoint so the
+     first card lines up with the header. */
+  /* Cards are sized against the visible run, from the header's left edge
+     to the screen's right edge, so exactly --wu-shown cards fit it:
+     3 whole + 1/3 of the 4th on desktop. Capped for ultra-wide screens. */
+  .why-us-cards{--wu-gutter:32px;--wu-gap:20px;--wu-shown:3.3333;--wu-gaps:3;--wu-max:480px;container-type:inline-size}
+  .why-us-cards::after{display:none}
+  .why-us-cards .value-cards-track{
+    gap:var(--wu-gap);padding-top:4px;
+    padding-inline:max(var(--wu-gutter), calc((100% - 1280px) / 2 + var(--wu-gutter)));
+    scroll-padding-inline:max(var(--wu-gutter), calc((100% - 1280px) / 2 + var(--wu-gutter)));
+  }
+  .why-us-cards .value-card{flex:0 0 min(var(--wu-max), calc((100vw - max(var(--wu-gutter), (100vw - 1280px) / 2 + var(--wu-gutter)) - var(--wu-gaps) * var(--wu-gap)) / var(--wu-shown)))}
+  @supports (width:1cqw){
+    .why-us-cards .value-card{flex-basis:min(var(--wu-max), calc((100cqw - max(var(--wu-gutter), (100cqw - 1280px) / 2 + var(--wu-gutter)) - var(--wu-gaps) * var(--wu-gap)) / var(--wu-shown)))}
+  }
+  .why-us-cards .value-card-body a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+  .why-us-cards .value-card-body a:hover{color:var(--gold-dark)}
+  .why-us-cards .value-card-visual{height:230px;padding:8px 28px 28px;background:transparent}
+  .why-us-cards .value-card-visual img{display:block;pointer-events:none;-webkit-user-drag:none}
+  .why-us-cards .wu-photo{width:100%;height:100%;object-fit:cover;border-radius:14px}
+  .why-us-cards .wu-portrait{width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:center 30%;box-shadow:var(--shadow-md)}
+  .why-us-cards .wu-seal{width:170px;height:170px;object-fit:contain;filter:drop-shadow(0 8px 16px rgba(0,0,0,.14))}
+  @media (hover:hover) and (pointer:fine){
+    .why-us-cards .value-cards-track{cursor:grab;user-select:none;-webkit-user-select:none}
+  }
+  .why-us-cards .value-cards-track.is-dragging{cursor:grabbing;scroll-snap-type:none}
+  @media (max-width:1024px){
+    .why-us-cards{--wu-gutter:24px}
+  }
+  @media (max-width:1023px){
+    .why-us-cards{--wu-shown:2.3333;--wu-gaps:2}
+  }
+  @media (max-width:767px){
+    .why-us-cards{--wu-gap:16px;--wu-shown:1.2;--wu-gaps:1}
+    .why-us-cards .value-card-visual{height:210px}
+  }
+  @media (max-width:640px){
+    .why-us-cards{--wu-gutter:20px}
+  }
+</style>
+<section class="section why-us-section" aria-labelledby="why-us-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 id="why-us-heading">See why Golden State Rehab is<br class="br-desktop"> the best place for treatment</h2>
+    </div>
+  </div>
+  <div class="value-cards-scroll-wrapper why-us-cards reveal">
+    <div class="value-cards-track">
+      <div class="value-card">
+        <div class="value-card-content">
+          <p class="value-card-eyebrow">Clinical Leadership</p>
+          <h3 class="value-card-headline">Led by a psychiatrist and a licensed therapist.</h3>
+          <p class="value-card-body">Your care is overseen by Medical Director Dr. Eric Chaghouri, MD, a board-certified psychiatrist, and Clinical Director Ari Labowitz, LMFT, starting with a <a href="contact">full clinical assessment</a>.</p>
+        </div>
+        <div class="value-card-visual">
+          <img class="wu-portrait" src="images/team/eric-chaghouri.webp" alt="Dr. Eric Chaghouri, MD, Medical Director" width="800" height="800" loading="lazy" draggable="false">
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-card-content">
+          <p class="value-card-eyebrow">Morning &amp; Evening Tracks</p>
+          <h3 class="value-card-headline">Treatment that fits around your job.</h3>
+          <p class="value-card-body"><a href="programs/php">Partial hospitalization (PHP)</a>, <a href="programs/iop">intensive outpatient (IOP)</a>, and telehealth, scheduled around work while you live at home. See how <a href="programs/outpatient-rehab">outpatient drug rehab in Los Angeles</a> works.</p>
+        </div>
+        <div class="value-card-visual">
+          <img class="wu-photo" src="images/facility/computer-workstations-800.webp" alt="Computer workstations with monitors and lounge chairs" width="600" height="800" loading="lazy" draggable="false">
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-card-content">
+          <p class="value-card-eyebrow">Licensed &amp; Accredited</p>
+          <h3 class="value-card-headline">Credentials you can look up yourself.</h3>
+          <p class="value-card-body">California DHCS License #191643AP and Joint Commission accreditation, both public record. We work with most major PPO plans; see how <a href="insurance/">insurance coverage for rehab</a> works.</p>
+        </div>
+        <div class="value-card-visual">
+          <img class="wu-seal" src="images/joint-commission-gold-seal-480.webp" alt="The Joint Commission Gold Seal of Approval" width="480" height="480" loading="lazy" draggable="false">
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-card-content">
+          <p class="value-card-eyebrow">Dual Diagnosis</p>
+          <h3 class="value-card-headline">Addiction and mental health, treated as one.</h3>
+          <p class="value-card-body">Most people with a substance use disorder also have a co-occurring condition. Your psychiatrist and therapist work from one shared plan, so both are treated at the same time.</p>
+        </div>
+        <div class="value-card-visual">
+          <img class="wu-photo" src="images/facility/individual-therapy-room-800.webp" alt="Private one-on-one therapy office with leather lounge chair and sofa" width="600" height="800" loading="lazy" draggable="false">
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-card-content">
+          <p class="value-card-eyebrow">Whole-Person Care</p>
+          <h3 class="value-card-headline">Care that goes beyond talk therapy.</h3>
+          <p class="value-card-body">Trauma-focused therapy, including EMDR, plus yoga, breathwork, and movement alongside your clinical care.</p>
+        </div>
+        <div class="value-card-visual">
+          <img class="wu-photo" src="images/facility/reading-lounge-800.webp" alt="Quiet reading lounge with library shelving and armchairs" width="600" height="800" loading="lazy" draggable="false">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div style="text-align: center; margin-top: 48px;" class="reveal">
+      <div class="cta-stack">
+        <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="why-us">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+        <ul class="cta-proof" aria-label="Ratings and accreditation">
+          <li class="cta-proof-item">
+            <svg class="cta-proof-laurel" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+            <span class="cta-proof-text"><strong>5-Star</strong> Rated<br>on Google</span>
+            <svg class="cta-proof-laurel cta-proof-laurel--r" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+          </li>
+          <li class="cta-proof-item">
+            <img class="cta-proof-seal" src="/images/joint-commission-gold-seal.webp" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="cta-proof-text"><strong>Joint Commission</strong><br>Accredited</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+// Why-us cards: mouse click-and-drag browsing (touch uses native swipe).
+// A press that moves less than DRAG_PX stays a normal click, so links in
+// the cards keep working; a real drag swallows the click that follows it.
+(function () {
+  var track = document.querySelector('.why-us-cards .value-cards-track');
+  if (!track) return;
+  var DRAG_PX = 6;
+  var press = null;
+  var suppressClick = false;
+
+  function pitch() {
+    var cards = track.children;
+    return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 0;
+  }
+  function settle() {
+    var p = pitch();
+    var max = track.scrollWidth - track.clientWidth;
+    var target = p ? Math.min(Math.round(track.scrollLeft / p) * p, max) : track.scrollLeft;
+    track.scrollTo({ left: target, behavior: 'smooth' });
+  }
+
+  track.addEventListener('dragstart', function (e) { e.preventDefault(); });
+  track.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    press = { id: e.pointerId, x: e.clientX, left: track.scrollLeft, dragging: false };
+  });
+  track.addEventListener('pointermove', function (e) {
+    if (!press || e.pointerId !== press.id) return;
+    var dx = e.clientX - press.x;
+    if (!press.dragging) {
+      if (Math.abs(dx) < DRAG_PX) return;
+      press.dragging = true;
+      track.classList.add('is-dragging');
+      track.setPointerCapture(press.id);
+    }
+    track.scrollLeft = press.left - dx;
+  });
+  function release(e) {
+    if (!press || e.pointerId !== press.id) return;
+    var wasDragging = press.dragging;
+    press = null;
+    if (!wasDragging) return;
+    // The click (if any) fires right after pointerup; clear the flag on the
+    // next tick so a drag released outside the row can't eat a later click.
+    suppressClick = true;
+    setTimeout(function () { suppressClick = false; }, 0);
+    if (track.hasPointerCapture(e.pointerId)) track.releasePointerCapture(e.pointerId);
+    track.classList.remove('is-dragging');
+    settle();
+  }
+  track.addEventListener('pointerup', release);
+  track.addEventListener('pointercancel', release);
+  track.addEventListener('click', function (e) {
+    if (!suppressClick) return;
+    suppressClick = false;
+    e.preventDefault();
+    e.stopPropagation();
+  }, true);
+}());
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     COMMUNITY BAND: alumni photo (lead-in to "How to Start Treatment")
+     ═══════════════════════════════════════════════════════════ -->
+<style>
+  .community-band{padding:0 0 96px;background:var(--white)}
   .community-figure{position:relative;margin:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
   .community-figure img{display:block;width:100%;height:clamp(300px,42vw,460px);object-fit:cover;object-position:center 42%}
   .community-figure figcaption{position:absolute;inset:auto 0 0 0;padding:110px 40px 34px;background:linear-gradient(to top,rgba(20,14,4,0.82),rgba(20,14,4,0.35) 55%,transparent);color:var(--white)}
   .community-kicker{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
   .community-figure figcaption p{margin:0;font-size:clamp(18px,2.4vw,26px);font-weight:700;line-height:1.35;max-width:30ch}
   @media (max-width:640px){
-    .community-band{padding-top:64px}
+    .community-band{padding-bottom:64px}
     .community-figure{border-radius:var(--radius-md)}
     .community-figure figcaption{padding:80px 22px 24px;background:linear-gradient(to top,rgba(20,14,4,0.92),rgba(20,14,4,0.5) 60%,transparent)}
   }
@@ -515,66 +1382,6 @@
         <p>Recovery doesn&rsquo;t end at discharge. You leave here with people in your corner.</p>
       </figcaption>
     </figure>
-  </div>
-</section>
-
-<style>
-  /* "Who walks through our doors": group-session photo beside the personas
-     list. Photo stretches to match list height on desktop; stacks first and
-     crops to a wide band on mobile. */
-  .doors-split{display:grid;grid-template-columns:minmax(280px,400px) 1fr;gap:40px 48px;align-items:stretch;max-width:1020px;margin:0 auto}
-  .doors-photo{position:relative;margin:0;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-md)}
-  .doors-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
-  @media (max-width:900px){
-    .doors-split{grid-template-columns:1fr;gap:28px}
-    .doors-photo img{height:auto;max-height:300px;object-position:center 40%}
-  }
-</style>
-<section class="section" aria-labelledby="why-us-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 id="why-us-heading">Licensed outpatient treatment that<br class="br-desktop"> fits around you</h2>
-      <p>Care at our private West Los Angeles center is led by Dr. Eric Chaghouri, MD, a board-certified psychiatrist, with morning and evening tracks built around your life.</p>
-    </div>
-    <div class="why-us-grid">
-      <div class="why-us-card reveal reveal-delay-1">
-        <div class="why-us-icon"><i data-lucide="users"></i></div>
-        <h3>Licensed clinicians, never interns</h3>
-        <p>You work directly with licensed therapists, psychiatrists, and certified addiction specialists, under the direction of Medical Director Dr. Eric Chaghouri, MD, who earned his M.D. at the Keck School of Medicine at USC. Care starts with a <a href="contact">full clinical assessment</a>, and the plan that comes out of it draws on CBT, DBT, EMDR, and medication-assisted treatment, shaped around your diagnosis, your goals, and your day-to-day life. The same clinicians stay with you from your first call through aftercare.</p>
-      </div>
-      <div class="why-us-card reveal reveal-delay-2">
-        <div class="why-us-icon"><i data-lucide="clock"></i></div>
-        <h3>Morning and evening tracks</h3>
-        <p>A <a href="programs/php">partial hospitalization program (PHP)</a>, an <a href="programs/iop">intensive outpatient program</a>, telehealth, and individual therapy, scheduled so treatment fits around a job, not instead of one. You live at home and stay in your own community the whole time; see how <a href="programs/outpatient-rehab">outpatient drug rehab in Los Angeles</a> works.</p>
-      </div>
-      <div class="why-us-card reveal reveal-delay-3">
-        <div class="why-us-icon"><i data-lucide="shield-check"></i></div>
-        <h3>DHCS-licensed, Joint Commission accredited</h3>
-        <p>We hold California DHCS License #191643AP and accreditation from The Joint Commission, both public records you can look up. We work with most major PPO plans, including Aetna, Anthem, Cigna, Blue Cross Blue Shield, and United Healthcare. See how <a href="insurance/">insurance coverage for rehab in Los Angeles</a> works, or have us check your benefits for free. Our intake team answers day or night, with same-day assessments whenever possible.</p>
-      </div>
-    </div>
-        <div class="reveal" style="margin-top:56px;background:var(--gold-light);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 44px 52px;">
-      <div style="text-align:center;max-width:640px;margin:0 auto 36px;">
-        <h3 style="font-size:28px;line-height:1.25;margin:0;color:var(--near-black);">Who our programs are designed for</h3>
-      </div>
-      <div class="doors-split">
-        <figure class="doors-photo">
-          <img src="images/community/group-session.webp" alt="People talking and laughing together during a group session" loading="lazy" width="1100" height="734">
-        </figure>
-        <ul style="list-style:none;display:grid;grid-template-columns:1fr;gap:18px;margin:0;padding:0;">
-        <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">Young adults</strong> balancing recovery with school, first jobs, and real life.</p></li>
-        <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">Working professionals</strong> who need serious treatment that starts after the workday ends.</p></li>
-        <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">People in early recovery</strong> who need more structure than weekly therapy.</p></li>
-        <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">People carrying both</strong> a mental health condition and substance use.</p></li>
-        <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">People stepping down from residential care</strong> who need a bridge to independence.</p></li>
-        <li style="display:flex;gap:14px;align-items:flex-start;"><span aria-hidden="true" style="flex-shrink:0;width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:9px;"></span><p style="margin:0;font-size:16px;line-height:1.6;color:var(--body-text);"><strong style="color:var(--near-black);">Spanish speakers</strong> who want <a href="spanish-speaking-treatment">Spanish-speaking treatment</a> from bilingual clinicians, in person or by telehealth.</p></li>
-      </ul>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 48px;" class="reveal">
-      <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--near-black);">Free. Confidential. Fast.</p>
-      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="why-us">Verify My Insurance <i data-lucide="arrow-right"></i></a>
-    </div>
   </div>
 </section>
 
@@ -607,8 +1414,20 @@
       </li>
     </ol>
     <div style="text-align: center; margin-top: 56px;" class="reveal">
-      <p style="margin:0 0 18px;font-size:20px;font-weight:700;line-height:1.35;color:var(--off-white);">Start with step 1.</p>
-      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="process">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+      <div class="cta-stack cta-stack--dark">
+        <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="process">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+        <ul class="cta-proof" aria-label="Ratings and accreditation">
+          <li class="cta-proof-item">
+            <svg class="cta-proof-laurel" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+            <span class="cta-proof-text"><strong>5-Star</strong> Rated<br>on Google</span>
+            <svg class="cta-proof-laurel cta-proof-laurel--r" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+          </li>
+          <li class="cta-proof-item">
+            <img class="cta-proof-seal" src="/images/joint-commission-gold-seal.webp" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="cta-proof-text"><strong>Joint Commission</strong><br>Accredited</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -679,9 +1498,20 @@
     <span class="cta-meta"><i data-lucide="shield-check"></i> Confidential · Free · 24/7</span>
     <h2>Let's get you scheduled.</h2>
     <p>Verify your insurance in about a minute, or call our Los Angeles admissions team and we'll walk you through every step. Free and confidential.</p>
-    <div class="btn-group">
-      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="final">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+    <div class="cta-stack cta-stack--dark">
       <a href="tel:+14242083120" class="btn btn-white-outline btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
+      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="final">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+      <ul class="cta-proof" aria-label="Ratings and accreditation">
+        <li class="cta-proof-item">
+          <svg class="cta-proof-laurel" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+          <span class="cta-proof-text"><strong>5-Star</strong> Rated<br>on Google</span>
+          <svg class="cta-proof-laurel cta-proof-laurel--r" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+        </li>
+        <li class="cta-proof-item">
+          <img class="cta-proof-seal" src="/images/joint-commission-gold-seal.webp" alt="" width="24" height="24" loading="lazy" decoding="async">
+          <span class="cta-proof-text"><strong>Joint Commission</strong><br>Accredited</span>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -697,7 +1527,7 @@
           <div google-add-preferred-source-btn data-theme="dark"></div>
         </div></div><div class="footer-col"><div class="footer-heading">Programs</div><nav class="footer-links"><a href="/programs/">All Programs</a><a href="/programs/php">Partial Hospitalization (PHP)</a><a href="/programs/iop">Intensive Outpatient (IOP)</a><a href="/programs/evening-iop">Evening IOP</a><a href="/programs/virtual-iop">Virtual IOP</a><a href="/programs/outpatient-rehab">Outpatient Drug Rehab</a><a href="/programs/telehealth">Telehealth Rehab</a><a href="/programs/psychiatric-care">Psychiatric Care</a></nav></div><div class="footer-col"><div class="footer-heading">Treatments</div><nav class="footer-links"><a href="/treatments/">All Treatments</a><a href="/treatments/alcohol">Alcohol Addiction</a><a href="/treatments/fentanyl">Fentanyl Addiction</a><a href="/treatments/dual-diagnosis">Dual Diagnosis</a><a href="/treatments/depression">Depression</a><a href="/treatments/anxiety">Anxiety</a></nav></div><div class="footer-col"><div class="footer-heading">Centers of Care</div><nav class="footer-links"><a href="/rehabilitation-center">Rehabilitation Center</a><a href="/alcoholism-treatment-program">Alcoholism Treatment Program</a><a href="/mental-health">Mental Health Treatment</a><a href="/spanish-speaking-treatment">Spanish-Speaking Treatment</a></nav></div><div class="footer-col"><div class="footer-heading">Admissions</div><nav class="footer-links"><a href="/admissions">Admissions &amp; Same-Week Intake</a><a href="/verify-insurance">Verify Insurance</a><a href="/insurance/">Insurance Coverage</a><a href="/contact">Contact Us</a><a href="/faq">FAQ</a><a href="/families">For Families</a></nav></div><div class="footer-col"><div class="footer-heading">Explore</div><nav class="footer-links"><a href="/locations">Our Location &amp; Areas We Serve</a><a href="/blog/">Blog</a><a href="/about">About Us</a><a href="/team">Our Team</a><a href="/our-facility">Our Facility</a></nav></div></div><div class="footer-visit"><div class="footer-visit-text"><div class="footer-visit-eyebrow">Visit Us</div><p class="footer-visit-addr">1964 Westwood Blvd, Suite 425<br>Los Angeles, CA 90025</p><p class="footer-visit-note">Our outpatient center in Westwood, West Los Angeles &mdash; minutes from Santa Monica, Beverly Hills, Brentwood, and Culver City.</p><div class="footer-visit-links"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Open in Google Maps</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025&amp;destination_place_id=ChIJd5B-5MW7woARZ672RvC5X9E" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Get directions</a></div></div><div class="footer-visit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3!2d-118.4343784!3d34.0474328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbc5e47e9077%3A0xd15fb9f046f6ae67!2sGolden%20State%20Rehab!5e0!3m2!1sen!2sus!4v1758000000000!5m2!1sen!2sus" title="Google Map: Golden State Rehab, 1964 Westwood Blvd Suite 425, Los Angeles" width="600" height="240" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div><div class="footer-bottom"><a rel="noopener noreferrer nofollow" href="https://www.jointcommission.org/" target="_blank" class="footer-seal"><img src="/images/joint-commission-gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage" width="44" height="44" loading="lazy" decoding="async"></a><p class="footer-bottom-text">&copy; 2026 Golden State Rehab. All rights reserved. Los Angeles, California.</p><nav class="footer-bottom-links"><a href="/blog/">Blog</a><a href="/faq">FAQ</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms of Use</a><a href="/sitemap.xml">Sitemap</a></nav></div><div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></div></footer>
 
-<script src="js/main.min.js?v=14" defer></script>
+<script src="js/main.min.js?v=15" defer></script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
 <script type="application/ld+json">
 {
@@ -819,6 +1649,15 @@
         "url": "https://www.jointcommission.org/"
       }
     }
+  ],
+  "employee": [
+    {"@type": "Person", "@id": "https://www.goldenstate-rehab.com/team#eric-chaghouri", "name": "Dr. Eric Chaghouri, MD", "jobTitle": "Medical Director"},
+    {"@type": "Person", "@id": "https://www.goldenstate-rehab.com/team#ari-labowitz", "name": "Ari Labowitz, LMFT", "jobTitle": "Clinical Director"},
+    {"@type": "Person", "@id": "https://www.goldenstate-rehab.com/team#viola-sulahian", "name": "Viola Sulahian, AMFT", "jobTitle": "Primary Therapist"},
+    {"@type": "Person", "@id": "https://www.goldenstate-rehab.com/team#juanita-casillas", "name": "Juanita Casillas, RADT", "jobTitle": "AOD Counselor"},
+    {"@type": "Person", "@id": "https://www.goldenstate-rehab.com/team#vindell-brunson", "name": "Vindell Brunson", "jobTitle": "Program Director"},
+    {"@type": "Person", "@id": "https://www.goldenstate-rehab.com/team#dean-mcdermott", "name": "Dean McDermott", "jobTitle": "Director of Operations"},
+    {"@type": "Person", "@id": "https://www.goldenstate-rehab.com/team#scott-hedlund", "name": "Scott Hedlund", "jobTitle": "Director of Business Development"}
   ],
   "sameAs": ["https://www.google.com/maps?cid=15086981718348312167", "https://www.yelp.com/biz/golden-state-rehab-llc-los-angeles", "https://www.instagram.com/goldenstaterehab", "https://www.linkedin.com/company/goldenstaterehab/", "https://x.com/goldenstateWR1"]
 }

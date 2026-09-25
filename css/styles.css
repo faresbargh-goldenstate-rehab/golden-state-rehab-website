@@ -1017,7 +1017,6 @@ p:last-child { margin-bottom: 0; }
   border-radius: 12px;
   transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 }
-button.ins-tile { cursor: pointer; }
 .ins-logo {
   height: 34px;
   width: auto;
@@ -1050,7 +1049,6 @@ button.ins-tile { cursor: pointer; }
   flex-wrap: wrap;
   margin-top: 28px;
 }
-.insurance-cta-row[hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .ins-tile, .ins-logo { transition: none; }
   .ins-tile:hover, .ins-tile.is-lit { transform: none; }
@@ -3772,21 +3770,9 @@ a.facility-card-label:hover svg { opacity: 1; transform: translate(2px, -2px); }
 }
 
 
-/* ── Insurance coverage checker ─────────────────────────────────────── */
+/* ── Homepage insurance logos header ────────────────────────────────── */
 .insurance-checker-head { flex-direction: column; align-items: center; text-align: center; gap: 10px; }
-.insurance-checker-sub { max-width: 580px; margin: 4px auto 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
-.ins-tile:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; }
-.ins-tile.is-selected { border-color: var(--gold); box-shadow: 0 4px 14px rgba(166, 132, 44, .22); }
-.ins-tile.is-selected .ins-logo { filter: grayscale(0); opacity: 1; }
 .ins-tile .ins-logo { display: block; }
-.coverage-result {
-  max-width: 640px; margin: 28px auto 0; padding: 24px 28px;
-  background: var(--gold-light); border: 1px solid var(--border); border-radius: 16px; text-align: center;
-}
-.coverage-result-msg { font-size: 18px; color: var(--near-black); margin: 0 0 18px; line-height: 1.5; display: flex; gap: 10px; align-items: center; justify-content: center; }
-.coverage-result-msg svg { color: #2e9e5b; flex: 0 0 auto; width: 22px; height: 22px; }
-.coverage-result-note { font-size: 14px; color: var(--muted); margin: 16px 0 0; }
-.coverage-result-note a { color: var(--gold-dark); font-weight: 600; }
 
 
 /* ── Hero "Referring a client?" link (3rd persona) ──────────────────── */
@@ -3896,7 +3882,7 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
    Four reviews in one compact row, all visible at once — nothing
    behind a swipe. "Read more" opens all six, full size.
 
-   At this scale the captures are a proof signal rather than a read:
+   At this scale the previews are a proof signal rather than a read:
    the Google card, the avatar, the five stars and the NEW badge all
    still register, but the body copy of the older, less zoomed-in
    captures is too small to read. That is deliberate — the overlay is
@@ -3912,6 +3898,7 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
 }
 .proof-shot {
   position: relative;
+  container-type: inline-size;
   height: 280px;
   overflow: hidden;
   background: var(--white);
@@ -3923,11 +3910,6 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
 .proof-shot:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-}
-.proof-shot img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 /* Reviews run longer than the card. Rather than crop them dead, the last
    inch fades to the card's own white and hands off to "Read more". On the
@@ -3960,6 +3942,239 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
 }
 .proof-shot-more:hover { color: var(--near-black); border-bottom-color: var(--near-black); }
 .proof-shot-more:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 3px; }
+
+/* Live Google review text. Dimensions are measured in the original capture's
+   pixels, then scaled to the card's inline-size container. This keeps both
+   capture formats and their line lengths intact in previews and the overlay.
+   Only the original photographs remain raster images, clipped below. */
+.google-review {
+  --review-width: 808;
+  --review-px: calc(100cqi / var(--review-width));
+  --review-top: 40;
+  --review-right: 48;
+  --review-bottom: 38;
+  --review-left: 48;
+  --review-avatar: 64;
+  --review-avatar-gap: 24;
+  --review-name-size: 32;
+  --review-name-line: 40;
+  --review-meta-size: 28;
+  --review-meta-line: 36;
+  --review-body-size: 29.2;
+  --review-body-line: 42;
+  --review-indent: 0;
+  --review-rating-gap: 26;
+  --review-rating-height: 44;
+  --review-stars-width: 160;
+  --review-stars-height: 32;
+  --review-text-gap: 8;
+  --review-paragraph-gap: 0;
+  --review-avatar-color: #4b5b62;
+  position: relative;
+  padding: calc(var(--review-top) * var(--review-px)) calc(var(--review-right) * var(--review-px)) calc(var(--review-bottom) * var(--review-px)) calc(var(--review-left) * var(--review-px));
+  background: #fff;
+  color: #1f1f1f;
+  font-family: "Google Sans", sans-serif;
+  font-size: calc(var(--review-body-size) * var(--review-px));
+  font-weight: 400;
+  line-height: calc(var(--review-body-line) * var(--review-px));
+  letter-spacing: normal;
+  text-align: left;
+}
+.google-review-header {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--review-avatar-gap) * var(--review-px));
+  min-height: calc(var(--review-avatar) * var(--review-px));
+}
+.google-review-avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: calc(var(--review-avatar) * var(--review-px));
+  height: calc(var(--review-avatar) * var(--review-px));
+  margin-top: calc(6 * var(--review-px));
+  border-radius: 50%;
+  background: var(--review-avatar-color);
+  color: #fff;
+  font-size: calc(36 * var(--review-px));
+  line-height: 1;
+}
+.google-review-author { min-width: 0; }
+.google-review-name {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--review-px));
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: calc(var(--review-name-size) * var(--review-px));
+  font-weight: 500;
+  line-height: calc(var(--review-name-line) * var(--review-px));
+  letter-spacing: normal;
+}
+.google-review-meta {
+  margin: 0;
+  color: #5e5e5e;
+  font-size: calc(var(--review-meta-size) * var(--review-px));
+  line-height: calc(var(--review-meta-line) * var(--review-px));
+}
+.google-review-menu {
+  position: absolute;
+  top: calc(28 * var(--review-px));
+  right: calc(6 * var(--review-px));
+  width: calc(32 * var(--review-px));
+  height: calc(32 * var(--review-px));
+  color: #5f6368;
+}
+.google-review-menu svg { display: block; width: 100%; height: 100%; }
+.google-review-menu circle { fill: #1f1f1f; }
+.google-review-external {
+  flex: 0 0 auto;
+  width: calc(24 * var(--review-px));
+  height: calc(24 * var(--review-px));
+}
+.google-review-content { margin-left: calc(var(--review-indent) * var(--review-px)); }
+.google-review-rating {
+  display: flex;
+  align-items: center;
+  gap: calc(16 * var(--review-px));
+  height: calc(var(--review-rating-height) * var(--review-px));
+  margin-top: calc(var(--review-rating-gap) * var(--review-px));
+  white-space: nowrap;
+}
+.google-review-stars {
+  display: block;
+  flex: 0 0 auto;
+  width: calc(var(--review-stars-width) * var(--review-px));
+  height: calc(var(--review-stars-height) * var(--review-px));
+  color: #f5bf43;
+}
+.google-review-stars svg { display: block; width: 100%; height: 100%; fill: currentColor; }
+.google-review-age { color: #5e5e5e; }
+.google-review-new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--review-rating-height) * var(--review-px));
+  padding-inline: calc(14 * var(--review-px));
+  border: calc(2 * var(--review-px)) solid #dadce0;
+  border-radius: calc(7 * var(--review-px));
+  color: #202124;
+  font-size: calc(22 * var(--review-px));
+  font-weight: 700;
+  line-height: 1;
+}
+.google-review-text { margin: calc(var(--review-text-gap) * var(--review-px)) 0 0; padding: 0; }
+.google-review-text p { margin: 0; }
+.google-review-text p + p { margin-top: calc(var(--review-paragraph-gap) * var(--review-px)); }
+.google-review--wide {
+  --review-width: 1100;
+  --review-top: 38;
+  --review-right: 12;
+  --review-bottom: 22;
+  --review-left: 13;
+  --review-avatar: 60;
+  --review-avatar-gap: 21;
+  --review-name-size: 24;
+  --review-name-line: 30;
+  --review-meta-size: 22;
+  --review-meta-line: 28;
+  --review-body-size: 24;
+  --review-body-line: 34;
+  --review-indent: 81;
+  --review-rating-gap: 22;
+  --review-rating-height: 42;
+  --review-stars-width: 120;
+  --review-stars-height: 26;
+  --review-text-gap: 12;
+  --review-paragraph-gap: 32;
+  --review-avatar-color: #78929c;
+}
+.google-review--wide .google-review-avatar { margin-top: 0; }
+.google-review--wide .google-review-name { color: #1967d2; }
+.google-review--wide .google-review-name span { text-decoration: underline; text-underline-offset: calc(2 * var(--review-px)); }
+.google-review--wide .google-review-menu { top: calc(12 * var(--review-px)); right: calc(20 * var(--review-px)); }
+.google-review--wide .google-review-rating { gap: calc(20 * var(--review-px)); }
+.google-review--wide .google-review-stars { color: #fbbc04; }
+.google-review--wide .google-review-new { border-color: #bdc1c6; padding-inline: calc(12 * var(--review-px)); font-size: calc(24 * var(--review-px)); }
+.google-review--1 {
+  --review-top: 54;
+  --review-right: 14;
+  --review-bottom: 24;
+  --review-left: 14;
+  --review-avatar: 64;
+  --review-avatar-gap: 22;
+  --review-name-size: 26;
+  --review-name-line: 32;
+  --review-body-size: 25;
+  --review-body-line: 36;
+  --review-indent: 86;
+  --review-rating-gap: 24;
+  --review-rating-height: 44;
+  --review-stars-width: 124;
+  --review-paragraph-gap: 36;
+  --review-avatar-color: #ef3b7c;
+}
+.google-review--3 {
+  --review-top: 18;
+  --review-right: 14;
+  --review-bottom: 24;
+  --review-left: 17;
+  --review-avatar-gap: 20;
+  --review-body-size: 23.5;
+  --review-indent: 80;
+  --review-rating-height: 40;
+  --review-avatar-color: #7e57c2;
+}
+.google-review-guide {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: calc(24 * var(--review-px));
+  height: calc(24 * var(--review-px));
+}
+.google-review--5 { --review-width: 804; --review-left: 50; --review-bottom: 32; }
+.google-review--5 .google-review-avatar { overflow: hidden; }
+.google-review--5 .google-review-avatar img {
+  position: absolute;
+  max-width: none;
+  width: 1256.25%;
+  height: auto;
+  left: -78.125%;
+  top: -71.875%;
+}
+.google-review--6 { --review-width: 796; --review-body-size: 28; --review-bottom: 20; --review-avatar-color: #7fa14b; }
+.google-review-photo {
+  position: relative;
+  overflow: hidden;
+  margin-top: calc(31 * var(--review-px));
+  border-radius: calc(24 * var(--review-px));
+  aspect-ratio: 986 / 436;
+}
+.google-review-photo img {
+  position: absolute;
+  max-width: none;
+  width: 111.561866%;
+  height: auto;
+  left: -10.141988%;
+  top: -176.376147%;
+}
+.google-review--2 .google-review-photo { margin-top: calc(30 * var(--review-px)); aspect-ratio: 994 / 440; }
+.google-review--2 .google-review-photo img { width: 110.663984%; left: -9.45674%; top: -100.454545%; }
+
+/* Expanded reviews share one width and readable text size. Screenshot line
+   breaks belong to the scaled previews; the overlay reflows naturally. */
+.proof-full .google-review {
+  --review-px: calc(16px / var(--review-body-size));
+  font-size: 16px;
+  line-height: 1.5;
+}
+.proof-full .google-review-text br { display: none; }
+.proof-full .google-review-text br.google-review-paragraph-break { display: initial; }
 
 /* ── The three cards ─────────────────────────────────────────
    Audience, then mechanism, then us. The dark card is the only
@@ -4209,20 +4424,17 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
 .proof-modal-stars { color: #FBBC05; letter-spacing: 1.5px; }
 .proof-modal-rating { font-weight: 500; color: rgba(253, 250, 245, 0.72); }
 
-/* The captures keep the wall's two width caps so their text stays even
-   here too; each one scrolls at full height, uncropped. */
+/* All six expanded reviews share a single responsive width. */
 .proof-full {
+  container-type: inline-size;
   margin: 0 auto 20px;
-  width: min(100%, var(--shot-max));
+  width: min(100%, 712px);
   background: var(--white);
   border-radius: var(--radius-lg);
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
   overflow: hidden;
 }
 .proof-full:last-child { margin-bottom: 0; }
-.proof-full--narrow { --shot-max: 423px; }
-.proof-full--wide   { --shot-max: 712px; }
-.proof-full img { display: block; width: 100%; height: auto; }
 
 /* Absolute, not fixed: the frame does not scroll, so this stays put
    while the reviews move under it. */
