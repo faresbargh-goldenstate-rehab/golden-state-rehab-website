@@ -679,7 +679,7 @@
   var track = strip.querySelector('.facility-strip-track');
   var originals = Array.prototype.slice.call(track.children);
   var COUNT = originals.length;
-  var SLIDE_MS = 2200;   // one-photo glide: slow start, fast middle, slow finish
+  var SLIDE_MS = 3150;   // one-photo glide: slow start, fast middle, slow finish
   var DWELL_MS = 100;    // the brief stop between glides
   var RESUME_MS = 4000;  // idle time after an interaction before autoplay resumes
   var SETTLE_MS = 150;   // quiet period that counts as "scroll finished"
@@ -744,11 +744,18 @@
     var start = strip.scrollLeft;
     var distance = target - start;
     var startedAt = null;
+    var lastSet = start;
     strip.classList.add('is-animating');
     function frame(now) {
+      // A finger is panning the row itself (it drifted from where the glide
+      // put it): that is a real sideways swipe, so hand the row over.
+      if (gesture && gesture.axis !== 'x' && Math.abs(strip.scrollLeft - lastSet) > 3) {
+        claimSwipe();
+        return;
+      }
       if (startedAt === null) startedAt = now;
       var progress = Math.min((now - startedAt) / duration, 1);
-      strip.scrollLeft = start + distance * easeSwell(progress);
+      strip.scrollLeft = lastSet = start + distance * easeSwell(progress);
       if (progress < 1) {
         frameId = requestAnimationFrame(frame);
         return;
@@ -826,32 +833,40 @@
     schedule(RESUME_MS);
   }, { passive: true });
 
-  // ── Touch: native swipe + CSS snap. Only a sideways swipe takes over; a
-  // vertical page scroll that starts on the strip leaves the glide running,
-  // since stopping it mid-glide makes snap jerk the row to the nearest photo. ──
-  var TOUCH_SLOP = 8;    // px of travel before a gesture's direction counts
-  var touch = null;
+  // ── Touch: native swipe + CSS snap. Only a clearly sideways swipe takes
+  // over; a page scroll that starts on the strip leaves the glide running,
+  // since stopping it mid-glide makes snap jerk the row to the nearest photo.
+  // Diagonal gestures stay with the page unless the row itself moves under
+  // the finger (caught in glideTo's frame). ──
+  var TOUCH_SLOP = 12;   // px of travel before a gesture's direction counts
+  var SIDEWAYS_RATIO = 2; // horizontal travel must exceed vertical by this much
+  var gesture = null;    // { x, y, scrollY, axis: null | 'x' | 'y' }
+  function claimSwipe() {
+    gesture.axis = 'x';
+    cancelGlide();
+    setState('touching', true);
+  }
   strip.addEventListener('touchstart', function (e) {
     var t = e.touches[0];
-    touch = { x: t.clientX, y: t.clientY, sideways: false };
+    gesture = { x: t.clientX, y: t.clientY, scrollY: window.scrollY, axis: null };
   }, { passive: true });
   strip.addEventListener('touchmove', function (e) {
-    if (!touch || touch.sideways) return;
-    var t = e.touches[0];
-    var dx = Math.abs(t.clientX - touch.x);
-    var dy = Math.abs(t.clientY - touch.y);
-    if (dx < TOUCH_SLOP && dy < TOUCH_SLOP) return;
-    if (dx > dy) {
-      touch.sideways = true;
-      cancelGlide();
-      setState('touching', true);
-    } else {
-      touch = null;  // vertical: ignore the rest of this gesture
+    if (!gesture || gesture.axis) return;
+    // The page has started scrolling: this gesture is vertical.
+    if (window.scrollY !== gesture.scrollY) {
+      gesture.axis = 'y';
+      return;
     }
+    var t = e.touches[0];
+    var dx = Math.abs(t.clientX - gesture.x);
+    var dy = Math.abs(t.clientY - gesture.y);
+    if (dx < TOUCH_SLOP && dy < TOUCH_SLOP) return;
+    if (dx > dy * SIDEWAYS_RATIO) claimSwipe();
+    else gesture.axis = 'y';
   }, { passive: true });
   function endTouch() {
-    if (touch && touch.sideways) setState('touching', false);
-    touch = null;
+    if (gesture && gesture.axis === 'x') setState('touching', false);
+    gesture = null;
   }
   strip.addEventListener('touchend', endTouch, { passive: true });
   strip.addEventListener('touchcancel', endTouch, { passive: true });
