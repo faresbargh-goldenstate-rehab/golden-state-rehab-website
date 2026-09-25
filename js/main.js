@@ -199,6 +199,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // once each image reports a height.
     var pending = [].slice.call(scroller.querySelectorAll('img')).filter(function (img) { return !img.complete; });
     pending.forEach(function (img) {
+      // iOS Safari never starts lazy images inside this fixed, scrolling
+      // overlay, so the photos stayed blank on phones. Once the overlay is
+      // open they are needed, so load them now.
+      img.loading = 'eager';
       img.addEventListener('load', function () { if (!modal.hidden) goTo(id); }, { once: true });
     });
     requestAnimationFrame(function () { modal.classList.add('is-open'); });
