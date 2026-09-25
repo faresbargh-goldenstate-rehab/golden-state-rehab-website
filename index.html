@@ -784,7 +784,7 @@
   }
   function advance() {
     timer = null;
-    if (!canPlay()) return;
+    if (!canPlay() || frameId !== null) return;  // a glide in flight schedules the next
     glideTo(nearestStop() + pitch(), SLIDE_MS, function () { schedule(DWELL_MS); });
   }
   function setState(key, value) {
@@ -826,12 +826,33 @@
     schedule(RESUME_MS);
   }, { passive: true });
 
-  // ── Touch: native swipe + CSS snap; just pause while a finger is down ──
-  strip.addEventListener('touchstart', function () {
-    cancelGlide();
-    setState('touching', true);
+  // ── Touch: native swipe + CSS snap. Only a sideways swipe takes over; a
+  // vertical page scroll that starts on the strip leaves the glide running,
+  // since stopping it mid-glide makes snap jerk the row to the nearest photo. ──
+  var TOUCH_SLOP = 8;    // px of travel before a gesture's direction counts
+  var touch = null;
+  strip.addEventListener('touchstart', function (e) {
+    var t = e.touches[0];
+    touch = { x: t.clientX, y: t.clientY, sideways: false };
   }, { passive: true });
-  function endTouch() { setState('touching', false); }
+  strip.addEventListener('touchmove', function (e) {
+    if (!touch || touch.sideways) return;
+    var t = e.touches[0];
+    var dx = Math.abs(t.clientX - touch.x);
+    var dy = Math.abs(t.clientY - touch.y);
+    if (dx < TOUCH_SLOP && dy < TOUCH_SLOP) return;
+    if (dx > dy) {
+      touch.sideways = true;
+      cancelGlide();
+      setState('touching', true);
+    } else {
+      touch = null;  // vertical: ignore the rest of this gesture
+    }
+  }, { passive: true });
+  function endTouch() {
+    if (touch && touch.sideways) setState('touching', false);
+    touch = null;
+  }
   strip.addEventListener('touchend', endTouch, { passive: true });
   strip.addEventListener('touchcancel', endTouch, { passive: true });
 
@@ -865,7 +886,7 @@
     new IntersectionObserver(function (entries) {
       onScreen = entries[entries.length - 1].isIntersecting;
       if (onScreen) schedule(DWELL_MS);
-      else stop();
+      else clearTimeout(timer);  // an in-flight glide finishes; none follows
     }, { threshold: 0.25 }).observe(strip);
   }
   document.addEventListener('visibilitychange', function () {
