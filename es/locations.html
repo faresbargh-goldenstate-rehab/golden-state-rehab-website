@@ -238,18 +238,19 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  "@id": "https://www.goldenstate-rehab.com/locations#clinic",
-  "name": "Golden State Rehab — Westwood",
-  "url": "https://www.goldenstate-rehab.com/es/locations",
+  "@type": [
+    "MedicalOrganization",
+    "LocalBusiness"
+  ],
+  "@id": "https://www.goldenstate-rehab.com/#organization",
+  "name": "Golden State Rehab",
+  "url": "https://www.goldenstate-rehab.com/",
+  "logo": "https://www.goldenstate-rehab.com/images/logo-icon.png",
   "image": "https://www.goldenstate-rehab.com/images/logo-icon.png",
+  "description": "Centro de tratamiento de adicciones y salud mental con licencia DHCS en Los Ángeles. PHP, IOP, telesalud y terapia individual. Se habla español.",
   "telephone": "+1-424-208-3120",
   "email": "admissions@goldenstate-rehab.com",
   "priceRange": "$$",
-  "knowsLanguage": ["en", "es"],
-  "parentOrganization": {
-    "@id": "https://www.goldenstate-rehab.com/#organization"
-  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "1964 Westwood Blvd, Ste 425",
@@ -264,32 +265,6 @@
     "longitude": -118.4308
   },
   "hasMap": "https://www.google.com/maps?cid=15086981718348312167",
-  "sameAs": ["https://www.google.com/maps?cid=15086981718348312167", "https://www.yelp.com/biz/golden-state-rehab-llc-los-angeles", "https://www.instagram.com/goldenstaterehab", "https://www.linkedin.com/company/goldenstaterehab/", "https://x.com/goldenstateWR1"],
-  "medicalSpecialty": ["Psychiatric"],
-  "knowsAbout": [
-    "Addiction Medicine",
-    "Substance Use Disorder",
-    "Dual Diagnosis",
-    "Addiction Treatment"
-  ],
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    "opens": "09:00",
-    "closes": "18:00"
-  }],
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "admissions",
-    "telephone": "+1-424-208-3120",
-    "availableLanguage": ["English", "Spanish"],
-    "hoursAvailable": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  }],
   "areaServed": [
     {
       "@type": "City",
@@ -309,15 +284,71 @@
     },
     {
       "@type": "City",
-      "name": "Brentwood"
-    },
-    {
-      "@type": "City",
       "name": "Culver City"
     },
     {
       "@type": "City",
       "name": "Westwood"
+    }
+  ],
+  "medicalSpecialty": ["Psychiatric"],
+  "knowsAbout": [
+    "Addiction Medicine",
+    "Substance Use Disorder",
+    "Dual Diagnosis",
+    "Addiction Treatment"
+  ],
+  "knowsLanguage": [
+    "en",
+    "es"
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "name": "DHCS License Number",
+      "value": "191643AP"
+    }
+  ],
+  "sameAs": ["https://www.google.com/maps?cid=15086981718348312167", "https://www.yelp.com/biz/golden-state-rehab-llc-los-angeles", "https://www.instagram.com/goldenstaterehab", "https://www.linkedin.com/company/goldenstaterehab/", "https://x.com/goldenstateWR1"],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "admissions",
+    "telephone": "+1-424-208-3120",
+    "availableLanguage": ["English", "Spanish"],
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "DHCS Licensed",
+      "credentialCategory": "license",
+      "identifier": "191643AP",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "California Department of Health Care Services"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Joint Commission Accredited",
+      "credentialCategory": "accreditation",
+      "url": "https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/750952",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "The Joint Commission",
+        "url": "https://www.jointcommission.org/"
+      }
     }
   ]
 }
