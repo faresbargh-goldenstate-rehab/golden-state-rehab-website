@@ -130,6 +130,9 @@
     .wcu-spot .proof-full{justify-self:end;width:calc(100% - 28px);margin:0;box-shadow:var(--shadow-sm);border:1px solid rgba(20,14,4,0.06)}
     .wcu-spot-who{order:-1;justify-self:start;display:grid;grid-template-columns:64px auto;column-gap:12px;align-items:center;text-align:left;text-decoration:none;color:inherit;transition:transform 0.2s ease}
     .wcu-spot-who:hover{transform:translateY(-2px)}
+    /* Two people in one spotlight: on phones the second one sits under the review so the two arrows run in opposite directions; on desktop both stack in the side column. */
+    .wcu-spot-whos{display:contents}
+    .wcu-spot-who--after{order:1}
     .wcu-spot-who img{grid-column:1;grid-row:1 / span 2;display:block;width:64px;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:12px;box-shadow:var(--shadow-md)}
     .wcu-spot-name{grid-column:2;grid-row:1;align-self:end;font-weight:700;font-size:15px;color:var(--near-black)}
     .wcu-spot-role{grid-column:2;grid-row:2;align-self:start;font-size:13px;color:var(--muted);margin-top:2px}
@@ -149,6 +152,9 @@
       .wcu-spot-who{order:0;justify-self:stretch;display:block}
       .wcu-spot--left{grid-template-columns:200px minmax(0,580px)}
       .wcu-spot--left .wcu-spot-who{order:-1}
+      .wcu-spot-whos{display:flex;flex-direction:column;gap:28px}
+      .wcu-spot--left .wcu-spot-whos{order:-1}
+      .wcu-spot-who--after{order:0}
       .wcu-spot-who img{width:100%;border-radius:16px;margin-bottom:12px}
       .wcu-spot-name{display:block;font-size:16px}
       .wcu-spot-role{display:block;font-size:14px}
@@ -378,7 +384,7 @@
       <p><mark class="wcu-hl">Working with <strong class="wcu-hl-name" data-from="viola">Viola</strong> was amazing.</mark> She helped me open up, look at things honestly, and do real<br>
       work on myself. I left feeling like I understood my recovery and my mental health in a much<br>
       better way.</p>
-      <p>Juanita led every group with so much love and care. Her groups always felt safe, honest, and<br>
+      <p><mark class="wcu-hl"><strong class="wcu-hl-name" data-from="juanita">Juanita</strong> led every group with so much love and care.</mark> Her groups always felt safe, honest, and<br>
       meaningful, and she has a way of making people feel comfortable even when the topics are<br>
       hard. I learned a lot from her and from everyone in the room.</p>
       <p>By the time I finished, I felt like I was leaving with a full toolbox, a clearer mind, and more<br>
@@ -388,11 +394,18 @@
       </div>
       </article>
       </figure>
-      <a class="wcu-spot-who" href="team#viola-sulahian">
-        <img data-to="viola" src="images/team/portrait/viola-sulahian-320.webp" width="320" height="400" loading="lazy" decoding="async" alt="Viola Sulahian, AMFT">
-        <span class="wcu-spot-name">Viola Sulahian, AMFT</span>
-        <span class="wcu-spot-role">Primary Therapist</span>
-      </a>
+      <div class="wcu-spot-whos">
+  <a class="wcu-spot-who" href="team#viola-sulahian">
+          <img data-to="viola" src="images/team/portrait/viola-sulahian-320.webp" width="320" height="400" loading="lazy" decoding="async" alt="Viola Sulahian, AMFT">
+          <span class="wcu-spot-name">Viola Sulahian, AMFT</span>
+          <span class="wcu-spot-role">Primary Therapist</span>
+        </a>
+        <a class="wcu-spot-who wcu-spot-who--after" href="team#juanita-casillas">
+          <img data-to="juanita" src="images/team/portrait/juanita-casillas-320.webp" srcset="images/team/portrait/juanita-casillas-320.webp 320w, images/team/portrait/juanita-casillas-556.webp 556w" sizes="220px" width="320" height="400" loading="lazy" decoding="async" alt="Juanita Casillas, RADT">
+          <span class="wcu-spot-name">Juanita Casillas, RADT</span>
+          <span class="wcu-spot-role">AOD Counselor</span>
+        </a>
+      </div>
       <svg class="wcu-arrows" aria-hidden="true" focusable="false"></svg>
     </div>
     <div class="wcu-spot reveal" data-arrows>
@@ -416,7 +429,7 @@
       <p>Golden State Rehab gave me a second chance at life and helped me get my sobriety back.<br>
       From the moment I got there, the place felt safe, calm, and welcoming. The location is<br>
       amazing and it honestly felt like a home away from home.<br class="google-review-paragraph-break">
-      The staff really care about your recovery. Juanita and <mark class="wcu-hl"><strong class="wcu-hl-name" data-from="scott">Scott</strong> helped me through some of the<br>
+      The staff really care about your recovery. <mark class="wcu-hl"><strong class="wcu-hl-name" data-from="juanita">Juanita</strong> and <strong class="wcu-hl-name" data-from="scott">Scott</strong> helped me through some of the<br>
       hardest parts</mark> and made sure I never felt like I was doing it alone. Big thank you to them and<br>
       the whole Golden State Rehab team for helping me heal and start feeling like myself again.<br>
       They also got me a cake for my birthday !! It isn’t just a place for treatment it feels like family</p>
@@ -427,11 +440,18 @@
       </div>
       </article>
       </figure>
-      <a class="wcu-spot-who" href="team#scott-hedlund">
-        <img data-to="scott" src="images/team/portrait/scott-hedlund-320.webp" srcset="images/team/portrait/scott-hedlund-320.webp 320w, images/team/portrait/scott-hedlund-640.webp 640w" sizes="220px" width="320" height="400" loading="lazy" decoding="async" alt="Scott Hedlund">
-        <span class="wcu-spot-name">Scott Hedlund</span>
-        <span class="wcu-spot-role">Director of Business Development</span>
-      </a>
+      <div class="wcu-spot-whos">
+  <a class="wcu-spot-who" href="team#scott-hedlund">
+          <img data-to="scott" src="images/team/portrait/scott-hedlund-320.webp" srcset="images/team/portrait/scott-hedlund-320.webp 320w, images/team/portrait/scott-hedlund-640.webp 640w" sizes="220px" width="320" height="400" loading="lazy" decoding="async" alt="Scott Hedlund">
+          <span class="wcu-spot-name">Scott Hedlund</span>
+          <span class="wcu-spot-role">Director of Business Development</span>
+        </a>
+        <a class="wcu-spot-who wcu-spot-who--after" href="team#juanita-casillas">
+          <img data-to="juanita" src="images/team/portrait/juanita-casillas-320.webp" srcset="images/team/portrait/juanita-casillas-320.webp 320w, images/team/portrait/juanita-casillas-556.webp 556w" sizes="220px" width="320" height="400" loading="lazy" decoding="async" alt="Juanita Casillas, RADT">
+          <span class="wcu-spot-name">Juanita Casillas, RADT</span>
+          <span class="wcu-spot-role">AOD Counselor</span>
+        </a>
+      </div>
       <svg class="wcu-arrows" aria-hidden="true" focusable="false"></svg>
     </div>
     </div>
