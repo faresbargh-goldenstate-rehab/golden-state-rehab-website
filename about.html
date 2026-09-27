@@ -125,6 +125,7 @@
        from the highlight to the person. The arrow path is computed by the
        script at the foot of the page, so it follows the text as it wraps. */
     .wcu-spots{margin-top:64px;display:grid;gap:72px}
+    .wcu-spots--first{margin:0 0 64px}
     .wcu-spot{position:relative;display:grid;grid-template-columns:minmax(0,1fr);row-gap:28px}
     .wcu-spot .proof-full{justify-self:end;width:calc(100% - 28px);margin:0;box-shadow:var(--shadow-sm);border:1px solid rgba(20,14,4,0.06)}
     .wcu-spot-who{order:-1;justify-self:start;display:grid;grid-template-columns:64px auto;column-gap:12px;align-items:center;text-align:left;text-decoration:none;color:inherit;transition:transform 0.2s ease}
@@ -142,6 +143,7 @@
     .visible .wcu-arrow-head{opacity:1}
     @media (min-width:900px){
       .wcu-spots{margin-top:88px;gap:104px}
+      .wcu-spots--first{margin:0 0 96px}
       .wcu-spot{grid-template-columns:minmax(0,580px) 200px;column-gap:112px;justify-content:center;align-items:center}
       .wcu-spot .proof-full{width:100%}
       .wcu-spot-who{order:0;justify-self:stretch;display:block}
@@ -352,6 +354,48 @@
       <span class="eyebrow">Google reviews</span>
       <h2 id="reviews-heading">What people are saying</h2>
     </div>
+    <div class="wcu-spots wcu-spots--first">
+    <div class="wcu-spot wcu-spot--left reveal" data-arrows>
+      <figure class="proof-full proof-full--wide" data-review="3" data-card>
+      <article class="google-review google-review--3 google-review--wide" aria-label="Google review by Joey F">
+      <header class="google-review-header">
+      <span class="google-review-avatar" aria-hidden="true">J<svg class="google-review-guide" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="11" fill="#f57c00" stroke="#fff" stroke-width="1.5"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" fill="#fff" transform="translate(2.4 2.4) scale(.8)"/></svg></span>
+      <div class="google-review-author">
+      <h3 class="google-review-name"><span>Joey F</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
+      <p class="google-review-meta">Local Guide • 17 reviews • 1 photo</p>
+      </div>
+      <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
+      </header>
+      <div class="google-review-content">
+      <div class="google-review-rating">
+      <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
+      <span class="google-review-age">5 weeks ago</span>
+      </div>
+      <blockquote class="google-review-text">
+      <p>I loved my time at Golden State Rehab. I came in needing a safe place to get myself together,<br>
+      and that is exactly what I found here. The staff gave me the space, support, and patience I<br>
+      needed to heal without ever making me feel judged or rushed.</p>
+      <p><mark class="wcu-hl">Working with <strong class="wcu-hl-name" data-from="viola">Viola</strong> was amazing.</mark> She helped me open up, look at things honestly, and do real<br>
+      work on myself. I left feeling like I understood my recovery and my mental health in a much<br>
+      better way.</p>
+      <p>Juanita led every group with so much love and care. Her groups always felt safe, honest, and<br>
+      meaningful, and she has a way of making people feel comfortable even when the topics are<br>
+      hard. I learned a lot from her and from everyone in the room.</p>
+      <p>By the time I finished, I felt like I was leaving with a full toolbox, a clearer mind, and more<br>
+      confidence in my sobriety. I’m grateful for the whole team at Golden State Rehab, including<br>
+      the people I may not have mentioned by name. I really felt like I was in good hands here.</p>
+      </blockquote>
+      </div>
+      </article>
+      </figure>
+      <a class="wcu-spot-who" href="team#viola-sulahian">
+        <img data-to="viola" src="images/team/portrait/viola-sulahian-320.webp" width="320" height="400" loading="lazy" decoding="async" alt="Viola Sulahian, AMFT">
+        <span class="wcu-spot-name">Viola Sulahian, AMFT</span>
+        <span class="wcu-spot-role">Primary Therapist</span>
+      </a>
+      <svg class="wcu-arrows" aria-hidden="true" focusable="false"></svg>
+    </div>
+    </div>
     <div class="wcu-review-grid">
       <figure class="proof-full proof-full--narrow" data-review="4">
       <article class="google-review google-review--4" aria-label="Google review by Yvette Vargas">
@@ -555,46 +599,6 @@
       </figure>
     </div>
     <div class="wcu-spots">
-    <div class="wcu-spot wcu-spot--left reveal" data-arrows>
-      <figure class="proof-full proof-full--wide" data-review="3" data-card>
-      <article class="google-review google-review--3 google-review--wide" aria-label="Google review by Joey F">
-      <header class="google-review-header">
-      <span class="google-review-avatar" aria-hidden="true">J<svg class="google-review-guide" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="11" fill="#f57c00" stroke="#fff" stroke-width="1.5"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" fill="#fff" transform="translate(2.4 2.4) scale(.8)"/></svg></span>
-      <div class="google-review-author">
-      <h3 class="google-review-name"><span>Joey F</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
-      <p class="google-review-meta">Local Guide • 17 reviews • 1 photo</p>
-      </div>
-      <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
-      </header>
-      <div class="google-review-content">
-      <div class="google-review-rating">
-      <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
-      <span class="google-review-age">5 weeks ago</span>
-      </div>
-      <blockquote class="google-review-text">
-      <p>I loved my time at Golden State Rehab. I came in needing a safe place to get myself together,<br>
-      and that is exactly what I found here. The staff gave me the space, support, and patience I<br>
-      needed to heal without ever making me feel judged or rushed.</p>
-      <p><mark class="wcu-hl">Working with <strong class="wcu-hl-name" data-from="viola">Viola</strong> was amazing.</mark> She helped me open up, look at things honestly, and do real<br>
-      work on myself. I left feeling like I understood my recovery and my mental health in a much<br>
-      better way.</p>
-      <p>Juanita led every group with so much love and care. Her groups always felt safe, honest, and<br>
-      meaningful, and she has a way of making people feel comfortable even when the topics are<br>
-      hard. I learned a lot from her and from everyone in the room.</p>
-      <p>By the time I finished, I felt like I was leaving with a full toolbox, a clearer mind, and more<br>
-      confidence in my sobriety. I’m grateful for the whole team at Golden State Rehab, including<br>
-      the people I may not have mentioned by name. I really felt like I was in good hands here.</p>
-      </blockquote>
-      </div>
-      </article>
-      </figure>
-      <a class="wcu-spot-who" href="team#viola-sulahian">
-        <img data-to="viola" src="images/team/portrait/viola-sulahian-320.webp" width="320" height="400" loading="lazy" decoding="async" alt="Viola Sulahian, AMFT">
-        <span class="wcu-spot-name">Viola Sulahian, AMFT</span>
-        <span class="wcu-spot-role">Primary Therapist</span>
-      </a>
-      <svg class="wcu-arrows" aria-hidden="true" focusable="false"></svg>
-    </div>
     <div class="wcu-spot reveal" data-arrows>
       <figure class="proof-full proof-full--wide" data-review="2" data-card>
       <article class="google-review google-review--2 google-review--wide" aria-label="Google review by Gregory Icenogle">

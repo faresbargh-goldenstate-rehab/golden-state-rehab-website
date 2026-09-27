@@ -1076,127 +1076,111 @@
 
 <!-- ═══════════════════════════════════════════════════════════
      OUR TEAM: who provides care
-     Every fact on these cards is sourced from team.html. One
-     "Meet Our Team" button under the grid links there instead of a
-     link per card. Everything stays visible: no carousel, no
-     hover-only bios. Every width uses the same
-     compact card (portrait beside name and role, description
-     underneath): 3 columns on desktop, 2 on tablet, 1 on phones.
+     Kept short on purpose: one row of portraits with name, role and
+     one credential line each (full bios live on team.html). The "Meet Our Team" button sits
+     beside the heading on tablet and up, and drops under the grid on
+     phones. Six across from 768px up, three across on small tablets,
+     and a compact list (photo beside text) on phones.
      ═══════════════════════════════════════════════════════════ -->
 <style>
   .team-home{background:var(--off-white);border-top:1px solid var(--border)}
-  .team-home-intro{margin-bottom:56px}
+  .team-home-layout{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"intro more" "grid grid";align-items:end;column-gap:32px}
+  .team-home-intro{grid-area:intro;margin-bottom:48px}
   .team-home-intro h2{margin:0;text-wrap:balance}
+  .team-home-more{grid-area:more;margin-bottom:48px}
 
-  .team-home-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-  .team-home-grid > li{display:flex}
-  .team-home-card{flex:1;display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:auto 1fr;grid-template-areas:"photo id" "desc desc";column-gap:20px;padding:24px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}
-  .team-home-photo{grid-area:photo;display:block;width:112px;height:auto;aspect-ratio:4 / 5;object-fit:cover;background:var(--gold-light);border-radius:var(--radius-sm)}
-  .team-home-id{grid-area:id;align-self:center}
-  .team-home-name{font-size:20px;line-height:1.3;margin:0;color:var(--near-black)}
-  .team-home-role{margin:6px 0 0;font-size:14.5px;font-weight:600;line-height:1.4;color:var(--near-black)}
-  .team-home-cred{margin:2px 0 0;font-size:14.5px;font-weight:500;line-height:1.4;color:var(--muted)}
-  .team-home-desc{grid-area:desc;margin:18px 0 0;font-size:15.5px;line-height:1.6;color:var(--body-text)}
+  .team-home-grid{grid-area:grid;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px}
+  .team-home-card{margin:0}
+  .team-home-photo{display:block;width:100%;height:auto;aspect-ratio:4 / 5;object-fit:cover;margin:0 0 14px;background:var(--gold-light);border-radius:var(--radius-md);box-shadow:var(--shadow-sm)}
+  .team-home-name{font-size:16px;line-height:1.3;margin:0 0 3px;color:var(--near-black)}
+  .team-home-role{margin:0;font-size:14px;font-weight:600;line-height:1.4;color:var(--near-black)}
+  .team-home-cred{margin:4px 0 0;font-size:13px;line-height:1.45;color:var(--muted)}
 
-  .team-home-more{margin-top:48px;text-align:center}
-
-  /* Below this width three columns leave too little room beside the portrait. */
-  @media (max-width:1100px){
-    .team-home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:1023px){
+    .team-home-grid{gap:16px}
+    .team-home-photo{margin-bottom:10px}
+    .team-home-name{font-size:14px}
+    .team-home-role{font-size:12.5px}
+    .team-home-cred{font-size:12px}
   }
-  @media (max-width:900px){
-    .team-home-intro{margin-bottom:40px}
+  /* Phones: heading, three-across grid, then the button. */
+  @media (max-width:767px){
+    .team-home-layout{grid-template-columns:minmax(0,1fr);grid-template-areas:"intro" "grid" "more"}
+    .team-home-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 12px}
+    .team-home-intro{margin-bottom:32px}
+    .team-home-more{margin:32px 0 0;text-align:center}
   }
-  /* Compact card: portrait beside name and role, description full width. */
+  /* Phones: one row per person, small portrait beside name, role and credential.
+     The 1fr rows above and below the text keep it centered on the photo. */
   @media (max-width:640px){
-    .team-home-grid{grid-template-columns:1fr;gap:16px}
-    .team-home-card{grid-template-columns:96px minmax(0,1fr);grid-template-rows:auto;grid-template-areas:"photo id" "desc desc";column-gap:16px;padding:16px}
-    .team-home-card > *{grid-column:auto}
-    .team-home-photo{grid-area:photo;width:96px;border-radius:var(--radius-sm)}
-    .team-home-id{grid-area:id;align-self:center;padding-top:0}
-    .team-home-name{font-size:18px}
-    .team-home-role,.team-home-cred{font-size:14px}
-    .team-home-desc{grid-area:desc;margin-top:14px;font-size:15px}
-    .team-home-more{margin-top:32px}
+    .team-home-grid{grid-template-columns:minmax(0,1fr);gap:16px}
+    .team-home-card{display:grid;grid-template-columns:80px minmax(0,1fr);grid-template-rows:1fr auto auto auto 1fr;column-gap:16px}
+    .team-home-photo{grid-column:1;grid-row:1 / -1;margin:0}
+    .team-home-name,.team-home-role,.team-home-cred{grid-column:2}
+    .team-home-name{grid-row:2;font-size:16px}
+    .team-home-role{grid-row:3;font-size:14px}
+    .team-home-cred{grid-row:4;font-size:13.5px}
   }
 </style>
 <section class="section team-home" id="team" aria-labelledby="team-heading">
-  <div class="container">
+  <div class="container team-home-layout">
     <div class="team-home-intro reveal">
       <span class="eyebrow">Our Team</span>
       <h2 id="team-heading">Know the people behind your care.</h2>
     </div>
-    <ul class="team-home-grid" role="list">
-      <li class="reveal">
-        <article class="team-home-card">
-          <img class="team-home-photo" src="images/team/portrait/eric-chaghouri-640.webp" srcset="images/team/portrait/eric-chaghouri-160.webp 160w, images/team/portrait/eric-chaghouri-320.webp 320w, images/team/portrait/eric-chaghouri-640.webp 640w" sizes="(max-width: 640px) 96px, 112px" width="640" height="800" loading="lazy" decoding="async" alt="Dr. Eric Chaghouri">
-          <div class="team-home-id">
-            <h3 class="team-home-name">Dr. Eric Chaghouri, MD</h3>
-            <p class="team-home-role">Medical Director</p>
-            <p class="team-home-cred">Board-certified psychiatrist</p>
-          </div>
-          <p class="team-home-desc">Dr. Chaghouri oversees clinical operations at the center and provides psychiatric care and medication management when clients need it. A board-certified psychiatrist who earned his M.D. at USC&rsquo;s Keck School of Medicine, he focuses on treating addiction alongside co-occurring mental health conditions.</p>
-        </article>
-      </li>
-      <li class="reveal reveal-delay-1">
-        <article class="team-home-card">
-          <img class="team-home-photo" src="images/team/portrait/ari-labowitz-640.webp" srcset="images/team/portrait/ari-labowitz-160.webp 160w, images/team/portrait/ari-labowitz-320.webp 320w, images/team/portrait/ari-labowitz-640.webp 640w" sizes="(max-width: 640px) 96px, 112px" width="640" height="800" loading="lazy" decoding="async" alt="Ari Labowitz">
-          <div class="team-home-id">
-            <h3 class="team-home-name">Ari Labowitz, LMFT</h3>
-            <p class="team-home-role">Clinical Director</p>
-            <p class="team-home-cred">Licensed Marriage and Family Therapist</p>
-          </div>
-          <p class="team-home-desc">As Clinical Director, Ari leads the therapy programs at Golden State Rehab. A Licensed Marriage and Family Therapist, he treats depression, anxiety, and major life transitions through individual, couples, and family therapy.</p>
-        </article>
-      </li>
-      <li class="reveal reveal-delay-2">
-        <article class="team-home-card">
-          <img class="team-home-photo" src="images/team/portrait/viola-sulahian-320.webp" srcset="images/team/portrait/viola-sulahian-160.webp 160w, images/team/portrait/viola-sulahian-320.webp 320w" sizes="(max-width: 640px) 96px, 112px" width="320" height="400" loading="lazy" decoding="async" alt="Viola Sulahian">
-          <div class="team-home-id">
-            <h3 class="team-home-name">Viola Sulahian, AMFT</h3>
-            <p class="team-home-role">Primary Therapist</p>
-            <p class="team-home-cred">Associate Marriage and Family Therapist</p>
-          </div>
-          <p class="team-home-desc">Viola works with clients as a primary therapist, treating addiction alongside depression, anxiety, PTSD, and other co-occurring conditions. An Associate Marriage and Family Therapist working toward licensure under supervision, she brings nearly four years of experience across detox, residential, PHP, and IOP.</p>
-        </article>
-      </li>
-      <li class="reveal">
-        <article class="team-home-card">
-          <img class="team-home-photo" src="images/team/portrait/nechama-berkowitz-320.webp" srcset="images/team/portrait/nechama-berkowitz-160.webp 160w, images/team/portrait/nechama-berkowitz-320.webp 320w, images/team/portrait/nechama-berkowitz-640.webp 640w" sizes="(max-width: 640px) 96px, 112px" width="320" height="400" loading="lazy" decoding="async" alt="Nechama Berkowitz">
-          <div class="team-home-id">
-            <h3 class="team-home-name">Nechama Berkowitz, AMFT</h3>
-            <p class="team-home-role">Trauma-Informed Therapist</p>
-            <p class="team-home-cred">Associate Marriage and Family Therapist</p>
-          </div>
-          <p class="team-home-desc">Nechama is a trauma-informed therapist specializing in mental health and trauma, helping clients address the painful experiences that often sit underneath substance use. An Associate Marriage and Family Therapist, she practices under supervision while working toward licensure.</p>
-        </article>
-      </li>
-      <li class="reveal reveal-delay-1">
-        <article class="team-home-card">
-          <img class="team-home-photo" src="images/team/portrait/eduardo-garcia-320.webp" srcset="images/team/portrait/eduardo-garcia-160.webp 160w, images/team/portrait/eduardo-garcia-320.webp 320w, images/team/portrait/eduardo-garcia-640.webp 640w" sizes="(max-width: 640px) 96px, 112px" width="320" height="400" loading="lazy" decoding="async" alt="Eduardo Garcia">
-          <div class="team-home-id">
-            <h3 class="team-home-name">Eduardo Garcia</h3>
-            <p class="team-home-role">Program Director</p>
-            <p class="team-home-cred">Programming and levels of care</p>
-          </div>
-          <p class="team-home-desc">As Program Director, Eduardo oversees how day-to-day programming runs at the center, including how clients move between levels of care.</p>
-        </article>
-      </li>
-      <li class="reveal reveal-delay-2">
-        <article class="team-home-card">
-          <img class="team-home-photo" src="images/team/portrait/dean-mcdermott-640.webp" srcset="images/team/portrait/dean-mcdermott-160.webp 160w, images/team/portrait/dean-mcdermott-320.webp 320w, images/team/portrait/dean-mcdermott-640.webp 640w" sizes="(max-width: 640px) 96px, 112px" width="640" height="800" loading="lazy" decoding="async" alt="Dean McDermott">
-          <div class="team-home-id">
-            <h3 class="team-home-name">Dean McDermott</h3>
-            <p class="team-home-role">Director of Brand Development</p>
-            <p class="team-home-cred">Alcohol and drug counselor, breathwork specialist</p>
-          </div>
-          <p class="team-home-desc">As Director of Brand Development, Dean leads brand development for Golden State Rehab. An alcohol and drug counselor and breathwork specialist, he brings his own recovery from addiction, and an earlier career as an actor and comedian, to the team.</p>
-        </article>
-      </li>
-    </ul>
     <div class="team-home-more reveal">
       <a href="team" class="btn btn-secondary btn-lg" data-cta="team">Meet Our Team <i data-lucide="arrow-right"></i></a>
     </div>
+    <ul class="team-home-grid" role="list">
+      <li class="reveal">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/eric-chaghouri-320.webp" srcset="images/team/portrait/eric-chaghouri-160.webp 160w, images/team/portrait/eric-chaghouri-320.webp 320w, images/team/portrait/eric-chaghouri-640.webp 640w" sizes="(max-width: 767px) 30vw, (max-width: 1023px) 15vw, 190px" width="320" height="400" loading="lazy" decoding="async" alt="Dr. Eric Chaghouri">
+          <h3 class="team-home-name">Dr. Eric Chaghouri, MD</h3>
+          <p class="team-home-role">Medical Director</p>
+          <p class="team-home-cred">Board-certified psychiatrist, M.D. from USC Keck</p>
+        </article>
+      </li>
+      <li class="reveal reveal-delay-1">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/ari-labowitz-320.webp" srcset="images/team/portrait/ari-labowitz-160.webp 160w, images/team/portrait/ari-labowitz-320.webp 320w, images/team/portrait/ari-labowitz-640.webp 640w" sizes="(max-width: 767px) 30vw, (max-width: 1023px) 15vw, 190px" width="320" height="400" loading="lazy" decoding="async" alt="Ari Labowitz">
+          <h3 class="team-home-name">Ari Labowitz, LMFT</h3>
+          <p class="team-home-role">Clinical Director</p>
+          <p class="team-home-cred">Licensed Marriage and Family Therapist</p>
+        </article>
+      </li>
+      <li class="reveal reveal-delay-2">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/viola-sulahian-320.webp" srcset="images/team/portrait/viola-sulahian-160.webp 160w, images/team/portrait/viola-sulahian-320.webp 320w" sizes="(max-width: 767px) 30vw, (max-width: 1023px) 15vw, 190px" width="320" height="400" loading="lazy" decoding="async" alt="Viola Sulahian">
+          <h3 class="team-home-name">Viola Sulahian, AMFT</h3>
+          <p class="team-home-role">Primary Therapist</p>
+          <p class="team-home-cred">Nearly four years in treatment, from detox to IOP</p>
+        </article>
+      </li>
+      <li class="reveal reveal-delay-3">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/nechama-berkowitz-320.webp" srcset="images/team/portrait/nechama-berkowitz-160.webp 160w, images/team/portrait/nechama-berkowitz-320.webp 320w, images/team/portrait/nechama-berkowitz-640.webp 640w" sizes="(max-width: 767px) 30vw, (max-width: 1023px) 15vw, 190px" width="320" height="400" loading="lazy" decoding="async" alt="Nechama Berkowitz">
+          <h3 class="team-home-name">Nechama Berkowitz, AMFT</h3>
+          <p class="team-home-role">Trauma-Informed Therapist</p>
+          <p class="team-home-cred">Associate Marriage and Family Therapist</p>
+        </article>
+      </li>
+      <li class="reveal reveal-delay-4">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/eduardo-garcia-320.webp" srcset="images/team/portrait/eduardo-garcia-160.webp 160w, images/team/portrait/eduardo-garcia-320.webp 320w, images/team/portrait/eduardo-garcia-640.webp 640w" sizes="(max-width: 767px) 30vw, (max-width: 1023px) 15vw, 190px" width="320" height="400" loading="lazy" decoding="async" alt="Eduardo Garcia">
+          <h3 class="team-home-name">Eduardo Garcia</h3>
+          <p class="team-home-role">Program Director</p>
+          <p class="team-home-cred">Oversees programming and levels of care</p>
+        </article>
+      </li>
+      <li class="reveal reveal-delay-5">
+        <article class="team-home-card">
+          <img class="team-home-photo" src="images/team/portrait/dean-mcdermott-320.webp" srcset="images/team/portrait/dean-mcdermott-160.webp 160w, images/team/portrait/dean-mcdermott-320.webp 320w, images/team/portrait/dean-mcdermott-640.webp 640w" sizes="(max-width: 767px) 30vw, (max-width: 1023px) 15vw, 190px" width="320" height="400" loading="lazy" decoding="async" alt="Dean McDermott">
+          <h3 class="team-home-name">Dean McDermott</h3>
+          <p class="team-home-role">Director of Brand Development</p>
+          <p class="team-home-cred">Alcohol and drug counselor, breathwork specialist</p>
+        </article>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -1244,7 +1228,8 @@
   }
   .why-us-cards .value-cards-track.is-dragging{cursor:grabbing;scroll-snap-type:none}
   /* Desktop: one column, each card full width and lying on its side. The
-     photo fills the left 42% edge to edge (absolutely positioned, so its
+     photo fills a narrow left strip (26%) edge to edge, so the text gets
+     the width and each card stays short (absolutely positioned, so its
      natural height can't stretch the card); the text column sets the
      height. The track stops scrolling, so the drag script stands down. */
   @media (min-width:1024px){
@@ -1253,7 +1238,7 @@
       overflow:visible;scroll-snap-type:none;padding-bottom:4px;
       cursor:auto;user-select:auto;-webkit-user-select:auto;
     }
-    .why-us-cards .value-card{display:grid;grid-template-columns:42% minmax(0,1fr)}
+    .why-us-cards .value-card{display:grid;grid-template-columns:26% minmax(0,1fr)}
     .why-us-cards .value-card-visual{order:-1;position:relative;height:auto;min-height:100%;margin:0;padding:0}
     .why-us-cards .wu-photo,
     .why-us-cards .wu-portrait{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none}
@@ -1262,8 +1247,8 @@
     /* Dr. Chaghouri stays a round portrait on a warm panel; stretched edge
        to edge, a headshot turns into an oversized close-up. */
     .why-us-cards .wu-visual-portrait{background:var(--gold-light)}
-    .why-us-cards .wu-visual-portrait .wu-portrait{position:static;width:170px;height:170px;border-radius:50%;object-position:center 30%;box-shadow:var(--shadow-md)}
-    .why-us-cards .value-card-content{padding:36px 48px 38px}
+    .why-us-cards .wu-visual-portrait .wu-portrait{position:static;width:140px;height:140px;border-radius:50%;object-position:center 30%;box-shadow:var(--shadow-md)}
+    .why-us-cards .value-card-content{padding:28px 44px 30px}
     .why-us-cards .value-card-headline{font-size:22px;text-wrap:balance}
     .why-us-cards .value-card-body{font-size:16px;line-height:1.65}
   }
