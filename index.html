@@ -39,7 +39,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
   <link rel="stylesheet" href="css/styles.min.css?v=56">
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
@@ -232,6 +233,8 @@
   .pillar-icon svg{display:block;width:52px;height:52px;stroke-width:1.75}
   .pillar-seal{display:block;width:60px;height:60px;margin-bottom:20px}
   .pillar-title{margin:0 0 10px;font-size:19px;line-height:1.3;letter-spacing:-0.01em;text-wrap:balance}
+  /* The first title is a <p> so it doesn't repeat the H1's "100+ Recoveries" as a heading. */
+  p.pillar-title{font-weight:700;color:var(--near-black)}
   .pillar-text{margin:0;font-size:15px;line-height:1.6;color:var(--body-text);text-wrap:pretty}
   .pillars-cta{margin-top:56px;text-align:center}
   @media (max-width:1023px){
@@ -263,7 +266,7 @@
         <span class="pillar-icon" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h5"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><circle cx="18" cy="18" r="4"/><path d="m16.3 18 1.2 1.2 2.3-2.4"/></svg>
         </span>
-        <h2 class="pillar-title">100+ Recoveries</h2>
+        <p class="pillar-title">100+ Recoveries</p>
         <p class="pillar-text">We&rsquo;ve helped more than 100 people achieve recovery from addiction through our outpatient treatment programs.</p>
       </li>
       <li class="pillar reveal reveal-delay-2">
@@ -1445,7 +1448,9 @@
   /* Heading and step titles wrap evenly so a short last word never sits
      alone on its own line. */
   .path-section .section-header h2,
-  .path-section .path-step h4{text-wrap:balance}
+  .path-section .path-step h3{text-wrap:balance}
+  /* Step titles are h3 for the outline; keep the old h4 look. */
+  .path-section .path-step h3{margin:0 0 10px;font-size:19px;font-weight:600;line-height:1.2;letter-spacing:-0.01em;color:var(--off-white)}
 </style>
 <section class="section section-dark path-section" aria-labelledby="process-heading">
   <div class="container">
@@ -1456,22 +1461,22 @@
     <ol class="path-steps">
       <li class="path-step reveal">
         <div class="path-step-top"><span class="path-step-num" aria-hidden="true">01</span></div>
-        <h4>Reach us any hour, holidays too</h4>
+        <h3>Reach us any hour, holidays too</h3>
         <p>Call or text <a href="tel:+14242083120">(424) 208-3120</a>. Someone from our admissions team picks up day or night. Tell them what&rsquo;s going on in your own words. You don&rsquo;t need the medical terms.</p>
       </li>
       <li class="path-step reveal">
         <div class="path-step-top"><span class="path-step-num" aria-hidden="true">02</span></div>
-        <h4>Free insurance check, usually within the hour</h4>
+        <h3>Free insurance check, usually within the hour</h3>
         <p>We call your insurance and tell you what you&rsquo;d pay before you commit. We work with most major PPO plans (here&rsquo;s how <a href="insurance/">insurance coverage for rehab</a> works). Quick tip: most plans reset your deductable on January 1. If you&rsquo;ve already paid toward it this year, starting sooner can cost you less.</p>
       </li>
       <li class="path-step reveal">
         <div class="path-step-top"><span class="path-step-num" aria-hidden="true">03</span></div>
-        <h4>A one-hour assessment, by phone or in Westwood</h4>
+        <h3>A one-hour assessment, by phone or in Westwood</h3>
         <p>A clinician asks what you&rsquo;re using and what your weeks look like, then recommends PHP or IOP. If you drink heavily every day or take benzos, don&rsquo;t stop all at once on your own. That withdrawal can be dangerous. We don&rsquo;t do detox here, but we set it up with a detox provider we trust and hold your spot.</p>
       </li>
       <li class="path-step reveal">
         <div class="path-step-top"><span class="path-step-num" aria-hidden="true">04</span></div>
-        <h4>Start treatment, often the same week</h4>
+        <h3>Start treatment, often the same week</h3>
         <p>Most people start within days of their first call, thanks to <a href="admissions">same-week intake</a> and no waiting list. In week one you meet your therapist and your group. Nothing gets shared with your job or your family without your written OK.</p>
       </li>
     </ol>
@@ -1587,7 +1592,7 @@
 <footer class="footer" aria-label="Site footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="nav-logo" style="margin-bottom:0;"><img src="/images/logo-white.png" alt="Golden State Rehab" class="nav-logo-img" width="120" height="120"></a><div class="footer-call-cta"><span class="footer-call-label">Call Us At</span><a href="tel:+14242083120" class="footer-call-number">(424) 208-3120</a></div><p class="footer-tagline">Treating addiction and mental health in Los Angeles with compassion, clinical expertise, and flexible programs built around your life.</p><div class="footer-contact"><a href="tel:+14242083120" class="footer-phone"><i data-lucide="phone"></i> Call Now</a><!--email_off--><a href="mailto:admissions@goldenstate-rehab.com"><i data-lucide="mail"></i> admissions@goldenstate-rehab.com</a><!--/email_off--><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025</a></div><div class="footer-badges"><a href="/license" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="View DHCS License Certificate">DHCS Lic. #191643AP</a>
           <a href="https://www.dhcs.ca.gov/providers-partners/directories-for-substance-use-disorder-services/" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="California DHCS provider directory">Verify with DHCS ↗</a><span class="footer-badge">Evidence-Based</span>
           <div google-add-preferred-source-btn data-theme="dark"></div>
-        </div></div><div class="footer-col"><div class="footer-heading">Programs</div><nav class="footer-links"><a href="/programs/">All Programs</a><a href="/programs/php">Partial Hospitalization (PHP)</a><a href="/programs/iop">Intensive Outpatient (IOP)</a><a href="/programs/evening-iop">Evening IOP</a><a href="/programs/virtual-iop">Virtual IOP</a><a href="/programs/outpatient-rehab">Outpatient Drug Rehab</a><a href="/programs/telehealth">Telehealth Rehab</a><a href="/programs/psychiatric-care">Psychiatric Care</a></nav></div><div class="footer-col"><div class="footer-heading">Treatments</div><nav class="footer-links"><a href="/treatments/">All Treatments</a><a href="/treatments/alcohol">Alcohol Addiction</a><a href="/treatments/fentanyl">Fentanyl Addiction</a><a href="/treatments/dual-diagnosis">Dual Diagnosis</a><a href="/treatments/depression">Depression</a><a href="/treatments/anxiety">Anxiety</a></nav></div><div class="footer-col"><div class="footer-heading">Centers of Care</div><nav class="footer-links"><a href="/rehabilitation-center">Rehabilitation Center</a><a href="/alcoholism-treatment-program">Alcoholism Treatment Program</a><a href="/mental-health">Mental Health Treatment</a><a href="/spanish-speaking-treatment">Spanish-Speaking Treatment</a></nav></div><div class="footer-col"><div class="footer-heading">Admissions</div><nav class="footer-links"><a href="/admissions">Admissions &amp; Same-Week Intake</a><a href="/verify-insurance">Verify Insurance</a><a href="/insurance/">Insurance Coverage</a><a href="/contact">Contact Us</a><a href="/faq">FAQ</a><a href="/families">For Families</a></nav></div><div class="footer-col"><div class="footer-heading">Explore</div><nav class="footer-links"><a href="/locations">Our Location &amp; Areas We Serve</a><a href="/blog/">Blog</a><a href="/about">Why Choose Us</a><a href="/team">Meet the Team</a><a href="/our-story">Our History</a></nav></div></div><div class="footer-visit"><div class="footer-visit-text"><div class="footer-visit-eyebrow">Visit Us</div><p class="footer-visit-addr">1964 Westwood Blvd, Suite 425<br>Los Angeles, CA 90025</p><p class="footer-visit-note">Our outpatient center in Westwood, West Los Angeles &mdash; minutes from Santa Monica, Beverly Hills, Brentwood, and Culver City.</p><div class="footer-visit-links"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Open in Google Maps</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025&amp;destination_place_id=ChIJd5B-5MW7woARZ672RvC5X9E" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Get directions</a></div></div><div class="footer-visit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3!2d-118.4343784!3d34.0474328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbc5e47e9077%3A0xd15fb9f046f6ae67!2sGolden%20State%20Rehab!5e0!3m2!1sen!2sus!4v1758000000000!5m2!1sen!2sus" title="Google Map: Golden State Rehab, 1964 Westwood Blvd Suite 425, Los Angeles" width="600" height="240" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div><div class="footer-bottom"><a rel="noopener noreferrer" href="https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/750952" target="_blank" class="footer-seal"><img src="/images/joint-commission-gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage" width="44" height="44" loading="lazy" decoding="async"></a><p class="footer-bottom-text">&copy; 2026 Golden State Rehab. All rights reserved. Los Angeles, California.</p><nav class="footer-bottom-links"><a href="/blog/">Blog</a><a href="/faq">FAQ</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms of Use</a><a href="/sitemap.xml">Sitemap</a></nav></div><div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></div></footer>
+        </div></div><div class="footer-col"><div class="footer-heading">Programs</div><nav class="footer-links"><a href="/programs/">All Programs</a><a href="/programs/php">Partial Hospitalization (PHP)</a><a href="/programs/iop">Intensive Outpatient (IOP)</a><a href="/programs/evening-iop">Evening IOP</a><a href="/programs/virtual-iop">Virtual IOP</a><a href="/programs/outpatient-rehab">Outpatient Drug Rehab</a><a href="/programs/telehealth">Telehealth Rehab</a><a href="/programs/psychiatric-care">Psychiatric Care</a></nav></div><div class="footer-col"><div class="footer-heading">Treatments</div><nav class="footer-links"><a href="/treatments/">All Treatments</a><a href="/treatments/alcohol">Alcohol Addiction</a><a href="/treatments/fentanyl">Fentanyl Addiction</a><a href="/treatments/dual-diagnosis">Dual Diagnosis</a><a href="/treatments/depression">Depression</a><a href="/treatments/anxiety">Anxiety</a></nav></div><div class="footer-col"><div class="footer-heading">Centers of Care</div><nav class="footer-links"><a href="/rehabilitation-center">Rehabilitation Center</a><a href="/alcoholism-treatment-program">Alcoholism Treatment Program</a><a href="/mental-health">Mental Health Treatment</a><a href="/spanish-speaking-treatment">Spanish-Speaking Treatment</a></nav></div><div class="footer-col"><div class="footer-heading">Admissions</div><nav class="footer-links"><a href="/admissions">Admissions &amp; Same-Week Intake</a><a href="/verify-insurance">Verify Insurance</a><a href="/insurance/">Insurance Coverage</a><a href="/contact">Contact Us</a><a href="/faq">FAQ</a><a href="/families">For Families</a></nav></div><div class="footer-col"><div class="footer-heading">Explore</div><nav class="footer-links"><a href="/locations">Our Location &amp; Areas We Serve</a><a href="/blog/">Blog</a><a href="/about">Why Choose Us</a><a href="/team">Meet the Team</a><a href="/our-story">Our History</a></nav></div></div><div class="footer-visit"><div class="footer-visit-text"><div class="footer-visit-eyebrow">Visit Us</div><p class="footer-visit-addr">1964 Westwood Blvd, Suite 425<br>Los Angeles, CA 90025</p><p class="footer-visit-note">Our outpatient center in Westwood, West Los Angeles, minutes from Santa Monica, Beverly Hills, Brentwood, and Culver City.</p><div class="footer-visit-links"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Open in Google Maps</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025&amp;destination_place_id=ChIJd5B-5MW7woARZ672RvC5X9E" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Get directions</a></div></div><div class="footer-visit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3!2d-118.4343784!3d34.0474328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbc5e47e9077%3A0xd15fb9f046f6ae67!2sGolden%20State%20Rehab!5e0!3m2!1sen!2sus!4v1758000000000!5m2!1sen!2sus" title="Google Map: Golden State Rehab, 1964 Westwood Blvd Suite 425, Los Angeles" width="600" height="240" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div><div class="footer-bottom"><a rel="noopener noreferrer" href="https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/750952" target="_blank" class="footer-seal"><img src="/images/joint-commission-gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage" width="44" height="44" loading="lazy" decoding="async"></a><p class="footer-bottom-text">&copy; 2026 Golden State Rehab. All rights reserved. Los Angeles, California.</p><nav class="footer-bottom-links"><a href="/blog/">Blog</a><a href="/faq">FAQ</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms of Use</a><a href="/sitemap.xml">Sitemap</a></nav></div><div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></div></footer>
 
 <script src="js/main.min.js?v=17" defer></script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
@@ -1602,7 +1607,10 @@
   "name": "Golden State Rehab",
   "url": "https://www.goldenstate-rehab.com/",
   "logo": "https://www.goldenstate-rehab.com/images/logo-icon.png",
-  "image": "https://www.goldenstate-rehab.com/images/logo-icon.png",
+  "image": [
+    "https://www.goldenstate-rehab.com/images/facility/reception-lobby.webp",
+    "https://www.goldenstate-rehab.com/images/facility/group-therapy-room.webp"
+  ],
   "description": "Golden State Rehab is a DHCS-licensed addiction and mental health treatment center in Los Angeles offering PHP, IOP, telehealth, and individual therapy. Most major insurance accepted.",
   "telephone": "+1-424-208-3120",
   "email": "admissions@goldenstate-rehab.com",
