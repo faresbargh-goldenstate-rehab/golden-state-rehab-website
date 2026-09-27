@@ -75,9 +75,9 @@
     "es": [
       { "id": "call", "label": "Llamar ahora", "href": "tel:+14242083120" },
       { "id": "verify_insurance", "label": "Verificar seguro", "href": "/es/verify-insurance" },
-      { "id": "programs", "label": "Ver programas", "href": "/es/programs/" },
+      { "id": "programs", "label": "Ver programas", "href": "/espanol" },
       { "id": "directions", "label": "Cómo llegar", "href": "/es/contact" },
-      { "id": "faq", "label": "Preguntas frecuentes", "href": "/es/faq" }
+      { "id": "faq", "label": "Preguntas frecuentes", "href": "/espanol" }
     ]
   },
 
@@ -260,7 +260,7 @@
         "id": "intent-detox",
         "re": "detox|desintoxicacion|residencial|internado|internamiento|quedarme|dormir alli|camas",
         "answer": "Una respuesta honesta: Golden State Rehab es un centro de tratamiento ambulatorio y no ofrece desintoxicación médica ni camas residenciales en el sitio. Si necesita desintoxicación primero, lo referiremos a un centro asociado de confianza y coordinaremos una transición a nuestro programa PHP o IOP cuando esté médicamente estable.",
-        "url": "/es/programs/",
+        "url": "/espanol",
         "link_label": "Ver nuestros programas ambulatorios"
       },
       {
@@ -275,7 +275,7 @@
         "id": "intent-cost",
         "re": "costo|cuesta|precio|pagar|caro|financ|efectivo",
         "answer": "El costo depende de su programa y de los beneficios de su seguro, así que la única respuesta real viene de una verificación gratuita y confidencial. Si no tiene seguro o su plan no cubre el tratamiento, nuestro equipo revisará todas las opciones con usted: tarifas escalonadas, pago privado y financiamiento.",
-        "url": "/es/blog/cost-of-rehab-in-los-angeles",
+        "url": "/espanol",
         "link_label": "Lo que realmente cuesta la rehabilitación",
         "cta": { "id": "verify_insurance", "label": "Verificar cobertura", "href": "/es/verify-insurance" }
       },
@@ -291,14 +291,14 @@
         "id": "intent-telehealth",
         "re": "telesalud|virtual|en linea|remoto|desde casa",
         "answer": "Sí — nuestro programa de telesalud (IOP virtual) atiende a clientes en toda California, con el mismo equipo clínico que nuestros programas presenciales.",
-        "url": "/es/programs/telehealth",
+        "url": "/espanol",
         "link_label": "Sobre la telesalud"
       },
       {
         "id": "intent-programs",
         "re": "que programas|que servicios|niveles de (atencion|cuidado)|que (ofrecen|tratan|hacen)",
         "answer": "Somos un centro ambulatorio con varios niveles de atención: Hospitalización Parcial (PHP, nuestro programa más estructurado), Programa Intensivo Ambulatorio (IOP), IOP virtual, terapia individual y grupal, manejo de medicamentos, terapias holísticas y un programa de exalumnos.",
-        "url": "/es/programs/",
+        "url": "/espanol",
         "link_label": "Ver todos los programas"
       },
       {
@@ -332,14 +332,14 @@
         "id": "intent-license",
         "re": "licencia|acreditad|certificad|legitimo",
         "answer": "Golden State Rehab opera bajo la licencia #191643AP del Departamento de Servicios de Salud de California (DHCS), y está acreditado por The Joint Commission. Nuestro Director Médico es el Dr. Eric Chaghouri, MD, psiquiatra certificado.",
-        "url": "/es/about",
+        "url": "/espanol",
         "link_label": "Sobre nosotros"
       },
       {
         "id": "intent-family",
         "re": "mi (hijo|hija|esposo|esposa|pareja|hermano|hermana|madre|padre|mama|papa|amigo|amiga)|ser querido|familiar|ayudar a (alguien|un)",
         "answer": "Ver a alguien que ama pasar por esto es duro. Nuestro equipo habla con familias todos los días — puede llamar antes de que su ser querido esté listo, y le ayudaremos a entender las opciones y qué decir. Sin presión.",
-        "url": "/es/families",
+        "url": "/espanol",
         "link_label": "Orientación para familias",
         "cta": { "id": "call", "label": "Llamar al (424) 208-3120", "href": "tel:+14242083120" }
       },
@@ -412,7 +412,7 @@
         "q": "¿Qué es la desintoxicación?",
         "kw": ["detox", "desintoxicacion", "abstinencia"],
         "a": "La desintoxicación es el proceso supervisado médicamente de eliminar una sustancia del cuerpo, normalmente el primer paso cuando hay dependencia física. Golden State Rehab es un centro ambulatorio y no ofrece desintoxicación en el sitio — si la necesita, lo referimos a un centro asociado de confianza y coordinamos su transición a nuestro programa PHP o IOP.",
-        "url": "/es/programs/",
+        "url": "/espanol",
         "link_label": "Nuestros programas ambulatorios"
       },
       {
@@ -420,7 +420,7 @@
         "q": "¿Cuál es la diferencia entre PHP e IOP?",
         "kw": ["php", "iop", "diferencia"],
         "a": "PHP (Hospitalización Parcial) es nuestro nivel ambulatorio más estructurado: unos 5 días por semana, alrededor de 6 horas al día. IOP (Programa Intensivo Ambulatorio) se reúne de 3 a 5 días por semana, unas 3 horas por sesión, así que muchos clientes siguen trabajando. Cuál le conviene depende de su evaluación clínica — nuestro equipo le ayuda a decidir.",
-        "url": "/es/programs/php",
+        "url": "/espanol",
         "link_label": "Comparar PHP e IOP"
       },
       {
@@ -428,7 +428,7 @@
         "q": "¿Qué es el diagnóstico dual?",
         "kw": ["dual", "diagnostico", "concurrente"],
         "a": "El diagnóstico dual (o trastornos concurrentes) significa tener un trastorno por uso de sustancias y una condición de salud mental — como depresión, ansiedad o TEPT — al mismo tiempo. Tratar ambos juntos importa, porque uno puede alimentar al otro. Nuestros programas los tratan como un solo cuadro conectado.",
-        "url": "/es/treatments/dual-diagnosis",
+        "url": "/espanol",
         "link_label": "Tratamiento de diagnóstico dual"
       }
     ]

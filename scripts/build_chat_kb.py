@@ -115,7 +115,7 @@ def clean_url(path):
 
 def page_lang(path):
     rel = path.relative_to(ROOT).as_posix()
-    return "es" if rel == "es" or rel.startswith("es/") else "en"
+    return "es" if rel in ("es", "espanol.html") or rel.startswith("es/") else "en"
 
 
 def iter_pages():

@@ -1,63 +1,38 @@
 /* ============================================================
-   GOLDEN STATE REHAB — Language detection + persistent switch
+   GOLDEN STATE REHAB — Language toggle + Spanish offer banner
    ------------------------------------------------------------
-   • Remembers the visitor's choice (localStorage) — manual choice
-     always wins over auto-detection.
-   • On first visit, if the device language is Spanish, routes the
-     visitor to the Spanish version (or offers it via a banner when
-     no direct Spanish mirror exists yet).
-   • Rewrites the EN/ES toggle so it points to the correct
-     counterpart of the current page.
-   Runs in <head> (before paint) to avoid a flash of the wrong
-   language; DOM-dependent parts wait for DOMContentLoaded.
+   • The site has one Spanish page, /espanol, plus four Spanish
+     form/legal pages under /es/. Every English page toggles to its
+     Spanish counterpart when one exists, and to /espanol otherwise.
+   • Never redirects. Google advises against switching language
+     automatically, so a Spanish-language device (or a visitor who
+     chose Spanish before) sees a dismissible banner instead.
+   • Remembers the visitor's choice (localStorage) so an English
+     choice stops the banner.
    ============================================================ */
 (function () {
   var KEY = 'gsr_lang';
+  var ES_HOME = '/espanol';
 
-  /* EN path -> ES path: explicit pairs + the growing /es/ mirror list.
-     Add an EN path to MIRROR once its /es/<path> page exists. */
-  var PAIRS = { '/spanish-speaking-treatment': '/espanol' };
-  var MIRROR = ['/', '/verify-insurance', '/contact',
-    '/programs/php', '/programs/iop', '/programs/telehealth', '/programs/individual-therapy',
-    '/programs/group-therapy', '/programs/medication-management', '/programs/holistic-therapies',
-    '/programs/alumni',
-    '/about', '/our-story', '/our-facility', '/team', '/faq', '/locations',
-    '/mental-health', '/families', '/privacy-policy', '/terms-and-conditions',
-    '/treatments/cbt', '/treatments/dbt', '/treatments/alcohol', '/treatments/opioid',
-    '/treatments/anxiety', '/treatments/depression', '/treatments/ptsd',
-    '/treatments/complex-trauma', '/treatments/dual-diagnosis', '/treatments/cocaine',
-    '/treatments/meth', '/treatments/fentanyl', '/treatments/prescription-drugs',
-    '/treatments/sex-addiction',
-    '/blog/cbt-vs-dbt-which-is-right', '/blog/cost-of-rehab-in-los-angeles',
-    '/blog/does-insurance-cover-rehab-in-california', '/blog/does-medi-cal-cover-rehab-in-california',
-    '/blog/first-week-of-outpatient-rehab', '/blog/terrified-to-ask-for-help']; // EN paths that have a real /es/ mirror page
+  /* EN path -> ES path for the pages that have a Spanish counterpart. */
+  var PAIRS = {
+    '/spanish-speaking-treatment': '/espanol',
+    '/verify-insurance': '/es/verify-insurance',
+    '/contact': '/es/contact',
+    '/intake-success': '/es/intake-success',
+    '/privacy-policy': '/es/privacy-policy'
+  };
 
   function norm(p) {
     p = p.replace(/index\.html$/, '').replace(/\.html$/, '');
     if (p.length > 1) p = p.replace(/\/+$/, '');
     return p === '' ? '/' : p;
   }
-  function isES(p) { return p === '/espanol' || p === '/es' || p.indexOf('/es/') === 0; }
-
-  /* Direct Spanish mirror for an English path, or null if none exists yet. */
-  function esMirror(p) {
-    if (PAIRS[p]) return PAIRS[p];
-    if (p === '/programs') return '/es/programs/';
-    if (p === '/treatments') return '/es/treatments/';
-    if (p === '/blog') return '/es/blog/';
-    if (p === '/' && MIRROR.indexOf('/') >= 0) return '/es/';
-    if (MIRROR.indexOf(p) >= 0) return '/es' + p;
-    return null;
-  }
-  /* English counterpart for a Spanish path. */
+  function isES(p) { return p === ES_HOME || p === '/es' || p.indexOf('/es/') === 0; }
+  function esFor(p) { return PAIRS[p] || ES_HOME; }
   function enFor(p) {
     for (var k in PAIRS) { if (PAIRS[k] === p) return k; }
-    if (p === '/es/programs') return '/programs/';
-    if (p === '/es/treatments') return '/treatments/';
-    if (p === '/es/blog') return '/blog/';
-    if (p === '/es' || p === '/es/') return '/';
-    if (p.indexOf('/es/') === 0) return p.slice(3) || '/';
-    return '/';
+    return '/spanish-speaking-treatment';
   }
 
   var path = norm(location.pathname);
@@ -65,28 +40,20 @@
   var saved = null;
   try { saved = localStorage.getItem(KEY); } catch (e) {}
 
-  /* 1) Honor a saved preference (manual choice wins). */
-  if (saved === 'es' && !onES) { var m = esMirror(path); if (m) { location.replace(m); return; } }
-  if (saved === 'en' && onES) { location.replace(enFor(path)); return; }
-
-  /* 2) First-visit auto-detection by device language. */
   var spanishDevice = false;
   try {
     var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || navigator.userLanguage || '']).join(',').toLowerCase();
     spanishDevice = /(^|,)\s*es\b/.test(langs);
   } catch (e) {}
 
-  if (!saved && !onES && spanishDevice) {
-    var es = esMirror(path);
-    if (es) { try { localStorage.setItem(KEY, 'es'); } catch (e) {} location.replace(es); return; }
-    // No direct mirror yet → offer Spanish via a dismissible banner.
-    onReady(function () { showBanner(); });
+  if (!onES && saved !== 'en' && (saved === 'es' || spanishDevice)) {
+    onReady(function () { showBanner(esFor(path)); });
   }
 
-  /* 3) Wire the EN/ES toggle to the correct counterpart + remember clicks. */
+  /* Point the EN/ES toggle at the right counterpart and remember clicks. */
   onReady(function () {
     var toES = !onES;
-    var target = toES ? (esMirror(path) || '/espanol') : enFor(path);
+    var target = toES ? esFor(path) : enFor(path);
     var links = document.querySelectorAll('.nav-lang, .nav-lang-mobile');
     for (var i = 0; i < links.length; i++) {
       links[i].setAttribute('href', target);
@@ -96,14 +63,15 @@
     }
   });
 
-  function showBanner() {
+  function showBanner(href) {
     try { if (sessionStorage.getItem('gsr_banner')) return; } catch (e) {}
     var b = document.createElement('div');
     b.className = 'lang-banner';
     b.setAttribute('role', 'region');
     b.setAttribute('aria-label', 'Cambiar idioma');
-    b.innerHTML = '<span>¿Prefieres ver el sitio en español?</span>' +
-      '<a href="/espanol">Ver en Español</a>' +
+    b.setAttribute('lang', 'es');
+    b.innerHTML = '<span>¿Prefiere leer en español?</span>' +
+      '<a href="' + href + '">Ver en español</a>' +
       '<button type="button" aria-label="Cerrar">✕</button>';
     b.querySelector('a').addEventListener('click', function () { try { localStorage.setItem(KEY, 'es'); } catch (e) {} });
     b.querySelector('button').addEventListener('click', function () {

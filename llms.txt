@@ -1,6 +1,6 @@
 # Golden State Rehab
 
-> Joint Commission accredited and DHCS-licensed (#191643AP) outpatient addiction and mental-health treatment center in Westwood, West Los Angeles. Programs: PHP, IOP, telehealth, individual & group therapy, medication management. Evidence-based modalities including CBT and DBT. Most major insurance accepted. Bilingual care — se habla español. Admissions available 24/7 at (424) 208-3120.
+> Joint Commission accredited and DHCS-licensed (#191643AP) outpatient addiction and mental-health treatment center in Westwood, West Los Angeles. Programs: PHP, IOP, telehealth, individual & group therapy, medication management. Evidence-based modalities including CBT and DBT. Works with most major PPO plans. Bilingual care — se habla español. Admissions available 24/7 at (424) 208-3120.
 
 - [Home](https://www.goldenstate-rehab.com/): Los Angeles outpatient addiction & mental-health treatment center
 
@@ -51,9 +51,7 @@ Rehab-near-me guides for every West LA neighborhood — each with directions to 
 - [Inpatient vs Outpatient Rehab: Which Is Right for You?](https://www.goldenstate-rehab.com/blog/inpatient-vs-outpatient-rehab)
 
 ## En Español
-- [Tratamiento en Español](https://www.goldenstate-rehab.com/espanol): programa bilingüe con personal que habla español
-- [Sitio en Español](https://www.goldenstate-rehab.com/es/): espejo completo del sitio en español
-- [Tratamientos](https://www.goldenstate-rehab.com/es/treatments/), [Programas](https://www.goldenstate-rehab.com/es/programs/), [Verificar Seguro](https://www.goldenstate-rehab.com/es/verify-insurance), [Para Familias](https://www.goldenstate-rehab.com/es/families)
+- [Rehabilitación en español en Los Ángeles](https://www.goldenstate-rehab.com/espanol): médicos bilingües, sesiones familiares en español y una persona que habla español contesta el teléfono
 
 ## Contact
 - Phone: (424) 208-3120 (24/7 admissions, se habla español)
