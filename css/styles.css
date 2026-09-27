@@ -395,11 +395,18 @@ p:last-child { margin-bottom: 0; }
    main.js alone is ignored by iOS Safari, and the menu panel only covers
    the area below the header, so a swipe starting on the phone banner or
    the nav scrolled the page underneath, which then triggered the nav's
-   hide-on-scroll. Lock the root too, block pans that start on the header
-   (taps still work), and keep the menu's own scroll from chaining. */
-html:has(.nav-mobile.open),
-html:has(.nav-mobile.open) body {
+   hide-on-scroll. Lock the root, block pans that start on the header
+   (taps still work), and keep the menu's own scroll from chaining.
+   Only the root: if html and body are both overflow:hidden, body stops
+   handing its overflow to the viewport and becomes its own scroll box,
+   and the sticky banner and nav snap to the top of the page, off-screen
+   whenever the menu is opened below the top. main.js sets body hidden
+   inline, hence the !important. */
+html:has(.nav-mobile.open) {
   overflow: hidden;
+}
+html:has(.nav-mobile.open) body {
+  overflow: visible !important;
 }
 html:has(.nav-mobile.open) .phone-banner,
 html:has(.nav-mobile.open) .nav {
@@ -407,6 +414,12 @@ html:has(.nav-mobile.open) .nav {
 }
 .nav-mobile {
   overscroll-behavior: contain;
+}
+/* The menu is taller than a phone screen, so flex would shrink its items
+   to fit; the empty 1px divider collapsed to nothing. Items keep their size
+   and the menu scrolls instead. */
+.nav-mobile > * {
+  flex-shrink: 0;
 }
 .nav-mobile a {
   display: block;
