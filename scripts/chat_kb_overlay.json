@@ -100,40 +100,40 @@
         "id": "intent-carrier-aetna",
         "re": "aetna",
         "answer": "Coverage details vary by plan and change over time, so we can't promise what any Aetna plan pays — benefits are confirmed only through verification with Aetna. We work with most major PPO plans, and verification is free, confidential, and shows your exact numbers before you commit to anything. (Golden State Rehab is not affiliated with or endorsed by Aetna.)",
-        "url": "/insurance/aetna",
-        "link_label": "Aetna coverage guide",
+        "url": "/insurance/",
+        "link_label": "Insurance coverage guide",
         "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
       },
       {
         "id": "intent-carrier-cigna",
         "re": "cigna|evernorth",
         "answer": "Coverage details vary by plan and change over time, so we can't promise what any Cigna plan pays — benefits are confirmed only through verification with Cigna. We work with most major PPO plans, and verification is free, confidential, and shows your exact numbers before you commit to anything. (Golden State Rehab is not affiliated with or endorsed by Cigna or Evernorth.)",
-        "url": "/insurance/cigna",
-        "link_label": "Cigna coverage guide",
+        "url": "/insurance/",
+        "link_label": "Insurance coverage guide",
         "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
       },
       {
         "id": "intent-carrier-anthem",
         "re": "anthem|blue cross",
         "answer": "Coverage details vary by plan and change over time, so we can't promise what any Anthem Blue Cross plan pays — benefits are confirmed only through verification with Anthem. We work with most major PPO plans, and verification is free, confidential, and shows your exact numbers before you commit to anything. (Golden State Rehab is not affiliated with or endorsed by Anthem Blue Cross, Elevance Health, or Carelon.)",
-        "url": "/insurance/anthem-blue-cross",
-        "link_label": "Anthem Blue Cross coverage guide",
+        "url": "/insurance/",
+        "link_label": "Insurance coverage guide",
         "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
       },
       {
         "id": "intent-carrier-blueshield",
         "re": "blue shield",
         "answer": "Coverage details vary by plan and change over time, so we can't promise what any Blue Shield of California plan pays — benefits are confirmed only through verification with Blue Shield. We work with most major PPO plans, and verification is free, confidential, and shows your exact numbers before you commit to anything. (Golden State Rehab is not affiliated with or endorsed by Blue Shield of California.)",
-        "url": "/insurance/blue-shield-of-california",
-        "link_label": "Blue Shield coverage guide",
+        "url": "/insurance/",
+        "link_label": "Insurance coverage guide",
         "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
       },
       {
         "id": "intent-carrier-uhc",
         "re": "united ?health|\\buhc\\b|optum",
         "answer": "Coverage details vary by plan and change over time, so we can't promise what any UnitedHealthcare plan pays — benefits are confirmed only through verification with UnitedHealthcare. We work with most major PPO plans, and verification is free, confidential, and shows your exact numbers before you commit to anything. (Golden State Rehab is not affiliated with or endorsed by UnitedHealthcare or Optum.)",
-        "url": "/insurance/united-healthcare",
-        "link_label": "UnitedHealthcare coverage guide",
+        "url": "/insurance/",
+        "link_label": "Insurance coverage guide",
         "cta": { "id": "verify_insurance", "label": "Verify my benefits", "href": "/verify-insurance" }
       },
       {
@@ -141,7 +141,7 @@
         "re": "medi[- ]?cal\\b|medicaid|medicare",
         "answer": "Coverage depends heavily on your specific plan type, and Medi-Cal works differently from PPO plans. The honest answer is: let our admissions team check for you — verification is free and confidential, and they'll explain every option that applies to you, including what to do if a plan doesn't cover treatment here.",
         "url": "/blog/does-medi-cal-cover-rehab-in-california",
-        "link_label": "Our Medi-Cal coverage guide",
+        "link_label": "Insurance coverage guide",
         "cta": { "id": "call", "label": "Call (424) 208-3120", "href": "tel:+14242083120" }
       },
       {

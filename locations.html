@@ -49,7 +49,7 @@
     .area-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
     a.area-card { display:block; text-decoration:none; color:inherit; }
     .area-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-md); padding:26px; transition:box-shadow var(--transition), transform var(--transition); }
-    .area-card:hover { box-shadow:var(--shadow-md); transform:translateY(-3px); border-color:rgba(200,164,74,0.5); }
+    a.area-card:hover { box-shadow:var(--shadow-md); transform:translateY(-3px); border-color:rgba(200,164,74,0.5); }
     .area-card h3 { font-size:19px; margin-bottom:8px; }
     .area-time { display:inline-flex; align-items:center; gap:6px; margin-bottom:12px; padding:5px 12px; border-radius:var(--radius-pill); background:rgba(200,164,74,0.14); color:var(--gold-dark); font-size:12.5px; font-weight:700; }
     .area-time i { width:13px; height:13px; }
@@ -162,8 +162,8 @@
 <!-- Areas we serve -->
 <section class="section section-cream">
   <div class="container">
-    <div class="section-header reveal"><span class="badge-gold">Areas We Serve</span><h2>Find Rehab Near Your West LA Neighborhood</h2><p class="section-subtitle">Pick your neighborhood for directions, transit options, and local recovery resources. We welcome clients from across Los Angeles County and offer <a href="programs/telehealth">telehealth</a> throughout California.</p></div>
-    <div class="area-grid"><a href="/locations/west-los-angeles" class="area-card reveal"><span class="area-time area-time--home"><i data-lucide="building-2"></i> We're right here</span><h3>West Los Angeles &amp; Westwood</h3><p>Our home turf. The clinic sits on Westwood Blvd south of UCLA — walkable for Westwood and Sawtelle residents, students, and professionals.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/locations/santa-monica" class="area-card reveal reveal-delay-1"><span class="area-time"><i data-lucide="car"></i> ~15 min to our door</span><h3>Santa Monica</h3><p>A straight shot east on Olympic or the 10. Flexible PHP and IOP scheduling built around beachside work-life balance.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/locations/beverly-hills" class="area-card reveal reveal-delay-2"><span class="area-time"><i data-lucide="car"></i> ~15 min to our door</span><h3>Beverly Hills</h3><p>West on Santa Monica Blvd. Discreet outpatient care for clients who value privacy and clinical depth.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/locations/brentwood" class="area-card reveal"><span class="area-time"><i data-lucide="car"></i> ~10 min to our door</span><h3>Brentwood</h3><p>Down via San Vicente and Wilshire. Individual therapy, dual-diagnosis care, and real family involvement.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/locations/culver-city" class="area-card reveal reveal-delay-1"><span class="area-time"><i data-lucide="car"></i> ~12 min to our door</span><h3>Culver City</h3><p>A straight shot up Overland. Evening IOP tracks let studio and tech professionals keep working while they recover.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/locations/venice" class="area-card reveal reveal-delay-2"><span class="area-time"><i data-lucide="car"></i> ~20 min to our door</span><h3>Venice</h3><p>Inland from the boardwalk. Compassionate care for opioid, fentanyl, and alcohol recovery — zero judgment.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/locations/mar-vista" class="area-card reveal"><span class="area-time"><i data-lucide="car"></i> ~10 min to our door</span><h3>Mar Vista</h3><p>Often the closest full outpatient program for Mar Vista families — straight up the ridge on Westwood Blvd.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/locations/century-city" class="area-card reveal reveal-delay-1"><span class="area-time"><i data-lucide="car"></i> Under 10 min to our door</span><h3>Century City</h3><p>Minutes from the towers. Early-evening IOP and telehealth that fit around demanding professional calendars.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/locations/pacific-palisades" class="area-card reveal reveal-delay-2"><span class="area-time"><i data-lucide="car"></i> ~25 min to our door</span><h3>Pacific Palisades</h3><p>Down Sunset through the canyons, with a full telehealth track when the drive doesn't make sense.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/locations/west-hollywood" class="area-card reveal"><span class="area-time"><i data-lucide="car"></i> ~25 min to our door</span><h3>West Hollywood</h3><p>Straight down Santa Monica Blvd. An affirming, judgment-free environment backed by WeHo's famously strong recovery community.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/locations/marina-del-rey" class="area-card reveal reveal-delay-1"><span class="area-time"><i data-lucide="car"></i> ~20 min to our door</span><h3>Marina del Rey</h3><p>Up the 405 corridor. Structured weekday treatment with telehealth options for harbor-area professionals.</p><span class="area-more">Directions &amp; local guide <i data-lucide="arrow-right"></i></span></a><a href="/programs/telehealth" class="area-card reveal"><span class="area-time"><i data-lucide="video"></i> From anywhere in California</span><h3>Greater Los Angeles &amp; California</h3><p>From the Valley to the South Bay — and anywhere in the state — our telehealth track brings live therapy and psychiatry to you.</p><span class="area-more">Explore telehealth <i data-lucide="arrow-right"></i></span></a></div>
+    <div class="section-header reveal"><span class="badge-gold">Areas We Serve</span><h2>Find Rehab Near Your West LA Neighborhood</h2><p class="section-subtitle">Drive times are from each neighborhood to our door on Westwood Blvd. We welcome clients from across Los Angeles County and offer <a href="programs/telehealth">telehealth</a> throughout California.</p></div>
+    <div class="area-grid"><div class="area-card reveal"><span class="area-time area-time--home"><i data-lucide="building-2"></i> We're right here</span><h3>West Los Angeles &amp; Westwood</h3><p>Our home turf. The clinic sits on Westwood Blvd south of UCLA — walkable for Westwood and Sawtelle residents, students, and professionals.</p></div><div class="area-card reveal reveal-delay-1"><span class="area-time"><i data-lucide="car"></i> ~15 min to our door</span><h3>Santa Monica</h3><p>A straight shot east on Olympic or the 10. Flexible PHP and IOP scheduling built around beachside work-life balance.</p></div><div class="area-card reveal reveal-delay-2"><span class="area-time"><i data-lucide="car"></i> ~15 min to our door</span><h3>Beverly Hills</h3><p>West on Santa Monica Blvd. Discreet outpatient care for clients who value privacy and clinical depth.</p></div><div class="area-card reveal"><span class="area-time"><i data-lucide="car"></i> ~10 min to our door</span><h3>Brentwood</h3><p>Down via San Vicente and Wilshire. Individual therapy, dual-diagnosis care, and real family involvement.</p></div><div class="area-card reveal reveal-delay-1"><span class="area-time"><i data-lucide="car"></i> ~12 min to our door</span><h3>Culver City</h3><p>A straight shot up Overland. Evening IOP tracks let studio and tech professionals keep working while they recover.</p></div><div class="area-card reveal reveal-delay-2"><span class="area-time"><i data-lucide="car"></i> ~20 min to our door</span><h3>Venice</h3><p>Inland from the boardwalk. Compassionate care for opioid, fentanyl, and alcohol recovery — zero judgment.</p></div><div class="area-card reveal"><span class="area-time"><i data-lucide="car"></i> ~10 min to our door</span><h3>Mar Vista</h3><p>Often the closest full outpatient program for Mar Vista families — straight up the ridge on Westwood Blvd.</p></div><div class="area-card reveal reveal-delay-1"><span class="area-time"><i data-lucide="car"></i> Under 10 min to our door</span><h3>Century City</h3><p>Minutes from the towers. Early-evening IOP and telehealth that fit around demanding professional calendars.</p></div><div class="area-card reveal reveal-delay-2"><span class="area-time"><i data-lucide="car"></i> ~25 min to our door</span><h3>Pacific Palisades</h3><p>Down Sunset through the canyons, with a full telehealth track when the drive doesn't make sense.</p></div><div class="area-card reveal"><span class="area-time"><i data-lucide="car"></i> ~25 min to our door</span><h3>West Hollywood</h3><p>Straight down Santa Monica Blvd. An affirming, judgment-free environment backed by WeHo's famously strong recovery community.</p></div><div class="area-card reveal reveal-delay-1"><span class="area-time"><i data-lucide="car"></i> ~20 min to our door</span><h3>Marina del Rey</h3><p>Up the 405 corridor. Structured weekday treatment with telehealth options for harbor-area professionals.</p></div><a href="/programs/telehealth" class="area-card reveal"><span class="area-time"><i data-lucide="video"></i> From anywhere in California</span><h3>Greater Los Angeles &amp; California</h3><p>From the Valley to the South Bay — and anywhere in the state — our telehealth track brings live therapy and psychiatry to you.</p><span class="area-more">Explore telehealth <i data-lucide="arrow-right"></i></span></a></div>
   </div>
 </section>
 
@@ -253,81 +253,6 @@
   "publisher": {
     "@id": "https://www.goldenstate-rehab.com/#organization"
   }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Golden State Rehab — Areas We Serve in West Los Angeles",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "West Los Angeles & Westwood",
-      "url": "https://www.goldenstate-rehab.com/locations/west-los-angeles"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Santa Monica",
-      "url": "https://www.goldenstate-rehab.com/locations/santa-monica"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Beverly Hills",
-      "url": "https://www.goldenstate-rehab.com/locations/beverly-hills"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Brentwood",
-      "url": "https://www.goldenstate-rehab.com/locations/brentwood"
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "Culver City",
-      "url": "https://www.goldenstate-rehab.com/locations/culver-city"
-    },
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "name": "Venice",
-      "url": "https://www.goldenstate-rehab.com/locations/venice"
-    },
-    {
-      "@type": "ListItem",
-      "position": 7,
-      "name": "Mar Vista",
-      "url": "https://www.goldenstate-rehab.com/locations/mar-vista"
-    },
-    {
-      "@type": "ListItem",
-      "position": 8,
-      "name": "Century City",
-      "url": "https://www.goldenstate-rehab.com/locations/century-city"
-    },
-    {
-      "@type": "ListItem",
-      "position": 9,
-      "name": "Pacific Palisades",
-      "url": "https://www.goldenstate-rehab.com/locations/pacific-palisades"
-    },
-    {
-      "@type": "ListItem",
-      "position": 10,
-      "name": "West Hollywood",
-      "url": "https://www.goldenstate-rehab.com/locations/west-hollywood"
-    },
-    {
-      "@type": "ListItem",
-      "position": 11,
-      "name": "Marina del Rey",
-      "url": "https://www.goldenstate-rehab.com/locations/marina-del-rey"
-    }
-  ]
 }
 </script>
 <script src="/js/chat.min.js?v=4" defer></script>
