@@ -304,8 +304,10 @@
 <!-- ═══════════════════════════════════════════════════════════
      PROOF: six Google reviews transcribed verbatim into HTML.
      Four previews retain the original captures' proportions; "Read
-     more" opens all six. Full review text is present in the initial
-     HTML. Dates and NEW badges are preserved as originally captured.
+     more" opens all six. Each review's text is in the HTML once: the
+     four wall cards, plus the two extra reviews in the overlay. The
+     script below copies the wall cards into their overlay slots on
+     first open. Reviewer names are styled text, not headings. Dates and NEW badges are preserved as originally captured.
      Images are clipped to the original photos and photographic avatar.
      ═══════════════════════════════════════════════════════════ -->
 <section class="section proof" id="reviews" aria-labelledby="reviews-heading">
@@ -322,7 +324,7 @@
           <header class="google-review-header">
             <span class="google-review-avatar" aria-hidden="true">Y</span>
             <div class="google-review-author">
-              <h3 class="google-review-name"><span>Yvette Vargas</span></h3>
+              <p class="google-review-name"><span>Yvette Vargas</span></p>
               <p class="google-review-meta">2 reviews</p>
             </div>
             <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="12" cy="19" r="2.1"/></svg></span>
@@ -353,7 +355,7 @@
           <header class="google-review-header">
             <span class="google-review-avatar" aria-hidden="true">D</span>
             <div class="google-review-author">
-              <h3 class="google-review-name"><span>Dennis</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
+              <p class="google-review-name"><span>Dennis</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></p>
               <p class="google-review-meta">1 review • 1 photo</p>
             </div>
             <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
@@ -391,7 +393,7 @@
           <header class="google-review-header">
             <span class="google-review-avatar" aria-hidden="true">G</span>
             <div class="google-review-author">
-              <h3 class="google-review-name"><span>Gregory Icenogle</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
+              <p class="google-review-name"><span>Gregory Icenogle</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></p>
               <p class="google-review-meta">11 reviews • 2 photos</p>
             </div>
             <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
@@ -423,7 +425,7 @@
           <header class="google-review-header">
             <span class="google-review-avatar" aria-hidden="true">M</span>
             <div class="google-review-author">
-              <h3 class="google-review-name"><span>Mikey Iava</span></h3>
+              <p class="google-review-name"><span>Mikey Iava</span></p>
               <p class="google-review-meta">1 review</p>
             </div>
             <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="12" cy="19" r="2.1"/></svg></span>
@@ -460,110 +462,15 @@
     <div class="proof-modal-scroll">
       <div class="proof-modal-inner">
       <p class="proof-modal-title" id="reviewsModalTitle">All 6 reviews <span class="proof-modal-stars" aria-hidden="true">★★★★★</span> <span class="proof-modal-rating">5.0 on Google</span></p>
-      <figure class="proof-full proof-full--narrow" data-review="4">
-        <article class="google-review google-review--4" aria-label="Google review by Yvette Vargas">
-          <header class="google-review-header">
-            <span class="google-review-avatar" aria-hidden="true">Y</span>
-            <div class="google-review-author">
-              <h3 class="google-review-name"><span>Yvette Vargas</span></h3>
-              <p class="google-review-meta">2 reviews</p>
-            </div>
-            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="12" cy="19" r="2.1"/></svg></span>
-          </header>
-          <div class="google-review-content">
-            <div class="google-review-rating">
-              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
-              <span class="google-review-age">a week ago</span>
-              <span class="google-review-new">NEW</span>
-            </div>
-            <blockquote class="google-review-text">
-              <p>For myself it’s been less then a month that I have been<br>
-              here. To share my experience here. It’s been one of<br>
-              the best programs by far. All the facilitators have a lot<br>
-              of experience in recovery and walk the talk. They are<br>
-              fun and are attentive to our needs and want to see us<br>
-              shine and have a beautiful out look on recovery.<br>
-              There’s never a dull moment as far as participation<br>
-              and perception. We appreciate this program and<br>
-              hands down. We recommend this place 💯</p>
-            </blockquote>
-          </div>
-        </article>
-      </figure>
-      <figure class="proof-full proof-full--wide" data-review="1">
-        <article class="google-review google-review--1 google-review--wide" aria-label="Google review by Dennis">
-          <header class="google-review-header">
-            <span class="google-review-avatar" aria-hidden="true">D</span>
-            <div class="google-review-author">
-              <h3 class="google-review-name"><span>Dennis</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
-              <p class="google-review-meta">1 review • 1 photo</p>
-            </div>
-            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
-          </header>
-          <div class="google-review-content">
-            <div class="google-review-rating">
-              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
-              <span class="google-review-age">3 days ago</span>
-              <span class="google-review-new">NEW</span>
-            </div>
-            <blockquote class="google-review-text">
-              <p>This place is truly amazing! From the moment I arrived, I felt welcomed, supported, and<br>
-              treated with genuine care and respect. The staff is incredible and goes above and<br>
-              beyond to make sure everyone feels heard, understood, and encouraged. You can tell<br>
-              they are passionate about the work they do and truly want to see people succeed.</p>
-              <p>The groups are also excellent. They are informative, engaging, and provide helpful tools<br>
-              that can be applied to everyday life. The facilitators create a comfortable and supportive<br>
-              environment where people can be honest, participate, and learn without feeling judged.<br>
-              I have gained so much insight, encouragement, and motivation from the groups and the<br>
-              staff.</p>
-              <p>I am extremely grateful for the support I received here. This program has made a<br>
-              positive difference in my life, and I would highly recommend it to anyone looking for a<br>
-              safe, caring, and supportive place to grow, heal, and move forward. Thank you to the<br>
-              entire staff for everything you do!</p>
-            </blockquote>
-            <div class="google-review-photo">
-              <img src="images/reviews/google-review-1.webp" width="1100" height="1229" loading="lazy" decoding="async" alt="Photo shared by Dennis with his Google review: three people standing together at Golden State Rehab.">
-            </div>
-          </div>
-        </article>
-      </figure>
-      <figure class="proof-full proof-full--wide" data-review="2">
-        <article class="google-review google-review--2 google-review--wide" aria-label="Google review by Gregory Icenogle">
-          <header class="google-review-header">
-            <span class="google-review-avatar" aria-hidden="true">G</span>
-            <div class="google-review-author">
-              <h3 class="google-review-name"><span>Gregory Icenogle</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
-              <p class="google-review-meta">11 reviews • 2 photos</p>
-            </div>
-            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
-          </header>
-          <div class="google-review-content">
-            <div class="google-review-rating">
-              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
-              <span class="google-review-age">3 weeks ago</span>
-              <span class="google-review-new">NEW</span>
-            </div>
-            <blockquote class="google-review-text">
-              <p>Golden State Rehab gave me a second chance at life and helped me get my sobriety back.<br>
-              From the moment I got there, the place felt safe, calm, and welcoming. The location is<br>
-              amazing and it honestly felt like a home away from home.<br class="google-review-paragraph-break">
-              The staff really care about your recovery. Juanita and Scott helped me through some of the<br>
-              hardest parts and made sure I never felt like I was doing it alone. Big thank you to them and<br>
-              the whole Golden State Rehab team for helping me heal and start feeling like myself again.<br>
-              They also got me a cake for my birthday !! It isn’t just a place for treatment it feels like family</p>
-            </blockquote>
-            <div class="google-review-photo">
-              <img src="images/reviews/google-review-2.webp" width="1100" height="904" loading="lazy" decoding="async" alt="Photo shared by Gregory Icenogle with his Google review: a person seated at a table at Golden State Rehab.">
-            </div>
-          </div>
-        </article>
-      </figure>
+      <figure class="proof-full proof-full--narrow" data-review="4"></figure>
+      <figure class="proof-full proof-full--wide" data-review="1"></figure>
+      <figure class="proof-full proof-full--wide" data-review="2"></figure>
       <figure class="proof-full proof-full--narrow" data-review="5">
         <article class="google-review google-review--5" aria-label="Google review by Chaz Rowens">
           <header class="google-review-header">
             <span class="google-review-avatar" aria-hidden="true"><img src="images/reviews/google-review-5.webp" width="804" height="394" loading="lazy" decoding="async" alt=""></span>
             <div class="google-review-author">
-              <h3 class="google-review-name"><span>Chaz Rowens</span></h3>
+              <p class="google-review-name"><span>Chaz Rowens</span></p>
               <p class="google-review-meta">3 reviews</p>
             </div>
             <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="12" cy="19" r="2.1"/></svg></span>
@@ -583,43 +490,13 @@
           </div>
         </article>
       </figure>
-      <figure class="proof-full proof-full--narrow" data-review="6">
-        <article class="google-review google-review--6" aria-label="Google review by Mikey Iava">
-          <header class="google-review-header">
-            <span class="google-review-avatar" aria-hidden="true">M</span>
-            <div class="google-review-author">
-              <h3 class="google-review-name"><span>Mikey Iava</span></h3>
-              <p class="google-review-meta">1 review</p>
-            </div>
-            <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2.1"/><circle cx="12" cy="12" r="2.1"/><circle cx="12" cy="19" r="2.1"/></svg></span>
-          </header>
-          <div class="google-review-content">
-            <div class="google-review-rating">
-              <span class="google-review-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 120 24" aria-hidden="true" focusable="false"><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(0 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(24 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(48 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(72 0)"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" transform="translate(96 0)"/></svg></span>
-              <span class="google-review-age">a week ago</span>
-              <span class="google-review-new">NEW</span>
-            </div>
-            <blockquote class="google-review-text">
-              <p>The best program ive been in since i started my<br>
-              recovery journey . The staff and owners actually listen<br>
-              to you and show genuine care which ive never<br>
-              experienced before . The groups are very engaging<br>
-              and very fun ! Ive grown more in my short time here at<br>
-              golden state rehab than i have in my entire journey of<br>
-              recovery . If your serious about getting sober and want<br>
-              to grow while have genuine connections and having<br>
-              fun then i cant recommend golden state rehab enough<br>
-              !</p>
-            </blockquote>
-          </div>
-        </article>
-      </figure>
+      <figure class="proof-full proof-full--narrow" data-review="6"></figure>
       <figure class="proof-full proof-full--wide" data-review="3">
         <article class="google-review google-review--3 google-review--wide" aria-label="Google review by Joey F">
           <header class="google-review-header">
             <span class="google-review-avatar" aria-hidden="true">J<svg class="google-review-guide" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="11" fill="#f57c00" stroke="#fff" stroke-width="1.5"/><path d="M12 2l2.94 6.26 6.91.88-5.07 4.78 1.31 6.84L12 17.38l-6.09 3.38 1.31-6.84L2.15 9.14l6.91-.88Z" fill="#fff" transform="translate(2.4 2.4) scale(.8)"/></svg></span>
             <div class="google-review-author">
-              <h3 class="google-review-name"><span>Joey F</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></h3>
+              <p class="google-review-name"><span>Joey F</span><svg class="google-review-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M13 3h8v8M21 3 10 14M10 3H3v18h18v-7"/></svg></p>
               <p class="google-review-meta">Local Guide • 17 reviews • 1 photo</p>
             </div>
             <span class="google-review-menu" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true" focusable="false"><path d="M8 2h8l6 6v8l-6 6H8l-6-6V8Z"/><path d="M12 6v7M12 15v3"/></svg></span>
@@ -650,6 +527,26 @@
     </div>
   </div>
 </section>
+<script>
+// "Read more" shows all six reviews. The four already on the wall aren't
+// repeated in the overlay's HTML: their empty slots are filled with copies
+// of the wall cards the first time it opens, so crawlers read each review
+// once. Capture phase, so this runs before main.js opens the overlay.
+(function () {
+  var wall = document.querySelector('.proof-wall');
+  if (!wall) return;
+  var filled = false;
+  wall.addEventListener('click', function (e) {
+    if (filled || !e.target.closest('.proof-shot-more')) return;
+    filled = true;
+    [].forEach.call(document.querySelectorAll('#reviewsModal .proof-full[data-review]'), function (slot) {
+      if (slot.querySelector('.google-review')) return;
+      var card = wall.querySelector('.google-review--' + slot.getAttribute('data-review'));
+      if (card) slot.appendChild(card.cloneNode(true));
+    });
+  }, true);
+}());
+</script>
 
 <!-- ═══════════════════════════════════════════════════════════
      INSURANCE LOGOS
@@ -1301,19 +1198,21 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     WHY US: left-aligned header + value cards (Apple-style shelf)
-     Cards reuse the sitewide .value-card styles (as on /treatments/
-     and /programs/). On desktop the three cards fill the container
-     exactly. Below 1024px the row starts at the header's left edge and
-     runs off the right edge of the screen, sized so 2⅓ cards show on
-     tablet (~1.2 mobile): the cut-off card says "swipe for more".
-     The visual panel holds a centered picture of the actual thing
-     (portrait, seal, room), not an icon.
+     HOW WE TREAT ADDICTION: left-aligned header + lede + value cards.
+     Cards reuse the sitewide .value-card styles (as on /treatments/ and
+     /programs/). Desktop (1024px+): one column of wide cards stacked top
+     to bottom, photo on the left and text on the right. Below 1024px
+     they turn back into the Apple-style swipe shelf: the row starts at
+     the header's left edge and runs off the right edge of the screen,
+     sized so 2⅓ cards show on tablet and ~1.2 on mobile, and the
+     cut-off card says "swipe for more".
+     The visual panel holds a picture of the actual thing (portrait,
+     room), not an icon.
      ═══════════════════════════════════════════════════════════ -->
 <style>
   .why-us-section .section-header{text-align:left;margin-bottom:40px}
   .why-us-section .section-header h2{text-wrap:balance}
-  .why-us-section .section-header p{margin:0;max-width:none}
+  .why-us-section .section-header p{margin:0;max-width:680px}
   /* --wu-gutter mirrors .container padding at each breakpoint so the
      first card lines up with the header. */
   /* Cards are sized against the visible run, from the header's left edge
@@ -1341,13 +1240,29 @@
     .why-us-cards .value-cards-track{cursor:grab;user-select:none;-webkit-user-select:none}
   }
   .why-us-cards .value-cards-track.is-dragging{cursor:grabbing;scroll-snap-type:none}
-  /* Three cards: desktop fits all three inside the container, no shelf. */
+  /* Desktop: one column, each card full width and lying on its side. The
+     photo fills the left 42% edge to edge (absolutely positioned, so its
+     natural height can't stretch the card); the text column sets the
+     height. The track stops scrolling, so the drag script stands down. */
   @media (min-width:1024px){
-    .why-us-cards .value-card{
-      flex-basis:calc((min(100vw, 1280px) - 2 * var(--wu-gutter) - 2 * var(--wu-gap)) / 3);
-      flex-basis:calc((min(100cqw, 1280px) - 2 * var(--wu-gutter) - 2 * var(--wu-gap)) / 3);
+    .why-us-cards .value-cards-track{
+      display:grid;grid-template-columns:minmax(0,1fr);
+      overflow:visible;scroll-snap-type:none;padding-bottom:4px;
+      cursor:auto;user-select:auto;-webkit-user-select:auto;
     }
-    .why-us-cards .value-cards-track{cursor:auto;user-select:auto;-webkit-user-select:auto}
+    .why-us-cards .value-card{display:grid;grid-template-columns:42% minmax(0,1fr)}
+    .why-us-cards .value-card-visual{order:-1;position:relative;height:auto;min-height:100%;margin:0;padding:0}
+    .why-us-cards .wu-photo,
+    .why-us-cards .wu-portrait{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none}
+    /* The lobby's narrow crop is centered on the wall sign, not the frame. */
+    .why-us-cards .wu-photo--lobby{object-position:68% 50%}
+    /* Dr. Chaghouri stays a round portrait on a warm panel; stretched edge
+       to edge, a headshot turns into an oversized close-up. */
+    .why-us-cards .wu-visual-portrait{background:var(--gold-light)}
+    .why-us-cards .wu-visual-portrait .wu-portrait{position:static;width:170px;height:170px;border-radius:50%;object-position:center 30%;box-shadow:var(--shadow-md)}
+    .why-us-cards .value-card-content{padding:36px 48px 38px}
+    .why-us-cards .value-card-headline{font-size:22px;text-wrap:balance}
+    .why-us-cards .value-card-body{font-size:16px;line-height:1.65}
   }
   @media (max-width:1024px){
     .why-us-cards{--wu-gutter:24px}
@@ -1366,39 +1281,50 @@
 <section class="section why-us-section" aria-labelledby="why-us-heading">
   <div class="container">
     <div class="section-header reveal">
-      <h2 id="why-us-heading">See why Golden State Rehab is<br class="br-desktop"> the best place for treatment</h2>
+      <h2 id="why-us-heading">How We Treat Addiction in Los Angeles</h2>
+      <p>A lot of people in LA hold it together for years. They drink after work or use just to get through the week, and nobody at the office has a clue. Most of our clients keep working while they get help. Golden State Rehab is an outpatient addiction treatment center in West Los Angeles, on Westwood Blvd just south of UCLA. We treat drug and alcohol addiction, plus the anxiety or depression that usualy comes with it (doctors call that a dual diagnosis).</p>
     </div>
   </div>
   <div class="value-cards-scroll-wrapper why-us-cards reveal">
     <div class="value-cards-track">
       <div class="value-card">
         <div class="value-card-content">
-          <p class="value-card-eyebrow">Leadership</p>
-          <h3 class="value-card-headline">You&rsquo;ll meet with a psychiatrist in your first week.</h3>
-          <p class="value-card-body">Your therapist and <a href="programs/psychiatric-care">psychiatrist</a> work together on your treatment plan and review it every week. Led by Medical Director Dr. Eric Chaghouri, MD, and Clinical Director Ari Labowitz, LMFT.</p>
+          <p class="value-card-eyebrow">PHP and IOP</p>
+          <h3 class="value-card-headline">Day treatment, or evenings after work.</h3>
+          <p class="value-card-body"><a href="programs/php">Partial hospitalization (PHP)</a> runs weekdays, about 9 a.m. to 3 p.m. <a href="programs/iop">Intensive outpatient (IOP)</a> is lighter: 3-hour groups, 3 to 5 days a week, mornings or after work. Both are <a href="programs/outpatient-rehab">outpatient drug rehab</a>, so you sleep at home every night. On weeks the 405 is a parking lot, you can join group by video from anywhere in California.</p>
         </div>
         <div class="value-card-visual">
+          <img class="wu-photo" src="images/facility/group-therapy-room-800.webp" alt="Group therapy room at Golden State Rehab in West Los Angeles" width="800" height="600" loading="lazy" draggable="false">
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-card-content">
+          <p class="value-card-eyebrow">Psychiatry and MAT</p>
+          <h3 class="value-card-headline">A psychiatrist on your team from week one.</h3>
+          <p class="value-card-body">Our medical director, Dr. Eric Chaghouri, is a <a href="programs/psychiatric-care">board-certified psychiatrist</a> who went to med school at USC. If you&rsquo;re coming off fentanyl or other opioids, we start buprenorphine (Suboxone) slowly, which lowers the chance of sudden withdrawal. For alcohol, naltrexone can cut cravings. This is called MAT, or medication-assisted treatment. If you&rsquo;re comparing rehabs, ask who writes the prescriptions. Not every program has a psychiatrist on staff.</p>
+        </div>
+        <div class="value-card-visual wu-visual-portrait">
           <img class="wu-portrait" src="images/team/eric-chaghouri.webp" alt="Dr. Eric Chaghouri, MD, Medical Director" width="800" height="800" loading="lazy" draggable="false">
         </div>
       </div>
       <div class="value-card">
         <div class="value-card-content">
-          <p class="value-card-eyebrow">Morning &amp; Evening Tracks</p>
-          <h3 class="value-card-headline">Treatment that fits around your job.</h3>
-          <p class="value-card-body"><a href="programs/php">Partial hospitalization (PHP)</a>, <a href="programs/iop">intensive outpatient (IOP)</a>, and telehealth, scheduled around work while you live at home. See how <a href="programs/outpatient-rehab">outpatient drug rehab in Los Angeles</a> works.</p>
+          <p class="value-card-eyebrow">Individual and Group Therapy</p>
+          <h3 class="value-card-headline">Therapy for why you drink or use.</h3>
+          <p class="value-card-body">In 2025, meth passed fentanyl as the drug involved in the most LA County overdose deaths, per county Public Health. There&rsquo;s no FDA-approved medicine for meth yet, so therapy is the main treatment. You see your own therapist at least once a week. Groups teach CBT and DBT skills for cravings and hard feelings. If trauma is part of it, we use EMDR too.</p>
         </div>
         <div class="value-card-visual">
-          <img class="wu-photo" src="images/facility/computer-workstations-800.webp" alt="Computer workstations with monitors and lounge chairs" width="600" height="800" loading="lazy" draggable="false">
+          <img class="wu-photo" src="images/facility/individual-therapy-room-800.webp" alt="Private individual therapy room at Golden State Rehab" width="600" height="800" loading="lazy" draggable="false">
         </div>
       </div>
       <div class="value-card">
         <div class="value-card-content">
-          <p class="value-card-eyebrow">Licensed &amp; Accredited</p>
-          <h3 class="value-card-headline">Credentials you can look up yourself.</h3>
-          <p class="value-card-body">California DHCS License #191643AP and Joint Commission accreditation, both public record. We work with most major PPO plans; see how <a href="insurance/">insurance coverage for rehab</a> works.</p>
+          <p class="value-card-eyebrow">Westwood, West LA</p>
+          <h3 class="value-card-headline">Right on Westwood Blvd, south of UCLA.</h3>
+          <p class="value-card-body">We&rsquo;re at 1964 Westwood Blvd, Suite 425. From Santa Monica it&rsquo;s about 15 minutes, heading east on Olympic or the 10. Mar Vista and Brentwood are closer, around 10. From Sawtelle you can walk it. After treatment, our alumni still get together for hikes and sober dinners.</p>
         </div>
         <div class="value-card-visual">
-          <img class="wu-seal" src="images/joint-commission-gold-seal-480.webp" alt="The Joint Commission Gold Seal of Approval" width="480" height="480" loading="lazy" draggable="false">
+          <img class="wu-photo wu-photo--lobby" src="images/facility/reception-lobby-800.webp" alt="Reception and lobby at Golden State Rehab in West Los Angeles" width="800" height="600" loading="lazy" draggable="false">
         </div>
       </div>
     </div>
@@ -1447,6 +1373,9 @@
   track.addEventListener('dragstart', function (e) { e.preventDefault(); });
   track.addEventListener('pointerdown', function (e) {
     if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    // Desktop lays the cards out as a grid; nothing to drag when the row
+    // doesn't overflow, and a press there must stay an ordinary click.
+    if (track.scrollWidth <= track.clientWidth + 1) return;
     press = { id: e.pointerId, x: e.clientX, left: track.scrollLeft, dragging: false };
   });
   track.addEventListener('pointermove', function (e) {
@@ -1512,32 +1441,38 @@
   </div>
 </section>
 
+<style>
+  /* Heading and step titles wrap evenly so a short last word never sits
+     alone on its own line. */
+  .path-section .section-header h2,
+  .path-section .path-step h4{text-wrap:balance}
+</style>
 <section class="section section-dark path-section" aria-labelledby="process-heading">
   <div class="container">
     <div class="section-header reveal">
-      <h2 id="process-heading">How to Start Treatment</h2>
-      <p style="color: rgba(253,250,245,0.65);">Starting treatment is simpler than most people expect. We handle the logistics so you can focus on the work that matters. See how <a href="admissions" style="color:var(--gold);">admissions and same-week intake</a> work.</p>
+      <h2 id="process-heading">Starting Rehab in LA This Week</h2>
+      <p style="color: rgba(253,250,245,0.65);">A lot of people plan to get help after the holidays, or once a big deadline at work passes. Then January comes and the plan slips again. You can start addiction treatment this week instead, and most of the setup happens in one phone call.</p>
     </div>
     <ol class="path-steps">
       <li class="path-step reveal">
         <div class="path-step-top"><span class="path-step-num" aria-hidden="true">01</span></div>
-        <h4>First, verify your insurance</h4>
-        <p>Call us or fill in the intake form, and we set up your assessment.</p>
+        <h4>Reach us any hour, holidays too</h4>
+        <p>Call or text <a href="tel:+14242083120">(424) 208-3120</a>. Someone from our admissions team picks up day or night. Tell them what&rsquo;s going on in your own words. You don&rsquo;t need the medical terms.</p>
       </li>
       <li class="path-step reveal">
         <div class="path-step-top"><span class="path-step-num" aria-hidden="true">02</span></div>
-        <h4>Clinical assessment ~60 min</h4>
-        <p>You sit down with an intake specialist for a clinical interview. We listen to your history, get clear on what you need, and go through your options together.</p>
+        <h4>Free insurance check, usually within the hour</h4>
+        <p>We call your insurance and tell you what you&rsquo;d pay before you commit. We work with most major PPO plans (here&rsquo;s how <a href="insurance/">insurance coverage for rehab</a> works). Quick tip: most plans reset your deductable on January 1. If you&rsquo;ve already paid toward it this year, starting sooner can cost you less.</p>
       </li>
       <li class="path-step reveal">
         <div class="path-step-top"><span class="path-step-num" aria-hidden="true">03</span></div>
-        <h4>Know your costs upfront</h4>
-        <p>We explain exactly what your plan covers, at no cost and before you commit to anything.</p>
+        <h4>A one-hour assessment, by phone or in Westwood</h4>
+        <p>A clinician asks what you&rsquo;re using and what your weeks look like, then recommends PHP or IOP. If you drink heavily every day or take benzos, don&rsquo;t stop all at once on your own. That withdrawal can be dangerous. We don&rsquo;t do detox here, but we set it up with a detox provider we trust and hold your spot.</p>
       </li>
       <li class="path-step reveal">
         <div class="path-step-top"><span class="path-step-num" aria-hidden="true">04</span></div>
-        <h4>First session in week 1</h4>
-        <p>You meet your therapist, join your first group, and begin the real work alongside people who understand what you're facing. And recovery doesn't end at discharge. You stay part of our alumni community long after.</p>
+        <h4>Start treatment, often the same week</h4>
+        <p>Most people start within days of their first call, thanks to <a href="admissions">same-week intake</a> and no waiting list. In week one you meet your therapist and your group. Nothing gets shared with your job or your family without your written OK.</p>
       </li>
     </ol>
     <div style="text-align: center; margin-top: 56px;" class="reveal">
