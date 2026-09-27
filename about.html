@@ -680,6 +680,312 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════
+     OUR FACILITY: SELF-ADVANCING PHOTO STRIP
+     Copied from index.html; keep the two in sync.
+     One row of photos, no controls, running edge to edge of the
+     screen at every width: 4 square tiles on desktop, one 4:5 tile
+     plus a peek of the next on mobile. Glides one photo at a time,
+     slow-fast-slow, with only a 0.1s stop between glides, so the row
+     reads as one continuous drift; drag (mouse) or swipe (touch) to
+     browse. The row never scrolls natively (overflow hidden,
+     touch-action pan-y), so vertical page scrolls can't disturb it.
+     Loops endlessly via clone sets on either side. Styles and script are page-scoped
+     here (es/index.html still uses .facility-gallery from
+     styles.css). No tour CTA by design — single-CTA page
+     discipline (verify insurance / call only).
+     ═══════════════════════════════════════════════════════════ -->
+<style>
+  .facility-section .section-header{margin-bottom:40px}
+  .facility-section .section-header h2{margin:0}
+  .facility-strip{overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+  .facility-strip:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
+  .facility-strip.is-dragging{cursor:grabbing}
+  .facility-strip-track{display:flex;gap:8px;margin:0;padding:0;list-style:none}
+  .facility-strip-item{flex:0 0 calc((100% - 24px) / 4);aspect-ratio:1 / 1;border-radius:var(--radius-md);overflow:hidden;background:var(--near-black)}
+  .facility-strip-item img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+  @media (max-width:767px){
+    .facility-strip-track{gap:6px}
+    .facility-strip-item{flex-basis:80%;aspect-ratio:4 / 5}
+  }
+</style>
+<section class="facility-section section" id="facility" aria-labelledby="facility-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 id="facility-heading">Our Facility</h2>
+    </div>
+  </div>
+  <div class="facility-strip reveal" role="region" aria-label="Photos of our facility" tabindex="0">
+    <ul class="facility-strip-track">
+      <li class="facility-strip-item"><img src="images/facility/reception-lobby-800.webp" srcset="images/facility/reception-lobby-800.webp 800w, images/facility/reception-lobby.webp 1600w" sizes="(max-width:767px) 134vw, 34vw" alt="Reception and front lounge with the Golden State Rehab signature wall" loading="lazy" draggable="false" width="800" height="600"></li>
+      <li class="facility-strip-item"><img src="images/facility/individual-therapy-room-800.webp" srcset="images/facility/individual-therapy-room-800.webp 800w, images/facility/individual-therapy-room.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Private one-on-one therapy office with leather lounge chair and sofa" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/group-therapy-room-800.webp" srcset="images/facility/group-therapy-room-800.webp 800w, images/facility/group-therapy-room.webp 1600w" sizes="(max-width:767px) 134vw, 34vw" alt="Group therapy room with a circle of chairs" loading="lazy" draggable="false" width="800" height="600"></li>
+      <li class="facility-strip-item"><img src="images/facility/meditation-room-800.webp" srcset="images/facility/meditation-room-800.webp 800w, images/facility/meditation-room.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Meditation and yoga room with floor cushions and warm lantern lighting" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/reading-lounge-800.webp" srcset="images/facility/reading-lounge-800.webp 800w, images/facility/reading-lounge.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Quiet reading lounge with library shelving and armchairs" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/computer-workstations-800.webp" srcset="images/facility/computer-workstations-800.webp 800w, images/facility/computer-workstations.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Computer workstations with monitors and lounge chairs for work and study" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/game-room-800.webp" srcset="images/facility/game-room-800.webp 800w, images/facility/game-room.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Game room with full-size ping pong table and lounge seating" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/recreation-room-800.webp" srcset="images/facility/recreation-room-800.webp 800w, images/facility/recreation-room.webp 1600w" sizes="(max-width:767px) 134vw, 34vw" alt="Recreation room with shared dining table, ping pong, and built-in shelving" loading="lazy" draggable="false" width="800" height="600"></li>
+      <li class="facility-strip-item"><img src="images/facility/tv-lounge-800.webp" srcset="images/facility/tv-lounge-800.webp 800w, images/facility/tv-lounge.webp 1600w" sizes="(max-width:767px) 80vw, 25vw" alt="Lounge and common area with media wall, sofas and lounge chairs" loading="lazy" draggable="false" width="600" height="800"></li>
+      <li class="facility-strip-item"><img src="images/facility/waiting-area-800.webp" srcset="images/facility/waiting-area-800.webp 800w, images/facility/waiting-area.webp 1600w" sizes="(max-width:767px) 134vw, 34vw" alt="Waiting area with leather swivel chairs, round rug, and tall arched mirror" loading="lazy" draggable="false" width="800" height="600"></li>
+    </ul>
+  </div>
+</section>
+<script>
+// Facility strip: near-continuous glide autoplay, drag/swipe, endless loop.
+// The row moves only under script control (overflow hidden, touch-action
+// pan-y): the browser keeps every vertical gesture for the page and hands us
+// sideways drags as pointer events. With no native scrolling or snapping,
+// nothing but this script can move the row, so a page scroll never
+// interrupts or resets a glide.
+(function () {
+  var strip = document.querySelector('.facility-strip');
+  if (!strip) return;
+  var track = strip.querySelector('.facility-strip-track');
+  var originals = Array.prototype.slice.call(track.children);
+  var COUNT = originals.length;
+  var SLIDE_MS = 3150;   // one-photo glide: slow start, fast middle, slow finish
+  var DWELL_MS = 100;    // the brief stop between glides
+  var RESUME_MS = 4000;  // idle time after an interaction before autoplay resumes
+  var SETTLE_MS = 150;   // quiet period that counts as "wheel/resize finished"
+  var SNAP_MS = 500;     // glide to a photo after a drag, wheel or arrow key
+  var DRAG_SLOP = 6;     // px a finger must travel sideways before it drags
+  var FLICK_PX = 40;     // a drag this long moves on to the next photo
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // One clone set on each side of the originals; the view always settles back
+  // into the middle set, so the row never runs out in either direction.
+  function makeClone(item) {
+    var clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelector('img').alt = '';
+    return clone;
+  }
+  var before = document.createDocumentFragment();
+  var after = document.createDocumentFragment();
+  originals.forEach(function (item) {
+    before.appendChild(makeClone(item));
+    after.appendChild(makeClone(item));
+  });
+  track.insertBefore(before, track.firstChild);
+  track.appendChild(after);
+
+  function pitch() {
+    var a = track.children[0].getBoundingClientRect();
+    var b = track.children[1].getBoundingClientRect();
+    return b.left - a.left;
+  }
+  function nearestStop() {
+    var p = pitch();
+    return Math.round(strip.scrollLeft / p) * p;
+  }
+  // Wrap back into the middle set (the sets are identical, so it's invisible).
+  function normalize() {
+    var p = pitch();
+    if (!p) return;
+    var index = Math.round(strip.scrollLeft / p);
+    if (index < COUNT) strip.scrollLeft += COUNT * p;
+    else if (index >= COUNT * 2) strip.scrollLeft -= COUNT * p;
+  }
+
+  // ── Eased glide ──
+  var frameId = null;
+  // Sine ease-in-out: speed follows sin(πt), easing up from rest to a peak
+  // mid-glide and back down symmetrically, so the row swells and slows.
+  function easeSwell(t) {
+    return (1 - Math.cos(Math.PI * t)) / 2;
+  }
+  function cancelGlide() {
+    if (frameId !== null) cancelAnimationFrame(frameId);
+    frameId = null;
+  }
+  function glideTo(target, duration, done) {
+    cancelGlide();
+    var start = strip.scrollLeft;
+    var distance = target - start;
+    var startedAt = null;
+    function frame(now) {
+      if (startedAt === null) startedAt = now;
+      var progress = Math.min((now - startedAt) / duration, 1);
+      strip.scrollLeft = start + distance * easeSwell(progress);
+      if (progress < 1) {
+        frameId = requestAnimationFrame(frame);
+        return;
+      }
+      frameId = null;
+      normalize();
+      if (done) done();
+    }
+    frameId = requestAnimationFrame(frame);
+  }
+
+  // ── Autoplay: glide one photo, rest, repeat ──
+  var timer = null;
+  var onScreen = !('IntersectionObserver' in window);
+  var state = { dragging: false, keyboard: false };
+
+  function interacting() {
+    return state.dragging || state.keyboard;
+  }
+  function canPlay() {
+    return onScreen && !document.hidden && !reducedMotion.matches && !interacting();
+  }
+  function stop() {
+    clearTimeout(timer);
+    timer = null;
+    cancelGlide();
+  }
+  function schedule(delay) {
+    clearTimeout(timer);
+    timer = null;
+    if (canPlay()) timer = setTimeout(advance, delay);
+  }
+  function advance() {
+    timer = null;
+    if (!canPlay() || frameId !== null) return;  // a glide in flight schedules the next
+    glideTo(nearestStop() + pitch(), SLIDE_MS, function () { schedule(DWELL_MS); });
+  }
+  function setState(key, value) {
+    if (state[key] === value) return;
+    state[key] = value;
+    if (interacting()) stop();
+    else schedule(RESUME_MS);
+  }
+
+  // ── Drag (mouse) and swipe (touch, pen) ──
+  // A mouse drags at once. A finger drags only once it has moved sideways
+  // more than up/down; if the browser claims the gesture as a page scroll it
+  // sends pointercancel before that, and the glide never notices.
+  var drag = null;  // { id, x, y, left, active }
+  function beginDrag(e) {
+    drag.active = true;
+    drag.x = e.clientX;
+    drag.left = strip.scrollLeft;
+    cancelGlide();
+    strip.setPointerCapture(e.pointerId);
+    strip.classList.add('is-dragging');
+    setState('dragging', true);
+  }
+  strip.addEventListener('pointerdown', function (e) {
+    if (drag || (e.pointerType === 'mouse' && e.button !== 0)) return;
+    drag = { id: e.pointerId, x: e.clientX, y: e.clientY, left: strip.scrollLeft, active: false };
+    if (e.pointerType === 'mouse') {
+      e.preventDefault();
+      beginDrag(e);
+    }
+  });
+  strip.addEventListener('pointermove', function (e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    if (!drag.active) {
+      var dx = Math.abs(e.clientX - drag.x);
+      var dy = Math.abs(e.clientY - drag.y);
+      if (dx < DRAG_SLOP || dx <= dy) return;
+      beginDrag(e);
+    }
+    strip.scrollLeft = drag.left - (e.clientX - drag.x);
+  });
+  function endDrag(e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var ended = drag;
+    drag = null;
+    if (!ended.active) return;
+    if (strip.hasPointerCapture(e.pointerId)) strip.releasePointerCapture(e.pointerId);
+    strip.classList.remove('is-dragging');
+    // Settle on a whole photo: onward in the drag's direction after a real
+    // swipe, back to the nearest one after a nudge.
+    var p = pitch();
+    var moved = strip.scrollLeft - ended.left;
+    var target = nearestStop();
+    if (moved >= FLICK_PX) target = Math.ceil(strip.scrollLeft / p) * p;
+    else if (moved <= -FLICK_PX) target = Math.floor(strip.scrollLeft / p) * p;
+    glideTo(target, SNAP_MS);
+    setState('dragging', false);
+  }
+  strip.addEventListener('pointerup', endDrag);
+  strip.addEventListener('pointercancel', endDrag);
+
+  // ── Trackpad side-swipes and shift+wheel scroll the row, then settle ──
+  var wheelTimer = null;
+  strip.addEventListener('wheel', function (e) {
+    var sideways = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+    if (!sideways && !e.shiftKey) return;  // vertical wheel scrolls the page
+    e.preventDefault();
+    var scale = e.deltaMode === 1 ? 16 : 1;  // line-based wheels (Firefox)
+    stop();
+    strip.scrollLeft += (sideways ? e.deltaX : e.deltaY) * scale;
+    clearTimeout(wheelTimer);
+    wheelTimer = setTimeout(function () {
+      glideTo(nearestStop(), SNAP_MS);
+      schedule(RESUME_MS);
+    }, SETTLE_MS);
+  }, { passive: false });
+
+  // ── Keyboard: arrow keys step one photo; pause while focus is visible ──
+  strip.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault();
+    glideTo(nearestStop() + (e.key === 'ArrowRight' ? pitch() : -pitch()), SNAP_MS);
+  });
+  strip.addEventListener('focusin', function () {
+    var visible = true;
+    try { visible = strip.matches(':focus-visible'); } catch (err) { /* older engines: treat as keyboard */ }
+    if (visible) setState('keyboard', true);
+  });
+  strip.addEventListener('focusout', function () { setState('keyboard', false); });
+
+  // Run only while the strip is on screen and the tab is visible. Photos
+  // sitting off to the side of the row are fetched as the section
+  // approaches, so an autoplay glide never reveals a blank tile.
+  if (!onScreen) {
+    var images = track.querySelectorAll('img');
+    var preload = new IntersectionObserver(function (entries) {
+      if (!entries[entries.length - 1].isIntersecting) return;
+      images.forEach(function (img) { img.loading = 'eager'; });
+      preload.disconnect();
+    }, { rootMargin: '400px 0px' });
+    preload.observe(strip);
+    new IntersectionObserver(function (entries) {
+      onScreen = entries[entries.length - 1].isIntersecting;
+      if (onScreen) schedule(DWELL_MS);
+      else clearTimeout(timer);  // an in-flight glide finishes; none follows
+    }, { threshold: 0.25 }).observe(strip);
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) stop();
+    else schedule(DWELL_MS);
+  });
+  if (reducedMotion.addEventListener) {
+    reducedMotion.addEventListener('change', function () {
+      if (reducedMotion.matches) stop();
+      else schedule(DWELL_MS);
+    });
+  }
+
+  // Keep a whole photo at the left edge when the tile width changes. Mobile
+  // browsers fire resize whenever the address bar shows or hides during a
+  // page scroll; that changes only the height, so it is ignored here instead
+  // of stopping the glide and jumping the row.
+  var lastPitch = pitch();
+  var lastWidth = strip.clientWidth;
+  var resizeTimer = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (strip.clientWidth === lastWidth) return;
+      lastWidth = strip.clientWidth;
+      var index = lastPitch ? Math.round(strip.scrollLeft / lastPitch) : COUNT;
+      stop();
+      lastPitch = pitch();
+      strip.scrollLeft = index * lastPitch;
+      normalize();
+      schedule(DWELL_MS);
+    }, SETTLE_MS);
+  });
+
+  strip.scrollLeft = COUNT * lastPitch;
+  schedule(DWELL_MS);
+}());
+</script>
+
 <style>
   /* CTA TRUST ROW. Google rating between laurels + Joint Commission seal,
      directly under a CTA. The stack shrinks to the badge row's width and the
