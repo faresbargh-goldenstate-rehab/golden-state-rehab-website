@@ -37,7 +37,18 @@
   <link rel="stylesheet" href="/css/styles.min.css?v=56">
 <link rel="preload" as="image" href="https://www.goldenstate-rehab.com/images/facility/reception-lobby.webp" fetchpriority="high">
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
-<style>div.related-card:hover{transform:none;box-shadow:none;background:var(--off-white)}</style>
+<style>
+    .carrier-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .carrier-card { background:#fff; border:1px solid var(--border); border-radius:var(--radius-md); padding:26px 24px; }
+    .carrier-card i { width:22px; height:22px; color:var(--gold-dark); }
+    .carrier-card h3 { font-size:19px; margin:10px 0 8px; }
+    .carrier-card p { color:var(--muted); font-size:15px; line-height:1.65; margin-bottom:12px; }
+    .carrier-facts { list-style:none; margin:0; padding:0; }
+    .carrier-facts li { color:var(--muted); font-size:14.5px; line-height:1.6; padding:10px 0; border-top:1px solid var(--border); }
+    .carrier-more { text-align:center; margin-top:32px; color:var(--muted); font-size:15px; }
+    @media (max-width:980px){ .carrier-grid{ grid-template-columns:1fr 1fr; } }
+    @media (max-width:640px){ .carrier-grid{ grid-template-columns:1fr; } }
+  </style>
 </head>
 <body>
 
@@ -129,14 +140,14 @@
 <section class="section section-cream">
   <div class="container">
     <div class="section-header reveal"><span class="badge-gold">By Insurer</span><h2>Find Your Insurance Plan</h2><p class="section-intro">Coverage details differ by carrier. These are the plans we verify most often in Los Angeles. Your own plan decides what gets paid, so we check it for you at no cost.</p></div>
-    <div class="related-grid">
-      <div class="related-card reveal"><div class="related-card-icon"><i data-lucide="heart-pulse"></i></div><h4>Aetna</h4><p>Aetna is part of CVS Health. Most of its California plans include behavioral health benefits, and PHP usually needs prior authorization first.</p></div>
-      <div class="related-card reveal reveal-delay-1"><div class="related-card-icon"><i data-lucide="shield-plus"></i></div><h4>Cigna</h4><p>Cigna runs its behavioral health benefits through Evernorth, so rehab questions often get routed there.</p></div>
-      <div class="related-card reveal reveal-delay-2"><div class="related-card-icon"><i data-lucide="cross"></i></div><h4>Anthem Blue Cross</h4><p>Anthem is the Blue Cross plan in California. Carelon handles the behavioral health side for many of its members.</p></div>
-      <div class="related-card reveal"><div class="related-card-icon"><i data-lucide="shield-check"></i></div><h4>Blue Shield of California</h4><p>Blue Shield of California is a seperate company from Anthem, with its own plans and its own rules for outpatient rehab.</p></div>
-      <div class="related-card reveal reveal-delay-1"><div class="related-card-icon"><i data-lucide="activity"></i></div><h4>UnitedHealthcare</h4><p>Optum handles behavioral health for most UnitedHealthcare plans, including PHP and IOP requests.</p></div>
-      <a href="/verify-insurance" class="related-card reveal reveal-delay-2"><div class="related-card-icon"><i data-lucide="badge-check"></i></div><h4>Another Plan?</h4><p>We work with most major PPO plans beyond these five. Verification tells you exactly where you stand.</p><span>Verify any plan <i data-lucide="arrow-right"></i></span></a>
+    <div class="carrier-grid">
+      <div class="carrier-card reveal"><i data-lucide="heart-pulse"></i><h3>Aetna</h3><p>Aetna is part of CVS Health. Most Aetna plans in California include behavioral health benefits.</p><ul class="carrier-facts"><li><strong>Plan type:</strong> PPO and POS plans usually have out-of-network benefits. HMO and EPO plans usually pay only for in-network care.</li><li><strong>Approvals:</strong> PHP and IOP usually need prior authorization from Aetna before you start. Our team sends it in for you.</li></ul></div>
+      <div class="carrier-card reveal"><i data-lucide="shield-plus"></i><h3>Cigna</h3><p>If your card says Cigna, your rehab benefits are usually run by Evernorth Behavioral Health. Evernorth reviews the approvals and pays the claims, not the medical side of your plan.</p><ul class="carrier-facts"><li><strong>Plan type:</strong> PPO and Open Access Plus plans usually have out-of-network benefits. EPO and HMO plans usualy don't.</li><li><strong>Approvals:</strong> Evernorth reviews PHP and IOP before you start and again during care. We handle those reviews.</li></ul></div>
+      <div class="carrier-card reveal"><i data-lucide="cross"></i><h3>Anthem Blue Cross</h3><p>Anthem holds the Blue Cross license in California and is part of Elevance Health. It is not the same company as Blue Shield of California, so check the name on your card.</p><ul class="carrier-facts"><li><strong>Plan type:</strong> PPO plans usually have out-of-network benefits. HMO and EPO plans usually pay only for in-network care.</li><li><strong>Approvals:</strong> PHP and IOP requests usually go through Carelon Behavioral Health. We put the clinical review together and send it.</li></ul></div>
+      <div class="carrier-card reveal"><i data-lucide="shield-check"></i><h3>Blue Shield of California</h3><p>Blue Shield of California is an independent nonprofit that only serves California. It is a seperate company from Anthem.</p><ul class="carrier-facts"><li><strong>Plan type:</strong> PPO plans usually have out-of-network benefits. HMO and Trio HMO plans usually don't.</li><li><strong>Approvals:</strong> Many plans send behavioral health through a separate administrator, so the phone number for rehab benefits may not be the one on the front of your card. We find the right line for you.</li></ul></div>
+      <div class="carrier-card reveal"><i data-lucide="activity"></i><h3>UnitedHealthcare</h3><p>UnitedHealthcare is part of UnitedHealth Group. Its behavioral health benefits are usually run by Optum Behavioral Health, which has its own approval process.</p><ul class="carrier-facts"><li><strong>Plan type:</strong> Choice Plus plans are PPO style and usually have out-of-network benefits. Choice and Navigate plans usually keep you in network.</li><li><strong>Approvals:</strong> Optum usually has to approve PHP and IOP first. We deal with Optum directly so you don't have to.</li></ul></div>
     </div>
+    <p class="carrier-more reveal">Your plan may not be one of these five. We work with most major PPO plans, so <a href="/verify-insurance">verify your benefits</a> and we will tell you where you stand.</p>
   </div>
 </section>
 
@@ -220,6 +231,24 @@
         <button class="faq-question" aria-expanded="false">Can I pay without insurance?<i data-lucide="chevron-down"></i></button>
         <div class="faq-answer">
           <p>Yes. We offer self-pay rates and will quote them clearly before you commit to anything. For many people comparing options, <a href="/blog/cost-of-rehab-in-los-angeles">the cost of rehab in Los Angeles</a> is a useful starting point.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">What if my insurance denies treatment?<i data-lucide="chevron-down"></i></button>
+        <div class="faq-answer">
+          <p>A denial is often not the final answer. Many appeals win, and if an appeal fails, California lets you ask the state for an independent medical review. We build authorization requests around your clinical assessment, handle the reviews during care, and go over self-pay options with you too.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Will my employer find out?<i data-lucide="chevron-down"></i></button>
+        <div class="faq-answer">
+          <p>No. Your records are protected by HIPAA and by 42 CFR Part 2, a federal law just for addiction treatment records. Checking your benefits does not notify your employer, and we never contact them. Our evening IOP lets many clients keep working full time.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Is Anthem Blue Cross the same as Blue Shield of California?<i data-lucide="chevron-down"></i></button>
+        <div class="faq-answer">
+          <p>No. They are two separate companies. Anthem Blue Cross is part of Elevance Health, and Blue Shield of California is an independent nonprofit. Check the exact name on your card before you compare benefits.</p>
         </div>
       </div>
     </div>
@@ -422,6 +451,30 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. Golden State Rehab offers self-pay rates and quotes them clearly before any commitment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my insurance denies treatment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A denial is often not the final answer. Many appeals win, and if an appeal fails, California lets you ask the state for an independent medical review. We build authorization requests around your clinical assessment, handle the reviews during care, and go over self-pay options with you too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my employer find out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your records are protected by HIPAA and by 42 CFR Part 2, a federal law just for addiction treatment records. Checking your benefits does not notify your employer, and we never contact them. Our evening IOP lets many clients keep working full time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Anthem Blue Cross the same as Blue Shield of California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They are two separate companies. Anthem Blue Cross is part of Elevance Health, and Blue Shield of California is an independent nonprofit. Check the exact name on your card before you compare benefits."
       }
     }
   ]
