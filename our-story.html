@@ -91,12 +91,9 @@
     .pile .snap--over{position:absolute;right:0;bottom:0;width:58%;z-index:1}
     .pile .snap figcaption{text-align:left;padding-left:8px}
     .prologue{margin:0 auto 104px}
-    .opener{display:grid;grid-template-columns:minmax(0,1fr);row-gap:36px;max-width:1100px;margin:0 auto}
+    .opener{max-width:900px;margin:0 auto;text-align:center}
     .opener-kicker{margin:0 0 16px;font-size:13px;font-weight:700;line-height:1.5;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark)}
     .opener-line{margin:0;font-size:clamp(32px,4.4vw,54px);line-height:1.1;letter-spacing:-0.02em;text-wrap:balance;color:var(--near-black)}
-    .short-version{--tilt:1.5deg;width:100%;max-width:440px;padding:26px 26px 24px}
-    .short-version .short-label{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark)}
-    .short-version p:not(.short-label){margin:0;font-size:16.5px;line-height:1.65;color:var(--near-black)}
     .prologue-link{display:flex;width:max-content;margin:40px auto 0}
     .prologue-sub{margin:40px 0 0;font-size:18px;color:var(--body-text);text-align:center}
     .people{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px;max-width:460px;margin:40px auto 0;padding:0}
@@ -117,8 +114,6 @@
       .chap+.chap{margin-top:128px}
       .chap:nth-child(even) .chap-media{order:2}
       .prologue{margin-bottom:144px}
-      .opener{grid-template-columns:minmax(0,7fr) minmax(0,4fr);column-gap:72px;align-items:center}
-      .short-version{justify-self:end}
       .people{grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;max-width:1100px;margin-top:56px}
       .person .snap{padding:10px 10px 0}
       .person .snap::before{width:84px;height:24px;margin-left:-42px;top:-12px}
@@ -251,17 +246,13 @@
           <h1 id="story-title" class="opener-kicker">About Us</h1>
           <h2 class="opener-line">It all started with an actor, a sales guy, a therapist and a psychiatrist</h2>
         </div>
-        <aside class="snap short-version reveal reveal-delay-1" aria-label="The short version">
-          <p class="short-label">The short version</p>
-          <p>We're a small outpatient rehab at 1964 Westwood Blvd in Los Angeles. California licensed us on April 15, 2026, and we opened our doors six weeks later, on May 26. By August 12, The Joint Commission had accredited us too.</p>
-        </aside>
       </div>
-      <p class="prologue-sub">Before any of this, we all had very different jobs.</p>
+      <p class="prologue-sub">We all had very different jobs.</p>
       <ol class="people">
         <li class="person reveal">
           <figure class="snap">
             <img src="images/team/portrait/dean-mcdermott-640.webp" srcset="images/team/portrait/dean-mcdermott-320.webp 320w, images/team/portrait/dean-mcdermott-640.webp 640w" sizes="(max-width: 899px) 300px, 250px" width="640" height="800" loading="lazy" decoding="async" alt="Dean McDermott">
-            <figcaption><strong>Dean</strong> was an actor and comedian before he got into this work. He's a dad of six, and he's in recovery himself.</figcaption>
+            <figcaption><strong>Dean</strong> was an actor and comedian before he got into this work. He's a dad of six, and he was in recovery himself.</figcaption>
           </figure>
         </li>
         <li class="person reveal reveal-delay-1">
