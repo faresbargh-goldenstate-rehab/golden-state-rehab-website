@@ -12,16 +12,16 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Story | Golden State Rehab, Los Angeles</title>
-  <meta name="description" content="Learn how Golden State Rehab was founded in 2026 to fill a gap in integrated addiction and mental health treatment in Los Angeles.">
+  <title>About Us: How Golden State Rehab Got Started in Westwood</title>
+  <meta name="description" content="It all started when California licensed us on April 15, 2026. We opened at 1964 Westwood Blvd on May 26 and earned Joint Commission accreditation on August 12. The whole first year, with photos.">
   <link rel="canonical" href="https://www.goldenstate-rehab.com/our-story">
   <link rel="alternate" hreflang="en" href="https://www.goldenstate-rehab.com/our-story">
   <link rel="alternate" hreflang="es" href="https://www.goldenstate-rehab.com/es/our-story">
   <link rel="alternate" hreflang="x-default" href="https://www.goldenstate-rehab.com/our-story">
   <link rel="icon" type="image/png" href="images/logo-icon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Our Story | Golden State Rehab, Los Angeles">
-  <meta property="og:description" content="Learn how Golden State Rehab was founded in 2026 to fill a gap in integrated addiction and mental health treatment in Los Angeles.">
+  <meta property="og:title" content="About Us: How Golden State Rehab Got Started in Westwood">
+  <meta property="og:description" content="It all started when California licensed us on April 15, 2026. We opened at 1964 Westwood Blvd on May 26 and earned Joint Commission accreditation on August 12. The whole first year, with photos.">
   <meta property="og:image" content="https://www.goldenstate-rehab.com/images/og/default.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -36,6 +36,106 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.16.0/dist/umd/lucide.min.js" defer></script>
   <link rel="stylesheet" href="css/styles.min.css?v=54">
+  <style>
+    /* History page. Page-scoped so it ships without a styles.min.css rebuild.
+       A story in chapters: date, a sentence heading, one or two lines, and a
+       scrapbook photo (white frame, tape, a slight tilt). One dotted trail
+       runs through the chapters and inks in as you scroll (script at the foot). */
+    .story{background:var(--gold-light);padding:40px 0 104px;overflow:hidden}
+    .story-trail{position:relative;max-width:1040px;margin:0 auto}
+    .trail-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+    .trail-base,.trail-ink{fill:none;stroke-width:3;stroke-linecap:round;stroke-dasharray:0.5 10}
+    .trail-base{stroke:rgba(166,132,44,0.28)}
+    .trail-ink{stroke:var(--gold-dark)}
+    .trail-reveal{fill:none;stroke:#fff;stroke-width:14}
+    .trail-dot{fill:var(--gold-light);stroke:rgba(166,132,44,0.45);stroke-width:2;transition:fill 0.4s ease,stroke 0.4s ease}
+    .trail-dot.is-lit{fill:var(--gold);stroke:var(--gold)}
+    .chapters{list-style:none;margin:0;padding:0}
+    .chap{display:grid;grid-template-columns:minmax(0,1fr);row-gap:28px;padding-left:36px}
+    .chap+.chap{margin-top:80px}
+    .chap[id]{scroll-margin-top:calc(var(--phone-banner-h, 56px) + var(--nav-height, 72px) + 24px)}
+    .chap-media{display:flex;justify-content:center}
+    .chap-when{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark)}
+    .chap-text h2{font-size:clamp(24px,2.6vw,32px);line-height:1.2;letter-spacing:-0.015em;text-wrap:balance;margin:0 0 14px;color:var(--near-black)}
+    .chap-text p:not(.chap-when){max-width:46ch;margin:0;font-size:17px;line-height:1.7;color:var(--body-text)}
+    .chap-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--gold-dark);font-weight:600;font-size:15px;text-decoration:none}
+    .chap-link:hover{text-decoration:underline;text-underline-offset:3px}
+    .chap-link svg{width:15px;height:15px}
+
+    .snap{--tilt:-2deg;position:relative;display:block;margin:0;width:min(100%,380px);padding:10px 10px 0;background:#fff;border-radius:4px;color:inherit;text-decoration:none;box-shadow:0 14px 34px rgba(20,14,4,0.12),0 2px 6px rgba(20,14,4,0.06);transform:rotate(var(--tilt));transition:transform 0.35s ease,box-shadow 0.35s ease}
+    .snap::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;margin-left:-42px;background:rgba(200,164,74,0.32);border-radius:2px;transform:rotate(-4deg)}
+    .snap:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 20px 44px rgba(20,14,4,0.16),0 2px 6px rgba(20,14,4,0.06);z-index:3}
+    .snap img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+    .snap figcaption,.snap-cap{display:block;padding:12px 4px 14px;font-size:14px;font-weight:500;line-height:1.35;text-align:center;color:var(--body-text)}
+    .snap--doc{width:min(78%,290px)}
+    .snap--doc img{aspect-ratio:806/974;object-fit:contain}
+    .snap--seal .snap-seal{display:grid;place-items:center;aspect-ratio:4/3;background:var(--gold-light);border-radius:2px}
+    .snap--seal .snap-seal img{width:52%;aspect-ratio:1/1;object-fit:contain}
+    .snap--review{width:min(100%,360px);padding:28px 28px 24px;text-align:left}
+    /* Phones: Joey's review sits under the heading, not above the date. */
+    @media (max-width:899px){
+      .chap--quote{row-gap:0}
+      .chap--quote .chap-text{display:contents}
+      .chap--quote .chap-when{order:1}
+      .chap--quote h2{order:2;margin-bottom:24px}
+      .chap--quote .chap-media{order:3;justify-content:flex-start;padding-left:4px}
+      .chap--quote .chap-link{order:4;justify-self:start;margin-top:24px}
+    }
+    .snap-stars{display:block;color:#FBBC05;font-size:22px;letter-spacing:3px;line-height:1;margin-bottom:14px}
+    .snap--review blockquote{margin:0 0 16px;font-size:22px;font-weight:700;line-height:1.35;letter-spacing:-0.01em;color:var(--near-black)}
+    .snap--review figcaption{padding:0;text-align:left;font-size:14px;color:var(--muted)}
+    .snap--faces .faces{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+    .snap--faces .faces img{aspect-ratio:4/5;border-radius:2px}
+    .pile{position:relative;width:min(100%,420px);padding:0 0 64px}
+    .pile>.snap:first-child{width:80%}
+    .pile .snap--over{position:absolute;right:0;bottom:0;width:58%;z-index:1}
+    .pile .snap figcaption{text-align:left;padding-left:8px}
+    .prologue{margin:0 auto 104px}
+    .opener{display:grid;grid-template-columns:minmax(0,1fr);row-gap:36px;max-width:1100px;margin:0 auto}
+    .opener-kicker{margin:0 0 16px;font-size:13px;font-weight:700;line-height:1.5;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark)}
+    .opener-line{margin:0;font-size:clamp(32px,4.4vw,54px);line-height:1.1;letter-spacing:-0.02em;text-wrap:balance;color:var(--near-black)}
+    .short-version{--tilt:1.5deg;width:100%;max-width:440px;padding:26px 26px 24px}
+    .short-version .short-label{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark)}
+    .short-version p:not(.short-label){margin:0;font-size:16.5px;line-height:1.65;color:var(--near-black)}
+    .prologue-link{display:flex;width:max-content;margin:40px auto 0}
+    .prologue-sub{margin:40px 0 0;font-size:18px;color:var(--body-text);text-align:center}
+    .people{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px;max-width:460px;margin:40px auto 0;padding:0}
+    .person .snap{width:100%}
+    .person .snap img{aspect-ratio:4/5}
+    .person .snap{padding:6px 6px 0}
+    .person .snap::before{width:56px;height:18px;margin-left:-28px;top:-9px}
+    .person .snap figcaption{padding:10px 4px 12px;font-size:13.5px;line-height:1.45;text-align:left;color:var(--body-text)}
+    .person .snap figcaption strong{color:var(--near-black)}
+    .person:nth-child(4n+1) .snap{--tilt:-3deg}
+    .person:nth-child(4n+2) .snap{--tilt:2.5deg}
+    .person:nth-child(4n+3) .snap{--tilt:-2deg}
+    .person:nth-child(4n+4) .snap{--tilt:3deg}
+    @media (min-width:600px) and (max-width:899px){.people{max-width:620px;gap:40px 28px}.person .snap figcaption{font-size:15px}}
+    @media (min-width:900px){
+      .story{padding:64px 0 136px}
+        .chap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:128px;align-items:center;padding-left:0}
+      .chap+.chap{margin-top:128px}
+      .chap:nth-child(even) .chap-media{order:2}
+      .prologue{margin-bottom:144px}
+      .opener{grid-template-columns:minmax(0,7fr) minmax(0,4fr);column-gap:72px;align-items:center}
+      .short-version{justify-self:end}
+      .people{grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;max-width:1100px;margin-top:56px}
+      .person .snap{padding:10px 10px 0}
+      .person .snap::before{width:84px;height:24px;margin-left:-42px;top:-12px}
+      .person .snap figcaption{padding:14px 8px 18px;font-size:15.5px}
+    }
+    @media (prefers-reduced-motion:reduce){.snap,.trail-dot{transition:none}}
+
+    .fac-location{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+    .getting-here .eyebrow{display:block;margin-bottom:12px;color:var(--gold)}
+    .getting-here h2{margin:0 0 18px;color:var(--off-white);text-wrap:balance}
+    .getting-here p{margin:0;font-size:17px;line-height:1.7;color:rgba(253,250,245,0.78);max-width:46ch}
+    @media (min-width:1024px){.fac-location{grid-template-columns:5fr 7fr;gap:64px}}
+    .fac-map{position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(253,250,245,0.12);box-shadow:var(--shadow-md);height:480px}
+    .fac-map iframe{width:100%;height:100%;border:0;display:block}
+    @media (max-width:640px){.fac-map{height:380px}}
+    #facility{scroll-margin-top:calc(var(--phone-banner-h, 56px) + var(--nav-height, 72px))}
+  </style>
 <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
@@ -58,10 +158,9 @@
       <li class="has-dropdown">
         <a href="about" class="active">About Us <i data-lucide="chevron-down"></i></a>
         <div class="dropdown">
-          <a href="our-story">Our Story</a>
-          <a href="our-facility">Our Facility</a>
-          <a href="about">Why Golden State Rehab</a>
-          <a href="team">Our Team</a>
+          <a href="about">Why Choose Us</a>
+          <a href="team">Meet the Team</a>
+          <a href="our-story">Our History</a>
         </div>
       </li>
       <li class="has-dropdown">
@@ -123,7 +222,13 @@
 </nav>
 
 <nav class="nav-mobile" aria-label="Mobile navigation">
-  <a href="about" class="active">About Us</a>
+  <div class="nav-mobile-group">
+    <div class="nav-mobile-group-label">About Us</div>
+    <a href="about">Why Choose Us</a>
+    <a href="team">Meet the Team</a>
+    <a href="our-story">Our History</a>
+  </div>
+  <div class="nav-mobile-divider"></div>
   <a href="programs/">Programs</a>
   <a href="treatments/">Treatments</a>
   <a href="/locations">Location</a>
@@ -137,125 +242,217 @@
 
 <main>
 
-<!-- Page Hero -->
-<section class="page-hero">
-  <div class="page-hero-bg" style="background-image: url('images/facility/reception-lobby.webp');"></div>
-  <div class="page-hero-overlay"></div>
-  <div class="container page-hero-content">
-    <span class="page-hero-badge">Our Story</span>
-    <h1>Our Story: Building a Better<br>Rehab in Los Angeles</h1>
-    <p class="page-hero-sub">A community that needed better care. A team that refused to accept the status quo.</p>
+<!-- The story: chapters told in first person, scrapbook photos, one dotted trail. -->
+<section class="story" aria-labelledby="story-title">
+  <div class="container">
+    <div class="prologue" id="t-before">
+      <div class="opener">
+        <div class="opener-copy reveal">
+          <h1 id="story-title" class="opener-kicker">About Us</h1>
+          <h2 class="opener-line">It all started with an actor, a sales guy, a therapist and a psychiatrist</h2>
+        </div>
+        <aside class="snap short-version reveal reveal-delay-1" aria-label="The short version">
+          <p class="short-label">The short version</p>
+          <p>We're a small outpatient rehab at 1964 Westwood Blvd in Los Angeles. California licensed us on April 15, 2026, and we opened our doors six weeks later, on May 26. By August 12, The Joint Commission had accredited us too.</p>
+        </aside>
+      </div>
+      <p class="prologue-sub">Before any of this, we all had very different jobs.</p>
+      <ol class="people">
+        <li class="person reveal">
+          <figure class="snap">
+            <img src="images/team/portrait/dean-mcdermott-640.webp" srcset="images/team/portrait/dean-mcdermott-320.webp 320w, images/team/portrait/dean-mcdermott-640.webp 640w" sizes="(max-width: 899px) 300px, 250px" width="640" height="800" loading="lazy" decoding="async" alt="Dean McDermott">
+            <figcaption><strong>Dean</strong> was an actor and comedian before he got into this work. He's a dad of six, and he's in recovery himself.</figcaption>
+          </figure>
+        </li>
+        <li class="person reveal reveal-delay-1">
+          <figure class="snap">
+            <img src="images/team/portrait/scott-hedlund-640.webp" srcset="images/team/portrait/scott-hedlund-320.webp 320w, images/team/portrait/scott-hedlund-640.webp 640w" sizes="(max-width: 899px) 300px, 250px" width="640" height="800" loading="lazy" decoding="async" alt="Scott Hedlund">
+            <figcaption><strong>Scott</strong> was a top sales rep at Yelp. Then he got sober and lost over 150 pounds.</figcaption>
+          </figure>
+        </li>
+        <li class="person reveal reveal-delay-2">
+          <figure class="snap">
+            <img src="images/team/portrait/viola-sulahian-320.webp" width="320" height="400" loading="lazy" decoding="async" alt="Viola Sulahian">
+            <figcaption><strong>Viola</strong> spent almost four years working in treatment, from detox all the way to IOP.</figcaption>
+          </figure>
+        </li>
+        <li class="person reveal reveal-delay-3">
+          <figure class="snap">
+            <img src="images/team/portrait/eric-chaghouri-640.webp" srcset="images/team/portrait/eric-chaghouri-320.webp 320w, images/team/portrait/eric-chaghouri-640.webp 640w" sizes="(max-width: 899px) 300px, 250px" width="640" height="800" loading="lazy" decoding="async" alt="Dr. Eric Chaghouri">
+            <figcaption><strong>Dr. Eric</strong> was chief resident in psychiatric emergency services at USC.</figcaption>
+          </figure>
+        </li>
+      </ol>
+      <a class="chap-link prologue-link" href="team">Meet the whole team <i data-lucide="arrow-right"></i></a>
+    </div>
+
+    <div class="story-trail" data-trail>
+      <svg class="trail-svg" aria-hidden="true" focusable="false"></svg>
+      <ol class="chapters">
+
+        <li class="chap reveal" id="t-license">
+          <div class="chap-media">
+            <a class="snap snap--doc" href="/license" style="--tilt:2.5deg">
+              <img src="images/dhcs-license.jpg" width="806" height="974" loading="lazy" decoding="async" alt="Golden State Rehab's California DHCS license, number 191643AP, effective April 15, 2026">
+              <span class="snap-cap">Our license, #191643AP</span>
+            </a>
+          </div>
+          <div class="chap-text">
+            <p class="chap-when"><time datetime="2026-04-15">April 15, 2026</time></p>
+            <h2>In April, the State of California made it official</h2>
+            <p>The Department of Health Care Services is the state agency that licenses rehabs here, and on April 15 they approved ours. That's the day we could actually start helping people.</p>
+            <a class="chap-link" href="/license">See the license <i data-lucide="arrow-right"></i></a>
+          </div>
+        </li>
+
+        <li class="chap reveal" id="t-opening">
+          <div class="chap-media">
+            <div class="pile">
+              <!-- PHOTO PLACEHOLDER (opening-day): facility fillers until the owner sends real
+                   opening or build-out photos. Swap src + alt + caption, keep the frames. -->
+              <figure class="snap" data-placeholder="opening-day" style="--tilt:-3deg">
+                <img src="images/facility/reception-lobby-800.webp" width="800" height="600" loading="lazy" decoding="async" alt="Reception at Golden State Rehab with the backlit logo wall and leather armchairs">
+                <figcaption>Our front desk</figcaption>
+              </figure>
+              <figure class="snap snap--over" style="--tilt:4deg">
+                <img src="images/facility/group-therapy-room-800.webp" width="800" height="600" loading="lazy" decoding="async" alt="Group therapy room with a circle of chairs">
+                <figcaption>The group room</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="chap-text">
+            <p class="chap-when"><time datetime="2026-05-26">May 26, 2026</time></p>
+            <h2>Six weeks later, we opened our doors to our first clients</h2>
+            <p>Btw, we're at 1964 Westwood Blvd, Suite 425, right in the middle of Westwood.</p>
+          </div>
+        </li>
+
+        <li class="chap chap--quote reveal" id="t-reviews">
+          <div class="chap-media">
+            <figure class="snap snap--review" style="--tilt:-2deg">
+              <span class="snap-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <blockquote>&ldquo;I loved my time at Golden State Rehab.&rdquo;</blockquote>
+              <figcaption>Joey F.</figcaption>
+            </figure>
+          </div>
+          <div class="chap-text">
+            <p class="chap-when">June 2026</p>
+            <h2>In June, we got our very first Google review</h2>
+            <a class="chap-link" href="about#reviews">Read the reviews <i data-lucide="arrow-right"></i></a>
+          </div>
+        </li>
+
+        <li class="chap reveal" id="t-accredited">
+          <div class="chap-media">
+            <a class="snap snap--seal" href="https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/750952" target="_blank" rel="noopener noreferrer" style="--tilt:2deg">
+              <span class="snap-seal"><img src="/images/joint-commission-gold-seal-480.webp" width="480" height="480" loading="lazy" decoding="async" alt="The Joint Commission Gold Seal of Approval"></span>
+              <span class="snap-cap">Gold Seal of Approval</span>
+            </a>
+          </div>
+          <div class="chap-text">
+            <p class="chap-when"><time datetime="2026-08-12">August 12, 2026</time></p>
+            <h2>In August, we were accredited by the same group that inspects hospitals</h2>
+            <p>It's called The Joint Commission, an independent nonprofit that checks healthcare organizations all over the country. They gave us their Gold Seal of Approval eleven weeks after we opened.</p>
+            <a class="chap-link" href="https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/750952" target="_blank" rel="noopener noreferrer">Our listing <i data-lucide="external-link"></i></a>
+          </div>
+        </li>
+
+        <li class="chap reveal" id="t-team">
+          <div class="chap-media">
+            <figure class="snap snap--faces" style="--tilt:-2deg">
+              <span class="faces"><img src="images/team/portrait/eric-chaghouri-160.webp" width="160" height="200" loading="lazy" decoding="async" alt="Dr. Eric Chaghouri"><img src="images/team/portrait/ari-labowitz-160.webp" width="160" height="200" loading="lazy" decoding="async" alt="Ari Labowitz"><img src="images/team/portrait/viola-sulahian-160.webp" width="160" height="200" loading="lazy" decoding="async" alt="Viola Sulahian"><img src="images/team/portrait/nechama-berkowitz-160.webp" width="160" height="200" loading="lazy" decoding="async" alt="Nechama Berkowitz"><img src="images/team/portrait/eduardo-garcia-160.webp" width="160" height="200" loading="lazy" decoding="async" alt="Eduardo Garcia"><img src="images/team/portrait/sophia-scharpf-160.webp" width="160" height="200" loading="lazy" decoding="async" alt="Sophia Scharpf"><img src="images/team/portrait/scott-hedlund-160.webp" width="160" height="200" loading="lazy" decoding="async" alt="Scott Hedlund"><img src="images/team/portrait/dean-mcdermott-160.webp" width="160" height="200" loading="lazy" decoding="async" alt="Dean McDermott"></span>
+              <figcaption>All eight of us</figcaption>
+            </figure>
+          </div>
+          <div class="chap-text">
+            <p class="chap-when">September 2026</p>
+            <h2>In September, Nechama and Eduardo joined, and that made eight of us</h2>
+            <p>Nechama is a trauma-informed therapist and Eduardo is our program director. All eight of us still work out of that same suite in Westwood.</p>
+            <a class="chap-link" href="team">Meet the team <i data-lucide="arrow-right"></i></a>
+          </div>
+        </li>
+
+      </ol>
+    </div>
   </div>
 </section>
 
-<!-- Founding Story -->
-<section class="section">
+<!-- Getting here -->
+<section class="section section-dark getting-here" id="facility" aria-labelledby="location-heading">
   <div class="container">
-    <div class="grid-2" style="gap: 80px; align-items: center;">
+    <div class="fac-location">
       <div class="reveal">
-        <span class="eyebrow">The Beginning</span>
-        <h2>Born from a gap in care — and a refusal to ignore it</h2>
-        <p>In 2026, our founders recognized something troubling: Los Angeles had no shortage of treatment centers, yet countless people were falling through the cracks. Facilities treated addiction or mental health — rarely both. Programs were rigid, impersonal, and designed around the institution rather than the person.</p>
-        <p>The founding team had seen this firsthand — in colleagues, in family members, in clients who cycled in and out of care without ever experiencing real healing. They believed the problem wasn't the people struggling; it was the fragmented system meant to help them.</p>
-        <p>Golden State Rehab was built to do something different: treat the whole person, with integrated care that addresses addiction and mental health together, in a setting that feels like healing — not a hospital.</p>
-      </div>
-      <div class="reveal reveal-delay-2" style="position: relative;">
-        <img src="images/facility/waiting-area.webp" alt="Golden State Rehab waiting lounge — designed to feel calm and welcoming" width="800" height="560" style="width: 100%; height: 500px; object-fit: cover; border-radius: 16px;">
-        <div class="intro-stat" style="position: absolute; bottom: 32px; left: -24px; background: var(--white); border: 1px solid var(--border); padding: 20px 28px; box-shadow: 0 8px 32px rgba(20,14,4,0.12); border-radius: 12px;">
-          <div class="intro-stat-number">Est. 2026</div>
-          <div class="intro-stat-label">West Los Angeles, CA</div>
+        <span class="eyebrow">Getting here</span>
+        <h2 id="location-heading">Here's where to find us (and yes, there's parking)</h2>
+        <p>We're a short drive from Santa Monica, Beverly Hills, Brentwood and Culver City. Street parking is avalable too if our lot is full.</p>
+        <div style="margin-top: 32px;">
+          <a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener" class="btn btn-primary">Get Directions <i data-lucide="map-pin"></i></a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our Mission -->
-<section class="section section-cream" aria-labelledby="mission-heading">
-  <div class="container">
-    <div style="max-width: 760px; margin: 0 auto; text-align: center;" class="reveal">
-      <span class="eyebrow">Our Purpose</span>
-      <h2 id="mission-heading">We believe healing is possible — for everyone</h2>
-      <p style="font-size: 20px; font-style: italic; color: var(--body-text); line-height: 1.7; margin: 28px 0;">"Our mission is to help people reclaim their lives by offering thoughtful, individualized treatment rooted in respect, honesty, and clinical expertise. We walk beside every client through healing, growth, and long-term recovery — ensuring no one has to navigate this journey alone."</p>
-      <p>We exist for the person who has been told they can't get better. For the family that doesn't know where to turn. For anyone who deserves a fresh start and a team that will genuinely fight for their recovery.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Core Values -->
-<section class="section section-off-white" aria-labelledby="values-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="eyebrow">What We Stand For</span>
-      <h2 id="values-heading">Our core values guide every decision we make</h2>
-      <p>From the first phone call to the last day of treatment — and beyond — these values shape how we show up for every person in our care.</p>
-    </div>
-    <div class="grid-3">
-      <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-card-icon"><i data-lucide="shield"></i></div>
-        <h3>Integrity</h3>
-        <p>We operate with radical honesty — with our clients, their families, and ourselves. No overpromising. No shortcuts. Just a genuine commitment to doing right by the people who trust us.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-card-icon"><i data-lucide="heart"></i></div>
-        <h3>Compassion</h3>
-        <p>Every person who walks through our doors deserves to be treated with dignity and warmth. We meet clients where they are — never where we think they should be.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-3">
-        <div class="feature-card-icon"><i data-lucide="award"></i></div>
-        <h3>Clinical Excellence</h3>
-        <p>Evidence-based, trauma-informed care delivered by specialists who stay current with the latest research. Our clinical standards are never compromised — no matter what.</p>
+      <div class="fac-map reveal reveal-delay-2">
+        <iframe
+          title="Google Map: Golden State Rehab, 1964 Westwood Blvd Suite 425, Los Angeles"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3!2d-118.4343784!3d34.0474328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbc5e47e9077%3A0xd15fb9f046f6ae67!2sGolden%20State%20Rehab!5e0!3m2!1sen!2sus!4v1758000000000!5m2!1sen!2sus"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Team Teaser -->
-<section class="section section-dark" aria-labelledby="team-heading">
-  <div class="container" style="text-align: center;">
-    <div class="reveal" style="max-width: 620px; margin: 0 auto;">
-      <span class="eyebrow" style="color: var(--gold);">Our Team</span>
-      <h2 id="team-heading">Meet the people behind the mission</h2>
-      <p style="color: rgba(253,250,245,0.7); margin-bottom: 36px;">Our clinical team brings decades of combined experience in addiction medicine, psychiatric care, and trauma-informed therapy. They're not just experts — they're people who genuinely care.</p>
-      <a href="team" class="btn btn-secondary btn-lg">Meet Our Team <i data-lucide="arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- Stats Row -->
-<div class="section-off-white">
-  <div class="container" style="padding-top: 64px; padding-bottom: 64px;">
-    <div class="stats-row reveal">
-      <div class="stat-item">
-        <div class="stat-number">2026</div>
-        <div class="stat-label">Founded in Los Angeles</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">100+</div>
-        <div class="stat-label">Recoveries</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">8+</div>
-        <div class="stat-label">Treatment programs</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">24/7</div>
-        <div class="stat-label">Support available</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CTA Banner -->
-<section class="cta-banner">
-  <div class="cta-banner-bg" style="background-image: url('images/facility/reception-lobby.webp');"></div>
+<style>
+  /* CTA TRUST ROW. Google rating between laurels + Joint Commission seal,
+     directly under a CTA. The stack shrinks to the badge row's width and the
+     buttons stretch to it, so pill and row line up edge to edge. Light
+     sections use the default colours; .cta-stack--dark flips them for the
+     dark process band and the final banner. Page-scoped for now; moves to
+     styles.css when rolled out sitewide. */
+  .cta-stack{display:inline-flex;flex-direction:column;align-items:stretch;max-width:100%;vertical-align:top}
+  .cta-stack>.btn{flex:none;width:100%;justify-content:center;padding:13px 24px;font-size:15px}
+  .cta-stack>.btn+.btn{margin-top:12px}
+  .cta-proof{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px 20px;margin:14px 0 0;padding:0;list-style:none}
+  .cta-proof-item{display:flex;align-items:center;gap:7px}
+  .cta-proof-text{font-size:10px;font-weight:400;line-height:1.35;letter-spacing:0.06em;text-transform:uppercase;text-align:left;color:var(--muted)}
+  .cta-proof-text strong{font-weight:600;color:var(--body-text)}
+  .cta-proof-laurel{flex:none;width:11px;height:22px;color:var(--gold-dark);opacity:0.8}
+  .cta-proof-laurel--r{transform:scaleX(-1)}
+  .cta-proof-item .cta-proof-laurel + .cta-proof-text{text-align:center}
+  .cta-proof-seal{flex:none;width:24px;height:24px}
+  .cta-stack--dark .cta-proof-text{color:rgba(253,250,245,0.6)}
+  .cta-stack--dark .cta-proof-text strong{color:rgba(253,250,245,0.85)}
+  .cta-stack--dark .cta-proof-laurel{color:var(--gold)}
+  @media (max-width:480px){
+    .cta-proof{justify-content:center;gap:8px 14px}
+    .cta-proof-item{gap:6px}
+    .cta-proof-text{font-size:9.5px;letter-spacing:0.05em}
+    .cta-proof-laurel{width:10px;height:20px}
+    .cta-proof-seal{width:22px;height:22px}
+  }
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="cta-laurel" viewBox="0 0 20 40"><path d="M15 39C5 33 3 16 9 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M11.3 35.9Q6.9 32.4 2.3 35.5Q6.6 39.0 11.3 35.9ZM11.3 35.9Q14.3 32.2 11.4 28.4Q8.5 32.1 11.3 35.9ZM8.2 31.1Q5.3 27.1 0.7 28.6Q3.5 32.6 8.2 31.1ZM8.2 31.1Q11.6 28.7 10.2 24.8Q6.7 27.2 8.2 31.1ZM6.3 25.5Q4.7 21.5 0.5 21.9Q2.0 25.8 6.3 25.5ZM6.3 25.5Q9.6 24.2 9.2 20.6Q5.8 21.9 6.3 25.5ZM5.6 19.4Q5.0 15.9 1.5 15.5Q2.1 19.0 5.6 19.4ZM5.6 19.4Q8.6 18.9 8.9 15.9Q5.9 16.4 5.6 19.4ZM6.2 13.4Q6.3 10.5 3.6 9.6Q3.5 12.5 6.2 13.4ZM6.2 13.4Q8.7 13.5 9.4 11.2Q6.9 11.1 6.2 13.4ZM9.0 6.0Q12.5 4.9 11.8 1.3Q8.4 2.4 9.0 6.0Z" fill="currentColor"/></symbol></svg>
+<!-- ═══════════════════════════════════════════════════════════
+     FINAL CTA BANNER
+     ═══════════════════════════════════════════════════════════ -->
+<section class="cta-banner" aria-label="Final call to action">
+  <div class="cta-banner-bg" style="background-image: url('images/community/community-sunset.webp'); background-position: center 38%;"></div>
   <div class="cta-banner-overlay"></div>
   <div class="cta-banner-content">
-    <h2>Begin your journey today</h2>
-    <p>You don't have to figure this out alone. Our team is ready to help — call us now or verify your insurance in minutes.</p>
-    <div class="btn-group">
-      <a href="tel:+14242083120" class="btn btn-primary btn-lg">Call Now <i data-lucide="phone"></i></a>
-      <a href="verify-insurance" class="btn btn-white-outline btn-lg">Verify Insurance <i data-lucide="arrow-right"></i></a>
+    <span class="cta-meta"><i data-lucide="shield-check"></i> Confidential · Free · 24/7</span>
+    <h2>Let's get you scheduled.</h2>
+    <p>Verify your insurance in about a minute, or call our Los Angeles admissions team and we'll walk you through every step. Free and confidential.</p>
+    <div class="cta-stack cta-stack--dark">
+      <a href="tel:+14242083120" class="btn btn-white-outline btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
+      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="final">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+      <ul class="cta-proof" aria-label="Ratings and accreditation">
+        <li class="cta-proof-item">
+          <svg class="cta-proof-laurel" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+          <span class="cta-proof-text"><strong>5-Star</strong> Rated<br>on Google</span>
+          <svg class="cta-proof-laurel cta-proof-laurel--r" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+        </li>
+        <li class="cta-proof-item">
+          <img class="cta-proof-seal" src="/images/joint-commission-gold-seal.webp" alt="" width="24" height="24" loading="lazy" decoding="async">
+          <span class="cta-proof-text"><strong>Joint Commission</strong><br>Accredited</span>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -265,7 +462,7 @@
 <footer class="footer" aria-label="Site footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="nav-logo" style="margin-bottom:0;"><img src="/images/logo-white.png" alt="Golden State Rehab" class="nav-logo-img" width="120" height="120"></a><div class="footer-call-cta"><span class="footer-call-label">Call Us At</span><a href="tel:+14242083120" class="footer-call-number">(424) 208-3120</a></div><p class="footer-tagline">Treating addiction and mental health in Los Angeles with compassion, clinical expertise, and flexible programs built around your life.</p><div class="footer-contact"><a href="tel:+14242083120" class="footer-phone"><i data-lucide="phone"></i> Call Now</a><!--email_off--><a href="mailto:admissions@goldenstate-rehab.com"><i data-lucide="mail"></i> admissions@goldenstate-rehab.com</a><!--/email_off--><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025</a></div><div class="footer-badges"><a href="/license" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="View DHCS License Certificate">DHCS Lic. #191643AP</a>
           <a href="https://www.dhcs.ca.gov/providers-partners/directories-for-substance-use-disorder-services/" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="California DHCS provider directory">Verify with DHCS ↗</a><span class="footer-badge">Evidence-Based</span>
           <div google-add-preferred-source-btn data-theme="dark"></div>
-        </div></div><div class="footer-col"><div class="footer-heading">Programs</div><nav class="footer-links"><a href="/programs/">All Programs</a><a href="/programs/php">Partial Hospitalization (PHP)</a><a href="/programs/iop">Intensive Outpatient (IOP)</a><a href="/programs/evening-iop">Evening IOP</a><a href="/programs/virtual-iop">Virtual IOP</a><a href="/programs/outpatient-rehab">Outpatient Drug Rehab</a><a href="/programs/telehealth">Telehealth Rehab</a><a href="/programs/psychiatric-care">Psychiatric Care</a></nav></div><div class="footer-col"><div class="footer-heading">Treatments</div><nav class="footer-links"><a href="/treatments/">All Treatments</a><a href="/treatments/alcohol">Alcohol Addiction</a><a href="/treatments/fentanyl">Fentanyl Addiction</a><a href="/treatments/dual-diagnosis">Dual Diagnosis</a><a href="/treatments/depression">Depression</a><a href="/treatments/anxiety">Anxiety</a></nav></div><div class="footer-col"><div class="footer-heading">Centers of Care</div><nav class="footer-links"><a href="/rehabilitation-center">Rehabilitation Center</a><a href="/alcoholism-treatment-program">Alcoholism Treatment Program</a><a href="/mental-health">Mental Health Treatment</a><a href="/spanish-speaking-treatment">Spanish-Speaking Treatment</a></nav></div><div class="footer-col"><div class="footer-heading">Admissions</div><nav class="footer-links"><a href="/admissions">Admissions &amp; Same-Week Intake</a><a href="/verify-insurance">Verify Insurance</a><a href="/insurance/">Insurance Coverage</a><a href="/contact">Contact Us</a><a href="/faq">FAQ</a><a href="/families">For Families</a></nav></div><div class="footer-col"><div class="footer-heading">Explore</div><nav class="footer-links"><a href="/locations">Our Location &amp; Areas We Serve</a><a href="/blog/">Blog</a><a href="/about">About Us</a><a href="/team">Our Team</a><a href="/our-facility">Our Facility</a></nav></div></div><div class="footer-visit"><div class="footer-visit-text"><div class="footer-visit-eyebrow">Visit Us</div><p class="footer-visit-addr">1964 Westwood Blvd, Suite 425<br>Los Angeles, CA 90025</p><p class="footer-visit-note">Our outpatient center in Westwood, West Los Angeles &mdash; minutes from Santa Monica, Beverly Hills, Brentwood, and Culver City.</p><div class="footer-visit-links"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Open in Google Maps</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025&amp;destination_place_id=ChIJd5B-5MW7woARZ672RvC5X9E" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Get directions</a></div></div><div class="footer-visit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3!2d-118.4343784!3d34.0474328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbc5e47e9077%3A0xd15fb9f046f6ae67!2sGolden%20State%20Rehab!5e0!3m2!1sen!2sus!4v1758000000000!5m2!1sen!2sus" title="Google Map: Golden State Rehab, 1964 Westwood Blvd Suite 425, Los Angeles" width="600" height="240" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div><div class="footer-bottom"><a rel="noopener noreferrer" href="https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/750952" target="_blank" class="footer-seal"><img src="/images/joint-commission-gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage" width="44" height="44" loading="lazy" decoding="async"></a><p class="footer-bottom-text">&copy; 2026 Golden State Rehab. All rights reserved. Los Angeles, California.</p><nav class="footer-bottom-links"><a href="/blog/">Blog</a><a href="/faq">FAQ</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms of Use</a><a href="/sitemap.xml">Sitemap</a></nav></div><div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></div></footer>
+        </div></div><div class="footer-col"><div class="footer-heading">Programs</div><nav class="footer-links"><a href="/programs/">All Programs</a><a href="/programs/php">Partial Hospitalization (PHP)</a><a href="/programs/iop">Intensive Outpatient (IOP)</a><a href="/programs/evening-iop">Evening IOP</a><a href="/programs/virtual-iop">Virtual IOP</a><a href="/programs/outpatient-rehab">Outpatient Drug Rehab</a><a href="/programs/telehealth">Telehealth Rehab</a><a href="/programs/psychiatric-care">Psychiatric Care</a></nav></div><div class="footer-col"><div class="footer-heading">Treatments</div><nav class="footer-links"><a href="/treatments/">All Treatments</a><a href="/treatments/alcohol">Alcohol Addiction</a><a href="/treatments/fentanyl">Fentanyl Addiction</a><a href="/treatments/dual-diagnosis">Dual Diagnosis</a><a href="/treatments/depression">Depression</a><a href="/treatments/anxiety">Anxiety</a></nav></div><div class="footer-col"><div class="footer-heading">Centers of Care</div><nav class="footer-links"><a href="/rehabilitation-center">Rehabilitation Center</a><a href="/alcoholism-treatment-program">Alcoholism Treatment Program</a><a href="/mental-health">Mental Health Treatment</a><a href="/spanish-speaking-treatment">Spanish-Speaking Treatment</a></nav></div><div class="footer-col"><div class="footer-heading">Admissions</div><nav class="footer-links"><a href="/admissions">Admissions &amp; Same-Week Intake</a><a href="/verify-insurance">Verify Insurance</a><a href="/insurance/">Insurance Coverage</a><a href="/contact">Contact Us</a><a href="/faq">FAQ</a><a href="/families">For Families</a></nav></div><div class="footer-col"><div class="footer-heading">Explore</div><nav class="footer-links"><a href="/locations">Our Location &amp; Areas We Serve</a><a href="/blog/">Blog</a><a href="/about">Why Choose Us</a><a href="/team">Meet the Team</a><a href="/our-story">Our History</a></nav></div></div><div class="footer-visit"><div class="footer-visit-text"><div class="footer-visit-eyebrow">Visit Us</div><p class="footer-visit-addr">1964 Westwood Blvd, Suite 425<br>Los Angeles, CA 90025</p><p class="footer-visit-note">Our outpatient center in Westwood, West Los Angeles &mdash; minutes from Santa Monica, Beverly Hills, Brentwood, and Culver City.</p><div class="footer-visit-links"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Open in Google Maps</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025&amp;destination_place_id=ChIJd5B-5MW7woARZ672RvC5X9E" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Get directions</a></div></div><div class="footer-visit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3!2d-118.4343784!3d34.0474328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbc5e47e9077%3A0xd15fb9f046f6ae67!2sGolden%20State%20Rehab!5e0!3m2!1sen!2sus!4v1758000000000!5m2!1sen!2sus" title="Google Map: Golden State Rehab, 1964 Westwood Blvd Suite 425, Los Angeles" width="600" height="240" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div><div class="footer-bottom"><a rel="noopener noreferrer" href="https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/750952" target="_blank" class="footer-seal"><img src="/images/joint-commission-gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage" width="44" height="44" loading="lazy" decoding="async"></a><p class="footer-bottom-text">&copy; 2026 Golden State Rehab. All rights reserved. Los Angeles, California.</p><nav class="footer-bottom-links"><a href="/blog/">Blog</a><a href="/faq">FAQ</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms of Use</a><a href="/sitemap.xml">Sitemap</a></nav></div><div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></div></footer>
 
 <script src="js/main.min.js?v=17" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.lucide)lucide.createIcons();});</script>
@@ -411,9 +608,97 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.goldenstate-rehab.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Our Story"}
+    {"@type": "ListItem", "position": 2, "name": "Our History"}
   ]
 }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": "https://www.goldenstate-rehab.com/our-story#webpage",
+  "url": "https://www.goldenstate-rehab.com/our-story",
+  "name": "Golden State Rehab history",
+  "description": "Dated 2026 timeline of Golden State Rehab: DHCS certification #191643AP on April 15, opening on May 26, Joint Commission accreditation on August 12.",
+  "isPartOf": {
+    "@id": "https://www.goldenstate-rehab.com/#website"
+  },
+  "about": {
+    "@id": "https://www.goldenstate-rehab.com/#organization"
+  },
+  "primaryImageOfPage": "https://www.goldenstate-rehab.com/images/dhcs-license.jpg"
+}
+</script>
+<script>
+// Story trail: a dotted line that weaves through the chapters (down the middle
+// gutter on desktop, the left edge on phones) and inks in as you scroll. Each
+// chapter's dot lights when the ink reaches it.
+(function () {
+  var trail = document.querySelector('[data-trail]');
+  if (!trail) return;
+  var svg = trail.querySelector('.trail-svg');
+  var chaps = trail.querySelectorAll('.chap');
+  if (!svg || !chaps.length) return;
+  var NS = 'http://www.w3.org/2000/svg';
+  var desktop = window.matchMedia('(min-width: 900px)');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function el(tag, attrs, parent) {
+    var node = document.createElementNS(NS, tag);
+    Object.keys(attrs).forEach(function (k) { node.setAttribute(k, attrs[k]); });
+    (parent || svg).appendChild(node);
+    return node;
+  }
+  var mask = el('mask', { id: 'trail-mask', maskUnits: 'userSpaceOnUse' }, el('defs', {}));
+  var reveal = el('path', { 'class': 'trail-reveal' }, mask);
+  var base = el('path', { 'class': 'trail-base' });
+  var ink = el('path', { 'class': 'trail-ink', mask: 'url(#trail-mask)' });
+  var dots = Array.prototype.map.call(chaps, function () { return el('circle', { 'class': 'trail-dot', r: 7 }); });
+  var length = 0, points = [];
+
+  function layout() {
+    var box = trail.getBoundingClientRect();
+    var wide = desktop.matches;
+    var mid = wide ? box.width / 2 : 12;
+    var sway = wide ? 30 : 5;
+    points = Array.prototype.map.call(chaps, function (chap, i) {
+      var r = chap.getBoundingClientRect();
+      return [mid + (i % 2 ? sway : -sway), r.top - box.top + (wide ? r.height / 2 : 18)];
+    });
+    var d = 'M' + mid + ' 0';
+    var prev = [mid, 0];
+    points.forEach(function (pt) {
+      var half = (pt[1] - prev[1]) / 2;
+      d += ' C' + prev[0] + ' ' + (prev[1] + half) + ' ' + pt[0] + ' ' + (pt[1] - half) + ' ' + pt[0] + ' ' + pt[1];
+      prev = pt;
+    });
+    [reveal, base, ink].forEach(function (path) { path.setAttribute('d', d); });
+    mask.setAttribute('x', -40); mask.setAttribute('y', -40);
+    mask.setAttribute('width', box.width + 80); mask.setAttribute('height', box.height + 80);
+    dots.forEach(function (dot, i) { dot.setAttribute('cx', points[i][0]); dot.setAttribute('cy', points[i][1]); });
+    length = reveal.getTotalLength();
+    reveal.style.strokeDasharray = length + ' ' + length;
+    progress();
+  }
+
+  function progress() {
+    ticking = false;
+    var box = trail.getBoundingClientRect();
+    var reach = still.matches ? box.height : window.innerHeight * 0.6 - box.top;
+    var last = points.length ? points[points.length - 1][1] : box.height;
+    var p = Math.min(1, Math.max(0, reach / last));
+    reveal.style.strokeDashoffset = (length * (1 - p)).toFixed(1);
+    dots.forEach(function (dot, i) { dot.classList.toggle('is-lit', points[i][1] <= reach + 1); });
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(progress); }
+  }, { passive: true });
+  if ('ResizeObserver' in window) new ResizeObserver(layout).observe(trail);
+  else window.addEventListener('resize', layout);
+  window.addEventListener('load', layout);
+  layout();
+}());
 </script>
 <script src="/js/chat.min.js?v=4" defer></script>
 </body>

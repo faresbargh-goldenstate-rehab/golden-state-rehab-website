@@ -68,10 +68,9 @@
       <li class="has-dropdown">
       <a href="about">About Us <i data-lucide="chevron-down"></i></a>
       <div class="dropdown">
-        <a href="our-story">Our Story</a>
-        <a href="our-facility">Our Facility</a>
-        <a href="about">Why Golden State Rehab</a>
-        <a href="team">Our Team</a>
+        <a href="about">Why Choose Us</a>
+        <a href="team">Meet the Team</a>
+        <a href="our-story">Our History</a>
       </div>
     </li>
       <li class="has-dropdown">
@@ -137,7 +136,13 @@
 
 <!-- Mobile Nav -->
 <nav class="nav-mobile" aria-label="Mobile navigation">
-  <a href="about">About Us</a>
+  <div class="nav-mobile-group">
+    <div class="nav-mobile-group-label">About Us</div>
+    <a href="about">Why Choose Us</a>
+    <a href="team">Meet the Team</a>
+    <a href="our-story">Our History</a>
+  </div>
+  <div class="nav-mobile-divider"></div>
   <a href="programs/">Programs</a>
   <a href="treatments/">Treatments</a>
   <a href="/locations">Location</a>
@@ -160,6 +165,19 @@
   @media (max-width:640px){
     .hero .hero-subheadline{font-size:clamp(13px,calc(4.55vw - 2.2px),16px)}
   }
+  /* Phone button on top, Verify below it, trust row under Verify. Stacked
+     and equal width at every size, so desktop matches the phone layout.
+     Both buttons share one height inside and outside .cta-stack. */
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions>.btn{justify-content:center}
+  .hero-actions>.btn,.hero-actions .cta-stack>.btn{padding:14px 28px}
+  /* Phones: the hero sizes to its content instead of 68vh, and the gap under
+     the nav drops from 56px to 32px, so the Google pill sits higher. The
+     40px bottom pad keeps the trust row off the hero's lower edge. */
+  @media (max-width:640px){
+    .hero{min-height:0}
+    .hero .hero-content{padding-top:32px;padding-bottom:40px}
+  }
 </style>
 <section class="hero" aria-label="Hero">
   <div class="container hero-content">
@@ -180,24 +198,105 @@
     <p class="hero-subheadline">Outpatient rehab in West Los Angeles for drugs, alcohol, and mental health. PHP or IOP: you can keep your job and live at home.</p>
 
     <div class="hero-actions">
-      <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="hero">Verify My Insurance <i data-lucide="arrow-right"></i></a>
       <a href="tel:+14242083120" class="btn btn-secondary btn-lg"><i data-lucide="phone"></i> (424) 208-3120</a>
+      <div class="cta-stack">
+        <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="hero">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+        <ul class="cta-proof" aria-label="Ratings and accreditation">
+          <li class="cta-proof-item">
+            <svg class="cta-proof-laurel" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+            <span class="cta-proof-text"><strong>5-Star</strong> Rated<br>on Google</span>
+            <svg class="cta-proof-laurel cta-proof-laurel--r" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+          </li>
+          <li class="cta-proof-item">
+            <img class="cta-proof-seal" src="/images/joint-commission-gold-seal.webp" alt="" width="24" height="24" decoding="async">
+            <span class="cta-proof-text"><strong>Joint Commission</strong><br>Accredited</span>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- One trust band: the seal anchors it on the left (strongest credential
-         reads first), with the three promises as a gold-bulleted list beside
-         it. The seal link carries the accreditation name itself, so the img
-         alt stays a real accessible name. -->
-    <div class="hero-creds">
-      <a class="hero-creds-seal" href="https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/750952" target="_blank" rel="noopener noreferrer" title="Accredited by The Joint Commission">
-        <img src="/images/joint-commission-gold-seal.webp" alt="Accredited by The Joint Commission, Gold Seal of Approval" width="76" height="76" decoding="async">
-      </a>
-      <span class="hero-creds-rule" aria-hidden="true"></span>
-      <ul class="hero-creds-list">
-        <li>A real counselor answers 24/7</li>
-        <li>Always confidential</li>
-        <li><a href="/license" target="_blank" rel="noopener" title="View DHCS License Certificate">DHCS Licensed · #191643AP</a></li>
-      </ul>
+<!-- ═══════════════════════════════════════════════════════════
+     PILLARS: four reasons, directly under the hero. Icon, one short
+     title, one sentence each. Four columns with hairline dividers on
+     desktop (subgrid keeps titles and sentences on shared rows), 2x2 on
+     tablet, one centered stack on phones. Page-scoped CSS: no min mirror.
+     ═══════════════════════════════════════════════════════════ -->
+<style>
+  .pillars{background:var(--white);padding:72px 0}
+  .pillars-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto auto 1fr;margin:0;padding:0;list-style:none}
+  .pillar{grid-row:span 3;display:grid;grid-template-rows:subgrid;justify-items:center;align-content:start;padding:4px 28px;text-align:center}
+  .pillar+.pillar{border-left:1px solid var(--border)}
+  .pillar-icon{display:block;color:var(--gold-dark);margin-bottom:20px}
+  .pillar-icon svg{display:block;width:52px;height:52px;stroke-width:1.75}
+  .pillar-seal{display:block;width:60px;height:60px;margin-bottom:20px}
+  .pillar-title{margin:0 0 10px;font-size:19px;line-height:1.3;letter-spacing:-0.01em;text-wrap:balance}
+  .pillar-text{margin:0;font-size:15px;line-height:1.6;color:var(--body-text);text-wrap:pretty}
+  .pillars-cta{margin-top:56px;text-align:center}
+  @media (max-width:1023px){
+    .pillars-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,auto auto 1fr)}
+    .pillar{padding:4px 32px}
+    .pillar:nth-child(odd){border-left:0}
+    .pillar:nth-child(n+3){margin-top:48px}
+  }
+  @media (max-width:639px){
+    .pillars{padding:48px 0}
+    .pillars-grid{grid-template-columns:1fr;grid-template-rows:none}
+    .pillar{grid-row:auto;grid-template-rows:none;padding:32px 8px}
+    .pillar+.pillar{border-left:0;border-top:1px solid var(--border)}
+    .pillar:nth-child(n+3){margin-top:0}
+    .pillar:first-child{padding-top:0}
+    .pillar:last-child{padding-bottom:0}
+    .pillar-icon{margin-bottom:16px}
+    .pillar-icon svg{width:46px;height:46px}
+    .pillar-seal{width:54px;height:54px;margin-bottom:16px}
+    .pillar-title{margin-bottom:8px;font-size:18px}
+    .pillar-text{max-width:34ch;font-size:15px}
+    .pillars-cta{margin-top:40px}
+  }
+</style>
+<section class="pillars" aria-label="Why choose Golden State Rehab">
+  <div class="container">
+    <ul class="pillars-grid">
+      <li class="pillar reveal reveal-delay-1">
+        <span class="pillar-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h5"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><circle cx="18" cy="18" r="4"/><path d="m16.3 18 1.2 1.2 2.3-2.4"/></svg>
+        </span>
+        <h2 class="pillar-title">100+ Recoveries</h2>
+        <p class="pillar-text">We&rsquo;ve helped more than 100 people achieve recovery from addiction through our outpatient treatment programs.</p>
+      </li>
+      <li class="pillar reveal reveal-delay-2">
+        <img class="pillar-seal" src="/images/joint-commission-gold-seal.webp" alt="The Joint Commission Gold Seal of Approval" width="72" height="72" loading="lazy" decoding="async">
+        <h2 class="pillar-title">Independently Reviewed. Nationally Accredited.</h2>
+        <p class="pillar-text">Our care meets The Joint Commission&rsquo;s national quality and safety standards, verified through an independent review.</p>
+      </li>
+      <li class="pillar reveal reveal-delay-3">
+        <span class="pillar-icon" aria-hidden="true"><i data-lucide="calendar-heart"></i></span>
+        <h2 class="pillar-title">One Full Year of Support After Treatment</h2>
+        <p class="pillar-text">Monthly counselor check-ins and weekly alumni groups help everyone we treat stay connected to support if recovery gets difficult.</p>
+      </li>
+      <li class="pillar reveal reveal-delay-4">
+        <span class="pillar-icon" aria-hidden="true"><i data-lucide="calculator"></i></span>
+        <h2 class="pillar-title">Free Treatment Cost Estimate</h2>
+        <p class="pillar-text">We check what your insurance covers and estimate what you&rsquo;ll pay before you commit to treatment.</p>
+      </li>
+    </ul>
+    <div class="pillars-cta reveal">
+      <div class="cta-stack">
+        <a href="verify-insurance" class="btn btn-primary btn-lg" data-cta="pillars">Verify My Insurance <i data-lucide="arrow-right"></i></a>
+        <ul class="cta-proof" aria-label="Ratings and accreditation">
+          <li class="cta-proof-item">
+            <svg class="cta-proof-laurel" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+            <span class="cta-proof-text"><strong>5-Star</strong> Rated<br>on Google</span>
+            <svg class="cta-proof-laurel cta-proof-laurel--r" aria-hidden="true" focusable="false"><use href="#cta-laurel"/></svg>
+          </li>
+          <li class="cta-proof-item">
+            <img class="cta-proof-seal" src="/images/joint-commission-gold-seal.webp" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="cta-proof-text"><strong>Joint Commission</strong><br>Accredited</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -1204,11 +1303,12 @@
 <!-- ═══════════════════════════════════════════════════════════
      WHY US: left-aligned header + value cards (Apple-style shelf)
      Cards reuse the sitewide .value-card styles (as on /treatments/
-     and /programs/). The row starts at the header's left edge and
-     runs off the right edge of the screen, sized so 3⅓ cards show on
-     desktop (2⅓ tablet, ~1.2 mobile): the cut-off card says
-     "swipe for more". The visual panel holds a centered picture of
-     the actual thing (portrait, seal, room), not an icon.
+     and /programs/). On desktop the three cards fill the container
+     exactly. Below 1024px the row starts at the header's left edge and
+     runs off the right edge of the screen, sized so 2⅓ cards show on
+     tablet (~1.2 mobile): the cut-off card says "swipe for more".
+     The visual panel holds a centered picture of the actual thing
+     (portrait, seal, room), not an icon.
      ═══════════════════════════════════════════════════════════ -->
 <style>
   .why-us-section .section-header{text-align:left;margin-bottom:40px}
@@ -1241,6 +1341,14 @@
     .why-us-cards .value-cards-track{cursor:grab;user-select:none;-webkit-user-select:none}
   }
   .why-us-cards .value-cards-track.is-dragging{cursor:grabbing;scroll-snap-type:none}
+  /* Three cards: desktop fits all three inside the container, no shelf. */
+  @media (min-width:1024px){
+    .why-us-cards .value-card{
+      flex-basis:calc((min(100vw, 1280px) - 2 * var(--wu-gutter) - 2 * var(--wu-gap)) / 3);
+      flex-basis:calc((min(100cqw, 1280px) - 2 * var(--wu-gutter) - 2 * var(--wu-gap)) / 3);
+    }
+    .why-us-cards .value-cards-track{cursor:auto;user-select:auto;-webkit-user-select:auto}
+  }
   @media (max-width:1024px){
     .why-us-cards{--wu-gutter:24px}
   }
@@ -1265,9 +1373,9 @@
     <div class="value-cards-track">
       <div class="value-card">
         <div class="value-card-content">
-          <p class="value-card-eyebrow">Clinical Leadership</p>
-          <h3 class="value-card-headline">Led by a psychiatrist and a licensed therapist.</h3>
-          <p class="value-card-body">Your care is overseen by Medical Director Dr. Eric Chaghouri, MD, a board-certified psychiatrist, and Clinical Director Ari Labowitz, LMFT, starting with a <a href="contact">full clinical assessment</a>.</p>
+          <p class="value-card-eyebrow">Leadership</p>
+          <h3 class="value-card-headline">You&rsquo;ll meet with a psychiatrist in your first week.</h3>
+          <p class="value-card-body">Your therapist and <a href="programs/psychiatric-care">psychiatrist</a> work together on your treatment plan and review it every week. Led by Medical Director Dr. Eric Chaghouri, MD, and Clinical Director Ari Labowitz, LMFT.</p>
         </div>
         <div class="value-card-visual">
           <img class="wu-portrait" src="images/team/eric-chaghouri.webp" alt="Dr. Eric Chaghouri, MD, Medical Director" width="800" height="800" loading="lazy" draggable="false">
@@ -1291,26 +1399,6 @@
         </div>
         <div class="value-card-visual">
           <img class="wu-seal" src="images/joint-commission-gold-seal-480.webp" alt="The Joint Commission Gold Seal of Approval" width="480" height="480" loading="lazy" draggable="false">
-        </div>
-      </div>
-      <div class="value-card">
-        <div class="value-card-content">
-          <p class="value-card-eyebrow">Dual Diagnosis</p>
-          <h3 class="value-card-headline">Addiction and mental health, treated as one.</h3>
-          <p class="value-card-body">Most people with a substance use disorder also have a co-occurring condition. Your psychiatrist and therapist work from one shared plan, so both are treated at the same time.</p>
-        </div>
-        <div class="value-card-visual">
-          <img class="wu-photo" src="images/facility/individual-therapy-room-800.webp" alt="Private one-on-one therapy office with leather lounge chair and sofa" width="600" height="800" loading="lazy" draggable="false">
-        </div>
-      </div>
-      <div class="value-card">
-        <div class="value-card-content">
-          <p class="value-card-eyebrow">Whole-Person Care</p>
-          <h3 class="value-card-headline">Care that goes beyond talk therapy.</h3>
-          <p class="value-card-body">Trauma-focused therapy, including EMDR, plus yoga, breathwork, and movement alongside your clinical care.</p>
-        </div>
-        <div class="value-card-visual">
-          <img class="wu-photo" src="images/facility/reading-lounge-800.webp" alt="Quiet reading lounge with library shelving and armchairs" width="600" height="800" loading="lazy" draggable="false">
         </div>
       </div>
     </div>
@@ -1564,7 +1652,7 @@
 <footer class="footer" aria-label="Site footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="nav-logo" style="margin-bottom:0;"><img src="/images/logo-white.png" alt="Golden State Rehab" class="nav-logo-img" width="120" height="120"></a><div class="footer-call-cta"><span class="footer-call-label">Call Us At</span><a href="tel:+14242083120" class="footer-call-number">(424) 208-3120</a></div><p class="footer-tagline">Treating addiction and mental health in Los Angeles with compassion, clinical expertise, and flexible programs built around your life.</p><div class="footer-contact"><a href="tel:+14242083120" class="footer-phone"><i data-lucide="phone"></i> Call Now</a><!--email_off--><a href="mailto:admissions@goldenstate-rehab.com"><i data-lucide="mail"></i> admissions@goldenstate-rehab.com</a><!--/email_off--><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="map-pin"></i> 1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025</a></div><div class="footer-badges"><a href="/license" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="View DHCS License Certificate">DHCS Lic. #191643AP</a>
           <a href="https://www.dhcs.ca.gov/providers-partners/directories-for-substance-use-disorder-services/" target="_blank" rel="noopener" class="footer-badge" style="text-decoration:none;" title="California DHCS provider directory">Verify with DHCS ↗</a><span class="footer-badge">Evidence-Based</span>
           <div google-add-preferred-source-btn data-theme="dark"></div>
-        </div></div><div class="footer-col"><div class="footer-heading">Programs</div><nav class="footer-links"><a href="/programs/">All Programs</a><a href="/programs/php">Partial Hospitalization (PHP)</a><a href="/programs/iop">Intensive Outpatient (IOP)</a><a href="/programs/evening-iop">Evening IOP</a><a href="/programs/virtual-iop">Virtual IOP</a><a href="/programs/outpatient-rehab">Outpatient Drug Rehab</a><a href="/programs/telehealth">Telehealth Rehab</a><a href="/programs/psychiatric-care">Psychiatric Care</a></nav></div><div class="footer-col"><div class="footer-heading">Treatments</div><nav class="footer-links"><a href="/treatments/">All Treatments</a><a href="/treatments/alcohol">Alcohol Addiction</a><a href="/treatments/fentanyl">Fentanyl Addiction</a><a href="/treatments/dual-diagnosis">Dual Diagnosis</a><a href="/treatments/depression">Depression</a><a href="/treatments/anxiety">Anxiety</a></nav></div><div class="footer-col"><div class="footer-heading">Centers of Care</div><nav class="footer-links"><a href="/rehabilitation-center">Rehabilitation Center</a><a href="/alcoholism-treatment-program">Alcoholism Treatment Program</a><a href="/mental-health">Mental Health Treatment</a><a href="/spanish-speaking-treatment">Spanish-Speaking Treatment</a></nav></div><div class="footer-col"><div class="footer-heading">Admissions</div><nav class="footer-links"><a href="/admissions">Admissions &amp; Same-Week Intake</a><a href="/verify-insurance">Verify Insurance</a><a href="/insurance/">Insurance Coverage</a><a href="/contact">Contact Us</a><a href="/faq">FAQ</a><a href="/families">For Families</a></nav></div><div class="footer-col"><div class="footer-heading">Explore</div><nav class="footer-links"><a href="/locations">Our Location &amp; Areas We Serve</a><a href="/blog/">Blog</a><a href="/about">About Us</a><a href="/team">Our Team</a><a href="/our-facility">Our Facility</a></nav></div></div><div class="footer-visit"><div class="footer-visit-text"><div class="footer-visit-eyebrow">Visit Us</div><p class="footer-visit-addr">1964 Westwood Blvd, Suite 425<br>Los Angeles, CA 90025</p><p class="footer-visit-note">Our outpatient center in Westwood, West Los Angeles &mdash; minutes from Santa Monica, Beverly Hills, Brentwood, and Culver City.</p><div class="footer-visit-links"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Open in Google Maps</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025&amp;destination_place_id=ChIJd5B-5MW7woARZ672RvC5X9E" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Get directions</a></div></div><div class="footer-visit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3!2d-118.4343784!3d34.0474328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbc5e47e9077%3A0xd15fb9f046f6ae67!2sGolden%20State%20Rehab!5e0!3m2!1sen!2sus!4v1758000000000!5m2!1sen!2sus" title="Google Map: Golden State Rehab, 1964 Westwood Blvd Suite 425, Los Angeles" width="600" height="240" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div><div class="footer-bottom"><a rel="noopener noreferrer" href="https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/750952" target="_blank" class="footer-seal"><img src="/images/joint-commission-gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage" width="44" height="44" loading="lazy" decoding="async"></a><p class="footer-bottom-text">&copy; 2026 Golden State Rehab. All rights reserved. Los Angeles, California.</p><nav class="footer-bottom-links"><a href="/blog/">Blog</a><a href="/faq">FAQ</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms of Use</a><a href="/sitemap.xml">Sitemap</a></nav></div><div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></div></footer>
+        </div></div><div class="footer-col"><div class="footer-heading">Programs</div><nav class="footer-links"><a href="/programs/">All Programs</a><a href="/programs/php">Partial Hospitalization (PHP)</a><a href="/programs/iop">Intensive Outpatient (IOP)</a><a href="/programs/evening-iop">Evening IOP</a><a href="/programs/virtual-iop">Virtual IOP</a><a href="/programs/outpatient-rehab">Outpatient Drug Rehab</a><a href="/programs/telehealth">Telehealth Rehab</a><a href="/programs/psychiatric-care">Psychiatric Care</a></nav></div><div class="footer-col"><div class="footer-heading">Treatments</div><nav class="footer-links"><a href="/treatments/">All Treatments</a><a href="/treatments/alcohol">Alcohol Addiction</a><a href="/treatments/fentanyl">Fentanyl Addiction</a><a href="/treatments/dual-diagnosis">Dual Diagnosis</a><a href="/treatments/depression">Depression</a><a href="/treatments/anxiety">Anxiety</a></nav></div><div class="footer-col"><div class="footer-heading">Centers of Care</div><nav class="footer-links"><a href="/rehabilitation-center">Rehabilitation Center</a><a href="/alcoholism-treatment-program">Alcoholism Treatment Program</a><a href="/mental-health">Mental Health Treatment</a><a href="/spanish-speaking-treatment">Spanish-Speaking Treatment</a></nav></div><div class="footer-col"><div class="footer-heading">Admissions</div><nav class="footer-links"><a href="/admissions">Admissions &amp; Same-Week Intake</a><a href="/verify-insurance">Verify Insurance</a><a href="/insurance/">Insurance Coverage</a><a href="/contact">Contact Us</a><a href="/faq">FAQ</a><a href="/families">For Families</a></nav></div><div class="footer-col"><div class="footer-heading">Explore</div><nav class="footer-links"><a href="/locations">Our Location &amp; Areas We Serve</a><a href="/blog/">Blog</a><a href="/about">Why Choose Us</a><a href="/team">Meet the Team</a><a href="/our-story">Our History</a></nav></div></div><div class="footer-visit"><div class="footer-visit-text"><div class="footer-visit-eyebrow">Visit Us</div><p class="footer-visit-addr">1964 Westwood Blvd, Suite 425<br>Los Angeles, CA 90025</p><p class="footer-visit-note">Our outpatient center in Westwood, West Los Angeles &mdash; minutes from Santa Monica, Beverly Hills, Brentwood, and Culver City.</p><div class="footer-visit-links"><a href="https://www.google.com/maps?cid=15086981718348312167" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Open in Google Maps</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=1964+Westwood+Blvd+Ste+425+Los+Angeles+CA+90025&amp;destination_place_id=ChIJd5B-5MW7woARZ672RvC5X9E" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Get directions</a></div></div><div class="footer-visit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3!2d-118.4343784!3d34.0474328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bbc5e47e9077%3A0xd15fb9f046f6ae67!2sGolden%20State%20Rehab!5e0!3m2!1sen!2sus!4v1758000000000!5m2!1sen!2sus" title="Google Map: Golden State Rehab, 1964 Westwood Blvd Suite 425, Los Angeles" width="600" height="240" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div><div class="footer-bottom"><a rel="noopener noreferrer" href="https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/750952" target="_blank" class="footer-seal"><img src="/images/joint-commission-gold-seal.webp" alt="The Joint Commission logo that links to the Joint Commission homepage" width="44" height="44" loading="lazy" decoding="async"></a><p class="footer-bottom-text">&copy; 2026 Golden State Rehab. All rights reserved. Los Angeles, California.</p><nav class="footer-bottom-links"><a href="/blog/">Blog</a><a href="/faq">FAQ</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms of Use</a><a href="/sitemap.xml">Sitemap</a></nav></div><div class="medical-disclaimer"><p>This content is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider.</p><p>If you or someone you know is in crisis, call <strong>988</strong> (Suicide &amp; Crisis Lifeline) or <strong>1-800-662-4357</strong> (SAMHSA National Helpline).</p></div></div></footer>
 
 <script src="js/main.min.js?v=17" defer></script>
 <script>document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });</script>
