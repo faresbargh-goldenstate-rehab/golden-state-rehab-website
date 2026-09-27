@@ -307,7 +307,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      PROOF: six Google reviews transcribed verbatim into HTML.
      Four previews retain the original captures' proportions; "Read
-     more" opens all six. Each review's text is in the HTML once: the
+     more" (or a click anywhere on a card) opens all six. Each review's text is in the HTML once: the
      four wall cards, plus the two extra reviews in the overlay. The
      script below copies the wall cards into their overlay slots on
      first open. Reviewer names are styled text, not headings. Dates and NEW badges are preserved as originally captured.
@@ -548,8 +548,22 @@
       if (card) slot.appendChild(card.cloneNode(true));
     });
   }, true);
+  // The whole card opens the overlay, not just the small "Read more" link.
+  // Clicking the card presses that card's button, so the fill above and the
+  // opener in main.js run exactly as before. A drag to select text doesn't count.
+  wall.addEventListener('click', function (e) {
+    if (e.target.closest('.proof-shot-more')) return;
+    var sel = window.getSelection && window.getSelection();
+    if (sel && String(sel).trim()) return;
+    var shot = e.target.closest('.proof-shot');
+    var btn = shot && shot.querySelector('.proof-shot-more');
+    if (btn) btn.click();
+  });
 }());
 </script>
+<style>
+  .proof-wall .proof-shot{cursor:pointer}
+</style>
 
 <!-- ═══════════════════════════════════════════════════════════
      INSURANCE LOGOS
