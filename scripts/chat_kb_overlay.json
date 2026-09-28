@@ -86,7 +86,7 @@
       {
         "id": "intent-human",
         "re": "(talk|speak|chat) (to|with) (a |an )?(person|human|someone|real|counselor|advisor)|real person|live (agent|person|chat)|not a (bot|robot)|actual person",
-        "answer": "Absolutely — our admissions line is answered 24/7 by our own team, never a call center. Call or text (424) 208-3120, or email admissions@goldenstate-rehab.com (we reply within one business hour).",
+        "answer": "Absolutely — our admissions line is answered 24/7 by our own team, never a call center. Call or text (424) 208-3120, or email admissions@goldenstate-rehab.com (we reply within the hour).",
         "cta": { "id": "call", "label": "Call (424) 208-3120", "href": "tel:+14242083120" }
       },
       {
@@ -199,7 +199,7 @@
       {
         "id": "intent-hours",
         "re": "hours|open (now|today|on)|when are you open|what time",
-        "answer": "Clinical hours run Monday through Saturday, and our admissions line is answered 24/7 — call or text (424) 208-3120 any time, day or night, and you'll reach a real person.",
+        "answer": "We're open 24 hours a day, 7 days a week, Monday through Sunday. Call or text (424) 208-3120 any time, day or night, and you'll reach a real person.",
         "url": "/contact",
         "link_label": "Contact details"
       },
@@ -213,7 +213,7 @@
       {
         "id": "intent-phone",
         "re": "phone|\\bnumber\\b|call you|contact (you|info)|reach (you|someone)|\\btexts?\\b|email",
-        "answer": "Call or text us at (424) 208-3120 — answered 24/7 by a real person, never a call center. You can also email admissions@goldenstate-rehab.com; we respond within one business hour.",
+        "answer": "Call or text us at (424) 208-3120 — answered 24/7 by a real person, never a call center. You can also email admissions@goldenstate-rehab.com; we respond within the hour.",
         "cta": { "id": "call", "label": "Call (424) 208-3120", "href": "tel:+14242083120" }
       },
       {
@@ -304,7 +304,7 @@
       {
         "id": "intent-hours",
         "re": "horario|abierto|a que hora",
-        "answer": "El horario clínico es de lunes a sábado, y nuestra línea de admisiones se atiende las 24 horas, los 7 días — llame o envíe un texto al (424) 208-3120 en cualquier momento.",
+        "answer": "Estamos abiertos las 24 horas, los 7 días de la semana, de lunes a domingo. Llame o envíe un texto al (424) 208-3120 en cualquier momento.",
         "url": "/es/contact",
         "link_label": "Datos de contacto"
       },

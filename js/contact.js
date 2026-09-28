@@ -19,7 +19,7 @@
       server: 'Something went wrong sending your message. Please try again in a moment, or call us directly at (424) 208-3120 — we answer 24/7.',
       sending: 'Sending…',
       successTitle: 'Request received.',
-      successBody: 'A member of our admissions team will follow up with you shortly — usually within the hour during business hours. If this is urgent, call us anytime at',
+      successBody: 'A member of our admissions team will follow up with you shortly — usually within the hour, day or night. If this is urgent, call us anytime at',
     },
     es: {
       required: 'Por favor completa todos los campos obligatorios.',
@@ -28,7 +28,7 @@
       server: 'Algo salió mal al enviar tu mensaje. Inténtalo de nuevo en un momento, o llámanos directamente al (424) 208-3120 — contestamos 24/7.',
       sending: 'Enviando…',
       successTitle: 'Solicitud recibida.',
-      successBody: 'Un miembro de nuestro equipo de admisiones te contactará pronto — normalmente dentro de una hora en horario de atención. Si es urgente, llámanos a cualquier hora al',
+      successBody: 'Un miembro de nuestro equipo de admisiones te contactará pronto — normalmente dentro de una hora, de día o de noche. Si es urgente, llámanos a cualquier hora al',
     },
   }[lang];
 

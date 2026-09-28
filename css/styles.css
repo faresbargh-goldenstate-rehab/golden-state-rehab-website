@@ -4828,8 +4828,8 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
    loading="lazy" keeps it at zero bytes until the footer scrolls into view. */
 .footer-visit {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: 32px 56px;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 5fr);
+  gap: 32px 48px;
   align-items: center;
   padding: 36px 0 40px;
   border-top: 1px solid rgba(200,164,74,0.15);
@@ -4889,8 +4889,28 @@ body:not([data-persona="loved"]) .persona-loved { display: none; }
   border: 0;
   display: block;
 }
+/* GBP hours, one row per day so the footer reads like the Business Profile. */
+.footer-hours-list { margin: 0; max-width: 320px; }
+.footer-hours-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(200,164,74,0.1);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.footer-hours-list div:first-child { padding-top: 0; }
+.footer-hours-list div:last-child { border-bottom: 0; padding-bottom: 0; }
+.footer-hours-list dt { color: rgba(253,250,245,0.7); }
+.footer-hours-list dd { margin: 0; font-weight: 600; color: var(--off-white); text-align: right; }
+.footer-hours-note { margin: 16px 0 0; max-width: 320px; font-size: 14px; line-height: 1.5; color: rgba(253,250,245,0.7); text-wrap: balance; }
+.footer-hours-note a { font-weight: 600; color: var(--gold); white-space: nowrap; transition: color var(--transition); }
+.footer-hours-note a:hover { color: var(--off-white); }
+.footer-hours-note a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
 @media (max-width: 1024px) {
   .footer-visit { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 32px; }
+  .footer-visit-map { grid-column: 1 / -1; }
 }
 @media (max-width: 640px) {
   .footer-visit { grid-template-columns: 1fr; gap: 24px; padding: 32px 0; }
