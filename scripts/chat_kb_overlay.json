@@ -220,8 +220,8 @@
         "id": "intent-license",
         "re": "licens|accredit|legit|certified|credential|joint commission|dhcs",
         "answer": "Golden State Rehab operates under license #191643AP from the California Department of Health Care Services (DHCS), and is accredited by The Joint Commission, an independent body that evaluates health care organizations against national quality and safety standards. Our Medical Director is Dr. Eric Chaghouri, MD, a board-certified psychiatrist.",
-        "url": "/license",
-        "link_label": "Verify our license"
+        "url": "/about",
+        "link_label": "See our credentials"
       },
       {
         "id": "intent-family",
