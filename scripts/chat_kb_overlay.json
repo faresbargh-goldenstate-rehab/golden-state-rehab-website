@@ -15,7 +15,7 @@
     "phone_tel": "+14242083120",
     "email": "admissions@goldenstate-rehab.com",
     "address": "1964 Westwood Blvd, Ste 425, Los Angeles, CA 90025",
-    "license": "DHCS Lic. #191643AP",
+    "license": "DHCS Cert. #191643AP",
     "accreditation": "The Joint Commission",
     "medical_director": "Dr. Eric Chaghouri, MD"
   },
@@ -219,7 +219,7 @@
       {
         "id": "intent-license",
         "re": "licens|accredit|legit|certified|credential|joint commission|dhcs",
-        "answer": "Golden State Rehab operates under license #191643AP from the California Department of Health Care Services (DHCS), and is accredited by The Joint Commission, an independent body that evaluates health care organizations against national quality and safety standards. Our Medical Director is Dr. Eric Chaghouri, MD, a board-certified psychiatrist.",
+        "answer": "Golden State Rehab operates under certification #191643AP from the California Department of Health Care Services (DHCS), and is accredited by The Joint Commission, an independent body that evaluates health care organizations against national quality and safety standards. Our Medical Director is Dr. Eric Chaghouri, MD, a board-certified psychiatrist.",
         "url": "/about",
         "link_label": "See our credentials"
       },
@@ -331,7 +331,7 @@
       {
         "id": "intent-license",
         "re": "licencia|acreditad|certificad|legitimo",
-        "answer": "Golden State Rehab opera bajo la licencia #191643AP del Departamento de Servicios de Salud de California (DHCS), y está acreditado por The Joint Commission. Nuestro Director Médico es el Dr. Eric Chaghouri, MD, psiquiatra certificado.",
+        "answer": "Golden State Rehab opera bajo la certificación #191643AP del Departamento de Servicios de Salud de California (DHCS), y está acreditado por The Joint Commission. Nuestro Director Médico es el Dr. Eric Chaghouri, MD, psiquiatra certificado.",
         "url": "/espanol",
         "link_label": "Sobre nosotros"
       },
