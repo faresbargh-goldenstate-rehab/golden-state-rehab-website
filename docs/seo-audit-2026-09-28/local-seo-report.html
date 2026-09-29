@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Local Search Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FDFAF5;
+  --surface: #FFFFFF;
+  --surface-2: #FBF6E8;
+  --ink: #140E04;
+  --text: #3D3020;
+  --muted: #6E5F48;
+  --line: #EADFC6;
+  --gold: #C8A44A;
+  --gold-ink: #7A5C12;
+  --good: #2F7D4F;   --good-bg: #E8F3EC;
+  --warn: #9A5B0B;   --warn-bg: #FBF0DC;
+  --bad: #B42318;    --bad-bg: #FBE9E7;
+  --info: #57534E;   --info-bg: #F1EEE8;
+  --shadow: 0 1px 2px rgba(20,14,4,.05), 0 8px 24px rgba(20,14,4,.06);
+  --radius: 12px;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Plus Jakarta Sans", "Avenir Next", "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12100B; --surface: #1C1812; --surface-2: #231E15;
+    --ink: #F5EFE3; --text: #E3DACA; --muted: #B3A68F; --line: #3A3226;
+    --gold: #D8B65C; --gold-ink: #E2C274;
+    --good: #6FC795; --good-bg: #16291E;
+    --warn: #E9B062; --warn-bg: #2E2413;
+    --bad: #F08A7E;  --bad-bg: #321915;
+    --info: #C9C2B6; --info-bg: #26221C;
+    --shadow: 0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12100B; --surface: #1C1812; --surface-2: #231E15;
+  --ink: #F5EFE3; --text: #E3DACA; --muted: #B3A68F; --line: #3A3226;
+  --gold: #D8B65C; --gold-ink: #E2C274;
+  --good: #6FC795; --good-bg: #16291E;
+  --warn: #E9B062; --warn-bg: #2E2413;
+  --bad: #F08A7E;  --bad-bg: #321915;
+  --info: #C9C2B6; --info-bg: #26221C;
+  --shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 400 16px/1.6 var(--sans); overflow-x: hidden;
+}
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+h1, h2, h3 { color: var(--ink); margin: 0; }
+h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01em; }
+h1 { font-size: clamp(34px, 7vw, 52px); line-height: 1.05; }
+h2 { font-size: clamp(26px, 4.5vw, 34px); line-height: 1.15; margin-bottom: 8px; }
+h3 { font-size: 18px; line-height: 1.35; font-weight: 700; }
+p { margin: 0 0 12px; }
+a { color: var(--gold-ink); text-underline-offset: 2px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+code { font: 500 0.88em/1.4 ui-monospace, "SF Mono", Menlo, monospace; background: var(--surface-2); padding: 1px 6px; border-radius: 6px; word-break: break-word; }
+.icon { width: 18px; height: 18px; flex: none; }
+
+/* Header */
+.masthead { border-bottom: 1px solid var(--line); background: var(--surface); }
+.masthead .wrap { display: flex; justify-content: space-between; gap: 16px; padding-top: 16px; padding-bottom: 16px; font-size: 14px; color: var(--muted); flex-wrap: wrap; }
+.brand { font-weight: 700; color: var(--ink); letter-spacing: .02em; }
+.brand span { color: var(--gold-ink); }
+
+/* Hero */
+.hero { padding: 56px 0 40px; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 12px; }
+.hero-grid { display: grid; gap: 32px; align-items: center; }
+.lede { font-size: 19px; line-height: 1.55; color: var(--text); max-width: 34em; margin-top: 16px; }
+.ring { position: relative; width: 184px; height: 184px; }
+.ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring .track { stroke: var(--line); }
+.ring .fill { stroke: var(--gold); stroke-linecap: round; }
+.ring-label { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.ring-num { font: 600 56px/1 var(--serif); color: var(--ink); }
+.ring-of { font-size: 14px; color: var(--muted); margin-top: 4px; }
+.stats { display: grid; gap: 12px; margin-top: 32px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+.stat b { display: block; font: 600 28px/1.1 var(--serif); color: var(--ink); }
+.stat span { font-size: 14px; color: var(--muted); }
+
+/* Sections */
+section { padding: 48px 0; border-top: 1px solid var(--line); }
+.section-intro { color: var(--muted); max-width: 40em; margin-bottom: 24px; }
+
+/* Score bars */
+.bars { display: grid; gap: 20px; }
+.bar-row { display: grid; gap: 6px; }
+.bar-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.bar-head h3 { font-size: 16px; }
+.bar-score { font-weight: 700; color: var(--ink); white-space: nowrap; }
+.bar-track { height: 10px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 99px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 99px; }
+.bar-fill.good { background: var(--good); } .bar-fill.warn { background: var(--warn); } .bar-fill.bad { background: var(--bad); }
+.bar-note { font-size: 14px; color: var(--muted); margin: 0; }
+
+/* Action cards */
+.group-label { display: flex; align-items: center; gap: 10px; margin: 32px 0 12px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.group-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.group-label.urgent { color: var(--bad); } .group-label.important { color: var(--warn); } .group-label.worth { color: var(--gold-ink); } .group-label.later { color: var(--info); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; margin-bottom: 16px; }
+.card.urgent { border-left: 4px solid var(--bad); } .card.important { border-left: 4px solid var(--warn); } .card.worth { border-left: 4px solid var(--gold); } .card.later { border-left: 4px solid var(--info); }
+.card-top { display: flex; gap: 14px; align-items: flex-start; }
+.num { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-content: center; font-weight: 700; font-size: 15px; background: var(--surface-2); color: var(--ink); border: 1px solid var(--line); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+.tag { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 99px; background: var(--info-bg); color: var(--info); }
+.tag.owner { background: var(--warn-bg); color: var(--warn); }
+.tag.site { background: var(--good-bg); color: var(--good); }
+.tag.done { background: var(--good); color: var(--surface); }
+.tag.wip { background: var(--surface-2); color: var(--gold-ink); border: 1px solid var(--line); }
+.done-note { background: var(--good-bg); color: var(--text); border-radius: 8px; padding: 10px 12px; margin-top: 4px !important; }
+.pill.prog { background: var(--surface-2); color: var(--gold-ink); border: 1px solid var(--line); }
+.kv { display: grid; gap: 10px; }
+.kv p { margin: 0; }
+.kv strong { color: var(--ink); }
+details { margin-top: 14px; border-top: 1px dashed var(--line); padding-top: 12px; }
+summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--gold-ink); list-style: none; display: inline-flex; align-items: center; gap: 6px; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "+"; display: inline-grid; place-content: center; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid currentColor; font-size: 13px; line-height: 1; }
+details[open] summary::before { content: "−"; }
+.tech { font-size: 14px; color: var(--muted); margin-top: 10px; }
+.tech ul { margin: 6px 0 0; padding-left: 20px; }
+.tech li { margin-bottom: 4px; }
+
+/* Pin diagram + uniqueness chart */
+.figure { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin: 14px 0 4px; }
+.figure svg { display: block; width: 100%; height: auto; }
+.figure svg text { font-family: var(--sans); }
+.svg-strong { fill: var(--ink); } .svg-soft { fill: var(--muted); }
+.svg-good { fill: var(--good); } .svg-bad { fill: var(--bad); }
+.svg-hole { fill: var(--surface); } .svg-chip { fill: var(--surface); stroke: var(--line); }
+.figure .cap { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+.uniq { display: grid; gap: 8px; position: relative; }
+.u-row { display: grid; grid-template-columns: 150px 1fr 44px; gap: 10px; align-items: center; font-size: 14px; }
+.u-row .lbl { color: var(--ink); font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.u-track { position: relative; height: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 99px; }
+.u-fill { height: 100%; border-radius: 99px; background: var(--warn); }
+.u-fill.best { background: var(--good); }
+.u-track::after { content: ""; position: absolute; left: 60%; top: -4px; bottom: -4px; border-left: 2px dashed var(--ink); opacity: .45; }
+.u-row .pct { text-align: right; font-weight: 700; color: var(--ink); }
+
+/* Checklist */
+.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.checks li { display: flex; gap: 12px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.checks .icon { color: var(--good); margin-top: 3px; }
+
+/* Listings table */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 520px; }
+th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 99px; white-space: nowrap; }
+.pill.ok { background: var(--good-bg); color: var(--good); }
+.pill.err { background: var(--bad-bg); color: var(--bad); }
+.pill.none { background: var(--warn-bg); color: var(--warn); }
+.pill.unk { background: var(--info-bg); color: var(--info); }
+
+/* Reviews */
+.reviews { display: grid; gap: 12px; }
+.rev { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+.rev .plat { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.rev .big { font: 600 34px/1.1 var(--serif); color: var(--ink); margin: 6px 0 2px; }
+.rev .stars { color: var(--gold); letter-spacing: 2px; }
+.rev p { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+
+/* Callout */
+.callout { display: flex; gap: 14px; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; margin-top: 12px; }
+.callout .icon { color: var(--gold-ink); margin-top: 3px; }
+
+/* Glossary */
+.gloss { display: grid; gap: 12px; margin: 0; }
+.gloss div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.gloss dt { font-weight: 700; color: var(--ink); }
+.gloss dd { margin: 4px 0 0; font-size: 15px; color: var(--muted); }
+
+.cant { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.cant li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.cant li:last-child { border-bottom: 0; }
+.cant .icon { color: var(--info); margin-top: 3px; }
+.cant small { display: block; color: var(--muted); font-size: 14px; }
+
+footer { border-top: 1px solid var(--line); padding: 32px 0 48px; font-size: 14px; color: var(--muted); }
+
+@media (min-width: 640px) {
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .reviews { grid-template-columns: repeat(3, 1fr); }
+  .gloss { grid-template-columns: 1fr 1fr; }
+  .card { padding: 24px; }
+}
+@media (min-width: 768px) {
+  .hero { padding: 80px 0 56px; }
+  .hero-grid { grid-template-columns: 1fr auto; }
+  section { padding: 64px 0; }
+  .u-row { grid-template-columns: 210px 1fr 48px; }
+}
+@media (max-width: 420px) {
+  .u-row { grid-template-columns: 1fr 44px; }
+  .u-row .lbl { grid-column: 1 / -1; }
+}
+@media print {
+  body { background: #fff; font-size: 12pt; }
+  .masthead { background: #fff; }
+  .card, .stat, .rev, .checks li { box-shadow: none; break-inside: avoid; }
+  section { padding: 24px 0; break-inside: auto; }
+  summary::before { display: none; }
+  a { color: inherit; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 4.2A9.8 9.8 0 0 1 12 4c7 0 10 8 10 8a13.2 13.2 0 0 1-1.7 2.7"/><path d="M6.6 6.6A13.5 13.5 0 0 0 2 12s3 8 10 8a9.7 9.7 0 0 0 5.4-1.6"/><path d="m2 2 20 20"/></symbol>
+</svg>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="brand">GOLDEN STATE <span>REHAB</span></span>
+    <span>Local search check-up · September 28, 2026</span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Google Maps and local search</div>
+          <h1>Your local search report card</h1>
+          <p class="lede">The website itself is built well. Most of the lost points come from a few wrong facts, some in the website's hidden code and some on outside listings. Most of them are quick to fix.</p>
+        </div>
+        <div class="ring" role="img" aria-label="Score: 64 out of 100">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="track" cx="60" cy="60" r="52" fill="none" stroke-width="10"/>
+            <circle class="fill" cx="60" cy="60" r="52" fill="none" stroke-width="10" stroke-dasharray="209.1 326.7"/>
+          </svg>
+          <div class="ring-label"><div class="ring-num">64</div><div class="ring-of">out of 100</div></div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>66 of 66</b><span>pages show your address, phone and Google map</span></div>
+        <div class="stat"><b>5.0 ★</b><span>on Google, with new reviews every month since June</span></div>
+        <div class="stat"><b>5 wrong facts</b><span>on the site and outside listings, each one fixable</span></div>
+      </div>
+    </div>
+
+    <!-- SCORE BREAKDOWN -->
+    <section aria-labelledby="s-score">
+      <h2 id="s-score">What the score is made of</h2>
+      <p class="section-intro">Google weighs these six areas when it decides who shows up in the map results. Green is healthy, amber needs work, red is where the points are going.</p>
+      <div class="bars">
+        <div class="bar-row">
+          <div class="bar-head"><h3>Connection to your Google listing</h3><span class="bar-score">20 / 25</span></div>
+          <div class="bar-track"><div class="bar-fill good" style="width:80%"></div></div>
+          <p class="bar-note">Every page links to your Google listing and shows its map. Your hours match.</p>
+        </div>
+        <div class="bar-row">
+          <div class="bar-head"><h3>Reviews</h3><span class="bar-score">12 / 20</span></div>
+          <div class="bar-track"><div class="bar-fill warn" style="width:60%"></div></div>
+          <p class="bar-note">5.0 stars and recent on Google. Yelp has none, and few other sites have any.</p>
+        </div>
+        <div class="bar-row">
+          <div class="bar-head"><h3>Your website pages</h3><span class="bar-score">16 / 20</span></div>
+          <div class="bar-track"><div class="bar-fill good" style="width:80%"></div></div>
+          <p class="bar-note">Every key page names the city and the service. Some service pages repeat too much of the same text.</p>
+        </div>
+        <div class="bar-row">
+          <div class="bar-head"><h3>Your listings around the web</h3><span class="bar-score">7 / 15</span></div>
+          <div class="bar-track"><div class="bar-fill bad" style="width:47%"></div></div>
+          <p class="bar-note">The state directory has the wrong phone number. You're missing from the federal treatment finder.</p>
+        </div>
+        <div class="bar-row">
+          <div class="bar-head"><h3>Hidden code Google reads</h3><span class="bar-score">6 / 10</span></div>
+          <div class="bar-track"><div class="bar-fill warn" style="width:60%"></div></div>
+          <p class="bar-note">The map pin in the code is in the wrong spot. It also has some banned insurance wording and an old Yelp link.</p>
+        </div>
+        <div class="bar-row">
+          <div class="bar-head"><h3>Links from other websites</h3><span class="bar-score">3 / 10</span></div>
+          <div class="bar-track"><div class="bar-fill bad" style="width:30%"></div></div>
+          <p class="bar-note">Few outside sites link to you yet. That's normal for a center that opened in May, and it grows with time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIONS -->
+    <section aria-labelledby="s-fix">
+      <h2 id="s-fix">Fix these, in this order</h2>
+      <p class="section-intro">Each item says who needs to act. <span class="tag owner">Owner</span> means it happens outside the website, in an account only the owner can reach. <span class="tag site">Website</span> means it's a change to the site's code.</p>
+
+      <div class="group-label urgent">Urgent</div>
+
+      <article class="card urgent">
+        <div class="card-top"><div class="num">1</div><div>
+          <h3>The state license directory lists the wrong phone number</h3>
+          <div class="tags"><span class="tag owner">Owner</span><span class="tag">One request to the state</span><span class="tag wip">Owner is on it</span></div>
+          <div class="kv">
+            <p><strong>What's wrong:</strong> California's DHCS directory shows your number as <strong>(404) 207-7485</strong>. The real number is (424) 208-3120. 404 is an Atlanta area code, so it looks like a typo.</p>
+            <p><strong>Why it matters:</strong> this is the official record. Insurance companies, the federal treatment finder and the big rehab directories check it or copy from it, so a wrong number here can spread.</p>
+            <p><strong>What to do:</strong> ask your DHCS licensing contact to correct the phone number on program #191643AP.</p>
+          </div>
+          <details><summary>Technical details</summary><div class="tech">Verified directly in the DHCS "SUD Recovery Treatment Facilities" dataset (record 1042). Name: GOLDEN STATE REHAB LLC. Address: 1964 Westwood Blvd #425, 90025. Expires 4/30/2028.</div></details>
+        </div></div>
+      </article>
+
+      <article class="card urgent">
+        <div class="card-top"><div class="num">2</div><div>
+          <h3>The website's hidden map pin is in the wrong place</h3>
+          <div class="tags"><span class="tag site">Website</span><span class="tag">Small job</span><span class="tag done">Done Sept 28</span></div>
+          <div class="kv">
+            <p class="done-note"><strong>Done:</strong> all 66 pages now point to the building's real spot, matching your Google listing.</p>
+            <p><strong>What's wrong:</strong> every page has code that tells Google where the building is. It points about <strong>447 meters (a quarter mile)</strong> south-east of the building, near Glendon Ave in Rancho Park.</p>
+            <p><strong>Why it matters:</strong> Google compares your site, your Google listing and other sources to confirm where you are. When they disagree, Google trusts all of them a little less.</p>
+          </div>
+          <div class="figure">
+            <svg viewBox="0 0 560 182" role="img" aria-label="Diagram: the real building location and the wrong pin in the code are 447 meters apart">
+              <line x1="120" y1="58" x2="440" y2="118" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6" opacity=".45"/>
+              <rect x="226" y="68" width="108" height="30" rx="15" class="svg-chip"/>
+              <text x="280" y="88" text-anchor="middle" font-size="15" font-weight="700" class="svg-strong">447 m apart</text>
+              <circle cx="120" cy="58" r="14" class="svg-good"/><circle cx="120" cy="58" r="5" class="svg-hole"/>
+              <text x="120" y="98" text-anchor="middle" font-size="14" font-weight="700" class="svg-strong">Your building</text>
+              <text x="120" y="116" text-anchor="middle" font-size="12" class="svg-soft">1964 Westwood Blvd</text>
+              <circle cx="440" cy="118" r="14" class="svg-bad"/><circle cx="440" cy="118" r="5" class="svg-hole"/>
+              <text x="440" y="158" text-anchor="middle" font-size="14" font-weight="700" class="svg-strong">Where the code points</text>
+              <text x="440" y="176" text-anchor="middle" font-size="12" class="svg-soft">near 2194 Glendon Ave</text>
+            </svg>
+            <p class="cap">Your Google listing, the US Census and the state record all agree on the building's spot. Only the website's code is off.</p>
+          </div>
+          <details><summary>Technical details</summary><div class="tech">In the schema <code>geo</code> on 66 pages, change <code>34.0447, -118.4308</code> to the Google listing's own pin, <code>34.0474328, -118.4343784</code>. In the same pass, change the business type to <code>MedicalClinic</code>.</div></details>
+        </div></div>
+      </article>
+
+      <article class="card urgent">
+        <div class="card-top"><div class="num">3</div><div>
+          <h3>Banned insurance wording is still on the site</h3>
+          <div class="tags"><span class="tag site">Website</span><span class="tag">Medium job</span><span class="tag done">Done Sept 28</span></div>
+          <p class="done-note" style="margin-bottom:12px"><strong>Done:</strong> every page now uses the homepage wording. The insurance section on 37 pages reads "Check Your Coverage: See if your insurance is accepted in seconds", like the homepage. FAQ answers and hidden descriptions say "We work with most major PPO plans", which the homepage FAQ also uses. The CBT and DBT answers no longer name insurance companies.</p>
+          <div class="kv">
+            <p><strong>What's wrong:</strong> "We Accept Most Major Insurance Providers" is still a heading on 29 pages. About 25 FAQ answers say "we accept most major insurance", and so does the hidden business description on about 65 pages.</p>
+            <p><strong>Why it matters:</strong> it breaks your own insurance-wording rule. That same insurance section is also the biggest block of text repeated across pages, and that repetition is why several service pages score low in item 5.</p>
+            <p><strong>What to do:</strong> swap it for the approved phrasing, "we work with most major PPO plans", or a short link to the insurance page.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <div class="group-label important">Important</div>
+
+      <article class="card important">
+        <div class="card-top"><div class="num">4</div><div>
+          <h3>Get listed on FindTreatment.gov</h3>
+          <div class="tags"><span class="tag owner">Owner</span><span class="tag">One registration</span></div>
+          <div class="kv">
+            <p><strong>What's wrong:</strong> you aren't on SAMHSA's federal treatment finder. <strong>15 other centers within 2 miles</strong> are.</p>
+            <p><strong>Why it matters:</strong> it's the government's official list of treatment centers. Many rehab directories and AI assistants draw from it, and a listing gives your website a link from a .gov site.</p>
+            <p><strong>What to do:</strong> register the facility through SAMHSA's new-facility form (N-SUMHSS).</p>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="card important">
+        <div class="card-top"><div class="num">5</div><div>
+          <h3>Make 8 service pages more unique</h3>
+          <div class="tags"><span class="tag site">Website</span><span class="tag">Bigger job</span></div>
+          <div class="kv">
+            <p><strong>What's wrong:</strong> about half the text on these pages also appears on other pages. Google rewards pages that say something only they can say.</p>
+            <p><strong>What to do:</strong> do item 3 first, since it removes the biggest repeated block, then measure again. After that, add details only that page can have, like who leads that program and what a week looks like.</p>
+          </div>
+          <div class="figure">
+            <div class="uniq" role="img" aria-label="Unique text per page. Eight pages are between 52 and 54 percent. The best page, DBT, is 79 percent. Healthy is 60 percent or more.">
+              <div class="u-row"><span class="lbl">Anxiety</span><div class="u-track"><div class="u-fill" style="width:52%"></div></div><span class="pct">52%</span></div>
+              <div class="u-row"><span class="lbl">Opioid addiction</span><div class="u-track"><div class="u-fill" style="width:52%"></div></div><span class="pct">52%</span></div>
+              <div class="u-row"><span class="lbl">Cocaine addiction</span><div class="u-track"><div class="u-fill" style="width:52%"></div></div><span class="pct">52%</span></div>
+              <div class="u-row"><span class="lbl">Group therapy</span><div class="u-track"><div class="u-fill" style="width:53%"></div></div><span class="pct">53%</span></div>
+              <div class="u-row"><span class="lbl">Depression</span><div class="u-track"><div class="u-fill" style="width:54%"></div></div><span class="pct">54%</span></div>
+              <div class="u-row"><span class="lbl">PTSD</span><div class="u-track"><div class="u-fill" style="width:54%"></div></div><span class="pct">54%</span></div>
+              <div class="u-row"><span class="lbl">Individual therapy</span><div class="u-track"><div class="u-fill" style="width:54%"></div></div><span class="pct">54%</span></div>
+              <div class="u-row"><span class="lbl">IOP</span><div class="u-track"><div class="u-fill" style="width:54%"></div></div><span class="pct">54%</span></div>
+              <div class="u-row"><span class="lbl">DBT (your best page)</span><div class="u-track"><div class="u-fill best" style="width:79%"></div></div><span class="pct">79%</span></div>
+            </div>
+            <p class="cap">Share of each page's text that appears on no other service page. The dashed line marks 60%, a healthy minimum.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="card important">
+        <div class="card-top"><div class="num">6</div><div>
+          <h3>Connect your clinicians to their public records</h3>
+          <div class="tags"><span class="tag site">Website</span><span class="tag">Small job</span><span class="tag done">Done Sept 28</span></div>
+          <p class="done-note" style="margin-bottom:12px"><strong>Done:</strong> Dr. Chaghouri, Ari Labowitz and Viola Sulahian now link to their NPI records, and the business links to its own. The team page and code now say nine staff. Nechama Berkowitz and Juanita Casillas have no matching California NPI record yet.</p>
+          <div class="kv">
+            <p><strong>What's wrong:</strong> Dr. Chaghouri and Ari Labowitz both have public national provider (NPI) records, but the site's code doesn't point to them. The team page also shows nine people, while the code and page title say eight.</p>
+            <p><strong>Why it matters:</strong> for healthcare, Google puts extra weight on real, checkable clinicians. Linking the records proves your staff are who you say they are.</p>
+          </div>
+          <details><summary>Technical details</summary><div class="tech"><ul>
+            <li>Dr. Eric Chaghouri: NPI 1932472883, Medical Board of California A123663</li>
+            <li>Ari Labowitz, LMFT: NPI 1881021491, BBS LMFT90865</li>
+            <li>Business NPI: 1891639308</li>
+            <li>Add Sophia Scharpf (Case Manager) to the business's staff list. Change the <code>/team</code> title and <code>llms.txt</code> to nine staff.</li>
+            <li>Check with the owner before publishing the license numbers, even though they're public records.</li>
+          </ul></div></details>
+        </div></div>
+      </article>
+
+      <div class="group-label worth">Worth doing</div>
+
+      <article class="card worth">
+        <div class="card-top"><div class="num">7</div><div>
+          <h3>Correct Recovery.com and Yelp</h3>
+          <div class="tags"><span class="tag owner">Owner</span><span class="tag">Small job</span><span class="tag wip">Owner is on Yelp</span></div>
+          <div class="kv">
+            <p><strong>Recovery.com</strong> is fine as it is. Detox is listed, and you arrange detox through a referral partner. It does show program hours instead of "admissions 24/7".</p>
+            <p><strong>Yelp</strong> is missing "Ste 425" from the address. The website also links to an old Yelp address, which is a website fix.</p>
+          </div>
+          <details><summary>Technical details</summary><div class="tech">The live Yelp listing is <code>yelp.com/biz/golden-state-rehab-los-angeles</code>. The site's code points to <code>…/golden-state-rehab-llc-los-angeles</code> on 65 pages. Confirm the live address in Yelp for Business before changing the code.</div></details>
+        </div></div>
+      </article>
+
+      <article class="card worth">
+        <div class="card-top"><div class="num">8</div><div>
+          <h3>Review dates on the homepage will go out of date</h3>
+          <div class="tags"><span class="tag site">Website</span><span class="tag">Small job</span><span class="tag done">Done Sept 28</span></div>
+          <p class="done-note" style="margin-bottom:12px"><strong>Done:</strong> reviews now show the month they were posted, June to September 2026, on the homepage and the Why Choose Us page. The "NEW" badges are gone.</p>
+          <div class="kv">
+            <p><strong>What's wrong:</strong> the reviews say "3 days ago", "a week ago" and "NEW" as fixed text. Nothing updates them, so by November they'll be wrong.</p>
+            <p><strong>What to do:</strong> show the month instead, like "September 2026", on the homepage and the Why Choose Us page.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="card worth">
+        <div class="card-top"><div class="num">9</div><div>
+          <h3>A question for the owner: "licensed" or "certified"?</h3>
+          <div class="tags"><span class="tag owner">Owner</span><span class="tag">Answer first, then a small job</span><span class="tag done">Done Sept 28</span></div>
+          <p class="done-note" style="margin-bottom:12px"><strong>Done:</strong> you confirmed the program is DHCS certified. Everywhere the site describes the center, it now says "certified", including the footer badge, the hidden code, the Spanish page and the chat assistant. Clinician licenses still say "licensed".</p>
+          <div class="kv">
+            <p>The state record lists the program as <strong>"Certified"</strong>. The site says "DHCS-licensed" about 149 times. In California, outpatient programs are usually certified rather than licensed.</p>
+            <p><strong>What to do:</strong> check what the actual DHCS certificate says. If it says certification, the wording can be updated across the site in one pass. Nothing should change until then.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <div class="group-label later">Later</div>
+
+      <article class="card later">
+        <div class="card-top"><div class="num">10</div><div>
+          <h3>Tidy-ups and local links</h3>
+          <div class="tags"><span class="tag site">Website</span><span class="tag owner">Owner</span><span class="tag">Ongoing</span></div>
+          <div class="kv">
+            <p>The contact page has a second map that opens a plain address instead of your Google listing. Swap it for the same map the footer uses.</p>
+            <p>The AI summary file (<code>llms.txt</code>) still mentions neighborhood pages that were removed. It's also missing several key pages.</p>
+            <p>Over time, join a local chamber of commerce (West LA or Century City), get mentioned in local news, and build community ties. These are the outside links a young website needs most.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <div class="callout">
+        <svg class="icon" aria-hidden="true"><use href="#i-help"/></svg>
+        <p style="margin:0"><strong>Before changing anything:</strong> record where you rank on the map today for "rehab near me", "addiction treatment" and "outpatient rehab". A grid tool like Local Falcon does this. Then you can see what the fixes actually did.</p>
+      </div>
+    </section>
+
+    <!-- WORKING -->
+    <section aria-labelledby="s-good">
+      <h2 id="s-good">What's already working</h2>
+      <p class="section-intro">Keep these as they are.</p>
+      <ul class="checks">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Your address, phone and a tap-to-call button are on every page, and they match everywhere on the site.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Every page has a map that opens your actual Google listing, and the directions link goes straight to it.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Hours show as open 24/7 on the site and in the code, matching Google.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Every program and treatment page has "Los Angeles" in its title and main heading.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>There's a page for each service on your Google listing, including the Alcoholism Treatment Program category.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Thin neighborhood pages were removed, so there's no copy-paste city-page risk.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>No review screening. Every "review us" link goes straight to Google, which keeps you within Google's rules and the FTC's.</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Apple Maps, the NPI registry and Recovery.com all show the right name, address and phone.</span></li>
+      </ul>
+    </section>
+
+    <!-- LISTINGS -->
+    <section aria-labelledby="s-list">
+      <h2 id="s-list">Your listings around the web</h2>
+      <p class="section-intro">Google checks that your name, address and phone match everywhere. Here's what we found on each site.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Where</th><th>Status</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>State DHCS directory</td><td><span class="pill err">Has an error</span></td><td>Wrong phone: (404) 207-7485. The owner is handling it.</td></tr>
+            <tr><td>FindTreatment.gov</td><td><span class="pill none">Not listed</span></td><td>15 nearby centers are listed</td></tr>
+            <tr><td>Recovery.com</td><td><span class="pill ok">Correct</span></td><td>5.0 stars from 13 reviews. Detox is listed, and you arrange it by referral.</td></tr>
+            <tr><td>Yelp</td><td><span class="pill err">Has an error</span></td><td>Missing the suite number. No reviews yet. You're working on it.</td></tr>
+            <tr><td>Google</td><td><span class="pill ok">Correct</span></td><td>5.0 stars. The name and map pin match.</td></tr>
+            <tr><td>Apple Maps</td><td><span class="pill ok">Correct</span></td><td>Everything matches</td></tr>
+            <tr><td>NPI registry</td><td><span class="pill ok">Correct</span></td><td>Uses the legal name with "LLC", which is normal</td></tr>
+            <tr><td>Psychology Today</td><td><span class="pill prog">In progress</span></td><td>Verification underway</td></tr>
+            <tr><td>Facebook</td><td><span class="pill none">Not yet</span></td><td>Planned, last on the list</td></tr>
+            <tr><td>BBB, Yellow Pages, Foursquare</td><td><span class="pill none">Not found</span></td><td>Lower priority</td></tr>
+            <tr><td>Bing Places</td><td><span class="pill prog">In progress</span></td><td>Verification underway</td></tr>
+            <tr><td>Joint Commission</td><td><span class="pill ok">Correct</span></td><td>Listed and verified</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section aria-labelledby="s-rev">
+      <h2 id="s-rev">Reviews at a glance</h2>
+      <p class="section-intro">Google cares about how often new reviews come in, not just the total. Yours have come in every month since June.</p>
+      <div class="reviews">
+        <div class="rev"><div class="plat">Google</div><div class="big">5.0</div><div class="stars" aria-label="5 stars">★★★★★</div><p>9 shown on the Why Choose Us page, posted June through September 2026. Google's total count wasn't visible to this check.</p></div>
+        <div class="rev"><div class="plat">Recovery.com</div><div class="big">5.0</div><div class="stars" aria-label="5 stars">★★★★★</div><p>13 reviews</p></div>
+        <div class="rev"><div class="plat">Yelp</div><div class="big">0</div><div class="stars" style="opacity:.3" aria-label="no rating">★★★★★</div><p>No reviews yet</p></div>
+      </div>
+      <div class="callout">
+        <svg class="icon" aria-hidden="true"><use href="#i-help"/></svg>
+        <p style="margin:0">When replying to reviews, never confirm the person was a client. That's a privacy (HIPAA) rule. Thank them for their kind words about the team, and leave it there.</p>
+      </div>
+    </section>
+
+    <!-- LIMITS -->
+    <section aria-labelledby="s-cant">
+      <h2 id="s-cant">What this check couldn't see</h2>
+      <p class="section-intro">These need account access or a paid tool.</p>
+      <ul class="cant">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-eye-off"/></svg><span>Your Google listing's categories, photos, posts and total review count<small>The Google Places API is turned off on your Maps key. The Google Business dashboard shows all of this.</small></span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-eye-off"/></svg><span>Where you rank on the map across LA<small>A grid tool like Local Falcon or BrightLocal</small></span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-eye-off"/></svg><span>Which websites link to you<small>Ahrefs, Semrush, or Bing Webmaster Tools, which you already have set up</small></span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-eye-off"/></svg><span>Calls, direction requests and clicks from your listing<small>The Performance tab in your Google Business dashboard</small></span></li>
+      </ul>
+    </section>
+
+    <!-- GLOSSARY -->
+    <section aria-labelledby="s-gloss">
+      <h2 id="s-gloss">Words used in this report</h2>
+      <dl class="gloss">
+        <div><dt>Map results (map pack)</dt><dd>The 3 businesses Google shows on a map at the top of a search like "rehab near me".</dd></div>
+        <div><dt>Google listing</dt><dd>Your Google Business Profile, the box with your hours, reviews and photos.</dd></div>
+        <div><dt>Hidden code (schema)</dt><dd>Information built into each page that only search engines read, like your address, map pin and staff.</dd></div>
+        <div><dt>Listing (citation)</dt><dd>Any outside website that shows your name, address and phone, like Yelp or Apple Maps.</dd></div>
+        <div><dt>DHCS</dt><dd>California's Department of Health Care Services, which oversees treatment programs.</dd></div>
+        <div><dt>NPI</dt><dd>The national ID number every US healthcare provider and clinic has. The records are public.</dd></div>
+      </dl>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Checked September 28, 2026 against the live website at goldenstate-rehab.com. Updated the same day: items marked "Done" were fixed on the website, and listing statuses reflect the owner's notes. The score of 64 is from before those fixes. The full technical version is in <code>LOCAL-SEO-ANALYSIS-goldenstate-rehab.com.md</code> in this folder.</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('details').forEach(function (d) { d.setAttribute('open', ''); });
+  });
+</script>
+</body>
+</html>
