@@ -1,0 +1,86 @@
+{
+  "h1": "Medication Management in Los Angeles",
+  "sub": "A psychiatrist checks whether medication could help your recovery, then follows up to see how it's working. It's part of every program at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "individual-therapy-room",
+    "alt": "A private room at Golden State Rehab with a sofa and an armchair",
+    "caption": "A private room for one-on-one visits",
+    "note": ["Your choice", "medication is never required"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it is", "q": "What is medication management?",
+      "a": "It's psychiatric care built into your treatment program. Our psychiatric team checks whether medication could help you and prescribes it when it fits. After that you keep meeting so they can see how it's working. Medication sits next to therapy here and never replaces it."
+    },
+    {
+      "id": "choice", "nav": "Is it required", "q": "Do I have to take medication?",
+      "a": "No, it's always your choice. Your free assessment sets the level of care, and the psychiatric team walks you through your options with no pressure. Some people do fine with therapy alone. For others, the right medication helps the therapy work better. It may be worth a talk if one of these sounds like you.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You're coming off opioids or fentanyl and the cravings keep pulling at you.",
+          "You've tried to cut back on drinking and it keeps slipping.",
+          "Depression or anxiety makes it hard to show up for therapy.",
+          "You already take a few medications and want someone to look at the whole list."
+        ],
+        "card": {
+          "title": "Therapy alone is fine too",
+          "text": "If you'd rather skip medication, say so. Your therapy plan stays the same, and you can bring it up again later if things change."
+        }
+      }
+    },
+    {
+      "id": "meds", "nav": "Medications", "q": "Which medications do you prescribe?",
+      "a": "It depends on what you're treating. For opioid or alcohol use, there are FDA-approved medications that ease cravings and withdrawal, always paired with therapy. For depression or anxiety, which often show up alongside addiction, there are mental health medications. Sometimes it's just a careful look at what you already take.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "pill", "t": "Buprenorphine (Suboxone)", "d": "For opioid and fentanyl use disorder. It eases withdrawal and cravings so you can focus on therapy."},
+          {"icon": "tablets", "t": "Naltrexone", "d": "For alcohol use disorder, and sometimes for opioid use disorder too."},
+          {"icon": "heart-pulse", "t": "Acamprosate", "d": "Another option for alcohol use disorder. Your psychiatrist explains how it compares to naltrexone."},
+          {"icon": "brain", "t": "Mental health medications", "d": "Antidepressants and mood stabilizers, among others, when depression or anxiety comes along with the addiction."}
+        ]
+      }
+    },
+    {
+      "id": "suboxone", "nav": "Suboxone", "q": "Is Suboxone just trading one addiction for another?",
+      "a": "No. Buprenorphine, the main drug in Suboxone, is taken at a steady prescribed dose and doesn't give the high that fentanyl or heroin does. It eases withdrawal and cravings so you can show up for therapy. Research links it to staying in treatment longer and a lower risk of overdose death.",
+      "note": "Fentanyl stays in the body longer than other opioids, so our team starts buprenorphine slowly and watches closely to lower the risk of sudden withdrawal. [SAMHSA](https://www.samhsa.gov/medications-substance-use-disorders) and [NIDA](https://nida.nih.gov/publications/research-reports/medications-to-treat-opioid-addiction/efficacy-medications-opioid-use-disorder) both call it an evidence-based treatment.",
+      "cta": true
+    },
+    {
+      "id": "first", "nav": "First visit", "q": "What happens at my first psychiatry appointment?",
+      "a": "It starts with a private, unhurried talk with our psychiatric team. You go over your history and what you want to change. Then you decide together whether medication belongs in your plan, and nothing starts without your okay.",
+      "block": {
+        "type": "sheet",
+        "rows": [
+          ["First visit", "Psychiatric evaluation", "Your history and any medications you take now, with doses if you know them."],
+          ["Same visit", "Your options", "If medication could help, you hear why and what to expect. The choice stays yours."],
+          ["Follow-ups", "Regular check-ins", "You talk about side effects and adjust the dose untill it feels right."],
+          ["All along", "One shared plan", "Your psychiatrist keeps your therapist in the loop, so you never carry messages between them."]
+        ]
+      }
+    },
+    {
+      "id": "team", "nav": "Who prescribes", "q": "Who prescribes and checks on my medication?",
+      "a": "Dr. Eric Chaghouri, MD, leads our psychiatric team. He's our medical director, a board-certified psychiatrist who trained at USC. His team writes your prescriptions and sees you for follow-ups. Your therapist hears about each change, so everyone works from one plan.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": ["eric-chaghouri", "ari-labowitz", "viola-sulahian", "nechama-berkowitz"],
+        "review": "kali-detox"
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Will insurance pay for medication management?",
+      "a": "Medication management is part of our PHP and IOP programs. We work with most major PPO plans. Before you start, we run a free benefits check, usually within the hour.",
+      "note": "Federal parity law and California's SB 855 require health plans to cover medically necessary mental health and addiction care, which can include psychiatric visits and medication.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays for psychiatric visits"]}
+    },
+    {
+      "id": "privacy", "nav": "Privacy", "q": "Will my employer find out I'm on medication?",
+      "a": "No. HIPAA and 42 CFR Part 2 keep your treatment records private, and your employer won't hear from us. Follow-ups fit into your program schedule, and some visits can happen by telehealth, so you aren't crossing the Westside for every check-in.",
+      "cta": true
+    }
+  ]
+}

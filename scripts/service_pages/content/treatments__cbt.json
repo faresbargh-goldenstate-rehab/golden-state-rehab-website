@@ -1,0 +1,80 @@
+{
+  "h1": "Cognitive Behavioral Therapy (CBT) in Los Angeles",
+  "sub": "CBT is a structured talk therapy that helps you catch and change the thoughts that keep you stuck. It's one of the main therapies at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "reading-lounge",
+    "alt": "Two armchairs in front of tall bookshelves in the reading lounge at Golden State Rehab",
+    "caption": "The reading lounge, a quiet spot between sessions",
+    "note": ["Skills to practice", "between sessions"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What is CBT", "q": "What is CBT?",
+      "a": "CBT stands for cognitive behavioral therapy. Psychiatrist Aaron Beck developed it in the 1960s, and it's one of the most studied talk therapies there is. The idea is simple. Your thoughts have a big say in how you feel. You learn to catch the quick, automatic thoughts behind a craving or a low mood, then test them against the facts."
+    },
+    {
+      "id": "different", "nav": "How it differs", "q": "How is CBT different from regular talk therapy?",
+      "a": "Traditional talk therapy is open-ended, and you follow wherever the conversation goes. CBT has more structure. Each session has an agenda and a skill to work on, and you track your progress toward clear goals you set at the start. Many people like the sense of momentum that gives them."
+    },
+    {
+      "id": "fit", "nav": "Is it for me", "q": "Is CBT a good fit for me?",
+      "a": "CBT suits people who want practical tools more than open-ended talk and don't mind a little work between sessions. We use it for anxiety, depression, PTSD and addiction, often in the same plan.",
+      "cta": true,
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You get stuck in worry loops or racing thoughts.",
+          "You avoid people or places, and your world keeps getting smaller.",
+          "You drink or use to quiet feelings you can't sit with.",
+          "Panic attacks have you avoiding crowds or the 405.",
+          "You've tried just talking and want something with more structure."
+        ]
+      }
+    },
+    {
+      "id": "session", "nav": "A session", "q": "What happens in a CBT session?",
+      "a": "Each session follows a steady rhythm, so you always know what's coming. You and your therapist pick the focus together. Then you use a skill on something that happened in your own week. Most of this work happens in [individual therapy](/programs/individual-therapy), with CBT skills groups during the week too.",
+      "cta": true,
+      "block": {
+        "type": "sheet",
+        "rows": [
+          ["Start", "Mood check-in", "A quick rating of your week, so you can both see the trend over time."],
+          ["Then", "Homework review", "What helped since last time and what got in the way."],
+          ["Next", "Pick the focus", "You decide together what matters most today."],
+          ["Middle", "Skill work", "Reframe a thought or plan a small experiment around a situation from your week."],
+          ["Near the end", "New homework", "One clear thing to try before you meet again."],
+          ["Last", "Takeaway", "A short note of what you learned, writen down so you don't lose it."]
+        ]
+      }
+    },
+    {
+      "id": "addiction", "nav": "For addiction", "q": "How does CBT help with drinking or drug use?",
+      "a": "CBT for addiction goes after the thoughts and triggers that lead to use. You map out your high-risk moments and rehearse what you'll do when they come. We pair it with group therapy and family work, so you're never doing this alone.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "target", "t": "Know your triggers", "d": "Name the places and feelings that pull you toward a drink or a drug."},
+          {"icon": "brain", "t": "Talk back to cravings", "d": "Catch thoughts like \"just one won't hurt\" and answer them with the facts."},
+          {"icon": "ban", "t": "Practice saying no", "d": "Rehearse turning down a drink before the moment comes, so the words are ready."},
+          {"icon": "life-buoy", "t": "Plan for slips", "d": "Build a relapse-prevention plan you can keep using long after treatment ends."}
+        ]
+      }
+    },
+    {
+      "id": "childhood", "nav": "Your past", "q": "Will I have to talk about my childhood?",
+      "a": "Only if it helps. CBT stays mostly on what's happening now. Sometimes a belief you formed as a kid is still running the show, and your therapist will look at it with you at a pace that feels okay. If trauma is part of your story, we use CBT inside [trauma-informed therapy](/treatments/trauma-informed-therapy) so nothing gets rushed.",
+      "cta": true
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Does insurance pay for CBT?",
+      "a": "CBT is part of our PHP and IOP programs, and many PPO plans may cover that care when it's medically necessary. We work with most major PPO plans. We check your benefits for free, usually within the hour, and you don't need a referral to start.",
+      "note": "The federal Mental Health Parity and Addiction Equity Act says insurers have to treat mental health and addiction care like other medical care.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays for CBT in PHP or IOP"]}
+    },
+    {
+      "id": "long", "nav": "How long", "q": "How long does CBT take to work?",
+      "a": "A standard course of CBT runs about 12 to 20 sessions. Complex cases, like PTSD or addiction alongside another condition, can take longer. The skills stay with you after treatment ends. You can also do CBT by telehealth from anywhere in California.",
+      "block": {"type": "quote", "review": "dennis-groups"}
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "h1": "Telehealth Rehab in Los Angeles",
+  "sub": "Our intensive outpatient program by encrypted video, from anywhere in California. It's run by the team at our [rehabilitation center in Los Angeles](/rehabilitation-center).",
+  "hero": {
+    "img": "reading-lounge",
+    "alt": "The reading lounge at Golden State Rehab, with tall bookshelves and two cream armchairs",
+    "caption": "The reading lounge at our Westwood clinic",
+    "note": ["No downloads", "works in any browser"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What is it", "q": "What is telehealth rehab?",
+      "a": "It's our intensive outpatient program, or IOP, delivered by video. You join live 3-hour sessions, 3 to 5 days a week, in the morning or the evening. That's about 9 to 15 hours of treatment a week, with the curriculum we use in person, and you never have to leave home."
+    },
+    {
+      "id": "fit", "nav": "Who it's for", "q": "Is telehealth rehab right for me?",
+      "a": "It tends to suit people who live far from Westwood or can't manage the commute. Some people just feel calmer starting treatment from home, and that's a fine reason too. Your free assessment tells you if online IOP is the right level.",
+      "block": {
+        "type": "list",
+        "items": [
+          "You live outside the Los Angeles area",
+          "You don't have a car or a ride several days a week",
+          "You're a parent or caregiver who can't leave the house for hours",
+          "You want discreet, flexible scheduling around work",
+          "You feel more at ease in your own space"
+        ]
+      }
+    },
+    {
+      "id": "where", "nav": "Where you live", "q": "Do I have to live in Los Angeles to join?",
+      "a": "No. Telehealth IOP is open anywhere in California. Our clinic is in Westwood, and we treat online clients across the Westside, from Santa Monica and Brentwood to Beverly Hills and Culver City, and all over the rest of the state."
+    },
+    {
+      "id": "start", "nav": "Getting started", "q": "How do I get started with telehealth?",
+      "a": "It starts with one phone call. Most people begin within days, and there's no waiting list. You'll need a phone or computer with a camera and a private space. We send the link, so there's nothing to download.",
+      "cta": true,
+      "block": {
+        "type": "steps",
+        "items": [
+          {"t": "Call or apply online", "d": "Reach admissions at (424) 208-3120, day or night, or fill out the short form online."},
+          {"t": "Insurance check", "d": "Free and confidential. We explain what your plan pays for before your first session."},
+          {"t": "Your link", "d": "A link to our HIPAA-compliant video platform. It opens in any browser."},
+          {"t": "Orientation", "d": "Meet your therapist and your group, and go over the schedule before treatment starts."}
+        ]
+      }
+    },
+    {
+      "id": "week", "nav": "Your week", "q": "What does a week of online IOP look like?",
+      "a": "It follows the in-person IOP schedule, set at your free assessment and adjusted as you go. Most of your hours are live video groups. Each week you also get a private video session with your primary therapist, plus psychiatry when your treatment plan calls for it.",
+      "block": {
+        "type": "sheet",
+        "rows": [
+          ["3 to 5 days", "Live video group", "CBT, DBT, relapse prevention or an open process group, 3 hours each."],
+          ["Once a week", "Your therapist", "A private session for the things you'd rather not say infront of the group."],
+          ["As needed", "Psychiatry", "Our board-certified psychiatrist handles medication by video."],
+          ["Your pick", "Morning or evening", "Log in before the day fills up, or log off work and log into group."],
+          ["At the end", "Aftercare plan", "Your team lines up ongoing care and alumni support for when you finish."]
+        ]
+      }
+    },
+    {
+      "id": "team", "nav": "Who runs it", "q": "Who runs the telehealth program?",
+      "a": "The clinical team that treats people in person at our DHCS-certified clinic, 1964 Westwood Blvd. If you live nearby, you can switch to in-person IOP at any point, since the curriculum is the same.",
+      "note": "Online IOP is also a common choice for alcohol addiction treatment when the commute is what's in the way.",
+      "cta": true,
+      "block": {"type": "quote", "review": "ryan"}
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Does insurance pay for telehealth rehab?",
+      "a": "It depends on your plan. We work with most major PPO plans, and many plans may cover telehealth IOP when it's medically necessary. Admissions calls your insurer for you and explains your benefits before your first session. The check doesn't commit you to anything.",
+      "note": "Federal parity law and California's SB 855 require plans to cover medically necessary mental health and addiction care.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "Whether your plan pays for care by video"]}
+    },
+    {
+      "id": "privacy", "nav": "Privacy", "q": "Is online addiction treatment confidential?",
+      "a": "Yes. Sessions run on a HIPAA-compliant video platform, and 42 CFR Part 2 gives addiction records extra federal protection. We never contact your employer. Your information only goes out with your written consent, apart from rare cases the law requires.",
+      "note": "Taking leave is an option too. FMLA and California's CFRA usually protect your job. [How FMLA works](https://www.dol.gov/agencies/whd/fmla)",
+      "cta": true
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "h1": "Spanish-Speaking Treatment in Los Angeles",
+  "sub": "Get help for addiction or mental health with a Spanish-speaking counselor and bilingual physicians. It's part of our [addiction treatment center in Los Angeles](/). Se habla español.",
+  "hero": {
+    "img": "reception-lobby",
+    "alt": "The front desk and lobby at Golden State Rehab, with the backlit logo on the wall",
+    "caption": "The front desk on Westwood Blvd",
+    "note": ["Se habla español", "on the phone 24/7"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it is", "q": "What is Spanish-speaking treatment?",
+      "a": "It means you can get help for addiction or mental health without a language barrier. Someone answers our phone in Spanish, day or night. Our physicians are bilingual, and family sessions can be held in Spanish so the people at home can follow along."
+    },
+    {
+      "id": "fit", "nav": "Is it for me", "q": "Is Spanish-speaking care right for me or my family?",
+      "a": "It's a good fit if Spanish is the language you feel in, even if you speak English at work. It also helps when your family would follow treatment better in Spanish.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You think and feel in Spanish, even when you speak English all day.",
+          "You tried therapy through an interpreter before and it felt far away.",
+          "Your parents or your partner would understand treatment better in Spanish.",
+          "You're calling for a loved one who would rather talk in Spanish."
+        ],
+        "card": {
+          "title": "Calling about a loved one",
+          "text": "If you're worried about someone in your family, call us. We'll walk you through the options in Spanish, with no pressure."
+        }
+      }
+    },
+    {
+      "id": "who", "nav": "Who speaks Spanish", "q": "Who will I talk to in Spanish?",
+      "a": "Juanita Casillas, RADT, is an alcohol and drug counselor who speaks Spanish. She leads groups and one-on-one sessions, and you can work with her in Spanish. Our physicians are bilingual too, so you can talk about medication in your own language.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": ["juanita-casillas"],
+        "review": "joey-juanita"
+      }
+    },
+    {
+      "id": "call", "nav": "The first call", "q": "What happens when I call?",
+      "a": "A Spanish speaker picks up at (424) 208-3120, at any hour. You can sort out most of the setup in that one call. There's no waiting list, and your first session can be just days away.",
+      "block": {
+        "type": "sheet",
+        "rows": [
+          ["Any hour", "You call", "Someone who speaks Spanish answers. Tell us what's going on in your own words."],
+          ["Within the hour", "Benefits check", "We run a free check on your plan and call you back with what we find."],
+          ["Next", "Your assessment", "A free, confidential talk in Spanish, by phone or in person. It shows wich program fits."],
+          ["Days later", "Your first session", "You walk into our Westwood center knowing where to go and who you'll meet."]
+        ]
+      }
+    },
+    {
+      "id": "programs", "nav": "PHP and IOP", "q": "Can I do PHP or IOP with Spanish support?",
+      "a": "Yes. Spanish speakers join both of our main programs, and the Spanish-speaking parts of your care come along at either level. That includes your work with Juanita and your visits with a bilingual physician.",
+      "note": "If you need detox before you start, we line it up with a detox provider we trust and keep your place.",
+      "cta": true,
+      "block": {
+        "type": "path",
+        "steps": [
+          {"t": "PHP", "d": "Weekdays from about 9am to 3pm, usually for two to four weeks.", "href": "/programs/php"},
+          {"t": "IOP", "d": "Three hours at a time, a few days a week. There's an evening track for after work.", "href": "/programs/iop"},
+          {"t": "Alumni", "d": "Alumni groups every week and a check-in each month, for one full year."}
+        ]
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Does insurance pay the same for care in Spanish?",
+      "a": "The language of your care doesn't change your coverage. What your plan pays depends on the plan and your medical need. We work with most major PPO plans. The benefits check is free, and someone can explain the results to you in Spanish.",
+      "note": "Under California's SB 855 and federal parity law, health plans must cover medically necessary mental health and addiction care.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays for PHP or IOP"]}
+    },
+    {
+      "id": "family", "nav": "Family", "q": "Can my family be part of treatment in Spanish?",
+      "a": "Yes. Family sessions are offered in Spanish, so the people at home can understand treatment and learn how to help. With your written permission, we can keep them in the loop. Federal privacy rules cover your records, and your employer never hears from us.",
+      "cta": true
+    },
+    {
+      "id": "espanol", "nav": "En español", "q": "¿Puedo hablar con alguien en español ahora mismo?",
+      "a": "Sí. Llame al (424) 208-3120 a cualquier hora y le contesta una persona que habla español. La llamada es gratis y confidencial. Si prefiere leer primero, [nuestra página en español](/espanol) tiene la información en su idioma."
+    }
+  ]
+}

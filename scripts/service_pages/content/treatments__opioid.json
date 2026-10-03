@@ -1,0 +1,84 @@
+{
+  "h1": "Opioid Addiction Treatment in Los Angeles",
+  "sub": "Medication and therapy for opioid addiction at our Westwood center, and you sleep at home every night. Our [addiction treatment center in Los Angeles](/) treats everything from pain pills to fentanyl.",
+  "hero": {
+    "img": "individual-therapy-room",
+    "alt": "A private therapy room at Golden State Rehab with a sofa and an armchair",
+    "caption": "One-on-one sessions happen in here",
+    "note": ["Suboxone + therapy", "managed by our medical team"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it involves", "q": "What does opioid addiction treatment involve?",
+      "a": "Opioid addiction changes the brain's reward system, whether it started with a pain prescription or with heroin from the street. Stopping without help gets very hard. We treat it with medication like buprenorphine (Suboxone) plus therapy, in a full-day program (PHP) or in 3-hour sessions a few days a week (IOP).",
+      "note": "All of it happens at our center on Westwood Blvd, a few minutes from the 405 and the 10.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "brain", "t": "CBT", "d": "Cognitive behavioral therapy. You work on the triggers and thought patterns behind your use, and make a plan for cravings and high-risk moments."},
+          {"icon": "users", "t": "Opioid-focused groups", "d": "Peer support and accountability from people who know what opioid recovery takes."},
+          {"icon": "target", "t": "Contingency management", "d": "Small rewards for clean tests and for showing up. It's one of the most effective behavorial tools for opioid addiction."},
+          {"icon": "heart", "t": "Trauma care", "d": "Opioid addiction often comes with trauma or PTSD. We treat both together, as part of the same plan."}
+        ]
+      }
+    },
+    {
+      "id": "detox", "nav": "Detox first", "q": "Do I need detox before I start Suboxone?",
+      "a": "Usually not. Buprenorphine (Suboxone) relieves withdrawal itself, so many people start it early in outpatient care. If you've been using [fentanyl](/treatments/fentanyl), the start takes more care, because fentanyl stays in the body longer. Your free assessment tells us what's safe for you.",
+      "note": "If detox is the safer first step for you, we set it up with a trusted detox provider and hold your spot.",
+      "cta": true,
+      "block": {
+        "type": "steps",
+        "items": [
+          {"t": "Free assessment", "d": "By phone or in person. We go over what you've been using and for how long."},
+          {"t": "A plan for your start", "d": "Our medical team picks a safe way to begin buprenorphine, with extra care if fentanyl is involved."},
+          {"t": "Medication early on", "d": "Buprenorphine eases withdrawal and cravings, so your head is clear enough for therapy."},
+          {"t": "Therapy and groups", "d": "You start PHP or IOP here in Westwood and go home at night."}
+        ]
+      }
+    },
+    {
+      "id": "meds", "nav": "Suboxone or Vivitrol", "q": "Should I take Suboxone or Vivitrol?",
+      "a": "Our medical team helps you choose. Buprenorphine (Suboxone) can start early and eases withdrawal while you settle into treatment. Naltrexone (Vivitrol) is a non-opioid option for people who have already finished detox and want nothing opioid in their system.",
+      "block": {
+        "type": "compare",
+        "cols": [
+          {"t": "Buprenorphine (Suboxone)", "rows": ["Eases withdrawal and cravings", "Blocks the effect of other opioids", "Lowers your risk of overdose", "You can work and live your normal day on it"]},
+          {"t": "Naltrexone (Vivitrol)", "dark": true, "rows": ["A non-opioid medication", "Starts after detox is done", "Comes in an extended-release form", "Blocks opioid receptors, so using brings no reward"]}
+        ]
+      }
+    },
+    {
+      "id": "myth", "nav": "Trading drugs", "q": "Isn't Suboxone just trading one drug for another?",
+      "a": "No. Buprenorphine is medicine for a medical condition. At a steady prescribed dose it doesn't make you high. It quiets withdrawal and cravings so therapy has room to work. SAMHSA and the American Society of Addiction Medicine both support its use.",
+      "note": "More from [NIDA](https://nida.nih.gov/publications/research-reports/medications-to-treat-opioid-addiction/overview) and [SAMHSA](https://www.samhsa.gov/medications-substance-use-disorders).",
+      "cta": true,
+      "block": {
+        "type": "list",
+        "items": [
+          "Medications like buprenorphine lower the risk of dying from an overdose.",
+          "People on MAT (medication-assisted treatment) are more likely to stay in treatment.",
+          "People on MAT tend to do better at work and at home.",
+          "Some programs still discourage MAT. Here it's part of the plan."
+        ]
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Will my insurance pay for opioid treatment?",
+      "a": "It depends on your plan. We work with most major PPO plans, and many plans may cover medication and therapy for opioid addiction. We check your benefits for free, usually within the hour, so you can decide with the facts in hand.",
+      "note": "Under federal parity law and California's SB 855, health plans have to cover medically necessary addiction care.",
+      "block": {"type": "insurance", "items": ["How much of your deductible is left", "Your network status", "What your plan pays for MAT and therapy"]}
+    },
+    {
+      "id": "work", "nav": "Job & privacy", "q": "Will my boss find out I'm on Suboxone?",
+      "a": "Not from us. HIPAA and 42 CFR Part 2, a federal privacy law written for addiction treatment, protect your records, and we never contact your employer. Most of our clients keep working. [IOP](/programs/iop) has morning and evening tracks, and many sessions can happen by telehealth.",
+      "note": "If you do need time off, federal FMLA and California's CFRA usually protect your job, and the leave request doesn't have to say why.",
+      "cta": true
+    },
+    {
+      "id": "after", "nav": "After detox", "q": "I just finished detox. What do I do now?",
+      "a": "Call us for a free assessment. Most people start within days of their first call, so the support doesn't stop when detox ends. If you've finished withdrawal and want a non-opioid medication, naltrexone (Vivitrol) is one way to protect the progress you made.",
+      "block": {"type": "quote", "review": "kali-detox"}
+    }
+  ]
+}

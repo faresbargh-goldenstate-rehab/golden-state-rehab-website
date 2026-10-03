@@ -1,0 +1,164 @@
+{
+  "h1": "Alcoholism Treatment Program in Los Angeles",
+  "sub": "A structured outpatient program for alcohol use disorder, with PHP and IOP tracks in Westwood or by telehealth. It's one of the core programs at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "reception-lobby",
+    "alt": "The front desk and backlit logo in the Golden State Rehab lobby",
+    "caption": "Our front desk on Westwood Blvd",
+    "note": [
+      "PHP or IOP",
+      "you sleep at home"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it is",
+      "q": "What is an alcoholism treatment program?",
+      "a": "It's more structured than seeing a therapist about drinking. You get set treatment hours each week and a primary therapist who owns your case. Support is heaviest at the start and tapers as you get stronger. It all runs outpatient at our Westwood center, so you sleep in your own bed."
+    },
+    {
+      "id": "who",
+      "nav": "Who it's for",
+      "q": "Who is the program for?",
+      "a": "People in very different places with their drinking. Your intake assessment decides where you start. After that, your plan adjusts to how you're doing, week by week.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You're a professional, and your drinking has crept up over time.",
+          "You're a parent who has tried to cut back alone and couldn't.",
+          "You're leaving detox or a residential stay and want structure before you're on your own.",
+          "You can't step away from your job, so you need evening hours."
+        ],
+        "card": {
+          "title": "Your family can be part of it",
+          "text": "When it helps, we bring family members into the process. Recovery goes better when the people you live with know how to suport you."
+        }
+      }
+    },
+    {
+      "id": "start",
+      "nav": "How to start",
+      "q": "How do I start the program?",
+      "a": "Call us or verify your insurance, then do a free assessment by phone or in person. Most people start within days. If you drink heavily every day, don't stop on your own first. Withdrawal can be dangerous, and we can set up detox with a trusted provider while we hold your place.",
+      "block": {
+        "type": "links",
+        "items": [
+          {
+            "t": "Alcohol addiction treatment",
+            "d": "How withdrawal works and which medicines help with cravings",
+            "href": "/treatments/alcohol"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tracks",
+      "nav": "PHP vs IOP",
+      "q": "What's the difference between PHP and IOP?",
+      "a": "PHP is our most structured level, with full weekdays of treatment while you live at home. IOP is the program's workhorse, with enough structure to keep recovery steady while you keep working. Many people start in PHP when drinking has upended daily life, then step down.",
+      "block": {
+        "type": "compare",
+        "cols": [
+          {
+            "t": "PHP track",
+            "rows": [
+              "About 6 hours a day, Monday to Friday",
+              "Usually two to four weeks",
+              "Best when drinking has thrown off your whole routine",
+              "Hard to fit around a full-time job"
+            ]
+          },
+          {
+            "t": "IOP track",
+            "dark": true,
+            "rows": [
+              "3-hour sessions, 3 to 5 days a week",
+              "Often lasts a couple of months",
+              "Morning or evening track",
+              "In person in Westwood or by video anywhere in California"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "weeks",
+      "nav": "The weeks",
+      "q": "What do the weeks look like?",
+      "a": "Most people move from steadying their routine to building skills, then step down to fewer hours. Each step down is made with your therapist, based on how stable your sobriety is. Everyone's timeline is their own.",
+      "cta": true,
+      "block": {
+        "type": "sheet",
+        "rows": [
+          [
+            "Early",
+            "Steady the ground",
+            "Show up on a regular schedule and get your sleep and routine back, with psychiatric support if you need it."
+          ],
+          [
+            "Core",
+            "Skills and relapse prevention",
+            "Name your triggers and practice saying no in group. One on one, you work on what alcohol has been doing for you."
+          ],
+          [
+            "Later",
+            "Step down",
+            "Hours taper from PHP to IOP, then to fewer days, so support eases off slowly."
+          ],
+          [
+            "After",
+            "Alumni",
+            "A full year of weekly alumni groups and monthly check-ins."
+          ]
+        ],
+        "photos": [
+          [
+            "reading-lounge",
+            "The reading lounge at Golden State Rehab",
+            "The reading lounge"
+          ],
+          [
+            "tv-lounge",
+            "The TV lounge at Golden State Rehab",
+            "The TV lounge"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "therapist",
+      "nav": "Your therapist",
+      "q": "Will I have my own therapist?",
+      "a": "Yes. You meet with your primary therapist at least once a week, at every level of the program. That's where the work gets specific, like the situations you drink in and your plan for the week ahead. Groups are the backbone of both PHP and IOP.",
+      "note": "If it fits your plan, our psychiatric team can add anti-craving medicine such as naltrexone. You and your prescriber decide.",
+      "block": {
+        "type": "quote",
+        "review": "desteny"
+      }
+    },
+    {
+      "id": "online",
+      "nav": "Online & work",
+      "q": "Can I do the program online or around work?",
+      "a": "Yes. The program runs by video anywhere in California,. The evening IOP track is built for people who can't step away from a job. PHP takes full weekdays, and many people use it as a short, intensive phase before moving to evening IOP.",
+      "note": "In person, we're minutes from the 405 and the 10, on Westwood Blvd between Santa Monica Blvd and Olympic, with parking.",
+      "cta": true
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will insurance pay for the program?",
+      "a": "Many plans may cover PHP and IOP for alcohol use disorder when treatment is medically necessary. We work with most major PPO plans and check your benefits for free, usually within the hour. Checking doesn't commit you to anything.",
+      "note": "Most plan deductibles reset on January 1.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible",
+          "Your network status",
+          "What your plan pays for each track"
+        ]
+      }
+    }
+  ]
+}

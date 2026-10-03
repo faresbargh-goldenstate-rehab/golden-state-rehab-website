@@ -1,0 +1,134 @@
+{
+  "h1": "Cocaine Addiction Treatment in Los Angeles",
+  "sub": "Outpatient therapy for cocaine and crack cocaine use, built on the methods research backs most. Care happens at our [addiction treatment center in Los Angeles](/) in Westwood, and most people keep working.",
+  "hero": {
+    "img": "recreation-room",
+    "alt": "The recreation room at Golden State Rehab in Westwood",
+    "caption": "The rec room at our Westwood center",
+    "note": [
+      "Usually no detox",
+      "most start right away"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it is",
+      "q": "What is cocaine addiction treatment?",
+      "a": "It's outpatient care for people who can't stop using cocaine or crack. There's no FDA-approved medicine for cocaine yet, so treatment is built on therapy. You come to our Westwood center for PHP, which takes up full weekdays, or IOP, which is a few 3-hour sessions a week. You sleep at home with either one."
+    },
+    {
+      "id": "signs",
+      "nav": "Signs",
+      "q": "How do I know if my cocaine use is a problem?",
+      "a": "Cocaine use often stays hidden. Plenty of people look fine at work until the costs get too big to ignore. Common signs are using more than you planned and cravings that are hard to fight. If that sounds like you, a free and private call is a good next step. We answer 24/7.",
+      "cta": true,
+      "block": {
+        "type": "list",
+        "items": [
+          "You use more than you planned, or more often.",
+          "Getting it and getting over it take up a lot of your time.",
+          "The cravings are hard to fight.",
+          "You keep using even as your money or your relationships suffer.",
+          "You've pulled away from people and things that don't involve cocaine.",
+          "You need more to get the same high.",
+          "You've tried to cut down or stop on your own, and it didn't last."
+        ]
+      }
+    },
+    {
+      "id": "detox",
+      "nav": "Detox & the crash",
+      "q": "Do I need detox to quit cocaine?",
+      "a": "Usually not. Cocaine doesn't cause the dangerous physical withdrawal that alcohol can. The hard part is the crash, with low moods and strong cravings that pull you back to using. Most people start outpatient care right away, and your free assessment confirms what's right for you.",
+      "note": "If you've also been drinking heavily or taking benzos, tell us on the first call. Withdrawal from those can be dangerous.",
+      "cta": true,
+      "block": {
+        "type": "steps",
+        "items": [
+          {
+            "t": "Use",
+            "d": "The rush hits fast and fades just as fast."
+          },
+          {
+            "t": "Crash",
+            "d": "Low mood and exhaustion set in."
+          },
+          {
+            "t": "Crave",
+            "d": "The pull to use again gets louder than anything else."
+          },
+          {
+            "t": "Use again",
+            "d": "The loop starts over. Therapy gives you a way out of it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "medication",
+      "nav": "Medication",
+      "q": "Is there a medication for cocaine addiction?",
+      "a": "Not yet. The FDA hasn't approved one, so treatment centers on therapy. Many people use cocaine to cope with depression or ADHD. When that's part of the picture, our psychiatric team treats it too, because leaving it untreated keeps the risk of relapse high.",
+      "note": "Sources: [NIDA cocaine research report](https://nida.nih.gov/publications/research-reports/cocaine) and [NIDA DrugFacts on cocaine](https://nida.nih.gov/publications/drugfacts/cocaine).",
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "brain",
+            "t": "CBT",
+            "d": "Cognitive behavioral therapy has the most research behind it for cocaine. You map out your triggers, from certain people to certain moods, and practice ways to ride out a craving without using."
+          },
+          {
+            "icon": "badge-check",
+            "t": "Contingency management",
+            "d": "You earn rewards for cocaine-free urine tests. It helps most at the begining, when the crash and the cravings hit hardest."
+          },
+          {
+            "icon": "compass",
+            "t": "Motivational interviewing",
+            "d": "Cocaine can feel tied to your social life or to how you see yourself. MI helps you sort out what you're looking for when you use, and what you want instead."
+          },
+          {
+            "icon": "shield-check",
+            "t": "Relapse prevention",
+            "d": "Slips tend to happen in the same spots, like a party or a certain mood. You plan for those moments ahead of time and practice what you'll do."
+          }
+        ]
+      }
+    },
+    {
+      "id": "friends",
+      "nav": "Your friends",
+      "q": "What if my friends still use?",
+      "a": "That's one of the hardest parts, and our groups work on it head on. You talk through peer pressure and the people you used with. Over time you build a social life that doesn't revolve around cocaine, with people who get what you're going through.",
+      "block": {
+        "type": "quote",
+        "review": "mikey"
+      }
+    },
+    {
+      "id": "work",
+      "nav": "Work & privacy",
+      "q": "Can I keep my job and keep this private?",
+      "a": "Yes. Most of our clients keep working or stay in school. [IOP](/programs/iop) has a morning track and an evening track, and you can join by telehealth. We never contact your employer, and your records fall under HIPAA and 42 CFR Part 2.",
+      "note": "42 CFR Part 2 is a federal law written for addiction treatment records. We share nothing without your written consent.",
+      "cta": true
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will my insurance pay for cocaine rehab?",
+      "a": "It depends on your plan. We work with most major PPO plans, and we check your benefits for free, usually within the hour. Under federal parity law and California's SB 855, health plans must cover medically necessary addiction care.",
+      "note": "Our admissions team walks you through your options without pressure.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible",
+          "Your network status",
+          "What your plan pays for IOP"
+        ]
+      }
+    }
+  ]
+}

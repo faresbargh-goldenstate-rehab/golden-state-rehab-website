@@ -1,0 +1,84 @@
+{
+  "h1": "Outpatient Drug Rehab in Los Angeles",
+  "sub": "Addiction treatment you go to during the day or evening while you live at home. It's the heart of our [rehabilitation center in Los Angeles](/rehabilitation-center).",
+  "hero": {
+    "img": "waiting-area",
+    "alt": "The waiting area at Golden State Rehab, with two leather swivel chairs on a round rug",
+    "caption": "The waiting area in Suite 425",
+    "note": ["3 levels of care", "home every night"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What is it", "q": "What is outpatient drug rehab?",
+      "a": "Outpatient rehab is structured addiction treatment you attend during the day or evening while living at home. At our Westwood center it comes in three levels, from full weekdays down to a few sessions a week. You sleep in your own bed in all of them.",
+      "note": "We treat alcohol, opioids, fentanyl, meth and cocaine, plus the mental health conditions that often come with them."
+    },
+    {
+      "id": "levels", "nav": "The 3 levels", "q": "How are the levels of outpatient care different?",
+      "a": "It mostly comes down to hours. You start at the level your free assessment points to, and many people step down to fewer hours as they get stronger. The clinical team stays with you at every level.",
+      "note": "Read [what your first week of outpatient rehab looks like](/blog/first-week-of-outpatient-rehab).",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "sun", "t": "PHP, partial hospitalization", "d": "About 6 hours a day, Monday to Friday, roughly 9am to 3pm. The most support you can get while living at home."},
+          {"icon": "clock", "t": "IOP, intensive outpatient", "d": "3-hour sessions, 3 to 5 days a week, about 9 to 15 hours in all. Morning and evening tracks."},
+          {"icon": "video", "t": "Telehealth", "d": "The IOP schedule over encrypted video, from anywhere in California. [How telehealth works](/programs/telehealth)"}
+        ]
+      }
+    },
+    {
+      "id": "fit", "nav": "Who it's for", "q": "Is outpatient rehab enough, or do I need inpatient?",
+      "a": "Outpatient works best when your life is steady enough to support recovery at home. You practice new skills in your own life the same day you learn them. We compare both in [inpatient versus outpatient rehab](/blog/inpatient-vs-outpatient-rehab), including when we tell callers to choose inpatient.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You have a safe, stable place to sleep at night.",
+          "You're medically stable, without a high risk of severe withdrawal.",
+          "You need more then weekly therapy, but not 24-hour care.",
+          "You want to keep working or caring for your family.",
+          "You're stepping down from detox or residential care."
+        ],
+        "card": {
+          "title": "We'll tell you if inpatient fits better",
+          "text": "Your assessment is free, by phone or in person. Some people need 24-hour care, and if that's you, we'll say so plainly before you commit to anything."
+        }
+      }
+    },
+    {
+      "id": "detox", "nav": "Detox first", "q": "Do I need detox before outpatient rehab?",
+      "a": "Sometimes. Heavy daily drinking, or high doses of opioids or benzodiazepines, can cause dangerous withdrawal that needs 24-hour medical detox first. Your free assessment screens for it. Detox happens by referral, so we set it up with a trusted provider.",
+      "cta": true,
+      "block": {
+        "type": "steps",
+        "items": [
+          {"t": "Call us anyway", "d": "Tell admissions what you've been using and how much. It stays confidential."},
+          {"t": "We set up detox", "d": "A trusted detox provider manages your withdrawal around the clock."},
+          {"t": "Your spot is held", "d": "Your place in our program waits for you while you're in detox."},
+          {"t": "Step into outpatient", "d": "You go straight from detox into the level of care that fits."}
+        ]
+      }
+    },
+    {
+      "id": "works", "nav": "Does it work", "q": "Does outpatient rehab work as well as inpatient?",
+      "a": "For most people with a substance use disorder, the research says yes. A review in Psychiatric Services found intensive outpatient programs get results comparable to inpatient and residential care ([McCarty et al., 2014](https://pmc.ncbi.nlm.nih.gov/articles/PMC4152944/)). Matching the level of care to your needs matters most."
+    },
+    {
+      "id": "include", "nav": "What's included", "q": "What does outpatient treatment include?",
+      "a": "Every level mixes group therapy with one-on-one sessions, and our psychiatrist is part of your care. If depression or anxiety sits under the drinking or using, we treat both at once. That's called dual diagnosis care.",
+      "note": "Medication can help too, like naltrexone for alcohol or buprenorphine (Suboxone) for opioids and fentanyl.",
+      "block": {"type": "quote", "review": "desteny"}
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Will insurance pay for outpatient rehab?",
+      "a": "We work with most major PPO plans, and many plans may cover outpatient rehab when it's medically necessary. Our admissions team checks your benefits for free, usually within the hour, so you know where you stand before you commit to anything.",
+      "note": "California's SB 855 requires health plans to cover medically necessary addiction treatment.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "Which levels of care your plan pays for"]}
+    },
+    {
+      "id": "work", "nav": "Your job", "q": "Can I keep working during outpatient rehab?",
+      "a": "For most people, yes. IOP sessions run about 3 hours, so they fit before or after work, and telehealth skips the drive. We never notify your employer, and HIPAA and 42 CFR Part 2 protect your records. Call any hour at (424) 208-3120, in English or Spanish.",
+      "cta": true
+    }
+  ]
+}

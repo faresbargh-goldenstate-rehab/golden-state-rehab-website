@@ -1,0 +1,168 @@
+{
+  "h1": "Dual Diagnosis Treatment in Los Angeles",
+  "sub": "One team treats your mental health and your substance use together, with one plan for both. It's built into every program at our [addiction treatment center in Los Angeles](/) in Westwood.",
+  "hero": {
+    "img": "individual-therapy-room",
+    "alt": "A private therapy room at Golden State Rehab with a sofa and an armchair",
+    "caption": "A private room for one-on-one therapy",
+    "note": [
+      "One team",
+      "for both conditions"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it is",
+      "q": "What is dual diagnosis?",
+      "a": "Dual diagnosis means you have a mental health condition and a substance use problem at the same time. Doctors also call it co-occurring disorders. Depression with heavy drinking is one common example. The two feed each other, so we treat them together, with one team and one plan.",
+      "note": "Source: [National Institute of Mental Health](https://www.nimh.nih.gov/health/topics/substance-use-and-mental-health)."
+    },
+    {
+      "id": "pairs",
+      "nav": "Common pairs",
+      "q": "What conditions do you treat together?",
+      "a": "Many different pairs. Two of the most common are depression with alcohol use and PTSD with opioid use. If you've struggled with both mental health and substances, and neither one fully explains how you feel, treating both together may be the piece that's been missing.",
+      "cta": true,
+      "block": {
+        "type": "list",
+        "items": [
+          "Depression and alcohol use",
+          "Anxiety and benzodiazepine or alcohol dependence",
+          "PTSD and opioid use",
+          "Bipolar disorder and substance use",
+          "ADHD and stimulant misuse",
+          "Complex trauma and more than one substance",
+          "Personality disorders and addiction"
+        ]
+      }
+    },
+    {
+      "id": "why",
+      "nav": "Why both at once",
+      "q": "Why can't I just fix one problem first?",
+      "a": "The untreated one tends to pull the other back. Many people start using to cope with anxiety or low moods, and over time the using makes those symptoms worse. Treating only one side raises the risk of relapse, so our team works on both at the same time.",
+      "block": {
+        "type": "compare",
+        "cols": [
+          {
+            "t": "One problem at a time",
+            "rows": [
+              "Two separate providers, often with gaps between them",
+              "The untreated condition can drag the other one back",
+              "Medications handled by different people",
+              "A higher chance of relapse"
+            ]
+          },
+          {
+            "t": "Both together",
+            "dark": true,
+            "rows": [
+              "One clinical team for both conditions",
+              "A single plan for your mental health and your substance use",
+              "Groups with peers who live with both",
+              "Care at every level, from PHP to evening [IOP](/programs/iop)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "team",
+      "nav": "Your team",
+      "q": "Who treats the mental health side?",
+      "a": "Dr. Eric Chaghouri, our medical director, is a board-certified psychiatrist who trained at USC. He manages medication for both conditions. Your therapist works from the same plan, using CBT, short for cognitive behavioral therapy, adapted for people who live with both.",
+      "note": "Nechama Berkowitz, APCC, is our trauma-informed therapist, for people whose substance use is tied to trauma or PTSD.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": [
+          "eric-chaghouri",
+          "ari-labowitz",
+          "viola-sulahian",
+          "nechama-berkowitz"
+        ],
+        "review": "joey-viola"
+      }
+    },
+    {
+      "id": "groups",
+      "nav": "Groups",
+      "q": "What are dual diagnosis groups like?",
+      "a": "You sit with peers who live with both a mental health condition and addiction. Hearing someone describe what you've felt eases the shame and the isolation. The group keeps you accountable between sessions, and it becomes a community you can lean on."
+    },
+    {
+      "id": "meds",
+      "nav": "Your medication",
+      "q": "What happens to the medication I already take?",
+      "a": "Our psychiatrist goes over it during your first evaluation. From there, your mental health medication and any medication for your recovery are managed as one plan, with a close eye on how they interact. It helps to bring a list of everything you take.",
+      "block": {
+        "type": "steps",
+        "items": [
+          {
+            "t": "Full evaluation",
+            "d": "We look at your mental health and your substance use, and at how each one feeds the other."
+          },
+          {
+            "t": "One plan",
+            "d": "Your psychiatrist and your therapist build a single plan, so nothing falls into the gap between two systems."
+          },
+          {
+            "t": "Watching interactions",
+            "d": "Medications for both conditions get checked against each other as you go."
+          },
+          {
+            "t": "Adjusting",
+            "d": "As your brain chemistry settles in recovery, your treatment shifts with it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "life",
+      "nav": "Privacy & family",
+      "q": "Will my boss or my family find out?",
+      "a": "Not from us. We never contact employers, and HIPAA protects your records. Substance use records get extra federal protection under 42 CFR Part 2. If you want your family involved, family therapy can help them understand both conditions and how to support you.",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "lock",
+            "t": "Your consent first",
+            "d": "We need your written consent before we share anything, apart from rare cases the law requires."
+          },
+          {
+            "icon": "moon",
+            "t": "Evening IOP",
+            "d": "[IOP](/programs/iop) has an evening track, so you can get help and keep working."
+          },
+          {
+            "icon": "video",
+            "t": "Telehealth",
+            "d": "Join sessions by video from anywhere in California on days you can't make it to Westwood."
+          },
+          {
+            "icon": "users",
+            "t": "Your family",
+            "d": "Family sessions help the people close to you learn what you're dealing with. They're availible in Spanish too."
+          }
+        ]
+      }
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Does insurance pay for dual diagnosis treatment?",
+      "a": "Plans may cover it. Federal parity law and California's SB 855 require health plans to cover medically necessary mental health and addiction treatment. We work with most major PPO plans and check your benefits for free before you commit to anything.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible",
+          "Your mental health and addiction benefits",
+          "What your plan pays at each level of care"
+        ]
+      }
+    }
+  ]
+}

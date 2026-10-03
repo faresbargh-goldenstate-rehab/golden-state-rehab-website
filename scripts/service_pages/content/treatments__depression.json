@@ -1,0 +1,84 @@
+{
+  "h1": "Depression Treatment in Los Angeles",
+  "sub": "Help for depression that hasn't lifted, with therapy and medication support at our Westwood clinic. It's part of our [outpatient mental health treatment](/mental-health) on the Westside.",
+  "hero": {
+    "img": "reading-lounge",
+    "alt": "The reading lounge at Golden State Rehab, with two cream armchairs in front of tall bookshelves",
+    "caption": "The reading lounge, a quiet corner between sessions",
+    "note": ["Free assessment", "by phone or in person"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it is", "q": "What is depression?",
+      "a": "Depression is [one of the most common](https://www.nimh.nih.gov/health/statistics/major-depression) mental health conditions, and it's more than a sad week. It drags down your sleep and your energy, and the things you used to enjoy stop feeling good. You can't just snap out of it, but it does respond to treatment."
+    },
+    {
+      "id": "signs", "nav": "Signs", "q": "Is this depression or just a rough patch?",
+      "a": "A rough patch usually lifts in a few days. Depression hangs on and starts to change how you get through the day. If several of these have lasted more than two weeks, it's worth a free assessment.",
+      "note": "If you're thinking about suicide, call or text 988, the Suicide and Crisis Lifeline. Someone answers any time, day or night.",
+      "block": {
+        "type": "list",
+        "items": [
+          "A low or empty mood most days",
+          "Losing interest in things you used to love",
+          "Sleeping much more or much less than usual",
+          "Feeling worn out even on easy days",
+          "Trouble focusing or making small decisions",
+          "Feeling worthless or guilty a lot of the time",
+          "Thoughts of death or suicide"
+        ]
+      }
+    },
+    {
+      "id": "treat", "nav": "Treatment", "q": "How do you treat depression?",
+      "a": "Most of your time is talk therapy, one on one and in groups. We also help you get back into the parts of life that depression took away, a little at a time. Pulling away from people tends to make depression worse, so this part matters.",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "brain", "t": "CBT", "d": "Cognitive behavioral therapy. You learn to catch thoughts like \"I always mess up\" and check them against what happened."},
+          {"icon": "footprints", "t": "Behavioral activation", "d": "Small steps back into things you used to do, like a walk or a call to a freind, before you feel like it."},
+          {"icon": "users", "t": "Group therapy", "d": "Depression pulls you inward. Group puts you in a room with people who know what that feels like."},
+          {"icon": "leaf", "t": "Mindfulness and movement", "d": "Yoga and mindfulness practice sit next to your therapy as extra support for your mood."}
+        ]
+      }
+    },
+    {
+      "id": "meds", "nav": "Medication", "q": "Do I need medication for depression?",
+      "a": "Not always. Dr. Eric Chaghouri, our medical director and a board-certified psychiatrist, meets with you to talk through whether an antidepressant makes sense. If you try one, he checks how it's working and adjusts the dose with you. Medication is always your choice, and he explains the options without pressure.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": ["eric-chaghouri", "ari-labowitz", "viola-sulahian"],
+        "review": "kali-life"
+      }
+    },
+    {
+      "id": "more", "nav": "More support", "q": "How do I know weekly therapy isn't enough?",
+      "a": "If you're in therapy and maybe on medication but still can't function the way you want, it may be time for more support. IOP, our intensive outpatient program, gives you more hours each week without a hospital stay. If you need even more, PHP, our day program, runs about 6 hours a day on weekdays.",
+      "block": {
+        "type": "compare",
+        "cols": [
+          {"t": "Weekly therapy", "rows": ["About one hour a week", "Usually one therapist", "A good fit when you're mostly coping"]},
+          {"t": "IOP", "dark": true, "rows": ["3-hour sessions, 3 to 5 days a week", "Therapy plus group sessions", "Morning or evening track", "Home every night"]}
+        ]
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Does insurance help with the cost?",
+      "a": "Your plan may cover depression treatment. California's SB 855 and federal parity law require health plans to cover medically necessary mental health care. We work with most major PPO plans. We check your benefits for free and explain them in plain English.",
+      "note": "Many deductibles reset on January 1. If you've already met yours this year, that can make now a good time to start.",
+      "block": {"type": "insurance", "items": ["How much of your deductible is left", "Your network status", "What your plan pays for therapy and psychiatry"]}
+    },
+    {
+      "id": "work", "nav": "Work", "q": "Can I keep working during depression treatment?",
+      "a": "Many people do. IOP has a morning track and an evening track, and telehealth works from anywhere in California. If work feels impossible right now, say so in your assessment. A few weeks of PHP might be the better place to start, and we never contact your employer.",
+      "note": "Federal FMLA and California's CFRA usually protect your job while you get care for a serious health condition. Your leave request doesn't have to say why.",
+      "cta": true
+    },
+    {
+      "id": "family", "nav": "Family", "q": "Can my family be part of my treatment?",
+      "a": "Yes. With your permission, family can join sessions to learn what depression is and how to support you at home. Home life has a big effect on how treatment goes, so it often helps. We offer family sessions in Spanish too."
+    }
+  ]
+}

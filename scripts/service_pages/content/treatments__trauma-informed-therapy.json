@@ -1,0 +1,142 @@
+{
+  "h1": "Trauma-Informed Therapy in Los Angeles",
+  "sub": "Care that assumes trauma may be part of your story and never pushes you faster than you can go. It shapes everything at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "waiting-area",
+    "alt": "Two leather armchairs on a round rug in the waiting area at Golden State Rehab",
+    "caption": "Our waiting area in Westwood",
+    "note": [
+      "You set the pace",
+      "nobody rushes your story"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it means",
+      "q": "What is trauma-informed therapy?",
+      "a": "Trauma-informed therapy is a way of running all care, from your first phone call to your last group. It starts from one idea: trauma may be part of your story, even if you've never called it that. Every part of treatment here is set up so it never makes things worse."
+    },
+    {
+      "id": "emdr",
+      "nav": "Is it EMDR",
+      "q": "Is trauma-informed therapy the same as EMDR?",
+      "a": "No. EMDR is one specific technique for working through hard memories. Trauma-informed care is the frame around your whole treatment, whatever method gets used inside it. Here we deliver [CBT](/treatments/cbt) and DBT inside that frame, paced to your history."
+    },
+    {
+      "id": "talk",
+      "nav": "Talking about it",
+      "q": "Do I have to talk about my trauma?",
+      "a": "No. You decide what to share and when. Many people start treatment without talking about their trauma at all. The early weeks focus on feeling steady. Deeper work starts only when you choose it and have the tools to do it safely.",
+      "note": "Grounding and emotion regulation skills come first, so you have something to lean on when feelings spike.",
+      "cta": true,
+      "block": {
+        "type": "steps",
+        "items": [
+          {
+            "t": "Settle in",
+            "d": "Learn the routine and what to expect each day, so nothing catches you off guard."
+          },
+          {
+            "t": "Build grounding skills",
+            "d": "Tools for staying steady when a memory or a trigger hits."
+          },
+          {
+            "t": "Build trust",
+            "d": "Get to know your therapist before you go anywhere hard."
+          },
+          {
+            "t": "Go deeper when you choose",
+            "d": "Processing starts when you say so, with your therapist right there with you."
+          }
+        ]
+      }
+    },
+    {
+      "id": "practice",
+      "nav": "Day to day",
+      "q": "What does trauma-informed care look like day to day?",
+      "a": "It shows up in small things. Your clinicians explain the reason behind each part of your care, and your plan is built with your input. Trauma often takes power away from people, so here you get a say in your own treatment.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "compass",
+            "t": "You control the pace",
+            "d": "Nobody makes you retell your story before you're ready. Pushing too fast can do harm."
+          },
+          {
+            "icon": "file-text",
+            "t": "No surprises",
+            "d": "You always know what's happening in your care and why. Nothing is decided behind closed doors."
+          },
+          {
+            "icon": "handshake",
+            "t": "A plan made with you",
+            "d": "You're the expert on your own life. Your clinicians work as your partners."
+          },
+          {
+            "icon": "house-heart",
+            "t": "A safe place",
+            "d": "A calm, predictable enviroment so your nervous system can finally stand down."
+          }
+        ]
+      }
+    },
+    {
+      "id": "addiction",
+      "nav": "Trauma & addiction",
+      "q": "How is trauma tied to my drinking or using?",
+      "a": "For many people, substances started as the most reliable relief they could find for pain nobody helped them carry. Alcohol can quiet a body that's always on alert, and opioids do something similar for pain that feels unbearable. When treatment takes the substance away and ignores the pain under it, relapse often follows. We work on both at once."
+    },
+    {
+      "id": "fit",
+      "nav": "Is it for me",
+      "q": "Is trauma-informed therapy right for me?",
+      "a": "Everyone here gets trauma-informed care, since it runs through every program at our Westwood center. It helps most if you've lived through trauma or if past treatment felt like too much. A free assessment, by phone or in person, is the easiest place to start.",
+      "cta": true,
+      "block": {
+        "type": "list",
+        "items": [
+          "You've lived with PTSD or complex trauma, diagnosed or not.",
+          "You grew up in a home that didn't feel safe.",
+          "Your relapses tend to follow triggers or anniversaries.",
+          "You've felt pushed too hard in treatment before.",
+          "Anxiety or depression shows up alongside your drinking or using."
+        ]
+      }
+    },
+    {
+      "id": "team",
+      "nav": "Your team",
+      "q": "Who will I work with?",
+      "a": "Nechama Berkowitz, APCC, is our trauma-informed therapist. The deeper one-on-one work happens in [individual therapy](/programs/individual-therapy), at your pace. Dr. Eric Chaghouri, our medical director and psychiatrist, makes medication choices with your full history in mind. Every facilitator works from the same approach, in groups and in private sessions.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": [
+          "nechama-berkowitz",
+          "eric-chaghouri",
+          "ari-labowitz",
+          "viola-sulahian"
+        ],
+        "review": "yvette"
+      }
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Does insurance pay for trauma-informed therapy?",
+      "a": "Trauma-informed care is how we run our outpatient programs, so your plan looks at PHP or IOP. Many PPO plans may cover that care. We work with most major PPO plans and check your benefits for free, usually within the hour.",
+      "note": "Under California's SB 855, health plans must cover medically necessary care for mental health conditions like PTSD, and for addiction.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible",
+          "Your network status",
+          "What your plan pays for outpatient care"
+        ]
+      }
+    }
+  ]
+}

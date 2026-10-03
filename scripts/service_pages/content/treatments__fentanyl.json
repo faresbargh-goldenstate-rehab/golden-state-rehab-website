@@ -1,0 +1,186 @@
+{
+  "h1": "Fentanyl Addiction Treatment in Los Angeles",
+  "sub": "Fentanyl-aware outpatient care in Westwood, with a careful Suboxone start and overdose training for you and your family. It's part of our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "meditation-room",
+    "alt": "The meditation room at Golden State Rehab, with cushions on the floor",
+    "caption": "The meditation room at our Westwood center",
+    "note": [
+      "Narcan training",
+      "for every patient and family"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it involves",
+      "q": "What does fentanyl addiction treatment involve?",
+      "a": "Fentanyl is a synthetic opioid roughly 50 times stronger than heroin, so the usual opioid plan doesn't always fit. We pair a careful buprenorphine (Suboxone) start with therapy for the addiction and any anxiety or depression that comes with it. Every patient also learns how to reverse an overdose.",
+      "note": "Sources: [NIDA fentanyl facts](https://nida.nih.gov/publications/drugfacts/fentanyl) and the [CDC](https://www.cdc.gov/stop-overdose/caring/fentanyl-facts.html).",
+      "block": {
+        "type": "list",
+        "items": [
+          "A fentanyl-aware buprenorphine (Suboxone) start, planned by our medical team.",
+          "CBT for the triggers and high-risk moments that pull people back to fentanyl.",
+          "Care for trauma or depression at the same time as the addiction.",
+          "Naloxone (Narcan) training and harm-reduction tips for you and your family."
+        ]
+      }
+    },
+    {
+      "id": "hidden",
+      "nav": "Hidden fentanyl",
+      "q": "Could I be hooked on fentanyl without knowing it?",
+      "a": "Yes, and many people are. Fentanyl is now in most of LA's illicit opioid supply. It gets pressed into fake pills and mixed into other drugs, so people end up dependent on a drug they never chose. That's a medical condition, and it's very treatable.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "pill",
+            "t": "Fake M30s",
+            "d": "Counterfeit pills sold as M30 oxycodone can be pressed fentanyl."
+          },
+          {
+            "icon": "tablets",
+            "t": "Fake Xanax",
+            "d": "Pills sold as Xanax can be counterfit and carry fentanyl too."
+          },
+          {
+            "icon": "zap",
+            "t": "Stimulants",
+            "d": "Fentanyl turns up in stimulants and other street drugs as well."
+          },
+          {
+            "icon": "map-pin",
+            "t": "Here in LA",
+            "d": "Fentanyl now dominates the illicit opioid supply in Los Angeles."
+          }
+        ]
+      }
+    },
+    {
+      "id": "withdrawal",
+      "nav": "Withdrawal",
+      "q": "How long does fentanyl withdrawal last?",
+      "a": "Acute withdrawal usually starts within a day of the last use and lasts several days to about a week. Some symptoms can hang on longer. Medical support makes it safer and far easier to get through than quitting alone. If you need detox first, we set it up with a trusted provider and hold your spot.",
+      "cta": true,
+      "block": {
+        "type": "sheet",
+        "rows": [
+          [
+            "Day 1",
+            "It starts",
+            "Symptoms usually begin within a day of your last use."
+          ],
+          [
+            "Week 1",
+            "The hardest stretch",
+            "Acute withdrawal lasts several days to about a week."
+          ],
+          [
+            "After",
+            "Some symptoms linger",
+            "A few can hang on longer. Buprenorphine and therapy help with that stretch."
+          ],
+          [
+            "All along",
+            "Your medical team",
+            "They watch how you respond and adjust the plan to keep you safe and as comfortable as possible."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "suboxone",
+      "nav": "Suboxone",
+      "q": "Can I take Suboxone if I've been using fentanyl?",
+      "a": "Yes. Buprenorphine (Suboxone) is the gold-standard medicine for opioid addiction, fentanyl included. The start needs care. Fentanyl builds up in body fat, so a standard start can bring on precipitated withdrawal, a sudden rush of symptoms. Our medical team uses a fentanyl-aware start. More on [medication management](/programs/medication-management).",
+      "note": "If you'd rather take a non-opioid medication once withdrawal is over, naltrexone (Vivitrol) is another option.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": [
+          "eric-chaghouri",
+          "ari-labowitz",
+          "juanita-casillas",
+          "viola-sulahian"
+        ],
+        "review": "gregory"
+      }
+    },
+    {
+      "id": "outpatient",
+      "nav": "Outpatient",
+      "q": "Do I have to go away to residential rehab?",
+      "a": "For many people, no. Our outpatient programs, PHP and IOP, give you medical care and therapy while you live at home and keep your family close. If your assessment shows you need a higher level of care first, we help arrange it.",
+      "cta": true,
+      "block": {
+        "type": "compare",
+        "cols": [
+          {
+            "t": "PHP, partial hospitalization",
+            "rows": [
+              "About 6 hours a day, Monday to Friday",
+              "Groups plus one-on-one therapy",
+              "A common first step after detox",
+              "[How PHP works](/programs/php)"
+            ]
+          },
+          {
+            "t": "IOP, intensive outpatient",
+            "dark": true,
+            "rows": [
+              "3-hour sessions, 3 to 5 days a week",
+              "A morning or evening track",
+              "Most people keep working",
+              "[How IOP works](/programs/iop)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will insurance pay for fentanyl treatment?",
+      "a": "Many plans may cover outpatient fentanyl treatment, including the medication. We work with most major PPO plans, and we check your benefits for free, usually within the hour. You'll hear what we find before you start anything.",
+      "note": "Federal parity law and California's SB 855 require health plans to cover medically necessary addiction treatment.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "What you've paid toward your deductible",
+          "Your network status",
+          "What your plan pays for PHP or IOP"
+        ]
+      }
+    },
+    {
+      "id": "overdose",
+      "nav": "Overdose",
+      "q": "What should I do if someone is overdosing?",
+      "a": "Call 911 right away if someone is unresponsive or struggling to breathe, and give naloxone (Narcan) if you have it. With fentanyl, it may take more than one dose. Every patient and family here learns how to spot and reverse an overdose.",
+      "note": "For confidential help 24/7, call the SAMHSA National Helpline at [1-800-662-4357](tel:+18006624357) or reach us at [(424) 208-3120](tel:+14242083120).",
+      "block": {
+        "type": "steps",
+        "items": [
+          {
+            "t": "Call 911",
+            "d": "Do this first if they won't wake up or are struggling to breathe."
+          },
+          {
+            "t": "Give naloxone",
+            "d": "Naloxone (Narcan) can reverse a fentanyl overdose."
+          },
+          {
+            "t": "Be ready for more",
+            "d": "A fentanyl overdose may need more than one dose of naloxone."
+          },
+          {
+            "t": "Then get treatment",
+            "d": "Medication-assisted treatment cuts overdose deaths by roughly half."
+          }
+        ]
+      }
+    }
+  ]
+}

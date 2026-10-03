@@ -1,0 +1,91 @@
+{
+  "h1": "Mental Health Clinic in Los Angeles",
+  "sub": "Outpatient mental health treatment in Westwood, minutes from UCLA, with day and evening programs. It's the mental health side of our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "reception-lobby",
+    "alt": "The front desk and waiting chairs at Golden State Rehab, with the backlit logo on the wall",
+    "caption": "Our front desk on Westwood Blvd",
+    "note": ["Telehealth too", "anywhere in California"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it is", "q": "What is outpatient mental health treatment?",
+      "a": "Outpatient mental health treatment means you get therapy and psychiatric care here, then sleep in your own bed. You come to our Westwood clinic on a set schedule, or join by telehealth from anywhere in California. You get far more support than a weekly therapist can give, with no hospital stay."
+    },
+    {
+      "id": "treat", "nav": "What we treat", "q": "What conditions do you treat?",
+      "a": "We treat depression, anxiety, PTSD and complex trauma. We also treat bipolar disorder and other mood problems, plus the drinking or drug use that often shows up next to them.",
+      "block": {
+        "type": "links",
+        "items": [
+          {"t": "Depression", "d": "Low mood that won't lift, with therapy and medication support", "href": "/treatments/depression"},
+          {"t": "Anxiety", "d": "Constant worry and panic attacks", "href": "/treatments/anxiety"},
+          {"t": "PTSD", "d": "Trauma care at a pace you set", "href": "/treatments/ptsd"},
+          {"t": "Complex trauma", "d": "Care in phases for trauma that lasted years", "href": "/treatments/complex-trauma"},
+          {"t": "Psychiatric care", "d": "Medication checks with a psychiatrist who talks to your therapist", "href": "/programs/psychiatric-care"},
+          {"t": "Group therapy", "d": "Talk things through and practice skills with others", "href": "/programs/group-therapy"},
+          {"t": "DBT", "d": "Skills for strong emotions and hard moments", "href": "/treatments/dbt"}
+        ]
+      }
+    },
+    {
+      "id": "fit", "nav": "Is it for me", "q": "How do I know I need more than a therapist?",
+      "a": "A weekly hour helps a lot of people. When it stops being enough, you usually notice it at work or at home first. If a couple of these sound like you, a free assessment will show which level of care fits.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You see a therapist every week and still feel stuck.",
+          "You're missing work or classes because of how you feel.",
+          "You use alcohol or pills to calm down or to sleep.",
+          "You're a student near UCLA and the stress has turned into something heavier."
+        ],
+        "card": {
+          "title": "Not sure what level you need",
+          "text": "That's what the free assessment is for. It's done by phone or in person. If weekly therapy is enough for you, that's what we'll suggest."
+        }
+      }
+    },
+    {
+      "id": "time", "nav": "Schedules", "q": "How much of my week will this take?",
+      "a": "That depends on the program. PHP, our day program, is for times when symptoms make normal life hard to manage. IOP, our intensive outpatient program, is lighter, so you can keep working or studying. Some people start in PHP and step down to IOP as things settle.",
+      "cta": true,
+      "block": {
+        "type": "compare",
+        "cols": [
+          {"t": "Day program (PHP)", "rows": ["About 6 hours a day", "Monday to Friday, about 9am to 3pm", "Usually two to four weeks", "Home every night"]},
+          {"t": "Intensive outpatient (IOP)", "dark": true, "rows": ["3-hour sessions", "3 to 5 days a week", "Morning or evening track", "In Westwood or by telehealth anywhere in California"]}
+        ]
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Will insurance pay for outpatient mental health care?",
+      "a": "Your plan may cover it. We work with most major PPO plans, and we check your benefits for free, usually within the hour. You hear what we find before you decide anything.",
+      "note": "Federal parity law and California's SB 855 require health plans to cover medically necessary mental health care the same way they cover physical care.",
+      "block": {"type": "insurance", "items": ["Your deductible, which resets January 1", "Your network status", "What your plan pays for PHP or IOP"]}
+    },
+    {
+      "id": "who", "nav": "Who comes here", "q": "Who comes here for care?",
+      "a": "People come from all over the Westside, from Brentwood and Santa Monica to Culver City and Beverly Hills. Care can fit around a job or a class schedule, and family can be part of it when you want them there.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "briefcase", "t": "Working professionals", "d": "The evening IOP track fits around a full-time job, and we never contact your employer."},
+          {"icon": "graduation-cap", "t": "UCLA students", "d": "We're a short drive down Westwood Blvd from campus, so its easy to fit sessions around classes."},
+          {"icon": "house-heart", "t": "Families", "d": "With your OK, the people closest to you can join sessions and learn how to help."},
+          {"icon": "languages", "t": "En español", "d": "Our physicians are bilingual, and we offer family sessions in Spanish."}
+        ]
+      }
+    },
+    {
+      "id": "where", "nav": "Location", "q": "Where is your mental health clinic?",
+      "a": "We're at 1964 Westwood Blvd, Suite 425, south of Santa Monica Blvd and north of Olympic. It's a few minutes from the 405 and the 10, and there's parking, plus street parking nearby. Our phone line, (424) 208-3120, is answered 24/7 in English or Spanish.",
+      "note": "[Get directions on Google Maps](https://www.google.com/maps?cid=15086981718348312167)"
+    },
+    {
+      "id": "both", "nav": "With addiction", "q": "Can you treat my mental health and my drinking at the same time?",
+      "a": "Yes. When a mental health condition and drinking or drug use show up together, it's called a dual diagnosis. We treat both in one plan, with one team, so you're not going back and forth between two clinics.",
+      "cta": true,
+      "block": {"type": "quote", "review": "joey-viola"}
+    }
+  ]
+}

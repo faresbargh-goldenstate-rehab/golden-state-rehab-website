@@ -1,0 +1,83 @@
+{
+  "h1": "Psychiatric Care in Los Angeles",
+  "sub": "A psychiatrist takes the time to find the right diagnosis, then builds one plan with your therapist. It's part of our [mental health clinic in Los Angeles](/mental-health), in Westwood or by video.",
+  "hero": {
+    "img": "reading-lounge",
+    "alt": "A quiet corner at Golden State Rehab with two cream armchairs in front of tall bookshelves",
+    "caption": "The reading lounge at our Westwood center",
+    "note": ["In Westwood", "or by video statewide"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it is", "q": "What is psychiatric care?",
+      "a": "A psychiatrist is a medical doctor who treats mental health. Here, care starts with a full psychiatric evaluation before any plan gets written. That leads to a diagnosis and one plan your psychiatrist and your therapist share. Dr. Eric Chaghouri, MD, a board-certified psychiatrist and our medical director, leads it."
+    },
+    {
+      "id": "treat", "nav": "What we treat", "q": "What can a psychiatrist help me with?",
+      "a": "Our psychiatric team treats mental health conditions on their own and alongside drinking or drug use. Some people come to us after years of treatment for the wrong thing, so the evaluation looks at the whole picture before anything else.",
+      "cta": true,
+      "block": {
+        "type": "list",
+        "items": [
+          "[Depression](/treatments/depression), including depression that hasn't lifted with past treatment",
+          "[Anxiety](/treatments/anxiety), from panic attacks to the worry that fuels drinking or drug use",
+          "[PTSD](/treatments/ptsd) after a single event or after something that went on for a long time",
+          "[Complex trauma](/treatments/complex-trauma), the kind that builds up from hurt that happened over and over",
+          "Addiction together with any of these, treated in one plan"
+        ]
+      }
+    },
+    {
+      "id": "crisis", "nav": "In a crisis", "q": "What if I'm in crisis right now?",
+      "a": "Please go to the nearest ER, or call or text 988, if you're thinking about suicide with a plan or someone is in danger. We're an outpatient center, here for the steady week by week work once things are safer.",
+      "block": {
+        "type": "compare",
+        "cols": [
+          {"t": "Call 988 or go to an ER", "rows": ["Thoughts of suicide with a plan", "Psychosis, like hearing or seeing things others don't", "You or someone near you is in danger right now"]},
+          {"t": "Call us at (424) 208-3120", "dark": true, "rows": ["Depression or anxiety that keeps coming back", "A diagnosis that never felt right", "Medication that stopped helping", "Drinking or drug use mixed in with any of it"]}
+        ]
+      }
+    },
+    {
+      "id": "referral", "nav": "Referrals", "q": "Do I need a referral to see a psychiatrist?",
+      "a": "No. You don't need a referral to start with us, because the psychiatric evaluation is part of admission. Once we check your insurance, it gets scheduled as you start. Some plans have their own referral rules for psychiatry visits, and we look for those when we verify your benefits."
+    },
+    {
+      "id": "eval", "nav": "First evaluation", "q": "What happens at a psychiatric evaluation?",
+      "a": "It's a sit-down conversation with a physician. You talk about how you feel now and about your history, including past diagnoses and medications. The psychiatrist uses that to form a diagnosis and a written plan, then goes over it with you before anything begins.",
+      "note": "Bring a list of any medications you take. That's all you need to prepare.",
+      "block": {
+        "type": "steps",
+        "items": [
+          {"t": "You talk", "d": "How you feel now, plus your mental health, substance use, medical and family history."},
+          {"t": "You get a diagnosis", "d": "A clear name for what's going on. It may differ from labels you were given before."},
+          {"t": "You see the plan", "d": "A written plan that says what we're treating and how. Nothing starts until you've gone over it."},
+          {"t": "It changes with you", "d": "Your psychiatrist and your therapist revisit the plan as things shift, instead of setting it once."}
+        ]
+      }
+    },
+    {
+      "id": "meds", "nav": "Medication", "q": "Will I be required to take medication?",
+      "a": "No. Medication is a choice you make with your psychiatrist, never a rule of treatment. If they think it could help, they explain why and what to expect, along with your other options. Many clients finish treatment without any psychiatric medication at all.",
+      "cta": true,
+      "block": {"type": "quote", "review": "mikey"}
+    },
+    {
+      "id": "video", "nav": "By video", "q": "Can I see the psychiatrist by video?",
+      "a": "Yes. Evaluations and follow-ups can happen by HIPAA-compliant video anywhere in California. Many clients do the first visit in person and the follow-ups by video, or the other way around. Some situations or medications call for an in-person visit, and your psychiatrist will tell you if that applies.",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "map-pin", "t": "In Westwood", "d": "Our office is Suite 425 at 1964 Westwood Blvd, close to the 405 and the 10, with parking and street parking."},
+          {"icon": "video", "t": "By video", "d": "The same psychiatrist and the same plan, without the drive. Handy on weeks when work or trafic gets in the way."}
+        ]
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Does insurance pay for psychiatric care?",
+      "a": "Most major plans may cover a psychiatric evaluation and follow-ups when they're medically necessary. We work with most major PPO plans. Some plans set their own rules for psychiatry visits, so a free benefits check comes first, before you commit to anything.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays for psychiatry visits"]}
+    }
+  ]
+}

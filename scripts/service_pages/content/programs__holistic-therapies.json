@@ -1,0 +1,84 @@
+{
+  "h1": "Holistic Therapies in Los Angeles",
+  "sub": "Yoga and breathwork, plus other ways to calm your body, built into your program day at our [addiction treatment center in Los Angeles](/). They help clinical care stick and never replace it.",
+  "hero": {
+    "img": "meditation-room",
+    "alt": "The meditation room at Golden State Rehab, with floor cushions and soft lamps",
+    "caption": "The meditation room in Westwood",
+    "note": ["No experience", "needed for any of it"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What they are", "q": "What are holistic therapies in rehab?",
+      "a": "They're practices that care for your body while therapy works on your mind. Think trauma-sensitive yoga, breathwork, mindfulness, journaling, movement and art. Stress and addiction show up in the body as tight shoulders and shallow breathing. These sessions give you simple tools to settle down, so what you learn in therapy has somewhere calm to land."
+    },
+    {
+      "id": "practices", "nav": "The practices", "q": "Which practices will I try?",
+      "a": "Most of them happen in a group with a facilitator, as part of your PHP or IOP schedule. You don't sign up for them on their own. One part of your day might be a skills group, and another might be breathwork.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "sprout", "t": "Trauma-sensitive yoga", "d": "Gentle and choice-based. No hands-on adjustments, and every pose is optional."},
+          {"icon": "wind", "t": "Breathwork", "d": "Slow breathing that helps calm your nervous system when cravings or anxiety spike."},
+          {"icon": "book-open", "t": "Journaling", "d": "Guided writing that helps you sort through what came up in therapy."},
+          {"icon": "sparkles", "t": "Art and movement", "d": "Art for the days when words aren't enough, and simple movement excercise for energy and body awareness."}
+        ]
+      }
+    },
+    {
+      "id": "replace", "nav": "Not a replacement", "q": "Can yoga replace therapy or medication?",
+      "a": "No. These practices support clinical treatment and help it stick. Nobody here will suggest yoga instead of therapy or medication. The core of your care is still therapy, one on one and in groups.",
+      "note": "There's research behind the pairing. A [randomized trial in JAMA Psychiatry](https://pubmed.ncbi.nlm.nih.gov/24647726/) studied mindfulness-based relapse prevention as aftercare for substance use.",
+      "cta": true,
+      "block": {
+        "type": "compare",
+        "cols": [
+          {"t": "The core of your treatment", "rows": ["Individual therapy with your own therapist", "Group therapy, including CBT and DBT skills", "Psychiatric care when you need it", "Relapse prevention planning"]},
+          {"t": "What holistic sessions add", "dark": true, "rows": ["A way to calm your body when stress spikes", "A breath practice that fits in a parking lot", "Quiet time that isn't about talking", "Habits you can keep after treatment ends"]}
+        ]
+      }
+    },
+    {
+      "id": "new", "nav": "New to this", "q": "I've never done yoga or meditated. Can I still take part?",
+      "a": "Yes. You don't need any experience or fitness level. Many people try these tools for the first time in treatment. Everything is choice-based, so you can adapt a practice or sit it out.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You can keep your eyes open the whole time.",
+          "You can change any pose, or skip it.",
+          "You can sit out a session and still be part of the group.",
+          "You never get a hands-on adjustment."
+        ],
+        "card": {
+          "title": "Built with trauma in mind",
+          "text": "Every practice here is an invitation. For people with a trauma history, having that control over your own body matters a lot."
+        }
+      }
+    },
+    {
+      "id": "session", "nav": "A session", "q": "What happens in a holistic session?",
+      "a": "Most sessions happen in a group, led by a facilitator. You might do slow stretches or some quiet writing. Nobody expects you to be good at it on day one. The point is to notice how your body feels and give it a chance to slow down.",
+      "block": {"type": "quote", "review": "gregory-place"}
+    },
+    {
+      "id": "cost", "nav": "Cost", "q": "Do holistic therapies cost extra?",
+      "a": "No. They're part of the PHP and IOP program day, not an add-on with its own price. When your plan pays for your level of care, the day it pays for includes these sessions. We work with most major PPO plans and check benefits for free.",
+      "note": "California's SB 855 and federal parity law say health plans must cover medically necessary addiction and mental health treatment.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays for PHP or IOP"]}
+    },
+    {
+      "id": "after", "nav": "After treatment", "q": "Will I keep using these after rehab?",
+      "a": "That's the idea. A five-minute breathing practice works as well in your car as it does in our meditation room. The tools come back in our alumni program as part of relapse prevention, with a year of weekly groups and monthly check-ins.",
+      "cta": true,
+      "block": {
+        "type": "list",
+        "items": [
+          "In your car before a hard conversation",
+          "Stuck in traffic on the 405",
+          "At your desk when a craving shows up",
+          "In bed when your mind won't slow down"
+        ]
+      }
+    }
+  ]
+}

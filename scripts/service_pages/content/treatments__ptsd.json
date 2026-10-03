@@ -1,0 +1,85 @@
+{
+  "h1": "PTSD Treatment in Los Angeles",
+  "sub": "Trauma care where you set the pace, with a trauma-informed therapist and a psychiatrist on the same team. It's part of our [mental health clinic in Westwood](/mental-health).",
+  "hero": {
+    "img": "individual-therapy-room",
+    "alt": "A private therapy room at Golden State Rehab with a cream sofa and a leather lounge chair",
+    "caption": "A private room for one-on-one trauma work",
+    "note": ["Trauma work starts", "when you're ready"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it is", "q": "What is PTSD?",
+      "a": "PTSD, or post-traumatic stress disorder, can start when something terrifying overwhelms your mind's way of coping. The memory doesn't settle into the past. It keeps coming back as if it's happening now, and your body stays on guard. It isn't a sign of weakness, and it can be treated.",
+      "note": "Source: [National Institute of Mental Health](https://www.nimh.nih.gov/health/topics/post-traumatic-stress-disorder-ptsd)"
+    },
+    {
+      "id": "signs", "nav": "Signs", "q": "Could I have PTSD?",
+      "a": "PTSD looks different for everyone. If you went through something frightening and some of these still show up in your life, it's worth talking to someone about it. Trouble sleeping or focusing can be part of it too.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You have flashbacks or memories that push in when you don't want them.",
+          "You have nightmares about what happened.",
+          "You stay away from people or places that remind you of it.",
+          "You feel numb or far away from the people you love.",
+          "You jump at small sounds and feel on guard most of the time.",
+          "You snap at people more than you used to."
+        ],
+        "card": {
+          "title": "It doesn't have to be combat",
+          "text": "PTSD can follow any traumatic experience, not only war or assault. If something still shakes you, that's reason enough to call."
+        }
+      }
+    },
+    {
+      "id": "pace", "nav": "Your pace", "q": "Do I have to talk about my trauma right away?",
+      "a": "No. You set the pace. Treatment starts with feeling safe and learning to cope. Working through the trauma comes later, when you're ready, and some methods like EMDR don't ask you to describe the event in detail.",
+      "block": {
+        "type": "compare",
+        "cols": [
+          {"t": "First: safety and skills", "rows": ["Coping skills for hard moments", "Grounding for when a memory pulls you back", "Ways to calm a body that's on alert", "No details of the trauma needed"]},
+          {"t": "Later: trauma work", "dark": true, "rows": ["Starts only when you say you're ready", "Methods like EMDR or prolonged exposure", "Matched to your history and your pace"]}
+        ]
+      }
+    },
+    {
+      "id": "therapies", "nav": "Therapies", "q": "Which therapy works best for PTSD?",
+      "a": "Trauma-focused therapies have the strongest research behind them. No single method is best for everyone, so we match the approach to you. Trauma-focused groups can also help you feel safe around other people again, which can ease the shame and isolation trauma leaves behind.",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "refresh-cw", "t": "EMDR", "d": "Eye movement desensitization and reprocessing. It helps a memory lose its charge untill it feels like the past."},
+          {"icon": "brain", "t": "Trauma-focused CBT", "d": "You work on the beliefs trauma left behind, like self-blame or feeling unsafe everywhere."},
+          {"icon": "footprints", "t": "Prolonged exposure", "d": "With support, you face the memories and places you've been avoiding, one small step at a time."},
+          {"icon": "activity", "t": "Body-based work", "d": "Breathwork and trauma-sensitive yoga for a body that's been stuck on high alert."}
+        ]
+      }
+    },
+    {
+      "id": "meds", "nav": "Medication", "q": "Can medication help with PTSD?",
+      "a": "For some people, yes. Certain antidepressants can ease symptoms like flashbacks or nightmares enough for therapy to move forward. Dr. Eric Chaghouri talks it through with you first. If you try one, he manages it carefully alongside your therapy sessions."
+    },
+    {
+      "id": "team", "nav": "Your team", "q": "Who will treat my PTSD?",
+      "a": "Nechama Berkowitz, APCC, is our trauma-informed therapist. Dr. Eric Chaghouri, our medical director and a board-certified psychiatrist, handles medication if you need it. Ari Labowitz, LMFT, is our clinical director. Your therapist and psychiatrist work from one shared plan.",
+      "block": {
+        "type": "team",
+        "people": ["nechama-berkowitz", "eric-chaghouri", "ari-labowitz"],
+        "review": "ryan"
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Does my insurance pay for PTSD care?",
+      "a": "It may. California's SB 855 and federal parity law require health plans to cover medically necessary mental health care, and that includes trauma care. We work with most major PPO plans and check your benefits free, before you commit to anything.",
+      "note": "We usually have an answer within the hour. Start online, or call (424) 208-3120 any time.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays for trauma therapy and psychiatry"]}
+    },
+    {
+      "id": "work", "nav": "Work", "q": "Can I get PTSD treatment while working full time?",
+      "a": "Yes. IOP, our intensive outpatient program, runs 3-hour sessions on a morning or an evening track at our clinic on Westwood Blvd, a few minutes off the 405. Telehealth works from anywhere in California. Your care stays private under HIPAA, and we never contact your employer.",
+      "cta": true
+    }
+  ]
+}

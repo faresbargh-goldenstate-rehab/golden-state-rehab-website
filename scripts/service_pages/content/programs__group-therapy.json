@@ -1,0 +1,138 @@
+{
+  "h1": "Group Therapy in Los Angeles",
+  "sub": "Small groups where you work on recovery next to people who get it, led by our therapists and counselors. Groups are at the center of care at our [mental health clinic in Los Angeles](/mental-health).",
+  "hero": {
+    "img": "group-therapy-room",
+    "alt": "Chairs set in a circle in the group therapy room at Golden State Rehab",
+    "caption": "The group room at our Westwood center",
+    "note": [
+      "Your first group",
+      "you can just listen"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it is",
+      "q": "What is group therapy?",
+      "a": "Group therapy is a small session led by someone from our clinical team. Some groups teach skills for cravings and hard feelings. Others give you room to say the hard stuff out loud and be heard by people who understand.",
+      "note": "Groups meet at our center at 1964 Westwood Blvd, a few minutes from the 405 and the 10."
+    },
+    {
+      "id": "why",
+      "nav": "Why group",
+      "q": "Does group therapy help as much as one-on-one?",
+      "a": "Here you get both, and each one does a different job. Group counseling is a core behavioral therapy for addiction, according to the [National Institute on Drug Abuse](https://nida.nih.gov/publications/drugfacts/treatment-approaches-drug-addiction). Hearing from people who've been where you are takes the edge off shame and the feeling of being alone. Your private sessions go deeper into your own story."
+    },
+    {
+      "id": "talk",
+      "nav": "Do I have to talk",
+      "q": "Do I have to talk in front of people?",
+      "a": "No. You set your own pace, and plenty of people spend their first group just listening. Often the turning point comes when someone else describes the exact thing you've been ashamed of, and you realize you're not the only one.",
+      "cta": true,
+      "block": {
+        "type": "list",
+        "items": [
+          "You can just listen for your whole first group.",
+          "You decide how much of your story to tell, and when.",
+          "Nobody is pushed to share before they're ready.",
+          "When you're ready to talk, the group is ready to hear you."
+        ]
+      }
+    },
+    {
+      "id": "kinds",
+      "nav": "Types of groups",
+      "q": "What kinds of groups will I be in?",
+      "a": "You move through a few different groups each week. Each one follows a clear format but leaves room for whatever the group needs that day. There are also family education groups that teach your loved ones about addiction and setting boundaries.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "message-circle",
+            "t": "Process group",
+            "d": "An open group. You share what's going on in your life and recieve honest feedback from people who've been there."
+          },
+          {
+            "icon": "book-open",
+            "t": "Skills group",
+            "d": "CBT and DBT tools you can use on a bad day, like reframing a thought or riding out an urge."
+          },
+          {
+            "icon": "shield-check",
+            "t": "Trauma group",
+            "d": "Learn how trauma and addiction feed each other, at a pace that feels safe."
+          },
+          {
+            "icon": "life-buoy",
+            "t": "Relapse prevention",
+            "d": "Spot your triggers and your risky moments. Then build a plan for when they show up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lead",
+      "nav": "Who leads",
+      "q": "Who runs the groups?",
+      "a": "Our therapists and counselors lead every group, and each one works from a trauma-informed approach. Juanita Casillas, RADT, is one of our counselors. She leads groups and speaks Spanish. Facilitators keep the room safe for the person who's talking and for the person who isn't ready yet.",
+      "block": {
+        "type": "quote",
+        "review": "joey-juanita"
+      }
+    },
+    {
+      "id": "often",
+      "nav": "How often",
+      "q": "How often do groups meet?",
+      "a": "That depends on whether you're in PHP or IOP. PHP has several groups every weekday, from the morning check-in to the last group of the afternoon. IOP is built around group work too, with fewer hours each week. Many people keep their job during IOP by picking the evening track or joining by telehealth.",
+      "cta": true,
+      "block": {
+        "type": "compare",
+        "cols": [
+          {
+            "t": "Groups in PHP",
+            "rows": [
+              "Several groups every weekday",
+              "Check-in, skills, process and education groups",
+              "About 9am to 3pm, Monday to Friday",
+              "You go home every night"
+            ]
+          },
+          {
+            "t": "Groups in IOP",
+            "rows": [
+              "3-hour sessions, 3 to 5 days a week",
+              "A morning or evening track",
+              "One-on-one therapy each week on top of group",
+              "Join live groups from home by telehealth anywhere in California"
+            ],
+            "dark": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will my insurance pay for group therapy?",
+      "a": "Group therapy is part of PHP and IOP, and your plan may cover the program when it's medically necessary. We work with most major PPO plans. We check your benefits for free, usually within the hour, and asking doesn't commit you to anything.",
+      "note": "Most deductibles reset January 1. We'll tell you where yours stands.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible",
+          "Your network status",
+          "What your plan pays for groups in PHP or IOP"
+        ]
+      }
+    },
+    {
+      "id": "private",
+      "nav": "Privacy",
+      "q": "Will people in my group keep what I say private?",
+      "a": "Yes. Every group follows one rule: what's shared in the room stays in the room. Facilitators hold everyone to it. Your treatment records are also protected by HIPAA and 42 CFR Part 2, a federal privacy rule written for addiction treatment, and we never contact your employer.",
+      "cta": true
+    }
+  ]
+}

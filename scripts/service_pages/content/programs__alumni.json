@@ -1,0 +1,83 @@
+{
+  "h1": "Aftercare & Alumni Program in Los Angeles",
+  "sub": "Weekly alumni groups and monthly check-ins for a full year after you finish treatment. It's the part of our [addiction treatment center in Los Angeles](/) that stays with you.",
+  "hero": {
+    "img": "alumni-gathering",
+    "alt": "A big group of smiling people posed close together for a photo on a tree-lined street",
+    "caption": "An alumni day out",
+    "note": ["Weekly groups", "monthly check-ins"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What is it", "q": "What is an alumni program?",
+      "a": "It's the recovery community you keep after treatment ends. When you finish PHP or IOP with us, you get a weekly alumni group and monthly check-ins with a counselor from your team. You also get sober events, from hiking meetups to sober dinners, and the clinical team still picks up the phone."
+    },
+    {
+      "id": "join", "nav": "Joining", "q": "How do I join the alumni program?",
+      "a": "There's no separate sign-up. As you near the end of PHP or IOP, your team builds an aftercare plan with you and connects you to the alumni community. That way there's no gap between treatment and what comes next."
+    },
+    {
+      "id": "why", "nav": "Why it matters", "q": "Why stay connected after treatment ends?",
+      "a": "The first months after treatment are often the hardest. The schedule that held you steady is gone, and old routines are waiting. [SAMHSA](https://www.samhsa.gov/find-help/recovery) names community as one of four things that hold up a life in recovery. Isolation pulls the other way.",
+      "note": "We lay out a full continuing care plan in [what happens after rehab](/blog/what-happens-after-rehab).",
+      "block": {"type": "quote", "review": "kali-life"}
+    },
+    {
+      "id": "year", "nav": "Your first year", "q": "How long does alumni support last?",
+      "a": "Your scheduled support runs for a full year after you finish, with a weekly group and a monthly one-on-one check-in. Our phone line never closes, so you don't have to wait for a scheduled call when things get hard.",
+      "cta": true,
+      "block": {
+        "type": "sheet",
+        "rows": [
+          ["Last week", "Your aftercare plan", "You and your team map out what comes next before you finish PHP or IOP."],
+          ["Every week", "Alumni group", "An alumni-only peer group, led by a certified counselor."],
+          ["Every month", "Check-in", "One on one with a counselor from your team. How you're sleeping, how work is going."],
+          ["All year", "Sober events", "Hiking meetups, sober dinners, movie nights and holliday get-togethers."],
+          ["Month 12", "A full year", "Your monthly check-ins run through your first 12 months."]
+        ],
+        "photos": [
+          ["group-therapy-room", "The group therapy room at Golden State Rehab, with a circle of chairs", "The group room"],
+          ["game-room", "The game room at Golden State Rehab", "The game room"]
+        ]
+      }
+    },
+    {
+      "id": "extras", "nav": "Extras", "q": "What else do alumni get besides groups?",
+      "a": "You can call our team any hour if you're struggling, and free workshops cover the hard parts of life after treatment. When you're ready, you can give back by mentoring alumni who are newer than you.",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "phone", "t": "Always a call away", "d": "Call (424) 208-3120 when things get hard. Someone answers 24/7, in English or Spanish."},
+          {"icon": "book-open", "t": "Free workshops", "d": "Webinars on relapse prevention, coping skills, repairing relationships and rebuilding a career."},
+          {"icon": "users", "t": "People who get it", "d": "Alumni group is a room where nobody needs the backstory. Everyone there has done the work too."},
+          {"icon": "hand-helping", "t": "Give back", "d": "Mentor newer alumni once you feel steady on your feet."}
+        ]
+      }
+    },
+    {
+      "id": "slip", "nav": "If I slip", "q": "What happens if I start using again after treatment?",
+      "a": "Call us at (424) 208-3120, any hour. A return to use is a sign your support needs to change. We help you get steady first, then a free assessment shows which level of care fits now. Stepping back into IOP for a while doesn't erase the work you've done.",
+      "cta": true,
+      "block": {
+        "type": "path",
+        "steps": [
+          {"t": "PHP", "d": "Full weekdays, when you need the most support."},
+          {"t": "IOP", "d": "3 to 5 days a week, 3 hours at a time.", "href": "/programs/iop"},
+          {"t": "Alumni", "d": "Weekly groups and monthly check-ins.", "here": true}
+        ]
+      }
+    },
+    {
+      "id": "cost", "nav": "Coming back", "q": "Will insurance pay if I need to come back to treatment?",
+      "a": "Alumni get priority admission back into our programs, with no re-intake delays. We work with most major PPO plans, and many plans may cover more care when it's medically necessary. We check your benefits for free, usually within the hour.",
+      "note": "California's SB 855 and federal parity law say health plans have to cover addiction and mental health care that's medically necessary.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays to step back into IOP or PHP"]}
+    },
+    {
+      "id": "privacy", "nav": "Privacy", "q": "Is the alumni program confidential?",
+      "a": "Yes. HIPAA and 42 CFR Part 2 protect your records. Nobody is told you're involved, including your employer, and you'll never be asked to share your story in public.",
+      "note": "To ask about alumni events, [contact the alumni team](/contact)."
+    }
+  ]
+}

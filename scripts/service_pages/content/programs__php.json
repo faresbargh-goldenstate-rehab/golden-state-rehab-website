@@ -1,0 +1,96 @@
+{
+  "h1": "Partial Hospitalization Program (PHP) in Los Angeles",
+  "sub": "Full-day treatment for addiction and mental health at our Westwood center, and you go home every night. It's the most intensive program at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "group-therapy-room",
+    "alt": "The group therapy room at Golden State Rehab, with a circle of chairs",
+    "caption": "The group room, where most of the day happens",
+    "note": ["Mon to Fri", "about 9am to 3pm"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What is PHP", "q": "What is PHP?",
+      "a": "PHP stands for partial hospitalization program. The name sounds like a hospital stay, but you never sleep here. You spend about six hours a day in therapy and groups at our Westwood center, Monday to Friday, then go home or back to sober living. PHP usually lasts two to four weeks, then you step down."
+    },
+    {
+      "id": "fit", "nav": "Is it for me", "q": "Is PHP right for me?",
+      "a": "PHP usually makes sense when weekly therapy isn't enough anymore. It's the right fit when you need structure every day and more support than a weekly session, but you don't need to live at a facility.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You're stepping down from detox, residential care or a hospital stay.",
+          "You're dealing with addiction and a mental health condition at the same time.",
+          "You've tried weekly therapy and it hasn't been enough.",
+          "Things at home or work are slipping and you need structure every day."
+        ],
+        "card": {
+          "title": "If PHP is more than you need, we'll say so",
+          "text": "Your free assessment decides the level of care. If IOP or weekly therapy fits better, that's what we'll reccomend. If you need detox first, we set it up with a trusted detox provider and hold your spot."
+        }
+      }
+    },
+    {
+      "id": "day", "nav": "A typical day", "q": "What does a day in PHP look like?",
+      "a": "It runs from about 9am to 3pm. Most of the day is group therapy, plus time one on one with your own therapist.",
+      "cta": true,
+      "block": {
+        "type": "sheet",
+        "rows": [
+          ["9:00", "Check-in group", "Everyone says how they're doing and what's on their mind."],
+          ["10:00", "Individual or family therapy", "One on one with your own therapist."],
+          ["11:30", "Skills group", "CBT, DBT or trauma-focused tools for cravings and hard feelings."],
+          ["1:00", "Process group", "An open group where people talk things through and give each other feedback."],
+          ["2:00", "Education or holistic session", "Relapse prevention, family systems, mental health, or wellness practices."],
+          ["3:00", "Wrap-up", "A short mindfulness practice, then you head home."]
+        ],
+        "photos": [
+          ["individual-therapy-room", "A private therapy room with a sofa and armchair, used for one-on-one sessions", "Your one-on-one room"],
+          ["meditation-room", "The meditation room at Golden State Rehab", "The meditation room"]
+        ]
+      }
+    },
+    {
+      "id": "team", "nav": "Your team", "q": "Who will I be working with?",
+      "a": "Dr. Eric Chaghouri, our medical director, is a board-certified psychiatrist and handles medication if you need it. Ari Labowitz, LMFT, our clinical director, oversees the PHP groups and supervises the therapists. Your psychiatrist and your therapist share updates, so everyone works from the same plan.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": ["eric-chaghouri", "ari-labowitz", "viola-sulahian", "nechama-berkowitz", "juanita-casillas"],
+        "review": "joey-viola"
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Will my insurance pay for PHP?",
+      "a": "For most people, insurance does the heavy lifting. We work with most major PPO plans, and we check your benefits for free before you start.",
+      "note": "California's SB 855 and federal parity law require health plans to cover medically necessary mental health and addiction care.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays for PHP"]}
+    },
+    {
+      "id": "life", "nav": "Job & privacy", "q": "What about my job and my privacy?",
+      "a": "PHP usually means a few weeks off work. Federal FMLA and California's CFRA usually protect your job for a serious health condition, and your leave request doesn't have to say why. Your records are protected by HIPAA and 42 CFR Part 2, and we never contact your employer.",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "briefcase", "t": "Your job", "d": "Plan to step away for the length of PHP, usually two to four weeks. Once you're steadier, IOP has an evening track built around a full-time job. [How FMLA works](https://www.dol.gov/agencies/whd/fmla)"},
+          {"icon": "lock", "t": "Your privacy", "d": "42 CFR Part 2 is a federal privacy rule written just for addiction treatment. Nothing is shared without your written consent, outside of rare legal exceptions."},
+          {"icon": "users", "t": "Your family", "d": "Family therapy can be part of your week, and we offer family sessions in Spanish too."},
+          {"icon": "map-pin", "t": "Getting here", "d": "We're at 1964 Westwood Blvd, Suite 425, a few minutes off the 405, and there's parking. People come in from Santa Monica, Brentwood, Culver City and Beverly Hills. [Get directions](https://www.google.com/maps?cid=15086981718348312167)"}
+        ]
+      }
+    },
+    {
+      "id": "after", "nav": "After PHP", "q": "What happens after PHP?",
+      "a": "As things get steadier, most people move to IOP, with 3-hour sessions 3 to 5 days a week, mornings or evenings. After that, weekly alumni groups and monthly check-ins keep you connected for a year.",
+      "block": {
+        "type": "path",
+        "steps": [
+          {"t": "Detox", "d": "Only if you need it first. We set it up with a partner."},
+          {"t": "PHP", "d": "About 6 hours a day, 5 days a week.", "here": true},
+          {"t": "IOP", "d": "3-hour sessions, 3 to 5 days a week. Mornings or evenings.", "href": "/programs/iop"},
+          {"t": "Alumni", "d": "Weekly alumni groups and monthly check-ins for a full year."}
+        ]
+      }
+    }
+  ]
+}

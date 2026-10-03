@@ -1,0 +1,139 @@
+{
+  "h1": "Anxiety Treatment in Los Angeles",
+  "sub": "Treatment for constant worry and panic attacks at our Westwood clinic, with morning and evening options. It's one part of our [mental health clinic in Los Angeles](/mental-health).",
+  "hero": {
+    "img": "meditation-room",
+    "alt": "The meditation room at Golden State Rehab, with round floor cushions and potted plants",
+    "caption": "The meditation room, where you practice slowing down",
+    "note": [
+      "Morning or evening",
+      "IOP tracks"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it is",
+      "q": "What is an anxiety disorder?",
+      "a": "Everyone worries sometimes. An anxiety disorder is worry or fear that won't switch off and starts to shape your day, often with a racing heart or a tight chest. Anxiety disorders are the [most common mental health conditions in the U.S.](https://www.nimh.nih.gov/health/statistics/any-anxiety-disorder), and they can be treated."
+    },
+    {
+      "id": "stress",
+      "nav": "Stress or anxiety",
+      "q": "Is this anxiety or just stress?",
+      "a": "Stress usually fades once the deadline or the argument is over. Anxiety hangs on after the cause is gone, and it starts making choices for you. If a few of these sound like you, a free assessment can sort it out.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You worry most of the day and can't turn it off.",
+          "You've had sudden waves of fear with a racing heart or trouble breathing.",
+          "You skip plans or places because of the fear.",
+          "You lie awake with your thoughts racing.",
+          "You've had one panic attack and now you dread the next one.",
+          "You're falling behind at work because of the worry."
+        ],
+        "card": {
+          "title": "A drink to take the edge off",
+          "text": "If you've been using alcohol or pills to calm down, tell us. We treat both together, so you don't need two seperate programs."
+        }
+      }
+    },
+    {
+      "id": "therapy",
+      "nav": "Therapy",
+      "q": "What therapy works best for anxiety?",
+      "a": "CBT, or cognitive behavioral therapy, has the strongest research behind it for anxiety. You learn to notice anxious thoughts and answer them differently. Depending on what you need, we add exposure work, mindfulness or DBT skills, plus medication when it makes sense.",
+      "cta": true,
+      "block": {
+        "type": "steps",
+        "items": [
+          {
+            "t": "Notice the thought",
+            "d": "Spot the fear behind the feeling, like \"I'll freeze up in that meeting.\""
+          },
+          {
+            "t": "Test it",
+            "d": "Check the thought against what has happened before. A fear often looks smaller once it's written down."
+          },
+          {
+            "t": "Face it in small doses",
+            "d": "With your therapist, you take on the things you've been avoiding, starting small."
+          },
+          {
+            "t": "Build from there",
+            "d": "Each step you handle makes the next one easier to try."
+          }
+        ]
+      }
+    },
+    {
+      "id": "panic",
+      "nav": "Panic skills",
+      "q": "What can I do when panic hits?",
+      "a": "Anxiety lives in your body as much as your mind. You learn simple body skills that calm the panic response, and you practice them in session so they're ready when you need them. They work alongside therapy.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "wind",
+            "t": "Belly breathing",
+            "d": "Slow breaths from the belly that help your body settle when your heart starts racing."
+          },
+          {
+            "icon": "activity",
+            "t": "Muscle relaxation",
+            "d": "Tense and release one muscle group at a time to let go of tension."
+          },
+          {
+            "icon": "sparkles",
+            "t": "Body scan",
+            "d": "A slow check from head to toe that brings you back to the room."
+          },
+          {
+            "icon": "leaf",
+            "t": "Mindfulness",
+            "d": "Watching anxious thoughts pass by without getting pulled along by them."
+          }
+        ]
+      }
+    },
+    {
+      "id": "meds",
+      "nav": "Medication",
+      "q": "Will I have to take medication?",
+      "a": "No. Medication is one option, and whether you take it is up to you. If it could help, our psychiatrist can talk with you about non-habit-forming options. The goal is to ease the symptoms while you build lasting skills in therapy."
+    },
+    {
+      "id": "job",
+      "nav": "Work & privacy",
+      "q": "Will my job find out I'm in treatment?",
+      "a": "No. We never contact your employer, and HIPAA protects your records. IOP runs 3-hour sessions on a morning or evening track, and telehealth works anywhere in California. You can usually keep working, or keep up with classes at UCLA, during treatment.",
+      "note": "If you've also had treatment for drinking or drug use, those records get extra federal protection under 42 CFR Part 2."
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will my insurance pay for anxiety treatment?",
+      "a": "It depends on your plan, and we find out before you start. We work with most major PPO plans, and plans may cover anxiety care under SB 855 and federal parity law. The benefits check is free and usually takes less than an hour.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible",
+          "Your network status",
+          "What your plan pays for IOP"
+        ]
+      }
+    },
+    {
+      "id": "call",
+      "nav": "First call",
+      "q": "What happens when I call?",
+      "a": "Someone answers 24/7 at (424) 208-3120, in English or Spanish, and the call is free and confidential. You talk through what's going on, and we set up a free assessment by phone or in person. If a call feels like too much, you can verify your insurance online first.",
+      "cta": true,
+      "block": {
+        "type": "quote",
+        "review": "dennis-judged"
+      }
+    }
+  ]
+}

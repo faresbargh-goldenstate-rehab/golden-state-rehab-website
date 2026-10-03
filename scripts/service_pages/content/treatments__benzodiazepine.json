@@ -1,0 +1,87 @@
+{
+  "h1": "Benzodiazepine Addiction Treatment in Los Angeles",
+  "sub": "A slow, supervised taper off Xanax, Klonopin, Ativan or Valium, with therapy for the anxiety underneath. It's outpatient care at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "waiting-area",
+    "alt": "The waiting area at Golden State Rehab in Westwood",
+    "caption": "Our waiting area on Westwood Blvd",
+    "note": ["Slow taper", "paced to your body"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it involves", "q": "What does benzodiazepine addiction treatment involve?",
+      "a": "Two things, side by side. Our physicians lower your dose slowly, often over weeks to months, and therapy treats the anxiety and insomnia the pills were covering up. It all happens outpatient in Westwood, so most people keep working while they recover.",
+      "note": "Sources: NIDA on [prescription CNS depressants](https://nida.nih.gov/research-topics/prescription-cns-depressants) and its [DrugFacts page](https://nida.nih.gov/publications/drugfacts/prescription-cns-depressants)."
+    },
+    {
+      "id": "prescribed", "nav": "As prescribed", "q": "I take it exactly as prescribed. Can I still be dependent?",
+      "a": "Yes. The FDA's boxed warning on benzodiazepines says physical dependence can develop even at prescribed doses, sometimes within a few weeks. That's how this drug class works, and it's no reason for shame. If your dose has stopped working or you feel unwell between doses, talk to a physician.",
+      "note": "Mixing benzodiazepines with opioids or alcohol sharply raises the risk of dangerous sedation and overdose.",
+      "cta": true,
+      "block": {
+        "type": "list",
+        "items": [
+          "You need a higher dose to get the same calm.",
+          "You feel shaky or irritable when a dose is late.",
+          "You run out early, or see more than one doctor to keep a supply.",
+          "You tried to cut down and got scared by what happened."
+        ]
+      }
+    },
+    {
+      "id": "stop", "nav": "Quitting cold", "q": "Can I just stop taking Xanax on my own?",
+      "a": "Please don't. Stopping any benzodiazepine suddenly can be medically dangerous. Withdrawal can cause seizures, especially after high doses or long-term use. Anxiety and sleeplessness often rush back too, and that can make a solo attempt fall apart within days. The safe way off is a gradual taper that a physician designs and watches.",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "stethoscope", "t": "Medication management", "d": "Our psychiatric team meets with you regularly through the taper and treats anxiety or panic with safer, non-addictive options."},
+          {"icon": "brain", "t": "Cognitive behavioral therapy", "d": "You learn to spot catastrophic thinking and ride out the body's anxiety signals without a pill in your pocket."},
+          {"icon": "moon", "t": "Sleep help", "d": "Behavioral sleep strategies for the insomnia that often surges during a taper."},
+          {"icon": "heart-pulse", "t": "Dual diagnosis", "d": "Panic disorder, anxiety, PTSD and depression often sit underneath. We treat them along with the dependence."}
+        ]
+      }
+    },
+    {
+      "id": "taper", "nav": "The taper", "q": "How long does a benzo taper take?",
+      "a": "Usually weeks to several months. It depends on your dose, how long you've taken it, which benzo it is and how your body responds. A slower taper is usually the more comfortable one. Your physician sets the pace with you, and there's no prize for finishing fast.",
+      "cta": true,
+      "block": {
+        "type": "sheet",
+        "rows": [
+          ["Start", "Free assessment", "By phone or in person. We go over your dose and how long you've been taking it."],
+          ["Weeks", "Small dose cuts", "Your physician lowers the dose bit by bit and checks in with you regularly."],
+          ["Months", "Paced to you", "If symptoms flare, the plan slows down. It follows your body, never a calender."],
+          ["All along", "Therapy beside it", "CBT and groups for the anxiety and sleep problems that tend to surge during a taper."]
+        ],
+        "photos": [
+          ["individual-therapy-room", "A private therapy room at Golden State Rehab with a sofa and an armchair", "One-on-one sessions"],
+          ["group-therapy-room", "The group therapy room at Golden State Rehab, with a circle of chairs", "The group room"]
+        ]
+      }
+    },
+    {
+      "id": "group", "nav": "Groups", "q": "Will group therapy help with benzo dependence?",
+      "a": "For many people, yes. Benzo dependence can be isolating, and a lot of our clients have never met anyone else going through it. In group, people share what helps during a taper and slowly rebuild the social confidence that long-term sedative use wears down.",
+      "block": {"type": "quote", "review": "ryan"}
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Does insurance pay for benzo treatment?",
+      "a": "Most major plans may cover it. Federal parity law and California's SB 855 require plans that cover medical care to cover medically necessary addiction treatment on similar terms. We work with most major PPO plans and check your benefits for free, usually within the hour.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your plan's network rules", "What your plan pays for a taper and therapy"]}
+    },
+    {
+      "id": "detox", "nav": "Detox", "q": "Do you offer benzo detox on-site?",
+      "a": "No. We're an outpatient center, so detox doesn't happen here. Many people can taper safely with our physicians while living at home. If your assessment shows you need medical detox first, usually after high doses or long-term use, we set it up with a trusted detox provider and hold your spot.",
+      "block": {
+        "type": "path",
+        "steps": [
+          {"t": "Medical detox", "d": "Only if your assessment calls for it. A trusted partner handles it."},
+          {"t": "PHP", "d": "About 6 hours a day on weekdays. You sleep at home.", "href": "/programs/php"},
+          {"t": "IOP", "d": "3-hour sessions on a morning or evening track, so you can keep working.", "href": "/programs/iop"},
+          {"t": "Alumni", "d": "Weekly alumni groups and monthly check-ins for one full year."}
+        ]
+      }
+    }
+  ]
+}

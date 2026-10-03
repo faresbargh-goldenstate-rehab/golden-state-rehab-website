@@ -1,0 +1,89 @@
+{
+  "h1": "Methamphetamine Addiction Treatment in Los Angeles",
+  "sub": "Outpatient care for meth addiction, built on the behavioral therapies with the strongest research behind them. It runs on Westwood Blvd at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "game-room",
+    "alt": "The game room at Golden State Rehab",
+    "caption": "The game room in Westwood",
+    "note": ["Hardest stretch", "weeks 2 to 4"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it is", "q": "What is meth addiction treatment?",
+      "a": "It's outpatient care for methamphetamine use disorder, the medical name for meth addiction. Meth changes the brain's dopamine system, and the changes from long-term use take time and support to heal. There's no FDA-approved medicine for meth, so behavioral therapy is the main treatment. You come to our Westwood center for PHP or IOP and sleep at home.",
+      "note": "Source: [NIDA methamphetamine research report](https://nida.nih.gov/publications/research-reports/methamphetamine)."
+    },
+    {
+      "id": "ready", "nav": "Not sure yet", "q": "What if part of me doesn't want to quit?",
+      "a": "That's common with meth, and you can still start. Motivational interviewing, or MI, is a kind of talk therapy that helps you weigh what meth gives you against what you want for your life. You don't have to be sure on day one.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You've tried to stop on your own and ended up using again.",
+          "You feel flat and empty when you're not using.",
+          "You've noticed paranoia or dark moods creeping in.",
+          "You want your energy and your focus back, even if quitting feels scary."
+        ],
+        "card": {
+          "title": "Call before you feel sure",
+          "text": "The assessment is free and confidential, by phone or in person. We explain your options without pressure, and the choice stays yours."
+        }
+      }
+    },
+    {
+      "id": "how", "nav": "How we treat it", "q": "How do you treat meth without medication?",
+      "a": "With behavioral therapy, which research shows works for meth. One of the strongest tools is contingency management, part of the Matrix Model. That's an intensive outpatient approach developed in Los Angeles for stimulant recovery. Many people recover with the right structure around them.",
+      "note": "Source: [NIDA, effective treatments for meth use](https://nida.nih.gov/publications/research-reports/methamphetamine/what-treatments-are-effective-people-who-misuse-methamphetamine).",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "badge-check", "t": "Contingency management", "d": "You earn rewards for drug-free urine tests and for showing up to treatment. Early wins start to stack up."},
+          {"icon": "brain", "t": "CBT", "d": "Cognitive behavioral therapy helps you spot your triggers and build a plan for cravings. You learn ways through the emotional lows of early recovery."},
+          {"icon": "activity", "t": "Exercise", "d": "Movement is one of the few things with evidence for helping the brain recover from meth. It helps restore the dopamine meth has used up."},
+          {"icon": "leaf", "t": "Body and brain care", "d": "Yoga, breathwork, nutrition and sleep habits help bring back your baseline mood and energy."}
+        ]
+      }
+    },
+    {
+      "id": "timeline", "nav": "Recovery timeline", "q": "How long until I feel normal again?",
+      "a": "It takes months, and the hardest part comes early. For many people, weeks 2 to 4 are the toughest stretch. After the first month, mood and energy slowly come back as the brain heals. Knowing what's coming makes the early weeks easier to get through.",
+      "note": "Everyone heals at their own pace, so treat this as a common pattern.",
+      "cta": true,
+      "block": {
+        "type": "sheet",
+        "rows": [
+          ["Week 1", "The crash", "Deep tiredness and low mood. Your appetite goes up."],
+          ["Weeks 2 to 4", "The gray period", "Low mood and trouble feeling pleasure. Hang on untill it lifts, because it does."],
+          ["Months 1 to 3", "A slow lift", "Mood and energy start to return, and thinking gets clearer."],
+          ["Months 3 to 6", "Brain healing", "Sleep improves, and everyday things start to feel good again."],
+          ["6+ months", "Your new normal", "Healing keeps going while you build a life that doesn't revolve around meth."]
+        ]
+      }
+    },
+    {
+      "id": "mind", "nav": "Mental health", "q": "Can you help with the paranoia and depression too?",
+      "a": "Yes. Paranoia and depression often show up in meth recovery, and some people have psychosis caused by meth. Our medical team treats these through dual diagnosis care, so your mental health and your meth use get treated together. Behavioral therapy still does the core work of recovery.",
+      "block": {"type": "quote", "review": "gregory-place"}
+    },
+    {
+      "id": "levels", "nav": "PHP or IOP", "q": "Do I start in PHP or IOP?",
+      "a": "Your free assessment decides. Many people start in PHP, about 6 hours a day on weekdays, to get through the hardest early weeks with support. As the brain heals and routines settle, they step down to IOP and then alumni support.",
+      "cta": true,
+      "block": {
+        "type": "path",
+        "steps": [
+          {"t": "Free assessment", "d": "By phone or in person. It sets your starting level."},
+          {"t": "PHP", "d": "About 6 hours a day, Monday to Friday. You go home each night.", "href": "/programs/php"},
+          {"t": "IOP", "d": "3-hour sessions, 3 to 5 days a week, in a morning or evening track.", "href": "/programs/iop"},
+          {"t": "Alumni", "d": "A year of weekly alumni groups, plus a check-in every month."}
+        ]
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Will insurance pay for meth rehab?",
+      "a": "Your plan may cover it. We work with most major PPO plans, and checking your benefits is free and confidential. Federal parity law and California's SB 855 say health plans must cover addiction treatment that's medically necessary.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "How much PHP or IOP your plan allows"]}
+    }
+  ]
+}

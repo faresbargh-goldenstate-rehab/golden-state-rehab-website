@@ -1,0 +1,168 @@
+{
+  "h1": "Prescription Drug Addiction Treatment in Los Angeles",
+  "sub": "Outpatient help when a medication your doctor prescribed, like Xanax or Adderall, has taken over. It's part of our [addiction treatment center in Los Angeles](/), and you sleep at home.",
+  "hero": {
+    "img": "reading-lounge",
+    "alt": "The reading lounge at Golden State Rehab in Westwood",
+    "caption": "The reading lounge at our Westwood center",
+    "note": [
+      "Outpatient care",
+      "most clients keep working"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it involves",
+      "q": "What does prescription drug addiction treatment involve?",
+      "a": "It's outpatient therapy and medical care for dependence on a pill that often started with a doctor's prescription. We plan a safe way off the drug and treat the problem underneath, like anxiety, ADHD, insomnia or pain. This kind of dependence responds to the same proven treatment as any other addiction.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "tablets",
+            "t": "Benzodiazepines",
+            "d": "Xanax, Klonopin, Ativan and Valium. These need a slow, supervised taper. [Benzo treatment](/treatments/benzodiazepine)"
+          },
+          {
+            "icon": "zap",
+            "t": "Stimulants",
+            "d": "Adderall and Vyvanse, often taken at higher doses than prescribed. We check for ADHD underneath."
+          },
+          {
+            "icon": "moon",
+            "t": "Sleep medications",
+            "d": "Ambien and Lunesta can build strong physical and mental dependance. Care includes a careful taper and better sleep habits."
+          },
+          {
+            "icon": "pill",
+            "t": "Prescription painkillers",
+            "d": "Opioid pain pills have their own page. See [opioid addiction treatment](/treatments/opioid)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "signs",
+      "nav": "Is it a problem",
+      "q": "How do I know if my prescription has become a problem?",
+      "a": "The pills came from a doctor, so the problem can be hard to see. Two of the clearest signs are taking more than your doctor prescribed and not being able to stop when you try. The shame can run deep, but this is a medical condition and it's treatable.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You take higher doses than your doctor prescribed.",
+          "You've seen more than one doctor to keep the pills coming.",
+          "You get mood swings or withdrawal symptoms when you miss a dose.",
+          "You've tried to cut back and couldn't."
+        ],
+        "card": {
+          "title": "No judgment here",
+          "text": "Many people we treat started with a pill from their own doctor. Your free assessment, by phone or in person, tells us the right level of care. If you need detox first, we set it up with a trusted provider and hold your spot."
+        }
+      }
+    },
+    {
+      "id": "detox",
+      "nav": "Detox",
+      "q": "Do I need detox before I start?",
+      "a": "It depends on the pill. Benzodiazepines like Xanax or Klonopin should never be stopped suddenly, because withdrawal can cause seizures. They need a slow, medically supervised taper. Stimulants and sleep medications usually don't need formal detox. Your free assessment tells us what's safe for you.",
+      "note": "Sources: NIDA on [prescription drug misuse](https://nida.nih.gov/publications/research-reports/misuse-prescription-drugs/overview) and on [sedatives like benzos](https://nida.nih.gov/publications/drugfacts/prescription-cns-depressants).",
+      "cta": true,
+      "block": {
+        "type": "compare",
+        "cols": [
+          {
+            "t": "Benzodiazepines",
+            "dark": true,
+            "rows": [
+              "Never stop suddenly or on your own",
+              "Withdrawal can cause seizures",
+              "A slow, medically supervised taper",
+              "We help you get medical detox when it's needed"
+            ]
+          },
+          {
+            "t": "Stimulants and sleep meds",
+            "rows": [
+              "Usually no formal detox",
+              "Sleep meds may still need a careful taper",
+              "We treat the ADHD or insomnia underneath",
+              "Outpatient, so you sleep at home"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "underlying",
+      "nav": "Anxiety & ADHD",
+      "q": "Who will treat the anxiety or ADHD I took the pills for?",
+      "a": "Our psychiatric team does, led by Dr. Eric Chaghouri, our medical director and a board-certified psychiatrist. They treat the condition underneath with non-habit-forming options while managing a careful taper. Cognitive behavioral therapy (CBT) gives you new ways to cope. The goal is for you to feel better day to day.",
+      "note": "If you still need a medication for a medical reason, that care continues, and we coordinate with your prescriber when it makes sense.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": [
+          "eric-chaghouri",
+          "ari-labowitz",
+          "viola-sulahian",
+          "nechama-berkowitz"
+        ],
+        "review": "joey-toolbox"
+      }
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will my insurance help pay for this?",
+      "a": "It depends on your plan. We work with most major PPO plans, and many plans may cover outpatient care for prescription drug addiction. We check your benefits for free and in confidence, usually within the hour.",
+      "note": "California's SB 855 and federal parity law require plans to cover medically necessary addiction care. Many deductibles reset January 1, so it helps to know where yours stands.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible so far this year",
+          "Your network status",
+          "What your plan pays for outpatient care"
+        ]
+      }
+    },
+    {
+      "id": "privacy",
+      "nav": "Doctor & boss",
+      "q": "Will my doctor or my boss find out I'm here?",
+      "a": "Not without your written permission. HIPAA and 42 CFR Part 2, a federal law just for addiction care, protect your records. We work with your prescribing doctor only if you ask us to, and we never contact your employer.",
+      "note": "If you do ask, we share updates with your prescriber and plan the taper together."
+    },
+    {
+      "id": "work",
+      "nav": "Work & school",
+      "q": "Can I keep working or going to school?",
+      "a": "Yes. Most of our clients keep working or going to school during treatment. [IOP](/programs/iop) meets in 3-hour sessions 3 to 5 days a week, on a morning or evening track, and many sessions can happen by telehealth.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "sunrise",
+            "t": "Morning track",
+            "d": "Get your session done, then head to work or class."
+          },
+          {
+            "icon": "moon",
+            "t": "Evening track",
+            "d": "Come in after work, so your job stays on schedule."
+          },
+          {
+            "icon": "laptop",
+            "t": "Telehealth",
+            "d": "Many sessions can happen by video from anywhere in California."
+          },
+          {
+            "icon": "map-pin",
+            "t": "In Westwood",
+            "d": "Or come in person to 1964 Westwood Blvd, a few minutes off the 405. [Get directions](https://www.google.com/maps?cid=15086981718348312167)"
+          }
+        ]
+      }
+    }
+  ]
+}

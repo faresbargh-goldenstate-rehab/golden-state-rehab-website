@@ -1,0 +1,136 @@
+{
+  "h1": "Alcohol Addiction Treatment in Los Angeles",
+  "sub": "Therapy and anti-craving medicine for alcohol use disorder, with evening and online options so you can keep your job. It's the clinical core of our [alcoholism treatment program](/alcoholism-treatment-program) in Westwood.",
+  "hero": {
+    "img": "group-therapy-room",
+    "alt": "The group therapy room at Golden State Rehab, with chairs set in a circle",
+    "caption": "The group room in Westwood",
+    "note": [
+      "Anti-craving meds",
+      "always your choice"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it is",
+      "q": "What is alcohol addiction?",
+      "a": "Doctors call it alcohol use disorder. It often starts as social drinking and slowly turns into a habit you can't control, even as it hurts your health or your work. It affects millions of Americans from every walk of life. It's a long-term brain condition, and it responds to treatment.",
+      "note": "Sources: [NIDA on the science of addiction](https://nida.nih.gov/research-topics/addiction-science/drugs-brain-behavior-science-of-addiction) and [SAMHSA's national survey on drug use](https://www.samhsa.gov/data/data-we-collect/nsduh-national-survey-drug-use-and-health)."
+    },
+    {
+      "id": "enough",
+      "nav": "Is it bad enough",
+      "q": "Is my drinking bad enough for treatment?",
+      "a": "Anyone who's worried about their drinking can call, even without being sure it's a problem. Most people who reach out are still working and holding things together, but they've noticed drinking takes more than it gives. A free assessment tells you what, if anything, you need.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You used to drink socially. Now it's hard to stop once you begin.",
+          "You drink every day, or in large amounts.",
+          "You keep drinking even though it's hurting your health or your relationships.",
+          "You feel shame about how much you drink and keep it hidden."
+        ],
+        "card": {
+          "title": "No label needed",
+          "text": "You don't have to call yourself an alcoholic to get help. Tell us what's going on, and we'll give you a straight anwser about the level of care that fits."
+        }
+      }
+    },
+    {
+      "id": "withdrawal",
+      "nav": "Withdrawal",
+      "q": "Is it dangerous to stop drinking on my own?",
+      "a": "It can be. For people with heavy physical dependence, alcohol withdrawal can be life-threatening. Seizures and delirium tremens, a severe form of withdrawal known as the DTs, need medical care. If you drink daily or in large amounts, talk to us before you stop.",
+      "note": "Not everyone needs detox. Your free assessment shows whether you can start outpatient care right away.",
+      "cta": true,
+      "block": {
+        "type": "steps",
+        "items": [
+          {
+            "t": "Call before you quit",
+            "d": "Calling us first is the easiest path. It's free and confidential."
+          },
+          {
+            "t": "Free assessment",
+            "d": "We find out whether you need medical detox before outpatient care."
+          },
+          {
+            "t": "Detox, if you need it",
+            "d": "We set it up with a trusted detox provider and hold your spot."
+          },
+          {
+            "t": "Start PHP or IOP",
+            "d": "You move into our program with the same clinical team and no gap in support."
+          }
+        ]
+      }
+    },
+    {
+      "id": "medication",
+      "nav": "Medication",
+      "q": "Is there medication that helps with cravings?",
+      "a": "Yes. FDA-approved medicines like naltrexone can cut cravings and make drinking less rewarding. Our medical team looks at whether one fits your plan. It's always your choice, and medication works best alongside therapy. Using the two together is called MAT, short for medication-assisted treatment.",
+      "note": "Source: [SAMHSA, medications for substance use disorders](https://www.samhsa.gov/medications-substance-use-disorders).",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "pill",
+            "t": "Naltrexone",
+            "d": "Can cut cravings and make a drink feel less rewarding. Vivitrol is one brand of it."
+          },
+          {
+            "icon": "tablets",
+            "t": "Acamprosate and disulfiram",
+            "d": "Two more FDA-approved options. Your prescriber walks you through how each one works and whether it suits you."
+          },
+          {
+            "icon": "user-check",
+            "t": "Your call",
+            "d": "Medication is never automatic. You and your prescriber decide together."
+          },
+          {
+            "icon": "message-circle",
+            "t": "Paired with therapy",
+            "d": "Medicine works best next to CBT and group therapy, where you learn to handle triggers without a drink."
+          }
+        ]
+      }
+    },
+    {
+      "id": "therapy",
+      "nav": "Therapy & groups",
+      "q": "What happens in therapy for drinking?",
+      "a": "You learn to spot your triggers and handle risky moments without a drink. That's CBT, short for cognitive behavioral therapy. Motivational interviewing helps early on, when sobriety still feels like a lot. Relapse prevention adds a plan for early warning signs. In group, hearing others share the same struggles cuts the shame that keeps drinking hidden.",
+      "block": {
+        "type": "quote",
+        "review": "dennis-judged"
+      }
+    },
+    {
+      "id": "life",
+      "nav": "Job & family",
+      "q": "Will my job or my family find out?",
+      "a": "Not from us. HIPAA and 42 CFR Part 2 protect your records, and we never contact your employer. Nothing goes to your family without your written consent. If you want them involved, family therapy can help repair relationships and break enabling patterns at home.",
+      "note": "Most of our clients keep working, often in evening IOP or by telehealth. If you want time away, [FMLA](https://www.dol.gov/agencies/whd/fmla) and California's CFRA usually protect your job.",
+      "cta": true
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will my insurance pay for alcohol treatment?",
+      "a": "It depends on your plan, so we check your benefits first. We work with most major PPO plans, and the check is free and confidential. California's SB 855 and federal parity law require plans to cover medically necessary addiction care.",
+      "note": "We usually get back to you within the hour.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible",
+          "Your network status",
+          "What your plan pays for PHP or IOP"
+        ]
+      }
+    }
+  ]
+}

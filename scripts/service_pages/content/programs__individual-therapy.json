@@ -1,0 +1,74 @@
+{
+  "h1": "Individual Therapy in Los Angeles",
+  "sub": "Private, one-on-one sessions with your own therapist at our Westwood center. It's part of every treatment plan at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "individual-therapy-room",
+    "alt": "A private therapy room at Golden State Rehab with a cream sofa and a leather armchair",
+    "caption": "One of our one-on-one rooms",
+    "note": ["Same therapist", "first week to last"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it is", "q": "What is individual therapy?",
+      "a": "Individual therapy is private time with one therapist, just the two of you. You dig into what sits under the addiction or the anxiety, the stuff that keeps pulling you back. At Golden State Rehab it's built into PHP, our full-day program, and IOP, which runs a few 3-hour sessions a week."
+    },
+    {
+      "id": "first", "nav": "First session", "q": "What happens in my first session?",
+      "a": "Your first session is mostly a conversation. Your therapist asks what brought you in and what you've tried before. Nobody lectures you or judges you. By the end you'll have a few clear goals, and those goals steer the sessions that come after.",
+      "cta": true,
+      "block": {
+        "type": "steps",
+        "items": [
+          {"t": "You tell your story", "d": "Start wherever feels right. On day one your therapist mostly listens."},
+          {"t": "You set goals together", "d": "Small, clear goals you both agree on. They shape every session after this one."},
+          {"t": "Each week builds on the last", "d": "One week you might look at the thought that shows up right before a craving. Another week you might rehearse a hard talk you've been putting off."},
+          {"t": "You practice in between", "d": "You try the new skill during your week, like at work or stuck in traffic on the 405. That's where the change starts to stick."}
+        ]
+      }
+    },
+    {
+      "id": "methods", "nav": "Methods", "q": "What kind of therapy will we do?",
+      "a": "Your therapist draws on a few proven methods and picks what fits your history and your goals. Most people get a mix. Behavioral therapies like CBT are among the most widely used treatments for addiction, according to the [National Institute on Drug Abuse](https://nida.nih.gov/publications/drugfacts/treatment-approaches-drug-addiction).",
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "brain", "t": "CBT", "d": "Cognitive behavioral therapy. You learn to catch the thoughts that feed cravings and low moods, then answer them back."},
+          {"icon": "refresh-cw", "t": "EMDR", "d": "Eye movement desensitization and reprocessing. A way to work through trauma untill an old memory loses its grip on you."},
+          {"icon": "anchor", "t": "DBT", "d": "Dialectical behavior therapy. Skills for big feelings, like riding out an urge or staying calm in an argument."},
+          {"icon": "compass", "t": "Motivational interviewing", "d": "A calm, no-judgment talk about what you want for your life. You find your own reasons to change."}
+        ]
+      }
+    },
+    {
+      "id": "family", "nav": "Family", "q": "Can we work on things with my family?",
+      "a": "Yes. Family systems therapy looks at how the family you grew up in shaped your drinking or your moods, and how those patterns still show up today. When you're ready, your therapist can bring family members into a session. Family sessions are offered in Spanish too."
+    },
+    {
+      "id": "team", "nav": "Your therapist", "q": "Who will my therapist be?",
+      "a": "You're matched with one primary therapist who stays with you from your first week to your last, even if you move from PHP to IOP. You never have to start your story over with someone new. Our clinical director, Ari Labowitz, LMFT, oversees the therapy team.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": ["viola-sulahian", "nechama-berkowitz", "ari-labowitz"],
+        "review": "joey-viola"
+      }
+    },
+    {
+      "id": "often", "nav": "How often", "q": "How often will I see my therapist?",
+      "a": "It depends on your program. PHP runs about 9am to 3pm on weekdays, and you see your therapist several times a week. IOP gives you at least one private session every week. If you're working, IOP has morning and evening tracks, and you can meet your therapist by telehealth from home.",
+      "note": "Telehealth sessions are by video, from anywhere in California."
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Does insurance pay for individual therapy?",
+      "a": "Your therapy sessions are part of PHP or IOP, so your plan looks at the whole program. Many PPO plans may cover it when it's medically necessary. We work with most major PPO plans, and we check your benefits for free, usually within the hour.",
+      "note": "Federal parity law and California's SB 855 say health plans must cover medically necessary mental health and addiction care.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays for therapy in PHP or IOP"]}
+    },
+    {
+      "id": "private", "nav": "Privacy", "q": "Will anyone find out what I say in therapy?",
+      "a": "What you say stays between you and your therapist. HIPAA and 42 CFR Part 2, a federal privacy rule written for addiction treatment, protect your records. We never contact your employer, and nobody learns you're in treatment unless you decide to tell them.",
+      "note": "Under 42 CFR Part 2, your addiction treatment records can't be shared without your written OK, apart from rare legal exceptions.",
+      "cta": true
+    }
+  ]
+}

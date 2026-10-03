@@ -1,0 +1,175 @@
+{
+ "programs/iop": {
+  "/": "addiction treatment center in Los Angeles",
+  "/programs/php": "PHP",
+  "/programs/evening-iop": "evening track",
+  "/blog/how-long-is-rehab": "how long rehab lasts"
+ },
+ "programs/evening-iop": {
+  "/": "addiction treatment center in Los Angeles",
+  "/programs/iop": "intensive outpatient program in Los Angeles"
+ },
+ "programs/virtual-iop": {
+  "/programs/iop": "intensive outpatient program in Los Angeles",
+  "/": "addiction treatment center in Los Angeles",
+  "/programs/evening-iop": "evening track"
+ },
+ "programs/outpatient-rehab": {
+  "/programs/telehealth": "Telehealth",
+  "/rehabilitation-center": "rehabilitation center in Los Angeles",
+  "/blog/first-week-of-outpatient-rehab": "what your first week of outpatient rehab actually looks like",
+  "/blog/inpatient-vs-outpatient-rehab": "inpatient versus outpatient rehab"
+ },
+ "programs/telehealth": {
+  "/rehabilitation-center": "rehabilitation center in Los Angeles"
+ },
+ "programs/alumni": {
+  "/programs/iop": "IOP",
+  "/": "addiction treatment center in Los Angeles",
+  "/contact": "Contact the Alumni Team",
+  "/blog/what-happens-after-rehab": "what happens after rehab"
+ },
+ "programs/individual-therapy": {
+  "/": "addiction treatment center in Los Angeles"
+ },
+ "programs/group-therapy": {
+  "/mental-health": "mental health clinic in Los Angeles"
+ },
+ "programs/medication-management": {
+  "/": "addiction treatment center in Los Angeles",
+  "/team": "Dr. Eric Chaghouri, MD",
+  "/contact": "Request an Assessment"
+ },
+ "programs/psychiatric-care": {
+  "/team": "Dr. Eric Chaghouri, MD",
+  "/treatments/depression": "Depression",
+  "/treatments/anxiety": "Anxiety disorders",
+  "/treatments/ptsd": "PTSD",
+  "/treatments/complex-trauma": "Complex trauma",
+  "/mental-health": "Mental Health TreatmentOur full mental health track \u2014 struct"
+ },
+ "programs/holistic-therapies": {
+  "/": "addiction treatment center in Los Angeles",
+  "/contact": "Request a Call Back"
+ },
+ "treatments/alcohol": {
+  "/alcoholism-treatment-program": "alcoholism treatment program"
+ },
+ "treatments/opioid": {
+  "/treatments/fentanyl": "fentanyl",
+  "/": "addiction treatment center in Los Angeles",
+  "/contact": "Request a Call Back",
+  "/programs/iop": "IOP"
+ },
+ "treatments/fentanyl": {
+  "/": "addiction treatment center in Los Angeles",
+  "/programs/php": "PHP",
+  "/programs/iop": "IOP",
+  "/contact": "Request a Call Back",
+  "/programs/medication-management": "medication management"
+ },
+ "treatments/cocaine": {
+  "/": "addiction treatment center in Los Angeles",
+  "/contact": "Request a Call Back",
+  "/programs/iop": "IOP"
+ },
+ "treatments/meth": {
+  "/": "addiction treatment center in Los Angeles",
+  "/contact": "Request a Call Back",
+  "/programs/php": "PHP",
+  "/programs/iop": "IOP"
+ },
+ "treatments/prescription-drugs": {
+  "/": "addiction treatment center in Los Angeles",
+  "/treatments/benzodiazepine": "benzodiazepines",
+  "/treatments/opioid": "opioid treatment page",
+  "/contact": "Request a Confidential Assessment",
+  "/programs/iop": "IOP"
+ },
+ "treatments/benzodiazepine": {
+  "/": "addiction treatment center in Los Angeles",
+  "/programs/php": "PHP",
+  "/programs/iop": "IOP",
+  "/contact": "Request a Call Back"
+ },
+ "treatments/dual-diagnosis": {
+  "/": "addiction treatment center in Los Angeles",
+  "/programs/iop": "IOP"
+ },
+ "treatments/depression": {
+  "/mental-health": "mental health treatment in Los Angeles",
+  "/contact": "Request a Call Back"
+ },
+ "treatments/anxiety": {
+  "/mental-health": "mental health treatment in Los Angeles",
+  "/contact": "Request a Call Back"
+ },
+ "treatments/ptsd": {
+  "/mental-health": "mental health treatment in Los Angeles",
+  "/contact": "Request a Call Back"
+ },
+ "treatments/complex-trauma": {
+  "/mental-health": "mental health treatment in Los Angeles",
+  "/contact": "Request a Call Back",
+  "/treatments/ptsd": "PTSD page"
+ },
+ "treatments/cbt": {
+  "/": "addiction treatment center in Los Angeles",
+  "/programs/individual-therapy": "individual therapy",
+  "/contact": "Ask About CBT",
+  "/treatments/trauma-informed-therapy": "Trauma-Informed",
+  "/blog/cbt-vs-dbt-which-is-right": "CBT vs. DBT: how to know which therapy is right for you"
+ },
+ "treatments/dbt": {
+  "/mental-health": "mental health treatment in Los Angeles",
+  "/contact": "Ask About DBT",
+  "/programs/group-therapy": "group therapy"
+ },
+ "treatments/trauma-informed-therapy": {
+  "/": "addiction treatment center in Los Angeles",
+  "/contact": "Ask About Trauma-Informed Care",
+  "/treatments/cbt": "CBT",
+  "/programs/individual-therapy": "individual therapy",
+  "/treatments/trauma-informed-therapy": "Trauma-Informed"
+ },
+ "mental-health": {
+  "/": "addiction treatment center in Los Angeles",
+  "/programs/group-therapy": "group therapy",
+  "/treatments/dbt": "DBT",
+  "/contact": "Evening IOP Evening mental health sessions for professionals",
+  "/treatments/depression": "Depression CBT, medication management, and holistic care for",
+  "/treatments/anxiety": "Anxiety Disorders Treatment for generalized anxiety, panic, ",
+  "/treatments/ptsd": "PTSD &amp; Trauma Trauma-focused CBT, EMDR, and somatic ther",
+  "/treatments/complex-trauma": "Complex Trauma Phase-based, trauma-informed care for C-PTSD,",
+  "/programs/psychiatric-care": "Psychiatric Care in Los Angeles Psychiatric evaluation and o"
+ },
+ "spanish-speaking-treatment": {
+  "/espanol": "Ver esta p\u00e1gina en espa\u00f1ol",
+  "/": "addiction treatment center in Los Angeles",
+  "/contact": "Hablar con Nuestro Equipo",
+  "/programs/php": "PHP",
+  "/programs/iop": "IOP"
+ },
+ "admissions": {
+  "/": "addiction treatment center in Los Angeles",
+  "/blog/first-day-of-rehab": "what the first day of rehab is actually like",
+  "/programs/php": "Partial Hospitalization (PHP)",
+  "/programs/iop": "Intensive Outpatient (IOP)",
+  "/programs/evening-iop": "Evening IOP",
+  "/programs/virtual-iop": "Virtual IOP"
+ },
+ "rehabilitation-center": {
+  "/": "Los Angeles addiction treatment center",
+  "/programs/outpatient-rehab": "outpatient rehab program",
+  "/programs/telehealth": "Telehealth rehab"
+ },
+ "alcoholism-treatment-program": {
+  "/": "Golden State Rehab",
+  "/treatments/alcohol": "alcohol addiction treatment"
+ },
+ "programs/php": {
+  "/": "addiction treatment center in Los Angeles",
+  "/team": "Meet the whole team",
+  "/programs/iop": "IOP"
+ }
+}

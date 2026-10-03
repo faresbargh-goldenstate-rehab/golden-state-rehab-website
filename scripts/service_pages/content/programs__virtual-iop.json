@@ -1,0 +1,132 @@
+{
+  "h1": "Virtual IOP in Los Angeles",
+  "sub": "Our full intensive outpatient program over live video, joined from home anywhere in California. It's run by the clinical team at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "computer-workstations",
+    "alt": "Computer workstations at Golden State Rehab, with monitors along a long white desk",
+    "caption": "Telehealth workstations in Westwood",
+    "note": [
+      "Live video",
+      "anywhere in California"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What is it",
+      "q": "What is virtual IOP?",
+      "a": "Virtual IOP is our [intensive outpatient program in Los Angeles](/programs/iop), held live over encrypted video. You join 3-hour group sessions, 3 to 5 days a week, at set times. Your therapist and your group see you on screen, and the work happens in the moment."
+    },
+    {
+      "id": "fit",
+      "nav": "Who it's for",
+      "q": "Who is virtual IOP a good fit for?",
+      "a": "It's for people who need IOP but can't easily get to Westwood. Distance is the usual reason. Kids at home and jobs that travel are common reasons too, and some people simply feel safer starting from their own couch.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You live outside the Westside, or outside LA altogether.",
+          "Driving to treatment several days a week isn't realistic right now.",
+          "You travel for work and need treatment that comes with you.",
+          "You started with us in person and need to switch after a move or an injury."
+        ],
+        "card": {
+          "title": "Some people should start in person",
+          "text": "If you need detox first, we set it up with a detox provider we trust and keep your place in the program. If 9 to 15 hours a week isn't enough structure, PHP, our full-day program in Westwood, is usually the better start. We'll tell you up front."
+        }
+      }
+    },
+    {
+      "id": "where",
+      "nav": "Outside LA",
+      "q": "Can I do virtual IOP if I don't live in LA?",
+      "a": "Yes, from anywhere in California. Our clinicians are licensed in California, so you can join from the Valley, San Diego or Sacramento. The one limit is the state line, so you need to be in California for your sessions.",
+      "note": "Admission works like it does in person: a confidential assessment by phone, then a start date, usually within days."
+    },
+    {
+      "id": "need",
+      "nav": "What you need",
+      "q": "What do I need to join virtual IOP?",
+      "a": "A device with a camera and a private spot where you can talk openly. You don't need special software or any tech skill beyond a video call. We walk you through the platform before your first group.",
+      "cta": true,
+      "block": {
+        "type": "list",
+        "items": [
+          "A laptop or phone with a camera that works",
+          "Internet that can hold a video call for 3 hours",
+          "A room with a door you can close",
+          "If the video acts wierd, we troubleshoot it with you"
+        ]
+      }
+    },
+    {
+      "id": "same",
+      "nav": "Home vs office",
+      "q": "Is virtual IOP as good as coming in person?",
+      "a": "Virtual IOP uses the group curriculum and clinical team from our Westwood program. What helps most is showing up every week, and for a lot of people the version they can attend is the one that works. If your assessment shows you need in-person care, we'll tell you.",
+      "block": {
+        "type": "compare",
+        "cols": [
+          {
+            "t": "In Westwood",
+            "rows": [
+              "Group in our rooms at 1964 Westwood Blvd",
+              "A few minutes off the 405, with parking",
+              "Weekly one-on-one with your therapist",
+              "Psychiatry when your plan calls for it"
+            ]
+          },
+          {
+            "t": "From home",
+            "dark": true,
+            "rows": [
+              "Live video group, morning or [evening track](/programs/evening-iop)",
+              "No drive and no waiting room",
+              "Weekly one-on-one with your therapist by video",
+              "Psychiatry by video when your plan calls for it"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "team",
+      "nav": "Your team",
+      "q": "Who will I see on screen?",
+      "a": "The clinical team our Westwood clients see, led by clinical director Ari Labowitz, LMFT. Your primary therapist meets you by video at least once a week. Dr. Eric Chaghouri, our medical director and a board-certified psychiatrist, handles medication over the same platform when your plan calls for it.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": [
+          "eric-chaghouri",
+          "ari-labowitz",
+          "viola-sulahian",
+          "nechama-berkowitz",
+          "eduardo-garcia"
+        ],
+        "review": "mikey"
+      }
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will my insurance pay for virtual IOP?",
+      "a": "Many plans may cover IOP by telehealth when it's medically necessary. The details depend on your plan and your deductible. We work with most major PPO plans, and checking your benefits is free and doesn't notify anyone.",
+      "note": "SB 855, a California law, and federal parity rules both say medically necessary addiction and mental health care has to be covered.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible",
+          "Your network status",
+          "How your plan handles telehealth"
+        ]
+      }
+    },
+    {
+      "id": "telehealth",
+      "nav": "Vs. telehealth",
+      "q": "What's the difference between virtual IOP and telehealth?",
+      "a": "Telehealth is the way care gets delivered, by video instead of in a room. Virtual IOP is one program delivered that way. It's the intensive outpatient level, with 3-hour groups 3 to 5 days a week plus weekly one-on-one therapy. If you're comparing options, start with how many hours of structure you need."
+    }
+  ]
+}

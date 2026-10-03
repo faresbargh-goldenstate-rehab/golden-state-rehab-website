@@ -1,0 +1,154 @@
+{
+  "h1": "Drug & Alcohol Rehabilitation Center in Los Angeles",
+  "sub": "Outpatient treatment for drug and alcohol use at our Westwood center, while you keep living at home. We're a DHCS certified [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "group-therapy-room",
+    "alt": "The group therapy room at Golden State Rehab, with chairs set in a circle",
+    "caption": "The group room in Westwood",
+    "note": [
+      "Outpatient only",
+      "you sleep at home"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it is",
+      "q": "What is a drug and alcohol rehabilitation center?",
+      "a": "It's a place where people get structured treatment for drug or alcohol use, mostly therapy in groups and one on one. It's a different thing from physical rehab after an injury or a stroke. Ours is outpatient, so you come in for treatment and go home after."
+    },
+    {
+      "id": "outpatient",
+      "nav": "Outpatient only",
+      "q": "Is Golden State Rehab inpatient or outpatient?",
+      "a": "Outpatient only. You come to our Westwood center, or join by video, during the day or in the evening. Then you sleep at home every night. There are no beds here and no overnight stays.",
+      "cta": true,
+      "block": {
+        "type": "compare",
+        "cols": [
+          {
+            "t": "Inpatient rehab",
+            "rows": [
+              "You live at the facility day and night",
+              "You leave work and home behind for a while",
+              "Not offered here. If you need it, we help you find a provider."
+            ]
+          },
+          {
+            "t": "Golden State Rehab",
+            "dark": true,
+            "rows": [
+              "You come in for set treatment hours, days or evenings",
+              "You sleep in your own bed every night",
+              "More of your normal life keeps going around treatment",
+              "Sessions in Westwood or by video anywhere in California"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "services",
+      "nav": "Services",
+      "q": "What services does your rehab center offer?",
+      "a": "Care starts intensive and loosens as you get steadier. Outpatient drug rehab covers our levels of care, from PHP at about 6 hours a day to IOP with 3-hour sessions. Telehealth rehab brings the IOP schedule to you by video.",
+      "block": {
+        "type": "links",
+        "items": [
+          {
+            "t": "Outpatient Drug Rehab",
+            "d": "PHP and IOP, from full weekdays down to a few sessions a week",
+            "href": "/programs/outpatient-rehab"
+          },
+          {
+            "t": "Telehealth Rehab",
+            "d": "The IOP schedule by video, anywhere in California",
+            "href": "/programs/telehealth"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fit",
+      "nav": "Is it enough",
+      "q": "Is outpatient rehab enough for me?",
+      "a": "For many people, yes. Outpatient is often the right fit when you're medically stable and have a safe place to sleep. The free assessment is where that gets decided, and if you need more than we offer, we'll tell you.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You're medically stable, or detox is already behind you.",
+          "You have a safe place to sleep at night.",
+          "You want to keep your job or keep caring for your kids.",
+          "You can get to Westwood most days, or you'd do better by video from your own kitchen tabel."
+        ],
+        "card": {
+          "title": "When outpatient isn't the first step",
+          "text": "If detox or residential care needs to come first, we help you set it up. Your spot here waits for you, and treatment picks up once you're ready."
+        }
+      }
+    },
+    {
+      "id": "detox",
+      "nav": "Detox",
+      "q": "Do you provide medical detox?",
+      "a": "No. As an outpatient center we don't offer detox, and withdrawal from alcohol or benzodiazepines can be dangerous without medical supervision. When your assessment shows you need it, we line up detox with a provider we trust and keep your place here.",
+      "block": {
+        "type": "path",
+        "steps": [
+          {
+            "t": "Detox",
+            "d": "By referral to a trusted detox provider. We hold your spot."
+          },
+          {
+            "t": "Rehab here",
+            "d": "Structured treatment in Westwood or by video while you live at home.",
+            "here": true
+          },
+          {
+            "t": "Alumni",
+            "d": "A full year of weekly alumni groups, plus a monthly check-in."
+          }
+        ]
+      }
+    },
+    {
+      "id": "certified",
+      "nav": "Certified",
+      "q": "Is your rehab center certified by the state?",
+      "a": "Yes. We're certified by the California Department of Health Care Services, DHCS #191643AP, and accredited by The Joint Commission since August 12, 2026. Treatment runs under the direction of our medical director, Dr. Eric Chaghouri, MD.",
+      "cta": true,
+      "block": {
+        "type": "team",
+        "people": [
+          "eric-chaghouri",
+          "ari-labowitz",
+          "eduardo-garcia",
+          "sophia-scharpf"
+        ],
+        "review": "ryan"
+      }
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will my insurance pay for rehab?",
+      "a": "We work with most major PPO plans, and health plans may cover outpatient rehab when it's medically necessary. Before you start, a free benefits check looks at what your plan says. Asking doesn't commit you to anything, and it doesn't notify your employer.",
+      "note": "Many plans reset the deductible on January 1. If you've already met yours this year, ask us what that means for your care.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible",
+          "Your network status",
+          "What your plan pays for outpatient rehab"
+        ]
+      }
+    },
+    {
+      "id": "where",
+      "nav": "Location",
+      "q": "Where is your rehab center?",
+      "a": "You'll find us at 1964 Westwood Blvd, Suite 425, between Santa Monica Blvd and Olympic. The 405 and the 10 are both close, and there's parking plus street parking. People come in from Culver City, Brentwood, Sawtelle and Beverly Hills. [Get directions](https://www.google.com/maps?cid=15086981718348312167)",
+      "cta": true
+    }
+  ]
+}

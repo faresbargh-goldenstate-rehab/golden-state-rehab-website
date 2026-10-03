@@ -1,0 +1,143 @@
+{
+  "h1": "Evening IOP in Los Angeles",
+  "sub": "Addiction and mental health treatment after work, 3 to 5 nights a week, and nobody at the office has to know. It's the after-work track at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "tv-lounge",
+    "alt": "The lounge at Golden State Rehab, with a wall-mounted TV and a black leather sofa",
+    "caption": "Our lounge on Westwood Blvd",
+    "note": [
+      "After work",
+      "3 to 5 nights a week"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What is it",
+      "q": "What is evening IOP?",
+      "a": "It's our [intensive outpatient program in Los Angeles](/programs/iop) on an after-work clock. You come to 3-hour group sessions after typical work hours, 3 to 5 nights a week. The clinicians and the groups match the morning track. You can come in to Westwood or join by telehealth."
+    },
+    {
+      "id": "night",
+      "nav": "A weeknight",
+      "q": "What does a weeknight in evening IOP look like?",
+      "a": "You work your normal day, then come to group. Each session runs 3 hours, and you're home the same night. Your exact start time is set at admission, and you pick your nights with your therapist.",
+      "cta": true,
+      "block": {
+        "type": "sheet",
+        "rows": [
+          [
+            "Daytime",
+            "Work as usual",
+            "No leave of absence and nothing to explain at the office."
+          ],
+          [
+            "After work",
+            "Drive over or log on",
+            "Head to Westwood Blvd, or open the telehealth link from home."
+          ],
+          [
+            "Evening",
+            "Group, 3 hours",
+            "Group therapy with people who have jobs and families to show up for too."
+          ],
+          [
+            "Once a week",
+            "Your own therapist",
+            "A private session about the pressure at work and at home."
+          ],
+          [
+            "Night",
+            "Home",
+            "You sleep in your own bed and go to work tomorrow like normal."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fit",
+      "nav": "Who it's for",
+      "q": "Who is evening IOP for?",
+      "a": "It's for people whose days are already full and who need more help than one therapy session a week. Most evening clients have a job or kids they can't step away from, and they want to keep showing up for them while they get well.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You work full-time and can't take weeks off.",
+          "You're the one who picks up the kids or looks after a parent.",
+          "You're in school during the day and don't want to lose the semester.",
+          "You'd rather your coworkers and clients never find out.",
+          "You finished PHP or a residential program and you're heading back to work."
+        ],
+        "card": {
+          "title": "There's a morning track too",
+          "text": "The same program runs in the morning if that suits you better. If you need more than evenings can give, your free assessment will show it, and we'll help you start at the right level."
+        }
+      }
+    },
+    {
+      "id": "same",
+      "nav": "Same care",
+      "q": "Is evening IOP as good as daytime treatment?",
+      "a": "Evening clients get the group curriculum and the clinical team the day track has, plus a weekly private session and psychiatry when needed. For a lot of working people, evenings are the only schedule they can keep. Showing up every week matters more than the hour on the clock.",
+      "block": {
+        "type": "quote",
+        "review": "dennis-groups"
+      }
+    },
+    {
+      "id": "privacy",
+      "nav": "Work & privacy",
+      "q": "Will anyone at my job find out?",
+      "a": "Not from us. HIPAA and 42 CFR Part 2, a federal privacy rule written for addiction treatment, protect your records. We never contact your employer or share anything without your written consent. Evening IOP also means no leave of absence on your record.",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "calendar",
+            "t": "Your schedule",
+            "d": "You and your therapist set your nights around your work calender, and they can shift when a big week hits."
+          },
+          {
+            "icon": "car",
+            "t": "Rush hour",
+            "d": "Westside traffic at 5 p.m. shouldn't decide whether you get help. Evening IOP also runs by telehealth anywhere in California."
+          },
+          {
+            "icon": "briefcase",
+            "t": "Work trips",
+            "d": "On a work trip, you can join group from your hotel room, as long as you're still in California."
+          },
+          {
+            "icon": "lock",
+            "t": "Time off",
+            "d": "If you ever do need leave, FMLA and California's CFRA usually protect your job. The request doesn't have to say why."
+          }
+        ]
+      }
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Does insurance pay for the evening track?",
+      "a": "Insurance treats IOP as one level of care, so the evening and morning tracks are looked at the same way. Many plans may cover IOP when it's medically necessary, and we work with most major PPO plans. Checking your benefits is free and usually takes under an hour.",
+      "note": "Most deductibles reset on January 1. If you've already met yours this year, it's worth checking now.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible and when it resets",
+          "Your network status",
+          "What your plan pays for evening IOP"
+        ]
+      }
+    },
+    {
+      "id": "length",
+      "nav": "How long",
+      "q": "How long does evening IOP last?",
+      "a": "It's different for everyone, and your progress sets the length. As you get steadier you come in fewer nights a week, then weekly alumni groups and monthly check-ins keep you connected for a full year.",
+      "note": "The structure loosens a little at a time as you get stronger, so treatment tapers off instead of stopping all at once.",
+      "cta": true
+    }
+  ]
+}

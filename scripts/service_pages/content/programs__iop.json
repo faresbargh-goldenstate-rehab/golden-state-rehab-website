@@ -1,0 +1,162 @@
+{
+  "h1": "Intensive Outpatient Program (IOP) in Los Angeles",
+  "sub": "Addiction and mental health treatment in 3-hour sessions, 3 to 5 days a week, so you can keep working. It's a core program at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "recreation-room",
+    "alt": "The recreation room at Golden State Rehab, with a long shared table and a ping pong table",
+    "caption": "The rec room at our Westwood center",
+    "note": [
+      "3 hours a session",
+      "mornings or evenings"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What is IOP",
+      "q": "What is IOP?",
+      "a": "IOP stands for intensive outpatient program. You come in for 3-hour sessions, 3 to 5 days a week, and sleep in your own bed every night. That's about 9 to 15 hours of treatment a week, at our Westwood center or by telehealth from anywhere in California."
+    },
+    {
+      "id": "fit",
+      "nav": "Who it's for",
+      "q": "Is my situation serious enough for IOP?",
+      "a": "Most people in IOP still go to work and look fine from the outside, while something underneath takes more than it gives. If weekly therapy hasn't been enough, IOP is often the next step. Your free assessment gives you a straight answer.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You just finished PHP and you're ready for more freedom.",
+          "You need to keep working or stay in school.",
+          "You're a parent or caregiver with a lot riding on you at home.",
+          "You have a stable place to live, at home or in sober living."
+        ],
+        "card": {
+          "title": "We'll point you to the right level",
+          "text": "The assessment is free and confidential, by phone or in person. If PHP fits you better, we'll tell you straight. If detox has to come first, a trusted partner handles it and your place here waits for you."
+        }
+      }
+    },
+    {
+      "id": "tracks",
+      "nav": "Morning or evening",
+      "q": "Should I pick the morning or the evening track?",
+      "a": "Pick the one your week can hold. Both tracks run the same 3-hour sessions with one clinical team. Your days get set at your free assessment, and they can change as you get stronger.",
+      "cta": true,
+      "block": {
+        "type": "compare",
+        "cols": [
+          {
+            "t": "Morning track",
+            "rows": [
+              "3-hour group sessions in the morning",
+              "Treatment done early, with the rest of the day open",
+              "A good fit if you work evenings",
+              "In person in Westwood or by telehealth"
+            ]
+          },
+          {
+            "t": "Evening track",
+            "dark": true,
+            "rows": [
+              "The same 3-hour sessions after the workday ends",
+              "Made for people with a full-time job",
+              "Work during the day, group at night",
+              "More on our [evening track](/programs/evening-iop)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "week",
+      "nav": "Your week",
+      "q": "What happens during a week of IOP?",
+      "a": "Most of your hours are in group therapy. You also meet one on one with your primary therapist at least once a week. Psychiatry and family sessions get added when your treatment plan calls for them.",
+      "note": "If you're planning around work or school, see [how long rehab lasts](/blog/how-long-is-rehab).",
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "users",
+            "t": "Group therapy",
+            "d": "CBT (changing thought patterns), DBT (handling big emotions), relapse prevention and trauma work."
+          },
+          {
+            "icon": "user",
+            "t": "Your own therapist",
+            "d": "A private session with your primary therapist at least once a week, seperate from group. This is where the personal stuff goes."
+          },
+          {
+            "icon": "stethoscope",
+            "t": "Psychiatric care",
+            "d": "Our board-certified psychiatrist handles medication if you need it, including MAT, which is medicine that eases cravings."
+          },
+          {
+            "icon": "house-heart",
+            "t": "Family therapy",
+            "d": "Sessions that help repair things at home and show your family how to back you up."
+          }
+        ]
+      }
+    },
+    {
+      "id": "team",
+      "nav": "Who leads it",
+      "q": "Who leads the IOP groups?",
+      "a": "Our clinicians lead every group, under clinical director Ari Labowitz, LMFT. Dr. Eric Chaghouri, our medical director, is a board-certified psychiatrist trained at USC. He handles medication when your plan calls for it.",
+      "cta": true,
+      "block": {
+        "type": "quote",
+        "review": "yvette"
+      }
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will my insurance pay for IOP?",
+      "a": "It depends on your plan, so we check your benefits before anything else. We work with most major PPO plans. The check is free and usually done within the hour. It doesn't commit you to anything.",
+      "note": "Under California's SB 855 and federal parity law, plans have to cover addiction and mental health care that's medically necessary.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "How much of your deductible is left",
+          "Your network status",
+          "What your plan pays for IOP"
+        ]
+      }
+    },
+    {
+      "id": "work",
+      "nav": "Job & privacy",
+      "q": "Can I keep working while I'm in IOP?",
+      "a": "Yes, that's what IOP is built for. The evening track meets after typical work hours, and telehealth cuts out the drive on the 405. We never contact your employer, and HIPAA and 42 CFR Part 2 keep your records private.",
+      "note": "If you want time off at some point, FMLA and California's CFRA usually protect your job. Your request doesn't need to name the reason. [How FMLA works](https://www.dol.gov/agencies/whd/fmla)",
+      "cta": true
+    },
+    {
+      "id": "after",
+      "nav": "Where IOP fits",
+      "q": "Where does IOP fit in my treatment?",
+      "a": "IOP sits one step below PHP, our full-day program. Some people start here, and others step down to IOP after a few weeks of PHP. When IOP ends, weekly alumni groups and monthly check-ins keep you connected for a full year.",
+      "block": {
+        "type": "path",
+        "steps": [
+          {
+            "t": "PHP",
+            "d": "About 6 hours a day, Monday to Friday.",
+            "href": "/programs/php"
+          },
+          {
+            "t": "IOP",
+            "d": "3-hour sessions, 3 to 5 days a week, mornings or evenings.",
+            "here": true
+          },
+          {
+            "t": "Alumni",
+            "d": "Weekly alumni groups and monthly check-ins for a year."
+          }
+        ]
+      }
+    }
+  ]
+}

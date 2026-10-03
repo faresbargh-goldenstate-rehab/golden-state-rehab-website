@@ -1,0 +1,83 @@
+{
+  "h1": "Dialectical Behavior Therapy (DBT) in Los Angeles",
+  "sub": "DBT is a skills-based therapy for emotions that hit too hard and too fast. You learn the skills in group at our [mental health clinic in Los Angeles](/mental-health).",
+  "hero": {
+    "img": "meditation-room",
+    "alt": "Floor cushions and soft lamps in the meditation room at Golden State Rehab",
+    "caption": "Our meditation room in Westwood",
+    "note": ["Four skills", "learned in group"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What is DBT", "q": "What is DBT?",
+      "a": "DBT stands for dialectical behavior therapy. Dr. Marsha Linehan built it in the 1980s for people whose emotions felt too big to handle. Dialectical means two things can be true at once. You can accept yourself as you are and still work hard to change."
+    },
+    {
+      "id": "vs", "nav": "DBT vs CBT", "q": "How is DBT different from CBT?",
+      "a": "Both are structured therapies built around skills you practice. CBT works on changing unhelpful thoughts. DBT adds skills for getting through and calming the strong feelings that come before the thinking. Many people get some of both, and your therapist can blend them in one plan."
+    },
+    {
+      "id": "skills", "nav": "The four skills", "q": "What are the four DBT skills?",
+      "a": "DBT skills are split into four modules, a bit like classes. You learn all four in skills group. Your therapist then helps you use them in the places where your life gets hardest.",
+      "block": {
+        "type": "cards",
+        "items": [
+          {"icon": "leaf", "t": "Mindfulness", "d": "Notice your thoughts and feelings without letting them run you. Every other skill builds on this one."},
+          {"icon": "life-buoy", "t": "Distress tolerance", "d": "Crisis skills like TIPP and self-soothing, for getting through a bad moment without drinking or lashing out."},
+          {"icon": "waves", "t": "Emotion regulation", "d": "Learn why your feelings hit so hard and how to bring them down. Opposite action helps you shift a mood instead of obeying it."},
+          {"icon": "handshake", "t": "Interpersonal effectiveness", "d": "Ask for what you need and set boundries without losing the people you care about. DEAR MAN gives you a script."}
+        ]
+      }
+    },
+    {
+      "id": "fit", "nav": "Is it for me", "q": "Is DBT right for me?",
+      "a": "DBT fits people whose emotions come on fast and hit hard. It started as a treatment for borderline personality disorder, and today it's used far beyond that, including for addiction and depression.",
+      "note": "If you're thinking about suicide right now, call or text 988 any time.",
+      "block": {
+        "type": "fit",
+        "signs": [
+          "Your feelings go from 0 to 100 faster than other people's.",
+          "You drink or use when a feeling gets too big to sit with.",
+          "Your relationships swing between very close and blown apart.",
+          "You've hurt yourself to get through a feeling.",
+          "You've been called too sensitive or too much."
+        ],
+        "card": {
+          "title": "You don't need a diagnosis to start",
+          "text": "Your free assessment looks at what's going on and which therapy fits best. Many people get DBT skills alongside other approaches in the same plan."
+        }
+      }
+    },
+    {
+      "id": "addiction", "nav": "For addiction", "q": "Can DBT help with addiction?",
+      "a": "Yes. A lot of relapses start with a feeling that's too strong to sit with. DBT teaches you to ride out a craving with distress tolerance skills and to repair relationships that drinking or using has hurt. A version called DBT-SUD was built just for substance use."
+    },
+    {
+      "id": "group", "nav": "Skills group", "q": "What is a DBT skills group like?",
+      "a": "It feels a bit like a class. A facilitator teaches one skill and the group practices it in the room. Then you try it out during your week. DBT skills groups are part of our [group therapy](/programs/group-therapy) in PHP and IOP.",
+      "note": "Join in person in Westwood or by telehealth from anywhere in California.",
+      "cta": true,
+      "block": {"type": "quote", "review": "desteny"}
+    },
+    {
+      "id": "week", "nav": "Between sessions", "q": "How do I use the skills between sessions?",
+      "a": "Most of the practice happens out in your life, at work or around your family. DBT gives you two tools to make that easier. A diary card tracks your days, and chain analysis breaks down a hard moment so you can handle it differently next time.",
+      "cta": true,
+      "block": {
+        "type": "steps",
+        "items": [
+          {"t": "Fill out your diary card", "d": "About five minutes a day. Track your urges and the skills you used."},
+          {"t": "Bring it to your session", "d": "Your therapist uses the card to set the agenda for that week."},
+          {"t": "Break down a hard moment", "d": "Chain analysis walks back through what happened, step by step, to find where a skill could fit."},
+          {"t": "Try it again", "d": "Use the skill the next time a craving or an argument shows up."}
+        ]
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Will my insurance pay for DBT?",
+      "a": "DBT is part of our PHP and IOP programs, and your PPO plan may cover it as part of that care. We work with most major PPO plans. We check your benefits for free, usually within the hour, so you know where you stand before you start.",
+      "note": "California's SB 855 says health plans must cover medically necessary mental health care.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays for DBT in PHP or IOP"]}
+    }
+  ]
+}

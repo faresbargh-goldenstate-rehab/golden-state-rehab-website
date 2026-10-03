@@ -1,0 +1,135 @@
+{
+  "h1": "Same-Week Intake in Los Angeles",
+  "sub": "From your first call to your first session in a few days, with one free assessment in between. It's how people start at our [addiction treatment center in Los Angeles](/).",
+  "hero": {
+    "img": "waiting-area",
+    "alt": "The waiting area at Golden State Rehab, with two leather chairs on a round rug",
+    "caption": "The waiting area, where day one starts",
+    "note": [
+      "No waiting list",
+      "most start within days"
+    ]
+  },
+  "sections": [
+    {
+      "id": "what",
+      "nav": "What it is",
+      "q": "What is same-week intake?",
+      "a": "It's how we get you from your first call to your first session fast, often in the same week. There's no waiting list, and the phone is answered 24/7, holidays included. Most people start within days of their first call, while the decision to get help still feels doable."
+    },
+    {
+      "id": "how",
+      "nav": "The steps",
+      "q": "How does intake work?",
+      "a": "There are four steps, and most of them happen in one phone call. You can call (424) 208-3120 at any hour, or verify your insurance online in about two minutes.",
+      "cta": true,
+      "block": {
+        "type": "steps",
+        "items": [
+          {
+            "t": "Call or verify online",
+            "d": "It's free and confidential. You can ask anything you want and stop at any point."
+          },
+          {
+            "t": "Insurance check",
+            "d": "We look at your deductible and network status with your plan, usually within the hour."
+          },
+          {
+            "t": "Assessment",
+            "d": "A free talk with a clinician, by phone or in Westwood. It picks your level of care, and there are no wrong answers."
+          },
+          {
+            "t": "Start treatment",
+            "d": "Often the same week. You know where to go and who you're meeting before you walk in."
+          }
+        ]
+      }
+    },
+    {
+      "id": "call",
+      "nav": "The first call",
+      "q": "What will they ask me when I call?",
+      "a": "An admissions coordinator asks what's going on and what your week looks like with work and family. They answer your questions and explain your options. Most calls take 15 to 30 minutes, and nothing starts until you say so. If you're calling for someone else, that's fine too.",
+      "cta": true,
+      "block": {
+        "type": "quote",
+        "review": "gregory"
+      }
+    },
+    {
+      "id": "program",
+      "nav": "Your program",
+      "q": "Which program will I start in?",
+      "a": "You don't have to figure that out before you call. The assessment matches you to a level of care based on your needs and your schedule. You'll start in one of our outpatient programs.",
+      "cta": true,
+      "block": {
+        "type": "cards",
+        "items": [
+          {
+            "icon": "sun",
+            "t": "PHP",
+            "d": "[Partial hospitalization](/programs/php) runs about 6 hours a day, Monday to Friday. You still sleep at home."
+          },
+          {
+            "icon": "calendar",
+            "t": "IOP",
+            "d": "[Intensive outpatient](/programs/iop) means 3-hour sessions, 3 to 5 days a week."
+          },
+          {
+            "icon": "moon",
+            "t": "Evening IOP",
+            "d": "[The same program after work](/programs/evening-iop), for people with a job to protect."
+          },
+          {
+            "icon": "laptop",
+            "t": "Virtual IOP",
+            "d": "[IOP by video](/programs/virtual-iop) from anywhere in California."
+          }
+        ]
+      }
+    },
+    {
+      "id": "detox",
+      "nav": "Detox first",
+      "q": "What if I need detox first?",
+      "a": "We're an outpatient center, so we don't do detox here. If your assessment shows you need it, we arrange it with a trusted detox provider and save your spot. You make one call and we handle the connecting. Treatment with us starts right after detox ends."
+    },
+    {
+      "id": "bring",
+      "nav": "What to bring",
+      "q": "What do I bring on my first day?",
+      "a": "Not much. You go home every day, so there's no bag to pack. If you want a feel for those first hours, read [what the first day of rehab is like](/blog/first-day-of-rehab).",
+      "block": {
+        "type": "list",
+        "items": [
+          "A photo ID",
+          "Your insurance card",
+          "A list of any medications you take, with doses if you know them",
+          "Nothing else. You sleep in your own bed, so no suitcase is neccessary."
+        ]
+      }
+    },
+    {
+      "id": "cost",
+      "nav": "Insurance",
+      "q": "Will my insurance pay for treatment?",
+      "a": "We work with most major PPO plans. Whether yours pays for treatment, and how much, depends on your deductible and plan type. The free benefits check answers that before you commit to anything, and it doesn't notify anyone.",
+      "note": "Federal parity law and California's SB 855 both require health plans to cover medically necessary addiction care.",
+      "block": {
+        "type": "insurance",
+        "items": [
+          "Your deductible",
+          "Your network status",
+          "What your plan pays for each level of care"
+        ]
+      }
+    },
+    {
+      "id": "privacy",
+      "nav": "Privacy",
+      "q": "Will anyone find out I called?",
+      "a": "No. Calling us doesn't notify your job or your family. What you tell us stays private under HIPAA and 42 CFR Part 2, a federal rule made just for addiction treatment. We never call your employer, and nothing goes out without your written okay.",
+      "cta": true
+    }
+  ]
+}

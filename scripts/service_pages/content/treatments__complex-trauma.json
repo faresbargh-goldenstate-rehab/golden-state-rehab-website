@@ -1,0 +1,85 @@
+{
+  "h1": "Complex Trauma Treatment in Los Angeles",
+  "sub": "Care in phases for C-PTSD and trauma that went on for years, often since childhood. It's part of our [outpatient mental health treatment in Los Angeles](/mental-health).",
+  "hero": {
+    "img": "tv-lounge",
+    "alt": "The TV lounge at Golden State Rehab, with a black leather sofa and two armchairs",
+    "caption": "The TV lounge, for quiet time between sessions",
+    "note": ["Three phases", "safety comes first"]
+  },
+  "sections": [
+    {
+      "id": "what", "nav": "What it is", "q": "What is complex trauma?",
+      "a": "Complex trauma, also called C-PTSD, comes from trauma that repeated or went on for a long time. It often starts in childhood, through abuse, neglect, violence at home or years of living with fear. It can shape how you see yourself and how close you let people get.",
+      "note": "Source: [SAMHSA, Understanding Trauma and Violence](https://www.samhsa.gov/mental-health/trauma-violence)"
+    },
+    {
+      "id": "diff", "nav": "Vs. PTSD", "q": "How is complex trauma different from PTSD?",
+      "a": "PTSD usually follows a single event. Complex trauma builds up over months or years, so it reaches deeper into how you see yourself and how you handle relationships. That's why we treat it in phases. Our [PTSD page](/treatments/ptsd) covers single-event trauma.",
+      "block": {
+        "type": "compare",
+        "cols": [
+          {"t": "PTSD", "rows": ["Usually follows one event", "Flashbacks and nightmares tied to that event", "Feeling on guard much of the time"]},
+          {"t": "Complex trauma", "dark": true, "rows": ["Builds up over months or years, often from childhood", "Deep shame or a sense of being damaged", "Trouble trusting people or staying close", "Treated in phases, with safety first"]}
+        ]
+      }
+    },
+    {
+      "id": "signs", "nav": "Signs", "q": "Could what I'm feeling be complex trauma?",
+      "a": "Complex trauma is easy to miss because the signs can look like personality traits. You may have spent years thinking that's just how you are. If several of these fit, it's worth a free assessment.",
+      "cta": true,
+      "block": {
+        "type": "fit",
+        "signs": [
+          "You have strong feelings that are hard to calm, sometimes out of nowhere.",
+          "You carry deep shame or feel damaged in some way.",
+          "You find it hard to trust people or stay close to them.",
+          "You feel empty or worthless alot of the time.",
+          "You sometimes feel detached from yourself, like you're watching from outside.",
+          "You've used alcohol or drugs to cope."
+        ]
+      }
+    },
+    {
+      "id": "phases", "nav": "Three phases", "q": "How does phase-based treatment work?",
+      "a": "We treat complex trauma in three phases. Each one builds on the last, and you don't move on until you feel steady. Moving too fast can stir up more than you can handle, so the pace follows you.",
+      "block": {
+        "type": "steps",
+        "items": [
+          {"t": "Safety and stabilization", "d": "You build coping skills and grounding tools first, so deeper work feels possible."},
+          {"t": "Trauma processing", "d": "With that base in place, you work through the memories at your pace. EMDR, one common method, helps them lose their charge."},
+          {"t": "Integration and reconnection", "d": "You make sense of the past as part of your story and start rebuilding close relationships."}
+        ]
+      }
+    },
+    {
+      "id": "relive", "nav": "Reliving it", "q": "Will I have to relive my trauma?",
+      "a": "No. The first phase is all about feeling safe and building skills, with no trauma processing at all. When deeper work starts, it moves at a pace you can handle, and you stay in control the whole way.",
+      "cta": true,
+      "block": {"type": "quote", "review": "gregory-place"}
+    },
+    {
+      "id": "ifs", "nav": "IFS", "q": "What is Internal Family Systems therapy?",
+      "a": "Internal Family Systems, or IFS, sees your mind as a set of parts. Some parts formed early to protect you, like the harsh inner critic or the part that shuts down. IFS helps you understand those parts, which can quiet the self-criticism and the fighting inside."
+    },
+    {
+      "id": "length", "nav": "How long", "q": "How long does complex trauma treatment take?",
+      "a": "There's no fixed timeline, and we won't make one up. Healing from years of trauma takes time. We start you at the right level of care and adjust as you heal, from full weekdays in PHP down to IOP and ongoing support.",
+      "note": "Evening IOP and telehealth make it possible to keep your job while you heal, and we never contact your employer. Your care stays private under HIPAA.",
+      "cta": true,
+      "block": {
+        "type": "path",
+        "steps": [
+          {"t": "PHP", "d": "About 6 hours a day at our Westwood clinic, Monday to Friday, with evenings at home."},
+          {"t": "IOP", "d": "3-hour sessions, 3 to 5 days a week, mornings or evenings."},
+          {"t": "Alumni", "d": "Weekly alumni groups and monthly check-ins for one full year."}
+        ]
+      }
+    },
+    {
+      "id": "cost", "nav": "Insurance", "q": "Will insurance help pay for trauma treatment?",
+      "a": "It may. We work with most major PPO plans, and California's SB 855 requires health plans to cover medically necessary mental health care. We check your benefits for free, usually within the hour, so you know where you stand before day one.",
+      "block": {"type": "insurance", "items": ["Your deductible", "Your network status", "What your plan pays at each level of care"]}
+    }
+  ]
+}
