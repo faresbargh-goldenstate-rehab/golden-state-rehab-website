@@ -976,6 +976,7 @@
   .tx-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
   .tx-list li{margin:0;border-bottom:1px solid var(--border);font-size:18px;font-weight:500;line-height:1.35}
   .tx-list a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0;color:var(--near-black);text-decoration:none;transition:color var(--transition)}
+  .tx-list .tx-plain{display:block;padding:18px 0;color:var(--near-black)}
   .tx-list a svg{flex:none;width:18px;height:18px;color:var(--tx-ink);transition:transform var(--transition)}
   .tx-list a:hover{color:var(--tx-ink)}
   .tx-list a:hover svg{transform:translate(3px,-3px)}
@@ -993,7 +994,7 @@
     .tx-split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:96px}
     .tx-list{grid-template-columns:minmax(0,1fr)}
     .tx-list li{font-size:19px}
-    .tx-list a{padding:20px 0}
+    .tx-list a,.tx-list .tx-plain{padding:20px 0}
   }
   @media (min-width:1024px) and (min-height:720px){
     .tx-intro{position:sticky;top:calc(var(--tx-chrome) + var(--tx-gap));align-self:start;display:flex;flex-direction:column;height:calc(100vh - var(--tx-chrome) - 2 * var(--tx-gap));height:calc(100svh - var(--tx-chrome) - 2 * var(--tx-gap));max-height:820px;transition:top .3s ease,opacity .6s ease,transform .6s ease}
@@ -1015,7 +1016,7 @@
     .tx-label{font-size:24px}
     .tx-list{grid-template-columns:minmax(0,1fr)}
     .tx-list li{font-size:16px}
-    .tx-list a{padding:16px 0}
+    .tx-list a,.tx-list .tx-plain{padding:16px 0}
     .tx-list a svg{width:16px;height:16px}
     .tx-cta{margin-top:72px}
     .tx-cta p{font-size:18px}
@@ -1038,7 +1039,7 @@
         <div class="tx-group reveal">
           <h3 class="tx-label" id="tx-addiction">Addiction treatment</h3>
           <ul class="tx-list" aria-labelledby="tx-addiction">
-            <li><a href="treatments/alcohol">Alcohol Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><a href="alcoholism-treatment-program">Alcohol Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
             <li><a href="treatments/opioid">Opioid Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
             <li><a href="treatments/fentanyl">Fentanyl Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
             <li><a href="treatments/cocaine">Cocaine Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
@@ -1046,18 +1047,18 @@
             <li><a href="treatments/prescription-drugs">Prescription Drug Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
             <li><a href="treatments/benzodiazepine">Benzodiazepine Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
             <li><a href="treatments/sex-addiction">Sex Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><a href="treatments/dual-diagnosis">Dual Diagnosis <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
           </ul>
         </div>
         <div class="tx-group reveal">
           <h3 class="tx-label" id="tx-mental-health"><a href="mental-health">Mental health treatment <i data-lucide="arrow-up-right"></i></a></h3>
           <ul class="tx-list" aria-labelledby="tx-mental-health">
-            <li><a href="treatments/depression">Depression <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/anxiety">Anxiety <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/anxiety">Panic Disorder <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/ptsd">PTSD <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/complex-trauma">Complex Trauma <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="mental-health">Bipolar Disorder <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/dual-diagnosis">Dual Diagnosis <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><span class="tx-plain">Depression</span></li>
+            <li><span class="tx-plain">Anxiety</span></li>
+            <li><span class="tx-plain">Panic Disorder</span></li>
+            <li><span class="tx-plain">PTSD</span></li>
+            <li><span class="tx-plain">Complex Trauma</span></li>
+            <li><span class="tx-plain">Bipolar Disorder</span></li>
           </ul>
         </div>
       </div>
@@ -1300,7 +1301,7 @@
         <div class="value-card-content">
           <p class="value-card-eyebrow">PHP and IOP</p>
           <h3 class="value-card-headline">Day treatment, or evenings after work.</h3>
-          <p class="value-card-body"><a href="programs/php">Partial hospitalization (PHP)</a> runs weekdays, about 9 a.m. to 3 p.m. <a href="programs/iop">Intensive outpatient (IOP)</a> is lighter: 3-hour groups, 3 to 5 days a week, mornings or after work. Both are <a href="programs/outpatient-rehab">outpatient drug rehab</a>, so you sleep at home every night. On weeks the 405 is a parking lot, you can join group by video from anywhere in California.</p>
+          <p class="value-card-body"><a href="programs/php">Partial hospitalization (PHP)</a> runs weekdays, about 9 a.m. to 3 p.m. <a href="programs/iop">Intensive outpatient (IOP)</a> is lighter: 3-hour groups, 3 to 5 days a week, mornings or in our <a href="programs/evening-iop">evening IOP</a> after work. Both are outpatient drug rehab, so you sleep at home every night. On weeks the 405 is a parking lot, you can join group by video through our <a href="programs/virtual-iop">virtual IOP</a>, from anywhere in California.</p>
         </div>
         <div class="value-card-visual">
           <img class="wu-photo" src="images/facility/group-therapy-room-800.webp" alt="Group therapy room at Golden State Rehab in West Los Angeles" width="800" height="600" loading="lazy" draggable="false">
@@ -1310,7 +1311,7 @@
         <div class="value-card-content">
           <p class="value-card-eyebrow">Psychiatry and MAT</p>
           <h3 class="value-card-headline">A psychiatrist on your team from week one.</h3>
-          <p class="value-card-body">Our medical director, Dr. Eric Chaghouri, is a <a href="programs/psychiatric-care">board-certified psychiatrist</a> who went to med school at USC. If you&rsquo;re coming off fentanyl or other opioids, we start buprenorphine (Suboxone) slowly, which lowers the chance of sudden withdrawal. For alcohol, naltrexone can cut cravings. This is called MAT, or medication-assisted treatment. If you&rsquo;re comparing rehabs, ask who writes the prescriptions. Not every program has a psychiatrist on staff.</p>
+          <p class="value-card-body">Our medical director, Dr. Eric Chaghouri, is a board-certified psychiatrist who went to med school at USC. If you&rsquo;re coming off fentanyl or other opioids, we start buprenorphine (Suboxone) slowly, which lowers the chance of sudden withdrawal. For alcohol, naltrexone can cut cravings. This is called MAT, or medication-assisted treatment. It&rsquo;s part of our <a href="programs/medication-management">medication management</a>. If you&rsquo;re comparing rehabs, ask who writes the prescriptions. Not every program has a psychiatrist on staff.</p>
         </div>
         <div class="value-card-visual wu-visual-portrait">
           <img class="wu-portrait" src="images/team/eric-chaghouri.webp" alt="Dr. Eric Chaghouri, MD, Medical Director" width="800" height="800" loading="lazy" draggable="false">
@@ -1320,7 +1321,7 @@
         <div class="value-card-content">
           <p class="value-card-eyebrow">Individual and Group Therapy</p>
           <h3 class="value-card-headline">Therapy for why you drink or use.</h3>
-          <p class="value-card-body">In 2025, meth passed fentanyl as the drug involved in the most LA County overdose deaths, per county Public Health. There&rsquo;s no FDA-approved medicine for meth yet, so therapy is the main treatment. You see your own therapist at least once a week, and your sessions can use CBT, DBT or EMDR, depending on what you need. Groups focus on coping skills for cravings and hard feelings.</p>
+          <p class="value-card-body">In 2025, meth passed fentanyl as the drug involved in the most LA County overdose deaths, per county Public Health. There&rsquo;s no FDA-approved medicine for meth yet, so therapy is the main treatment. You get <a href="programs/individual-therapy">individual therapy</a> with your own therapist at least once a week, and your sessions can use <a href="treatments/cbt">CBT</a>, DBT or EMDR, depending on what you need. If trauma is part of your story, your therapist uses a <a href="treatments/trauma-informed-therapy">trauma-informed</a> approach. Groups focus on coping skills for cravings and hard feelings. <a href="programs/holistic-therapies">Holistic therapies</a> like yoga and breathwork help your body calm down too.</p>
         </div>
         <div class="value-card-visual">
           <img class="wu-photo" src="images/facility/individual-therapy-room-800.webp" alt="Private individual therapy room at Golden State Rehab" width="600" height="800" loading="lazy" draggable="false">
@@ -1330,7 +1331,7 @@
         <div class="value-card-content">
           <p class="value-card-eyebrow">Westwood, West LA</p>
           <h3 class="value-card-headline">Right on Westwood Blvd, south of UCLA.</h3>
-          <p class="value-card-body">We&rsquo;re at 1964 Westwood Blvd, Suite 425. From Santa Monica it&rsquo;s about 15 minutes, heading east on Olympic or the 10. Mar Vista and Brentwood are closer, around 10. From Sawtelle you can walk it. After treatment, our alumni still get together for hikes and sober dinners.</p>
+          <p class="value-card-body">We&rsquo;re at 1964 Westwood Blvd, Suite 425. From Santa Monica it&rsquo;s about 15 minutes, heading east on Olympic or the 10. Mar Vista and Brentwood are closer, around 10. From Sawtelle you can walk it. After treatment, people in our <a href="programs/alumni">alumni program</a> still get together for hikes and sober dinners.</p>
         </div>
         <div class="value-card-visual">
           <img class="wu-photo wu-photo--lobby" src="images/facility/reception-lobby-800.webp" alt="Reception and lobby at Golden State Rehab in West Los Angeles" width="800" height="600" loading="lazy" draggable="false">
@@ -1468,7 +1469,7 @@
       <li class="path-step reveal">
         <div class="path-step-top"><span class="path-step-num" aria-hidden="true">01</span></div>
         <h3>Reach us any hour, holidays too</h3>
-        <p>Call or text <a href="tel:+14242083120">(424) 208-3120</a>. Someone from our admissions team picks up day or night. Tell them what&rsquo;s going on in your own words. You don&rsquo;t need the medical terms.</p>
+        <p>Call or text <a href="tel:+14242083120">(424) 208-3120</a>. Someone from our admissions team picks up day or night, in English or Spanish. We also offer <a href="spanish-speaking-treatment">Spanish-speaking treatment</a>. Tell them what&rsquo;s going on in your own words. You don&rsquo;t need the medical terms.</p>
       </li>
       <li class="path-step reveal">
         <div class="path-step-top"><span class="path-step-num" aria-hidden="true">02</span></div>
