@@ -108,7 +108,6 @@
             <a href="treatments/meth">Meth</a>
             <a href="treatments/cocaine">Cocaine</a>
             <a href="treatments/prescription-drugs">Prescription Drugs</a><a href="treatments/benzodiazepine">Benzodiazepines</a>
-            <a href="treatments/sex-addiction">Sex Addiction</a>
           </div>
           <div class="dropdown-col">
             <span class="dropdown-col-label">Therapies</span>
@@ -976,7 +975,7 @@
   .tx-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
   .tx-list li{margin:0;border-bottom:1px solid var(--border);font-size:18px;font-weight:500;line-height:1.35}
   .tx-list a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0;color:var(--near-black);text-decoration:none;transition:color var(--transition)}
-  .tx-list .tx-plain{display:block;padding:18px 0;color:var(--near-black)}
+  .tx-list .tx-plain{display:block;padding:18px 0;color:var(--near-black)}.tx-name{display:block}.tx-aka{display:block;margin-top:4px;font-size:14px;font-weight:400;line-height:1.4;color:var(--muted)}
   .tx-list a svg{flex:none;width:18px;height:18px;color:var(--tx-ink);transition:transform var(--transition)}
   .tx-list a:hover{color:var(--tx-ink)}
   .tx-list a:hover svg{transform:translate(3px,-3px)}
@@ -1039,14 +1038,14 @@
         <div class="tx-group reveal">
           <h3 class="tx-label" id="tx-addiction">Addiction treatment</h3>
           <ul class="tx-list" aria-labelledby="tx-addiction">
-            <li><a href="alcoholism-treatment-program">Alcohol Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/opioid">Opioid Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/fentanyl">Fentanyl Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/cocaine">Cocaine Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/meth">Methamphetamine Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/prescription-drugs">Prescription Drug Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/benzodiazepine">Benzodiazepine Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
-            <li><a href="treatments/sex-addiction">Sex Addiction <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><a href="alcoholism-treatment-program"><span class="tx-name">Alcohol Addiction<small class="tx-aka">Beer, wine, liquor, booze</small></span> <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><a href="treatments/opioid"><span class="tx-name">Opioid Addiction<small class="tx-aka">Oxycodone, hydrocodone, heroin, percs</small></span> <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><a href="treatments/fentanyl"><span class="tx-name">Fentanyl Addiction<small class="tx-aka">Fent, M30s, blues, china white</small></span> <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><a href="treatments/cocaine"><span class="tx-name">Cocaine Addiction<small class="tx-aka">Coke, crack, blow, snow</small></span> <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><a href="treatments/meth"><span class="tx-name">Methamphetamine Addiction<small class="tx-aka">Meth, crystal, ice, tina</small></span> <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><a href="treatments/prescription-drugs"><span class="tx-name">Prescription Drug Addiction<small class="tx-aka">Adderall, OxyContin, Ambien, addies</small></span> <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><a href="treatments/benzodiazepine"><span class="tx-name">Benzodiazepine Addiction<small class="tx-aka">Xanax, Klonopin, Valium, bars</small></span> <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+            <li><span class="tx-plain"><span class="tx-name">Kratom Addiction<small class="tx-aka">Kratom powder, kratom shots, 7-OH</small></span></span></li>
             <li><a href="treatments/dual-diagnosis">Dual Diagnosis <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
           </ul>
         </div>
