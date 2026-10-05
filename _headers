@@ -50,3 +50,8 @@
   X-Robots-Tag: noindex, nofollow
 /*.csv
   X-Robots-Tag: noindex, nofollow
+
+# IndexNow key file (scripts/indexnow_submit.py). Bing/Yandex fetch it to
+# verify our submissions; it must stay at the root and return the bare key.
+/9f692a782cc140d997f5769bbead7db0.txt
+  X-Robots-Tag: noindex
